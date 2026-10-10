@@ -1,0 +1,145 @@
+{
+  "category": "smart-plug",
+  "brand": "Wemo",
+  "model": "WSP100",
+  "name": "Wemo Smart Plug with Thread (WSP100)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.belkin.com/support-product/?sku=WSP100",
+  "radios": {
+    "value": [
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "belkin-wsp100-meet"
+    ],
+    "note": "Bluetooth LE 5.0 and Thread (802.15.4), per Belkin's spec article."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Belkin describes it as a HomeKit-only device and never mentions Matter for it. No CSA listing found. Not confirmed either way."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "belkin-wsp100-meet",
+        "belkin-wsp100-faq",
+        "belkin-wemo-support-ending"
+      ],
+      "note": "HomeKit (HAP) over Bluetooth and Thread, set up with NFC or the HomeKit code. Thread and remote control need an Apple home hub with Thread (Apple TV 4K 2021 or HomePod mini)."
+    },
+    "google_home": {
+      "status": "no",
+      "sources": [
+        "belkin-wsp100-faq"
+      ],
+      "note": "Belkin's FAQ answers \"No\" for Google Home and says the plug is designed for use only with Apple HomeKit."
+    },
+    "alexa": {
+      "status": "no",
+      "sources": [
+        "belkin-wsp100-faq"
+      ],
+      "note": "Belkin's FAQ answers \"No\" for Amazon Alexa and says the plug is designed for use only with Apple HomeKit."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Belkin says the plug is designed only for Apple HomeKit and lists no Matter support, but no Belkin or Samsung page names SmartThings either way."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-homekit-controller"
+      ],
+      "note": "Home Assistant's official HomeKit Device integration pairs HomeKit accessories over Bluetooth and Thread (Thread needs a border router). HA doesn't name the WSP100, and a HomeKit accessory pairs with only one controller at a time."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [
+      "belkin-wsp100-faq",
+      "belkin-wsp100-meet"
+    ],
+    "note": "Belkin's sources disagree: the FAQ says a hub is needed only for Thread and away-from-home control, while the spec list says you need an Apple home hub or Thread hub."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "belkin-wemo-support-ending",
+      "belkin-wsp100-faq"
+    ],
+    "note": "Runs on HomeKit with no Wemo app or cloud; Belkin says Thread Wemo devices keep working through HomeKit after the Wemo cloud shutdown."
+  },
+  "energyMonitoring": {
+    "value": false,
+    "sources": [
+      "belkin-wsp100-faq"
+    ],
+    "note": "Belkin's FAQ says the WSP100 has no power reporting."
+  },
+  "maxLoadWatts": {
+    "value": 1800,
+    "sources": [
+      "belkin-wsp100-meet"
+    ],
+    "note": "120 V, 15 A, 1800 W. The Thai version (WSP100-TH) has a different rating."
+  },
+  "summary": "The Wemo WSP100 is a HomeKit-only plug that talks Bluetooth and Thread. It never used the Wemo app or cloud, so Belkin lists it among the Thread products not affected by the Wemo shutdown on January 31, 2026, and it keeps working in Apple Home. Belkin says it doesn't work with Alexa, Google Home or Android. It is rated 15 A / 1800 W and has no power reporting.",
+  "caveats": [
+    "Belkin announced on July 10, 2025 that Wemo cloud services, the Wemo app and support would end on January 31, 2026. Belkin says Thread Wemo devices like this one keep working through HomeKit.",
+    "Belkin's end-of-support page lists the WSP100 both as affected and as not affected, and says new HomeKit setup of Wemo devices isn't possible after the cutoff. It's unclear whether that applies to this plug.",
+    "No Alexa, Google Home or Android support.",
+    "Belkin's pages disagree on whether you need an Apple home hub to set it up; you do need one with Thread (HomePod mini or Apple TV 4K 2021 or later) for Thread and remote control.",
+    "No energy monitoring."
+  ],
+  "sources": [
+    {
+      "id": "belkin-wsp100-meet",
+      "url": "https://www.belkin.com/support-article/?articleNum=318936",
+      "title": "Belkin Official Support - Meet the Wemo Smart Plug with Thread, WSP100",
+      "publisher": "Belkin",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "belkin-wsp100-faq",
+      "url": "https://www.belkin.com/support-article/?articleNum=318937",
+      "title": "Belkin Official Support - Wemo WSP100 Frequently Asked Questions",
+      "publisher": "Belkin",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "belkin-wemo-support-ending",
+      "url": "https://www.belkin.com/support-article/?articleNum=335419",
+      "title": "Belkin Official Support - Wemo Support Ending",
+      "publisher": "Belkin",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "techcrunch-wemo-end",
+      "url": "https://techcrunch.com/2025/07/10/belkin-ends-support-for-most-wemo-devices-and-its-wemo-app/",
+      "title": "Belkin ends support for most Wemo devices and its Wemo app",
+      "publisher": "TechCrunch",
+      "kind": "review",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-homekit-controller",
+      "url": "https://www.home-assistant.io/integrations/homekit_controller/",
+      "title": "HomeKit Device - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-10",
+  "verifiedAt": "2026-10-10"
+}

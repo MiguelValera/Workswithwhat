@@ -1,0 +1,128 @@
+{
+  "category": "smart-plug",
+  "brand": "Philips Hue",
+  "model": "Hue Smart Plug EU (8719514342309)",
+  "name": "Philips Hue Smart Plug (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.philips-hue.com/de-de/p/hue-smart-plug/8719514342309",
+  "radios": {
+    "value": ["zigbee", "bluetooth"],
+    "sources": ["hue-smart-plug-de"],
+    "note": "Bluetooth for direct app control; Zigbee (2.4 GHz) to the Hue Bridge. No Wi-Fi."
+  },
+  "matter": {
+    "certified": null,
+    "sources": ["hue-matter"],
+    "note": "No Matter certification found for the plug itself. Hue says products connected to a Hue Bridge are exposed to Matter by the Bridge."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-apple-home", "hue-bridge-us"],
+      "note": "Apple Home is linked from the Hue app with a Hue Bridge. Hue's EU product pages are inconsistent about listing Apple Home."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-smart-plug-de", "hue-bridge-us"],
+      "note": "The German product page says voice control with Google Assistant needs a Hue Bridge."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-smart-plug-de", "hue-bridge-us"],
+      "note": "The German product page says voice control with Alexa needs a Hue Bridge."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-bridge-us"],
+      "note": "The Hue Bridge page lists Samsung SmartThings compatibility. That page is the US one; we assume the EU Bridge behaves the same."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["ha-hue"],
+      "note": "Official Hue integration controls devices connected to a Hue Bridge."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["hue-smart-plug-de"],
+    "note": "Basic control works over Bluetooth from the Hue app; the Hue Bridge is needed for voice assistants, ecosystems and remote access."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["hue-smart-plug-de", "ha-hue"],
+    "note": "Bluetooth control without a bridge or Wi-Fi; the Hue Bridge also offers a local API used by Home Assistant."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [],
+    "note": "Hue's pages describe on/off switching only and list no metering, but none says explicitly that it is absent."
+  },
+  "maxLoadWatts": {
+    "value": 2300,
+    "sources": ["hue-smart-plug-support-de-at", "hue-smart-plug-de"],
+    "note": "Hue support gives 2300 W for mainland Europe (220–240 V). The UK version has a different rating."
+  },
+  "summary": "The EU Philips Hue Smart Plug talks Bluetooth to the Hue app for basic on/off, with no Wi-Fi. Apple Home, Google Home, Alexa, SmartThings and Home Assistant all need a Hue Bridge; the plug joins it over Zigbee, and the Bridge also exposes it to Matter platforms. It fits 220–240 V mainland European sockets and is rated 2300 W. Hue doesn't list energy metering.",
+  "caveats": [
+    "Voice assistants, ecosystems and remote access all need a Hue Bridge.",
+    "Bluetooth-only setups can't use Matter; the Bridge is what exposes the plug to Matter.",
+    "Rated 2300 W in mainland Europe, below the 3680 W of many 16 A Schuko plugs."
+  ],
+  "sources": [
+    {
+      "id": "hue-smart-plug-de",
+      "url": "https://www.philips-hue.com/de-de/p/hue-smart-plug/8719514342309",
+      "title": "Hue Smart Plug zur Steuerung Deiner smarten Lampen",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "hue-smart-plug-support-de-at",
+      "url": "https://www.philips-hue.com/de-at/support/product/smart-plug/100022",
+      "title": "Hue Smart Plug (support)",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "hue-bridge-us",
+      "url": "https://www.philips-hue.com/en-us/p/hue-bridge/046677458478",
+      "title": "Bridge - Smart hub",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "hue-apple-home",
+      "url": "https://www.philips-hue.com/en-us/support/topic/apple-homekit/100021",
+      "title": "Apple Home",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "hue-matter",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/works-with/matter",
+      "title": "Philips Hue and Matter",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-hue",
+      "url": "https://www.home-assistant.io/integrations/hue/",
+      "title": "Philips Hue - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-10"
+}

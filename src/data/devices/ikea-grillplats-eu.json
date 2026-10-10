@@ -1,0 +1,177 @@
+{
+  "category": "smart-plug",
+  "brand": "IKEA",
+  "model": "GRILLPLATS",
+  "name": "IKEA GRILLPLATS (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.ikea.com/de/en/p/grillplats-plug-smart-60604238/",
+  "radios": {
+    "value": [
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "ikea-grillplats-se",
+      "csa-grillplats-plug-17"
+    ],
+    "note": "IKEA says it uses Matter over Thread. The CSA listing for family SKU E2491-EU shows Thread and Bluetooth as transports; Bluetooth is likely for Matter setup only."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "csa-grillplats-plug-17",
+      "ikea-grillplats-de",
+      "ikea-grillplats-se"
+    ],
+    "note": "IKEA marks it Matter compatible. CSA certificate CSA255B7MAT46345-24 (Matter 1.4, certified 2025-08-20) lists family SKU E2491-EU, the type named in IKEA's German manual. CSA also has other GRILLPLATS certificates."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "ikea-grillplats-de",
+        "ikea-grillplats-se",
+        "ikea-grillplats-us"
+      ],
+      "note": "IKEA names Apple among compatible systems. Through Matter; needs an Apple home hub that is a Thread border router."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "ikea-grillplats-de",
+        "ikea-grillplats-se",
+        "ikea-grillplats-us"
+      ],
+      "note": "IKEA names Google among compatible systems. Through Matter; needs a Google hub that is a Thread border router."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "ikea-grillplats-de",
+        "ikea-grillplats-se",
+        "ikea-grillplats-us"
+      ],
+      "note": "IKEA names Amazon among compatible systems. Through Matter; needs an Echo that is a Matter controller and Thread border router. Some buyer reviews report failed Alexa pairing."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "ikea-grillplats-de",
+        "ikea-grillplats-se",
+        "ikea-grillplats-us"
+      ],
+      "note": "IKEA names Samsung among compatible systems. Through Matter; needs a SmartThings hub with Thread."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "ha-matter",
+        "csa-grillplats-plug-17"
+      ],
+      "note": "Through Home Assistant's Matter integration, which needs a Thread border router for Thread devices. IKEA doesn't name Home Assistant itself."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "ikea-grillplats-de",
+      "ikea-grillplats-se",
+      "ikea-grillplats-us"
+    ],
+    "note": "IKEA says phone control needs a Thread border router, such as its DIRIGERA hub or another ecosystem's border router. Without one it only pairs directly with an IKEA remote or motion sensor."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "ha-matter",
+      "csa-grillplats-plug-17"
+    ],
+    "note": "Matter-certified (CSA), and Home Assistant documents Matter as local control without cloud. IKEA itself doesn't state local control."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "ikea-grillplats-de",
+      "ikea-newsroom-matter-range"
+    ],
+    "note": "IKEA says it tracks power usage. What you see depends on the controller app."
+  },
+  "maxLoadWatts": {
+    "value": 3680,
+    "sources": [
+      "ikea-grillplats-manual-de"
+    ],
+    "note": "IKEA's German manual for type E2491-EU: 220-240 V, max 3680 W / 16 A resistive load, max 300 W motor load."
+  },
+  "summary": "IKEA GRILLPLATS is a Matter over Thread smart plug, and IKEA lists Apple, Google, Amazon and Samsung as compatible systems. To control it from a phone you need a Thread border router, such as IKEA's DIRIGERA hub, a HomePod mini or a Thread-capable Nest or Echo. It also pairs directly with an IKEA remote or motion sensor (up to 10 plugs each), tracks power usage and is rated 3680 W / 16 A. This record covers EU article 606.042.38 (type E2491-EU).",
+  "caveats": [
+    "Needs a Thread border router (DIRIGERA or an Apple, Google or Amazon hub) for app and voice control.",
+    "Rated 3680 W / 16 A for resistive loads, but only 300 W for motor loads.",
+    "Some buyer reviews report failed Alexa pairing and plugs dropping off the Thread network.",
+    "Other EU countries sell a different article (906.247.44) with another plug type; it may differ in rating."
+  ],
+  "sources": [
+    {
+      "id": "ikea-grillplats-de",
+      "url": "https://www.ikea.com/de/en/p/grillplats-plug-smart-60604238/",
+      "title": "GRILLPLATS plug, smart - IKEA Germany",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ikea-grillplats-se",
+      "url": "https://www.ikea.com/se/en/p/grillplats-plug-smart-60604238/",
+      "title": "GRILLPLATS plug, smart - IKEA Sweden",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ikea-grillplats-us",
+      "url": "https://www.ikea.com/us/en/p/grillplats-plug-smart-70624740/",
+      "title": "GRILLPLATS plug, smart - IKEA",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ikea-newsroom-matter-range",
+      "url": "https://www.ikea.com/global/en/newsroom/retail/the-new-smart-home-from-ikea-matter-compatible-251106/",
+      "title": "IKEA launches new smart home range with 21 Matter-compatible products",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "csa-grillplats-plug-17",
+      "url": "https://csa-iot.org/csa_product/grillplats-plug-17/",
+      "title": "GRILLPLATS plug - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ikea-grillplats-manual-de",
+      "url": "https://www.ikea.com/de/de/manuals/grillplats-steckdose-smart__AA-2692575-1-2.pdf",
+      "title": "GRILLPLATS",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-10",
+  "verifiedAt": "2026-10-10"
+}

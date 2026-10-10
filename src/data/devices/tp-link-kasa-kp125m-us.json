@@ -1,0 +1,133 @@
+{
+  "category": "smart-plug",
+  "brand": "TP-Link",
+  "model": "Kasa KP125M",
+  "name": "Kasa Smart Plug Slim with Energy Monitoring KP125M",
+  "regions": ["US"],
+  "officialUrl": "https://www.tp-link.com/us/home-networking/smart-plug/kp125m/",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["kp125m-datasheet"],
+    "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n). The datasheet lists Bluetooth for setup only."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["kp125m-product", "kp125m-press", "kp125m-datasheet"],
+    "note": "TP-Link calls it Kasa's first Matter-certified plug. We did not find a CSA listing that names the KP125M model number."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["kp125m-product", "tplink-faq-3520"],
+      "note": "Set up in Apple Home by scanning the Matter code. We found no separate HomeKit (HAP) support for this model."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["kp125m-product", "tplink-faq-3520"],
+      "note": "Set up in the Google Home app through Matter; needs a Google Matter controller."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["tplink-faq-2780", "kp125m-datasheet"],
+      "note": "TP-Link says Matter Kasa devices connect to Alexa directly and don't need the Kasa skill. Needs an Echo that works as a Matter controller."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["kp125m-product", "tplink-faq-3520"],
+      "note": "TP-Link lists Samsung SmartThings; setup is through Matter."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink", "ha-matter"],
+      "note": "Home Assistant's TP-Link Smart Home integration lists the KP125M (with a footnote). It can also be added through the Matter integration."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Likely works with the Kasa app alone, but we found no official page that says so outright. The datasheet says Matter use needs a Matter controller."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["kp125m-press"],
+    "note": "TP-Link says it keeps LAN control between devices even if the home internet goes offline."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": ["kp125m-datasheet", "kp125m-product", "kp125m-press"],
+    "note": "Real-time and historical use in the Kasa (or Tapo) app. Users report that Matter exposes only on/off, not power readings; we found no official statement on Matter energy data."
+  },
+  "maxLoadWatts": {
+    "value": 1800,
+    "sources": ["kp125m-datasheet"],
+    "note": "15 A / 1800 W for general use and resistive loads at 100–120 V; 1/6 HP motor."
+  },
+  "summary": "The Kasa KP125M is a slim US Wi-Fi plug with energy monitoring that reaches Apple Home, Google Home, Alexa and SmartThings through Matter. TP-Link says Matter Kasa devices join Alexa directly rather than through the Kasa skill. Home Assistant can use its TP-Link integration or Matter. It runs on 2.4 GHz Wi-Fi, is rated 15 A / 1800 W, and keeps LAN control if the internet drops.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Energy readings show in the Kasa or Tapo app; users report Matter platforms only get on/off.",
+    "Matter pairing is only open for 15 minutes after power-up; power-cycle the plug if setup times out.",
+    "Alexa needs an Echo that works as a Matter controller; the Kasa skill doesn't cover Matter Kasa devices."
+  ],
+  "sources": [
+    {
+      "id": "kp125m-product",
+      "url": "https://www.tp-link.com/us/home-networking/smart-plug/kp125m/",
+      "title": "KP125M",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "kp125m-datasheet",
+      "url": "https://static.tp-link.com/upload/product-overview/2023/202302/20230227/KP125M(US)1.0_Datasheet.pdf",
+      "title": "KP125M Kasa Smart Wi-Fi Plug Slim Energy Monitoring Datasheet",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "kp125m-press",
+      "url": "https://www.tp-link.com/us/press/news/20552/",
+      "title": "Kasa Smart Launches its First Matter-Certified Smart Plug with Energy Monitoring",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-faq-2780",
+      "url": "https://www.tp-link.com/us/support/faq/2780/",
+      "title": "How to Connect Tapo and Kasa Devices to Amazon Alexa",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-faq-3520",
+      "url": "https://www.tp-link.com/us/support/faq/3520/",
+      "title": "TP-Link Matter Setup Guide: Compatible Devices and Tips",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-10"
+}

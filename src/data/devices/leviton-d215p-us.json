@@ -1,0 +1,167 @@
+{
+  "category": "smart-plug",
+  "brand": "Leviton",
+  "model": "D215P",
+  "name": "Leviton Decora Smart Wi-Fi Mini Plug-In Switch (D215P)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://leviton.com/products/d215p-1bw",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "leviton-d215p-guide",
+      "csa-d215p"
+    ],
+    "note": "2.4 GHz Wi-Fi per Leviton's guide. The CSA listing shows Wi-Fi and Bluetooth as transports; Bluetooth is likely for setup only."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "csa-d215p",
+      "leviton-matter-update",
+      "leviton-d215p-product"
+    ],
+    "note": "Matter comes with a firmware update in the My Leviton app. CSA lists the D215P (Matter 1.3, firmware 2.3.10, certified 2025-05-20); other CSA pages show a second certificate ID for it."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "leviton-d215p-guide",
+        "leviton-matter-update"
+      ],
+      "note": "Pairs with Apple Home directly through HomeKit, using the HomeKit code that comes with it. The optional Matter update removes the HomeKit link; it must then be re-added with the Matter code, which needs an Apple home hub."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "leviton-d215p-product",
+        "leviton-d215p-guide",
+        "leviton-matter-update"
+      ],
+      "note": "Through the My Leviton cloud link; Matter is also an option after the firmware update."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "leviton-d215p-product",
+        "leviton-d215p-guide",
+        "leviton-matter-update"
+      ],
+      "note": "Through the My Leviton Alexa skill; Matter is also an option after the firmware update."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "leviton-d215p-product",
+        "leviton-matter-update"
+      ],
+      "note": "Leviton lists SmartThings, and says the Matter update doesn't affect the existing SmartThings integration. Matter is also an option."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "ha-matter",
+        "csa-d215p"
+      ],
+      "note": "Through Home Assistant's Matter integration after the Matter firmware update. We found no official Leviton integration for Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "leviton-d215p-product",
+      "leviton-d215p-guide"
+    ],
+    "note": "Connects straight to 2.4 GHz Wi-Fi; no Leviton hub needed."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "ha-matter",
+      "csa-d215p"
+    ],
+    "note": "With the Matter firmware, Matter controllers reach it on the local Wi-Fi network. Leviton doesn't state local control for its own app."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [
+      "leviton-d215p-product",
+      "leviton-d215p-spec"
+    ],
+    "note": "Leviton's product page and spec sheet don't mention energy monitoring, but no source says it is absent."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [
+      "leviton-d215p-spec",
+      "leviton-d215p-product"
+    ],
+    "note": "Leviton rates it 15 A general use at 120 V, 1500 W incandescent/halogen, 5 A LED/CFL and 3/4 HP motor. It gives no single wattage figure for general use."
+  },
+  "summary": "The Leviton D215P is a 2.4 GHz Wi-Fi mini plug-in switch that needs no hub. Through the My Leviton app it works with Alexa, Google Assistant and SmartThings, and it can join Apple HomeKit directly. A firmware update adds Matter, which also lets Home Assistant control it locally. Leviton rates it 15 A for general use and 1500 W for incandescent lights; energy monitoring isn't listed.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Matter needs a firmware update from the My Leviton app, and the update removes the existing HomeKit pairing, so you have to re-add it to Apple Home.",
+    "Load limits depend on load type: 15 A general use, 1500 W incandescent, 5 A LED/CFL.",
+    "Indoor use only."
+  ],
+  "sources": [
+    {
+      "id": "leviton-d215p-product",
+      "url": "https://leviton.com/products/d215p-1bw",
+      "title": "Decora Smart Wi-Fi Mini Plug-In Switch",
+      "publisher": "Leviton",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "leviton-d215p-spec",
+      "url": "https://leviton.com/content/dam/leviton/residential/product_documents/product_specification/D215P-spec-sheet-RS-JA012423-en-leviton.pdf",
+      "title": "PRODUCT DATA Decora Smart Wi-Fi 2nd Gen Mini Plug-In Switch",
+      "publisher": "Leviton",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "leviton-d215p-guide",
+      "url": "https://leviton.com/content/dam/leviton/residential/product_documents/instruction_sheet/DI-000-D215P-02A-W.pdf",
+      "title": "Decora Smart",
+      "publisher": "Leviton",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "leviton-matter-update",
+      "url": "https://leviton.com/support/resources/product-support/decora-smart-support/decora-smart-wi-fi/how-do-i-update-my-decora-smart-wi-fi-2nd-gen-device-to-support-matter",
+      "title": "How do I Update my Decora Smart Wi-Fi 2nd Gen Device to Support Matter?",
+      "publisher": "Leviton",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "csa-d215p",
+      "url": "https://csa-iot.org/csa_product/d215p/",
+      "title": "D215P - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-10",
+  "verifiedAt": "2026-10-10"
+}

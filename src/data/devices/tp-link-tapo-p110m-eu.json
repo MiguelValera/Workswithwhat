@@ -1,0 +1,133 @@
+{
+  "category": "smart-plug",
+  "brand": "TP-Link",
+  "model": "Tapo P110M",
+  "name": "Tapo P110M (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.tp-link.com/gr/home-networking/smart-plug/tapo-p110m/",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["tplink-eu-datasheet", "tplink-gr-product"],
+    "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n). The EU datasheet says Bluetooth is used for setup only."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["tplink-gr-product", "csa-tapo-p110m-uk"],
+    "note": "TP-Link's EU product page calls it Matter-certified. The CSA listing we found (family SKU P110M) names the UK, not the EU, variant; we found no CSA entry naming P110M(EU)."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["tplink-gr-product", "tplink-de-matter-faq"],
+      "note": "TP-Link lists Apple Home. There is no HomeKit (HAP) mode, so this goes through Matter; the EU datasheet says a controller such as an Apple TV or HomePod is needed."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["tplink-gr-product", "tplink-de-matter-faq"],
+      "note": "Added in the Google Home app by scanning the Matter code. Needs a Google Matter controller."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["tplink-gr-product", "tplink-de-matter-faq"],
+      "note": "Added in the Alexa app through Matter. Needs an Echo that works as a Matter controller. We did not confirm whether the Tapo Alexa skill also covers this model."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["tplink-gr-product", "tplink-de-matter-faq"],
+      "note": "TP-Link lists Samsung SmartThings; setup is through Matter."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink", "ha-matter"],
+      "note": "Home Assistant's TP-Link Smart Home integration lists the P110M among supported Tapo devices. It can also be added through the Matter integration."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["tplink-eu-datasheet"],
+    "note": "The EU datasheet says no hub is needed with the Tapo app; third-party apps need a Matter controller."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["tplink-gr-product"],
+    "note": "TP-Link's EU page says Tapo Matter devices talk to other certified devices on the local network (LAN)."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": ["tplink-eu-datasheet", "tplink-gr-product", "tapo-de-store"],
+    "note": "Real-time and historical use plus bill estimates in the Tapo app. Energy data over Matter depends on firmware and controller; TP-Link's UK store once said it was not supported over Matter yet."
+  },
+  "maxLoadWatts": {
+    "value": 3680,
+    "sources": ["tplink-eu-datasheet", "tplink-gr-product", "tapo-de-store"],
+    "note": "16 A / 3680 W for general use and resistive loads; 1/6 HP motor. TP-Link says it is not meant for high-power motors such as air conditioners."
+  },
+  "summary": "The EU Tapo P110M is a 2.4 GHz Wi-Fi plug with energy monitoring that reaches Apple Home, Google Home, Alexa and SmartThings through Matter. Home Assistant can use its TP-Link integration or Matter. It is rated 16 A / 3680 W, and Bluetooth is used only for setup. The Tapo app needs no hub; third-party platforms need their own Matter controller.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Apple Home, Google Home, Alexa and SmartThings work through Matter, so each needs its own Matter controller.",
+    "Energy readings over Matter depend on firmware and controller; the Tapo app is the reliable place to see them.",
+    "Rated 1/6 HP for motors; TP-Link says not to use it with high-power motor appliances such as air conditioners."
+  ],
+  "sources": [
+    {
+      "id": "tplink-gr-product",
+      "url": "https://www.tp-link.com/gr/home-networking/smart-plug/tapo-p110m/",
+      "title": "Tapo P110M",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-eu-datasheet",
+      "url": "https://static.tp-link.com/upload/product-overview/2023/202308/20230807/Tapo%20P110M(EU)1.0%20datasheet.pdf",
+      "title": "Datasheet Mini Smart Wi-Fi Plug, Energy Monitoring Tapo P110M",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tapo-de-store",
+      "url": "https://de.store.tapo.com/products/tapo-p110m-matter-zertifiziert",
+      "title": "Tapo P110M",
+      "publisher": "TP-Link (Tapo DE store)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-de-matter-faq",
+      "url": "https://www.tp-link.com/de/support/faq/3564/",
+      "title": "So richten Sie das Matter-Gerät mit Alexa, Google, Apple oder SmartThings ein",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "csa-tapo-p110m-uk",
+      "url": "https://csa-iot.org/csa_product/tapo-smart-plug-energy-monitoring-4/",
+      "title": "Tapo Smart Plug, Energy Monitoring - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-10"
+}
