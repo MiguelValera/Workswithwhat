@@ -1,0 +1,103 @@
+{
+  "category": "smart-plug",
+  "brand": "Meross",
+  "model": "MSS115",
+  "name": "Meross MSS115",
+  "regions": ["US", "CA"],
+  "officialUrl": "https://shop.meross.com/products/matter-smart-plug-mss115-us",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["meross-mss115-shop"],
+    "note": "Needs an existing 2.4 GHz Wi-Fi network."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["meross-mss115-shop", "meross-mss115-product"],
+    "note": "Meross sells it as a Matter plug. CSA lists several Meross 'Smart Plug Mini' Matter certificates, but we could not match one to the MSS115 model number."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["meross-mss115-blog", "meross-mss115-shop"],
+      "note": "Through Matter; needs an Apple home hub."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["meross-mss115-blog"],
+      "note": "Through Matter; needs a Google Matter controller."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["meross-mss115-blog"],
+      "note": "Through Matter. We could not confirm whether the Meross Alexa skill also supports this model."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["meross-mss115-blog", "meross-mss115-product"],
+      "note": "Through Matter; needs a SmartThings hub."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Should pair through the Home Assistant Matter integration, but neither Meross nor Home Assistant names this model, and forum users report failed Matter pairing."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Meross does not say whether the Meross app alone can run it without a Matter controller."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["meross-mss115-shop", "meross-mss115-blog"],
+    "note": "Meross describes it as fully local over Matter and says it keeps working on the LAN during internet outages."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [],
+    "note": "The MSS115 pages don't mention a power meter. Meross's metering Matter plug is the MSS315, but we found no explicit 'no metering' statement for the MSS115."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [],
+    "note": "We found no official MSS115 load rating. The 15 A / 1800 W figure Meross gives is for other plug models."
+  },
+  "summary": "Everything about the Meross MSS115 runs through Matter over Wi-Fi. Meross lists Apple Home, Google Home, Alexa and SmartThings, and each one needs its own Matter controller, such as an Apple home hub or a SmartThings hub. It's a compact US/Canada plug on 2.4 GHz Wi-Fi, and Meross says it keeps working on your LAN during internet outages. Meross doesn't publish a load rating or mention a power meter for this model; its metering Matter plug is the MSS315.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Each ecosystem needs its own Matter controller, such as an Apple home hub, a Google Matter controller, an Echo or a SmartThings hub.",
+    "Home Assistant isn't confirmed: neither Meross nor Home Assistant names this model, and forum users report failed Matter pairing.",
+    "Meross publishes no load rating for the MSS115, so check before plugging in a high-draw appliance.",
+    "No energy monitoring is mentioned; if you want power data, Meross's metering Matter plug is the MSS315."
+  ],
+  "sources": [
+    {
+      "id": "meross-mss115-shop",
+      "url": "https://shop.meross.com/products/matter-smart-plug-mss115-us",
+      "title": "Meross Matter Smart Wi-Fi Plug Mini, MSS115 (US/CA Version), 2 Pack",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "meross-mss115-product",
+      "url": "https://www.meross.com/en-gc/mTerminal/smart_plug_and_switch/matter-smart-plug/136",
+      "title": "Meross Matter Smart Plug, Smart Mini Wi-Fi Plug In American Standard - MSS115",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "meross-mss115-blog",
+      "url": "https://www.meross.com/en-gc/explore/meross-matter-plug-sale-on-Amazon/25",
+      "title": "Introducing the Meross Matter Smart Plug MSS115: Elevate Your Home, Elevate Your Life",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
+  "updatedAt": "2026-10-10"
+}

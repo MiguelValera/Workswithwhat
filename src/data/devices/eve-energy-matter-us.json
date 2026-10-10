@@ -1,0 +1,133 @@
+{
+  "category": "smart-plug",
+  "brand": "Eve",
+  "model": "Eve Energy 20EBU4101 (Matter, product no. 10EBU4151)",
+  "name": "Eve Energy (Matter, US)",
+  "regions": ["US", "CA"],
+  "officialUrl": "https://www.evehome.com/en-us/eve-energy",
+  "radios": {
+    "value": ["thread"],
+    "sources": ["eve-energy-us", "eve-identify"],
+    "note": "Eve lists only Thread for this model; Bluetooth is listed for the older US generations. CSA listings in this family show Bluetooth as a transport, likely for Matter setup, but Eve doesn't confirm it."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": ["csa-eve-energy-17", "eve-energy-us", "eve-identify"],
+    "note": "Eve calls this US model Matter-enabled. CSA lists Eve Energy certificates under family SKU 20EBU4101, but the variant SKUs shown are not the US one, so the exact listing is uncertain."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["eve-energy-us", "eve-hub"],
+      "note": "Through Matter. Needs an Apple home hub that is also a Thread border router (HomePod mini, HomePod 2nd gen, or Apple TV 4K with Thread)."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["eve-energy-us", "eve-hub"],
+      "note": "Through Matter. Needs a Google Nest hub that acts as a Thread border router."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["eve-energy-us", "eve-hub"],
+      "note": "Through Matter. Needs an Echo device that works as a Matter controller and Thread border router."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["eve-energy-us", "eve-hub"],
+      "note": "Through Matter. Needs a SmartThings hub with Thread."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": ["eve-ha", "ha-matter"],
+      "note": "Through the Home Assistant Matter integration. Needs a Thread border router on the network."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": ["eve-hub", "eve-identify"],
+    "note": "Needs a Matter controller that is also a Thread border router. Eve sells no bridge of its own; the hub comes from your ecosystem."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["eve-ha", "ha-matter"],
+    "note": "Matter over Thread runs on the local network, with no Eve cloud or account. Eve's iOS 18 hub-free control list doesn't include the US model, so a hub is still needed."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": ["eve-energy-us", "eve-matter-news"],
+    "note": "Built-in power meter. A firmware update adds Matter energy reporting for Apple Home, Google Home, Home Assistant and SmartThings; Eve does not name Alexa there."
+  },
+  "maxLoadWatts": {
+    "value": 1800,
+    "sources": ["eve-energy-us"],
+    "note": "120 V, 60 Hz, max. 15 A / 1,800 W (U.S. & Canada)."
+  },
+  "summary": "Eve Energy works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, all through Matter over Thread. The catch is the Thread part: you need a Thread border router that is also a Matter controller, such as a HomePod mini, an Apple TV 4K with Thread, a Nest hub or a Thread-capable Echo. This US and Canada version (product no. 10EBU4151) is rated 15 A / 1,800 W and has a built-in power meter. Control stays on your local network, with no Eve account or cloud.",
+  "caveats": [
+    "Needs a Thread border router that is also a Matter controller, such as a HomePod mini, Apple TV 4K with Thread, a Nest hub or a Thread-capable Echo.",
+    "Eve's iOS 18 hub-free control list doesn't include the US model, so Apple Home still needs a home hub.",
+    "Matter energy readings arrive with a firmware update, and Eve doesn't list Alexa among the controllers that show them."
+  ],
+  "sources": [
+    {
+      "id": "eve-energy-us",
+      "url": "https://www.evehome.com/en-us/eve-energy",
+      "title": "Eve Energy",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "eve-identify",
+      "url": "https://www.evehome.com/en-us/identify-your-eve-accessory",
+      "title": "Identify your Eve accessory",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "eve-hub",
+      "url": "https://www.evehome.com/en-us/hub",
+      "title": "Which hub is right for me?",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "eve-ha",
+      "url": "https://www.evehome.com/en/eve-energy-works-with-home-assistant",
+      "title": "Eve Energy works with Home Assistant",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "eve-matter-news",
+      "url": "https://www.evehome.com/en/news/matter-enabled-devices",
+      "title": "Eve Starts Rolling Out Matter-Enabled Devices and Firmware Updates",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "csa-eve-energy-17",
+      "url": "https://csa-iot.org/csa_product/eve-energy-17/",
+      "title": "Eve Energy - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
+  "updatedAt": "2026-10-10"
+}

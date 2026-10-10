@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import DeviceCard from '../components/DeviceCard.astro';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getPublishedDevices } from '../lib/devices';
+
+const devices = await getPublishedDevices();
+const recent = [...devices].sort((a, b) => (b.data.verifiedAt ?? '').localeCompare(a.data.verifiedAt ?? '')).slice(0, 6);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Workswithwhat',
+    url: Astro.site!.href,
+    description: 'Smart home compatibility, checked against official sources.',
+  },
+];
+---
+
+<Base
+  title="Workswithwhat: does this smart home device work with my system?"
+  description="Check if a smart plug works with Apple Home, Google Home, Alexa, SmartThings or Home Assistant. Every answer links to the manufacturer or certification source."
+  jsonLd={jsonLd}
+>
+  <h1>Will it work with your smart home?</h1>
+  <p class="lede">
+    Box labels say “works with” and leave out the details: whether it needs a hub, if it goes through Matter,
+    or if your region's version is different. We look those up in manufacturer specs and certification
+    databases, and link every answer to where we found it.
+  </p>
+
+  <p class="callout">
+    Start with the <a href="/smart-plugs/">smart plug compatibility chart</a>, or jump to a platform:{' '}
+    {
+      ECOSYSTEMS.map((e, i) => (
+        <>
+          {i > 0 && ' · '}
+          <a href={`/works-with/${ecosystemSlug(e)}/`}>{ECOSYSTEM_LABELS[e]}</a>
+        </>
+      ))
+    }
+  </p>
+
+  <h2>Recently checked</h2>
+  {
+    recent.length ? (
+      <ul class="cards">
+        {recent.map((d) => <DeviceCard device={d} />)}
+      </ul>
+    ) : (
+      <p class="muted">The first devices are being checked. Come back soon.</p>
+    )
+  }
+</Base>

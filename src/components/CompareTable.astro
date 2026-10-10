@@ -1,0 +1,47 @@
+---
+import Status from './Status.astro';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, RADIO_LABELS, devicePath, type Device } from '../lib/devices';
+interface Props {
+  devices: Device[];
+}
+const { devices } = Astro.props;
+---
+
+<div class="table-scroll">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Plug</th>
+        <th scope="col">Radio</th>
+        <th scope="col">Matter</th>
+        {ECOSYSTEMS.map((e) => <th scope="col">{ECOSYSTEM_LABELS[e]}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {
+        devices.map((dev) => {
+          const d = dev.data;
+          return (
+            <tr>
+              <th scope="row" class="name">
+                <a href={devicePath(dev)}>{d.name}</a>
+                <span class="note">{d.model} · {d.regions.join('/')}</span>
+              </th>
+              <td>{(d.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+              <td>
+                <span class={`badge s-${d.matter.certified}`}>
+                  {d.matter.certified === null ? 'Unconfirmed' : d.matter.certified ? 'Yes' : 'No'}
+                </span>
+              </td>
+              {ECOSYSTEMS.map((e) => (
+                <td>
+                  <Status status={d.compatibility[e].status} via={d.compatibility[e].via} compact />
+                </td>
+              ))}
+            </tr>
+          );
+        })
+      }
+    </tbody>
+  </table>
+</div>

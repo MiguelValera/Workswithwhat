@@ -1,0 +1,101 @@
+---
+import Base from '../../layouts/Base.astro';
+import Refs from '../../components/Refs.astro';
+import Status from '../../components/Status.astro';
+import {
+  ECOSYSTEMS,
+  ECOSYSTEM_LABELS,
+  RADIO_LABELS,
+  devicePath,
+  ecosystemSlug,
+  getPublishedDevices,
+  worksWith,
+  type Ecosystem,
+} from '../../lib/devices';
+
+export function getStaticPaths() {
+  return ECOSYSTEMS.map((e) => ({ params: { ecosystem: ecosystemSlug(e) }, props: { eco: e } }));
+}
+
+const { eco } = Astro.props as { eco: Ecosystem };
+const label = ECOSYSTEM_LABELS[eco];
+const all = await getPublishedDevices();
+const yes = all.filter((d) => worksWith(d, eco));
+const unsure = all.filter((d) => d.data.compatibility[eco].status === 'unknown');
+const viaMatter = yes.filter((d) => d.data.compatibility[eco].status === 'matter').length;
+
+const title = `Smart plugs that work with ${label}`;
+const description = `${yes.length} smart plugs confirmed to work with ${label}${viaMatter ? `, ${viaMatter} of them via Matter` : ''}. See which need a hub, and check the source for each one.`;
+---
+
+<Base
+  title={title}
+  description={description}
+  crumbs={[
+    { name: 'By ecosystem', path: '/works-with/' },
+    { name: label, path: `/works-with/${ecosystemSlug(eco)}/` },
+  ]}
+>
+  <h1>{title}</h1>
+  <p class="lede">
+    {yes.length} of the {all.length} plugs we've checked work with {label}.
+    {viaMatter > 0 && ` ${viaMatter} connect through Matter rather than a brand integration.`}
+  </p>
+
+  {
+    yes.length > 0 && (
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th scope="col">Plug</th><th scope="col">How</th><th scope="col">Radio</th><th scope="col">Notes</th></tr>
+          </thead>
+          <tbody>
+            {yes.map((d) => {
+              const c = d.data.compatibility[eco];
+              return (
+                <tr>
+                  <th scope="row" class="name">
+                    <a href={devicePath(d)}>{d.data.name}</a>
+                    <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
+                  </th>
+                  <td><Status status={c.status} via={c.via} /></td>
+                  <td>{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+                  <td>{c.note}<Refs ids={c.sources} all={d.data.sources} /></td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    )
+  }
+
+  {
+    unsure.length > 0 && (
+      <>
+        <h2>Not confirmed yet</h2>
+        <p>
+          We couldn't find an official source either way for{' '}
+          {unsure.map((d, i) => (
+            <>
+              {i > 0 && ', '}
+              <a href={devicePath(d)}>{d.data.name}</a>
+            </>
+          ))}.
+        </p>
+      </>
+    )
+  }
+
+  <p class="muted">
+    Other platforms:{' '}
+    {
+      ECOSYSTEMS.filter((e) => e !== eco).map((e, i) => (
+        <>
+          {i > 0 && ' · '}
+          <a href={`/works-with/${ecosystemSlug(e)}/`}>{ECOSYSTEM_LABELS[e]}</a>
+        </>
+      ))
+    }
+  </p>
+</Base>
