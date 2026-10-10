@@ -3,71 +3,109 @@
   "brand": "TP-Link",
   "model": "Kasa KP125M",
   "name": "Kasa Smart Plug Slim with Energy Monitoring KP125M",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://www.tp-link.com/us/home-networking/smart-plug/kp125m/",
   "radios": {
-    "value": ["wifi", "bluetooth"],
-    "sources": ["kp125m-datasheet"],
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "kp125m-datasheet"
+    ],
     "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n). The datasheet lists Bluetooth for setup only."
   },
   "matter": {
     "certified": true,
     "transport": "wifi",
-    "sources": ["kp125m-product", "kp125m-press", "kp125m-datasheet"],
+    "sources": [
+      "kp125m-product",
+      "kp125m-press",
+      "kp125m-datasheet"
+    ],
     "note": "TP-Link calls it Kasa's first Matter-certified plug. We did not find a CSA listing that names the KP125M model number."
   },
   "compatibility": {
     "apple_home": {
       "status": "matter",
-      "sources": ["kp125m-product", "tplink-faq-3520"],
+      "sources": [
+        "kp125m-product",
+        "tplink-faq-3520"
+      ],
       "note": "Set up in Apple Home by scanning the Matter code. We found no separate HomeKit (HAP) support for this model."
     },
     "google_home": {
       "status": "matter",
-      "sources": ["kp125m-product", "tplink-faq-3520"],
+      "sources": [
+        "kp125m-product",
+        "tplink-faq-3520"
+      ],
       "note": "Set up in the Google Home app through Matter; needs a Google Matter controller."
     },
     "alexa": {
       "status": "matter",
-      "sources": ["tplink-faq-2780", "kp125m-datasheet"],
+      "sources": [
+        "tplink-faq-2780",
+        "kp125m-datasheet"
+      ],
       "note": "TP-Link says Matter Kasa devices connect to Alexa directly and don't need the Kasa skill. Needs an Echo that works as a Matter controller."
     },
     "smartthings": {
       "status": "matter",
-      "sources": ["kp125m-product", "tplink-faq-3520"],
+      "sources": [
+        "kp125m-product",
+        "tplink-faq-3520"
+      ],
       "note": "TP-Link lists Samsung SmartThings; setup is through Matter."
     },
     "home_assistant": {
       "status": "native",
-      "sources": ["ha-tplink", "ha-matter"],
-      "note": "Home Assistant's TP-Link Smart Home integration lists the KP125M (with a footnote). It can also be added through the Matter integration."
+      "sources": [
+        "ha-tplink",
+        "ha-matter"
+      ],
+      "note": "Home Assistant's TP-Link Smart Home integration lists the KP125M with a footnote we could not read; it needs TP-Link account credentials for newer devices. It can also be added through the Matter integration."
     }
   },
   "hubRequired": {
-    "value": null,
-    "sources": [],
-    "note": "Likely works with the Kasa app alone, but we found no official page that says so outright. The datasheet says Matter use needs a Matter controller."
+    "value": false,
+    "sources": [
+      "kp125m-user-guide",
+      "kp125m-datasheet"
+    ],
+    "note": "Connects straight to 2.4 GHz Wi-Fi and is set up in the Kasa app, with no hub. Third-party platforms need their own Matter controller."
   },
   "localControl": {
     "value": true,
-    "sources": ["kp125m-press"],
+    "sources": [
+      "kp125m-press"
+    ],
     "note": "TP-Link says it keeps LAN control between devices even if the home internet goes offline."
   },
   "energyMonitoring": {
     "value": true,
-    "sources": ["kp125m-datasheet", "kp125m-product", "kp125m-press"],
-    "note": "Real-time and historical use in the Kasa (or Tapo) app. Users report that Matter exposes only on/off, not power readings; we found no official statement on Matter energy data."
+    "sources": [
+      "kp125m-datasheet",
+      "kp125m-product",
+      "kp125m-download",
+      "kp125m-user-guide"
+    ],
+    "note": "Real-time and historical use in the Kasa (or Tapo) app. Firmware 1.4.1 (Aug 2026) adds Matter energy reporting; TP-Link verifies it in SmartThings and Home Assistant, and says Apple Home doesn't show energy."
   },
   "maxLoadWatts": {
     "value": 1800,
-    "sources": ["kp125m-datasheet"],
+    "sources": [
+      "kp125m-datasheet"
+    ],
     "note": "15 A / 1800 W for general use and resistive loads at 100–120 V; 1/6 HP motor."
   },
   "summary": "The Kasa KP125M is a slim US Wi-Fi plug with energy monitoring that reaches Apple Home, Google Home, Alexa and SmartThings through Matter. TP-Link says Matter Kasa devices join Alexa directly rather than through the Kasa skill. Home Assistant can use its TP-Link integration or Matter. It runs on 2.4 GHz Wi-Fi, is rated 15 A / 1800 W, and keeps LAN control if the internet drops.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Energy readings show in the Kasa or Tapo app; users report Matter platforms only get on/off.",
-    "Matter pairing is only open for 15 minutes after power-up; power-cycle the plug if setup times out.",
+    "Matter energy readings need firmware 1.4.1 or later and only show in some apps (TP-Link verifies SmartThings and Home Assistant; not Apple Home). The Kasa app always shows them.",
+    "If you set it up in the Kasa or Tapo app first, you have 15 minutes from power-on to also add it to a Matter app.",
     "Alexa needs an Echo that works as a Matter controller; the Kasa skill doesn't cover Matter Kasa devices."
   ],
   "sources": [
@@ -83,6 +121,22 @@
       "id": "kp125m-datasheet",
       "url": "https://static.tp-link.com/upload/product-overview/2023/202302/20230227/KP125M(US)1.0_Datasheet.pdf",
       "title": "KP125M Kasa Smart Wi-Fi Plug Slim Energy Monitoring Datasheet",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "kp125m-user-guide",
+      "url": "https://static.tp-link.com/upload/manual/2024/202407/20240718/1910013749_KP125M(2-Pack)(US)_UG_V3.pdf",
+      "title": "User Guide Kasa Smart Wi-Fi Plug Slim, Energy Monitoring",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "kp125m-download",
+      "url": "https://www.tp-link.com/us/support/download/kp125m/",
+      "title": "Download for KP125M V1.60",
       "publisher": "TP-Link",
       "kind": "manufacturer",
       "accessed": "2026-10-10"
@@ -128,6 +182,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-10"
+  "status": "verified",
+  "updatedAt": "2026-10-10",
+  "verifiedAt": "2026-10-10"
 }

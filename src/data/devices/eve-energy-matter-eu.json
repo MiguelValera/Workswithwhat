@@ -3,71 +3,112 @@
   "brand": "Eve",
   "model": "Eve Energy 20EBO8301 (Matter, product no. 10EBO8351)",
   "name": "Eve Energy (Matter, EU)",
-  "regions": ["EU"],
+  "regions": [
+    "EU"
+  ],
   "officialUrl": "https://www.evehome.com/en/eve-energy",
   "radios": {
-    "value": ["thread"],
-    "sources": ["eve-energy-eu", "eve-identify-eu"],
+    "value": [
+      "thread"
+    ],
+    "sources": [
+      "eve-energy-eu",
+      "eve-identify-eu"
+    ],
     "note": "Eve lists Thread. The CSA listing for 20EBO8301 also shows Bluetooth as a transport, likely for setup, but Eve doesn't confirm it."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
-    "sources": ["csa-eve-energy-17", "eve-identify-eu", "eve-energy-eu"],
+    "sources": [
+      "csa-eve-energy-17",
+      "eve-identify-eu",
+      "eve-energy-eu"
+    ],
     "note": "CSA lists variant SKU 20EBO8301 under Eve Energy certificates (e.g. CSA22065MAT40065-24, firmware 3.1.0). Eve's identify page gives product no. 10EBO8351 for the Matter EU model."
   },
   "compatibility": {
     "apple_home": {
       "status": "matter",
-      "sources": ["eve-energy-eu", "eve-hub-eu"],
-      "note": "Through Matter. Normally needs an Apple home hub that is a Thread border router (HomePod mini, HomePod 2nd gen, Apple TV 4K with Thread)."
+      "sources": [
+        "eve-energy-eu",
+        "eve-eu-notice",
+        "eve-hub-eu",
+        "eve-ios18"
+      ],
+      "note": "Through Matter, normally with an Apple home hub that is a Thread border router. With iOS 18 and an iPhone 15 Pro or later, Eve says it can be controlled locally without a hub, minus remote access and automations."
     },
     "google_home": {
       "status": "matter",
-      "sources": ["eve-energy-eu", "eve-hub-eu"],
+      "sources": [
+        "eve-energy-eu",
+        "eve-eu-notice",
+        "eve-hub-eu"
+      ],
       "note": "Through Matter. Needs a Google hub that is a Matter controller and Thread border router."
     },
     "alexa": {
       "status": "matter",
-      "sources": ["eve-energy-eu", "eve-hub-eu"],
+      "sources": [
+        "eve-energy-eu",
+        "eve-eu-notice",
+        "eve-hub-eu"
+      ],
       "note": "Through Matter. Needs an Echo that is a Matter controller and Thread border router."
     },
     "smartthings": {
       "status": "matter",
-      "sources": ["eve-energy-eu", "eve-hub-eu"],
+      "sources": [
+        "eve-energy-eu",
+        "eve-eu-notice",
+        "eve-hub-eu"
+      ],
       "note": "Through Matter. Needs a SmartThings hub with Thread."
     },
     "home_assistant": {
       "status": "matter",
-      "sources": ["eve-ha", "ha-matter"],
+      "sources": [
+        "eve-ha",
+        "ha-matter"
+      ],
       "note": "Through the Home Assistant Matter integration. Needs a Thread border router on the network."
     }
   },
   "hubRequired": {
     "value": null,
     "sources": [],
-    "note": "Eve's product page says it needs a Thread + Matter hub, but Eve's iOS 18 post lists the Europe 4th-gen Eve Energy as controllable from an iPhone 15 Pro or later without a hub. Sources disagree."
+    "note": "Eve's EU product page says it needs a Matter + Thread hub, but Eve's iOS 18 post lists Europe 4th gen for hub-free local control from an iPhone 15 Pro+. Every non-Apple platform needs a hub, so treat it as needed."
   },
   "localControl": {
     "value": true,
-    "sources": ["eve-ha", "ha-matter", "eve-ios18"],
-    "note": "Matter over Thread runs on the local network, with no Eve account or cloud."
+    "sources": [
+      "eve-ha",
+      "ha-matter",
+      "eve-eu-notice"
+    ],
+    "note": "Matter over Thread runs on the local network. Eve says it needs no Eve account and has no Eve cloud."
   },
   "energyMonitoring": {
     "value": true,
-    "sources": ["eve-energy-eu", "eve-matter-news"],
-    "note": "Built-in power meter. Eve's Matter energy reporting update names Apple Home, Google Home, Home Assistant and SmartThings, not Alexa."
+    "sources": [
+      "eve-energy-eu",
+      "eve-ha"
+    ],
+    "note": "Built-in power meter. Eve's April 2025 firmware moved it to standard Matter energy reporting (power, voltage, current, total use), installable via Apple Home, Google Home, Home Assistant or SmartThings."
   },
   "maxLoadWatts": {
     "value": 2500,
-    "sources": ["eve-energy-eu-qsg", "eve-support-energy"],
-    "note": "Eve's EU Matter quick start guide gives max. 11 A / 2500 W. One Eve support snippet showed 16 A / 3680 W for Europe, which appears to be the Outdoor model's rating."
+    "sources": [
+      "eve-support-energy"
+    ],
+    "note": "Eve's technical specs give max. 11 A / 2500 W for the European model; the relay cuts out above 11 A. The 16 A / 3680 W figure belongs to Eve Energy Outdoor."
   },
-  "summary": "Eve Energy (EU) works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, all through Matter over Thread. You need a Thread border router that is also a Matter controller, such as a HomePod mini, Apple TV 4K with Thread, a Nest hub or a Thread-capable Echo. This Schuko version (model 20EBO8301, product no. 10EBO8351) fits Type E and F sockets, is rated 11 A / 2500 W, and has a built-in power meter.",
+  "summary": "Eve Energy (EU) works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, all through Matter over Thread. You normally need a Thread border router that is also a Matter controller, such as a HomePod mini, Apple TV 4K with Thread, a Nest hub or a Thread-capable Echo. This Schuko version (model 20EBO8301, product no. 10EBO8351) fits Type E and F sockets, is rated 11 A / 2500 W, and has a built-in power meter.",
   "caveats": [
     "Needs a Thread border router that is also a Matter controller for most uses.",
+    "With iOS 18 and an iPhone 15 Pro or later you can control it locally without a hub, but remote access and automations still need an Apple home hub.",
     "Rated 11 A / 2500 W, lower than many 16 A Schuko plugs; don't use it for heaters or other high loads above that.",
-    "Eve doesn't list Alexa among the controllers that show Matter energy readings."
+    "Matter energy readings need Eve's 2025 firmware; Eve lists Apple Home, Google Home, Home Assistant and SmartThings for it, not Alexa."
   ],
   "sources": [
     {
@@ -87,9 +128,9 @@
       "accessed": "2026-10-10"
     },
     {
-      "id": "eve-energy-eu-qsg",
-      "url": "https://www.evehome.com/sites/default/files/2025-06/Eve_Energy_EU_QSG_250613.pdf",
-      "title": "Eve Energy EU Matter quick start guide",
+      "id": "eve-eu-notice",
+      "url": "https://www.evehome.com/sites/default/files/2025-08/Eve-Energy-Europe-20EBO8301-Connected-Information-Notice.pdf",
+      "title": "Information notice on Eve Energy (Europe)",
       "publisher": "Eve Systems",
       "kind": "manufacturer",
       "accessed": "2026-10-10"
@@ -127,14 +168,6 @@
       "accessed": "2026-10-10"
     },
     {
-      "id": "eve-matter-news",
-      "url": "https://www.evehome.com/en/news/matter-enabled-devices",
-      "title": "Eve Starts Rolling Out Matter-Enabled Devices and Firmware Updates",
-      "publisher": "Eve Systems",
-      "kind": "manufacturer",
-      "accessed": "2026-10-10"
-    },
-    {
       "id": "csa-eve-energy-17",
       "url": "https://csa-iot.org/csa_product/eve-energy-17/",
       "title": "Eve Energy - CSA-IOT",
@@ -151,6 +184,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-10"
+  "status": "verified",
+  "updatedAt": "2026-10-10",
+  "verifiedAt": "2026-10-10"
 }

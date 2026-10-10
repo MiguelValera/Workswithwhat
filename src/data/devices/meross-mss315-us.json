@@ -3,38 +3,59 @@
   "brand": "Meross",
   "model": "MSS315",
   "name": "Meross Matter Smart Plug with Energy Monitor MSS315 (US)",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://shop.meross.com/products/matter-smart-plug-mss315-us",
   "radios": {
-    "value": ["wifi"],
-    "sources": ["meross-mss315-us-shop"],
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "meross-mss315-us-shop"
+    ],
     "note": "Needs an existing 2.4 GHz Wi-Fi network with IPv6. We found no official mention of Bluetooth."
   },
   "matter": {
     "certified": true,
     "transport": "wifi",
-    "sources": ["meross-mss315-us-shop", "meross-mss315-product"],
-    "note": "Meross sells it as a Matter plug. We could not find a CSA listing that names the MSS315 model number."
+    "sources": [
+      "meross-mss315-us-shop",
+      "meross-mss315-product"
+    ],
+    "note": "Meross sells it as a Matter plug. We could not find a CSA listing that names the MSS315 model number. Meross's en-gc product page is not region-specific; the US store listing is the US source."
   },
   "compatibility": {
     "apple_home": {
       "status": "matter",
-      "sources": ["meross-mss315-us-shop", "meross-mss315-product"],
+      "sources": [
+        "meross-mss315-us-shop",
+        "meross-mss315-product"
+      ],
       "note": "Through Matter; Meross says a Matter-compatible hub is required for the chosen platform."
     },
     "google_home": {
       "status": "matter",
-      "sources": ["meross-mss315-us-shop", "meross-mss315-product"],
+      "sources": [
+        "meross-mss315-us-shop",
+        "meross-mss315-product"
+      ],
       "note": "Through Matter; needs a Google Matter controller."
     },
     "alexa": {
       "status": "matter",
-      "sources": ["meross-mss315-us-shop", "meross-mss315-product"],
+      "sources": [
+        "meross-mss315-us-shop",
+        "meross-mss315-product"
+      ],
       "note": "Through Matter; needs an Echo that works as a Matter controller. We did not confirm whether the Meross Alexa skill also covers this model."
     },
     "smartthings": {
       "status": "matter",
-      "sources": ["meross-mss315-us-shop", "meross-mss315-product"],
+      "sources": [
+        "meross-mss315-us-shop",
+        "meross-mss315-product"
+      ],
       "note": "Through Matter; needs a SmartThings hub that supports Matter."
     },
     "home_assistant": {
@@ -44,18 +65,22 @@
     }
   },
   "hubRequired": {
-    "value": false,
-    "sources": ["meross-mss315-us-shop"],
-    "note": "Meross says energy monitoring in its app needs no hub. Apple Home, Google Home, Alexa and SmartThings need their own Matter controller."
+    "value": null,
+    "sources": [],
+    "note": "The US listing only says a Matter hub is needed for your chosen platform. Meross's 'no hub required' wording appears on the EU listing, not the US one."
   },
   "localControl": {
     "value": true,
-    "sources": ["meross-mss315-us-shop"],
-    "note": "Meross describes Matter control as local. Cloud-free behaviour of the Meross app itself is not documented."
+    "sources": [
+      "meross-mss315-us-shop"
+    ],
+    "note": "The US listing describes a completely local architecture for Matter. Cloud-free behaviour of the Meross app itself is not documented."
   },
   "energyMonitoring": {
     "value": true,
-    "sources": ["meross-mss315-us-shop"],
+    "sources": [
+      "meross-mss315-us-shop"
+    ],
     "note": "Real-time and historical use in the Meross app. Whether readings reach Matter platforms on the US model is not confirmed by Meross."
   },
   "maxLoadWatts": {
@@ -63,11 +88,10 @@
     "sources": [],
     "note": "We found no official electrical rating for the US MSS315 in Meross's pages. Check the label on the plug."
   },
-  "summary": "The Meross MSS315 is a US Wi-Fi plug with an energy meter that reaches Apple Home, Google Home, Alexa and SmartThings through Matter. Energy data shows in the Meross app, which needs no hub; each third-party platform needs its own Matter controller. It needs a 2.4 GHz network with IPv6. We could not find an official load rating for the US model.",
+  "summary": "The Meross MSS315 is a US Wi-Fi plug with an energy meter that reaches Apple Home, Google Home, Alexa and SmartThings through Matter. Energy data shows in the Meross app; each third-party platform needs its own Matter controller. It needs a 2.4 GHz network with IPv6. We could not find an official load rating for the US model.",
   "caveats": [
     "Needs 2.4 GHz Wi-Fi with IPv6 enabled on the router.",
-    "Apple Home, Google Home, Alexa and SmartThings each need a Matter controller.",
-    "Meross recalled certain batches of the EU version in 2023; the notice does not cover this US model."
+    "Apple Home, Google Home, Alexa and SmartThings each need a Matter controller."
   ],
   "sources": [
     {
@@ -85,16 +109,9 @@
       "publisher": "Meross",
       "kind": "manufacturer",
       "accessed": "2026-10-10"
-    },
-    {
-      "id": "meross-mss315-eu-recall",
-      "url": "https://www.meross.com/en-gc/explore/recall-mss315/22",
-      "title": "Important Recall Notice: Meross Matter Smart Wi-Fi Plug MSS315MAKIT (EU Version)",
-      "publisher": "Meross",
-      "kind": "manufacturer",
-      "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-10"
+  "status": "verified",
+  "updatedAt": "2026-10-10",
+  "verifiedAt": "2026-10-10"
 }
