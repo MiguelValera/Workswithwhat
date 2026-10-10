@@ -1,0 +1,78 @@
+---
+import Base from '../../layouts/Base.astro';
+import Refs from '../../components/Refs.astro';
+import { RADIO_LABELS, devicePath, getPublishedDevices } from '../../lib/devices';
+
+const all = await getPublishedDevices();
+const matter = all.filter((d) => d.data.matter.certified);
+const thread = matter.filter((d) => d.data.matter.transport === 'thread');
+const wifi = matter.filter((d) => d.data.matter.transport === 'wifi');
+
+const title = 'Matter smart plugs';
+const description = `${matter.length} Matter-certified smart plugs, split by Wi-Fi and Thread, with what each needs to work in Apple Home, Google Home, Alexa, SmartThings and Home Assistant.`;
+---
+
+<Base
+  title={title}
+  description={description}
+  crumbs={[
+    { name: 'By ecosystem', path: '/works-with/' },
+    { name: 'Matter', path: '/works-with/matter/' },
+  ]}
+>
+  <h1>Matter smart plugs</h1>
+  <p class="lede">
+    {matter.length} of the {all.length} plugs we've checked are Matter-certified: {wifi.length} over Wi-Fi and {thread.length} over Thread.
+  </p>
+
+  <h2>What Matter means for a plug</h2>
+  <p>
+    A Matter-certified plug can be added to any platform that acts as a Matter controller, including Apple Home,
+    Google Home, Alexa, SmartThings and Home Assistant, without the brand's own skill or cloud. You can also share
+    it with more than one platform at once.
+  </p>
+  <p>
+    <strong>Wi-Fi plugs</strong> join your existing network. <strong>Thread plugs</strong> use a low-power mesh and
+    need a Thread border router, which many recent smart speakers and streaming boxes include. Either way, the
+    platform you add it to needs its own Matter hub for automations and remote access.
+  </p>
+
+  {
+    [
+      { label: 'Over Wi-Fi', list: wifi },
+      { label: 'Over Thread', list: thread },
+    ].map(
+      (g) =>
+        g.list.length > 0 && (
+          <>
+            <h2>{g.label}</h2>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th scope="col">Plug</th><th scope="col">Radios</th><th scope="col">Energy monitoring</th><th scope="col">Notes</th></tr>
+                </thead>
+                <tbody>
+                  {g.list.map((d) => (
+                    <tr>
+                      <th scope="row" class="name">
+                        <a href={devicePath(d)}>{d.data.name}</a>
+                        <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
+                      </th>
+                      <td>{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+                      <td>{d.data.energyMonitoring.value === null ? 'Unconfirmed' : d.data.energyMonitoring.value ? 'Yes' : 'No'}</td>
+                      <td>{d.data.matter.note}<Refs ids={d.data.matter.sources} all={d.data.sources} base={devicePath(d)} /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        ),
+    )
+  }
+
+  <p class="muted small">
+    Only plugs that are Matter-certified themselves are listed. Plugs that reach Matter through a bridge (such as a
+    Zigbee plug behind a hub) are on the <a href="/smart-plugs/">full chart</a>.
+  </p>
+</Base>
