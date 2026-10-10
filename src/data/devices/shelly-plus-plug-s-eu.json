@@ -1,0 +1,138 @@
+{
+  "category": "smart-plug",
+  "brand": "Shelly",
+  "model": "Plus Plug S",
+  "name": "Shelly Plus Plug S (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.shelly.com/blogs/documentation/shelly-plus-plug-s",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["shelly-kb-plus-plug-s-v2"],
+    "note": "Wi-Fi 802.11 b/g/n plus Bluetooth 4.2 (ESP32), per the V2 spec table."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Shelly page found that states Matter support for the Plus (Gen2) Plug S; Shelly's Matter plugs are Gen3/Gen4. Not confirmed either way."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Shelly's Apple Home page covers Matter-capable Gen3/Gen4 devices; nothing found that covers the Plus Plug S."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["shelly-plus-plug-s-asia-listing", "shelly-compatibility"],
+      "note": "Through Shelly's cloud integration with Google."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["shelly-plus-plug-s-asia-listing", "shelly-compatibility"],
+      "note": "Through Shelly's cloud integration with Alexa."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": ["shelly-plus-plug-s-asia-listing", "shelly-smartthings-blog"],
+      "note": "Cloud-to-cloud integration maintained by Shelly; listed on the Shelly product page."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-shelly"],
+      "note": "Official local Shelly integration; Gen2+ devices use RPC and need no extra configuration."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["shelly-kb-plus-plug-s-user-guide"],
+    "note": "Wi-Fi device; the user guide says the Shelly app and cloud are not required for it to work."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-shelly", "shelly-kb-plus-plug-s-v2"],
+    "note": "Local RPC used by Home Assistant; MQTT and scripting are supported on the device."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": ["shelly-kb-plus-plug-s-device-smart-control", "shelly-plus-plug-s-asia-listing"],
+    "note": "Reports live power and energy consumption."
+  },
+  "maxLoadWatts": {
+    "value": 2500,
+    "sources": ["shelly-plus-plug-s-asia-listing", "shelly-kb-plus-plug-s-device-smart-control"],
+    "note": "12 A / 2500 W rating; the app's max-power limit goes up to 2500 W."
+  },
+  "summary": "The Shelly Plus Plug S is a compact Wi-Fi and Bluetooth plug for Schuko (Type F) sockets, rated 12 A / 2500 W with power and energy metering. It works without a hub, connects to Alexa, Google and SmartThings through Shelly's cloud, and to Home Assistant locally. Shelly has since moved to Gen3 and Gen4 plugs that add Matter.",
+  "caveats": [
+    "Two hardware revisions exist (V1 and V2, model numbers SNPL-00112EU and SNPL-10112EU); check which one you have.",
+    "Indoor use only, per the Shelly user and safety guide."
+  ],
+  "sources": [
+    {
+      "id": "shelly-plus-plug-s-docs",
+      "url": "https://www.shelly.com/blogs/documentation/shelly-plus-plug-s",
+      "title": "Documentation about Shelly Plus Plug S - Shelly Europe",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "shelly-kb-plus-plug-s-v2",
+      "url": "https://kb.shelly.cloud/knowledge-base/shelly-plus-plug-s-v2",
+      "title": "Shelly Plus Plug S V2",
+      "publisher": "Shelly Knowledge Base",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "shelly-kb-plus-plug-s-user-guide",
+      "url": "https://kb.shelly.cloud/knowledge-base/shelly-plus-plug-s-user-and-safety-guide",
+      "title": "Shelly Plus Plug S User and Safety Guide",
+      "publisher": "Shelly Knowledge Base",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "shelly-kb-plus-plug-s-device-smart-control",
+      "url": "https://kb.shelly.cloud/knowledge-base/shelly-plus-plug-s-device-smart-control",
+      "title": "Shelly Plus Plug S Device Smart Control",
+      "publisher": "Shelly Knowledge Base",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "shelly-plus-plug-s-asia-listing",
+      "url": "https://asia.shelly.com/products/shelly-plus-plug-s-1/",
+      "title": "Shelly Plus Plug S List",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "shelly-compatibility",
+      "url": "https://www.shelly.com/pages/compatibility",
+      "title": "Shelly Compatibility",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "shelly-smartthings-blog",
+      "url": "https://us.shelly.com/blogs/media-center/shelly-smartthings-integration",
+      "title": "Shelly SmartThings integration - Shelly USA",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-shelly",
+      "url": "https://www.home-assistant.io/integrations/shelly/",
+      "title": "Shelly - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-10"
+}

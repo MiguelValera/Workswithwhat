@@ -1,0 +1,91 @@
+{
+  "category": "smart-plug",
+  "brand": "Amazon",
+  "model": "Amazon Smart Plug (HD34BX)",
+  "name": "Amazon Smart Plug",
+  "regions": ["US"],
+  "officialUrl": "https://us.amazon.com/Amazon-smart-plug-works-with-Alexa/dp/B089DR29T6",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["amazon-smart-plug"],
+    "note": "2.4 GHz Wi-Fi only (802.11 b/g/n). Retailer listings mention Bluetooth 4.2, but Amazon's page does not, so it is left out."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Amazon's listing does not mention Matter and says the plug is made for exclusive use with Alexa. We found no CSA listing, but no explicit statement either."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "no",
+      "sources": ["amazon-smart-plug"],
+      "note": "Amazon says the plug does not support other voice assistants or smart hubs."
+    },
+    "google_home": {
+      "status": "no",
+      "sources": ["amazon-smart-plug"],
+      "note": "Amazon says the plug does not support other voice assistants or smart hubs."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["amazon-smart-plug", "amazon-smart-plug-howto"],
+      "note": "Set up and controlled in the Alexa app."
+    },
+    "smartthings": {
+      "status": "no",
+      "sources": ["amazon-smart-plug"],
+      "note": "Amazon says the plug does not support other voice assistants or smart hubs."
+    },
+    "home_assistant": {
+      "status": "no",
+      "sources": ["amazon-smart-plug"],
+      "note": "Amazon says the plug does not support other smart hubs. There is no official Home Assistant integration."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["amazon-smart-plug"],
+    "note": "No smart home hub needed, but setup requires the Alexa app (an Echo is optional)."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Amazon does not say whether the plug works without internet."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [],
+    "note": "Amazon's listing does not mention energy monitoring."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [],
+    "note": "Amazon lists 120 VAC, 60 Hz, 15 A max but gives no wattage."
+  },
+  "summary": "The Amazon Smart Plug is a single-outlet US Wi-Fi plug made to work only with Alexa. You set it up and control it in the Alexa app, with no separate hub. Amazon says it does not support other voice assistants or smart hubs. It is rated 120 V, 15 A, and is for indoor use only.",
+  "caveats": [
+    "Alexa only: Amazon says it does not work with other voice assistants or smart hubs.",
+    "2.4 GHz Wi-Fi only; no 5 GHz or ad-hoc networks.",
+    "Indoor use only."
+  ],
+  "sources": [
+    {
+      "id": "amazon-smart-plug",
+      "url": "https://us.amazon.com/Amazon-smart-plug-works-with-Alexa/dp/B089DR29T6",
+      "title": "Amazon Smart Plug, works with Alexa",
+      "publisher": "Amazon",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "amazon-smart-plug-howto",
+      "url": "https://www.amazon.com/b?ie=UTF8&node=21341313011",
+      "title": "How to use an Amazon Smart Plug",
+      "publisher": "Amazon",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-10"
+}

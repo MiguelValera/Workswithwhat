@@ -1,0 +1,116 @@
+{
+  "category": "smart-plug",
+  "brand": "TP-Link",
+  "model": "Tapo P125M",
+  "name": "Tapo P125M Mini Smart Wi-Fi Plug (Matter)",
+  "regions": ["US"],
+  "officialUrl": "https://www.tp-link.com/us/home-networking/smart-plug/tapo-p125m/",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["tplink-us-product", "tplink-us-datasheet"],
+    "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n). TP-Link lists Bluetooth for setup only."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["tplink-us-product", "tplink-us-datasheet", "tplink-press-p125m"],
+    "note": "TP-Link calls it Matter-certified. We did not find a CSA listing that names the P125M model number."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["tplink-us-product"],
+      "note": "TP-Link lists Apple Home. The plug has no HomeKit (HAP) mode, so this works through Matter and needs an Apple home hub."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["tplink-us-product"],
+      "note": "TP-Link lists Google Assistant separately from Matter. It can also be added to Google Home over Matter."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["tplink-us-product"],
+      "note": "TP-Link lists Alexa separately from Matter. It can also be added to Alexa over Matter."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["tplink-us-product"],
+      "note": "TP-Link lists Samsung SmartThings. We could not confirm a direct Tapo cloud integration, so we record it as Matter."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": ["ha-matter", "tplink-us-product"],
+      "note": "Works through the Home Assistant Matter integration. The TP-Link Smart Home integration also supports Tapo plugs, but we did not confirm that it lists this model."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["tapo-us-store"],
+    "note": "No hub is needed with the Tapo app. Third-party ecosystems need their own Matter controller."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["tplink-us-product", "tapo-us-store"],
+    "note": "TP-Link says Matter devices on your home network can still be controlled from the Tapo app or another Matter app without internet."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [],
+    "note": "The US product page and datasheet we saw don't mention energy monitoring. The Italian datasheet for the same model name does, so regional versions may differ."
+  },
+  "maxLoadWatts": {
+    "value": 1800,
+    "sources": ["tplink-us-datasheet", "tplink-us-product"],
+    "note": "15 A / 1800 W maximum for resistive loads at 100–125 V."
+  },
+  "summary": "The Tapo P125M is TP-Link's compact US Wi-Fi smart plug with Matter. It is rated 15 A / 1800 W and uses 2.4 GHz Wi-Fi, with Bluetooth used only for setup. TP-Link lists support for Apple Home, Alexa, Google Assistant and SmartThings, and you can set it up by scanning the Matter code.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Apple Home works only through Matter, which needs an Apple home hub (HomePod or Apple TV).",
+    "The Matter pairing window lasts 15 minutes, and the controller must be on the same local network."
+  ],
+  "sources": [
+    {
+      "id": "tplink-us-product",
+      "url": "https://www.tp-link.com/us/home-networking/smart-plug/tapo-p125m/",
+      "title": "Tapo P125M",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-us-datasheet",
+      "url": "https://static.tp-link.com/upload/product-overview/2022/202212/20221216/Tapo%20P125M(US)1.0_Datasheet.pdf",
+      "title": "Datasheet Model: Tapo P125M Mini Smart Wi-Fi Plug Matter-Certified Away Mode",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-press-p125m",
+      "url": "https://www.tp-link.com/us/press/news/20447/",
+      "title": "TP-Link Tapo Launches its First Matter-Certified Smart Plug - Tapo P125M",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tapo-us-store",
+      "url": "https://us.store.tapo.com/products/tp-link-tapo-matter-compatible-smart-plug-mini-15a-1800w-tapo-p125m",
+      "title": "Matter Smart Plug Mini 15A",
+      "publisher": "TP-Link (Tapo US store)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-10"
+}

@@ -1,0 +1,130 @@
+{
+  "category": "smart-plug",
+  "brand": "TP-Link",
+  "model": "Kasa EP25",
+  "name": "Kasa Smart Wi-Fi Plug Slim with Energy Monitoring (EP25)",
+  "regions": ["US"],
+  "officialUrl": "https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-plug-slim-energy-monitoring-ep25",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["tplink-ep25-datasheet", "tplink-faq-1390"],
+    "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n). TP-Link says Kasa products don't support 5 GHz, Zigbee, Z-Wave or Ethernet."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No source we found mentions Matter for the EP25. TP-Link's Matter Kasa plug is a different model (KP125M)."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": ["tplink-faq-949", "tplink-ep25-datasheet", "tplink-press-ep25"],
+      "note": "HomeKit built in, with no separate hub. The datasheet says energy monitoring is not shown in the Home app."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["tplink-ep25p4", "tplink-faq-1390"],
+      "note": "Cloud-to-cloud link between the Kasa and Google accounts."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["tplink-ep25p4", "tplink-faq-1390"],
+      "note": "Cloud-to-cloud link via the Kasa skill."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": ["tplink-ep25p4"],
+      "note": "TP-Link's EP25P4 page lists Samsung SmartThings."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink"],
+      "note": "Official TP-Link Smart Home integration, which covers Kasa plugs and talks to them locally. Newer devices may need TP-Link cloud credentials once to authenticate."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["tplink-faq-949"]
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-tplink"],
+    "note": "Home Assistant's integration controls Kasa devices on the local network without the TP-Link cloud. The Kasa app itself uses the cloud when the plug is online."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": ["tplink-ep25-datasheet", "kasa-ep25-product"],
+    "note": "Real-time and historical power use in the Kasa app. Not available in Apple Home."
+  },
+  "maxLoadWatts": {
+    "value": 1800,
+    "sources": ["tplink-ep25-datasheet"],
+    "note": "15 A, 1.8 kW at 120 V; 1/6 HP motor."
+  },
+  "summary": "The Kasa EP25 is a compact US Wi-Fi smart plug from TP-Link with energy monitoring and built-in Apple HomeKit. It was launched as the Smart Plug Mini and is now sold as the Smart Wi-Fi Plug Slim, often in EP25P2/EP25P4 packs. It is rated 15 A / 1800 W and works with Alexa, Google Home and SmartThings through the Kasa account.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Energy data appears only in the Kasa app, not in Apple Home.",
+    "Home Assistant may need TP-Link cloud credentials and the Third-Party Compatibility setting enabled in the Kasa app."
+  ],
+  "sources": [
+    {
+      "id": "kasa-ep25-product",
+      "url": "https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-plug-slim-energy-monitoring-ep25",
+      "title": "Kasa Smart Wi-Fi Plug Slim with Energy Monitoring",
+      "publisher": "TP-Link (Kasa Smart)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-ep25-datasheet",
+      "url": "https://static.tp-link.com/upload/product-overview/2023/202309/20230920/EP25(US)_Datasheet.pdf",
+      "title": "EP25 Kasa Smart Wi-Fi Plug Slim Energy Monitoring Control from Anywhere",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-ep25p4",
+      "url": "https://www.tp-link.com/us/home-networking/smart-plug/ep25p4/",
+      "title": "EP25P4",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-press-ep25",
+      "url": "https://www.tp-link.com/us/press/news/20100/",
+      "title": "TP-Link Announces New HomeKit Compatible Kasa Smart Plugs with Energy Monitoring for an Ultra-Value 4-Pack at $49.99",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-faq-949",
+      "url": "https://www.tp-link.com/us/support/faq/949/",
+      "title": "TP-Link Smart Plug and Switch: Frequently Asked Questions",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-faq-1390",
+      "url": "https://www.tp-link.com/us/support/faq/1390/",
+      "title": "Kasa Smart Home Devices FAQs",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-10"
+}

@@ -1,0 +1,135 @@
+{
+  "category": "smart-plug",
+  "brand": "IKEA",
+  "model": "TRETAKT",
+  "name": "IKEA TRETAKT smart plug (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.ikea.com/nl/en/p/tretakt-plug-smart-80540349/",
+  "radios": {
+    "value": ["zigbee"],
+    "sources": ["ikea-dirigera-matter-bridge-news", "z2m-e22x4"],
+    "note": "IKEA's product page does not name the radio; IKEA describes its hub-connected smart range as Zigbee-based, and Zigbee2MQTT lists TRETAKT as E22x4."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter certification found for TRETAKT itself. It reaches Matter platforms only through the DIRIGERA hub's Matter bridge."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "IKEA DIRIGERA hub",
+      "sources": ["ikea-connect-dirigera-ecosystems", "ikea-dirigera-matter-bridge-news"],
+      "note": "The hub is added to Apple Home from the IKEA Home smart app; a Matter bridge option also exists."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "IKEA DIRIGERA hub",
+      "sources": ["ikea-connect-dirigera-ecosystems", "ikea-dirigera-matter-bridge-news"],
+      "note": "Linked with the Works with Google service and an IKEA account, or through the Matter bridge."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "IKEA DIRIGERA hub",
+      "sources": ["ikea-connect-dirigera-ecosystems", "ikea-dirigera-matter-bridge-news"],
+      "note": "Through the IKEA Home Smart Alexa skill, or through the Matter bridge."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official IKEA or SmartThings page found covering this plug."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "IKEA DIRIGERA hub (Matter bridge)",
+      "sources": ["ha-matter", "ikea-dirigera-matter-bridge-news"],
+      "note": "HA's Matter integration accepts bridges such as DIRIGERA. Direct pairing to a Zigbee coordinator (ZHA, Zigbee2MQTT) is reported by users but not documented officially."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": ["ikea-tretakt-nl", "ikea-tretakt-manual-at"],
+    "note": "DIRIGERA (or the older TRÅDFRI gateway) is needed for app, voice and ecosystem control. Without a hub it can only be paired to an IKEA remote or sensor."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No official statement on local control found."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [],
+    "note": "IKEA's listings and manual found do not mention energy metering, but no source says explicitly that it is absent."
+  },
+  "maxLoadWatts": {
+    "value": 3680,
+    "sources": ["ikea-tretakt-nl", "ikea-tretakt-se", "ikea-tretakt-manual-at"],
+    "note": "3680 W resistive load; the manual limits motor loads to 300 W. The US TRETAKT is rated 1800 W."
+  },
+  "summary": "IKEA TRETAKT is a low-cost Zigbee smart plug for EU sockets, rated 3680 W for resistive loads. It needs the DIRIGERA hub (or the older TRÅDFRI gateway) for app control and to reach Apple Home, Google Home and Alexa. Without a hub it can only be paired with an IKEA remote or motion sensor.",
+  "caveats": [
+    "Motor loads are limited to 300 W, far below the 3680 W resistive rating.",
+    "Indoor use only, 0–35 °C.",
+    "Not a Matter device; Matter platforms see it only through the DIRIGERA Matter bridge. IKEA's newer GRILLPLATS plug is a different, Matter-over-Thread product."
+  ],
+  "sources": [
+    {
+      "id": "ikea-tretakt-nl",
+      "url": "https://www.ikea.com/nl/en/p/tretakt-plug-smart-80540349/",
+      "title": "TRETAKT plug, smart - IKEA",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ikea-tretakt-se",
+      "url": "https://www.ikea.com/se/en/p/tretakt-plug-smart-80540349/",
+      "title": "TRETAKT plug, smart - IKEA Sweden",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ikea-tretakt-manual-at",
+      "url": "https://www.ikea.com/at/en/manuals/tretakt-plug-smart__AA-2396101-2-100.pdf",
+      "title": "TRETAKT (manual)",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ikea-connect-dirigera-ecosystems",
+      "url": "https://www.ikea.com/se/en/customer-service/knowledge/articles/c84ba9dd-93e4-4975-9810-67fd69b9dd75.html",
+      "title": "How do I connect DIRIGERA to Google home, Apple home, and Amazon Alexa - IKEA Sweden",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ikea-dirigera-matter-bridge-news",
+      "url": "https://www.ikea.com/global/en/newsroom/innovation/ikea-dirigera-matter-bridge-240911/",
+      "title": "IKEA Introduces Matter support for the DIRIGERA Hub",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "z2m-e22x4",
+      "url": "https://www.zigbee2mqtt.io/devices/E22x4.html",
+      "title": "IKEA E22x4 control via MQTT",
+      "publisher": "Zigbee2MQTT",
+      "kind": "review",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-10"
+}
