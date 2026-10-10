@@ -12,8 +12,8 @@
   },
   "matter": {
     "certified": null,
-    "sources": [],
-    "note": "No Matter certification found for the S31. SONOFF's CUBE OS Matter bridge may expose eWeLink Wi-Fi devices, but S31 support was not confirmed."
+    "sources": ["ewelink-matter-bridge"],
+    "note": "No Matter certification found for the S31 itself. eWeLink's CUBE (iHost) Matter Bridge page lists the S31 among devices it can expose to Matter platforms."
   },
   "compatibility": {
     "apple_home": {
@@ -33,13 +33,13 @@
     },
     "smartthings": {
       "status": "native",
-      "sources": ["sonoff-s31-help", "sonoff-smartthings-news"],
+      "sources": ["sonoff-s31-help", "ewelink-smartthings-products", "sonoff-smartthings-news"],
       "note": "Added in eWeLink first, then synced to SmartThings via cloud account linking."
     },
     "home_assistant": {
       "status": "native",
-      "sources": ["ewelink-home-assistant", "sonoff-how-works-with-ha"],
-      "note": "Via eWeLink's official Home Assistant add-on (needs HA OS/Supervised), not a core HA integration."
+      "sources": ["ewelink-home-assistant", "ewelink-ha-addon-launch", "sonoff-how-works-with-ha"],
+      "note": "Via eWeLink's own Home Assistant add-on (HA OS/Supervised), not a core HA integration. It covers eWeLink switches and sockets as on/off entities; power readings are not exposed."
     }
   },
   "hubRequired": {
@@ -48,9 +48,9 @@
     "note": "Wi-Fi plug that connects directly to the router; the Zigbee S31 Lite zb is a different product that needs a bridge."
   },
   "localControl": {
-    "value": true,
-    "sources": ["sonoff-s31-help"],
-    "note": "eWeLink LAN control lets the app talk to the plug on the same network without the cloud."
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed: SONOFF's S31 help page describes eWeLink LAN control generally without stating S31 support, and an ITEAD spec listing says LAN control: no."
   },
   "energyMonitoring": {
     "value": true,
@@ -65,7 +65,7 @@
   "summary": "The SONOFF S31 is a 2.4 GHz Wi-Fi plug for US outlets, rated 15 A / 1800 W, with real-time power, voltage and current monitoring. It is set up in the eWeLink app and links to Alexa, Google Home and SmartThings through the cloud. The cheaper S31 Lite looks similar but has no energy monitoring.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Voice and SmartThings control go through the eWeLink cloud; LAN control covers the eWeLink app only.",
+    "Voice and SmartThings control go through the eWeLink cloud.",
     "Do not confuse with the S31 Lite (no metering) or the S31 Lite zb (Zigbee, needs a bridge)."
   ],
   "sources": [
@@ -102,6 +102,30 @@
       "accessed": "2026-10-10"
     },
     {
+      "id": "ewelink-smartthings-products",
+      "url": "https://help.ewelink.cc/hc/en-us/articles/360059347291-SmartThings-Compatible-Products-via-account-linking",
+      "title": "SmartThings Compatible Products via account linking",
+      "publisher": "eWeLink (CoolKit)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ewelink-matter-bridge",
+      "url": "https://ewelink.cc/ewelink-cube/matter-bridge/",
+      "title": "Matter Bridge - eWeLink",
+      "publisher": "eWeLink (CoolKit)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ewelink-ha-addon-launch",
+      "url": "https://ewelink.cc/its-official-ewelink-home-assistant-add-on-arrives/",
+      "title": "It's official. eWeLink Home Assistant Add-on arrives. - eWeLink",
+      "publisher": "eWeLink (CoolKit)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
       "id": "ewelink-home-assistant",
       "url": "https://ewelink.cc/ewelink-works-with-home-assistant/",
       "title": "eWeLink connect to Home Assistant - eWeLink",
@@ -118,6 +142,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
   "updatedAt": "2026-10-10"
 }

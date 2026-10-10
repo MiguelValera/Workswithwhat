@@ -13,7 +13,7 @@
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "No Shelly page found that states Matter support for the Plus (Gen2) Plug S; Shelly's Matter plugs are Gen3/Gen4. Not confirmed either way."
+    "note": "No Shelly page found that states Matter support for the Plus (Gen2) Plug S; Shelly's Matter and Works with Apple Home plugs are Gen3/Gen4. Not confirmed either way."
   },
   "compatibility": {
     "apple_home": {
@@ -23,17 +23,17 @@
     },
     "google_home": {
       "status": "native",
-      "sources": ["shelly-plus-plug-s-asia-listing", "shelly-compatibility"],
+      "sources": ["shelly-plus-plug-s-asia-listing", "shelly-us-docs-plus-plug-s"],
       "note": "Through Shelly's cloud integration with Google."
     },
     "alexa": {
       "status": "native",
-      "sources": ["shelly-plus-plug-s-asia-listing", "shelly-compatibility"],
+      "sources": ["shelly-plus-plug-s-asia-listing", "shelly-us-docs-plus-plug-s"],
       "note": "Through Shelly's cloud integration with Alexa."
     },
     "smartthings": {
       "status": "native",
-      "sources": ["shelly-plus-plug-s-asia-listing", "shelly-smartthings-blog"],
+      "sources": ["shelly-plus-plug-s-asia-listing", "shelly-us-docs-plus-plug-s", "shelly-smartthings-blog"],
       "note": "Cloud-to-cloud integration maintained by Shelly; listed on the Shelly product page."
     },
     "home_assistant": {
@@ -44,8 +44,8 @@
   },
   "hubRequired": {
     "value": false,
-    "sources": ["shelly-kb-plus-plug-s-user-guide"],
-    "note": "Wi-Fi device; the user guide says the Shelly app and cloud are not required for it to work."
+    "sources": ["shelly-kb-plus-plug-s-user-guide", "shelly-kb-plus-plug-s-v2"],
+    "note": "Wi-Fi device; the user guide says the Shelly app and cloud are not required for it to work, and the V2 KB says it can run standalone on the local Wi-Fi."
   },
   "localControl": {
     "value": true,
@@ -68,14 +68,6 @@
     "Indoor use only, per the Shelly user and safety guide."
   ],
   "sources": [
-    {
-      "id": "shelly-plus-plug-s-docs",
-      "url": "https://www.shelly.com/blogs/documentation/shelly-plus-plug-s",
-      "title": "Documentation about Shelly Plus Plug S - Shelly Europe",
-      "publisher": "Shelly Group",
-      "kind": "manufacturer",
-      "accessed": "2026-10-10"
-    },
     {
       "id": "shelly-kb-plus-plug-s-v2",
       "url": "https://kb.shelly.cloud/knowledge-base/shelly-plus-plug-s-v2",
@@ -109,9 +101,9 @@
       "accessed": "2026-10-10"
     },
     {
-      "id": "shelly-compatibility",
-      "url": "https://www.shelly.com/pages/compatibility",
-      "title": "Shelly Compatibility",
+      "id": "shelly-us-docs-plus-plug-s",
+      "url": "https://us.shelly.com/blogs/documentation/shelly-plus-plug-s",
+      "title": "Documentation about Shelly Plus Plug S - Shelly USA",
       "publisher": "Shelly Group",
       "kind": "manufacturer",
       "accessed": "2026-10-10"
@@ -133,6 +125,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
   "updatedAt": "2026-10-10"
 }

@@ -26,13 +26,13 @@
       "status": "hub",
       "via": "Philips Hue Bridge",
       "sources": ["hue-smart-plug-us", "hue-bridge-us"],
-      "note": "The product page lists Google Assistant among assistants that need a Hue Bridge."
+      "note": "The US product page lists Google Assistant among assistants that need a Hue Bridge. Hue's bridgeless Bluetooth voice FAQ covers bulbs, not this plug."
     },
     "alexa": {
       "status": "hub",
       "via": "Philips Hue Bridge",
       "sources": ["hue-smart-plug-us", "hue-bridge-us"],
-      "note": "The product page lists Alexa among assistants that need a Hue Bridge."
+      "note": "The US product page lists Alexa among assistants that need a Hue Bridge. Hue's bridgeless Bluetooth voice FAQ covers bulbs, not this plug."
     },
     "smartthings": {
       "status": "hub",
@@ -114,6 +114,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
   "updatedAt": "2026-10-10"
 }

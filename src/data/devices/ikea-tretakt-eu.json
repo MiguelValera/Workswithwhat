@@ -4,11 +4,11 @@
   "model": "TRETAKT",
   "name": "IKEA TRETAKT smart plug (EU)",
   "regions": ["EU"],
-  "officialUrl": "https://www.ikea.com/nl/en/p/tretakt-plug-smart-80540349/",
+  "officialUrl": "https://www.ikea.com/at/en/p/tretakt-plug-smart-80540349/",
   "radios": {
     "value": ["zigbee"],
-    "sources": ["ikea-dirigera-matter-bridge-news", "z2m-e22x4"],
-    "note": "IKEA's product page does not name the radio; IKEA describes its hub-connected smart range as Zigbee-based, and Zigbee2MQTT lists TRETAKT as E22x4."
+    "sources": ["csa-tretakt-zigbee", "ikea-dirigera-matter-bridge-news", "z2m-e22x4"],
+    "note": "IKEA's product page does not name the radio. The CSA lists TRETAKT Smart Plug as Zigbee 3.0 certified (listing does not name the regional variant); Zigbee2MQTT lists it as E22x4 (E2204 EU)."
   },
   "matter": {
     "certified": null,
@@ -43,13 +43,13 @@
       "status": "hub",
       "via": "IKEA DIRIGERA hub (Matter bridge)",
       "sources": ["ha-matter", "ikea-dirigera-matter-bridge-news"],
-      "note": "HA's Matter integration accepts bridges such as DIRIGERA. Direct pairing to a Zigbee coordinator (ZHA, Zigbee2MQTT) is reported by users but not documented officially."
+      "note": "HA's Matter docs name DIRIGERA as a bridge and list smart plugs among bridged types. Direct pairing to a Zigbee coordinator (ZHA, Zigbee2MQTT) is reported by users but not documented officially."
     }
   },
   "hubRequired": {
     "value": true,
-    "sources": ["ikea-tretakt-nl", "ikea-tretakt-manual-at"],
-    "note": "DIRIGERA (or the older TRÅDFRI gateway) is needed for app, voice and ecosystem control. Without a hub it can only be paired to an IKEA remote or sensor."
+    "sources": ["ikea-tretakt-at", "ikea-tretakt-manual-at"],
+    "note": "DIRIGERA (or the older TRÅDFRI gateway) is needed for app, voice and ecosystem control. Without a hub it can still be paired directly to an IKEA remote or motion sensor."
   },
   "localControl": {
     "value": null,
@@ -63,7 +63,7 @@
   },
   "maxLoadWatts": {
     "value": 3680,
-    "sources": ["ikea-tretakt-nl", "ikea-tretakt-se", "ikea-tretakt-manual-at"],
+    "sources": ["ikea-tretakt-at", "ikea-tretakt-se", "ikea-tretakt-manual-at"],
     "note": "3680 W resistive load; the manual limits motor loads to 300 W. The US TRETAKT is rated 1800 W."
   },
   "summary": "IKEA TRETAKT is a low-cost Zigbee smart plug for EU sockets, rated 3680 W for resistive loads. It needs the DIRIGERA hub (or the older TRÅDFRI gateway) for app control and to reach Apple Home, Google Home and Alexa. Without a hub it can only be paired with an IKEA remote or motion sensor.",
@@ -74,9 +74,9 @@
   ],
   "sources": [
     {
-      "id": "ikea-tretakt-nl",
-      "url": "https://www.ikea.com/nl/en/p/tretakt-plug-smart-80540349/",
-      "title": "TRETAKT plug, smart - IKEA",
+      "id": "ikea-tretakt-at",
+      "url": "https://www.ikea.com/at/en/p/tretakt-plug-smart-80540349/",
+      "title": "TRETAKT plug, smart - IKEA Austria",
       "publisher": "IKEA",
       "kind": "manufacturer",
       "accessed": "2026-10-10"
@@ -114,6 +114,14 @@
       "accessed": "2026-10-10"
     },
     {
+      "id": "csa-tretakt-zigbee",
+      "url": "https://csa-iot.org/csa_product/tretakt-smart-plug/",
+      "title": "TRETAKT Smart Plug - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-10"
+    },
+    {
       "id": "ha-matter",
       "url": "https://www.home-assistant.io/integrations/matter/",
       "title": "Matter - Home Assistant",
@@ -130,6 +138,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
   "updatedAt": "2026-10-10"
 }

@@ -47,13 +47,13 @@
   },
   "hubRequired": {
     "value": true,
-    "sources": ["aqara-smart-plug-eu-specs"],
-    "note": "Spec sheet: Hub Required: Yes."
+    "sources": ["aqara-smart-plug-eu-specs", "aqara-smart-plug-eu-faq"],
+    "note": "Spec sheet: Hub Required: Yes. FAQ: it needs a hub and cannot connect to Wi-Fi directly."
   },
   "localControl": {
-    "value": null,
-    "sources": [],
-    "note": "No official statement on local control found."
+    "value": true,
+    "sources": ["aqara-smart-plug-eu-faq"],
+    "note": "Aqara FAQ: if the internet is down, app control stops but local control and links with other devices on the hub keep working."
   },
   "energyMonitoring": {
     "value": true,
@@ -62,7 +62,7 @@
   },
   "maxLoadWatts": {
     "value": 2300,
-    "sources": ["aqara-smart-plug-eu-specs"],
+    "sources": ["aqara-smart-plug-eu-specs", "aqara-smart-plug-eu-faq"],
     "note": "250 V AC, 10 A, max 2300 W. 16 A appliances are not supported."
   },
   "summary": "The Aqara Smart Plug (EU, SP-EUC01) is a Zigbee 3.0 plug rated 10 A / 2300 W, with power and energy metering. It needs an Aqara hub, which links it to Apple Home, Google Home and Alexa. Aqara's security update support for this model was scheduled to end on 30 June 2026.",
@@ -81,9 +81,9 @@
       "accessed": "2026-10-10"
     },
     {
-      "id": "aqara-smart-plug-eu",
-      "url": "https://www.aqara.com/en/product/smart-plug-eu/",
-      "title": "Smart Plug EU - Aqara",
+      "id": "aqara-smart-plug-eu-faq",
+      "url": "https://www.aqara.com/en/support/smart-plug-eu",
+      "title": "Smart Plug EU - FAQ - Aqara",
       "publisher": "Aqara",
       "kind": "manufacturer",
       "accessed": "2026-10-10"
@@ -105,6 +105,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
   "updatedAt": "2026-10-10"
 }
