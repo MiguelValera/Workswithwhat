@@ -89,7 +89,7 @@ const description = `${yes.length} smart plugs confirmed to work with ${label}${
                   </th>
                   <td><Status status={c.status} via={c.via} /></td>
                   <td>{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
-                  <td>{c.note}<Refs ids={c.sources} all={d.data.sources} /></td>
+                  <td>{c.note}<Refs ids={c.sources} all={d.data.sources} base={devicePath(d)} /></td>
                 </tr>
               );
             })}
