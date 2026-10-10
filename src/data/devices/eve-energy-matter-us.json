@@ -8,13 +8,13 @@
   "radios": {
     "value": ["thread"],
     "sources": ["eve-energy-us", "eve-identify"],
-    "note": "Eve lists Thread. Some CSA listings for Eve Energy variants also show Bluetooth, but we could not confirm it for this US unit."
+    "note": "Eve lists only Thread for this model; Bluetooth is listed for the older US generations. CSA listings in this family show Bluetooth as a transport, likely for Matter setup, but Eve doesn't confirm it."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
     "sources": ["csa-eve-energy-17", "eve-energy-us", "eve-identify"],
-    "note": "CSA listing for family SKU 20EBU4101. Eve's identification page names this version 'U.S. & Canada, 4th generation / Matter'."
+    "note": "Eve calls this US model Matter-enabled. CSA lists Eve Energy certificates under family SKU 20EBU4101, but the variant SKUs shown are not the US one, so the exact listing is uncertain."
   },
   "compatibility": {
     "apple_home": {
@@ -50,8 +50,8 @@
   },
   "localControl": {
     "value": true,
-    "sources": ["csa-eve-energy-17", "eve-ios18"],
-    "note": "Matter over Thread works on the local network, with no Eve cloud or account."
+    "sources": ["eve-ha", "ha-matter"],
+    "note": "Matter over Thread runs on the local network, with no Eve cloud or account. Eve's iOS 18 hub-free control list doesn't include the US model, so a hub is still needed."
   },
   "energyMonitoring": {
     "value": true,
@@ -103,14 +103,6 @@
       "accessed": "2026-10-10"
     },
     {
-      "id": "eve-ios18",
-      "url": "https://www.evehome.com/en-us/blog/iOS-18",
-      "title": "New: Control Eve devices directly and locally from your iPhone, without a home hub",
-      "publisher": "Eve Systems",
-      "kind": "manufacturer",
-      "accessed": "2026-10-10"
-    },
-    {
       "id": "eve-matter-news",
       "url": "https://www.evehome.com/en/news/matter-enabled-devices",
       "title": "Eve Starts Rolling Out Matter-Enabled Devices and Firmware Updates",
@@ -135,6 +127,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
   "updatedAt": "2026-10-10"
 }

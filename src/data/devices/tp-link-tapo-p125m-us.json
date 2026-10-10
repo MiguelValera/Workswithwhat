@@ -14,7 +14,7 @@
     "certified": true,
     "transport": "wifi",
     "sources": ["tplink-us-product", "tplink-us-datasheet", "tplink-press-p125m"],
-    "note": "TP-Link calls it Matter-certified. We did not find a CSA listing that names the P125M model number."
+    "note": "TP-Link calls it Matter-certified and the US datasheet lists Matter among its certifications. We did not find a CSA listing that names the P125M model number."
   },
   "compatibility": {
     "apple_home": {
@@ -23,24 +23,24 @@
       "note": "TP-Link lists Apple Home. The plug has no HomeKit (HAP) mode, so this works through Matter and needs an Apple home hub."
     },
     "google_home": {
-      "status": "native",
-      "sources": ["tplink-us-product"],
-      "note": "TP-Link lists Google Assistant separately from Matter. It can also be added to Google Home over Matter."
+      "status": "matter",
+      "sources": ["tplink-us-product", "tapo-matter-faq"],
+      "note": "Added in the Google Home app by scanning the Matter code. Linking through Tapo Actions may also work, but we found no source that confirms it for this model."
     },
     "alexa": {
-      "status": "native",
-      "sources": ["tplink-us-product"],
-      "note": "TP-Link lists Alexa separately from Matter. It can also be added to Alexa over Matter."
+      "status": "matter",
+      "sources": ["tplink-us-product", "tapo-matter-faq", "tplink-faq-2780"],
+      "note": "TP-Link's Alexa guide says Matter-enabled Tapo devices connect to Alexa directly, not through the Tapo skill. Needs an Echo that works as a Matter controller."
     },
     "smartthings": {
       "status": "matter",
-      "sources": ["tplink-us-product"],
+      "sources": ["tplink-us-product", "tapo-matter-faq"],
       "note": "TP-Link lists Samsung SmartThings. We could not confirm a direct Tapo cloud integration, so we record it as Matter."
     },
     "home_assistant": {
-      "status": "matter",
-      "sources": ["ha-matter", "tplink-us-product"],
-      "note": "Works through the Home Assistant Matter integration. The TP-Link Smart Home integration also supports Tapo plugs, but we did not confirm that it lists this model."
+      "status": "native",
+      "sources": ["ha-tplink", "ha-matter"],
+      "note": "Home Assistant's TP-Link Smart Home integration lists the P125M among supported Tapo plugs. It can also be added through the Matter integration."
     }
   },
   "hubRequired": {
@@ -56,7 +56,7 @@
   "energyMonitoring": {
     "value": null,
     "sources": [],
-    "note": "The US product page and datasheet we saw don't mention energy monitoring. The Italian datasheet for the same model name does, so regional versions may differ."
+    "note": "The US product page and datasheet don't list energy monitoring, and TP-Link forum staff say the P125M lacks it. The Italian datasheet lists it, so regional versions may differ. No official US statement either way."
   },
   "maxLoadWatts": {
     "value": 1800,
@@ -80,7 +80,7 @@
     },
     {
       "id": "tplink-us-datasheet",
-      "url": "https://static.tp-link.com/upload/product-overview/2022/202212/20221216/Tapo%20P125M(US)1.0_Datasheet.pdf",
+      "url": "https://www.tp-link.com/us/document/40788/",
       "title": "Datasheet Model: Tapo P125M Mini Smart Wi-Fi Plug Matter-Certified Away Mode",
       "publisher": "TP-Link",
       "kind": "manufacturer",
@@ -103,6 +103,30 @@
       "accessed": "2026-10-10"
     },
     {
+      "id": "tapo-matter-faq",
+      "url": "https://www.tapo.com/us/faq/294/",
+      "title": "How to Set Up Matter Devices with Alexa, Google, Apple, and SmartThings",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "tplink-faq-2780",
+      "url": "https://www.tp-link.com/us/support/faq/2780/",
+      "title": "How to Connect Tapo and Kasa Devices to Amazon Alexa",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    },
+    {
       "id": "ha-matter",
       "url": "https://www.home-assistant.io/integrations/matter/",
       "title": "Matter - Home Assistant",
@@ -111,6 +135,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
   "updatedAt": "2026-10-10"
 }

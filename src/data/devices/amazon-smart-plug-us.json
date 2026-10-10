@@ -1,14 +1,14 @@
 {
   "category": "smart-plug",
   "brand": "Amazon",
-  "model": "Amazon Smart Plug (HD34BX)",
+  "model": "Amazon Smart Plug",
   "name": "Amazon Smart Plug",
   "regions": ["US"],
   "officialUrl": "https://us.amazon.com/Amazon-smart-plug-works-with-Alexa/dp/B089DR29T6",
   "radios": {
     "value": ["wifi"],
     "sources": ["amazon-smart-plug"],
-    "note": "2.4 GHz Wi-Fi only (802.11 b/g/n). Retailer listings mention Bluetooth 4.2, but Amazon's page does not, so it is left out."
+    "note": "2.4 GHz Wi-Fi only (802.11 b/g/n). Retailer listings and FCC filings suggest Bluetooth too, but Amazon's page does not mention it, so it is left out."
   },
   "matter": {
     "certified": null,
@@ -37,9 +37,9 @@
       "note": "Amazon says the plug does not support other voice assistants or smart hubs."
     },
     "home_assistant": {
-      "status": "no",
-      "sources": ["amazon-smart-plug"],
-      "note": "Amazon says the plug does not support other smart hubs. There is no official Home Assistant integration."
+      "status": "unknown",
+      "sources": [],
+      "note": "Amazon's general 'no other smart hubs' line doesn't name Home Assistant. We found no official integration; forum users only control it indirectly through Alexa routines."
     }
   },
   "hubRequired": {
@@ -86,6 +86,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
   "updatedAt": "2026-10-10"
 }

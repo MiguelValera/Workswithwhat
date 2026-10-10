@@ -34,13 +34,13 @@
     },
     "smartthings": {
       "status": "matter",
-      "sources": ["meross-mss115-blog"],
+      "sources": ["meross-mss115-blog", "meross-mss115-product"],
       "note": "Through Matter; needs a SmartThings hub."
     },
     "home_assistant": {
-      "status": "matter",
-      "sources": ["ha-matter", "meross-mss115-shop"],
-      "note": "Through the Home Assistant Matter integration. Meross does not name Home Assistant for this model."
+      "status": "unknown",
+      "sources": [],
+      "note": "Should pair through the Home Assistant Matter integration, but neither Meross nor Home Assistant names this model, and forum users report failed Matter pairing."
     }
   },
   "hubRequired": {
@@ -93,16 +93,9 @@
       "publisher": "Meross",
       "kind": "manufacturer",
       "accessed": "2026-10-10"
-    },
-    {
-      "id": "ha-matter",
-      "url": "https://www.home-assistant.io/integrations/matter/",
-      "title": "Matter - Home Assistant",
-      "publisher": "Home Assistant",
-      "kind": "ecosystem",
-      "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
   "updatedAt": "2026-10-10"
 }

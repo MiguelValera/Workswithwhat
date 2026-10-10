@@ -13,7 +13,7 @@
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "No source we found mentions Matter for the EP25. TP-Link's Matter Kasa plug is a different model (KP125M)."
+    "note": "No official source mentions Matter for the EP25. One user forum post calls hardware V2.6 a Matter device; TP-Link doesn't say so. TP-Link's Matter Kasa plug is the KP125M."
   },
   "compatibility": {
     "apple_home": {
@@ -33,18 +33,19 @@
     },
     "smartthings": {
       "status": "native",
-      "sources": ["tplink-ep25p4"],
-      "note": "TP-Link's EP25P4 page lists Samsung SmartThings."
+      "sources": ["kasa-ep25-product", "tplink-ep25p4", "tplink-faq-3822"],
+      "note": "Link the TP-Link account in the SmartThings app. TP-Link's SmartThings energy FAQ lists EP25 (V2.60), and the Kasa EP25 page lists SmartThings."
     },
     "home_assistant": {
       "status": "native",
       "sources": ["ha-tplink"],
-      "note": "Official TP-Link Smart Home integration, which covers Kasa plugs and talks to them locally. Newer devices may need TP-Link cloud credentials once to authenticate."
+      "note": "The official TP-Link Smart Home integration lists the EP25. It talks to Kasa plugs locally. Newer devices may need TP-Link cloud credentials once to authenticate."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["tplink-faq-949"]
+    "sources": ["kasa-ep25-product", "tplink-faq-1390"],
+    "note": "Connects straight to 2.4 GHz Wi-Fi; TP-Link says Kasa devices need no hub."
   },
   "localControl": {
     "value": true,
@@ -117,6 +118,14 @@
       "accessed": "2026-10-10"
     },
     {
+      "id": "tplink-faq-3822",
+      "url": "https://www.tp-link.com/us/support/faq/3822/",
+      "title": "How can I use energy monitoring of the TP-Link plug in SmartThings",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
       "id": "ha-tplink",
       "url": "https://www.home-assistant.io/integrations/tplink/",
       "title": "TP-Link Smart Home - Home Assistant",
@@ -125,6 +134,7 @@
       "accessed": "2026-10-10"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-10",
   "updatedAt": "2026-10-10"
 }
