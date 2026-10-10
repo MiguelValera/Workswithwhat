@@ -1,0 +1,44 @@
+import type { APIRoute } from 'astro';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, RADIO_LABELS, answerFor, getPublishedDevices } from '../lib/devices';
+
+const fact = (label: string, v: unknown, note?: string) =>
+  `- ${label}: ${v === null ? 'unconfirmed' : v === true ? 'yes' : v === false ? 'no' : String(v)}${note ? ` (${note})` : ''}`;
+
+// Every published device as Markdown, so an assistant can answer from one fetch.
+export const GET: APIRoute = async ({ site }) => {
+  const devices = await getPublishedDevices();
+  const out = [
+    '# Workswithwhat: smart plug compatibility (full text)',
+    '',
+    `Source: ${new URL('/', site).href} · Every claim below is backed by the listed sources. "Unconfirmed" means no official source either way.`,
+    '',
+  ];
+  for (const dev of devices) {
+    const d = dev.data;
+    out.push(
+      `## ${d.name}`,
+      '',
+      `URL: ${new URL(`/smart-plugs/${dev.id}/`, site).href}`,
+      `Brand: ${d.brand} · Model: ${d.model} · Regions: ${d.regions.join(', ')} · Verified: ${d.verifiedAt ?? 'n/a'}`,
+      '',
+      d.summary,
+      '',
+      '### Compatibility',
+      '',
+      `- Matter: ${d.matter.certified === null ? 'unconfirmed' : d.matter.certified ? `yes (${d.matter.transport})` : 'no'}`,
+      ...ECOSYSTEMS.map((e) => `- ${ECOSYSTEM_LABELS[e]}: ${answerFor(dev, e)}`),
+      '',
+      '### Specs',
+      '',
+      fact('Radios', d.radios.value?.map((r) => RADIO_LABELS[r]).join(', ') ?? null, d.radios.note),
+      fact('Hub required', d.hubRequired.value, d.hubRequired.note),
+      fact('Local control', d.localControl.value, d.localControl.note),
+      fact('Energy monitoring', d.energyMonitoring.value, d.energyMonitoring.note),
+      fact('Max load (W)', d.maxLoadWatts.value, d.maxLoadWatts.note),
+      '',
+    );
+    if (d.caveats.length) out.push('### Before you buy', '', ...d.caveats.map((c) => `- ${c}`), '');
+    out.push('### Sources', '', ...d.sources.map((s) => `- [${s.title}](${s.url}) (${s.publisher}, ${s.kind})`), '');
+  }
+  return new Response(out.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+};

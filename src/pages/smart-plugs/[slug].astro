@@ -7,7 +7,11 @@ import {
   ECOSYSTEMS,
   ECOSYSTEM_LABELS,
   RADIO_LABELS,
+  answerFor,
+  deviceTitle,
+  ecosystemSlug,
   formatDate,
+  listJoin,
   getPublishedDevices,
   worksWith,
   type Device,
@@ -27,9 +31,9 @@ const d = device.data;
 const src = d.sources;
 
 const works = ECOSYSTEMS.filter((e) => worksWith(device, e)).map((e) => ECOSYSTEM_LABELS[e]);
-const list = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
+const list = listJoin;
 
-const title = `Does the ${d.name} work with Apple Home, Google Home or Alexa?`;
+const title = deviceTitle(device);
 const description = works.length
   ? `${d.name} (${d.model}) works with ${list(works)}. Connection type, hub needs and specs, each linked to its source.`
   : `${d.name} (${d.model}) compatibility with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, with sources.`;
@@ -47,13 +51,29 @@ const related = devices
   .filter((o) => o.id !== device.id && o.data.regions.some((r) => d.regions.includes(r)))
   .slice(0, 3);
 
+const faq = ECOSYSTEMS.map((e) => ({
+  eco: e,
+  q: `Does the ${d.name} work with ${ECOSYSTEM_LABELS[e]}?`,
+  a: answerFor(device, e),
+}));
+
 const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
   {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: title,
     description,
     dateModified: d.updatedAt,
+    ...(d.verifiedAt && { lastReviewed: d.verifiedAt }),
     mainEntity: {
       '@type': 'Product',
       name: d.name,
@@ -158,6 +178,23 @@ const jsonLd = [
         </>
       )
     }
+
+    <h2>Quick answers</h2>
+    <dl class="faq">
+      {
+        faq.map((f) => (
+          <div>
+            <dt>{f.q}</dt>
+            <dd>
+              {f.a}{' '}
+              {worksWith(device, f.eco) && (
+                <a href={`/works-with/${ecosystemSlug(f.eco)}/`}>More plugs for {ECOSYSTEM_LABELS[f.eco]}</a>
+              )}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
 
     <h2>Sources</h2>
     <ol class="sources">

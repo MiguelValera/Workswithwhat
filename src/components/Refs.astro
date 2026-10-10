@@ -3,8 +3,10 @@
 interface Props {
   ids: string[];
   all: { id: string }[];
+  /** page holding the source list, when it isn't the current page */
+  base?: string;
 }
-const { ids, all } = Astro.props;
+const { ids, all, base = '' } = Astro.props;
 const n = (id: string) => all.findIndex((s) => s.id === id) + 1;
 ---
 
@@ -14,7 +16,7 @@ const n = (id: string) => all.findIndex((s) => s.id === id) + 1;
       {ids.map((id, i) => (
         <>
           {i > 0 && ','}
-          <a href={`#src-${id}`} aria-label={`Source ${n(id)}`}>[{n(id)}]</a>
+          <a href={`${base}#src-${id}`} aria-label={`Source ${n(id)}`}>[{n(id)}]</a>
         </>
       ))}
     </sup>

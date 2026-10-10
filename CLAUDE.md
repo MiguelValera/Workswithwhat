@@ -61,6 +61,13 @@ After any agent run: `npm run validate` must pass.
 - Every page needs a unique `<title>` and meta description, a canonical URL, OG tags and breadcrumbs (with BreadcrumbList JSON-LD). Sitemap via `@astrojs/sitemap`.
 - Keep pages light: no client JS unless needed, system fonts, no trackers.
 
+### AI search and agents (GEO)
+
+- `/llms.txt` (site map for assistants), `/llms-full.txt` (every device as Markdown) and `/api/smart-plugs.json` (published records plus a ready-made answer per ecosystem) are generated from the same data. Drafts never appear in them.
+- Every device page has a visible "Quick answers" block ("Does X work with Y?") mirrored in FAQPage JSON-LD. The wording comes from `answerFor()` in `src/lib/devices.ts`, so the page, the FAQ, llms.txt and the API always agree.
+- `robots.txt` explicitly allows AI search and assistant crawlers. Don't block them at Cloudflare (no Bot Fight Mode, no "Block AI bots"): the live site check warns if they get blocked.
+- After each deploy, CI submits the sitemap URLs to IndexNow (Bing, Yandex…).
+
 ## Roadmap
 
 - **Phase 1 (current):** Astro setup, schema and validation, agents, first 10 smart plugs, GitHub Pages deploy.

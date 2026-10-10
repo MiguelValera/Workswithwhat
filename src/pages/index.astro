@@ -13,6 +13,16 @@ const jsonLd = [
     name: 'Workswithwhat',
     url: Astro.site!.href,
     description: 'Smart home compatibility, checked against official sources.',
+    publisher: { '@id': `${Astro.site!.href}#org` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${Astro.site!.href}#org`,
+    name: 'Workswithwhat',
+    url: Astro.site!.href,
+    logo: new URL('/favicon.svg', Astro.site).href,
+    sameAs: ['https://github.com/MiguelValera/Workswithwhat'],
   },
 ];
 ---

@@ -63,7 +63,22 @@ check /methodology/ 200
 check /sitemap-index.xml 200
 check /robots.txt 200
 check /.well-known/security.txt 200
+check /llms.txt 200
+check /llms-full.txt 200
+check /api/smart-plugs.json 200
+check /og.png 200
 check /this-page-does-not-exist/ 404
+
+echo "== AI and search crawlers"
+robots=$(curl -sS --max-time 20 "$BASE/robots.txt")
+echo "$robots" | grep -q 'llms.txt' && ok "robots.txt is ours" || warn "robots.txt differs from the repo (Cloudflare managed robots.txt?)"
+echo "$robots" | grep -iE '^(user-agent|disallow):' | grep -iB1 '^disallow: /$' | sed 's/^/          /'
+for ua in "OAI-SearchBot" "ClaudeBot" "PerplexityBot" "Googlebot" "bingbot"; do
+  code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 -A "Mozilla/5.0 (compatible; $ua)" "$BASE/smart-plugs/")
+  [ "$code" = 200 ] && ok "$ua user agent -> $code" || warn "$ua user agent -> $code (blocked at the edge?)"
+done
+count=$(curl -sS --max-time 20 "$BASE/api/smart-plugs.json" | jq '.count' 2>/dev/null)
+[ -n "$count" ] && [ "$count" -gt 0 ] && ok "JSON API lists $count devices" || fail "JSON API unreadable or empty"
 
 echo
 if [ "$fails" -gt 0 ]; then echo "$fails check(s) failed"; exit 1; fi
