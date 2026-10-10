@@ -9,6 +9,10 @@ fails=0
 ok()   { echo "  OK    $*"; }
 warn() { echo "  WARN  $*"; }
 fail() { echo "  FAIL  $*"; fails=$((fails + 1)); }
+# Explain a non-2xx answer: Cloudflare marks bot challenges with cf-mitigated.
+why() {
+  curl -sSI --max-time 20 "$1" | tr -d '\r' | grep -iE '^(HTTP/|server:|cf-mitigated:|cf-ray:)' | sed 's/^/          /'
+}
 
 echo "== DNS"
 a=$(dig +short A "$DOMAIN" @1.1.1.1 | sort | tr '\n' ' ')
@@ -49,7 +53,7 @@ curl -sS --max-time 20 "$BASE/" | grep -q 'http-equiv="Content-Security-Policy"'
 echo "== Pages"
 check() {
   code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 "$BASE$1")
-  [ "$code" = "$2" ] && ok "$1 -> $code" || fail "$1 -> $code (expected $2)"
+  if [ "$code" = "$2" ]; then ok "$1 -> $code"; else fail "$1 -> $code (expected $2)"; why "$BASE$1"; fi
 }
 check / 200
 check /smart-plugs/ 200
