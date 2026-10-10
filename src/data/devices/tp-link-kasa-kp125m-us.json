@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "TP-Link",
   "model": "Kasa KP125M",
-  "name": "Kasa Smart Plug Slim with Energy Monitoring KP125M",
+  "name": "Kasa KP125M",
   "regions": [
     "US"
   ],
@@ -101,12 +101,14 @@
     ],
     "note": "15 A / 1800 W for general use and resistive loads at 100–120 V; 1/6 HP motor."
   },
-  "summary": "The Kasa KP125M is a slim US Wi-Fi plug with energy monitoring that reaches Apple Home, Google Home, Alexa and SmartThings through Matter. TP-Link says Matter Kasa devices join Alexa directly rather than through the Kasa skill. Home Assistant can use its TP-Link integration or Matter. It runs on 2.4 GHz Wi-Fi, is rated 15 A / 1800 W, and keeps LAN control if the internet drops.",
+  "summary": "Yes to Apple Home, Google Home, Alexa and SmartThings: the Kasa KP125M joins all four over Matter, and Home Assistant can add it through its TP-Link integration or Matter. It's a slim 2.4 GHz Wi-Fi plug for US outlets, rated 15 A / 1800 W at 100–120 V, set up in the Kasa app with no hub, and it keeps LAN control if your internet drops. The Kasa or Tapo app shows energy use. Firmware 1.4.1 sends those readings over Matter to SmartThings and Home Assistant, but Apple Home doesn't display them.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Matter energy readings need firmware 1.4.1 or later and only show in some apps (TP-Link verifies SmartThings and Home Assistant; not Apple Home). The Kasa app always shows them.",
-    "If you set it up in the Kasa or Tapo app first, you have 15 minutes from power-on to also add it to a Matter app.",
-    "Alexa needs an Echo that works as a Matter controller; the Kasa skill doesn't cover Matter Kasa devices."
+    "We found no HomeKit (HAP) mode, so Apple Home works only through Matter.",
+    "Apple Home doesn't show energy data; Matter energy readings need firmware 1.4.1 or later and are verified only in SmartThings and Home Assistant.",
+    "Alexa needs an Echo that works as a Matter controller; Matter Kasa devices don't use the Kasa skill.",
+    "Home Assistant's TP-Link integration needs your TP-Link account credentials for newer devices.",
+    "Motor loads are limited to 1/6 HP."
   ],
   "sources": [
     {

@@ -89,12 +89,13 @@
     ],
     "note": "120 V, 15 A, 1800 W. The Thai version (WSP100-TH) has a different rating."
   },
-  "summary": "The Wemo WSP100 is a HomeKit-only plug that talks Bluetooth and Thread. It never used the Wemo app or cloud, so Belkin lists it among the Thread products not affected by the Wemo shutdown on January 31, 2026, and it keeps working in Apple Home. Belkin says it doesn't work with Alexa, Google Home or Android. It is rated 15 A / 1800 W and has no power reporting.",
+  "summary": "Built for Apple HomeKit and nothing else, the Wemo WSP100 joins Apple Home directly over Bluetooth or Thread; Belkin says it doesn't work with Google Home or Alexa. Home Assistant can pair it through its official HomeKit Device integration instead. Because it never used the Wemo app or cloud, Belkin says it keeps working through HomeKit after the Wemo cloud shutdown. The US plug is rated 120 V / 15 A / 1800 W and has no power reporting.",
   "caveats": [
-    "Belkin announced on July 10, 2025 that Wemo cloud services, the Wemo app and support would end on January 31, 2026. Belkin says Thread Wemo devices like this one keep working through HomeKit.",
-    "Belkin's end-of-support page lists the WSP100 both as affected and as not affected, and says new HomeKit setup of Wemo devices isn't possible after the cutoff. It's unclear whether that applies to this plug.",
-    "No Alexa, Google Home or Android support.",
-    "Belkin's pages disagree on whether you need an Apple home hub to set it up; you do need one with Thread (HomePod mini or Apple TV 4K 2021 or later) for Thread and remote control.",
+    "No Google Home or Alexa support, per Belkin's FAQ.",
+    "Thread and remote control need an Apple home hub with Thread (Apple TV 4K 2021 or HomePod mini).",
+    "Belkin's pages disagree on whether you need an Apple home hub just to set it up.",
+    "A HomeKit accessory pairs with only one controller at a time, so Apple Home and Home Assistant can't both hold it.",
+    "Belkin never mentions Matter for this plug.",
     "No energy monitoring."
   ],
   "sources": [

@@ -98,12 +98,12 @@
     ],
     "note": "Hue support gives 2300 W for mainland Europe; Great Britain and Ireland get 3250 W, a different model."
   },
-  "summary": "The EU Philips Hue Smart Plug talks Bluetooth to the Hue app for basic on/off, with no Wi-Fi. Apple Home, Google Home, Alexa, SmartThings and Home Assistant all need a Hue Bridge; the plug joins it over Zigbee, and the Bridge also exposes it to Matter platforms. It fits 220–240 V mainland European sockets and is rated 2300 W. Hue doesn't list energy metering.",
+  "summary": "With a Hue Bridge, the EU Philips Hue Smart Plug works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant. Without one, you're limited to Bluetooth on/off from the Hue app. The plug joins the Bridge over Zigbee, and the Bridge also exposes it to Matter platforms; the plug has no Wi-Fi and no Matter certification of its own. It's rated 2300 W for mainland Europe, and Hue lists no energy metering.",
   "caveats": [
     "Voice assistants, ecosystems and remote access all need a Hue Bridge.",
     "Bluetooth-only setups can't use Matter; the Bridge is what exposes the plug to Matter.",
-    "Rated 2300 W in mainland Europe, below the 3680 W of many 16 A Schuko plugs.",
-    "Hue also lists EU smart plugs under EANs 8719514342385 and 8720169258341 ('EU type F'); this record was checked against 8719514342309."
+    "Rated 2300 W in mainland Europe; Great Britain and Ireland get a different model rated 3250 W.",
+    "Hue lists no energy metering, so don't count on power readings."
   ],
   "sources": [
     {

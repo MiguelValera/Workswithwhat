@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Govee",
   "model": "H5086",
-  "name": "Govee Smart Plug Pro with Energy Monitoring (H5086)",
+  "name": "Govee Smart Plug Pro (H5086)",
   "regions": [
     "US"
   ],
@@ -82,12 +82,13 @@
     ],
     "note": "15 A at 120 V, 1800 W maximum. Govee says a surge protector may be plugged in if the total stays within that rating."
   },
-  "summary": "The Govee H5086 is a 2.4 GHz Wi-Fi and Bluetooth plug that measures energy use in the Govee Home app. Govee lists Alexa and Google Assistant, both through its cloud. Apple Home, SmartThings and Matter aren't listed for this model. It is rated 15 A / 1800 W.",
+  "summary": "Alexa and Google Assistant are the two platforms Govee lists for the H5086, and both go through Govee's cloud. Apple Home, SmartThings and Matter aren't listed for this model. It's a 2.4 GHz Wi-Fi and Bluetooth plug rated 15 A / 1800 W at 120 V, controlled from the Govee Home app with no hub, and it tracks energy use there. Govee's Matter plug is the separate Smart Plug Pro B5085.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "No confirmed Apple Home or Matter support for the H5086; Govee's Matter plug is a different listing.",
-    "No official Home Assistant integration; community add-ons report missing energy readings.",
-    "Govee's own listing shows the model as both H5086 and B5086; they appear to be the same plug."
+    "No confirmed Apple Home or Matter support; Govee gives Matter only to the separate Smart Plug Pro (B5085).",
+    "No official Home Assistant integration; community custom integrations have mixed results.",
+    "Govee's documented integrations are cloud based, and it makes no statement about local control.",
+    "Govee says a surge protector can be plugged in only if the total load stays within 1800 W."
   ],
   "sources": [
     {

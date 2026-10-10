@@ -101,12 +101,11 @@
     ],
     "note": "13 A / 3000 W, resistive loads only."
   },
-  "summary": "The Shelly Plug M Gen3 is a Wi-Fi and Bluetooth plug with Matter, so it can join Apple Home, Google Home, Alexa and SmartThings through Matter. Home Assistant has an official local Shelly integration. It is rated 13 A / 3000 W for resistive loads and measures power, voltage and current. No hub is needed.",
+  "summary": "Home Assistant controls the Shelly Plug M Gen3 locally through its official Shelly integration, while Apple Home, Google Home, Alexa and SmartThings reach it over Matter. It's a Wi-Fi plug with Bluetooth 4.2 that runs standalone with no hub; the Shelly cloud and app are optional, and there's a built-in web interface. It measures power, voltage and current, and its 13 A / 3000 W rating covers resistive loads only. The EU model number is S3PL-30110EU.",
   "caveats": [
-    "The 3000 W rating applies to resistive loads only.",
-    "Shelly scripting is not available while Matter is enabled.",
+    "The 13 A / 3000 W rating covers resistive loads only.",
     "Apple Home works only through Matter and needs an Apple home hub for remote control and automations.",
-    "Shelly's spec table marks Alexa and Google 'Yes' but doesn't say whether that covers its cloud skill; we only confirm the Matter route."
+    "Shelly's spec table marks Alexa and Google 'Yes' without saying whether that means its cloud integration; we only confirm Matter for those two and for SmartThings."
   ],
   "sources": [
     {

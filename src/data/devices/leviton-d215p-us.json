@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Leviton",
   "model": "D215P",
-  "name": "Leviton Decora Smart Wi-Fi Mini Plug-In Switch (D215P)",
+  "name": "Leviton Decora Smart Mini Plug (D215P)",
   "regions": [
     "US"
   ],
@@ -104,12 +104,13 @@
     ],
     "note": "Leviton rates it 15 A general use at 120 V, 1500 W incandescent/halogen, 5 A LED/CFL and 3/4 HP motor. It gives no single wattage figure for general use."
   },
-  "summary": "The Leviton D215P is a 2.4 GHz Wi-Fi mini plug-in switch that needs no hub. Through the My Leviton app it works with Alexa, Google Assistant and SmartThings, and it can join Apple HomeKit directly. A firmware update adds Matter, which also lets Home Assistant control it locally. Leviton rates it 15 A for general use and 1500 W for incandescent lights; energy monitoring isn't listed.",
+  "summary": "Leviton's D215P covers all five: Apple Home through built-in HomeKit, Alexa, Google Home and SmartThings through My Leviton, and Home Assistant through Matter after Leviton's Matter firmware update. It connects straight to 2.4 GHz Wi-Fi with no hub. The update lets Matter controllers reach it on your local network, but it removes the HomeKit pairing, so you re-add it to Apple Home with the Matter code and an Apple home hub. It's rated 15 A general use at 120 V and 1500 W for incandescent; Leviton doesn't mention energy monitoring.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Matter needs a firmware update from the My Leviton app, and the update removes the existing HomeKit pairing, so you have to re-add it to Apple Home.",
-    "Load limits depend on load type: 15 A general use, 1500 W incandescent, 5 A LED/CFL.",
-    "Indoor use only."
+    "The Matter update removes the HomeKit link; re-adding it to Apple Home with the Matter code needs an Apple home hub.",
+    "Home Assistant needs the Matter update; there's no official Leviton integration.",
+    "Limits depend on the load: 15 A general use, 1500 W incandescent/halogen, 5 A LED/CFL, 3/4 HP motor.",
+    "Leviton's product page and spec sheet don't mention energy monitoring."
   ],
   "sources": [
     {

@@ -103,12 +103,12 @@
     ],
     "note": "Eve's technical specs give max. 11 A / 2500 W for the European model; the relay cuts out above 11 A. The 16 A / 3680 W figure belongs to Eve Energy Outdoor."
   },
-  "summary": "Eve Energy (EU) works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, all through Matter over Thread. You normally need a Thread border router that is also a Matter controller, such as a HomePod mini, Apple TV 4K with Thread, a Nest hub or a Thread-capable Echo. This Schuko version (model 20EBO8301, product no. 10EBO8351) fits Type E and F sockets, is rated 11 A / 2500 W, and has a built-in power meter.",
+  "summary": "All five big platforms (Apple Home, Google Home, Alexa, SmartThings and Home Assistant) can control the EU Eve Energy, and every one of them does it through Matter over Thread. Plan on a Thread border router: an Apple home hub, a Google or SmartThings hub with Thread, or an Echo that is also a Matter controller. On iOS 18, an iPhone 15 Pro or later can switch it locally with no hub, minus remote access and automations. Model 20EBO8301 (product no. 10EBO8351) has a built-in power meter, is rated 11 A / 2500 W, and needs no Eve account or cloud.",
   "caveats": [
-    "Needs a Thread border router that is also a Matter controller for most uses.",
-    "With iOS 18 and an iPhone 15 Pro or later you can control it locally without a hub, but remote access and automations still need an Apple home hub.",
-    "Rated 11 A / 2500 W, lower than many 16 A Schuko plugs; don't use it for heaters or other high loads above that.",
-    "Matter energy readings need Eve's 2025 firmware; Eve lists Apple Home, Google Home, Home Assistant and SmartThings for it, not Alexa."
+    "Google Home, Alexa, SmartThings and Home Assistant all need a Thread border router; for Alexa, the Echo must be both a Matter controller and a border router.",
+    "Hub-free control from an iPhone 15 Pro or later on iOS 18 is local only; remote access and automations still need an Apple home hub.",
+    "Rated 11 A / 2500 W, and the relay cuts out above 11 A; Eve's 16 A / 3680 W figure belongs to Eve Energy Outdoor.",
+    "Standard Matter energy readings (power, voltage, current, total use) need Eve's April 2025 firmware or later."
   ],
   "sources": [
     {
