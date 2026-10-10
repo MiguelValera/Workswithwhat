@@ -18,8 +18,8 @@ export const ecosystemFromSlug = (s: string) => ECOSYSTEMS.find((e) => ecosystem
 
 export const STATUS_TEXT = {
   native: 'Yes',
-  matter: 'Yes, via Matter',
-  hub: 'With a hub',
+  matter: 'Via Matter',
+  hub: 'Via hub',
   no: 'No',
   unknown: 'Unconfirmed',
 } as const;

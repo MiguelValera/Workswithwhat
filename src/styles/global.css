@@ -72,7 +72,7 @@ table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
 th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
 tr:last-child td, tr:last-child th { border-bottom: 0; }
 thead th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); white-space: nowrap; }
-td.name { min-width: 180px; }
+.name { min-width: 210px; }
 .note { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
 
 .badge { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: 0.82rem; font-weight: 600; white-space: nowrap; }

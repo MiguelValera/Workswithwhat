@@ -12,7 +12,7 @@ const radios = (d.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(' + ');
 <li class="card">
   <h3><a href={devicePath(device)}>{d.name}</a></h3>
   <div class="muted">
-    {d.brand} {d.model} · {d.regions.join('/')}{radios && ` · ${radios}`}{d.matter.certified && ' · Matter'}
+    {d.model} · {d.regions.join('/')}{radios && ` · ${radios}`}{d.matter.certified && ' · Matter'}
   </div>
   <div class="eco">
     {works.map((e) => <span class="badge s-native">{ECOSYSTEM_LABELS[e]}</span>)}

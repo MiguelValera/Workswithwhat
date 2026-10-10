@@ -35,7 +35,7 @@ const { devices } = Astro.props;
               </td>
               {ECOSYSTEMS.map((e) => (
                 <td>
-                  <Status status={d.compatibility[e].status} via={d.compatibility[e].via} />
+                  <Status status={d.compatibility[e].status} via={d.compatibility[e].via} compact />
                 </td>
               ))}
             </tr>
