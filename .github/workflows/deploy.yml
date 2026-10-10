@@ -44,3 +44,20 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Tell IndexNow engines (Bing, Yandex, …) which URLs exist after each deploy.
+  # The key is public by design: it is also served at /b065f34bf6c2a7a6c90cf76a5ada5c02.txt.
+  indexnow:
+    needs: deploy
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit sitemap URLs
+        env:
+          KEY: b065f34bf6c2a7a6c90cf76a5ada5c02
+        run: |
+          urls=$(curl -sSf https://workswithwhat.com/sitemap-0.xml | grep -o '<loc>[^<]*' | sed 's/<loc>//' | jq -R . | jq -sc .)
+          echo "Submitting $(echo "$urls" | jq length) URLs"
+          curl -sS -o /dev/null -w 'IndexNow HTTP %{http_code}\n' -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            -d "{\"host\":\"workswithwhat.com\",\"key\":\"$KEY\",\"keyLocation\":\"https://workswithwhat.com/$KEY.txt\",\"urlList\":$urls}"

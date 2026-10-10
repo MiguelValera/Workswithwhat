@@ -16,7 +16,8 @@ interface Props {
 const { title, description, crumbs = [], jsonLd = [], ogType = 'website' } = Astro.props;
 const site = Astro.site!;
 const canonical = new URL(Astro.url.pathname, site).href;
-const fullTitle = Astro.url.pathname === '/' ? title : `${title} | Workswithwhat`;
+// keep titles short enough for search results; long question titles drop the brand suffix
+const fullTitle = Astro.url.pathname === '/' || title.length > 50 ? title : `${title} | Workswithwhat`;
 
 const structured = [...jsonLd];
 if (crumbs.length) {
@@ -54,7 +55,13 @@ if (crumbs.length) {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={new URL('/og.png', site).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Workswithwhat: smart home compatibility, checked against official sources" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Site summary for AI assistants" />
+    <link rel="alternate" type="application/json" href="/api/smart-plugs.json" title="Smart plug data (JSON)" />
     {structured.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj).replace(/</g, '\\u003c')} />)}
   </head>
   <body>
