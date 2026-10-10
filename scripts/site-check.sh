@@ -46,6 +46,8 @@ for h in x-content-type-options x-frame-options referrer-policy permissions-poli
   v=$(echo "$headers" | grep -i "^$h:" | head -1 | tr -d '\r')
   [ -n "$v" ] && ok "$v" || fail "missing header $h"
 done
+cookies=$(echo "$headers" | grep -i '^set-cookie:' | cut -d= -f1 | tr -d '\r' | tr '\n' ' ')
+[ -z "$cookies" ] && ok "no cookies set (privacy policy says none)" || warn "cookies set: $cookies (check the privacy policy still matches)"
 hsts=$(echo "$headers" | grep -i '^strict-transport-security:' | tr -d '\r')
 [ -n "$hsts" ] && ok "$hsts" || warn "no HSTS header yet"
 curl -sS --max-time 20 "$BASE/" | grep -q 'http-equiv="Content-Security-Policy"' && ok "CSP meta tag present" || fail "CSP meta tag missing"

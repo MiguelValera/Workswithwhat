@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import { CONTACT_URL, LEGAL_UPDATED, OPERATOR } from '../site.config';
+import { formatDate } from '../lib/devices';
+
+const details = [
+  ['Operator', OPERATOR.name],
+  ['Tax ID', OPERATOR.taxId],
+  ['Address', OPERATOR.address],
+  ['Email', OPERATOR.email],
+].filter(([, v]) => v);
+---
+
+<Base
+  title="Legal notice"
+  description="Who runs Workswithwhat, how to contact us, and the terms for using the site and its compatibility data."
+  crumbs={[{ name: 'Legal notice', path: '/legal/' }]}
+>
+  <h1>Legal notice</h1>
+  <p class="muted">Last updated <time datetime={LEGAL_UPDATED}>{formatDate(LEGAL_UPDATED)}</time></p>
+
+  <h2>Who runs this site</h2>
+  {
+    details.length > 0 && (
+      <dl class="facts">
+        {details.map(([k, v]) => (
+          <div>
+            <dt>{k}</dt>
+            <dd>{v}</dd>
+          </div>
+        ))}
+      </dl>
+    )
+  }
+  <p>
+    Workswithwhat (workswithwhat.com) is an independent reference site about smart-home device compatibility.
+    For questions, corrections or legal requests, <a href={CONTACT_URL}>contact us through the project's issue tracker</a>{OPERATOR.email && <> or by email at <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a></>}.
+  </p>
+
+  <h2>Information only, no warranty</h2>
+  <p>
+    Compatibility depends on hardware revision, region, firmware and the ecosystem's own software, and all of these
+    change. We check every claim against the sources we link and show when each device was last verified, but we
+    can't guarantee the information is complete, current or free of errors. Before buying, confirm with the
+    manufacturer for your exact model and region. We are not liable for decisions or losses based on this site.
+  </p>
+
+  <h2>Independence and trademarks</h2>
+  <p>
+    We are not affiliated with, endorsed by or paid by any manufacturer or platform mentioned. There are no
+    sponsored listings and no affiliate links. Product names, brands and logos belong to their owners and are used
+    only to identify the products.
+  </p>
+
+  <h2>Links to other sites</h2>
+  <p>
+    We link to manufacturer, certification and platform pages as sources. We don't control those sites and aren't
+    responsible for their content or privacy practices.
+  </p>
+
+  <h2>Using our content</h2>
+  <p>
+    The text and compilation of data on this site are protected by copyright. You're welcome to quote individual
+    answers, and assistants and search engines may use them, as long as you credit Workswithwhat and link to the page
+    the answer comes from. For any other reuse, such as copying the dataset in bulk, ask us first.
+  </p>
+
+  <h2>Privacy</h2>
+  <p>We don't use cookies or trackers. See our <a href="/privacy/">privacy and cookies policy</a>.</p>
+</Base>
