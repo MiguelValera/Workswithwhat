@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Eve",
   "model": "Eve Energy 20EBU4101 (Matter, product no. 10EBU4151)",
-  "name": "Eve Energy (Matter) Smart Plug & Power Meter",
+  "name": "Eve Energy (Matter, US)",
   "regions": ["US", "CA"],
   "officialUrl": "https://www.evehome.com/en-us/eve-energy",
   "radios": {
@@ -63,11 +63,11 @@
     "sources": ["eve-energy-us"],
     "note": "120 V, 60 Hz, max. 15 A / 1,800 W (U.S. & Canada)."
   },
-  "summary": "Eve Energy is a smart plug with a built-in power meter that connects over Thread and is controlled through Matter. The US and Canada version (model 20EBU4101) is rated 15 A / 1,800 W. Eve lists Apple Home, Google Home, Alexa, SmartThings and Home Assistant as supported, and it works locally with no Eve account or cloud.",
+  "summary": "Eve Energy works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, all through Matter over Thread. The catch is the Thread part: you need a Thread border router that is also a Matter controller, such as a HomePod mini, an Apple TV 4K with Thread, a Nest hub or a Thread-capable Echo. This US and Canada version (product no. 10EBU4151) is rated 15 A / 1,800 W and has a built-in power meter. Control stays on your local network, with no Eve account or cloud.",
   "caveats": [
     "Needs a Thread border router that is also a Matter controller, such as a HomePod mini, Apple TV 4K with Thread, a Nest hub or a Thread-capable Echo.",
-    "Older Eve Energy US units share model number 20EBU4101; the Matter version is product number 10EBU4151, so check the box before buying used.",
-    "Eve does not list Alexa among the controllers that show Matter energy readings."
+    "Eve's iOS 18 hub-free control list doesn't include the US model, so Apple Home still needs a home hub.",
+    "Matter energy readings arrive with a firmware update, and Eve doesn't list Alexa among the controllers that show them."
   ],
   "sources": [
     {

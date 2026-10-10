@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Aqara",
   "model": "SP-EUC01",
-  "name": "Aqara Smart Plug (EU)",
+  "name": "Aqara SP-EUC01 (EU)",
   "regions": ["EU"],
   "officialUrl": "https://www.aqara.com/en/product/smart-plug-eu/",
   "radios": {
@@ -65,11 +65,12 @@
     "sources": ["aqara-smart-plug-eu-specs", "aqara-smart-plug-eu-faq"],
     "note": "250 V AC, 10 A, max 2300 W. 16 A appliances are not supported."
   },
-  "summary": "The Aqara Smart Plug (EU, SP-EUC01) is a Zigbee 3.0 plug rated 10 A / 2300 W, with power and energy metering. It needs an Aqara hub, which links it to Apple Home, Google Home and Alexa. Aqara's security update support for this model was scheduled to end on 30 June 2026.",
+  "summary": "You'll need an Aqara hub before this plug does anything useful. The Aqara SP-EUC01 is a Zigbee 3.0 plug that can't join Wi-Fi by itself; once paired to an Aqara hub, Aqara lists it as working with Apple Home (HomeKit), Google Home and Alexa. It's rated 10 A / 2300 W and reports power and kWh in the Aqara Home app. If your internet drops, Aqara says local control and links with other devices on the hub keep working. Aqara's security update support for this model ended on 30 June 2026.",
   "caveats": [
-    "Requires an Aqara Zigbee hub; it does not connect to Wi-Fi.",
-    "Rated 10 A / 2300 W, so not for 16 A appliances such as some heaters.",
-    "Aqara's Product Security Support Policy lists end of security update support for SP-EUC01 as 2026-06-30."
+    "Needs an Aqara Zigbee hub; it cannot connect to Wi-Fi directly.",
+    "Rated 10 A / 2300 W, so it isn't meant for 16 A appliances.",
+    "Aqara's Product Security Support Policy lists the end of security updates for SP-EUC01 as 2026-06-30, a date that has already passed.",
+    "Home Assistant and SmartThings aren't officially documented for this model; Zigbee2MQTT supports it, but neither Aqara nor Home Assistant lists it."
   ],
   "sources": [
     {

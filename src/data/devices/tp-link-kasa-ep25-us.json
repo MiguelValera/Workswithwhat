@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "TP-Link",
   "model": "Kasa EP25",
-  "name": "Kasa Smart Wi-Fi Plug Slim with Energy Monitoring (EP25)",
+  "name": "Kasa EP25",
   "regions": ["US"],
   "officialUrl": "https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-plug-slim-energy-monitoring-ep25",
   "radios": {
@@ -62,11 +62,12 @@
     "sources": ["tplink-ep25-datasheet"],
     "note": "15 A, 1.8 kW at 120 V; 1/6 HP motor."
   },
-  "summary": "The Kasa EP25 is a compact US Wi-Fi smart plug from TP-Link with energy monitoring and built-in Apple HomeKit. It was launched as the Smart Plug Mini and is now sold as the Smart Wi-Fi Plug Slim, often in EP25P2/EP25P4 packs. It is rated 15 A / 1800 W and works with Alexa, Google Home and SmartThings through the Kasa account.",
+  "summary": "HomeKit is built into the Kasa EP25, so it joins Apple Home directly with no hub. Alexa, Google Home and SmartThings connect through your Kasa account, and Home Assistant's official TP-Link integration controls it locally. It's a US 2.4 GHz Wi-Fi plug rated 15 A / 1800 W with energy monitoring, but you'll see power data in the Kasa app, not in Apple Home. It isn't a Matter plug; TP-Link's Matter Kasa plug is the KP125M.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Energy data appears only in the Kasa app, not in Apple Home.",
-    "Home Assistant may need TP-Link cloud credentials and the Third-Party Compatibility setting enabled in the Kasa app."
+    "Energy data doesn't show in Apple Home; use the Kasa app (TP-Link also lists EP25 hardware V2.60 for energy data in SmartThings).",
+    "Home Assistant may need your TP-Link cloud credentials once to authenticate newer units.",
+    "No official Matter support; TP-Link's Matter Kasa plug is the KP125M."
   ],
   "sources": [
     {

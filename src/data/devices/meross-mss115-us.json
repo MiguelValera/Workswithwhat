@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Meross",
   "model": "MSS115",
-  "name": "Meross Matter Smart Wi-Fi Plug Mini (MSS115)",
+  "name": "Meross MSS115",
   "regions": ["US", "CA"],
   "officialUrl": "https://shop.meross.com/products/matter-smart-plug-mss115-us",
   "radios": {
@@ -63,11 +63,13 @@
     "sources": [],
     "note": "We found no official MSS115 load rating. The 15 A / 1800 W figure Meross gives is for other plug models."
   },
-  "summary": "The Meross MSS115 is a compact US/Canada Wi-Fi smart plug that works through Matter. Meross lists Apple Home, Google Home, Alexa and SmartThings, and it can join several of them at once. It runs on 2.4 GHz Wi-Fi and Meross says it works locally without the cloud.",
+  "summary": "Everything about the Meross MSS115 runs through Matter over Wi-Fi. Meross lists Apple Home, Google Home, Alexa and SmartThings, and each one needs its own Matter controller, such as an Apple home hub or a SmartThings hub. It's a compact US/Canada plug on 2.4 GHz Wi-Fi, and Meross says it keeps working on your LAN during internet outages. Meross doesn't publish a load rating or mention a power meter for this model; its metering Matter plug is the MSS315.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Each ecosystem needs its own Matter controller, such as a HomePod, Apple TV, Nest hub, Echo or SmartThings hub.",
-    "Matter setup needs iOS 16.1 or later, or Android 8.1 or later."
+    "Each ecosystem needs its own Matter controller, such as an Apple home hub, a Google Matter controller, an Echo or a SmartThings hub.",
+    "Home Assistant isn't confirmed: neither Meross nor Home Assistant names this model, and forum users report failed Matter pairing.",
+    "Meross publishes no load rating for the MSS115, so check before plugging in a high-draw appliance.",
+    "No energy monitoring is mentioned; if you want power data, Meross's metering Matter plug is the MSS315."
   ],
   "sources": [
     {

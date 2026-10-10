@@ -62,11 +62,13 @@
     "sources": ["sonoff-s31-help", "sonoff-s31-product"],
     "note": "15 A at 120 V AC."
   },
-  "summary": "The SONOFF S31 is a 2.4 GHz Wi-Fi plug for US outlets, rated 15 A / 1800 W, with real-time power, voltage and current monitoring. It is set up in the eWeLink app and links to Alexa, Google Home and SmartThings through the cloud. The cheaper S31 Lite looks similar but has no energy monitoring.",
+  "summary": "The SONOFF S31 is set up in the eWeLink app, and that account is the bridge to everything else: Alexa, Google Home and SmartThings all connect through the eWeLink cloud. The reason to buy one is metering, with real-time current, voltage and power plus usage history, on a US plug rated 15 A / 1800 W over 2.4 GHz Wi-Fi. SONOFF doesn't list Apple Home, and Home Assistant gets on/off only through eWeLink's add-on.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Voice and SmartThings control go through the eWeLink cloud.",
-    "Do not confuse with the S31 Lite (no metering) or the S31 Lite zb (Zigbee, needs a bridge)."
+    "Alexa, Google Home and SmartThings all go through the eWeLink cloud, and local control isn't confirmed.",
+    "Home Assistant support is eWeLink's add-on (HA OS or Supervised only), not a core integration, and it gives on/off with no power readings.",
+    "SONOFF doesn't list Apple Home; eWeLink's CUBE (iHost) Matter Bridge can expose the S31 to Matter platforms, but that's an extra device.",
+    "Don't confuse it with the S31 Lite (no metering) or the S31 Lite zb (Zigbee, needs a bridge)."
   ],
   "sources": [
     {

@@ -62,10 +62,10 @@
     "sources": ["shelly-plus-plug-s-asia-listing", "shelly-kb-plus-plug-s-device-smart-control"],
     "note": "12 A / 2500 W rating; the app's max-power limit goes up to 2500 W."
   },
-  "summary": "The Shelly Plus Plug S is a compact Wi-Fi and Bluetooth plug for Schuko (Type F) sockets, rated 12 A / 2500 W with power and energy metering. It works without a hub, connects to Alexa, Google and SmartThings through Shelly's cloud, and to Home Assistant locally. Shelly has since moved to Gen3 and Gen4 plugs that add Matter.",
+  "summary": "No hub required: the Shelly Plus Plug S runs on Wi-Fi with Bluetooth and works standalone, without the Shelly app or cloud. Alexa, Google Home and SmartThings connect through Shelly's cloud, while Home Assistant's official Shelly integration controls it locally. It's rated 12 A / 2500 W and reports live power and energy use. Apple Home isn't confirmed for this Gen2 plug; Shelly's Apple Home and Matter support covers its newer Gen3 and Gen4 models.",
   "caveats": [
-    "Two hardware revisions exist (V1 and V2, model numbers SNPL-00112EU and SNPL-10112EU); check which one you have.",
-    "Indoor use only, per the Shelly user and safety guide."
+    "Apple Home and Matter aren't confirmed for this Gen2 plug; Shelly's Matter plugs are Gen3/Gen4.",
+    "Alexa, Google Home and SmartThings go through Shelly's cloud; only Home Assistant (and MQTT) control is local."
   ],
   "sources": [
     {

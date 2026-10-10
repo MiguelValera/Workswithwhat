@@ -67,10 +67,11 @@
     "sources": ["hue-smart-plug-us", "hue-smart-plug-support"],
     "note": "Hue support gives 1800 W for North America (100–120 V)."
   },
-  "summary": "The US Philips Hue Smart Plug is an on/off plug for 100–120 V outlets, rated 1800 W. It can be controlled over Bluetooth from the Hue app, but Apple Home, Google Home, Alexa, SmartThings and Home Assistant all need a Hue Bridge. With the Bridge it also reaches Matter platforms.",
+  "summary": "Out of the box, the Philips Hue Smart Plug talks Bluetooth to the Hue app, which covers basic on/off. Apple Home, Google Home, Alexa, SmartThings and Home Assistant all need a Hue Bridge; the plug joins it over Zigbee, and the Bridge also exposes it to Matter platforms. The US model is rated 1800 W for 100–120 V outlets. Hue describes on/off switching only and doesn't list energy metering.",
   "caveats": [
-    "Indoor use only (IP20).",
-    "Home Assistant users report the plug appears as a light, so it can respond to 'all lights off' commands."
+    "Voice assistants, ecosystems and remote access all need a Hue Bridge; Hue's bridgeless Bluetooth voice control covers bulbs, not this plug.",
+    "Bluetooth-only setups can't use Matter; the Bridge is what exposes the plug to Matter.",
+    "Home Assistant users report the plug appears as a light, so 'all lights off' can switch it off too."
   ],
   "sources": [
     {

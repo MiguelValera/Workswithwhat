@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "TP-Link",
   "model": "Tapo P125M",
-  "name": "Tapo P125M Mini Smart Wi-Fi Plug (Matter)",
+  "name": "Tapo P125M",
   "regions": ["US"],
   "officialUrl": "https://www.tp-link.com/us/home-networking/smart-plug/tapo-p125m/",
   "radios": {
@@ -63,11 +63,12 @@
     "sources": ["tplink-us-datasheet", "tplink-us-product"],
     "note": "15 A / 1800 W maximum for resistive loads at 100–125 V."
   },
-  "summary": "The Tapo P125M is TP-Link's compact US Wi-Fi smart plug with Matter. It is rated 15 A / 1800 W and uses 2.4 GHz Wi-Fi, with Bluetooth used only for setup. TP-Link lists support for Apple Home, Alexa, Google Assistant and SmartThings, and you can set it up by scanning the Matter code.",
+  "summary": "Matter does the heavy lifting on the Tapo P125M: it's how the plug reaches Apple Home, Google Home, Alexa and SmartThings. There's no HomeKit mode, and TP-Link says Matter Tapo devices connect to Alexa directly rather than through the Tapo skill. Home Assistant can use its TP-Link integration or Matter. This US plug runs on 2.4 GHz Wi-Fi (Bluetooth is for setup only), is rated 15 A / 1800 W, and keeps working on your home network without internet. TP-Link's US specs don't list energy monitoring.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Apple Home works only through Matter, which needs an Apple home hub (HomePod or Apple TV).",
-    "The Matter pairing window lasts 15 minutes, and the controller must be on the same local network."
+    "Apple Home works only through Matter, so you need an Apple home hub.",
+    "Alexa needs an Echo that works as a Matter controller; the Tapo skill doesn't cover it.",
+    "Don't count on energy monitoring: the US product page and datasheet don't list it, though some regional versions may differ."
   ],
   "sources": [
     {

@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "IKEA",
   "model": "TRETAKT",
-  "name": "IKEA TRETAKT smart plug (EU)",
+  "name": "IKEA TRETAKT (EU)",
   "regions": ["EU"],
   "officialUrl": "https://www.ikea.com/at/en/p/tretakt-plug-smart-80540349/",
   "radios": {
@@ -66,11 +66,13 @@
     "sources": ["ikea-tretakt-at", "ikea-tretakt-se", "ikea-tretakt-manual-at"],
     "note": "3680 W resistive load; the manual limits motor loads to 300 W. The US TRETAKT is rated 1800 W."
   },
-  "summary": "IKEA TRETAKT is a low-cost Zigbee smart plug for EU sockets, rated 3680 W for resistive loads. It needs the DIRIGERA hub (or the older TRÅDFRI gateway) for app control and to reach Apple Home, Google Home and Alexa. Without a hub it can only be paired with an IKEA remote or motion sensor.",
+  "summary": "On its own, IKEA TRETAKT only pairs with an IKEA remote or motion sensor. Add a DIRIGERA hub (or the older TRÅDFRI gateway) and it reaches Apple Home, Google Home and Alexa, either through IKEA's own links or DIRIGERA's Matter bridge, which is also how Home Assistant's Matter integration sees it. The plug itself is Zigbee, not Matter. This EU version is rated 3680 W for resistive loads but only 300 W for motors, and IKEA doesn't mention energy metering.",
   "caveats": [
+    "Needs the DIRIGERA hub (or TRÅDFRI gateway) for app, voice or any ecosystem control.",
     "Motor loads are limited to 300 W, far below the 3680 W resistive rating.",
-    "Indoor use only, 0–35 °C.",
-    "Not a Matter device; Matter platforms see it only through the DIRIGERA Matter bridge. IKEA's newer GRILLPLATS plug is a different, Matter-over-Thread product."
+    "Not a Matter device; Matter platforms see it only through the DIRIGERA Matter bridge.",
+    "The US TRETAKT is a separate version rated 1800 W.",
+    "IKEA lists it as being phased out in some markets."
   ],
   "sources": [
     {

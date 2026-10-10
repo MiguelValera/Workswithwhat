@@ -62,11 +62,12 @@
     "sources": [],
     "note": "Amazon lists 120 VAC, 60 Hz, 15 A max but gives no wattage."
   },
-  "summary": "The Amazon Smart Plug is a single-outlet US Wi-Fi plug made to work only with Alexa. You set it up and control it in the Alexa app, with no separate hub. Amazon says it does not support other voice assistants or smart hubs. It is rated 120 V, 15 A, and is for indoor use only.",
+  "summary": "Alexa only, and Amazon says so outright: the Amazon Smart Plug doesn't support other voice assistants or smart hubs, so Apple Home, Google Home and SmartThings are out. Setup and control happen in the Alexa app; you don't need a hub, and an Echo is optional. It's a US plug on 2.4 GHz Wi-Fi, rated 120 V / 15 A, though Amazon gives no wattage figure. Amazon also doesn't mention energy monitoring or say whether it works when the internet is down.",
   "caveats": [
-    "Alexa only: Amazon says it does not work with other voice assistants or smart hubs.",
-    "2.4 GHz Wi-Fi only; no 5 GHz or ad-hoc networks.",
-    "Indoor use only."
+    "Alexa only: Amazon says it doesn't work with other voice assistants or smart hubs, so it won't show up in Apple Home, Google Home or SmartThings.",
+    "2.4 GHz Wi-Fi only.",
+    "Home Assistant has no official integration we could find; owners only reach it indirectly through Alexa routines.",
+    "Amazon doesn't say whether the plug keeps working without an internet connection."
   ],
   "sources": [
     {
