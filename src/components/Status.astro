@@ -1,0 +1,11 @@
+---
+import { STATUS_TEXT } from '../lib/devices';
+interface Props {
+  status: keyof typeof STATUS_TEXT;
+  via?: string;
+}
+const { status, via } = Astro.props;
+const text = status === 'hub' && via ? `Via ${via}` : STATUS_TEXT[status];
+---
+
+<span class={`badge s-${status}`}>{text}</span>

@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import CompareTable from '../../components/CompareTable.astro';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getPublishedDevices } from '../../lib/devices';
+
+const devices = await getPublishedDevices();
+const title = 'Smart plug compatibility chart: Apple Home, Google Home, Alexa, Matter';
+const description = `${devices.length} smart plugs compared by ecosystem support, radio, Matter certification and hub needs. Every cell links back to a source.`;
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Smart plugs',
+    itemListElement: devices.map((d, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: new URL(`/smart-plugs/${d.id}/`, Astro.site).href,
+      name: d.data.name,
+    })),
+  },
+];
+---
+
+<Base title={title} description={description} crumbs={[{ name: 'Smart plugs', path: '/smart-plugs/' }]} jsonLd={jsonLd}>
+  <h1>Smart plug compatibility chart</h1>
+  <p class="lede">
+    Which plug works with which platform, and how it gets there: directly, over Matter, or through a hub.
+    Open any plug for the details and the sources behind each answer.
+  </p>
+  <CompareTable devices={devices} />
+  <p class="muted">
+    Looking for one platform?
+    {
+      ECOSYSTEMS.map((e, i) => (
+        <>
+          {i > 0 && ' · '}
+          <a href={`/works-with/${ecosystemSlug(e)}/`}>{ECOSYSTEM_LABELS[e]}</a>
+        </>
+      ))
+    }
+  </p>
+</Base>

@@ -1,0 +1,22 @@
+---
+// Footnote-style links from a claim to the device's source list.
+interface Props {
+  ids: string[];
+  all: { id: string }[];
+}
+const { ids, all } = Astro.props;
+const n = (id: string) => all.findIndex((s) => s.id === id) + 1;
+---
+
+{
+  ids.length > 0 && (
+    <sup class="ref">
+      {ids.map((id, i) => (
+        <>
+          {i > 0 && ','}
+          <a href={`#src-${id}`} aria-label={`Source ${n(id)}`}>[{n(id)}]</a>
+        </>
+      ))}
+    </sup>
+  )
+}

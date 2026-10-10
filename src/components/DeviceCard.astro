@@ -1,0 +1,21 @@
+---
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, RADIO_LABELS, devicePath, worksWith, type Device } from '../lib/devices';
+interface Props {
+  device: Device;
+}
+const { device } = Astro.props;
+const d = device.data;
+const works = ECOSYSTEMS.filter((e) => worksWith(device, e));
+const radios = (d.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(' + ');
+---
+
+<li class="card">
+  <h3><a href={devicePath(device)}>{d.name}</a></h3>
+  <div class="muted">
+    {d.brand} {d.model} · {d.regions.join('/')}{radios && ` · ${radios}`}{d.matter.certified && ' · Matter'}
+  </div>
+  <div class="eco">
+    {works.map((e) => <span class="badge s-native">{ECOSYSTEM_LABELS[e]}</span>)}
+    {works.length === 0 && <span class="badge s-unknown">No confirmed ecosystems</span>}
+  </div>
+</li>

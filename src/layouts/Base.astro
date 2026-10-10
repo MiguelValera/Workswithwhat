@@ -1,0 +1,93 @@
+---
+import '../styles/global.css';
+
+interface Crumb {
+  name: string;
+  path: string;
+}
+interface Props {
+  title: string;
+  description: string;
+  crumbs?: Crumb[];
+  jsonLd?: object[];
+  ogType?: 'website' | 'article';
+}
+
+const { title, description, crumbs = [], jsonLd = [], ogType = 'website' } = Astro.props;
+const site = Astro.site!;
+const canonical = new URL(Astro.url.pathname, site).href;
+const fullTitle = Astro.url.pathname === '/' ? title : `${title} | Workswithwhat`;
+
+const structured = [...jsonLd];
+if (crumbs.length) {
+  structured.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{ name: 'Home', path: '/' }, ...crumbs].map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: new URL(c.path, site).href,
+    })),
+  });
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta property="og:site_name" content="Workswithwhat" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    {structured.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj)} />)}
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="logo" href="/">works<span>with</span>what</a>
+        <nav aria-label="Main">
+          <a href="/smart-plugs/">Smart plugs</a>
+          <a href="/works-with/">By ecosystem</a>
+          <a href="/methodology/">How we verify</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+      {
+        crumbs.length > 0 && (
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            {crumbs.map((c, i) =>
+              i === crumbs.length - 1 ? (
+                <span aria-current="page">{c.name}</span>
+              ) : (
+                <a href={c.path}>{c.name}</a>
+              ),
+            )}
+          </nav>
+        )
+      }
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p>
+          Every claim links to its source. Spotted something wrong or out of date?
+          <a href="https://github.com/miguelvalera/workswithwhat/issues">Tell us</a>.
+        </p>
+        <p class="muted">Not affiliated with any brand mentioned. Trademarks belong to their owners.</p>
+      </div>
+    </footer>
+  </body>
+</html>

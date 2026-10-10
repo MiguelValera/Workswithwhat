@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="How we verify compatibility"
+  description="Where Workswithwhat's compatibility data comes from, what each status means, and how we handle conflicting or missing information."
+  crumbs={[{ name: 'How we verify', path: '/methodology/' }]}
+>
+  <h1>How we verify compatibility</h1>
+  <p class="lede">
+    A “works with” answer is only useful if you can check it. So each one on this site points to the page it came from.
+  </p>
+
+  <h2>Where the data comes from</h2>
+  <p>In order of preference:</p>
+  <ol>
+    <li>The manufacturer's own product page, datasheet, manual or support article.</li>
+    <li>The Connectivity Standards Alliance certification database, for Matter.</li>
+    <li>Platform pages from Apple, Google, Amazon, Samsung SmartThings and Home Assistant.</li>
+    <li>Retailers and independent reviews, only to back up one of the above.</li>
+  </ol>
+
+  <h2>Two passes per device</h2>
+  <p>
+    One pass collects the specs and sources. A second pass goes through every claim again on its own and checks
+    that the cited page actually says it, for that exact model and region. Anything that doesn't hold up is marked
+    <span class="badge s-unknown">Unconfirmed</span> instead of guessed. A device appears on the site only after the second pass.
+  </p>
+
+  <h2>What the labels mean</h2>
+  <ul>
+    <li><span class="badge s-native">Yes</span> Works through the brand's own integration: an Alexa skill, Google Home linking, HomeKit or an official Home Assistant integration.</li>
+    <li><span class="badge s-matter">Yes, via Matter</span> Works because the plug is Matter-certified. You add it with the platform's Matter pairing. Thread plugs also need a Thread border router, such as a recent Apple TV, HomePod mini or Nest Hub.</li>
+    <li><span class="badge s-hub">Via …</span> Works, but only through the named hub or bridge.</li>
+    <li><span class="badge s-no">No</span> A source says it isn't supported.</li>
+    <li><span class="badge s-unknown">Unconfirmed</span> We couldn't find an official answer.</li>
+  </ul>
+
+  <h2>Regions and versions</h2>
+  <p>
+    The US and EU versions of a plug often have different model numbers, radios or certifications. We treat them as
+    separate devices and list the regions each record covers.
+  </p>
+
+  <h2>Corrections</h2>
+  <p>
+    Firmware updates change compatibility all the time. If something here is wrong or out of date,
+    <a href="https://github.com/miguelvalera/workswithwhat/issues">open an issue</a> with a link, and we'll re-check it.
+    No brand pays to be listed, and there are no affiliate links.
+  </p>
+</Base>

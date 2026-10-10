@@ -1,0 +1,188 @@
+---
+import Base from '../../layouts/Base.astro';
+import Refs from '../../components/Refs.astro';
+import Status from '../../components/Status.astro';
+import DeviceCard from '../../components/DeviceCard.astro';
+import {
+  ECOSYSTEMS,
+  ECOSYSTEM_LABELS,
+  RADIO_LABELS,
+  formatDate,
+  getPublishedDevices,
+  worksWith,
+  type Device,
+} from '../../lib/devices';
+
+export async function getStaticPaths() {
+  const devices = await getPublishedDevices();
+  return devices.map((device) => ({ params: { slug: device.id }, props: { device, devices } }));
+}
+
+interface Props {
+  device: Device;
+  devices: Device[];
+}
+const { device, devices } = Astro.props;
+const d = device.data;
+const src = d.sources;
+
+const works = ECOSYSTEMS.filter((e) => worksWith(device, e)).map((e) => ECOSYSTEM_LABELS[e]);
+const list = (xs: string[]) => (xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`);
+
+const title = `Does the ${d.name} work with Apple Home, Google Home or Alexa?`;
+const description = works.length
+  ? `${d.name} (${d.model}) works with ${list(works)}. Connection type, hub needs and specs, each linked to its source.`
+  : `${d.name} (${d.model}) compatibility with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, with sources.`;
+
+const yesNo = (v: boolean | null) => (v === null ? 'Unconfirmed' : v ? 'Yes' : 'No');
+const radios = (d.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || 'Unconfirmed';
+const matterText =
+  d.matter.certified === null
+    ? 'Unconfirmed'
+    : d.matter.certified
+      ? `Yes, over ${d.matter.transport === 'wifi' ? 'Wi-Fi' : d.matter.transport === 'thread' ? 'Thread' : 'Ethernet'}`
+      : 'No';
+
+const related = devices
+  .filter((o) => o.id !== device.id && o.data.regions.some((r) => d.regions.includes(r)))
+  .slice(0, 3);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description,
+    dateModified: d.updatedAt,
+    mainEntity: {
+      '@type': 'Product',
+      name: d.name,
+      model: d.model,
+      brand: { '@type': 'Brand', name: d.brand },
+      category: 'Smart plug',
+      description: d.summary,
+      url: d.officialUrl,
+    },
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  ogType="article"
+  crumbs={[
+    { name: 'Smart plugs', path: '/smart-plugs/' },
+    { name: d.name, path: `/smart-plugs/${device.id}/` },
+  ]}
+  jsonLd={jsonLd}
+>
+  <article>
+    {d.status === 'draft' && <p class="badge s-hub">Draft, not published (visible in dev only)</p>}
+    <h1>{d.name}: what it works with</h1>
+    <p class="muted">
+      {d.brand} · model {d.model} · sold in {d.regions.join(', ')}
+    </p>
+    <p class="lede">{d.summary}</p>
+    {
+      d.verifiedAt && (
+        <p class="verified">
+          Checked against {src.length} sources on <time datetime={d.verifiedAt}>{formatDate(d.verifiedAt)}</time>
+        </p>
+      )
+    }
+
+    <h2>Ecosystem compatibility</h2>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th scope="col">Platform</th><th scope="col">Works?</th><th scope="col">Details</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Matter</th>
+            <td><span class={`badge s-${d.matter.certified}`}>{matterText}</span></td>
+            <td>{d.matter.note}<Refs ids={d.matter.sources} all={src} /></td>
+          </tr>
+          {
+            ECOSYSTEMS.map((e) => {
+              const c = d.compatibility[e];
+              return (
+                <tr>
+                  <th scope="row">{ECOSYSTEM_LABELS[e]}</th>
+                  <td><Status status={c.status} via={c.via} /></td>
+                  <td>{c.note}<Refs ids={c.sources} all={src} /></td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:0.88rem">
+      “Via Matter” means you add it with that platform's Matter controller instead of a brand skill or app.
+      “Unconfirmed” means we couldn't find an official source either way.
+      <a href="/methodology/">How we verify</a>.
+    </p>
+
+    <h2>Specs that matter for setup</h2>
+    <dl class="facts">
+      <div><dt>Radio</dt><dd>{radios}<Refs ids={d.radios.sources} all={src} /></dd></div>
+      <div><dt>Hub required</dt><dd>{yesNo(d.hubRequired.value)}<Refs ids={d.hubRequired.sources} all={src} /></dd></div>
+      <div><dt>Local control</dt><dd>{yesNo(d.localControl.value)}<Refs ids={d.localControl.sources} all={src} /></dd></div>
+      <div><dt>Energy monitoring</dt><dd>{yesNo(d.energyMonitoring.value)}<Refs ids={d.energyMonitoring.sources} all={src} /></dd></div>
+      <div>
+        <dt>Max load</dt>
+        <dd>{d.maxLoadWatts.value ? `${d.maxLoadWatts.value.toLocaleString('en-US')} W` : 'Unconfirmed'}<Refs ids={d.maxLoadWatts.sources} all={src} /></dd>
+      </div>
+    </dl>
+    {
+      [d.hubRequired, d.localControl, d.energyMonitoring, d.maxLoadWatts, d.radios].some((f) => f.note) && (
+        <ul class="muted" style="font-size:0.9rem">
+          {d.radios.note && <li>Radio: {d.radios.note}</li>}
+          {d.hubRequired.note && <li>Hub: {d.hubRequired.note}</li>}
+          {d.localControl.note && <li>Local control: {d.localControl.note}</li>}
+          {d.energyMonitoring.note && <li>Energy monitoring: {d.energyMonitoring.note}</li>}
+          {d.maxLoadWatts.note && <li>Max load: {d.maxLoadWatts.note}</li>}
+        </ul>
+      )
+    }
+
+    {
+      d.caveats.length > 0 && (
+        <>
+          <h2>Before you buy</h2>
+          <ul class="caveats">
+            {d.caveats.map((c) => <li>{c}</li>)}
+          </ul>
+        </>
+      )
+    }
+
+    <h2>Sources</h2>
+    <ol class="sources">
+      {
+        src.map((s) => (
+          <li id={`src-${s.id}`}>
+            <a href={s.url} rel="nofollow noopener" target="_blank">{s.title}</a> — {s.publisher}{' '}
+            <span class="kind">{s.kind}</span> <span class="muted">· accessed {formatDate(s.accessed)}</span>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="muted">
+      Official product page: <a href={d.officialUrl} rel="nofollow noopener">{new URL(d.officialUrl).hostname}</a>
+    </p>
+  </article>
+
+  {
+    related.length > 0 && (
+      <section>
+        <h2>Other plugs for the same region</h2>
+        <ul class="cards">
+          {related.map((r) => <DeviceCard device={r} />)}
+        </ul>
+      </section>
+    )
+  }
+</Base>
