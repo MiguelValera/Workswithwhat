@@ -1,0 +1,120 @@
+{
+  "category": "smart-plug",
+  "brand": "Meross",
+  "model": "MSS315",
+  "name": "Meross MSS315",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://shop.meross.com/products/matter-smart-plug-mss315-us",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "meross-mss315-us-shop"
+    ],
+    "note": "Needs an existing 2.4 GHz Wi-Fi network with IPv6. We found no official mention of Bluetooth."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "meross-mss315-us-shop",
+      "meross-mss315-product"
+    ],
+    "note": "Meross sells it as a Matter plug. We could not find a CSA listing that names the MSS315 model number. Meross's en-gc product page is not region-specific; the US store listing is the US source."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "meross-mss315-us-shop",
+        "meross-mss315-product"
+      ],
+      "note": "Through Matter; Meross says a Matter-compatible hub is required for the chosen platform."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "meross-mss315-us-shop",
+        "meross-mss315-product"
+      ],
+      "note": "Through Matter; needs a Google Matter controller."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "meross-mss315-us-shop",
+        "meross-mss315-product"
+      ],
+      "note": "Through Matter; needs an Echo that works as a Matter controller. We did not confirm whether the Meross Alexa skill also covers this model."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "meross-mss315-us-shop",
+        "meross-mss315-product"
+      ],
+      "note": "Through Matter; needs a SmartThings hub that supports Matter."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Meross doesn't list Home Assistant, and HA has no official Meross integration. Reviews show the EU version pairing via HA's Matter integration, but nothing official covers the US model."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "The US listing only says a Matter hub is needed for your chosen platform. Meross's 'no hub required' wording appears on the EU listing, not the US one."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "meross-mss315-us-shop"
+    ],
+    "note": "The US listing describes a completely local architecture for Matter. Cloud-free behaviour of the Meross app itself is not documented."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "meross-mss315-us-shop"
+    ],
+    "note": "Real-time and historical use in the Meross app. Whether readings reach Matter platforms on the US model is not confirmed by Meross."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [],
+    "note": "We found no official electrical rating for the US MSS315 in Meross's pages. Check the label on the plug."
+  },
+  "summary": "Through Matter, the Meross MSS315 works with Apple Home, Google Home, Alexa and SmartThings; Home Assistant isn't confirmed for this US model. Each platform needs its own Matter controller, and the plug itself needs a 2.4 GHz Wi-Fi network with IPv6. Meross describes its Matter control as fully local. The energy meter shows real-time and historical use in the Meross app, but Meross doesn't say whether those readings reach Matter platforms. We found no official load rating, so check the label.",
+  "caveats": [
+    "Needs 2.4 GHz Wi-Fi with IPv6 enabled on the router.",
+    "Each platform needs its own Matter controller, such as an Echo for Alexa or a SmartThings hub that supports Matter.",
+    "Home Assistant isn't confirmed for the US model; only reviews of the EU version show it pairing through HA's Matter integration.",
+    "Energy data is confirmed only in the Meross app.",
+    "No official load rating for the US MSS315; check the label before plugging in a high-draw appliance."
+  ],
+  "sources": [
+    {
+      "id": "meross-mss315-us-shop",
+      "url": "https://shop.meross.com/products/matter-smart-plug-mss315-us",
+      "title": "Meross Matter Smart Plug with Energy Monitor, MSS315, 4-Pack (US Version)",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "meross-mss315-product",
+      "url": "https://www.meross.com/en-gc/mTerminal/smart_plug_and_switch/matter-smart-plug/175",
+      "title": "Matter Smart Plug with Energy Monitor",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-10",
+  "verifiedAt": "2026-10-10"
+}

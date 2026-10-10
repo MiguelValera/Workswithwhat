@@ -28,6 +28,7 @@ export const GET: APIRoute = async ({ site }) => {
     '## By ecosystem',
     '',
     ...ECOSYSTEMS.map((e) => `- [Smart plugs that work with ${ECOSYSTEM_LABELS[e]}](${url(`/works-with/${ecosystemSlug(e)}/`)})`),
+    `- [Matter smart plugs](${url('/works-with/matter/')}): Matter-certified plugs split by Wi-Fi and Thread`,
     '',
   ];
   return new Response(lines.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

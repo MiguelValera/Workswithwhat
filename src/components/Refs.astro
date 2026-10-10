@@ -8,12 +8,13 @@ interface Props {
 }
 const { ids, all, base = '' } = Astro.props;
 const n = (id: string) => all.findIndex((s) => s.id === id) + 1;
+const sorted = [...ids].sort((a, b) => n(a) - n(b));
 ---
 
 {
-  ids.length > 0 && (
+  sorted.length > 0 && (
     <sup class="ref">
-      {ids.map((id, i) => (
+      {sorted.map((id, i) => (
         <>
           {i > 0 && ','}
           <a href={`${base}#src-${id}`} aria-label={`Source ${n(id)}`}>[{n(id)}]</a>

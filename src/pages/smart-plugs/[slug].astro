@@ -122,7 +122,10 @@ const jsonLd = [
           <tr>
             <th scope="row">Matter</th>
             <td><span class={`badge s-${d.matter.certified}`}>{matterText}</span></td>
-            <td>{d.matter.note}<Refs ids={d.matter.sources} all={src} /></td>
+            <td>
+              {d.matter.note}<Refs ids={d.matter.sources} all={src} />
+              {d.matter.certified && <> <a href="/works-with/matter/">Other Matter plugs</a></>}
+            </td>
           </tr>
           {
             ECOSYSTEMS.map((e) => {

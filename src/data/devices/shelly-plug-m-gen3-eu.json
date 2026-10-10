@@ -1,0 +1,147 @@
+{
+  "category": "smart-plug",
+  "brand": "Shelly",
+  "model": "Plug M Gen3",
+  "name": "Shelly Plug M Gen3 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.shelly.com/products/shelly-plug-m-gen3-white",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "shelly-kb-plug-m-gen3",
+      "shelly-plug-m-gen3-product"
+    ],
+    "note": "Wi-Fi 802.11 b/g/n plus Bluetooth 4.2; Shelly also lists a BLE gateway function. Model S3PL-30110EU."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "shelly-kb-plug-m-gen3",
+      "shelly-plug-m-gen3-product"
+    ],
+    "note": "Shelly lists Matter support for this model. A CSA entry (CSA25F6AMAT48828-24) was only seen in sidebars of other Shelly CSA pages, not on a dedicated page, so it isn't cited."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "shelly-kb-plug-m-gen3",
+        "shelly-plug-m-gen3-product"
+      ],
+      "note": "Through Matter; Shelly names Apple Home as a Matter platform. Needs an Apple home hub for remote and automation use."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "shelly-plug-m-gen3-product",
+        "shelly-kb-plug-m-gen3"
+      ],
+      "note": "Shelly says it works with Google Home through Matter. Its spec table also marks Google Smart Home 'Yes' without saying whether that means Shelly's cloud link, so we don't claim a native integration."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "shelly-plug-m-gen3-product",
+        "shelly-kb-plug-m-gen3"
+      ],
+      "note": "Shelly says it works with Alexa through Matter. Its spec table marks Alexa 'Yes', but no Shelly page confirms the Shelly Cloud Alexa skill for this model, so we don't claim native."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "shelly-plug-m-gen3-product",
+        "shelly-kb-plug-m-gen3"
+      ],
+      "note": "Shelly says it works with SmartThings through Matter. We found no page confirming Shelly's SmartThings cloud integration for this model."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-shelly",
+        "shelly-plug-m-gen3-product"
+      ],
+      "note": "Official local Shelly integration, which says all device generations are supported. Shelly also lists Home Assistant via Matter."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "shelly-plug-m-gen3-product",
+      "shelly-us-docs-plug-m-gen3"
+    ],
+    "note": "Wi-Fi device that can run standalone on the local network; the Shelly cloud and app are optional."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "shelly-plug-m-gen3-product",
+      "ha-shelly"
+    ],
+    "note": "Built-in web interface for setup and control, and local control from Home Assistant's Shelly integration."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "shelly-kb-plug-m-gen3",
+      "shelly-plug-m-gen3-product"
+    ],
+    "note": "Measures power, voltage and current."
+  },
+  "maxLoadWatts": {
+    "value": 3000,
+    "sources": [
+      "shelly-kb-plug-m-gen3",
+      "shelly-plug-m-gen3-product"
+    ],
+    "note": "13 A / 3000 W, resistive loads only."
+  },
+  "summary": "Home Assistant controls the Shelly Plug M Gen3 locally through its official Shelly integration, while Apple Home, Google Home, Alexa and SmartThings reach it over Matter. It's a Wi-Fi plug with Bluetooth 4.2 that runs standalone with no hub; the Shelly cloud and app are optional, and there's a built-in web interface. It measures power, voltage and current, and its 13 A / 3000 W rating covers resistive loads only. The EU model number is S3PL-30110EU.",
+  "caveats": [
+    "The 13 A / 3000 W rating covers resistive loads only.",
+    "Apple Home works only through Matter and needs an Apple home hub for remote control and automations.",
+    "Shelly's spec table marks Alexa and Google 'Yes' without saying whether that means its cloud integration; we only confirm Matter for those two and for SmartThings."
+  ],
+  "sources": [
+    {
+      "id": "shelly-plug-m-gen3-product",
+      "url": "https://www.shelly.com/products/shelly-plug-m-gen3-white",
+      "title": "Shelly Plug M Gen3",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "shelly-kb-plug-m-gen3",
+      "url": "https://kb.shelly.cloud/knowledge-base/shelly-plug-m-gen3",
+      "title": "Shelly Plug M Gen3",
+      "publisher": "Shelly Knowledge Base",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "shelly-us-docs-plug-m-gen3",
+      "url": "https://us.shelly.com/blogs/documentation/shelly-plug-m-gen3",
+      "title": "Shelly Plug M Gen3 - Shelly USA",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-10"
+    },
+    {
+      "id": "ha-shelly",
+      "url": "https://www.home-assistant.io/integrations/shelly/",
+      "title": "Shelly - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-10"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-10",
+  "verifiedAt": "2026-10-10"
+}

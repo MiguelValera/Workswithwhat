@@ -21,5 +21,9 @@ const all = await getPublishedDevices();
         </li>
       ))
     }
+    <li class="card">
+      <h3><a href="/works-with/matter/">Matter</a></h3>
+      <div class="muted">{all.filter((d) => d.data.matter.certified).length} Matter-certified smart plugs</div>
+    </li>
   </ul>
 </Base>
