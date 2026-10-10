@@ -119,7 +119,7 @@ const jsonLd = [
         </tbody>
       </table>
     </div>
-    <p class="muted" style="font-size:0.88rem">
+    <p class="muted small">
       “Via Matter” means you add it with that platform's Matter controller instead of a brand skill or app.
       “Unconfirmed” means we couldn't find an official source either way.{' '}
       <a href="/methodology/">How we verify</a>.
@@ -138,7 +138,7 @@ const jsonLd = [
     </dl>
     {
       [d.hubRequired, d.localControl, d.energyMonitoring, d.maxLoadWatts, d.radios].some((f) => f.note) && (
-        <ul class="muted" style="font-size:0.9rem">
+        <ul class="muted small">
           {d.radios.note && <li>Radio: {d.radios.note}</li>}
           {d.hubRequired.note && <li>Hub: {d.hubRequired.note}</li>}
           {d.localControl.note && <li>Local control: {d.localControl.note}</li>}

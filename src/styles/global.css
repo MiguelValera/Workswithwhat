@@ -50,6 +50,7 @@ h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); margin: 0.4em 0 0.3em; }
 h2 { font-size: 1.3rem; margin-top: 2em; }
 .wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
 .muted { color: var(--muted); }
+.small { font-size: 0.88rem; }
 .lede { font-size: 1.1rem; color: var(--muted); max-width: 62ch; }
 
 .site-header { border-bottom: 1px solid var(--line); background: var(--surface); }
