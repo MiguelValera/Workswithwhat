@@ -3,54 +3,81 @@
   "brand": "Philips Hue",
   "model": "Hue Motion Sensor (indoor)",
   "name": "Hue Motion Sensor (EU)",
-  "regions": ["EU"],
-  "officialUrl": "https://www.philips-hue.com/de-at/p/hue-hue-motion-sensor/8719514342125",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.philips-hue.com/de-de/p/hue-hue-motion-sensor/8719514342125",
   "radios": {
-    "value": ["zigbee", "bluetooth"],
-    "sources": ["hue-motion-us", "hue-motion-hk"],
-    "note": "Hue lists Bluetooth and Zigbee as communication protocols. The EU page (EAN 8719514342125) was seen only as a search result."
+    "value": [
+      "zigbee",
+      "bluetooth"
+    ],
+    "sources": [
+      "hue-motion-de",
+      "hue-motion-us"
+    ],
+    "note": "Hue's German (EAN 8719514342125) and US product pages list Bluetooth and Zigbee as communication protocols."
   },
   "matter": {
     "certified": null,
-    "sources": ["hue-matter-faq"],
-    "note": "The sensor has no CSA listing of its own as far as seen. Hue says accessories connected to a Hue Bridge are exposed over Matter, and the US sensor page lists Matter. No Hue page seen names the motion sensor's Matter device type."
+    "sources": [
+      "hue-matter-faq"
+    ],
+    "note": "The sensor has no CSA listing of its own as far as seen. Hue says products connected to a Hue Bridge work with Matter (Bluetooth-connected products do not), and the product pages list Matter among third-party systems. No Hue page seen names the sensor's Matter device type."
   },
   "compatibility": {
     "apple_home": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-motion-us", "hue-motion-hk"],
-      "note": "Hue's page lists Apple Home with the Bridge."
+      "sources": [
+        "hue-motion-de",
+        "hue-motion-us"
+      ],
+      "note": "Hue's EU and US pages list Apple Home among third-party systems; it works through the Bridge."
     },
     "google_home": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-motion-us"],
-      "note": "Hue's page lists Google Assistant with the Bridge."
+      "sources": [
+        "hue-motion-de",
+        "hue-motion-us"
+      ],
+      "note": "Hue's EU and US pages list Google Home among third-party systems; it works through the Bridge."
     },
     "alexa": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-motion-us"],
-      "note": "Hue's page lists Amazon Alexa with the Bridge."
+      "sources": [
+        "hue-motion-de",
+        "hue-motion-us"
+      ],
+      "note": "Hue's EU and US pages list Alexa among third-party systems; it works through the Bridge."
     },
     "smartthings": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-motion-us"],
-      "note": "Hue's US page lists Samsung SmartThings among third-party systems; it works through the Bridge."
+      "sources": [
+        "hue-motion-de",
+        "hue-motion-us"
+      ],
+      "note": "Hue's EU and US pages list Samsung SmartThings among third-party systems; it works through the Bridge."
     },
     "home_assistant": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["ha-hue"],
+      "sources": [
+        "ha-hue"
+      ],
       "note": "Home Assistant's Hue integration covers motion sensors (with temperature and light level) through the Bridge. Pairing the sensor straight to a Zigbee coordinator is only described in forum posts, so it is not counted."
     }
   },
   "hubRequired": {
     "value": true,
-    "sources": ["hue-motion-us", "hue-motion-hk"],
-    "note": "Hue says the sensor needs a Hue Bridge-controlled setup; the Bridge is sold separately. Up to 12 accessories per standard Bridge."
+    "sources": [
+      "hue-motion-de",
+      "hue-motion-us"
+    ],
+    "note": "Hue says the sensor needs a Hue Bridge-controlled setup; the Bridge is sold separately. Up to 12 accessories with a Hue Bridge."
   },
   "localControl": {
     "value": null,
@@ -58,26 +85,65 @@
     "note": "No page seen says whether the sensor works without internet."
   },
   "senses": {
-    "value": ["motion", "temperature", "light"],
-    "sources": ["hue-motion-us", "ha-hue"],
+    "value": [
+      "motion",
+      "temperature",
+      "light"
+    ],
+    "sources": [
+      "hue-motion-us",
+      "ha-hue"
+    ],
     "note": "Temperature and light level are named in Home Assistant's Hue docs."
   },
   "power": {
     "value": "2 × AAA (included)",
-    "sources": ["hue-motion-us", "hue-motion-hk"],
-    "note": "Hue says the batteries are included and last at least two years."
+    "sources": [
+      "hue-motion-de",
+      "hue-motion-us"
+    ],
+    "note": "2 × AAA included. Hue's US page quotes at least two years of battery life."
   },
   "summary": "The Hue Motion Sensor (indoor) detects movement, and also reports temperature and light level. It talks Zigbee to a Hue Bridge, so Apple Home, Google Home, Alexa and SmartThings all reach it through the Bridge. Two AAA batteries come in the box, and Hue quotes at least two years of life.",
   "caveats": [
-    "Needs a Hue Bridge; Bluetooth-only setups do not give Matter or third-party access.",
-    "A standard Bridge supports 12 accessories."
+    "Needs a Hue Bridge; Hue says products connected over Bluetooth can't be used with Matter.",
+    "Hue lists a limit of 12 accessories with a Hue Bridge."
   ],
   "sources": [
-    { "id": "hue-motion-us", "url": "https://www.philips-hue.com/en-us/p/hue-motion-sensor/046677570972", "title": "Hue Motion Sensor to trigger your Smart Lights with Movement", "publisher": "Philips Hue", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "hue-motion-hk", "url": "https://www.philips-hue.com/en-hk/p/hue-motion-sensor/8719514342149", "title": "Hue Motion Sensor to trigger your Smart Lights with Movement", "publisher": "Philips Hue", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "hue-matter-faq", "url": "https://www.philips-hue.com/en-us/explore-hue/works-with/matter", "title": "Philips Hue and Matter", "publisher": "Philips Hue", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "ha-hue", "url": "https://www.home-assistant.io/integrations/hue/", "title": "Philips Hue - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11" }
+    {
+      "id": "hue-motion-de",
+      "url": "https://www.philips-hue.com/de-de/p/hue-hue-motion-sensor/8719514342125",
+      "title": "Der Hue Motion Sensor löst Deine smarten Lampen durch Bewegung aus",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-motion-us",
+      "url": "https://www.philips-hue.com/en-us/p/hue-motion-sensor/046677570972",
+      "title": "Hue Motion Sensor to trigger your Smart Lights with Movement",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-matter-faq",
+      "url": "https://www.philips-hue.com/en-au/explore-hue/works-with/matter",
+      "title": "Philips Hue and Matter",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-hue",
+      "url": "https://www.home-assistant.io/integrations/hue/",
+      "title": "Philips Hue - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

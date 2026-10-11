@@ -3,11 +3,18 @@
   "brand": "Aqara",
   "model": "Water Leak Sensor T1 (WL-S02D)",
   "name": "Aqara Water Leak Sensor T1 (EU)",
-  "regions": ["EU"],
+  "regions": [
+    "EU"
+  ],
   "officialUrl": "https://www.aqara.com/en/product/water-leak-sensor-t1/",
   "radios": {
-    "value": ["zigbee"],
-    "sources": ["aqara-wl-t1-specs", "aqara-wl-t1"],
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "aqara-wl-t1-specs",
+      "aqara-wl-t1"
+    ],
     "note": "Zigbee 3.0."
   },
   "matter": {
@@ -19,8 +26,10 @@
     "apple_home": {
       "status": "hub",
       "via": "Aqara hub",
-      "sources": ["aqara-wl-t1-faq"],
-      "note": "Retailers say it reaches HomeKit once bound to an Aqara hub. The exact Aqara wording was not seen; the FAQ is a snippet only."
+      "sources": [
+        "aqara-wl-t1-faq"
+      ],
+      "note": "Aqara's T1 FAQ says an Aqara hub is needed for the sensor to work with HomeKit."
     },
     "google_home": {
       "status": "unknown",
@@ -45,8 +54,10 @@
   },
   "hubRequired": {
     "value": true,
-    "sources": ["aqara-wl-t1-faq"],
-    "note": "Aqara's FAQ says it requires an Aqara hub."
+    "sources": [
+      "aqara-wl-t1-faq"
+    ],
+    "note": "Aqara's FAQ says the sensor can't work on its own and must be used with an Aqara hub."
   },
   "localControl": {
     "value": null,
@@ -54,25 +65,54 @@
     "note": "No page seen describes hub-local operation."
   },
   "senses": {
-    "value": ["leak"],
-    "sources": ["aqara-wl-t1-faq", "aqara-wl-t1"],
+    "value": [
+      "leak"
+    ],
+    "sources": [
+      "aqara-wl-t1-faq",
+      "aqara-wl-t1"
+    ],
     "note": "Detects water between two probes, from about 0.5 mm of water."
   },
   "power": {
     "value": "CR2032",
-    "sources": ["aqara-wl-t1-specs"],
+    "sources": [
+      "aqara-wl-t1-specs"
+    ],
     "note": "Aqara says typical battery life is about two years."
   },
-  "summary": "The Water Leak Sensor T1 (WL-S02D) is Aqara's current Zigbee 3.0 leak sensor, successor to the SJCGQ11LM. Two probes detect water from about 0.5 mm, and an Aqara hub is required to raise alerts and reach Apple Home. A CR2032 cell lasts about two years, and Aqara describes the unit as IP67.",
+  "summary": "The Water Leak Sensor T1 (WL-S02D) is Aqara's Zigbee 3.0 leak sensor. Its probes raise an alarm from about 0.5 mm of water, and an Aqara hub is required for alerts and for Apple Home. A CR2032 cell lasts about two years, and Aqara describes the unit as IP67.",
   "caveats": [
     "Needs an Aqara hub; it is not a standalone Zigbee device.",
     "Google Home, Alexa and SmartThings support is unconfirmed on Aqara pages seen."
   ],
   "sources": [
-    { "id": "aqara-wl-t1", "url": "https://www.aqara.com/en/product/water-leak-sensor-t1/", "title": "Aqara Water Leak Sensor T1: Protect Your Property from Water Damage", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "aqara-wl-t1-specs", "url": "https://www.aqara.com/en/product/water-leak-sensor-t1/water-leak-sensor-t1-specs/", "title": "Water Leak Sensor T1 Specs - Aqara", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "aqara-wl-t1-faq", "url": "https://www.aqara.com/en/water-leak-sensor-t1/water-leak-sensor-t1-faq/", "title": "Water Leak Sensor T1 FAQ - Aqara", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" }
+    {
+      "id": "aqara-wl-t1",
+      "url": "https://www.aqara.com/en/product/water-leak-sensor-t1/",
+      "title": "Aqara Water Leak Sensor T1: Protect Your Property from Water Damage",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-wl-t1-specs",
+      "url": "https://www.aqara.com/en/product/water-leak-sensor-t1/water-leak-sensor-t1-specs/",
+      "title": "Water Leak Sensor T1 Specs - Aqara",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-wl-t1-faq",
+      "url": "https://www.aqara.com/en/water-leak-sensor-t1/water-leak-sensor-t1-faq/",
+      "title": "Water Leak Sensor T1 FAQ - Aqara",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
