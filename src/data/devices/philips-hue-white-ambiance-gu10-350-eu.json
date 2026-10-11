@@ -4,11 +4,11 @@
   "model": "White Ambiance GU10 350 lm (8719514339903)",
   "name": "Philips Hue White Ambiance GU10 (350 lm, EU)",
   "regions": ["EU"],
-  "officialUrl": "https://www.philips-hue.com/fr-fr/p/hue-white-ambiance-gu10-spots-connectes/8719514339903",
+  "officialUrl": "https://www.philips-hue.com/en-gb/p/hue-white-ambiance-gu10---smart-spotlight/8719514339903",
   "radios": {
     "value": ["bluetooth", "zigbee"],
-    "sources": ["hue-gu10-fr", "hue-gu10-de"],
-    "note": "Hue lists Bluetooth and Zigbee for this EAN."
+    "sources": ["hue-gu10-gb", "hue-gu10-de", "conrad-gu10"],
+    "note": "Hue's pages for this EAN list Bluetooth control and Hue Bridge control (the Bridge talks to lights over Zigbee). Conrad lists Zigbee for this EAN."
   },
   "matter": {
     "certified": null,
@@ -19,8 +19,8 @@
     "apple_home": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-gu10-gb", "hue-gu10-fr"],
-      "note": "Hue's pages list Apple Home (HomeKit) as working via the Hue Bridge."
+      "sources": ["hue-gu10-gb", "hue-matter-guide"],
+      "note": "Via the Hue Bridge. Hue's Matter guide says the Bridge connects all Hue lights, including bulbs without Matter, to Apple Home, Google Home and Alexa."
     },
     "google_home": {
       "status": "native",
@@ -65,26 +65,26 @@
   },
   "bulbBase": {
     "value": "GU10",
-    "sources": ["hue-gu10-gb", "hue-gu10-fr"]
+    "sources": ["hue-gu10-gb", "hue-gu10-be"]
   },
   "summary": "The EU Philips Hue White Ambiance GU10 (EAN 8719514339903) is a tunable white spotlight, 2200 to 6500 K, rated at 350 lumens. It has Bluetooth and Zigbee: the Hue app controls it directly over Bluetooth, while voice assistants and Apple Home need a Hue Bridge. Home Assistant supports it through the official Hue and Hue BLE integrations.",
   "caveats": [
     "Apple Home and voice assistants need a Hue Bridge, according to Hue's product page for this EAN.",
-    "Hue's German shop lists this EAN as no longer available; its successor (EAN 8720169229976) is rated at 400 lm.",
+    "Hue's UK shop lists this EAN as no longer available; its successor (EAN 8720169229976) is rated at 400 lm.",
     "Bluetooth mode is limited to a few lights in short range and has no remote access."
   ],
   "sources": [
     {
       "id": "hue-gu10-gb",
-      "url": "https://www.philips-hue.com/en-gb/p/hue-white-ambiance-gu10-smart-spotlight/8719514339903",
+      "url": "https://www.philips-hue.com/en-gb/p/hue-white-ambiance-gu10---smart-spotlight/8719514339903",
       "title": "Hue GU10 LED Bulb",
       "publisher": "Signify (Philips Hue)",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
     {
-      "id": "hue-gu10-fr",
-      "url": "https://www.philips-hue.com/fr-fr/p/hue-white-ambiance-gu10-spots-connectes/8719514339903",
+      "id": "hue-gu10-be",
+      "url": "https://www.philips-hue.com/fr-be/p/hue-white-ambiance-gu10---smart-spotlight/8719514339903",
       "title": "Ampoule LED GU10 Hue - White Ambiance",
       "publisher": "Signify (Philips Hue)",
       "kind": "manufacturer",
@@ -115,6 +115,22 @@
       "accessed": "2026-10-11"
     },
     {
+      "id": "conrad-gu10",
+      "url": "https://www.conrad.com/en/p/philips-lighting-hue-led-light-bulb-871951433990300-eec-g-a-g-hue-white-ambiance-gu10-einzelpack-350lm-gu10-4-3-w-w-2437138.html",
+      "title": "Philips Lighting Hue LED light bulb 871951433990300 Hue White Ambiance GU10 single pack 350lm",
+      "publisher": "Conrad Electronic",
+      "kind": "retailer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ahlsell-gu10-400",
+      "url": "https://www.ahlsell.se/en/products/electric/lighting-70-83/82-led-light-sources/led-light-sources-hue/98701154---philips-huewa-gu10-4.2w-2200---6500k-ww-gu10-400l",
+      "title": "Philips HueWA GU10 4.2W 2200-6500K WW GU10 400lm",
+      "publisher": "Ahlsell",
+      "kind": "retailer",
+      "accessed": "2026-10-11"
+    },
+    {
       "id": "ha-hue",
       "url": "https://www.home-assistant.io/integrations/hue/",
       "title": "Philips Hue - Home Assistant",
@@ -131,6 +147,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

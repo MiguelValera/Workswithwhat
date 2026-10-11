@@ -4,38 +4,38 @@
   "model": "SuperColor A19 1100 lm (Matter, LHLA19E26US)",
   "name": "LIFX Color / SuperColor A19 1100 lm (Matter, US)",
   "regions": ["US"],
-  "officialUrl": "https://www.lifx.com/products/lifx-color-1pk",
+  "officialUrl": "https://www.lifx.com/products/lifx",
   "radios": {
     "value": ["wifi"],
-    "sources": ["lifx-color-1pk"],
+    "sources": ["lifx-color"],
     "note": "2.4 GHz Wi-Fi only."
   },
   "matter": {
     "certified": true,
     "transport": "wifi",
-    "sources": ["lifx-color-1pk", "csa-lifx-supercolor-a19-1100"],
-    "note": "LIFX's page says Matter is enabled out of the box. CSA lists a 'LIFX SuperColor A19 (1100 lumens)'; we couldn't tie its certificate to a model number. The older HomeKit-only version (LHLA19E26CA) has no Matter."
+    "sources": ["lifx-matter-devices", "csa-lifx-supercolor-a19-1100"],
+    "note": "LIFX's Matter list includes LHLA19E26US, LCM4 edition only (part A19L4AE26); units whose firmware starts with v3 have no Matter. CSA lists 'LIFX SuperColor A19 (1100 lumens)' under Feit SKUs, not this model number."
   },
   "compatibility": {
     "apple_home": {
       "status": "matter",
-      "sources": ["lifx-color-1pk", "lifx-matter-setup"],
-      "note": "Pairs with Apple Home via Matter. The older HomeKit edition pairs natively instead; check the model number."
+      "sources": ["lifx-matter-devices", "lifx-matter-setup"],
+      "note": "Pairs with Apple Home via Matter on the LCM4 edition. Check the firmware version in the LIFX app: v3 firmware means no Matter."
     },
     "google_home": {
       "status": "native",
-      "sources": ["lifx-color-1pk", "lifx-integrations"],
-      "note": "LIFX lists Google Home support; it can also pair via Matter."
+      "sources": ["lifx-color", "lifx-integrations-support"],
+      "note": "LIFX lists Google Home on the product page and has a Google Home setup guide; it can also pair via Matter."
     },
     "alexa": {
       "status": "native",
-      "sources": ["lifx-color-1pk", "lifx-integrations"],
-      "note": "LIFX lists Alexa support; it can also pair via Matter."
+      "sources": ["lifx-color", "lifx-integrations-support"],
+      "note": "LIFX lists Alexa on the product page and has an Alexa setup guide; it can also pair via Matter."
     },
     "smartthings": {
-      "status": "matter",
-      "sources": ["lifx-color-1pk", "lifx-matter-setup"],
-      "note": "LIFX lists SmartThings for its Matter bulbs; a SmartThings Matter controller is needed."
+      "status": "native",
+      "sources": ["lifx-smartthings-support"],
+      "note": "LIFX's support guide links your LIFX account in the SmartThings app. The LCM4 edition can also pair via Matter with a SmartThings hub."
     },
     "home_assistant": {
       "status": "native",
@@ -45,7 +45,7 @@
   },
   "hubRequired": {
     "value": false,
-    "sources": ["lifx-color-1pk"],
+    "sources": ["lifx-color"],
     "note": "Here this means needing a bridge or hub for basic app control. It joins 2.4 GHz Wi-Fi directly and is controlled from the LIFX app."
   },
   "localControl": {
@@ -55,37 +55,53 @@
   },
   "colorType": {
     "value": "color",
-    "sources": ["lifx-color-1pk"],
+    "sources": ["lifx-color"],
     "note": "Full colour plus white from 1500 to 9000 K."
   },
   "lumens": {
     "value": 1100,
-    "sources": ["lifx-color-1pk"],
-    "note": "1100 lm, sold as a 75 W equivalent; 11.5 W."
+    "sources": ["lifx-color"],
+    "note": "1100 lm, sold as a 75 W equivalent; 11.5 W at full brightness."
   },
   "bulbBase": {
     "value": "E26 (A19)",
-    "sources": ["lifx-color-1pk"]
+    "sources": ["lifx-color"]
   },
-  "summary": "The current US LIFX Color A19, now sold as the SuperColor 1100 lm bulb, is a full-colour E26 bulb rated at 1100 lumens with whites from 1500 to 9000 K. It joins 2.4 GHz Wi-Fi directly, with no hub, and ships with Matter enabled. It works with Alexa and Google Home through LIFX's own integrations, and with Apple Home and SmartThings via Matter. Home Assistant controls it locally through the official LIFX integration.",
+  "summary": "The current US LIFX Color A19, now sold as the SuperColor 1100 lm bulb, is a full-colour E26 bulb rated at 1100 lumens with whites from 1500 to 9000 K. It joins 2.4 GHz Wi-Fi directly, with no hub, and ships with Matter enabled. It works with Alexa, Google Home and SmartThings through LIFX's own integrations, and with Apple Home via Matter. Home Assistant controls it locally through the official LIFX integration.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "LIFX also sells an older HomeKit-only A19 1100 lm (LHLA19E26CA) without Matter; check the model number on the box.",
+    "Matter is only on the LCM4 edition (part A19L4AE26). If the LIFX app shows firmware starting with v3, the bulb has no Matter.",
     "Remote control through Matter needs a Matter home hub, such as an Apple TV, HomePod or Nest Hub."
   ],
   "sources": [
     {
-      "id": "lifx-color-1pk",
-      "url": "https://www.lifx.com/products/lifx-color-1pk",
-      "title": "LIFX SuperColor Smart Bulb 1100lm",
+      "id": "lifx-color",
+      "url": "https://www.lifx.com/products/lifx",
+      "title": "LIFX Color",
       "publisher": "LIFX (Feit Electric)",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
     {
-      "id": "lifx-integrations",
-      "url": "https://www.lifx.com/pages/integrations",
-      "title": "LIFX Integrations: Works With What You Already Have",
+      "id": "lifx-integrations-support",
+      "url": "https://support.lifx.com/hc/en-us/categories/14498756992919-Integrating-With-Other-Products",
+      "title": "Integrating With Other Products",
+      "publisher": "LIFX (Feit Electric)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "lifx-smartthings-support",
+      "url": "https://support.lifx.com/hc/en-us/articles/31099475617559-How-do-I-connect-my-LIFX-lights-to-SmartThings",
+      "title": "How do I connect my LIFX lights to SmartThings",
+      "publisher": "LIFX (Feit Electric)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "lifx-matter-devices",
+      "url": "https://www.lifx.com/pages/matter-compatible-devices",
+      "title": "Matter compatible devices",
       "publisher": "LIFX (Feit Electric)",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -115,6 +131,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

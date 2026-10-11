@@ -62,7 +62,7 @@
   "lumens": {
     "value": 810,
     "sources": ["hue-white-a19-4pk", "hue-white-a19-2pk"],
-    "note": "Hue gives 810 lm as maximum brightness; no separate rated figure was shown. The older single-pack Hue White A19 (046677476861, now discontinued) is rated up to 806 lm."
+    "note": "Hue gives 810 lm as maximum brightness; no separate rated figure was shown."
   },
   "bulbBase": {
     "value": "E26 (A19)",
@@ -73,7 +73,7 @@
     "Apple Home and SmartThings need a Hue Bridge.",
     "White only: no colour and no adjustable colour temperature.",
     "Bluetooth mode is limited to about 10 lights in a short range and has no remote access.",
-    "Hue sells this generation mainly in 2- and 4-packs; the older single bulb (806 lm) has a different product number."
+    "Hue sells this generation mainly in 2- and 4-packs."
   ],
   "sources": [
     {
@@ -125,6 +125,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

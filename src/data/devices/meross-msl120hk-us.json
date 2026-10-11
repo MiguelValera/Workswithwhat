@@ -4,11 +4,11 @@
   "model": "MSL120HK",
   "name": "Meross Smart Wi-Fi LED Bulb MSL120HK (HomeKit, US)",
   "regions": ["US"],
-  "officialUrl": "https://www.meross.com/Detail/28/Smart%20Wi-Fi%20LED%20Bulb",
+  "officialUrl": "https://www.meross.com/en-gc/product/28/article/",
   "radios": {
     "value": ["wifi"],
     "sources": ["meross-msl120"],
-    "note": "IEEE 802.11 b/g/n, 2.4 GHz only; enterprise Wi-Fi is not supported."
+    "note": "IEEE 802.11 b/g/n, 2.4 GHz only."
   },
   "matter": {
     "certified": null,
@@ -23,7 +23,7 @@
     },
     "google_home": {
       "status": "native",
-      "sources": ["meross-msl120", "meross-msl120-us-2pk"],
+      "sources": ["meross-msl120"],
       "note": "Meross lists Google Assistant, through its cloud integration."
     },
     "alexa": {
@@ -54,12 +54,12 @@
   },
   "colorType": {
     "value": "color",
-    "sources": ["meross-msl120", "meross-msl120-us-2pk"],
+    "sources": ["meross-msl120"],
     "note": "RGB colour plus tunable white from 2700 to 6500 K."
   },
   "lumens": {
     "value": 810,
-    "sources": ["meross-msl120", "meross-msl120-us-2pk"],
+    "sources": ["meross-msl120"],
     "note": "810 lm, sold as a 60 W equivalent; 9 W."
   },
   "bulbBase": {
@@ -76,7 +76,7 @@
   "sources": [
     {
       "id": "meross-msl120",
-      "url": "https://www.meross.com/Detail/28/Smart%20Wi-Fi%20LED%20Bulb",
+      "url": "https://www.meross.com/en-gc/product/28/article/",
       "title": "Smart Light Bulb that Changes Color - Meross MSL120",
       "publisher": "Meross",
       "kind": "manufacturer",
@@ -84,21 +84,14 @@
     },
     {
       "id": "meross-smartbulb-series",
-      "url": "https://www.meross.com/en-gc/smartbulb",
+      "url": "https://www.meross.com/en-gc/mTerminal/smartbulb",
       "title": "Meross Smart Bulb Series - Works with HomeKit, Alexa and SmartThings",
-      "publisher": "Meross",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "meross-msl120-us-2pk",
-      "url": "https://shop.meross.com/products/meross-smart-led-light-bulb",
-      "title": "Meross Smart LED Light Bulb, 810 Lumens 60W Equivalent, 2 Pack",
       "publisher": "Meross",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
