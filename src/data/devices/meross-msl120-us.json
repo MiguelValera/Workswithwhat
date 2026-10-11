@@ -1,29 +1,29 @@
 {
   "category": "smart-bulb",
   "brand": "Meross",
-  "model": "MSL120HK",
-  "name": "Meross Smart Wi-Fi LED Bulb MSL120HK (HomeKit, US)",
+  "model": "MSL120",
+  "name": "Meross MSL120 (US)",
   "regions": ["US"],
-  "officialUrl": "https://www.meross.com/Detail/28/Smart%20Wi-Fi%20LED%20Bulb",
+  "officialUrl": "https://www.meross.com/en-gc/product/28/article/",
   "radios": {
     "value": ["wifi"],
     "sources": ["meross-msl120"],
-    "note": "IEEE 802.11 b/g/n, 2.4 GHz only; enterprise Wi-Fi is not supported."
+    "note": "IEEE 802.11 b/g/n, 2.4 GHz only."
   },
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "Some Meross shop pages carry a brand-wide 'works with Matter' line, but we found no CSA listing or product spec confirming Matter for the MSL120HK. Not confirmed."
+    "note": "Some Meross shop pages carry a brand-wide 'works with Matter' line, but we found no CSA listing or product spec confirming Matter for the MSL120. Not confirmed."
   },
   "compatibility": {
     "apple_home": {
       "status": "native",
       "sources": ["meross-msl120", "meross-smartbulb-series"],
-      "note": "HomeKit edition; Meross lists Apple HomeKit and Siri."
+      "note": "Meross's MSL120 product page lists Apple HomeKit and Siri."
     },
     "google_home": {
       "status": "native",
-      "sources": ["meross-msl120", "meross-msl120-us-2pk"],
+      "sources": ["meross-msl120"],
       "note": "Meross lists Google Assistant, through its cloud integration."
     },
     "alexa": {
@@ -54,29 +54,31 @@
   },
   "colorType": {
     "value": "color",
-    "sources": ["meross-msl120", "meross-msl120-us-2pk"],
+    "sources": ["meross-msl120"],
     "note": "RGB colour plus tunable white from 2700 to 6500 K."
   },
   "lumens": {
     "value": 810,
-    "sources": ["meross-msl120", "meross-msl120-us-2pk"],
-    "note": "810 lm, sold as a 60 W equivalent; 9 W."
+    "sources": ["meross-msl120"],
+    "note": "810 lm, sold as a 60 W equivalent; 9 W, per Meross's MSL120 page."
   },
   "bulbBase": {
     "value": "E26 (A19)",
     "sources": ["meross-msl120"],
     "note": "The US version is E26 for 90–125 V; Meross also sells E27 and B22 versions for other markets."
   },
-  "summary": "The Meross MSL120HK is a colour Wi-Fi bulb with tunable white from 2700 to 6500 K, rated at 810 lumens. This record covers the US E26 version. It joins 2.4 GHz Wi-Fi directly, with no hub. Meross lists Apple HomeKit, Alexa, Google Assistant and SmartThings. Matter and Home Assistant support are unconfirmed.",
+  "summary": "Siri and the Home app control the Meross MSL120 directly: Meross lists Apple HomeKit for this colour bulb, and it joins 2.4 GHz Wi-Fi without a hub. Meross also lists Alexa, Google Assistant and SmartThings. This US version is an E26 bulb rated at 810 lumens (60 W equivalent, 9 W), with RGB colour and tunable white from 2700 to 6500 K. Home Assistant has no official Meross integration, and Matter isn't confirmed.",
   "caveats": [
-    "2.4 GHz Wi-Fi only; enterprise Wi-Fi isn't supported.",
-    "Meross's model naming varies between pages (MSL120, MSL120HK, MSL120KIT); check the box for the HomeKit edition.",
-    "Matter support isn't confirmed for this model."
+    "2.4 GHz Wi-Fi only.",
+    "This record follows Meross's MSL120 product page; check the box for the HomeKit logo.",
+    "This record is the US E26 (90–125 V) version; Meross sells E27 and B22 versions for other markets.",
+    "Home Assistant has no official Meross integration; pairing through HA's HomeKit Device integration may work but isn't documented for this model.",
+    "The 'works with Matter' line on some Meross shop pages is brand-wide, and nothing confirms Matter for this bulb."
   ],
   "sources": [
     {
       "id": "meross-msl120",
-      "url": "https://www.meross.com/Detail/28/Smart%20Wi-Fi%20LED%20Bulb",
+      "url": "https://www.meross.com/en-gc/product/28/article/",
       "title": "Smart Light Bulb that Changes Color - Meross MSL120",
       "publisher": "Meross",
       "kind": "manufacturer",
@@ -84,21 +86,14 @@
     },
     {
       "id": "meross-smartbulb-series",
-      "url": "https://www.meross.com/en-gc/smartbulb",
+      "url": "https://www.meross.com/en-gc/mTerminal/smartbulb",
       "title": "Meross Smart Bulb Series - Works with HomeKit, Alexa and SmartThings",
-      "publisher": "Meross",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "meross-msl120-us-2pk",
-      "url": "https://shop.meross.com/products/meross-smart-led-light-bulb",
-      "title": "Meross Smart LED Light Bulb, 810 Lumens 60W Equivalent, 2 Pack",
       "publisher": "Meross",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

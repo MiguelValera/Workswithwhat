@@ -83,7 +83,7 @@ After any agent run: `npm run validate` must pass.
 Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
-- **45 verified devices:** 35 smart plugs (US, EU, UK) and 10 smart bulbs, each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
+- **50 verified devices:** 35 smart plugs (US, EU, UK) and 15 smart bulbs, each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
   - `/smart-plugs/` and `/smart-bulbs/`: comparison charts.
   - A page per device.
@@ -92,12 +92,6 @@ Read this first if you are picking the project up.
 - **For AI assistants:** `/llms.txt`, `/llms-full.txt`, `/api/devices.json` and `/api/<category>.json`.
 
 ### Unfinished work
-- **Five smart-bulb drafts** (`status: "draft"`, not published): `lifx-supercolor-a19-1100-us`, `meross-msl120hk-us`, `philips-hue-white-a19-e26-810-us`, `philips-hue-white-ambiance-gu10-350-eu` and `tp-link-tapo-l510e-eu`. Their verifier run was stopped partway, so start over: run the verifier, then the editor. Collector doubts:
-  - Hue White A19: only multipack pages exist, and 810 lm is a "max" figure.
-  - Hue GU10 350 lm: may be discontinued (EAN 8719514339903). The successor is EAN 8720169229976.
-  - Tapo L510E: the Home Assistant listing and local control are unclear.
-  - LIFX: model number LHLA19E26US vs LHLA19E26CAN; the CSA listing is generic.
-  - Meross MSL120HK: Matter rests only on a brand-wide claim.
 - **Next plug batch (not started):** Tapo P115 (EU), Nous A1T, Innr SP 242, LEDVANCE SMART+ Matter plug, Shelly Plug Gen4 (EU).
 
 ### How content gets added (lessons learned)

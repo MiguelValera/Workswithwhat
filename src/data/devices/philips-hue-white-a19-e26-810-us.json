@@ -62,18 +62,20 @@
   "lumens": {
     "value": 810,
     "sources": ["hue-white-a19-4pk", "hue-white-a19-2pk"],
-    "note": "Hue gives 810 lm as maximum brightness; no separate rated figure was shown. The older single-pack Hue White A19 (046677476861, now discontinued) is rated up to 806 lm."
+    "note": "Hue gives 810 lm as maximum brightness; no separate rated figure was shown."
   },
   "bulbBase": {
     "value": "E26 (A19)",
     "sources": ["hue-white-a19-4pk"]
   },
-  "summary": "The current US Philips Hue White A19 is a warm white (2700 K) E26 bulb rated at up to 810 lumens, with Bluetooth and Zigbee radios. Without a bridge it runs over Bluetooth from the Hue app and can pair with some Echo and Nest devices. With a Hue Bridge it works with Apple Home, SmartThings and Matter controllers. Home Assistant supports it through the official Hue and Hue BLE integrations.",
+  "summary": "Bluetooth gets the Philips Hue White A19 (US) going without a bridge. The Hue app controls it directly, and Hue's FAQ says Bluetooth bulbs pair with most Echo devices and with Google Nest speakers and displays. Apple Home and SmartThings need a Hue Bridge, which also adds remote access. It's a fixed warm white (2700 K) E26 bulb at up to 810 lumens. Home Assistant supports it through the official Hue integration via the Bridge, or bridgeless through Hue BLE.",
   "caveats": [
     "Apple Home and SmartThings need a Hue Bridge.",
-    "White only: no colour and no adjustable colour temperature.",
-    "Bluetooth mode is limited to about 10 lights in a short range and has no remote access.",
-    "Hue sells this generation mainly in 2- and 4-packs; the older single bulb (806 lm) has a different product number."
+    "810 lm is Hue's maximum brightness figure; Hue shows no separate rated output.",
+    "Fixed 2700 K white: no colour and no colour-temperature adjustment.",
+    "Bluetooth mode handles about 10 lights at short range and has no remote access.",
+    "Hue lists Matter for this bulb only under 'Hue Bridge required', and we found no CSA listing for the bulb itself.",
+    "Hue sells this bulb mainly in 2- and 4-packs."
   ],
   "sources": [
     {
@@ -125,6 +127,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
