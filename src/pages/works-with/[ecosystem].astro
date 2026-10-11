@@ -75,13 +75,18 @@ const description = `${yes.length} ${what} confirmed to work with ${label}${viaM
     {yes.length} of the {all.length} devices we've checked work with {label}.
     {viaMatter > 0 && ` ${viaMatter} connect through Matter rather than a brand integration.`}
   </p>
-  <h2>How devices connect to {label}</h2>
+  <nav class="toc" aria-label="On this page">
+    <span class="toc-label">Jump to:</span>
+    {groups.map((g) => <a href={`#${g.cat.path}`}>{g.cat.label} ({g.yes.length})</a>)}
+    <a href="#how">How devices connect</a>
+  </nav>
+  <h2 id="how">How devices connect to {label}</h2>
   {HOW[eco].map((p) => <p>{p}</p>)}
 
   {
     groups.map((g) => (
-      <section>
-        <h2>{g.cat.label} that work with {label}</h2>
+      <section aria-labelledby={g.cat.path}>
+        <h2 id={g.cat.path}>{g.cat.label} that work with {label}</h2>
         {g.yes.length > 0 ? (
           <div class="table-scroll">
             <table role="table" class="stack pair">

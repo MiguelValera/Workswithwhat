@@ -36,7 +36,17 @@ const description = `${matter.length} Matter-certified ${what}, split by Wi-Fi a
     {' '}{matter.filter((d) => d.data.matter.transport === 'thread').length} over Thread.
   </p>
 
-  <h2>What Matter means for a device</h2>
+  <nav class="toc" aria-label="On this page">
+    <span class="toc-label">Jump to:</span>
+    {
+      groups.flatMap((g) => [
+        g.wifi.length > 0 && <a href={`#${g.cat.path}-wifi`}>{g.cat.label} over Wi-Fi ({g.wifi.length})</a>,
+        g.thread.length > 0 && <a href={`#${g.cat.path}-thread`}>{g.cat.label} over Thread ({g.thread.length})</a>,
+      ])
+    }
+    <a href="#what-matter-means">What Matter means</a>
+  </nav>
+  <h2 id="what-matter-means">What Matter means for a device</h2>
   <p>
     A Matter-certified device can be added to any platform that acts as a Matter controller, including Apple Home,
     Google Home, Alexa, SmartThings and Home Assistant, without the brand's own skill or cloud. You can also share
@@ -51,13 +61,13 @@ const description = `${matter.length} Matter-certified ${what}, split by Wi-Fi a
   {
     groups.map((g) =>
       [
-        { label: 'over Wi-Fi', list: g.wifi },
-        { label: 'over Thread', list: g.thread },
+        { label: 'over Wi-Fi', list: g.wifi, id: `${g.cat.path}-wifi` },
+        { label: 'over Thread', list: g.thread, id: `${g.cat.path}-thread` },
       ].map(
         (t) =>
           t.list.length > 0 && (
             <>
-              <h2>Matter {g.cat.plural} {t.label}</h2>
+              <h2 id={t.id}>Matter {g.cat.plural} {t.label}</h2>
               <div class="table-scroll">
                 <table role="table" class="stack pair">
                   <thead role="rowgroup">
