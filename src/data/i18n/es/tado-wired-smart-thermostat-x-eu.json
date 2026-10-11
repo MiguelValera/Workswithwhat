@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Como termostato de pared para calderas y bombas de calor, el tado° Wired Smart Thermostat X activa la calefacción mediante un relé u OpenTherm. Se empareja por Matter sobre Thread con Apple Home, Google Home y Alexa, y Home Assistant funciona con su integración Matter, aunque tado° dice que no ofrece soporte oficial para Home Assistant. Vale cualquier router de borde Thread, incluido el Bridge X de tado°. Funciona con 3 pilas AAA.",
+  "caveats": [
+    "Necesita un router de borde Thread, como el Bridge X de tado° (se vende aparte y no es compatible con los dispositivos tado° V3+) o uno de otra marca.",
+    "tado° también vende un modelo cableado de 2.ª generación con batería recargable integrada; este registro es la versión con 3 pilas AAA.",
+    "tado° dice que funciona con la mayoría de las calderas y bombas de calor; comprueba la compatibilidad de la tuya en su comprobador antes de comprar."
+  ],
+  "notes": {
+    "radios": "Las páginas de tado° dicen que necesita un router de borde Thread. No se ha confirmado Bluetooth para la configuración en este modelo.",
+    "matter": "tado° documenta un código de configuración Matter para sus dispositivos X, incluido este termostato. Un fragmento de búsqueda mostraba el certificado de la CSA CSA23C79MAT41789-24 (Smart Thermostat X, Thread), pero la propia página de la CSA no apareció, así que no se cita.",
+    "hubRequired": "No hace falta ningún puente de tado° para el control básico: tado° dice que el Bridge X u otro router de borde Thread compatible lo conecta a internet. Sin ningún router de borde Thread no puede llegar a internet. Los productos tado° X no funcionan con dispositivos V3+.",
+    "localControl": "No hemos encontrado ninguna página de tado° que describa el control sin conexión o solo local.",
+    "systems": "Se cablea al sistema de calefacción. tado° dice que funciona con la mayoría de estos sistemas; comprueba la compatibilidad de tu caldera en su comprobador.",
+    "power": "tado° dice que el Smart Thermostat X usa tres pilas alcalinas AAA (LR03). El Wired Smart Thermostat X (2.ª gen.) usa en su lugar una batería recargable integrada y es otro producto.",
+    "compatibility.apple_home": "Se vincula con un código Matter desde la app tado° o con el código QR del dispositivo. Necesita un router de borde Thread.",
+    "compatibility.google_home": "tado° tiene una guía de configuración para Google Home con Matter. Necesita un router de borde Thread.",
+    "compatibility.alexa": "Necesita un Echo o eero compatible con Matter y un router de borde Thread. tado° aconseja añadir primero el dispositivo en su propia app para conservar las actualizaciones de firmware.",
+    "compatibility.smartthings": "No hemos encontrado ninguna guía de configuración de SmartThings de tado°.",
+    "compatibility.home_assistant": "Mediante la integración Matter de Home Assistant, que necesita un router de borde Thread. tado° dice que no ofrece soporte oficial para Home Assistant."
+  },
+  "values": {
+    "systems": "Calderas y bombas de calor mediante relé u OpenTherm"
+  }
+}

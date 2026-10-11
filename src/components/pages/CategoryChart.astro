@@ -1,11 +1,12 @@
 ---
 // The comparison chart for one category: all markets (/smart-plugs/, one table per
-// market) or one market (/us/smart-plugs/, one table).
+// market) or one market (/us/smart-plugs/, one table). Both languages.
 import Base from '../../layouts/Base.astro';
 import CompareTable from '../CompareTable.astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemSlug, formatDate, type Device } from '../../lib/devices';
-import type { Category } from '../../lib/categories';
-import { byMarket, regionPath, type Market } from '../../lib/markets';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemSlug, formatDate, getTranslations, type Device } from '../../lib/devices';
+import { catText, type Category } from '../../lib/categories';
+import { byMarket, marketText, regionPath, type Market } from '../../lib/markets';
+import { langOf, localize } from '../../i18n/lang';
 
 interface Props {
   cat: Category;
@@ -13,22 +14,34 @@ interface Props {
   market?: Market;
 }
 const { cat, devices, market } = Astro.props;
-const singularTitle = cat.singular.replace(/^./, (c) => c.toUpperCase());
+const lang = langOf(Astro.url.pathname);
+const es = lang === 'es';
+const L = (p: string) => localize(p, lang);
+const c = catText(cat, lang);
+const m = market && marketText(market, lang);
+const cap = (s: string) => s.replace(/^./, (x) => x.toUpperCase());
+const translations = await getTranslations();
 const path = market ? `/${market.key}/${cat.path}/` : `/${cat.path}/`;
-const title = market
-  ? `${market.short} ${cat.singular} compatibility chart: Apple Home, Google Home, Alexa, Matter`
-  : `${singularTitle} compatibility chart: Apple Home, Google Home, Alexa, Matter`;
-const description = market
-  ? `${devices.length} ${cat.plural} for ${market.phrase} compared by ecosystem support, radio, Matter certification and hub needs. Every cell links back to a source.`
-  : `${devices.length} ${cat.plural} compared by ecosystem support, radio, Matter certification and hub needs. Every cell links back to a source.`;
+
+const title = es
+  ? `Compatibilidad de ${c.plural}${m ? ` (${m.short})` : ''}: Apple Home, Google Home, Alexa, Matter`
+  : market
+    ? `${market.short} ${cat.singular} compatibility chart: Apple Home, Google Home, Alexa, Matter`
+    : `${cap(cat.singular)} compatibility chart: Apple Home, Google Home, Alexa, Matter`;
+const description = es
+  ? `${devices.length} ${c.plural}${m ? ` para ${m.phrase}` : ''} comparados por compatibilidad con cada ecosistema, radio, certificación Matter y necesidad de hub. Cada celda enlaza a su fuente.`
+  : `${devices.length} ${cat.plural}${market ? ` for ${market.phrase}` : ''} compared by ecosystem support, radio, Matter certification and hub needs. Every cell links back to a source.`;
+const h1 = es
+  ? `Tabla de compatibilidad de ${c.plural}${m ? ` para ${m.phrase}` : ''}`
+  : `${cap(cat.singular)} compatibility chart${market ? ` for ${market.phrase}` : ''}`;
 const api = `/api/${cat.path}.json`;
 const groups = await Promise.all(
-  byMarket(devices).map(async (g) => ({ ...g, regionPage: await regionPath(g.market, `/${cat.path}/`) })),
+  byMarket(devices).map(async (g) => ({ ...g, text: marketText(g.market, lang), regionPage: await regionPath(g.market, `/${cat.path}/`) })),
 );
 const ecoLinks = await Promise.all(
   ECOSYSTEMS.map(async (e) => {
     const global = `/works-with/${ecosystemSlug(e)}/`;
-    return { e, href: (market && (await regionPath(market, global))) || global };
+    return { e, href: L((market && (await regionPath(market, global))) || global) };
   }),
 );
 
@@ -37,9 +50,10 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
-    name: market ? `${market.short} ${cat.singular} ecosystem compatibility` : `${singularTitle} ecosystem compatibility`,
+    name: es ? `Compatibilidad de ${c.plural}${m ? ` (${m.short})` : ''}` : `${market ? `${market.short} ${cat.singular}` : cap(cat.singular)} ecosystem compatibility`,
     description,
-    url: new URL(path, Astro.site).href,
+    inLanguage: es ? 'es-ES' : 'en',
+    url: new URL(L(path), Astro.site).href,
     ...(newest && { dateModified: newest }),
     creator: { '@type': 'Organization', name: 'Workswithwhat', url: Astro.site!.href },
     variableMeasured: ['Matter certification', ...ECOSYSTEMS.map((e) => `${ECOSYSTEM_LABELS[e]} compatibility`)],
@@ -48,45 +62,57 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: market ? `${cat.label} for ${market.phrase}` : cat.label,
+    name: m ? (es ? `${c.label} para ${m.phrase}` : `${cat.label} for ${market!.phrase}`) : c.label,
     itemListElement: devices.map((d, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      url: new URL(devicePath(d), Astro.site).href,
+      url: new URL(devicePathIn(d, lang, translations), Astro.site).href,
       name: d.data.name,
     })),
   },
 ];
 const crumbs = market
   ? [
-      { name: market.label, path: `/${market.key}/` },
-      { name: cat.label, path },
+      { name: m!.label, path: `/${market.key}/` },
+      { name: c.label, path },
     ]
-  : [{ name: cat.label, path }];
+  : [{ name: c.label, path }];
 ---
 
 <Base title={title} description={description} crumbs={crumbs} jsonLd={jsonLd}>
-  <h1>{singularTitle} compatibility chart{market && ` for ${market.phrase}`}</h1>
-  <p class="lede">
-    Which {cat.singular} works with which platform, and how it gets there: directly, over Matter, or through a hub.
-    Open any one for the details and the sources behind each answer.
-    {market && <> Only models sold in {market.phrase} are listed; <a href={`/${cat.path}/`}>see every region</a>.</>}
-  </p>
+  <h1>{h1}</h1>
+  {
+    es ? (
+      <p class="lede">
+        Qué {c.singular} funciona con cada plataforma y de qué forma: directamente, mediante Matter o a través de un hub.
+        Abre cualquiera para ver los detalles y las fuentes de cada respuesta.
+        {m && <> Solo aparecen modelos que se venden en {m.phrase}; <a href={L(`/${cat.path}/`)}>ver todas las regiones</a>.</>}
+      </p>
+    ) : (
+      <p class="lede">
+        Which {cat.singular} works with which platform, and how it gets there: directly, over Matter, or through a hub.
+        Open any one for the details and the sources behind each answer.
+        {market && <> Only models sold in {market.phrase} are listed; <a href={`/${cat.path}/`}>see every region</a>.</>}
+      </p>
+    )
+  }
   {
     market ? (
       <CompareTable devices={devices} brandJump />
     ) : (
       <>
-        <nav class="toc" aria-label="Jump to region">
-          <span class="toc-label">Region:</span>
-          {groups.map((g) => <a href={`#${g.market.key}`}>{g.market.label} ({g.devices.length})</a>)}
+        <nav class="toc" aria-label={es ? 'Ir a la región' : 'Jump to region'}>
+          <span class="toc-label">{es ? 'Región:' : 'Region:'}</span>
+          {groups.map((g) => <a href={`#${g.market.key}`}>{g.text.label} ({g.devices.length})</a>)}
         </nav>
         {groups.map((g) => (
           <section aria-labelledby={g.market.key}>
-            <h2 id={g.market.key}>{cat.label} for {g.market.phrase}</h2>
+            <h2 id={g.market.key}>{es ? `${c.label} para ${g.text.phrase}` : `${cat.label} for ${g.market.phrase}`}</h2>
             {g.regionPage && (
               <p class="muted small">
-                <a href={g.regionPage}>Only {g.market.label}: the {g.market.short} {cat.singular} chart</a>
+                <a href={L(g.regionPage)}>
+                  {es ? `Solo ${g.text.label}: tabla de ${c.plural} (${g.text.short})` : `Only ${g.market.label}: the ${g.market.short} ${cat.singular} chart`}
+                </a>
               </p>
             )}
             <CompareTable devices={g.devices} brandJump anchorPrefix={`${g.market.key}-`} />
@@ -95,9 +121,18 @@ const crumbs = market
       </>
     )
   }
-  {newest && <p class="muted small">Last updated <time datetime={newest}>{formatDate(newest)}</time>. The same data is available as <a href={api}>JSON</a>.</p>}
+  {
+    newest && (
+      <p class="muted small">
+        {es ? 'Actualizado el ' : 'Last updated '}
+        <time datetime={newest}>{formatDate(newest, lang)}</time>.
+        {es ? ' Los mismos datos están disponibles en ' : ' The same data is available as '}
+        <a href={api}>JSON</a>{es ? ' (en inglés).' : '.'}
+      </p>
+    )
+  }
   <p class="muted">
-    Looking for one platform?{' '}
+    {es ? '¿Buscas una plataforma concreta?' : 'Looking for one platform?'}{' '}
     {
       ecoLinks.map(({ e, href }, i) => (
         <>

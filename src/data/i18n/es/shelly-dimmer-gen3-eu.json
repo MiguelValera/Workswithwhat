@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El Shelly Dimmer Gen3 es un módulo regulador de un canal por corte de fase final, de 200 W como máximo, que va en la caja detrás de un interruptor de pared existente. Funciona con wifi y Bluetooth, con o sin cable neutro, y tiene una interfaz web local que no necesita la nube. Shelly indica compatibilidad con Google, Alexa y SmartThings, Home Assistant tiene una integración oficial y Apple Home no está confirmado.",
+  "caveats": [
+    "Sin cable neutro y sin el Bypass de Shelly, la carga mínima es de 20 W.",
+    "No hay certificación Matter confirmada para este modelo, así que la compatibilidad con Apple Home no está confirmada."
+  ],
+  "notes": {
+    "radios": "Wifi 802.11 b/g/n y Bluetooth (la base de conocimiento indica un ID de Bluetooth).",
+    "matter": "Shelly dice que los dispositivos Gen3 no salieron con Matter y que no todos lo recibirán; las notas de su firmware Matter nombran relés, no este regulador. Se vio de pasada un ID de certificado, pero no apareció ningún registro de la CSA para este regulador, así que está sin confirmar.",
+    "hubRequired": "Dispositivo wifi con su propio punto de acceso e interfaz web.",
+    "localControl": "La interfaz web integrada funciona sin internet ni Shelly Cloud; la integración de Shelly en Home Assistant usa push local.",
+    "switchForm": "Controlador de regulación compacto que se instala detrás de un interruptor de pared existente.",
+    "dimmer": "Regulador por corte de fase final para cargas regulables LED, incandescentes y halógenas.",
+    "neutralRequired": "Funciona con o sin neutro. Sin neutro y sin Bypass, la carga mínima es de 20 W.",
+    "gangs": "Controlador de regulación de un solo canal, 200 W como máximo.",
+    "compatibility.apple_home": "No hay certificación Matter confirmada y ninguna página de Shelly nombra Apple Home para este modelo.",
+    "compatibility.google_home": "La tabla de especificaciones de Shelly marca como compatibles los rasgos de Google Smart Home.",
+    "compatibility.alexa": "La tabla de especificaciones de Shelly marca como compatibles las capacidades de Amazon Alexa.",
+    "compatibility.smartthings": "La tabla de especificaciones de Shelly marca como compatibles las capacidades de Samsung SmartThings.",
+    "compatibility.home_assistant": "Integración oficial de Shelly con push local."
+  },
+  "values": {
+    "gangs": "1 canal"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El Tapo P105 de TP-Link es un minienchufe estadounidense para Alexa, Google Home y SmartThings, cada uno vinculado con tu cuenta de Tapo. La integración oficial de TP-Link de Home Assistant también lo admite y lo controla en tu red local. Se conecta directamente al wifi de 2,4 GHz, usa Bluetooth solo para la configuración y es de 15 A / 1800 W. Tiene dos carencias: no mide el consumo y TP-Link no menciona Apple Home ni Matter.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "Sin medición de consumo; TP-Link dice que los Tapo P110 y P115 son los enchufes Tapo que miden la potencia.",
+    "TP-Link no menciona Apple Home ni Matter; sus enchufes con Matter llevan el sufijo M, como el P125M.",
+    "Home Assistant necesita tus credenciales de la cuenta de TP-Link para autenticar los dispositivos Tapo.",
+    "Las cargas con motor están limitadas a 1/6 CV."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz (IEEE 802.11b/g/n). El Bluetooth se usa solo para la configuración.",
+    "matter": "TP-Link indica Alexa, Google Assistant y SmartThings para el P105 y no menciona Matter, pero tampoco dice que no lo tenga. Los enchufes con Matter de TP-Link llevan el sufijo M (p. ej., P125M).",
+    "hubRequired": "Se conecta directamente al wifi de 2,4 GHz; TP-Link dice que no hace falta hub.",
+    "localControl": "La integración de Home Assistant se comunica con el enchufe en la red local. La app Tapo en sí funciona a través de la nube.",
+    "energyMonitoring": "TP-Link dice que el P110 y el P115 miden el consumo; el P100 y el P105 no.",
+    "maxLoadWatts": "15 A, 1800 W a 120 V para uso general y carga resistiva; motor de 1/6 CV. La web estadounidense indica una entrada de 100–125 V; la ficha técnica de 2020 y algunas cajas dicen 100–240 V.",
+    "compatibility.apple_home": "La lista de plataformas del P105 de TP-Link nombra Alexa, Google Assistant y SmartThings, no HomeKit, pero tampoco lo descarta.",
+    "compatibility.google_home": "Vincula la cuenta de Tapo en la app Google Home o desde la app Tapo.",
+    "compatibility.alexa": "Vincula la cuenta de Tapo mediante la skill Tapo.",
+    "compatibility.smartthings": "TP-Link incluye Samsung SmartThings entre las plataformas del P105.",
+    "compatibility.home_assistant": "La integración oficial TP-Link Smart Home incluye el P105. Los dispositivos Tapo necesitan tus credenciales de la cuenta de TP-Link para autenticarse."
+  }
+}

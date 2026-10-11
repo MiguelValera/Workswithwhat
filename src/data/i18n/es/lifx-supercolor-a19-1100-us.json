@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Cuatro de las cinco grandes plataformas se conectan a la LIFX SuperColor A19 de 1100 lm (EE. UU.) con las integraciones propias de LIFX: Alexa, Google Home, SmartThings y Home Assistant, sin hub. Apple Home es la excepción. Se empareja por Matter, y solo la edición LCM4 de esta bombilla (pieza A19L4AE26) tiene Matter. La bombilla es de color completo con casquillo E26 y 1100 lúmenes, con blancos de 1500 a 9000 K, y usa wifi de 2,4 GHz. Home Assistant la controla en local con el protocolo LAN de LIFX.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "Apple Home necesita la edición LCM4 (pieza A19L4AE26); si la app de LIFX muestra un firmware que empieza por v3, la bombilla no tiene Matter."
+  ],
+  "notes": {
+    "radios": "Solo wifi de 2,4 GHz.",
+    "matter": "Este registro es la edición LCM4, que la lista de Matter de LIFX nombra como LHLA19E26US, pieza A19L4AE26. Las unidades antiguas cuyo firmware empieza por v3 no tienen Matter. La CSA lista «LIFX SuperColor A19 (1100 lumens)» bajo SKU de Feit, no con este número de modelo.",
+    "compatibility.apple_home": "Se empareja con Apple Home por Matter en la edición LCM4. Comprueba la versión de firmware en la app de LIFX: el firmware v3 significa que no tiene Matter.",
+    "compatibility.google_home": "LIFX lista Google Home en la página de producto y tiene una guía de configuración para Google Home; también puede emparejarse por Matter.",
+    "compatibility.alexa": "LIFX lista Alexa en la página de producto y tiene una guía de configuración para Alexa; también puede emparejarse por Matter.",
+    "compatibility.smartthings": "La guía de soporte de LIFX vincula tu cuenta de LIFX en la app SmartThings. La edición LCM4 también puede emparejarse por Matter con un hub SmartThings.",
+    "compatibility.home_assistant": "La integración oficial de LIFX controla las luces por la red local (protocolo LAN de LIFX). La integración de Matter es una alternativa.",
+    "hubRequired": "Aquí significa que no hace falta puente ni hub para el control básico desde la app. Se une directamente al wifi de 2,4 GHz y se controla desde la app de LIFX.",
+    "localControl": "La integración de LIFX de Home Assistant habla con la bombilla por la red local, sin la nube de LIFX.",
+    "colorType": "Color completo más blanco de 1500 a 9000 K.",
+    "lumens": "1100 lm, vendida como equivalente a 75 W; 11,5 W a máximo brillo."
+  }
+}

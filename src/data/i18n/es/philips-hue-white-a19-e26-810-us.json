@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Gracias a Bluetooth, la Philips Hue White A19 (EE. UU.) funciona sin puente. La app de Hue la controla directamente, y la FAQ de Hue dice que las bombillas Bluetooth se emparejan con la mayoría de los Echo y con los altavoces y pantallas Google Nest. Apple Home y SmartThings necesitan un Hue Bridge, que además añade acceso remoto. Es una bombilla E26 de blanco cálido fijo (2700 K) de hasta 810 lúmenes. Home Assistant la admite con la integración oficial de Hue a través del Bridge, o sin puente con Hue BLE.",
+  "caveats": [
+    "Apple Home y SmartThings necesitan un Hue Bridge.",
+    "810 lm es la cifra de brillo máximo de Hue; Hue no muestra un rendimiento nominal aparte.",
+    "Blanco fijo de 2700 K: sin color y sin ajuste de temperatura de color.",
+    "El modo Bluetooth maneja unas 10 luces a corta distancia y no tiene acceso remoto.",
+    "Hue incluye Matter para esta bombilla solo en «Hue Bridge necesario», y no hemos encontrado ningún registro de la CSA para la propia bombilla.",
+    "Hue vende esta bombilla sobre todo en packs de 2 y de 4."
+  ],
+  "notes": {
+    "radios": "Hue indica Bluetooth y Zigbee como protocolos de comunicación de esta bombilla.",
+    "matter": "La página de Hue incluye Matter entre los sistemas de terceros, pero en «Hue Bridge necesario» y con solo radios Bluetooth y Zigbee, así que parece Matter a través del Bridge. No hemos encontrado ningún registro de la CSA para la propia bombilla.",
+    "hubRequired": "Aquí significa que hace falta un puente para el control básico desde la app. La app de Hue la controla por Bluetooth (unas 10 luces, a corta distancia); el Hue Bridge hace falta para Apple Home, SmartThings y el acceso remoto.",
+    "localControl": "El control por Bluetooth desde el móvil funciona sin internet; Home Assistant habla con el Hue Bridge por su API local.",
+    "colorType": "Blanco cálido fijo, 2700 K.",
+    "lumens": "Hue da 810 lm como brillo máximo; no se mostró ninguna cifra nominal aparte.",
+    "compatibility.apple_home": "La página de producto de Hue incluye Apple Home en «Hue Bridge necesario»; el Bridge se conecta mediante HomeKit o Matter.",
+    "compatibility.google_home": "Mediante la integración propia de Hue con Google Home. La FAQ de Hue dice que las bombillas Bluetooth funcionan sin puente solo con altavoces y pantallas Google Nest; la página de producto incluye Google en «Hue Bridge necesario».",
+    "compatibility.alexa": "Mediante la integración propia de Hue con Alexa. La FAQ de Hue dice que las bombillas Bluetooth se pueden emparejar sin Bridge con la mayoría de los Echo; la página de producto incluye Alexa en «Hue Bridge necesario».",
+    "compatibility.smartthings": "La página de producto de Hue incluye Samsung SmartThings entre los sistemas de terceros, en «Hue Bridge necesario».",
+    "compatibility.home_assistant": "Integración oficial de Hue (mediante Hue Bridge) e integración oficial de Hue BLE (desde la 2025.12, Bluetooth sin puente). La documentación de BLE no nombra esta bombilla concreta."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge"
+  }
+}

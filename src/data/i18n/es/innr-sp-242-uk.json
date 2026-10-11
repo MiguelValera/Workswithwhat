@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Los altavoces Echo con hub Zigbee integrado pueden emparejar directamente el Innr SP 242 (Reino Unido) para Alexa; si no, necesita un puente como un Hue Bridge o SmartThings. Home Assistant lo reconoce mediante ZHA o Zigbee2MQTT, con la medición de consumo incluida. Es un enchufe Zigbee 3.0 con un límite de 13 A que repite la malla Zigbee. Google Home no está en la lista de Innr, y Apple Home no está confirmado: Innr dice que sus dispositivos en un Hue Bridge no pasan a HomeKit.",
+  "caveats": [
+    "Necesita un hub Zigbee; no tiene wifi.",
+    "Philips Hue puede encenderlo y apagarlo, pero no muestra sus lecturas de energía.",
+    "Los dispositivos de Innr en un Hue Bridge no pasan a Apple HomeKit.",
+    "Innr dice que funciona con ZHA y Zigbee2MQTT, pero no da soporte a esas configuraciones."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0 en 2,4 GHz (máx. 10 dBm según el manual). Actúa como repetidor Zigbee.",
+    "matter": "Enchufe solo Zigbee; Innr no menciona Matter para él y no se halló ningún registro de la CSA.",
+    "compatibility.apple_home": "La página Works-with de Innr dice que los dispositivos de Innr en un Hue Bridge no pasan a Apple HomeKit. Ninguna fuente cubre otras vías, así que no se marca como «no».",
+    "compatibility.google_home": "La página Works-with de Innr no lista Google Home para este enchufe.",
+    "compatibility.alexa": "Se empareja directamente con los modelos Echo que tienen hub Zigbee integrado (p. ej., Echo de 4.ª generación, Studio, Show 10), o mediante un Hue Bridge o SmartThings.",
+    "compatibility.smartthings": "Innr lista SmartThings como hub Zigbee compatible.",
+    "compatibility.home_assistant": "Innr dice que sus productos funcionan con ZHA o Zigbee2MQTT, incluida la medición de consumo de los enchufes, pero no da soporte a esas configuraciones. Zigbee2MQTT lista el SP 242.",
+    "hubRequired": "Enchufe Zigbee: necesita un hub Zigbee, como un Hue Bridge, SmartThings, un Echo con Zigbee, Homey o el puente de Innr.",
+    "localControl": "No se encontró ninguna declaración de Innr sobre el control sin internet.",
+    "energyMonitoring": "La declaración británica de Innr llama al SP 242 enchufe inteligente Zigbee 3.0 con medición de potencia. Innr dice que Philips Hue no muestra las lecturas; SmartThings, Hubitat, Homey y Home Assistant sí.",
+    "maxLoadWatts": "El manual de Innr da un límite de corriente total de 13 A; no se encontró ninguna cifra en vatios."
+  },
+  "via": {
+    "alexa": "Echo con hub Zigbee, Hue Bridge o SmartThings",
+    "smartthings": "hub SmartThings (Zigbee)",
+    "home_assistant": "coordinador Zigbee (ZHA o Zigbee2MQTT)"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Regulador wifi para una caja de pared estadounidense, sin hub: el Kasa KS220 necesita cable neutro y un cableado unipolar. TP-Link indica Apple Home, Google Home, Alexa y SmartThings como plataformas compatibles, y Home Assistant lo admite con su integración de TP-Link. Regula 150 W de LED o 300 W de incandescentes.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "Necesita cable neutro y no admite cableado de conmutación (3-way).",
+    "Sin mención a Matter para el KS220; el regulador Matter de TP-Link es el KS225, un producto aparte.",
+    "Las cargas LED están limitadas a 150 W."
+  ],
+  "notes": {
+    "radios": "Solo wifi de 2,4 GHz. TP-Link indica Bluetooth 4.2 solo para la configuración.",
+    "matter": "El regulador Matter de TP-Link es el KS225, un producto aparte; las páginas del KS220 que hemos visto no mencionan Matter. El KS220 se sigue vendiendo junto a él, así que lo hemos usado.",
+    "hubRequired": "Se conecta directamente a la wifi de 2,4 GHz; el título de la ficha técnica de TP-Link dice que no hace falta hub.",
+    "localControl": "La integración de TP-Link en Home Assistant se comunica con el interruptor directamente en tu red, no a través de la nube de TP-Link. El control HomeKit también funciona en la red local; la guía de TP-Link dice que el centro de la casa es solo opcional.",
+    "switchForm": "Sustituye a un interruptor de pared estándar y viene con placa de pared.",
+    "dimmer": "Regulación TRIAC; 300 W incandescente/halógena, 150 W LED.",
+    "gangs": "La ficha técnica de TP-Link dice que no funciona con cableado de conmutación (3-way, varios puntos).",
+    "compatibility.apple_home": "TP-Link indica Apple Home como plataforma de terceros. La guía de usuario explica cómo añadirlo en la app Casa con su código HomeKit; un centro de la casa (HomePod o Apple TV) es opcional, para el acceso remoto.",
+    "compatibility.google_home": "TP-Link lo indica como plataforma de terceros compatible.",
+    "compatibility.alexa": "TP-Link lo indica como plataforma de terceros compatible.",
+    "compatibility.smartthings": "TP-Link lo indica como plataforma de terceros compatible.",
+    "compatibility.home_assistant": "La integración TP-Link Smart Home de Home Assistant incluye el KS220 como interruptor de pared compatible."
+  },
+  "values": {
+    "gangs": "Solo unipolar"
+  }
+}

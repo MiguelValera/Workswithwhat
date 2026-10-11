@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Sin hub ni puente: la Kasa KL125 se une directamente a tu wifi de 2,4 GHz y funciona con Alexa, Google Home y SmartThings mediante las integraciones propias de Kasa. La integración oficial TP-Link Smart Home de Home Assistant la maneja en la red local. Es una bombilla estadounidense a todo color con base E26, de 800 lúmenes (equivalente a 60 W), con blanco ajustable de 2500 a 6500 K. Apple Home es la laguna: Kasa no lo indica y no hemos encontrado certificación Matter para la KL125.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz; no se une a una red de 5 GHz.",
+    "Kasa no indica Apple Home y no hay soporte de Matter confirmado al que recurrir.",
+    "Con firmware más reciente, Home Assistant puede pedirte una vez tus credenciales de la nube de TP-Link para autenticarse.",
+    "Home Assistant no ofrece los efectos de luz de la bombilla."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz (802.11 b/g/n) según la ficha técnica; la bombilla se une directamente a la red doméstica.",
+    "matter": "Ni la página de producto de Kasa ni la ficha técnica de la KL125 mencionan Matter, y no hemos encontrado ningún registro de la CSA para la KL125.",
+    "hubRequired": "En las bombillas, esto significa necesitar un puente o hub para el control básico desde la app. La KL125 se conecta directamente a la wifi de 2,4 GHz y se controla desde la app Kasa.",
+    "localControl": "La integración de Home Assistant se comunica con los dispositivos Kasa en la LAN sin la nube de TP-Link (sondeo local). Con firmware más reciente puede hacer falta una vez las credenciales de la nube de TP-Link para autenticar.",
+    "colorType": "Todo color más blanco ajustable de 2500 a 6500 K.",
+    "lumens": "800 lm, equivalente a 60 W.",
+    "compatibility.apple_home": "Kasa indica Alexa, Google Assistant y SmartThings para esta bombilla, y una guía de la comunidad de TP-Link sobre Apple Home no incluye luces Kasa. Ninguna fuente dice sin más que no sea compatible, y el estado de Matter no está confirmado.",
+    "compatibility.google_home": "Funciona con Google Assistant mediante la integración en la nube de Kasa.",
+    "compatibility.alexa": "Funciona con Alexa mediante la skill de Kasa.",
+    "compatibility.smartthings": "Kasa indica SmartThings como plataforma de voz y hogar inteligente compatible con la KL125.",
+    "compatibility.home_assistant": "La integración oficial TP-Link Smart Home incluye la KL125 entre las bombillas compatibles. Señala que las bombillas Kasa no tienen efectos de luz."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Tedee GO es una cerradura pequeña para cilindros de perfil europeo que se monta sobre el cilindro existente y conserva tus llaves. Una actualización de firmware añadió Matter sobre Thread, así que Apple Home, Google Home, Alexa y SmartThings funcionan solo con un router de borde Thread y sin puente de Tedee. Home Assistant usa su integración oficial de Tedee, que necesita el Tedee Bridge opcional. Tres pilas CR123A dan de 6 a 8 meses, según Tedee.",
+  "caveats": [
+    "Matter necesita un router de borde Thread y el firmware 2.1.3493 o posterior.",
+    "El cilindro necesita una función de emergencia (doble embrague) para que tu llave siga funcionando.",
+    "El Keypad PRO no se puede añadir directamente por Matter.",
+    "El acceso remoto y las vías en la nube de Tedee para Alexa y Google Home necesitan el Tedee Bridge.",
+    "Sin puente, Home Assistant puede añadir la GO por Matter con menos funciones.",
+    "Páginas antiguas de Tedee dicen que la GO no es compatible con Apple Home; son anteriores a la actualización de Matter."
+  ],
+  "notes": {
+    "radios": "Bluetooth hacia el móvil o el Tedee Bridge; Thread para Matter tras la actualización de firmware.",
+    "matter": "Tedee dice que la actualización gratuita de firmware (2.1.3493 o posterior) ya está disponible y que la GO y la GO2 admiten Matter 1.4.2. Las entradas de Tedee en el directorio de la CSA incluyen un certificado aparte para la Tedee GO (CSA260DNMAT49899-24), junto al registro de la GO2 citado aquí.",
+    "hubRequired": "Con Matter no hace falta ningún puente de Tedee, solo un router de borde Thread. El Tedee Bridge opcional añade acceso remoto y las vías en la nube para Alexa y Google Home.",
+    "localControl": "Tedee indica Matter sobre Thread como una integración local que no usa la nube de Tedee.",
+    "lockFit": "Se monta por el interior, sobre un cilindro de perfil europeo con función de emergencia (doble embrague), y conserva tus llaves.",
+    "keypad": "La cerradura no lleva teclado; el Keypad PRO es un accesorio aparte y no se puede añadir directamente por Matter.",
+    "power": "Tedee indica hasta 6-8 meses de duración de la batería.",
+    "compatibility.apple_home": "Necesita un router de borde Thread. Páginas antiguas de Tedee dicen que la GO no es compatible con Apple Home; son anteriores a la actualización de Matter.",
+    "compatibility.google_home": "Necesita un router de borde Thread. Tedee también ofrece una vía en la nube que necesita el Tedee Bridge.",
+    "compatibility.alexa": "Necesita un router de borde Thread. Tedee también ofrece una vía en la nube que necesita el Tedee Bridge.",
+    "compatibility.smartthings": "Necesita un router de borde Thread.",
+    "compatibility.home_assistant": "La integración oficial de Tedee incluye la GO y se comunica con el Tedee Bridge mediante su API HTTP local, así que necesita el puente. Sin puente, Home Assistant puede añadir la GO por Matter sobre Thread con menos funciones."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Sustituyendo a un regulador estándar unipolar en una caja de pared estadounidense de 1 módulo, el Lutron Caséta PD-6WCL no necesita neutro gracias a su diseño de dos cables. Apple Home, Google Home, Alexa y SmartThings lo alcanzan mediante el Caséta Smart Bridge (ahora llamado Smart Hub); Home Assistant también se conecta al puente, por la red local. Por sí solo, solo se empareja con mandos y sensores Pico. Regula 150 W de LED o 600 W de incandescentes y halógenas.",
+  "caveats": [
+    "Necesita el Caséta Smart Bridge (ahora llamado Smart Hub) para controlarlo desde la app, por voz y con los ecosistemas; el puente se conecta al router por Ethernet.",
+    "Las cargas LED se limitan a 150 W, y las bombillas deben ser regulables."
+  ],
+  "notes": {
+    "radios": "El regulador usa la radio propia de Lutron, Clear Connect RF, que no es wifi, Thread, Zigbee, Z-Wave ni Bluetooth, así que ninguno de nuestros valores de radio encaja. El Smart Bridge (Smart Hub) habla con él por Clear Connect y se une a tu router por Ethernet.",
+    "matter": "No se encontró ninguna afirmación de Matter en las páginas de Lutron que vimos; no está confirmado en un sentido ni en otro.",
+    "compatibility.apple_home": "Lutron lista Apple HomeKit (incluido Siri) entre las funciones que añade el Smart Hub, así que el regulador aparece en Apple Home a través del puente.",
+    "compatibility.google_home": "Lutron lista Google Home entre las funciones que añade el Smart Hub; llega al regulador a través del puente.",
+    "compatibility.alexa": "Lutron lista Amazon Alexa entre las funciones que añade el Smart Hub; necesita el puente.",
+    "compatibility.smartthings": "El artículo de soporte de Lutron añade Lutron como socio en la app SmartThings; el hub Caséta debe estar conectado y accesible en la app de Lutron. Es un enlace de nube a nube, y los mandos Pico no aparecen en SmartThings.",
+    "compatibility.home_assistant": "La integración Lutron Caséta de Home Assistant se conecta al Smart Bridge por la red local (local push).",
+    "hubRequired": "Lutron dice que el acceso remoto, las escenas, los horarios y los asistentes de voz necesitan el Smart Bridge (ahora llamado Smart Hub). Sin él, el regulador solo se empareja con mandos y sensores Pico.",
+    "localControl": "La integración Lutron Caséta de Home Assistant habla con el Smart Bridge por la red local (local push). La app de Lutron y los enlaces con Alexa, Google Home y SmartThings pasan por la nube de Lutron.",
+    "switchForm": "Sustituye a un regulador de pared unipolar estándar en una caja de pared estadounidense de 1 módulo.",
+    "dimmer": "Admite 150 W de LED regulable y 600 W de incandescente o halógena.",
+    "neutralRequired": "Diseño de dos cables que se instala como un interruptor normal. El cable de tierra es opcional, salvo que lo exija la normativa local.",
+    "gangs": "La especificación de Lutron pide una caja de pared estadounidense de 1 módulo."
+  },
+  "via": {
+    "apple_home": "Lutron Caséta Smart Bridge",
+    "google_home": "Lutron Caséta Smart Bridge",
+    "alexa": "Lutron Caséta Smart Bridge",
+    "smartthings": "Lutron Caséta Smart Bridge",
+    "home_assistant": "Lutron Caséta Smart Bridge"
+  },
+  "values": {
+    "gangs": "1 módulo"
+  }
+}

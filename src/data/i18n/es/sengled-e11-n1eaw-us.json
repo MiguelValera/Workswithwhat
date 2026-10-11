@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Sin un hub Zigbee no hay forma de controlar la Sengled Zigbee Color A19 (E11-N1EAW). SmartThings funciona con un hub SmartThings, Alexa con un Echo con hub Zigbee integrado (Echo Plus, Echo Show 2, Echo Studio) y Google Home con un Sengled Smart Hub vinculado a través de la nube de Sengled. Apple Home y Home Assistant no están confirmados. Es una bombilla estadounidense de color con casquillo E26 y 800 lúmenes, con 16 millones de colores y blanco regulable. Según se ha informado, Amazon retiró la skill de Alexa de Sengled en 2025, así que emparejarla directamente con un Echo Zigbee es la vía de Alexa que no depende de la cuenta de Sengled.",
+  "caveats": [
+    "Solo Zigbee: necesita un hub Zigbee y no tiene wifi ni Bluetooth.",
+    "Amazon retiró la skill de Alexa de Sengled en 2025, según un artículo de PCWorld que cita una serie de caídas del servicio de Sengled.",
+    "El control desde Google Home pasa por la nube de Sengled, así que depende de que ese servicio esté activo.",
+    "Un Echo o un Echo Dot normales no pueden controlarla; hace falta un modelo de Echo con hub Zigbee integrado."
+  ],
+  "notes": {
+    "radios": "Solo Zigbee; Sengled vende esta bombilla como «Hub Required».",
+    "matter": "Sengled la vende como una bombilla Zigbee que requiere hub y no menciona Matter. No encontramos ninguna declaración explícita ni registro de la CSA en ningún sentido.",
+    "hubRequired": "En las bombillas, esto significa necesitar un puente o hub para el control básico desde la app. Esta bombilla Zigbee necesita un hub de Sengled, un hub SmartThings o un Echo con Zigbee.",
+    "localControl": "Ninguna fuente oficial describe el control local. La vía de la app de Sengled depende de la nube de Sengled; los hubs Zigbee de terceros pueden variar.",
+    "colorType": "16 millones de colores y blanco regulable.",
+    "lumens": "800 lm según la ficha del kit de inicio de Sengled para la misma bombilla Zigbee Color A19/E26; la página de la bombilla suelta indica 8,6 W (equivalente a 60 W) pero no da la cifra de lúmenes.",
+    "compatibility.apple_home": "Sengled no incluye Apple Home para esta bombilla; ninguna fuente oficial lo confirma ni lo descarta.",
+    "compatibility.google_home": "La guía de Sengled vincula la cuenta de Sengled Home (el hub y sus bombillas) con Google Home, así que depende de la nube de Sengled. Los altavoces Google Home no son hubs Zigbee.",
+    "compatibility.alexa": "Sengled incluye los modelos de Echo con hub Zigbee integrado (Echo Plus, Echo Show 2, Echo Studio). Echo y Echo Dot no son hubs. Según se ha informado, la vía de la skill de Alexa de Sengled se retiró en 2025 (ver advertencias).",
+    "compatibility.smartthings": "Sengled da el hub SmartThings como compatible y documenta el emparejamiento.",
+    "compatibility.home_assistant": "Ninguna fuente oficial de Home Assistant ni de Sengled nombra esta bombilla; un coordinador Zigbee genérico probablemente funcione, pero no está confirmado."
+  },
+  "via": {
+    "google_home": "Sengled Smart Hub",
+    "alexa": "Echo con hub Zigbee integrado",
+    "smartthings": "hub SmartThings"
+  },
+  "values": {}
+}

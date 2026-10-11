@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El tado° Smart Radiator Thermostat X llega a Apple Home, Google Home y Alexa mediante Matter sobre Thread, y Home Assistant lo detecta con su integración Matter, aunque tado° dice que no ofrece soporte oficial para Home Assistant. Necesitas un router de borde Thread, que puede ser un HomePod mini o un Apple TV 4K en lugar del Bridge X de tado°. Encaja en válvulas M30 × 1,5, con adaptadores Danfoss RA, RAV y RAVL incluidos, y funciona con una batería recargable por USB-C que, según tado°, dura cerca de un año.",
+  "caveats": [
+    "Necesita un router de borde Thread, como el Bridge X de tado° (se vende aparte y no es compatible con los dispositivos tado° V3+) o uno de otra marca.",
+    "tado° indica que la batería se carga en unas 2 horas por USB-C, y la tienda de la UE no incluye cable USB-C.",
+    "Las válvulas Oventrop M30 × 1,0 necesitan un adaptador que tado° no suministra."
+  ],
+  "notes": {
+    "radios": "La CSA registra interfaces de transporte Thread y Bluetooth. Es probable que el Bluetooth se use para la configuración.",
+    "matter": "La CSA registra más de una certificación para este producto (p. ej. hardware VA04, firmware 1.0, Thread y Bluetooth).",
+    "hubRequired": "No hace falta ningún puente de tado°: tado° dice que se conecta mediante el Bridge X o cualquier otro router de borde Thread (p. ej. HomePod mini, Apple TV 4K). Se necesita algún router de borde Thread. El Bridge X se vende aparte y no funciona con tado° V3+.",
+    "localControl": "No hemos encontrado ninguna página de tado° que describa el control sin conexión o solo local de la válvula mediante Matter.",
+    "systems": "tado° dice que la mayoría de los usuarios pueden montarlo sin adaptador. Las válvulas Oventrop M30 × 1,0 necesitan un adaptador que tado° no suministra.",
+    "power": "tado° dice que la batería se carga por USB-C en unas 2 horas y dura cerca de un año. No indica la capacidad; la tienda de la UE no incluye cable USB-C.",
+    "compatibility.apple_home": "Se vincula con un código Matter desde la app tado° o con el código QR del dispositivo. Necesita un router de borde Thread: el Bridge X, otro router de borde tado° X o uno de otra marca.",
+    "compatibility.google_home": "tado° tiene una guía de configuración para Google Home con Matter. Necesita un router de borde Thread.",
+    "compatibility.alexa": "Necesita un Echo o eero compatible con Matter y un router de borde Thread (tado° nombra el Bridge X, el Heat Pump Optimizer X o el Wireless Receiver X). tado° aconseja añadir primero el dispositivo en su propia app para conservar las actualizaciones de firmware.",
+    "compatibility.smartthings": "tado° nombra SmartThings entre las plataformas Matter solo en el fragmento de una búsqueda. No hemos encontrado ninguna guía de configuración de SmartThings de tado°.",
+    "compatibility.home_assistant": "Mediante la integración Matter de Home Assistant, que necesita un router de borde Thread. tado° dice que no ofrece soporte oficial para Home Assistant."
+  },
+  "values": {
+    "systems": "Válvulas M30 × 1,5; adaptadores Danfoss RA, RAV y RAVL incluidos",
+    "power": "Batería recargable (USB-C)"
+  }
+}

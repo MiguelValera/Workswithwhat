@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Netatmo conecta su Smart Thermostat (UE) con Apple Home, Google Home y Alexa mediante integraciones propias, y Home Assistant tiene una integración oficial de Netatmo. La compatibilidad con Matter no está confirmada. En la caja viene un relé de red eléctrica que se conecta al wifi y que enciende y apaga una caldera, una bomba de calor o una estufa. El termostato funciona con 3 × AAA y se comunica con el relé por radio.",
+  "caveats": [
+    "Solo funciona con sistemas de encendido y apagado (contacto seco); las calderas OpenTherm necesitan el termostato modulante de Netatmo, que se vende aparte.",
+    "Comprueba tu caldera en check.netatmo.com antes de comprar.",
+    "El control desde Home Assistant pasa por la nube de Netatmo.",
+    "Para controlar Apple Home fuera de casa hace falta un centro de la casa (HomePod o Apple TV)."
+  ],
+  "notes": {
+    "radios": "El relé de red eléctrica se conecta al wifi; el termostato se comunica con el relé por un enlace de radio de largo alcance, que no figura en nuestra lista de radios.",
+    "matter": "No hemos encontrado ninguna fuente que diga que este termostato tenga Matter. La gama ORIGINAL más reciente de Netatmo es otro producto.",
+    "hubRequired": "El relé que une el termostato con el wifi viene incluido con el termostato. No se vende nada más por separado.",
+    "localControl": "Las páginas de Netatmo consultadas no describen un control solo local. Solo hay mensajes de la comunidad que dicen que HomeKit funciona en local.",
+    "systems": "Netatmo dice que un sistema es compatible si lo puede gobernar un termostato ambiente de encendido y apagado de contacto seco, y remite a los compradores a su comprobador en línea. El modelo OpenTherm es otro producto.",
+    "power": "El termostato funciona con tres pilas alcalinas AAA; el relé funciona con la red eléctrica.",
+    "compatibility.apple_home": "Se empareja con el código HomeKit del relé o el que aparece en la pantalla del termostato. Netatmo dice que es compatible si el menú Configurar HomeKit aparece en la app Netatmo Energy para tu relé. El control remoto necesita un centro de la casa, como un Apple TV.",
+    "compatibility.google_home": "El centro de ayuda de Netatmo incluye el Smart Thermostat como compatible con Google Assistant.",
+    "compatibility.alexa": "El centro de ayuda de Netatmo incluye el Smart Thermostat como compatible con Alexa mediante la skill Legrand-Netatmo-BTicino.",
+    "compatibility.smartthings": "No hemos encontrado ninguna fuente de Netatmo ni de SmartThings.",
+    "compatibility.home_assistant": "Integración oficial de Netatmo, que usa la nube de Netatmo y requiere una cuenta de Netatmo."
+  },
+  "values": {
+    "systems": "Calderas todo/nada (contacto seco), bombas de calor aire-agua, estufas de leña/pellets"
+  }
+}

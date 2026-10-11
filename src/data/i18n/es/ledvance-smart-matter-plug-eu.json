@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Certificado para Matter 1.3 sobre wifi, el LEDVANCE SMART+ Matter Plug (UE) funciona con Apple Home, Google Home, Alexa y SmartThings, y Home Assistant lo añade con su integración de Matter. LEDVANCE dice que el medidor de energía también se expone por Matter, no solo en su app SMART+, que muestra el consumo por horas, días y meses. El control es local y la nube, opcional, según LEDVANCE. El límite de carga es de 2300 W / 10 A a 230 V.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "Cada ecosistema necesita su propio controlador Matter; Apple Home necesita un centro de la casa de Apple (HomePod o Apple TV).",
+    "Limitado a 10 A / 2300 W, así que comprueba la potencia de los aparatos de mucho consumo."
+  ],
+  "notes": {
+    "radios": "Matter sobre wifi de 2,4 GHz según la página y la ficha técnica de LEDVANCE para el EAN 4099854295195. El Bluetooth no está confirmado en un sentido ni en otro.",
+    "matter": "La página de LEDVANCE para este enchufe blanco de la UE (EAN 4099854295195) dice que está certificado Matter 1.3, con medición de energía por Matter. Matter Alpha lista el certificado CSA24264MAT43287-24 (mayo de 2024); no se encontró la página de la CSA.",
+    "compatibility.apple_home": "LEDVANCE lista Apple Home mediante Matter. Necesita un centro de la casa de Apple como controlador Matter.",
+    "compatibility.google_home": "LEDVANCE lista Google Home mediante Matter. Necesita un controlador Matter de Google.",
+    "compatibility.alexa": "LEDVANCE lista Alexa mediante Matter. Necesita un Echo que funcione como controlador Matter.",
+    "compatibility.smartthings": "LEDVANCE lista SmartThings mediante Matter. Necesita un controlador Matter de SmartThings.",
+    "compatibility.home_assistant": "Mediante la integración de Matter de HA, como dispositivo Matter certificado; las docs de HA no nombran este enchufe.",
+    "hubRequired": "La app SMART+ añade dispositivos Matter sobre wifi sin gateway. Los demás ecosistemas necesitan su propio controlador Matter (altavoz o hub).",
+    "localControl": "Las FAQ de LEDVANCE dicen que los dispositivos Matter se comunican en local y que la nube es opcional; HA dice que los dispositivos Matter se controlan en local. No se encontró ninguna prueba de LEDVANCE del control de la app sin conexión.",
+    "energyMonitoring": "Medidor de energía integrado; la app SMART+ muestra el consumo por horas (7 días), por días (365 días) y por meses. LEDVANCE dice que la medición también se expone por Matter.",
+    "maxLoadWatts": "2300 W / 10 A a 230 V, 50 Hz."
+  }
+}

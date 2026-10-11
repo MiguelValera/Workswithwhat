@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Pensado solo para Apple HomeKit, el Wemo WSP100 se empareja con Apple Home directamente por Bluetooth o Thread; Belkin dice que no funciona con Google Home ni con Alexa. Home Assistant puede emparejarlo con su integración oficial HomeKit Device. Como nunca usó la app Wemo ni la nube, Belkin dice que sigue funcionando con HomeKit tras el cierre de la nube de Wemo. El enchufe estadounidense es de 120 V / 15 A / 1800 W y no informa del consumo.",
+  "caveats": [
+    "Sin compatibilidad con Google Home ni Alexa, según las FAQ de Belkin.",
+    "Thread y el control remoto necesitan un centro de la casa de Apple con Thread (Apple TV 4K de 2021 o HomePod mini).",
+    "Las páginas de Belkin no coinciden en si hace falta un centro de la casa de Apple solo para configurarlo.",
+    "Un accesorio HomeKit solo se empareja con un controlador a la vez, así que Apple Home y Home Assistant no pueden tenerlo a la vez.",
+    "Belkin ha puesto fin al soporte de la mayoría de los dispositivos Wemo y de la app Wemo.",
+    "Belkin nunca menciona Matter para este enchufe.",
+    "Sin medición de consumo."
+  ],
+  "notes": {
+    "radios": "Bluetooth LE 5.0 y Thread (802.15.4), según el artículo de especificaciones de Belkin.",
+    "matter": "Belkin lo describe como un dispositivo solo HomeKit y nunca menciona Matter para él. No hemos encontrado ningún registro de la CSA. Sin confirmar en ningún sentido.",
+    "hubRequired": "Las fuentes de Belkin no coinciden: la FAQ dice que solo hace falta un hub para Thread y para el control fuera de casa, mientras que la lista de especificaciones dice que necesitas un centro de la casa de Apple o un hub Thread.",
+    "localControl": "Funciona con HomeKit sin la app Wemo ni la nube; Belkin dice que los dispositivos Wemo con Thread siguen funcionando con HomeKit tras el cierre de la nube de Wemo.",
+    "energyMonitoring": "La FAQ de Belkin dice que el WSP100 no informa del consumo.",
+    "maxLoadWatts": "120 V, 15 A, 1800 W. La versión tailandesa (WSP100-TH) tiene una potencia distinta.",
+    "compatibility.apple_home": "HomeKit (HAP) por Bluetooth y Thread, configurado con NFC o con el código HomeKit. Thread y el control remoto necesitan un centro de la casa de Apple con Thread (Apple TV 4K de 2021 o HomePod mini).",
+    "compatibility.google_home": "La FAQ de Belkin responde «No» para Google Home y dice que el enchufe está diseñado para usarse solo con Apple HomeKit.",
+    "compatibility.alexa": "La FAQ de Belkin responde «No» para Amazon Alexa y dice que el enchufe está diseñado para usarse solo con Apple HomeKit.",
+    "compatibility.smartthings": "Belkin dice que el enchufe está diseñado solo para Apple HomeKit y no indica compatibilidad con Matter, pero ninguna página de Belkin ni de Samsung nombra SmartThings en un sentido ni en otro.",
+    "compatibility.home_assistant": "La integración oficial HomeKit Device de Home Assistant empareja accesorios HomeKit por Bluetooth y Thread (Thread necesita un router de borde). HA no nombra el WSP100, y un accesorio HomeKit solo se empareja con un controlador a la vez."
+  }
+}

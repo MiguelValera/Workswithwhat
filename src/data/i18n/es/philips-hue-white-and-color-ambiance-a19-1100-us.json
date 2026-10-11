@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Las integraciones propias de Hue conectan la Philips Hue White and Color Ambiance A19 con Alexa y Google Home, sin puente por Bluetooth en altavoces Echo y Google Nest compatibles, o a través de un Hue Bridge. Apple Home y SmartThings necesitan el Bridge, y Home Assistant tiene integraciones oficiales para ambas vías. Esta versión estadounidense (código de producto 046677591168) es una bombilla de color con casquillo E26 y hasta 1100 lúmenes. Matter está sin confirmar: la CSA registra una bombilla Hue A19/A60 de 1100 lm, pero la página de Hue para este código solo menciona Bluetooth y Zigbee.",
+  "caveats": [
+    "Apple Home y SmartThings necesitan un Hue Bridge; el emparejamiento directo con Matter no está confirmado para este código de producto.",
+    "Sin Bridge, Google solo controla la bombilla desde altavoces y pantallas Google Nest.",
+    "El modo Bluetooth admite unas 10 luces en una sola habitación y no tiene acceso remoto.",
+    "Hue también vende bombillas A19 de color con menos potencia (por ejemplo, 800 lm), así que busca el código de producto 046677591168 en la caja."
+  ],
+  "notes": {
+    "radios": "Hue indica Bluetooth y Zigbee. El registro Matter de la CSA para la A19/A60 de 1100 lm también incluye transporte Thread, pero no podemos asociarlo a este código de producto, así que no figura Thread.",
+    "matter": "Las fuentes oficiales no coinciden. El registro de la CSA «White and Color Ambiance 1100lm A19/A60» indica transporte Thread y Bluetooth (Matter 1.3), pero la página de Hue para este código de producto solo menciona Bluetooth y Zigbee. La guía de Hue también ofrece Matter a través del Hue Bridge.",
+    "hubRequired": "El control básico funciona por Bluetooth desde la app Hue (hasta 10 luces, una habitación). Hace falta un Hue Bridge para Apple Home, SmartThings, el acceso remoto y instalaciones más grandes.",
+    "localControl": "El control por Bluetooth desde el móvil no necesita internet; el Hue Bridge también ofrece una API local que usa Home Assistant.",
+    "colorType": "Color completo y blanco regulable; Hue indica un rango de 1000–20000 K.",
+    "lumens": "Hasta 1100 lm según la página de Hue para el código de producto 046677591168. Hue también vende bombillas A19 de color con menos potencia (por ejemplo, 800 lm), así que comprueba el código en la caja.",
+    "compatibility.apple_home": "La página de producto de Hue incluye Apple Home en «Hue Bridge required»; el Bridge se vincula mediante HomeKit o Matter. Si esta bombilla es el modelo Thread registrado en la CSA, quizá también se empareje directamente con Matter; sin confirmar.",
+    "compatibility.google_home": "Integración propia de Hue. Las páginas de preguntas frecuentes de Hue y de soporte de Google dicen que las bombillas Bluetooth funcionan sin puente solo con altavoces y pantallas Google Nest; la página de producto incluye Google en «Hue Bridge required», lo que desbloquea todas las funciones.",
+    "compatibility.alexa": "Integración propia de Hue. Las preguntas frecuentes de Hue y su página de configuración con Alexa dicen que las bombillas Bluetooth se pueden añadir directamente en dispositivos Echo compatibles; la página de producto incluye Alexa en «Hue Bridge required», lo que añade la skill de Hue y más funciones.",
+    "compatibility.smartthings": "La página de producto de Hue incluye SmartThings en «Hue Bridge required». El emparejamiento directo con Matter no está confirmado para este código de producto (ver Matter).",
+    "compatibility.home_assistant": "Integración oficial de Hue (con Hue Bridge) e integración oficial Hue BLE (2025.12, Bluetooth sin puente). La documentación de BLE nombra modelos concretos de Hue y dice que los demás deberían funcionar; este código de producto no aparece."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge"
+  },
+  "values": {}
+}
