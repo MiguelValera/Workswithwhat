@@ -45,6 +45,8 @@ if (crumbs.length) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Model numbers and EANs aren't phone numbers; stop iOS Safari linking them -->
+    <meta name="format-detection" content="telephone=no" />
     {
       /* production only: the dev server injects its own scripts and styles */
       import.meta.env.PROD && (
