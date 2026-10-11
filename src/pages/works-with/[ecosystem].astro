@@ -9,7 +9,7 @@ import {
   devicePath,
   ecosystemSlug,
   getPublishedDevices,
-  listJoin,
+  categoryPhrase,
   worksWith,
   type Ecosystem,
 } from '../../lib/devices';
@@ -30,7 +30,7 @@ const groups = CATEGORIES.map((cat) => ({
   unsure: all.filter((d) => d.data.category === cat.key && d.data.compatibility[eco].status === 'unknown'),
   total: all.filter((d) => d.data.category === cat.key).length,
 })).filter((g) => g.total > 0);
-const what = listJoin(groups.map((g) => g.cat.plural));
+const { short: what, long: whatLong } = categoryPhrase(groups.map((g) => g.cat.plural));
 const What = what.replace(/^./, (c) => c.toUpperCase());
 
 // General, stable facts about how devices reach each platform. Device-specific
@@ -59,7 +59,7 @@ const HOW: Record<Ecosystem, string[]> = {
 };
 
 const title = `${What} that work with ${label}`;
-const description = `${yes.length} ${what} confirmed to work with ${label}${viaMatter ? `, ${viaMatter} of them via Matter` : ''}. See which need a hub, and check the source for each one.`;
+const description = `${yes.length} ${whatLong} confirmed to work with ${label}${viaMatter ? `, ${viaMatter} of them via Matter` : ''}. See which need a hub, and check the source for each one.`;
 ---
 
 <Base

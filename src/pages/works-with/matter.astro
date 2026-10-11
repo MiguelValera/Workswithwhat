@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Refs from '../../components/Refs.astro';
-import { RADIO_LABELS, devicePath, getPublishedDevices, listJoin } from '../../lib/devices';
+import { RADIO_LABELS, devicePath, getPublishedDevices, categoryPhrase } from '../../lib/devices';
 import { CATEGORIES, specFacts } from '../../lib/categories';
 
 const all = await getPublishedDevices();
@@ -15,10 +15,10 @@ const groups = CATEGORIES.map((cat) => {
     thread: list.filter((d) => d.data.matter.transport === 'thread'),
   };
 }).filter((g) => g.list.length > 0);
-const what = listJoin(groups.map((g) => g.cat.plural));
+const { short: what, long: whatLong } = categoryPhrase(groups.map((g) => g.cat.plural));
 
 const title = `Matter ${what}`;
-const description = `${matter.length} Matter-certified ${what}, split by Wi-Fi and Thread, with what each needs to work in Apple Home, Google Home, Alexa, SmartThings and Home Assistant.`;
+const description = `${matter.length} Matter-certified ${whatLong}, split by Wi-Fi and Thread, with what each needs to work in Apple Home, Google Home, Alexa, SmartThings and Home Assistant.`;
 ---
 
 <Base
