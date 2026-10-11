@@ -1,8 +1,8 @@
 {
   "category": "smart-bulb",
   "brand": "LIFX",
-  "model": "SuperColor A19 1100 lm (Matter, LHLA19E26US)",
-  "name": "LIFX Color / SuperColor A19 1100 lm (Matter, US)",
+  "model": "LHLA19E26US, LCM4 edition (part A19L4AE26)",
+  "name": "LIFX SuperColor A19 1100 lm (LCM4, US)",
   "regions": ["US"],
   "officialUrl": "https://www.lifx.com/products/lifx",
   "radios": {
@@ -14,7 +14,7 @@
     "certified": true,
     "transport": "wifi",
     "sources": ["lifx-matter-devices", "csa-lifx-supercolor-a19-1100"],
-    "note": "LIFX's Matter list includes LHLA19E26US, LCM4 edition only (part A19L4AE26); units whose firmware starts with v3 have no Matter. CSA lists 'LIFX SuperColor A19 (1100 lumens)' under Feit SKUs, not this model number."
+    "note": "This record is the LCM4 edition, which LIFX's Matter list names as LHLA19E26US, part A19L4AE26. Older units whose firmware starts with v3 have no Matter. CSA lists 'LIFX SuperColor A19 (1100 lumens)' under Feit SKUs, not this model number."
   },
   "compatibility": {
     "apple_home": {

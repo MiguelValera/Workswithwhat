@@ -7,8 +7,8 @@
   "officialUrl": "https://www.philips-hue.com/en-gb/p/hue-white-ambiance-gu10---smart-spotlight/8719514339903",
   "radios": {
     "value": ["bluetooth", "zigbee"],
-    "sources": ["hue-gu10-gb", "hue-gu10-de", "conrad-gu10"],
-    "note": "Hue's pages for this EAN list Bluetooth control and Hue Bridge control (the Bridge talks to lights over Zigbee). Conrad lists Zigbee for this EAN."
+    "sources": ["hue-gu10-gb", "hue-gu10-de", "hue-bridge-faq", "conrad-gu10"],
+    "note": "Hue's pages for this EAN list Bluetooth and Hue Bridge control. Hue's Bridge FAQ says the Bridge runs a private Zigbee network for all Hue lights. Conrad also lists Zigbee."
   },
   "matter": {
     "certified": null,
@@ -23,14 +23,16 @@
       "note": "Via the Hue Bridge. Hue's Matter guide says the Bridge connects all Hue lights, including bulbs without Matter, to Apple Home, Google Home and Alexa."
     },
     "google_home": {
-      "status": "native",
-      "sources": ["hue-gu10-gb", "hue-no-bridge-faq"],
-      "note": "Through Hue's own Google integration. The product page lists Google Assistant under 'Hue Bridge required'; Hue's (US) FAQ says Bluetooth bulbs work bridgeless with Google Nest speakers and displays."
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-gu10-gb"],
+      "note": "Hue's page for this EAN lists Google Assistant under 'Hue Bridge required'. Hue's US FAQ describes bridgeless Bluetooth pairing with Nest devices, but that isn't confirmed for this EU bulb."
     },
     "alexa": {
-      "status": "native",
-      "sources": ["hue-gu10-gb", "hue-no-bridge-faq"],
-      "note": "Through Hue's own Alexa integration. The product page lists Alexa under 'Hue Bridge required'; Hue's (US) FAQ says Bluetooth bulbs can pair with most Echo devices without a Bridge."
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-gu10-gb"],
+      "note": "Hue's page for this EAN lists Alexa under 'Hue Bridge required'. Hue's US FAQ describes bridgeless Bluetooth pairing with Echo devices, but that isn't confirmed for this EU bulb."
     },
     "smartthings": {
       "status": "unknown",
@@ -61,7 +63,7 @@
   "lumens": {
     "value": 350,
     "sources": ["hue-gu10-gb", "hue-gu10-de"],
-    "note": "350 lm at 4000 K for EAN 8719514339903. A newer White Ambiance GU10 (EAN 8720169229976) is rated at 400 lm; check the EAN on the box."
+    "note": "350 lm at 4000 K for EAN 8719514339903."
   },
   "bulbBase": {
     "value": "GU10",
@@ -110,6 +112,14 @@
       "id": "hue-matter-guide",
       "url": "https://www.philips-hue.com/en-us/support/article/philips-hue-and-matter-complete-setup-and-support-guide/000012",
       "title": "Philips Hue and Matter: Complete Setup & Support Guide",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-bridge-faq",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/faq/controls/what-is-the-hue-bridge",
+      "title": "What is the Hue Bridge?",
       "publisher": "Signify (Philips Hue)",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
