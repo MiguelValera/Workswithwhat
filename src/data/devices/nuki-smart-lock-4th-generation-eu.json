@@ -4,17 +4,17 @@
   "model": "Smart Lock (4th generation)",
   "name": "Nuki Smart Lock 4th Gen (EU)",
   "regions": ["EU"],
-  "officialUrl": "https://nuki.io/en-it/products/smart-lock-4th-generation",
+  "officialUrl": "https://nuki.io/en-us/products/smart-lock-4th-generation",
   "radios": {
     "value": ["bluetooth", "thread"],
     "sources": ["nuki-sl4", "nuki-generations", "csa-nuki-sl4"],
-    "note": "Nuki's generations table lists no built-in Wi-Fi for the standard model. The latest CSA entry text mentions Wi-Fi, so the verifier should check it. The Pro model is not recorded here."
+    "note": "Nuki's generations table lists Thread but no built-in Wi-Fi for the standard 4th generation; only the Pro (4th generation) has Wi-Fi. The 2025 CSA entry text mentions Wi-Fi, but Nuki's own table is followed here."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
     "sources": ["csa-nuki-sl4", "nuki-matter-press"],
-    "note": "Several CSA entries exist for the 4th generation lock (vendor ID 0x135D, product ID 0x00B0)."
+    "note": "Several CSA entries exist for the standard 4th generation lock (product ID 0x00B0, Thread and Bluetooth); the Pro variants have their own product IDs."
   },
   "compatibility": {
     "apple_home": {
@@ -25,12 +25,12 @@
     "google_home": {
       "status": "native",
       "sources": ["nuki-google", "nuki-integrations"],
-      "note": "Nuki Web cloud integration, which needs remote access (Nuki Bridge or the paid Thread remote-access option). Matter via Thread is also supported and needs a Thread border router."
+      "note": "Nuki Web cloud integration; needs a Nuki Web account and remote access (Nuki Bridge or paid Thread remote access). Nuki says voice unlock is currently off in Google Home; app controls work. Matter via Thread also works with a Thread border router."
     },
     "alexa": {
       "status": "native",
       "sources": ["nuki-alexa", "nuki-matter-help"],
-      "note": "Nuki Web cloud integration, which needs remote access. Matter is also supported, but Nuki's hub table lists only the Echo (4th Gen) for Matter via Thread."
+      "note": "Nuki Web cloud integration (Nuki Smart Home skill), which needs remote access (Nuki Bridge or the paid Thread remote-access option) and a Nuki Web account. Matter via Thread is also supported; Nuki's hub table lists which Echo devices work for it."
     },
     "smartthings": {
       "status": "matter",
@@ -39,8 +39,8 @@
     },
     "home_assistant": {
       "status": "matter",
-      "sources": ["nuki-matter-help", "ha-nuki-matter"],
-      "note": "Nuki lists Home Assistant for Matter via Thread. Home Assistant's Nuki Matter page names the Go, Pro and Ultra; whether the standard 4th gen is covered is unconfirmed. Nuki also documents MQTT."
+      "sources": ["ha-nuki"],
+      "note": "Home Assistant's Nuki page says 4th generation Smart Locks support Matter over Thread and integrate through the Matter integration. Needs a Thread border router. Home Assistant also documents MQTT for 4th generation locks."
     }
   },
   "hubRequired": {
@@ -55,8 +55,8 @@
   },
   "lockFit": {
     "value": "retrofit",
-    "sources": ["nuki-sl4"],
-    "note": "Fits on the inside of the door over the existing cylinder, which keeps your keys. The Universal Cylinder is sold separately."
+    "sources": ["nuki-mounting", "nuki-sl4"],
+    "note": "Mounts on the inside of the door over the existing cylinder. Nuki says the key still works from outside if the cylinder has an emergency function; otherwise use the Universal Cylinder, sold separately."
   },
   "keypad": {
     "value": false,
@@ -64,29 +64,32 @@
     "note": "No keypad on the lock. Nuki sells the Keypad 2 NFC as a separate accessory."
   },
   "power": {
-    "value": "4 × AA",
-    "sources": ["nuki-sl4"],
-    "note": "Batteries included. Some press and retail text mentions a rechargeable pack, which the verifier should check."
+    "value": "4 × AA or Nuki Power Pack",
+    "sources": ["nuki-batteries", "nuki-generations"],
+    "note": "Removable batteries: four AA cells or the rechargeable Nuki Power Pack (sold separately, up to 6 months per charge, per Nuki)."
   },
-  "summary": "The Nuki Smart Lock (4th generation) is a retrofit lock that sits on the inside of a European door and speaks Matter over Thread, with no bridge needed for Matter. Nuki lists Apple Home, Google Home, Alexa and SmartThings, and Home Assistant through Matter. Remote access needs a Nuki Bridge or Nuki's paid Thread remote-access option. It has no keypad of its own and runs on four AA batteries.",
+  "summary": "The Nuki Smart Lock (4th generation) is a retrofit lock that sits on the inside of a European door and speaks Matter over Thread, with no bridge needed for Matter. It works with Apple Home, Google Home, Alexa and SmartThings, and with Home Assistant through Matter. Remote access needs a Nuki Bridge or Nuki's paid Thread remote-access option. It has no keypad of its own and runs on four AA batteries or Nuki's rechargeable Power Pack.",
   "caveats": [
     "Matter control needs a Thread border router at home, such as a HomePod mini or Echo (4th Gen).",
     "Remote access needs the separate Nuki Bridge or a one-time paid Thread remote-access option.",
     "The Nuki Smart Lock Pro (4th generation) is a different model and not covered by this record.",
-    "Nuki's Matter hub table lists only the Echo (4th Gen) for Alexa over Thread."
+    "Not every Echo works as a Thread hub for Nuki's Matter mode; check Nuki's hub table first."
   ],
   "sources": [
-    { "id": "nuki-sl4", "url": "https://nuki.io/en-it/products/smart-lock-4th-generation", "title": "Smart Lock (4th generation)", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "nuki-sl4", "url": "https://nuki.io/en-us/products/smart-lock-4th-generation", "title": "Smart Lock (4th generation)", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "nuki-generations", "url": "https://help.nuki.io/hc/en-001/articles/33659819862289-Smart-Lock-Generations", "title": "Smart Lock Generations", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "nuki-matter-help", "url": "https://help.nuki.io/hc/en-001/articles/14596875392017-Setting-up-your-Matter-integration", "title": "Setting up your Matter integration", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "nuki-integrations", "url": "https://help.nuki.io/hc/en-001/articles/4407671333521-What-Smart-Home-integrations-does-Nuki-offer", "title": "What Smart Home integrations does Nuki offer?", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "nuki-alexa", "url": "https://help.nuki.io/hc/en-us/articles/360017685278-Nuki-Web-integration-with-Amazon-Alexa", "title": "Nuki Web integration with Amazon Alexa", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "nuki-alexa", "url": "https://help.nuki.io/hc/en-001/articles/360017685278-Nuki-Web-integration-with-Amazon-Alexa", "title": "Nuki Web integration with Amazon Alexa", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "nuki-google", "url": "https://help.nuki.io/hc/en-001/articles/360017685978-Nuki-Web-integration-with-Google-Home", "title": "Nuki Web integration with Google Home", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "nuki-matter-press", "url": "https://nuki.io/en/company/press-releases/first-native-matter-smart-lock-3645f", "title": "First native Matter smart lock", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "nuki-keypad2", "url": "https://nuki.io/en/products/keypad-2-nfc", "title": "Keypad 2 NFC", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "csa-nuki-sl4", "url": "https://csa-iot.org/csa_product/smart-lock-4th-generation/", "title": "Smart Lock (4th Generation)", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11" },
-    { "id": "ha-nuki-matter", "url": "https://www.home-assistant.io/integrations/nuki_matter/", "title": "Nuki Matter - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11" }
+    { "id": "ha-nuki", "url": "https://www.home-assistant.io/integrations/nuki/", "title": "Nuki Bridge - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11" },
+    { "id": "nuki-batteries", "url": "https://help.nuki.io/hc/articles/4407674566929", "title": "Smart Lock batteries", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "nuki-mounting", "url": "https://help.nuki.io/hc/en-001/articles/4407107556625-Smart-Lock-with-removable-batteries-Mounting-and-Installation", "title": "Smart Lock with removable batteries: Mounting and Installation", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

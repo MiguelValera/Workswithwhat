@@ -4,17 +4,17 @@
   "model": "GO",
   "name": "Tedee GO (EU)",
   "regions": ["EU"],
-  "officialUrl": "https://tedee.com/product/tedee-go/",
+  "officialUrl": "https://tedee.com/product-info/tedee-go-best-keyless-access/",
   "radios": {
     "value": ["bluetooth", "thread"],
     "sources": ["tedee-matter", "tedee-go-info"],
-    "note": "Bluetooth to the phone or Tedee Bridge; Thread for Matter after the firmware update. Tedee's CSA entry is for the GO2."
+    "note": "Bluetooth to the phone or Tedee Bridge; Thread for Matter after the firmware update."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
-    "sources": ["tedee-matter", "tedee-go2-matter-kb"],
-    "note": "Tedee says a free firmware update (2.1.3493 or newer) adds Matter to the original GO. The CSA listing we saw is for the GO2, not the GO."
+    "sources": ["tedee-matter", "tedee-go2-matter-kb", "csa-tedee"],
+    "note": "Tedee says the free firmware update (2.1.3493 or newer) has shipped and that the GO and GO2 support Matter 1.4.2. The CSA directory's Tedee entries include a separate certificate for the Tedee GO (CSA260DNMAT49899-24), shown alongside the GO2 listing cited here."
   },
   "compatibility": {
     "apple_home": {
@@ -25,12 +25,12 @@
     "google_home": {
       "status": "matter",
       "sources": ["tedee-matter", "tedee-integrations"],
-      "note": "Needs a Thread border router. Tedee also has a cloud route via the Tedee Bridge."
+      "note": "Needs a Thread border router. Tedee also offers a cloud route that needs the Tedee Bridge."
     },
     "alexa": {
       "status": "matter",
       "sources": ["tedee-matter", "tedee-integrations"],
-      "note": "Needs a Thread border router. Tedee also has a cloud route via the Tedee Bridge."
+      "note": "Needs a Thread border router. Tedee also offers a cloud route that needs the Tedee Bridge."
     },
     "smartthings": {
       "status": "matter",
@@ -40,7 +40,7 @@
     "home_assistant": {
       "status": "native",
       "sources": ["ha-tedee"],
-      "note": "Official Tedee integration talks to the Tedee Bridge through its local API, so it needs the bridge. Matter is the alternative without a bridge."
+      "note": "The official Tedee integration lists the GO and talks to the Tedee Bridge over its local HTTP API, so it needs the bridge. Without a bridge, Home Assistant can add the GO through Matter over Thread with fewer features."
     }
   },
   "hubRequired": {
@@ -80,8 +80,10 @@
     { "id": "tedee-go2-matter-kb", "url": "https://tedee.com/knowledge-base/tedee-go2-matter/", "title": "Tedee GO(2): Matter", "publisher": "Tedee", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "tedee-integrations", "url": "https://tedee.com/smart-home-integrations/", "title": "Integrations", "publisher": "Tedee", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "tedee-bridge", "url": "https://tedee.com/product-info/tedee-bridge/", "title": "Tedee Bridge", "publisher": "Tedee", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "csa-tedee", "url": "https://csa-iot.org/csa_product/tedee-go2/", "title": "Tedee GO2", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11" },
     { "id": "ha-tedee", "url": "https://www.home-assistant.io/integrations/tedee/", "title": "Tedee - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11" }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
