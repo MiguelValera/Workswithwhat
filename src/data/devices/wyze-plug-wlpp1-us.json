@@ -3,18 +3,11 @@
   "brand": "Wyze",
   "model": "WLPP1",
   "name": "Wyze Plug",
-  "regions": [
-    "US"
-  ],
+  "regions": ["US"],
   "officialUrl": "https://www.wyze.com/products/wyze-plug",
   "radios": {
-    "value": [
-      "wifi"
-    ],
-    "sources": [
-      "wyze-plug-product",
-      "wyze-faq-wifi"
-    ],
+    "value": ["wifi"],
+    "sources": ["wyze-plug-product", "wyze-faq-wifi"],
     "note": "2.4 GHz Wi-Fi only; Wyze says it won't join 5 GHz. This record is the original WLPP1. The later WLPP1CFH revision sets up over Bluetooth, per FCC filings and the Wyze forum; Wyze's product page doesn't give a model number."
   },
   "matter": {
@@ -25,34 +18,22 @@
   "compatibility": {
     "apple_home": {
       "status": "unknown",
-      "sources": [
-        "wyze-integrations"
-      ],
+      "sources": ["wyze-integrations"],
       "note": "Wyze's integration list (Alexa, Google Assistant, IFTTT) leaves out HomeKit, but Wyze never says it's unsupported. No Matter listing found either."
     },
     "google_home": {
       "status": "native",
-      "sources": [
-        "wyze-faq-alexa-google",
-        "wyze-google-assistant",
-        "wyze-plug-product"
-      ],
+      "sources": ["wyze-faq-alexa-google", "wyze-google-assistant", "wyze-plug-product"],
       "note": "Link your Wyze account in the Google Home app. Wyze says the Google integration is officially supported in the US only."
     },
     "alexa": {
       "status": "native",
-      "sources": [
-        "wyze-faq-alexa-google",
-        "wyze-alexa-plug",
-        "wyze-plug-product"
-      ],
+      "sources": ["wyze-faq-alexa-google", "wyze-alexa-plug", "wyze-plug-product"],
       "note": "Through the Wyze Alexa skill; on/off by voice using the plug's name."
     },
     "smartthings": {
       "status": "unknown",
-      "sources": [
-        "wyze-integrations"
-      ],
+      "sources": ["wyze-integrations"],
       "note": "Wyze's integration list (Alexa, Google Assistant, IFTTT) leaves out SmartThings, but Wyze never says it's unsupported."
     },
     "home_assistant": {
@@ -63,9 +44,7 @@
   },
   "hubRequired": {
     "value": false,
-    "sources": [
-      "wyze-plug-product"
-    ],
+    "sources": ["wyze-plug-product"],
     "note": "Connects directly to Wi-Fi; Wyze says no hub is needed."
   },
   "localControl": {
@@ -75,16 +54,12 @@
   },
   "energyMonitoring": {
     "value": false,
-    "sources": [
-      "wyze-faq-energy"
-    ],
+    "sources": ["wyze-faq-energy"],
     "note": "Wyze says it can't report energy use; the app only shows run time. Wyze's metering plug is the Wyze Plug Outdoor."
   },
   "maxLoadWatts": {
     "value": null,
-    "sources": [
-      "wyze-plug-product"
-    ],
+    "sources": ["wyze-plug-product"],
     "note": "Wyze lists 100–120 VAC, 60 Hz, 15 A maximum but no watt figure. 15 A at 120 V would be 1800 W; that's derived, not stated."
   },
   "summary": "Alexa and Google Home, yes; Apple Home and SmartThings, not on Wyze's list. The Wyze Plug (WLPP1) links to both assistants through your Wyze account and joins 2.4 GHz Wi-Fi directly, so there's no hub. Wyze names no Matter support. It's a US plug rated 15 A, and it doesn't measure energy: the app only shows how long it ran. Home Assistant has no official Wyze integration.",

@@ -3,18 +3,11 @@
   "brand": "TP-Link",
   "model": "Kasa EP10",
   "name": "Kasa EP10",
-  "regions": [
-    "US"
-  ],
+  "regions": ["US"],
   "officialUrl": "https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-plug-mini-ep10",
   "radios": {
-    "value": [
-      "wifi"
-    ],
-    "sources": [
-      "tplink-ep10-datasheet",
-      "tplink-ep10"
-    ],
+    "value": ["wifi"],
+    "sources": ["tplink-ep10-datasheet", "tplink-ep10"],
     "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n); no 5 GHz."
   },
   "matter": {
@@ -25,57 +18,38 @@
   "compatibility": {
     "apple_home": {
       "status": "unknown",
-      "sources": [
-        "tplink-ep10"
-      ],
+      "sources": ["tplink-ep10"],
       "note": "TP-Link's EP10 platform list names Alexa, Google Assistant and SmartThings, not HomeKit, but doesn't rule it out. Kasa's HomeKit plugs are the KP125 and EP25."
     },
     "google_home": {
       "status": "native",
-      "sources": [
-        "tplink-ep10",
-        "kasa-ep10-product",
-        "tplink-ep10-ug"
-      ],
+      "sources": ["tplink-ep10", "kasa-ep10-product", "tplink-ep10-ug"],
       "note": "Cloud-to-cloud link between the Kasa and Google accounts."
     },
     "alexa": {
       "status": "native",
-      "sources": [
-        "tplink-ep10",
-        "kasa-ep10-product",
-        "tplink-ep10-ug"
-      ],
+      "sources": ["tplink-ep10", "kasa-ep10-product", "tplink-ep10-ug"],
       "note": "Cloud-to-cloud link via the Kasa skill."
     },
     "smartthings": {
       "status": "native",
-      "sources": [
-        "tplink-ep10",
-        "tplink-ep10-ug"
-      ],
+      "sources": ["tplink-ep10", "tplink-ep10-ug"],
       "note": "TP-Link lists Samsung SmartThings, and the user guide has SmartThings setup steps."
     },
     "home_assistant": {
       "status": "native",
-      "sources": [
-        "ha-tplink"
-      ],
+      "sources": ["ha-tplink"],
       "note": "Listed by the official TP-Link Smart Home integration. One forum user reported EP10 units that weren't discovered."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": [
-      "kasa-ep10-product"
-    ],
+    "sources": ["kasa-ep10-product"],
     "note": "Connects straight to 2.4 GHz Wi-Fi; Kasa says no hub is required."
   },
   "localControl": {
     "value": true,
-    "sources": [
-      "ha-tplink"
-    ],
+    "sources": ["ha-tplink"],
     "note": "Home Assistant's integration controls Kasa plugs over the local network. The Kasa app itself goes through the cloud."
   },
   "energyMonitoring": {
@@ -85,9 +59,7 @@
   },
   "maxLoadWatts": {
     "value": 1800,
-    "sources": [
-      "tplink-ep10-datasheet"
-    ],
+    "sources": ["tplink-ep10-datasheet"],
     "note": "15 A, 1800 W general use / resistive load at 100–120 V AC."
   },
   "summary": "Small and simple: the Kasa EP10 works with Alexa, Google Home and SmartThings once you link your Kasa account, and Home Assistant's official TP-Link integration lists it for local control. It's a compact US plug on 2.4 GHz Wi-Fi, rated 15 A / 1800 W, and needs no hub. TP-Link doesn't list Apple Home or Matter. Don't count on energy data either; TP-Link's EP10 pages don't mention a power meter.",
