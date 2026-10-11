@@ -54,7 +54,7 @@
   },
   "cameraType": {
     "value": "indoor",
-    "sources": ["blink-mini-2-faq"],
+    "sources": ["blink-mini-2-faq", "blink-mini-2-support"],
     "note": "Sold as a plug-in indoor camera. Blink says it can be used outdoors (IP65) with a separately sold outdoor power adapter."
   },
   "power": {
