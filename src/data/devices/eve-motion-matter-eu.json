@@ -6,7 +6,7 @@
   "regions": [
     "EU"
   ],
-  "officialUrl": "https://www.evehome.com/en/eve-motion",
+  "officialUrl": "https://www.evehome.com/en-us/eve-motion",
   "radios": {
     "value": [
       "thread",
@@ -16,17 +16,16 @@
       "csa-eve-motion",
       "eve-motion-page"
     ],
-    "note": "CSA lists Thread and Bluetooth; Eve's page lists Bluetooth Low Energy and Thread."
+    "note": "CSA lists Thread and Bluetooth (Bluetooth is used for Matter setup); Eve's page lists Thread as the wireless connection."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
     "sources": [
       "csa-eve-motion",
-      "csa-eve-motion-3",
       "eve-motion-news"
     ],
-    "note": "CSA lists Eve Motion with Matter over Thread (vendor 0x130A, product 0x0059, firmware 3.2.1). Eve announced the Matter version in November 2022. The CSA pages are inconsistent on the product name, so the verifier should recheck which listing is the Motion sensor."
+    "note": "CSA lists Eve Motion (vendor 0x130A, product 0x0059) with Matter over Thread; the cited listing is firmware 3.2.1, and earlier listings for 3.1.0 and 3.2.0 share the same product ID."
   },
   "compatibility": {
     "apple_home": {
@@ -64,23 +63,27 @@
     "home_assistant": {
       "status": "matter",
       "sources": [
-        "eve-motion-page",
+        "ha-eve",
         "ha-matter"
       ],
-      "note": "Reached through Home Assistant's Matter integration, which needs a Thread border router for Thread devices."
+      "note": "Home Assistant's Eve page lists Eve Motion as a Matter device, added locally through the Matter integration. Needs a Thread border router."
     }
   },
   "hubRequired": {
-    "value": null,
+    "value": false,
     "sources": [
-      "eve-motion-hub"
+      "eve-motion-hub",
+      "eve-motion-page"
     ],
-    "note": "Eve says Matter devices need a hub with Matter controller and Thread border router functions. That is not an Eve bridge, so we leave it unconfirmed, as with Eve Energy."
+    "note": "No Eve bridge is needed. Eve says the first platform needs a hub with Matter controller and Thread border router functions (e.g. HomePod mini or Apple TV 4K); that is a generic Thread border router, not a brand hub."
   },
   "localControl": {
-    "value": null,
-    "sources": [],
-    "note": "No source we saw states local-only control for Eve Motion."
+    "value": true,
+    "sources": [
+      "csa-eve-motion",
+      "ha-eve"
+    ],
+    "note": "The CSA listing describes no Eve cloud, no registration and fully local connectivity; Home Assistant's Eve page says Eve's Matter devices connect locally."
   },
   "senses": {
     "value": [
@@ -103,13 +106,12 @@
   "summary": "Eve Motion is a battery motion sensor with a built-in light sensor, and it can go indoors or outdoors with an IPX3 rating. It covers a 120 degree field of view out to about 9 m. The Matter version uses Thread, so Apple Home, Google Home, Alexa, SmartThings and Home Assistant can add it, each through a Thread border router. It takes two AAA cells.",
   "caveats": [
     "Needs a Thread border router; it does not join a network without one.",
-    "Older Eve Motion units are HomeKit-only and gain Matter after a firmware update; once updated they cannot go back to HomeKit.",
-    "Eve's page may show the product as unavailable in some regions; check the EU model before buying."
+    "Units sold before the Matter version were HomeKit devices; Eve offers a free Matter firmware update for the latest Thread-enabled models."
   ],
   "sources": [
     {
       "id": "eve-motion-page",
-      "url": "https://www.evehome.com/en/eve-motion",
+      "url": "https://www.evehome.com/en-us/eve-motion",
       "title": "Eve Motion",
       "publisher": "Eve Systems",
       "kind": "manufacturer",
@@ -125,8 +127,8 @@
     },
     {
       "id": "eve-motion-hub",
-      "url": "https://www.evehome.com/en-us/hub",
-      "title": "Which hub is right for me?",
+      "url": "https://www.evehome.com/hub",
+      "title": "Getting started with Matter",
       "publisher": "Eve Systems",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -140,22 +142,23 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "csa-eve-motion-3",
-      "url": "https://csa-iot.org/csa_product/eve-motion-3/",
-      "title": "Eve Motion - Matter",
-      "publisher": "Connectivity Standards Alliance",
-      "kind": "certification",
-      "accessed": "2026-10-11"
-    },
-    {
       "id": "ha-matter",
       "url": "https://www.home-assistant.io/integrations/matter/",
       "title": "Matter - Home Assistant",
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-eve",
+      "url": "https://www.home-assistant.io/integrations/eve/",
+      "title": "Eve - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

@@ -57,10 +57,11 @@
     "home_assistant": {
       "status": "native",
       "sources": [
+        "aqara-fp2-eu",
         "aqara-fp2-manual",
         "ha-homekit"
       ],
-      "note": "Aqara's manual says to add it with Home Assistant's HomeKit Device integration. A device paired to Apple Home must be removed from there first."
+      "note": "Aqara says to add it with Home Assistant's HomeKit Device integration, with no Aqara hub. A device paired to Apple Home must be removed from there first."
     }
   },
   "hubRequired": {
@@ -144,6 +145,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

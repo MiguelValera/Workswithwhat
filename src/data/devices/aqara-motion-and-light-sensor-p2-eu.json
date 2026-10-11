@@ -47,9 +47,10 @@
       "status": "matter",
       "sources": [
         "aqara-ml-eu",
-        "aqara-ml-faq"
+        "aqara-ml-faq",
+        "aqara-ml-specs"
       ],
-      "note": "Aqara lists it as compatible; Matter use needs a Matter-compatible Thread border router. Aqara's FAQ warns the light sensor may not work on some Matter apps, including Alexa."
+      "note": "Aqara lists Alexa; Matter use needs a Matter-compatible Thread border router. Aqara says Alexa does not support the light sensor."
     },
     "smartthings": {
       "status": "matter",
@@ -69,11 +70,12 @@
     }
   },
   "hubRequired": {
-    "value": null,
+    "value": false,
     "sources": [
-      "aqara-ml-specs"
+      "aqara-ml-specs",
+      "aqara-ml-faq"
     ],
-    "note": "Aqara says it needs a Matter-compatible Thread border router such as an Aqara hub; Aqara Home app support was tied to the Hub M3."
+    "note": "No Aqara hub is needed for Matter control; it needs a Matter controller with a Thread border router, which is not a brand hub. The Aqara Home app and its settings need Aqara's Hub M3."
   },
   "localControl": {
     "value": null,
@@ -101,8 +103,8 @@
   "summary": "Aqara Motion and Light Sensor P2 combines a PIR motion detector with an ambient light sensor. Aqara quotes a 170 degree by 45 degree field and up to 7 m range. It joins Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter on Thread, so each setup needs a Thread border router. Two CR2450 cells power it.",
   "caveats": [
     "Needs a Matter-compatible Thread border router.",
-    "Aqara's FAQ says the light sensor may not work in some Matter apps, including Alexa.",
-    "Motion re-trigger interval is 1 minute and the light reading updates about every 30 seconds."
+    "Aqara says Alexa does not support the light sensor.",
+    "Aqara's FAQ says that after it detects motion it won't report motion again for 1 minute."
   ],
   "sources": [
     {
@@ -115,7 +117,7 @@
     },
     {
       "id": "aqara-ml-specs",
-      "url": "https://www.aqara.com/us/motion-and-light-sensor-p2-specs/",
+      "url": "https://www.aqara.com/en/motion-and-light-sensor-p2-specs/",
       "title": "Motion and Light Sensor P2 Specs",
       "publisher": "Aqara",
       "kind": "manufacturer",
@@ -146,6 +148,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

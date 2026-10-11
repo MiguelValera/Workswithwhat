@@ -66,16 +66,16 @@
         "aqara-dw-support",
         "ha-matter"
       ],
-      "note": "Aqara's support page lists Home Assistant over Matter. Reached through Home Assistant's Matter integration, which needs a Thread border router for Thread devices."
+      "note": "Aqara's product page lists Home Assistant Yellow among tested Matter controller and Thread border routers. Reached through Home Assistant's Matter integration."
     }
   },
   "hubRequired": {
-    "value": null,
+    "value": false,
     "sources": [
-      "aqara-dw-eu",
-      "aqara-dw-support"
+      "aqara-dw-support",
+      "aqara-dw-news"
     ],
-    "note": "Needs a Matter Thread border router. Aqara Home app support was announced to arrive with the Hub M3; Aqara pages disagree on whether it is live."
+    "note": "No Aqara hub is needed for Matter control; it needs a Matter controller with a Thread border router (e.g. HomePod mini, Nest Hub 2nd gen, Echo 4th gen), which is not a brand hub. The Aqara Home app and extras such as the tamper alert need Aqara's Hub M3."
   },
   "localControl": {
     "value": null,
@@ -123,8 +123,8 @@
     },
     {
       "id": "aqara-dw-support",
-      "url": "https://www.aqara.com/en/product/door-and-window-sensor-p2/",
-      "title": "Door and Window Sensor P2",
+      "url": "https://www.aqara.com/us/product/door-and-window-sensor-p2/",
+      "title": "Door and Window Sensor P2 - Aqara",
       "publisher": "Aqara",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -154,6 +154,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }
