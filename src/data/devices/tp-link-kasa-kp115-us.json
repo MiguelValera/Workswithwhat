@@ -11,15 +11,15 @@
     "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n)."
   },
   "matter": {
-    "certified": false,
-    "sources": ["tplink-kp115"],
-    "note": "TP-Link lists Alexa, Google Assistant and SmartThings as its platforms, with no Matter. TP-Link's Matter version of this plug is the KP125M."
+    "certified": null,
+    "sources": [],
+    "note": "TP-Link lists Alexa, Google Assistant and SmartThings for the KP115 and doesn't mention Matter, but never says it has none. TP-Link's Matter version of this plug is the KP125M."
   },
   "compatibility": {
     "apple_home": {
-      "status": "no",
+      "status": "unknown",
       "sources": ["tplink-kp115"],
-      "note": "TP-Link's platform list for the KP115 (Alexa, Google Assistant, SmartThings) leaves out HomeKit, and it has no Matter. HomeKit Kasa plugs are the KP125 and EP25."
+      "note": "TP-Link's KP115 platform list names Alexa, Google Assistant and SmartThings, not HomeKit, but doesn't rule it out. Kasa's HomeKit plugs are the KP125 and EP25."
     },
     "google_home": {
       "status": "native",
@@ -33,7 +33,7 @@
     },
     "smartthings": {
       "status": "native",
-      "sources": ["tplink-kp115"],
+      "sources": ["tplink-kp115", "kasa-kp115-product"],
       "note": "TP-Link lists Samsung SmartThings among the KP115's platforms."
     },
     "home_assistant": {
@@ -62,10 +62,10 @@
     "sources": ["tplink-kp115", "tplink-kp115-datasheet"],
     "note": "15 A, 1.8 kW at 120 V."
   },
-  "summary": "The Kasa KP115 is a slim US Wi-Fi plug with energy monitoring, rated 15 A / 1800 W. It works with Alexa, Google Home and SmartThings through your Kasa account, and Home Assistant's official TP-Link integration controls it locally. It doesn't support Apple Home or Matter; TP-Link's HomeKit and Matter versions are the KP125 and KP125M.",
+  "summary": "The Kasa KP115 is a slim US Wi-Fi plug with energy monitoring, rated 15 A / 1800 W. It works with Alexa, Google Home and SmartThings through your Kasa account, and Home Assistant's official TP-Link integration controls it locally. TP-Link doesn't list Apple Home or Matter for it; its HomeKit and Matter versions are the KP125 and KP125M.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "No Apple Home or Matter support; look at the KP125 (HomeKit) or KP125M (Matter) instead.",
+    "TP-Link doesn't list Apple Home or Matter; look at the KP125 (HomeKit) or KP125M (Matter) instead.",
     "Energy data is in the Kasa app; Home Assistant users report the daily total needs the plug to reach an NTP server."
   ],
   "sources": [
@@ -79,15 +79,15 @@
     },
     {
       "id": "tplink-kp115",
-      "url": "https://www.tp-link.com/us/home-networking/smart-plug/kp115/",
-      "title": "Kasa Smart WiFi Plug Slim with Energy Monitoring",
+      "url": "https://www.tp-link.com/us/home-networking/smart-plug/kp115/v1%20(1-pack)/",
+      "title": "KP115",
       "publisher": "TP-Link",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
     {
       "id": "tplink-kp115-datasheet",
-      "url": "https://static.tp-link.com/2020/202010/20201030/KP115(US)1.0%20&%201.8_Datasheet.pdf",
+      "url": "https://www.tp-link.com/us/document/76917/",
       "title": "KP115 Kasa Smart Wi-Fi Plug Slim, Energy Monitoring No Hub Required",
       "publisher": "TP-Link",
       "kind": "manufacturer",

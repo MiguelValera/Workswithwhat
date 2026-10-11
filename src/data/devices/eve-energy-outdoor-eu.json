@@ -1,0 +1,154 @@
+{
+  "category": "smart-plug",
+  "brand": "Eve",
+  "model": "Eve Energy Outdoor 20ECM8301 (product no. 10ECM8351)",
+  "name": "Eve Energy Outdoor (Matter, EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.evehome.com/en-us/eve-energy-outdoor",
+  "radios": {
+    "value": [
+      "thread"
+    ],
+    "sources": [
+      "eve-outdoor-product",
+      "eve-outdoor-launch"
+    ],
+    "note": "Matter over Thread. Eve classes it as a mains-powered Full Thread Device, so it can act as a Thread router for other devices."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "eve-outdoor-product",
+      "eve-outdoor-launch",
+      "eve-identify"
+    ],
+    "note": "Eve sells it as a Matter-over-Thread device. A CSA entry that looks like it (CSA23K53MAT42554-24) only showed up in a sidebar on another Eve page, so we don't cite it."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "eve-outdoor-product",
+        "eve-outdoor-support"
+      ],
+      "note": "Through Matter. Needs an Apple home hub that is a Thread border router; Eve names HomePod (2nd gen), HomePod mini and Apple TV 4K (2nd gen, or 3rd gen 128 GB)."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "eve-outdoor-product",
+        "eve-outdoor-support"
+      ],
+      "note": "Through Matter. Needs a Google hub that is a Matter controller and Thread border router. Eve says power metering isn't shown in Google Home."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "eve-outdoor-product",
+        "eve-outdoor-support"
+      ],
+      "note": "Through Matter. Needs an Echo that is a Matter controller and Thread border router. Eve says power metering isn't shown in Alexa."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "eve-outdoor-product",
+        "eve-outdoor-support"
+      ],
+      "note": "Through Matter. Needs a SmartThings hub with Thread. Eve says power readings appear in SmartThings Energy."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "eve-outdoor-product",
+        "ha-matter"
+      ],
+      "note": "Eve's product page shows the Works with Home Assistant logo. Pairs through the Matter integration and needs a Thread border router."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "eve-outdoor-support",
+      "eve-outdoor-product"
+    ],
+    "note": "Eve says it needs a hub that is both a Matter controller and a Thread border router. Eve's iOS 18 hub-free mode exists for some devices, but we couldn't confirm it covers this one."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "eve-outdoor-product",
+      "ha-matter"
+    ],
+    "note": "Matter over Thread runs on the local network through your own hub; no Eve cloud account is involved in control."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "eve-outdoor-product",
+      "eve-outdoor-launch"
+    ],
+    "note": "Built-in power meter with cost estimates in the Eve app. Readings show in Apple Home (via the Eve app) and SmartThings, but not in Alexa or Google Home."
+  },
+  "maxLoadWatts": {
+    "value": 2300,
+    "sources": [
+      "eve-outdoor-product",
+      "eve-outdoor-launch"
+    ],
+    "note": "10 A / 2300 W continuous; Eve gives 16 A / 3680 W as the peak rating. Incandescent lamps up to 1 A / 240 W."
+  },
+  "summary": "Eve Energy Outdoor is an IP44 surface-mounted outdoor socket with a Schuko outlet and a built-in power meter, controlled over Matter via Thread. Apple Home, Google Home, Alexa, SmartThings and Home Assistant all reach it through Matter, and each needs a hub that is a Thread border router. It is rated 10 A / 2300 W continuous (16 A / 3680 W peak). Energy readings show in the Eve app and SmartThings, but not in Alexa or Google Home.",
+  "caveats": [
+    "Needs a Thread border router hub, such as a HomePod mini, Apple TV 4K, or a Thread-capable Echo, Nest or SmartThings hub.",
+    "Continuous load is 10 A / 2300 W; 16 A / 3680 W is the peak rating only.",
+    "Power metering doesn't show in Alexa or Google Home."
+  ],
+  "sources": [
+    {
+      "id": "eve-outdoor-product",
+      "url": "https://www.evehome.com/en-us/eve-energy-outdoor",
+      "title": "Eve Energy Outdoor",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-outdoor-launch",
+      "url": "https://www.evehome.com/en-us/eve-energy-outdoor-available",
+      "title": "Eve Energy Outdoor Now Available",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-outdoor-support",
+      "url": "https://www.evehome.com/en-us/support/eve-energy-outdoor",
+      "title": "Eve Energy Outdoor",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-identify",
+      "url": "https://www.evehome.com/en/identify-your-eve-accessory",
+      "title": "Identify your Eve accessory",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

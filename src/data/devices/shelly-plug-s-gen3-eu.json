@@ -1,0 +1,161 @@
+{
+  "category": "smart-plug",
+  "brand": "Shelly",
+  "model": "Plug S Gen3 (S3PL-00112EU)",
+  "name": "Shelly Plug S Gen3 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.shelly.com/products/shelly-plug-s-gen3",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "shelly-kb-plug-s-mtr-gen3"
+    ],
+    "note": "Wi-Fi 802.11 b/g/n plus Bluetooth 4.2; Shelly also lists Wi-Fi range extender and BLE gateway functions."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "csa-shelly-plug-s-mtr-gen3",
+      "shelly-kb-plug-s-mtr-gen3",
+      "shelly-apple-home-press"
+    ],
+    "note": "CSA lists it as Shelly Plug S MTR Gen3 (cert CSA243B1MAT43620-24, July 2024, firmware 1.2.0-s1). Shelly now sells the same S3PL-00112EU under the 'MTR' name. Scripting only works with Matter turned off."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "shelly-apple-home-press",
+        "csa-shelly-plug-s-mtr-gen3"
+      ],
+      "note": "Shelly says the Plug S MTR Gen3 earned Apple's Works with Apple Home badge through Matter. Needs an Apple home hub for remote control and automations."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "shelly-plug-s-gen3-product",
+        "shelly-kb-plug-s-mtr-gen3"
+      ],
+      "note": "Shelly marks Google Smart Home 'Yes' without saying whether that means its cloud link or Matter, so we only claim Matter. Needs a Google Matter controller."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "shelly-plug-s-gen3-product",
+        "shelly-kb-plug-s-mtr-gen3"
+      ],
+      "note": "Shelly marks Alexa 'Yes'; no Shelly page we found confirms the Shelly Cloud skill for this model, so we only claim Matter. Needs an Echo that works as a Matter controller."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "shelly-apple-home-press",
+        "shelly-plug-s-gen3-product"
+      ],
+      "note": "Shelly says it is certified under Samsung's Works with SmartThings program for Matter."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-shelly"
+      ],
+      "note": "Official Shelly integration with local push; it supports all Shelly device generations. It can also be added through Matter."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "shelly-kb-plug-s-mtr-gen3",
+      "shelly-kb-plug-s-mtr-gen3-manual"
+    ],
+    "note": "Wi-Fi device with its own access-point setup and built-in web interface; the Shelly app and cloud are optional. Third-party platforms need their own Matter controller."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "shelly-kb-plug-s-mtr-gen3-manual",
+      "ha-shelly"
+    ],
+    "note": "Built-in web interface for control and configuration, and local push control from Home Assistant's Shelly integration."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "shelly-kb-plug-s-mtr-gen3",
+      "shelly-plug-s-gen3-product"
+    ],
+    "note": "Measures power, energy, voltage and current."
+  },
+  "maxLoadWatts": {
+    "value": 2500,
+    "sources": [
+      "shelly-kb-plug-s-mtr-gen3"
+    ],
+    "note": "12 A / 2500 W, resistive loads only."
+  },
+  "summary": "The Shelly Plug S Gen3 (S3PL-00112EU) is a compact Wi-Fi plug with Bluetooth 4.2 that measures power, energy, voltage and current. It is Matter-certified, now sold as the Plug S MTR Gen3, and Shelly says it carries Apple's Works with Apple Home badge. Google Home, Alexa and SmartThings reach it through Matter, and Home Assistant controls it locally through the official Shelly integration. It is rated 12 A / 2500 W for resistive loads.",
+  "caveats": [
+    "Rated 12 A / 2500 W for resistive loads only, below the 16 A of many EU plugs.",
+    "Scripting only works when Matter is turned off.",
+    "Shelly now lists this model as 'Plug S MTR Gen3'; it is the same S3PL-00112EU.",
+    "Apple Home, Google Home, Alexa and SmartThings go through Matter and need a Matter controller from that platform."
+  ],
+  "sources": [
+    {
+      "id": "shelly-plug-s-gen3-product",
+      "url": "https://www.shelly.com/products/shelly-plug-s-gen3",
+      "title": "Shelly Plug S Gen3 White",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-kb-plug-s-mtr-gen3",
+      "url": "https://kb.shelly.cloud/knowledge-base/shelly-plug-s-mtr-gen3",
+      "title": "Shelly Plug S MTR Gen3",
+      "publisher": "Shelly Knowledge Base",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-kb-plug-s-mtr-gen3-manual",
+      "url": "https://kb.shelly.cloud/knowledge-base/plug-s-mtr-gen3",
+      "title": "Ръководство за употреба и безопасност (Plug S MTR Gen3)",
+      "publisher": "Shelly Knowledge Base",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-apple-home-press",
+      "url": "https://www.shelly.com/blogs/media-center/two-shelly-group-devices-earn-works-with-apple-home-certification-via-matter-protocol",
+      "title": "Two Shelly Devices Gain Apple Home Certification",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-shelly-plug-s-mtr-gen3",
+      "url": "https://csa-iot.org/csa_product/shelly-plug-s-mtr-gen3/",
+      "title": "Shelly Plug S MTR Gen3 - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-shelly",
+      "url": "https://www.home-assistant.io/integrations/shelly/",
+      "title": "Shelly - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
