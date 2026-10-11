@@ -97,11 +97,12 @@
     ],
     "note": "Aqara says the local AI features need no subscription, while third-party cloud storage such as HomeKit Secure Video, or future cloud options, may need a paid plan. Aqara does not name the plan."
   },
-  "summary": "The Aqara Camera Hub G3 is an indoor pan/tilt camera with 2K (2304 x 1296) video that doubles as a Zigbee 3.0 hub for Aqara sensors. It records to a microSD card of up to 128 GB and runs face, gesture and pet recognition on the device. Apple Home (with HomeKit Secure Video), Google Home and Alexa are listed by Aqara. SmartThings and Home Assistant support are not confirmed.",
+  "summary": "Aqara lists HomeKit Secure Video, Google Home and Alexa for the Camera Hub G3, an indoor pan/tilt camera that is also a Zigbee 3.0 hub for Aqara sensors, so no separate hub is needed. Face, gesture and pet recognition run on the device and need no subscription, and a microSD card of up to 128 GB takes local recordings. It runs on a USB-C 5 V / 2 A adapter. Aqara has not confirmed live view on Echo Show or Nest displays, and SmartThings and Home Assistant support are not confirmed.",
   "caveats": [
-    "HomeKit Secure Video limits recording to 1080p and disables pan/tilt control.",
+    "HomeKit Secure Video limits recording to 1080p and disables pan/tilt control, and it needs an Apple home hub.",
+    "HomeKit Secure Video cloud storage, or future cloud options, may need a paid plan; Aqara does not name one.",
     "Google Home and Alexa see it as a camera only, not as a Zigbee hub.",
-    "Retailers disagree on how many Zigbee devices it supports (64 vs 128); Aqara's page does not state a number.",
+    "The microSD card is not included.",
     "Indoor use only, per Aqara's manual."
   ],
   "sources": [

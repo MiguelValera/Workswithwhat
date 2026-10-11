@@ -3,11 +3,18 @@
   "brand": "eufy",
   "model": "Video Doorbell E340",
   "name": "eufy Video Doorbell E340 (US)",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://www.eufy.com/products/t8214111",
   "radios": {
-    "value": ["wifi"],
-    "sources": ["eufy-e340-page", "eufy-e340-specs"],
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "eufy-e340-page",
+      "eufy-e340-specs"
+    ],
     "note": "eufy's US page says it supports 2.4 GHz Wi-Fi only; the spec sheet lists 802.11 b/g/n."
   },
   "matter": {
@@ -18,33 +25,48 @@
   "compatibility": {
     "apple_home": {
       "status": "no",
-      "sources": ["eufy-e340-specs", "eufy-homekit"],
+      "sources": [
+        "eufy-e340-specs",
+        "eufy-homekit"
+      ],
       "note": "eufy's spec sheet lists Works with HomeKit as N for the E340, and its FAQ says HomeKit is not currently supported."
     },
     "google_home": {
       "status": "native",
-      "sources": ["eufy-e340-specs", "eufy-e340-page"],
+      "sources": [
+        "eufy-e340-specs",
+        "eufy-e340-page"
+      ],
       "note": "Google Assistant works through the eufy Security integration. eufy's spec sheet lists voice-command streaming only; two-way talk, motion announcements and doorbell-press announcements are listed as not supported. Google Home speakers cannot act as a chime."
     },
     "alexa": {
       "status": "native",
-      "sources": ["eufy-e340-specs", "eufy-e340-page"],
+      "sources": [
+        "eufy-e340-specs",
+        "eufy-e340-page"
+      ],
       "note": "Linked with the eufy Security Alexa skill. The spec sheet lists voice-command streaming and doorbell-press announcements as supported; two-way talk and motion announcements are listed as not supported. Echo devices can act as a chime."
     },
     "smartthings": {
       "status": "unknown",
-      "sources": ["eufy-3rd-party"],
+      "sources": [
+        "eufy-3rd-party"
+      ],
       "note": "eufy's general doorbell article marks SmartThings as not supported, but it does not name the E340, so it is not treated as a firm no."
     },
     "home_assistant": {
       "status": "unknown",
-      "sources": ["eufy-3rd-party"],
+      "sources": [
+        "eufy-3rd-party"
+      ],
       "note": "eufy's third-party platform list marks Home Assistant as not supported, but that article is not clearly specific to the E340, so it is not treated as a firm no. Community integrations exist but are unofficial."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["eufy-e340-page"],
+    "sources": [
+      "eufy-e340-page"
+    ],
     "note": "The doorbell records to its own 8 GB storage. eufy says it also works with a HomeBase S280 or S380 (S380 needs firmware 3.3.2.6 or later), which is optional."
   },
   "localControl": {
@@ -54,21 +76,31 @@
   },
   "cameraType": {
     "value": "doorbell",
-    "sources": ["eufy-e340-page"]
+    "sources": [
+      "eufy-e340-page"
+    ]
   },
   "power": {
     "value": "Rechargeable battery or wired",
-    "sources": ["eufy-e340-page", "eufy-e340-specs"],
+    "sources": [
+      "eufy-e340-page",
+      "eufy-e340-specs"
+    ],
     "note": "Removable battery pack, or doorbell wiring. eufy's US page asks for 8–24 V and over 10 VA; its spec sheet says 16–24 V, 10 VA."
   },
   "localStorage": {
     "value": true,
-    "sources": ["eufy-e340-page", "eufy-e340-specs"],
+    "sources": [
+      "eufy-e340-page",
+      "eufy-e340-specs"
+    ],
     "note": "8 GB of eMMC storage in the doorbell. eufy says that holds about 90 days of video at 30 clips of 20 seconds a day."
   },
   "subscription": {
     "value": "None required (no monthly fee)",
-    "sources": ["eufy-e340-page"],
+    "sources": [
+      "eufy-e340-page"
+    ],
     "note": "eufy markets the doorbell as working without a subscription; whether optional paid plans exist was not checked."
   },
   "summary": "The eufy Video Doorbell E340 records to 8 GB of built-in storage, which eufy says holds about 90 days of clips, and markets itself as needing no monthly fee. Alexa and Google Assistant work through the eufy Security integration, with limited features. Apple Home is a flat no: eufy's own spec sheet says HomeKit is not supported. It runs on a removable battery or doorbell wiring, over 2.4 GHz Wi-Fi.",

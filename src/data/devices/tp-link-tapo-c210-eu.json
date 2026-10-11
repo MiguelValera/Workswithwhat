@@ -100,12 +100,12 @@
     ],
     "note": "Tapo lists local storage as free and 30-day cloud clip history as a Tapo Care feature. Tapo says plan types and features vary by region; EU prices not checked."
   },
-  "summary": "The Tapo C210 is a pan/tilt indoor Wi-Fi camera with 3 MP (2304 x 1296) video, 30 ft of infrared night vision and a microSD slot. It works with Alexa and Google through Tapo's cloud link, and Home Assistant's TP-Link integration supports it directly. Cloud history is a separate Tapo Care plan. Apple Home and SmartThings support are not confirmed.",
+  "summary": "Ask Alexa to show the Tapo C210 on an Echo Show, Echo Spot or Fire TV, or ask Google to stream it to a Nest Hub or Chromecast. Both links run through the Tapo app with no hub. It is a plug-in indoor camera with a microSD slot, which Tapo lists as free recording; 30-day cloud history is the optional Tapo Care plan. Home Assistant supports it through its TP-Link integration. Apple Home and SmartThings are not confirmed.",
   "caveats": [
     "Alexa and Google streams are cloud-to-cloud and stop after 10 minutes; you ask again to keep watching.",
     "2.4 GHz Wi-Fi only.",
     "The maximum microSD size differs by hardware version: 512 GB on Tapo's V2 page, 256 GB on older V1 pages.",
-    "Cloud storage, microSD and NVR recording can't all run at once; with all three on, Tapo disables NVR recording."
+    "Home Assistant live view needs a camera account set in the Tapo app, and some firmware also needs third-party access turned on in Tapo Lab."
   ],
   "sources": [
     {

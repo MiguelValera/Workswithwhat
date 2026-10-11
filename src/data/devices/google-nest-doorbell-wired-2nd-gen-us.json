@@ -3,11 +3,17 @@
   "brand": "Google",
   "model": "Nest Doorbell (wired, 2nd gen)",
   "name": "Nest Doorbell wired 2nd gen (US)",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://support.google.com/googlehome/answer/12570869",
   "radios": {
-    "value": ["wifi"],
-    "sources": ["nest-doorbell-install"],
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "nest-doorbell-install"
+    ],
     "note": "Google's install page connects it to Wi-Fi through the Google Home app. No Google page seen states the bands for this model; press and retailer listings say 2.4 and 5 GHz."
   },
   "matter": {
@@ -23,12 +29,17 @@
     },
     "google_home": {
       "status": "native",
-      "sources": ["nest-doorbell-install", "nest-visitor-announcements"],
+      "sources": [
+        "nest-doorbell-install",
+        "nest-visitor-announcements"
+      ],
       "note": "Set up in the Google Home app. Doorbell visitor announcements play on Google speakers and displays in the same home."
     },
     "alexa": {
       "status": "native",
-      "sources": ["nest-alexa"],
+      "sources": [
+        "nest-alexa"
+      ],
       "note": "Through the Google Nest skill in the Alexa app. Google names this model for doorbell-press announcements once Visitor announcements is on in Google Home, and live view works on Echo Show when you ask for it."
     },
     "smartthings": {
@@ -38,13 +49,18 @@
     },
     "home_assistant": {
       "status": "native",
-      "sources": ["ha-nest", "nest-device-access"],
+      "sources": [
+        "ha-nest",
+        "nest-device-access"
+      ],
       "note": "The official Google Nest integration uses Google's Device Access API, which costs US$5. Google's Device Access list includes Nest Doorbell (wired), added in February 2023, with WebRTC live view and clip preview."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["nest-doorbell-install"],
+    "sources": [
+      "nest-doorbell-install"
+    ],
     "note": "Needs Wi-Fi, the Google Home app and a Google Account; no hub or bridge is mentioned."
   },
   "localControl": {
@@ -54,11 +70,16 @@
   },
   "cameraType": {
     "value": "doorbell",
-    "sources": ["nest-doorbell-install"]
+    "sources": [
+      "nest-doorbell-install"
+    ]
   },
   "power": {
     "value": "Wired (doorbell 16–24 V AC)",
-    "sources": ["nest-doorbell-install", "nest-transformer"],
+    "sources": [
+      "nest-doorbell-install",
+      "nest-transformer"
+    ],
     "note": "Google requires a transformer rated 16–24 V AC, 10–40 VA; some homes need a new one. Google also lists an optional indoor plug-in power adapter."
   },
   "localStorage": {
@@ -68,7 +89,9 @@
   },
   "subscription": {
     "value": "Event video history beyond 3 hours (Google Home Premium)",
-    "sources": ["google-compare-doorbells"],
+    "sources": [
+      "google-compare-doorbells"
+    ],
     "note": "Google's comparison page lists 3 hours of event video with no plan and up to 60 days of event history with Google Home Premium."
   },
   "summary": "Set up in the Google Home app, the Nest Doorbell (wired, 2nd gen) announces visitors on Google speakers and displays in the same home. Alexa works through the Google Nest skill, with doorbell-press announcements and live view on Echo Show, and Home Assistant gets it via the Google Nest integration. It needs existing 16 to 24 V AC doorbell wiring and no hub. Free use keeps 3 hours of event video; up to 60 days needs Google Home Premium.",

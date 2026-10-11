@@ -3,11 +3,17 @@
   "brand": "Ring",
   "model": "Battery Doorbell 2K",
   "name": "Ring Battery Doorbell 2K (US)",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://ring.com/products/battery-doorbell-2nd-gen",
   "radios": {
-    "value": ["wifi"],
-    "sources": ["ring-bd2k-page"],
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "ring-bd2k-page"
+    ],
     "note": "Ring's US product page lists Wi-Fi 4 on 2.4 GHz only. A Ring support page for the Battery Doorbell (2nd Gen) lists dual band, so the band is not settled."
   },
   "matter": {
@@ -28,7 +34,11 @@
     },
     "alexa": {
       "status": "native",
-      "sources": ["ring-alexa-devices", "ring-alexa-control", "ring-alexa-announcements"],
+      "sources": [
+        "ring-alexa-devices",
+        "ring-alexa-control",
+        "ring-alexa-announcements"
+      ],
       "note": "Through the Ring skill. Ring says all of its video doorbell models work with Alexa, with announcements, two-way talk and live view on Echo Show. Person and package announcements, with automatic live view on Echo Show, need a Ring Protect plan."
     },
     "smartthings": {
@@ -38,13 +48,17 @@
     },
     "home_assistant": {
       "status": "unknown",
-      "sources": ["ha-ring"],
+      "sources": [
+        "ha-ring"
+      ],
       "note": "Home Assistant has an official Ring integration, but its device list names 'Battery Doorbell' and 'Doorbell (2nd Gen)', not the Battery Doorbell 2K, so support for this model is not confirmed."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["ring-bd2k-page"],
+    "sources": [
+      "ring-bd2k-page"
+    ],
     "note": "Connects over Wi-Fi to the Ring app. A Ring Chime is optional."
   },
   "localControl": {
@@ -54,11 +68,16 @@
   },
   "cameraType": {
     "value": "doorbell",
-    "sources": ["ring-bd2k-page"]
+    "sources": [
+      "ring-bd2k-page"
+    ]
   },
   "power": {
     "value": "Rechargeable battery",
-    "sources": ["ring-bd2k-page", "ring-bd2k-support"],
+    "sources": [
+      "ring-bd2k-page",
+      "ring-bd2k-support"
+    ],
     "note": "Built-in battery; the doorbell comes off the wall to recharge. Ring says it can also be wired to an 8–24 V AC doorbell transformer, or fed by a Ring solar charger, to trickle-charge it."
   },
   "localStorage": {
@@ -68,7 +87,10 @@
   },
   "subscription": {
     "value": "Saved video history (Ring Protect plan)",
-    "sources": ["ring-bd2k-page", "ring-alexa-announcements"],
+    "sources": [
+      "ring-bd2k-page",
+      "ring-alexa-announcements"
+    ],
     "note": "Ring says recordings are stored through a Ring Protect plan; live view works without one. Retention and prices were not read on the US page."
   },
   "summary": "Alexa is the one ecosystem Ring confirms for the Battery Doorbell 2K: through the Ring skill you get announcements, two-way talk and live view on an Echo Show. Live view is free, but saved video and the person and package announcements need a Ring Protect plan. The doorbell runs on a rechargeable battery and connects over Wi-Fi with no hub, and it can also be wired to an 8 to 24 V AC doorbell transformer. Apple Home, Google Home and SmartThings are not confirmed.",

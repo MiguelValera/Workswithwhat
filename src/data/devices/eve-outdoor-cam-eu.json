@@ -97,10 +97,10 @@
     ],
     "note": "An iCloud+ plan (not included) is needed for recording; Apple's plan size sets how many cameras are allowed."
   },
-  "summary": "The Eve Outdoor Cam is a hardwired floodlight camera with 1080p video at 24 fps, a 157 degree view, two-way audio and an IP55 rating. It is built only for Apple HomeKit Secure Video, so recording needs iCloud+ and an Apple TV or HomePod as home hub. Google Home, Alexa and SmartThings are not listed by Eve.",
+  "summary": "The Eve Outdoor Cam is a hardwired floodlight camera built exclusively for Apple HomeKit Secure Video. Clips are analysed on an Apple TV or HomePod and stored encrypted in iCloud, so recording needs an iCloud+ plan, and live view goes through the home hub. Installation needs mains power with neutral and ground wires. Eve does not list Google Home, Alexa or SmartThings, which leaves them unconfirmed.",
   "caveats": [
     "Needs an iCloud+ plan and an Apple home hub; no recording without them.",
-    "Installation needs neutral and ground wires.",
+    "Installation needs neutral and ground wires; without them it can't go in that spot.",
     "2.4 GHz Wi-Fi only.",
     "Specs and ecosystem facts come from 2022 launch-era pages; the EU variant's exact model number was not found."
   ],

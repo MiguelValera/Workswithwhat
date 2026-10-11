@@ -96,11 +96,11 @@
     ],
     "note": "Google's store page includes up to 3 hours of event video history; longer history and 24/7 recording need a paid Google plan. Plan names for this model were not confirmed from a Google page."
   },
-  "summary": "The Nest Cam (indoor, wired) 2nd gen is a plug-in indoor camera with 1080p HDR video and a 135 degree view, powered by a 10 ft USB-A cable. It works with Google Home and Nest displays, with Alexa for live view on Echo Show, and with Home Assistant's Nest integration. Apple Home and SmartThings support are not confirmed.",
+  "summary": "Live video from the Nest Cam (indoor, wired) 2nd gen streams to Nest displays and Chromecast devices from the Google Home app, and to an Echo Show through the Google Nest skill. Google's store page includes up to 3 hours of event video history; longer history and 24/7 recording need a paid Google plan. It plugs in with a 10 ft cable and a 7.5 W USB-A adapter, for indoor use only. Home Assistant supports it, while Apple Home and SmartThings are not confirmed.",
   "caveats": [
-    "The 3rd gen indoor camera has different specs (2K, 152 degrees, USB-C); make sure you read the 2nd gen figures.",
+    "The 3rd gen indoor camera uses USB-C instead of USB-A; make sure you read the 2nd gen specs.",
     "Home Assistant can't record this camera's WebRTC stream through the integration, and the Nest integration needs a one-time US$5 Google Device Access fee.",
-    "Alexa live view on wired Nest cameras stops after 12 hours.",
+    "Alexa live view on wired Nest cameras stops after 12 hours until you ask again.",
     "24/7 recording and longer history need a paid Google plan."
   ],
   "sources": [
