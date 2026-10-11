@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import DeviceCard from '../components/DeviceCard.astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getActiveCategories, getPublishedDevices, listJoin } from '../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getActiveCategories, getPublishedDevices, categoryPhrase } from '../lib/devices';
 
 const devices = await getPublishedDevices();
 const cats = await getActiveCategories();
-const what = listJoin(cats.map((c) => c.plural)) || 'smart home devices';
+const what = categoryPhrase(cats.map((c) => c.plural)).long || 'smart home devices';
 const recent = [...devices].sort((a, b) => (b.data.verifiedAt ?? '').localeCompare(a.data.verifiedAt ?? '')).slice(0, 6);
 
 const jsonLd = [

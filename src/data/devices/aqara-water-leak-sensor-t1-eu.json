@@ -1,0 +1,118 @@
+{
+  "category": "smart-sensor",
+  "brand": "Aqara",
+  "model": "Water Leak Sensor T1 (WL-S02D)",
+  "name": "Aqara Water Leak Sensor T1 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.aqara.com/en/product/water-leak-sensor-t1/",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "aqara-wl-t1-specs",
+      "aqara-wl-t1"
+    ],
+    "note": "Zigbee 3.0."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No CSA listing found. Aqara's M3 hub acts as a Matter bridge for Aqara Zigbee devices; no page seen says this sensor is exposed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Aqara hub",
+      "sources": [
+        "aqara-wl-t1-faq"
+      ],
+      "note": "Aqara's T1 FAQ says an Aqara hub is needed for the sensor to work with HomeKit."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Only retailer listings say Google works; no Aqara page seen for the T1 confirms it."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Only retailer listings say Alexa works; the older Water Leak Sensor's US page lists it, the T1 page was not seen."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Only retailer listings mention SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant docs seen name no Aqara T1 support. A generic Zigbee coordinator is not documented for it."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "aqara-wl-t1-faq"
+    ],
+    "note": "Aqara's FAQ says the sensor can't work on its own and must be used with an Aqara hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No page seen describes hub-local operation."
+  },
+  "senses": {
+    "value": [
+      "leak"
+    ],
+    "sources": [
+      "aqara-wl-t1-faq",
+      "aqara-wl-t1"
+    ],
+    "note": "Detects water between two probes, from about 0.5 mm of water."
+  },
+  "power": {
+    "value": "CR2032",
+    "sources": [
+      "aqara-wl-t1-specs"
+    ],
+    "note": "Aqara says typical battery life is about two years."
+  },
+  "summary": "Aqara's Water Leak Sensor T1 (WL-S02D) detects water between two probes from about 0.5 mm deep, using Zigbee 3.0. It must be paired to an Aqara hub, which is also how it reaches Apple Home. Google Home, Alexa, SmartThings and Home Assistant are not confirmed. A CR2032 cell lasts about two years.",
+  "caveats": [
+    "Needs an Aqara hub; it is not a standalone Zigbee device.",
+    "Google Home, Alexa and SmartThings support is unconfirmed on Aqara pages seen."
+  ],
+  "sources": [
+    {
+      "id": "aqara-wl-t1",
+      "url": "https://www.aqara.com/en/product/water-leak-sensor-t1/",
+      "title": "Aqara Water Leak Sensor T1: Protect Your Property from Water Damage",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-wl-t1-specs",
+      "url": "https://www.aqara.com/en/product/water-leak-sensor-t1/water-leak-sensor-t1-specs/",
+      "title": "Water Leak Sensor T1 Specs - Aqara",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-wl-t1-faq",
+      "url": "https://www.aqara.com/en/water-leak-sensor-t1/water-leak-sensor-t1-faq/",
+      "title": "Water Leak Sensor T1 FAQ - Aqara",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
+  "updatedAt": "2026-10-11"
+}

@@ -50,6 +50,15 @@ export const devicePath = (d: Device) => `/${categoryOf(d.data).path}/${d.id}/`;
 export const listJoin = (xs: string[]) =>
   xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`;
 
+// Category names for titles and descriptions. Past three categories a full list
+// makes titles too long, so titles say "smart home devices" and descriptions
+// name the categories in brackets.
+export const categoryPhrase = (plurals: string[]) => {
+  if (plurals.length <= 3) return { short: listJoin(plurals), long: listJoin(plurals) };
+  const bare = listJoin(plurals.map((p) => p.replace(/^smart /, '')));
+  return { short: 'smart home devices', long: `smart home devices (${bare})` };
+};
+
 const ensureStop = (s: string) => (/[.!?]$/.test(s.trim()) ? s.trim() : `${s.trim()}.`);
 
 // One plain-English answer per device × ecosystem, built only from verified

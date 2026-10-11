@@ -1,0 +1,154 @@
+{
+  "category": "smart-sensor",
+  "brand": "Aqara",
+  "model": "Motion and Light Sensor P2",
+  "name": "Aqara Motion and Light Sensor P2 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://eu.aqara.com/en-eu/products/aqara-motion-and-light-sensor-p2",
+  "radios": {
+    "value": [
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "aqara-ml-specs",
+      "csa-aqara-ml"
+    ],
+    "note": "Aqara lists Thread and Bluetooth 5.0; CSA lists Thread and Bluetooth."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "csa-aqara-ml"
+    ],
+    "note": "CSA lists Motion and Light Sensor P2 from Lumi United (vendor 0x115F, product 0x2003). Models are ML-S03E and ML-S03D."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "aqara-ml-eu",
+        "aqara-ml-specs"
+      ],
+      "note": "Aqara lists it as compatible; Matter use needs a Matter-compatible Thread border router. On Apple that means a HomePod mini, HomePod 2nd gen or Apple TV 4K."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "aqara-ml-eu",
+        "aqara-ml-specs"
+      ],
+      "note": "Aqara lists it as compatible; Matter use needs a Matter-compatible Thread border router."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "aqara-ml-eu",
+        "aqara-ml-faq",
+        "aqara-ml-specs"
+      ],
+      "note": "Aqara lists Alexa; Matter use needs a Matter-compatible Thread border router. Aqara says Alexa does not support the light sensor."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "aqara-ml-eu",
+        "aqara-ml-specs"
+      ],
+      "note": "Aqara lists it as compatible; Matter use needs a Matter-compatible Thread border router."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "csa-aqara-ml",
+        "ha-matter"
+      ],
+      "note": "Aqara's pages we saw do not list Home Assistant; it works because the sensor is Matter-certified. Reached through Home Assistant's Matter integration, which needs a Thread border router for Thread devices."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "aqara-ml-specs",
+      "aqara-ml-faq"
+    ],
+    "note": "No Aqara hub is needed for Matter control; it needs a Matter controller with a Thread border router, which is not a brand hub. The Aqara Home app and its settings need Aqara's Hub M3."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Aqara source we saw states local-only control."
+  },
+  "senses": {
+    "value": [
+      "motion",
+      "light"
+    ],
+    "sources": [
+      "aqara-ml-specs",
+      "aqara-ml-faq"
+    ],
+    "note": "PIR motion sensor plus an ambient light sensor that works independently of motion."
+  },
+  "power": {
+    "value": "2 × CR2450",
+    "sources": [
+      "aqara-ml-specs"
+    ],
+    "note": "Two CR2450 cells included; Aqara claims up to 2 years."
+  },
+  "summary": "Aqara Motion and Light Sensor P2 pairs a PIR motion detector with an ambient light sensor that works independently of motion. Matter over Thread connects it to Apple Home, Google Home, Alexa, SmartThings and Home Assistant, using any Matter-compatible Thread border router instead of an Aqara hub. Two CR2450 cells are included, and Aqara claims up to 2 years.",
+  "caveats": [
+    "Needs a Matter-compatible Thread border router.",
+    "Aqara says Alexa does not support the light sensor.",
+    "The Aqara Home app and its settings need Aqara's Hub M3."
+  ],
+  "sources": [
+    {
+      "id": "aqara-ml-eu",
+      "url": "https://eu.aqara.com/en-eu/products/aqara-motion-and-light-sensor-p2",
+      "title": "Motion and Light Sensor P2",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-ml-specs",
+      "url": "https://www.aqara.com/en/motion-and-light-sensor-p2-specs/",
+      "title": "Motion and Light Sensor P2 Specs",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-ml-faq",
+      "url": "https://www.aqara.com/en/product/motion-and-light-sensor-p2-faq/",
+      "title": "Motion and Light Sensor P2 FAQ",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-aqara-ml",
+      "url": "https://csa-iot.org/csa_product/motion-and-light-sensor-p2/",
+      "title": "Motion and Light Sensor P2",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

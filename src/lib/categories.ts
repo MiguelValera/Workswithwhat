@@ -35,6 +35,18 @@ const THERMOSTAT_LABELS: Record<string, string> = {
   'radiator-valve': 'Radiator valve',
 };
 
+const SENSE_LABELS: Record<string, string> = {
+  contact: 'Contact',
+  motion: 'Motion',
+  presence: 'Presence',
+  temperature: 'Temperature',
+  humidity: 'Humidity',
+  leak: 'Water leak',
+  light: 'Light',
+  vibration: 'Vibration',
+  'air-quality': 'Air quality',
+};
+
 export const CATEGORIES: Category[] = [
   {
     key: 'smart-plug',
@@ -80,6 +92,21 @@ export const CATEGORIES: Category[] = [
     specs: [
       { key: 'thermostatType', label: 'Type', format: (v) => THERMOSTAT_LABELS[String(v)] ?? String(v) },
       { key: 'systems', label: 'Controls', format: String },
+      { key: 'power', label: 'Power', format: String },
+    ],
+  },
+  {
+    key: 'smart-sensor',
+    path: 'smart-sensors',
+    label: 'Smart sensors',
+    singular: 'smart sensor',
+    plural: 'smart sensors',
+    specs: [
+      {
+        key: 'senses',
+        label: 'Senses',
+        format: (v) => (v as string[]).map((x) => SENSE_LABELS[x] ?? x).join(', '),
+      },
       { key: 'power', label: 'Power', format: String },
     ],
   },

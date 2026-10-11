@@ -27,9 +27,9 @@ The site is in **English**; it targets the global search market. Internal docs a
 | `radios` | Fact: wifi / thread / zigbee / z-wave / bluetooth / ethernet. |
 | `matter` | `certified` (true / false / null), plus `transport` when certified. |
 | `compatibility.<ecosystem>` | `native` · `matter` · `hub` (needs `via`) · `no` · `unknown`, with `sources`. Ecosystems: apple_home, google_home, alexa, smartthings, home_assistant. |
-| `category` | `smart-plug`, `smart-bulb`, `smart-lock` or `smart-thermostat` (more to come). Decides the URL section and the category facts below. |
+| `category` | `smart-plug`, `smart-bulb`, `smart-lock`, `smart-thermostat` or `smart-sensor` (more to come). Decides the URL section and the category facts below. |
 | `hubRequired`, `localControl` | Facts `{ value, sources, note? }`; `value: null` = not confirmed. Every category has them. |
-| Category facts | Plugs: `energyMonitoring`, `maxLoadWatts`. Bulbs: `colorType` (white / tunable-white / color), `lumens`, `bulbBase` (e.g. "E27", "E26 (A19)", "GU10"). Locks: `lockFit` (deadbolt / retrofit / cylinder / lever), `keypad`, `power` (e.g. "4 × AA"). Thermostats: `thermostatType` (wall / radiator-valve), `systems` (what it controls), `power` (e.g. "C-wire (24 V)"). |
+| Category facts | Plugs: `energyMonitoring`, `maxLoadWatts`. Bulbs: `colorType` (white / tunable-white / color), `lumens`, `bulbBase` (e.g. "E27", "E26 (A19)", "GU10"). Locks: `lockFit` (deadbolt / retrofit / cylinder / lever), `keypad`, `power` (e.g. "4 × AA"). Thermostats: `thermostatType` (wall / radiator-valve), `systems` (what it controls), `power` (e.g. "C-wire (24 V)"). Sensors: `senses` (contact / motion / presence / temperature / humidity / leak / light / vibration / air-quality), `power`. |
 | `summary`, `caveats` | Human copy (written by the editor agent). |
 | `sources[]` | `{ id, url, title, publisher, kind, accessed, forCaveat? }`. At least one source must be `kind: manufacturer`. `forCaveat: true` marks a source that backs only a caveat. |
 | `status` | `draft` (collector output) → `verified` (after the verifier signs off, with `verifiedAt`). **Only verified records are published.** |
@@ -60,7 +60,7 @@ After any agent run: `npm run validate` must pass.
 - `/` home: what the site is, latest verified devices.
 - `/<category>/` (e.g. `/smart-plugs/`, `/smart-bulbs/`): comparison table. A category gets pages only once it has a verified device.
 - `/<category>/<slug>/`: device page with a compatibility table, specs, sources, last-verified date, and Product JSON-LD.
-- `/works-with/<ecosystem>/`: e.g. "Smart plugs and smart bulbs that work with Apple Home", one section per category. `/works-with/matter/` lists Matter-certified devices.
+- `/works-with/<ecosystem>/`: e.g. "Smart home devices that work with Apple Home", one section per category. Titles name the categories only up to three; past that they say "smart home devices" and the description names them in brackets (`categoryPhrase()` in `src/lib/devices.ts`). `/works-with/matter/` lists Matter-certified devices.
 - Categories are registered in `src/lib/categories.ts` (routes, labels, which facts to show) and `src/schema/device.ts` (fields).
 - `/methodology/`: how we verify (trust signal).
 - Every page needs a unique `<title>` and meta description, a canonical URL, OG tags and breadcrumbs (with BreadcrumbList JSON-LD). Sitemap via `@astrojs/sitemap`.
@@ -78,7 +78,7 @@ After any agent run: `npm run validate` must pass.
 ## Roadmap
 
 - **Phase 1 (done):** Astro setup, schema and validation, agents, first smart plugs, GitHub Pages + Cloudflare deploy, security hardening, legal pages, SEO/GEO.
-- **Phase 2 (in progress):** more devices and categories. Plugs, bulbs, locks and thermostats are live; sensors come next. Each new category needs code: schema in `src/schema/device.ts`, plus registry and labels in `src/lib/categories.ts`. Then filters, comparison pages ("X vs Y") and per-ecosystem buying guides.
+- **Phase 2 (in progress):** more devices and categories. Plugs, bulbs, locks, thermostats and sensors are live; cameras and video doorbells come next. Each new category needs code: schema in `src/schema/device.ts`, plus registry and labels in `src/lib/categories.ts`. Then filters, comparison pages ("X vs Y") and per-ecosystem buying guides.
 - **Phase 3:** data freshness (re-verify records older than 6 months), contribution and corrections form, monetisation (see below).
 
 ## Current state (handoff, updated 2026-10-11)
@@ -86,17 +86,17 @@ After any agent run: `npm run validate` must pass.
 Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
-- **84 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs, 18 smart locks and 10 smart thermostats (US, EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
+- **94 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs, 18 smart locks, 10 smart thermostats (US, EU) and 10 smart sensors (EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
-  - `/smart-plugs/`, `/smart-bulbs/`, `/smart-locks/` and `/smart-thermostats/`: comparison charts.
+  - `/smart-plugs/`, `/smart-bulbs/`, `/smart-locks/`, `/smart-thermostats/` and `/smart-sensors/`: comparison charts.
   - A page per device.
   - `/works-with/<ecosystem>/` and `/works-with/matter/`.
   - `/methodology/`, `/legal/` and `/privacy/`.
 - **For AI assistants:** `/llms.txt`, `/llms-full.txt`, `/api/devices.json` and `/api/<category>.json`.
 
 ### Unfinished work
-- **Next:** pick the next batch (Claude decides). Agreed category order: sensors (contact, motion, leak, temperature) next, then cameras and video doorbells, wall switches and dimmers, robot vacuums; LED strips are a cheap add on the bulb schema. Each new category needs schema and registry work first, as thermostats did. More thermostats are also open (Honeywell T6 Pro, Bosch, Danfoss Ally). Lockly Secure Pro was dropped: no lockly.com page surfaced in search.
-- **Long titles:** `/works-with/<ecosystem>/` titles list every category ("Smart plugs, smart bulbs, smart locks and smart thermostats that work with …"). Shorten the pattern (e.g. "Smart home devices that work with …") before adding a fifth category. There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
+- **Next:** pick the next batch (Claude decides). Agreed category order: cameras and video doorbells, wall switches and dimmers, robot vacuums; LED strips are a cheap add on the bulb schema. Each new category needs schema and registry work first, as thermostats did. More thermostats (Honeywell T6 Pro, Bosch, Danfoss Ally) and sensors (US versions, IKEA MYGGBETT and KLIPPBOK, SwitchBot, Shelly) are also open. Cameras need care: Matter camera support is new, most support is brand integrations, and features often depend on a subscription, so the schema should record that. Lockly Secure Pro was dropped: no lockly.com page surfaced in search.
+- There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
 - **Who decides content:** the owner doesn't pick devices or review content. Claude chooses what to add next and writes it, following the principles above.
 
 ### How content gets added (lessons learned)

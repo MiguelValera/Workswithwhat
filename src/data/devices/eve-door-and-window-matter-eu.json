@@ -1,0 +1,164 @@
+{
+  "category": "smart-sensor",
+  "brand": "Eve",
+  "model": "Door & Window",
+  "name": "Eve Door & Window (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.evehome.com/en/node/6760",
+  "radios": {
+    "value": [
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "csa-eve-dw",
+      "eve-dw-page"
+    ],
+    "note": "Eve's page lists Thread as the wireless connection; CSA lists Thread and Bluetooth (Bluetooth is used for Matter setup)."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "csa-eve-dw",
+      "eve-dw-page",
+      "eve-matter-update"
+    ],
+    "note": "CSA has several Eve Door & Window listings (vendor 0x130A, product 0x004D, firmware 3.1.0 to 3.2.1), all Thread and Bluetooth. Eve says the latest HomeKit/Thread models got Matter through a free firmware update."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "eve-dw-page",
+        "eve-dw-hub"
+      ],
+      "note": "Needs a Thread border router (a hub that is also a Matter controller). On Apple that means a HomePod mini, HomePod 2nd gen or Apple TV 4K."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "eve-dw-page",
+        "eve-dw-hub"
+      ],
+      "note": "Needs a Thread border router (a hub that is also a Matter controller)."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "eve-dw-page",
+        "eve-dw-hub"
+      ],
+      "note": "Needs a Thread border router (a hub that is also a Matter controller). Eve's hub page names Amazon Alexa among the platforms with such hubs."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "eve-dw-page",
+        "eve-dw-hub"
+      ],
+      "note": "Needs a Thread border router (a hub that is also a Matter controller). Eve's hub page names Samsung SmartThings among the platforms with such hubs."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "ha-eve",
+        "ha-matter"
+      ],
+      "note": "Home Assistant's Eve page lists Eve Door & Window as a Matter device, added locally through the Matter integration. Needs a Thread border router."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "eve-dw-hub",
+      "eve-dw-page"
+    ],
+    "note": "No Eve bridge is needed. Eve says the first platform needs a hub with Matter controller and Thread border router functions (e.g. HomePod mini or Apple TV 4K); that is a generic Thread border router, not a brand hub."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "eve-dw-page",
+      "csa-eve-dw"
+    ],
+    "note": "Eve's page says no Eve cloud and no registration; the CSA listing describes fully local connectivity."
+  },
+  "senses": {
+    "value": [
+      "contact"
+    ],
+    "sources": [
+      "eve-dw-page",
+      "csa-eve-dw"
+    ],
+    "note": "Eve and CSA describe it as an open/closed sensor with time and duration statistics."
+  },
+  "power": {
+    "value": "1 × ½ AA (ER14250)",
+    "sources": [
+      "eve-dw-page"
+    ],
+    "note": "Eve's page lists one replaceable ½ AA (ER14250, 3.6 V) cell, included."
+  },
+  "summary": "Eve Door & Window reports whether a door or window is open or closed, with time and duration statistics. It works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter on Thread, so you need a Thread border router such as a HomePod mini or Apple TV 4K but no Eve bridge. Eve says there is no Eve cloud or registration. One replaceable half-AA (ER14250) cell is included.",
+  "caveats": [
+    "Needs a Thread border router, which must also be a Matter controller; there is no Eve bridge option.",
+    "Older HomeKit/Thread units need Eve's free firmware update to get Matter."
+  ],
+  "sources": [
+    {
+      "id": "eve-dw-page",
+      "url": "https://www.evehome.com/en/node/6760",
+      "title": "Eve Door & Window",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-dw-hub",
+      "url": "https://www.evehome.com/hub",
+      "title": "Getting started with Matter",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-matter-update",
+      "url": "https://www.evehome.com/en/node/6279",
+      "title": "Eve Welcomes Matter with Free Firmware Updates for Three Eve Products",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-eve-dw",
+      "url": "https://csa-iot.org/csa_product/eve-door-window-2/",
+      "title": "Eve Door & Window",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-eve",
+      "url": "https://www.home-assistant.io/integrations/eve/",
+      "title": "Eve - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

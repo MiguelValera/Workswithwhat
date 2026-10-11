@@ -1,0 +1,132 @@
+{
+  "category": "smart-sensor",
+  "brand": "IKEA",
+  "model": "BADRING water leakage sensor",
+  "name": "IKEA BADRING (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.ikea.com/se/en/p/badring-water-leakage-sensor-smart-60504352/",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "ikea-sensors-news"
+    ],
+    "note": "IKEA's launch release describes the three sensors as built on Zigbee."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "ikea-dirigera-matter"
+    ],
+    "note": "IKEA says Zigbee devices on DIRIGERA can be made available through its Matter bridge. No page seen says BADRING is exposed, and forum posts say it is not. No CSA listing was found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "IKEA says DIRIGERA can link IKEA smart products to Apple Home, Google Home and Alexa, but no IKEA page seen confirms BADRING itself shows up there (IKEA has such a page for PARASOLL, not for BADRING)."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "IKEA says DIRIGERA can link IKEA smart products to Apple Home, Google Home and Alexa, but no IKEA page seen confirms BADRING itself shows up there (IKEA has such a page for PARASOLL, not for BADRING)."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "IKEA says DIRIGERA can link IKEA smart products to Apple Home, Google Home and Alexa, but no IKEA page seen confirms BADRING itself shows up there (IKEA has such a page for PARASOLL, not for BADRING)."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No IKEA or SmartThings page seen covers BADRING."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's docs seen name no BADRING support. Forum posts describe it pairing with ZHA only after tricks, and missing from the Matter bridge."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "ikea-se-badring",
+      "ikea-sensors-no-hub"
+    ],
+    "note": "IKEA says a DIRIGERA hub (sold separately) is needed to use it as a smart product. Without one it still sounds its built-in alarm."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No page seen says whether it works without internet through DIRIGERA."
+  },
+  "senses": {
+    "value": [
+      "leak"
+    ],
+    "sources": [
+      "ikea-se-badring"
+    ]
+  },
+  "power": {
+    "value": "1 × AAA (not included)",
+    "sources": [
+      "ikea-badring-battery",
+      "ikea-se-badring"
+    ],
+    "note": "IKEA recommends one LADDA rechargeable AAA (HR03, 1.2 V) cell, sold separately."
+  },
+  "summary": "Water leaks are what IKEA's BADRING detects, over Zigbee through a DIRIGERA hub. On its own it still sounds a built-in alarm; with the hub it also sends a phone notification. Apple Home, Google Home, Alexa, SmartThings and Home Assistant are all unconfirmed. One AAA cell is needed and is not included.",
+  "caveats": [
+    "Needs a DIRIGERA hub for phone notifications; without one it only sounds its own alarm.",
+    "IKEA has not confirmed on any page seen that BADRING appears in Apple Home, Google Home or Alexa."
+  ],
+  "sources": [
+    {
+      "id": "ikea-se-badring",
+      "url": "https://www.ikea.com/se/en/p/badring-water-leakage-sensor-smart-60504352/",
+      "title": "BADRING water leakage sensor, smart - IKEA Sweden",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ikea-badring-battery",
+      "url": "https://www.ikea.com/at/en/customer-service/knowledge/articles/ce23c3g1-75c4-4786-bd2g-c604dfe7e9gg.html",
+      "title": "Which battery type is recommended for the IKEA BADRING water - IKEA Austria",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ikea-sensors-news",
+      "url": "https://www.ikea.com/global/en/newsroom/innovation/parasoll-badring-vallhorn-smart-sensors-231128/",
+      "title": "IKEA launches trio of smart sensors",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ikea-sensors-no-hub",
+      "url": "https://www.ikea.com/gb/en/customer-service/knowledge/articles/6e35f4f2-g08g-45fb-b7b3-205b60fgc6e1.html",
+      "title": "Can I use IKEA sensors without the DIRIGERA hub and the IKEA - IKEA United kingdom",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ikea-dirigera-matter",
+      "url": "https://www.ikea.com/global/en/newsroom/innovation/ikea-dirigera-matter-bridge-240911/",
+      "title": "IKEA Introduces Matter support for the DIRIGERA Hub",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
+  "updatedAt": "2026-10-11"
+}

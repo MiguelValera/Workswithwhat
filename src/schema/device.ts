@@ -99,6 +99,8 @@ export const LOCK_FITS = ['deadbolt', 'retrofit', 'cylinder', 'lever'] as const;
 // wall = wall thermostat that switches a heating/cooling system (US HVAC, boiler);
 // radiator-valve = thermostatic head that replaces a radiator's valve head (TRV)
 export const THERMOSTAT_TYPES = ['wall', 'radiator-valve'] as const;
+// what a sensor reports; presence = mmWave-style presence that sees people who sit still
+export const SENSES = ['contact', 'motion', 'presence', 'temperature', 'humidity', 'leak', 'light', 'vibration', 'air-quality'] as const;
 
 // Category-specific facts. Add a category here, in CATEGORY_FACTS and in
 // src/lib/categories.ts (labels and routes).
@@ -147,7 +149,17 @@ const thermostatSchema = z
   })
   .strict();
 
-export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat'] as const;
+const sensorSchema = z
+  .object({
+    ...baseShape,
+    category: z.literal('smart-sensor'),
+    senses: fact(z.array(z.enum(SENSES)).min(1)),
+    // e.g. "CR2032", "2 × AAA", "USB-C (mains)"
+    power: fact(z.string().min(2).max(40)),
+  })
+  .strict();
+
+export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor'] as const;
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const COMMON_FACTS = ['radios', 'hubRequired', 'localControl'] as const;
@@ -156,12 +168,13 @@ export const CATEGORY_FACTS = {
   'smart-bulb': ['colorType', 'lumens', 'bulbBase'],
   'smart-lock': ['lockFit', 'keypad', 'power'],
   'smart-thermostat': ['thermostatType', 'systems', 'power'],
+  'smart-sensor': ['senses', 'power'],
 } as const satisfies Record<CategoryKey, readonly string[]>;
 
 type FactValue = { value: unknown; sources: string[] };
 
 export const deviceSchema = z
-  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema])
+  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema])
   .superRefine((d, ctx) => {
     const ids = d.sources.map((s) => s.id);
     const known = new Set(ids);
