@@ -1,0 +1,86 @@
+{
+  "category": "smart-lock",
+  "brand": "Aqara",
+  "model": "Smart Lock U200",
+  "name": "Aqara Smart Lock U200 (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://eu.aqara.com/products/aqara-smart-lock-u200",
+  "radios": {
+    "value": ["thread", "bluetooth"],
+    "sources": ["aqara-u200-specs-eu"],
+    "note": "Spec sheet also lists NFC."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": ["aqara-u200-news", "aqara-u200-manual"],
+    "note": "Aqara states Matter over Thread. We did not open a CSA listing for the U200 itself (only a third-party tracker was seen)."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["aqara-u200-news", "aqara-u200-manual"],
+      "note": "Needs an Apple home hub that is a Thread border router (HomePod mini, HomePod 2nd gen, Apple TV 4K)."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["aqara-u200-news", "aqara-u200-manual"],
+      "note": "Needs a Thread border router that supports Matter."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["aqara-u200-news", "aqara-u200-manual"],
+      "note": "Needs a Thread border router that supports Matter."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["aqara-u200-news", "aqara-u200-manual"],
+      "note": "Needs a Thread border router that supports Matter."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": ["aqara-u200-news"],
+      "note": "Aqara's platform list includes Home Assistant; reached through Matter, which needs a Thread border router. Aqara's manual says third-party platforms get only basic functions."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": ["aqara-u200-specs-us"],
+    "note": "Aqara's spec sheet says the lock is exclusively compatible with the Aqara M3 hub for best results, but also says any Matter-capable Thread border router is needed for Matter. Whether a hub is strictly required is unclear."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Aqara source states local-only control."
+  },
+  "lockFit": {
+    "value": "retrofit",
+    "sources": ["aqara-u200-specs-us", "aqara-u200-manual"],
+    "note": "Specs mention Euro mortise locks with an emergency function. Installation type (retrofit or cylinder replacement) should be checked against the manual."
+  },
+  "keypad": {
+    "value": true,
+    "sources": ["aqara-u200-specs-us"],
+    "note": "The kit has an outdoor keypad/fingerprint unit, powered by 4 AAA batteries or 12-24 V wiring. Check whether the EU kit includes it or sells it separately."
+  },
+  "power": {
+    "value": "Rechargeable Li-ion or 4 × AA",
+    "sources": ["aqara-u200-specs-us"],
+    "note": "Lock: 7.4 V rechargeable Li-ion pack or 4 AA. Up to about 6 months per charge at 8 cycles a day."
+  },
+  "summary": "The Aqara Smart Lock U200 connects over Thread and Bluetooth and speaks Matter, so Aqara lists it for Apple Home, Google Home, Alexa, SmartThings and Home Assistant. Each platform needs a Thread border router that supports Matter, and Aqara points to its M3 hub as the best partner. The lock is powered by a rechargeable Li-ion pack or AA batteries, and the kit includes an outdoor keypad unit.",
+  "caveats": [
+    "Matter needs a Thread border router; Aqara recommends its M3 hub.",
+    "Aqara's manual says third-party platforms currently get only basic lock and unlock functions.",
+    "Do not confuse it with the cheaper Smart Lock U200 Lite."
+  ],
+  "sources": [
+    { "id": "aqara-u200-eu", "url": "https://eu.aqara.com/products/aqara-smart-lock-u200", "title": "Aqara Smart Lock U200", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-u200-specs-eu", "url": "https://eu.aqara.com/en-eu/pages/product-specs/smart-lock-u-200", "title": "Smart Lock U200 specs", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-u200-specs-us", "url": "https://www.aqara.com/us/product/smart-lock-u200-specs/", "title": "Smart Lock U200-Specs - Aqara", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-u200-news", "url": "https://www.aqara.com/en/news/aqara-announces-global-availability-of-smart-lock-u200/", "title": "Aqara Announces Global Availability of Smart Lock U200", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-u200-manual", "url": "https://www.aqara.com/wp-content/uploads/2024/06/EN_U200-User-Manual-2024-0624.pdf", "title": "Smart Lock U200 User Manual", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

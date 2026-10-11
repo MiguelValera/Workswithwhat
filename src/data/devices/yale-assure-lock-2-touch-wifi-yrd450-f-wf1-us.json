@@ -1,0 +1,130 @@
+{
+  "category": "smart-lock",
+  "brand": "Yale",
+  "model": "Assure Lock 2 Touch with Wi-Fi (YRD450-F-WF1)",
+  "name": "Yale Assure Lock 2 Touch Wi-Fi (US)",
+  "regions": ["US"],
+  "officialUrl": "https://shopyalehome.com/products/yale-assure-lock-2-touch-with-wi-fi",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["yale-touch-wifi", "yale-faq"],
+    "note": "Wi-Fi module for remote access; Yale's FAQ describes the upgrade kit as Wi-Fi and Bluetooth. Yale's store says 2.4 GHz only on one page and mentions 5 GHz on another."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter listing or Yale statement found for this Wi-Fi model. News coverage mentioned a separate Matter module, but we could not confirm it ships."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": ["yale-touch-wifi", "yale-assure-2"],
+      "note": "HomeKit/Siri through Apple Home. Remote access needs an Apple TV, iPad or HomePod as hub. Apple Home Key is not on the Touch; Yale ties it to the Assure Lock 2 Plus."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["yale-touch-wifi", "yale-faq"],
+      "note": "Works with Google Assistant voice control through the Wi-Fi module."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["yale-touch-wifi", "yale-faq"],
+      "note": "Amazon Alexa voice control through the Wi-Fi module."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Yale pages seen do not mention SmartThings; with no Matter listing we do not mark it 'no'."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's August/Yale pages list the Assure Lock 2 but mostly with a Connect Bridge; it is unclear whether this Wi-Fi model works without one."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["yale-touch-wifi", "yale-assure-2"],
+    "note": "Wi-Fi is built in. Remote Apple Home use still needs an Apple home hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Remote control runs through the Yale Access app and cloud; no source confirms local control."
+  },
+  "lockFit": {
+    "value": "deadbolt",
+    "sources": ["yale-touch-wifi", "homedepot-yale-f-wf1"],
+    "note": "Replaces a standard deadbolt; Yale sells it alone or bundled with Norwood, Valdosta or Ridgefield handles. Model number YRD450-F-WF1 comes from retailer listings."
+  },
+  "keypad": {
+    "value": true,
+    "sources": ["yale-touch-wifi", "yale-touch-keypad"],
+    "note": "Keypad plus fingerprint reader on the lock."
+  },
+  "power": {
+    "value": "4 × AA",
+    "sources": ["yale-touch-wifi"],
+    "note": "Four AA batteries are included, per Yale's store."
+  },
+  "summary": "The Yale Assure Lock 2 Touch with Wi-Fi combines a keypad and fingerprint reader with a built-in Wi-Fi module, so remote access through the Yale Access app needs no bridge. Apple Home, Google Home and Alexa are supported. It runs on four AA batteries. It does not support Apple Home Key.",
+  "caveats": [
+    "No Apple Home Key; Yale ties that feature to the Assure Lock 2 Plus.",
+    "Yale's pages disagree on whether the Wi-Fi model supports 5 GHz or only 2.4 GHz.",
+    "Remote control through Apple Home needs an Apple TV, HomePod or iPad as a home hub.",
+    "Yale also sells Bluetooth-only versions of the Assure Lock 2 without voice assistant support."
+  ],
+  "sources": [
+    {
+      "id": "yale-touch-wifi",
+      "url": "https://shopyalehome.com/products/yale-assure-lock-2-touch-with-wi-fi",
+      "title": "Yale Assure Lock 2 Touch with Wi-Fi - Fingerprint Smart Lock",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "yale-touch-keypad",
+      "url": "https://shopyalehome.com/products/yale-assure-lock-2-touch",
+      "title": "Yale Assure Lock 2 Touch - Fingerprint Keypad Lock",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "yale-assure-2",
+      "url": "https://shopyalehome.com/pages/yale-assure-lock-2",
+      "title": "Meet the Yale Assure Lock 2",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "yale-faq",
+      "url": "https://support.shopyalehome.com/assure-lock-faqs-SkHmLyzE8",
+      "title": "Assure Lock FAQ - Yale support",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "homedepot-yale-f-wf1",
+      "url": "https://homedepot.com/p/Yale-Assure-Lock-2-Keyless-Smart-Door-Lock-with-Wi-Fi-and-Fingerprint-Access-Black-Suede-YRD450-F-WF1-BSP/327781642",
+      "title": "Yale Assure Lock 2 Keyless Smart Door Lock with Wi-Fi and Fingerprint Access, Black Suede YRD450-F-WF1-BSP",
+      "publisher": "The Home Depot",
+      "kind": "retailer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "homekitnews-yale-home-key",
+      "url": "https://homekitnews.com/2023/09/27/yale-reveal-new-homekey-smart-lock-and-more/",
+      "title": "Yale Reveal New HomeKey Smart Lock and More",
+      "publisher": "HomeKit News",
+      "kind": "review",
+      "accessed": "2026-10-11",
+      "forCaveat": true
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

@@ -1,0 +1,87 @@
+{
+  "category": "smart-lock",
+  "brand": "Tedee",
+  "model": "GO",
+  "name": "Tedee GO (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://tedee.com/product/tedee-go/",
+  "radios": {
+    "value": ["bluetooth", "thread"],
+    "sources": ["tedee-matter", "tedee-go-info"],
+    "note": "Bluetooth to the phone or Tedee Bridge; Thread for Matter after the firmware update. Tedee's CSA entry is for the GO2."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": ["tedee-matter", "tedee-go2-matter-kb"],
+    "note": "Tedee says a free firmware update (2.1.3493 or newer) adds Matter to the original GO. The CSA listing we saw is for the GO2, not the GO."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["tedee-matter"],
+      "note": "Needs a Thread border router. Older Tedee pages say GO has no Apple Home support; they predate the Matter update."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["tedee-matter", "tedee-integrations"],
+      "note": "Needs a Thread border router. Tedee also has a cloud route via the Tedee Bridge."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["tedee-matter", "tedee-integrations"],
+      "note": "Needs a Thread border router. Tedee also has a cloud route via the Tedee Bridge."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["tedee-matter"],
+      "note": "Needs a Thread border router."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tedee"],
+      "note": "Official Tedee integration talks to the Tedee Bridge through its local API, so it needs the bridge. Matter is the alternative without a bridge."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["tedee-matter", "tedee-bridge"],
+    "note": "With Matter, no Tedee bridge is needed, only a Thread border router. The optional Tedee Bridge adds remote access and the cloud routes for Alexa and Google Home."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["tedee-integrations"],
+    "note": "Tedee lists Matter over Thread as a local integration that does not use Tedee's cloud."
+  },
+  "lockFit": {
+    "value": "retrofit",
+    "sources": ["tedee-go-info"],
+    "note": "Mounts on the inside, over a Euro-profile cylinder with an emergency (double-clutch) feature, and keeps your keys."
+  },
+  "keypad": {
+    "value": false,
+    "sources": ["tedee-matter"],
+    "note": "No keypad on the lock; Keypad PRO is a separate accessory and cannot be added directly through Matter."
+  },
+  "power": {
+    "value": "3 × CR123A",
+    "sources": ["tedee-go-info"],
+    "note": "Tedee states up to 6-8 months of battery life."
+  },
+  "summary": "Tedee GO is a small retrofit lock for Euro-profile cylinders. A firmware update added Matter over Thread, which Tedee lists for Apple Home, Google Home, Alexa and SmartThings. The optional Tedee Bridge adds remote access and Home Assistant control through the official integration. Three CR123A batteries power it.",
+  "caveats": [
+    "Matter needs a Thread border router and firmware 2.1.3493 or newer.",
+    "Matter supports at most 20 PIN codes, and Keypad PRO and Door Sensor cannot be added through Matter.",
+    "Older Tedee pages still say GO does not work with Apple Home; they predate the Matter update."
+  ],
+  "sources": [
+    { "id": "tedee-go-info", "url": "https://tedee.com/product-info/tedee-go-best-keyless-access/", "title": "Tedee GO Smart Lock", "publisher": "Tedee", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "tedee-matter", "url": "https://tedee.com/matter/", "title": "Tedee GO2 now works with Matter. Your Tedee GO does, too!", "publisher": "Tedee", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "tedee-go2-matter-kb", "url": "https://tedee.com/knowledge-base/tedee-go2-matter/", "title": "Tedee GO(2): Matter", "publisher": "Tedee", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "tedee-integrations", "url": "https://tedee.com/smart-home-integrations/", "title": "Integrations", "publisher": "Tedee", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "tedee-bridge", "url": "https://tedee.com/product-info/tedee-bridge/", "title": "Tedee Bridge", "publisher": "Tedee", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "ha-tedee", "url": "https://www.home-assistant.io/integrations/tedee/", "title": "Tedee - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11" }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

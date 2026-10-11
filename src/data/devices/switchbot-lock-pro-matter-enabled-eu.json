@@ -1,0 +1,83 @@
+{
+  "category": "smart-lock",
+  "brand": "SwitchBot",
+  "model": "Lock Pro Matter Enabled",
+  "name": "SwitchBot Lock Pro Matter Enabled (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://eu.switch-bot.com/products/switchbot-lock-pro-matter-enabled",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["switchbot-eu-lock-pro-matter"],
+    "note": "Built-in Wi-Fi plus Bluetooth for close-range unlocking."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["switchbot-eu-matter", "switchbot-eu-lock-pro-matter"],
+    "note": "SwitchBot's Matter page lists the Lock Pro Matter Enabled under Matter over Wi-Fi (lock and unlock). No CSA listing was opened."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["switchbot-eu-lock-pro-matter", "switchbot-eu-matter"],
+      "note": "The product page also says a home hub such as a HomePod mini is needed for Apple Home."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["switchbot-eu-lock-pro-matter"],
+      "note": "The page lists Google Home without saying how it connects; Matter over Wi-Fi is the documented path."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["switchbot-eu-lock-pro-matter"],
+      "note": "The page lists Alexa without saying how it connects; Matter over Wi-Fi is the documented path."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "SwitchBot's pages we saw do not mention SmartThings for this model."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": ["switchbot-eu-lock-pro-matter"],
+      "note": "The product page lists Home Assistant. Home Assistant's SwitchBot Bluetooth docs list the original Lock Pro, not necessarily this variant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["switchbot-eu-lock-pro-matter"],
+    "note": "This variant has built-in Wi-Fi and Matter; the original SwitchBot Lock Pro (without Matter Enabled) needs a SwitchBot Hub for Matter."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No SwitchBot source states local-only control."
+  },
+  "lockFit": {
+    "value": "retrofit",
+    "sources": ["switchbot-eu-lock-pro-matter"],
+    "note": "Fits over the existing thumb-turn of Euro profile, UK oval, Swiss round and knob cylinders."
+  },
+  "keypad": {
+    "value": false,
+    "sources": ["switchbot-eu-lock-pro-matter"],
+    "note": "Keypad access needs a separate accessory, sold in the Touch and Vision combos."
+  },
+  "power": {
+    "value": "Rechargeable battery packs",
+    "sources": ["switchbot-eu-lock-pro-matter"],
+    "note": "Dual rechargeable AB packs; one keeps powering the lock while the other charges."
+  },
+  "summary": "The SwitchBot Lock Pro Matter Enabled is the Matter version sold in Europe. It has built-in Wi-Fi and Bluetooth, and speaks Matter over Wi-Fi without a SwitchBot hub. SwitchBot's page lists Apple Home, Alexa, Google Home and Home Assistant. It fits over the thumb-turn of European-style cylinders and runs on rechargeable battery packs.",
+  "caveats": [
+    "The original SwitchBot Lock Pro, without Matter Enabled, has no built-in Matter or Wi-Fi and needs a SwitchBot Hub.",
+    "Matter exposes lock and unlock only.",
+    "Keypad access needs a separate accessory."
+  ],
+  "sources": [
+    { "id": "switchbot-eu-lock-pro-matter", "url": "https://eu.switch-bot.com/products/switchbot-lock-pro-matter-enabled", "title": "SwitchBot Lock Pro Matter Enabled", "publisher": "SwitchBot", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "switchbot-eu-matter", "url": "https://eu.switch-bot.com/pages/matter", "title": "Matter", "publisher": "SwitchBot", "kind": "manufacturer", "accessed": "2026-10-11" }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
