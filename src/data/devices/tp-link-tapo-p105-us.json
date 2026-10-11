@@ -3,11 +3,18 @@
   "brand": "TP-Link",
   "model": "Tapo P105",
   "name": "Tapo P105",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://www.tapo.com/us/product/smart-plug/tapo-p105/",
   "radios": {
-    "value": ["wifi", "bluetooth"],
-    "sources": ["tplink-p105"],
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "tplink-p105"
+    ],
     "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n). Bluetooth is used for setup only."
   },
   "matter": {
@@ -18,56 +25,78 @@
   "compatibility": {
     "apple_home": {
       "status": "unknown",
-      "sources": ["tplink-p105"],
+      "sources": [
+        "tplink-p105"
+      ],
       "note": "TP-Link's P105 platform list names Alexa, Google Assistant and SmartThings, not HomeKit, but doesn't rule it out."
     },
     "google_home": {
       "status": "native",
-      "sources": ["tplink-p105", "tapo-faq-google"],
+      "sources": [
+        "tplink-p105",
+        "tapo-faq-google"
+      ],
       "note": "Link the Tapo account in the Google Home app or from the Tapo app."
     },
     "alexa": {
       "status": "native",
-      "sources": ["tplink-p105", "tplink-faq-alexa"],
+      "sources": [
+        "tplink-p105",
+        "tplink-faq-alexa"
+      ],
       "note": "Link the Tapo account through the Tapo skill."
     },
     "smartthings": {
       "status": "native",
-      "sources": ["tplink-p105"],
+      "sources": [
+        "tplink-p105"
+      ],
       "note": "TP-Link lists Samsung SmartThings among the P105's platforms."
     },
     "home_assistant": {
       "status": "native",
-      "sources": ["ha-tplink"],
+      "sources": [
+        "ha-tplink"
+      ],
       "note": "The official TP-Link Smart Home integration lists the P105. Tapo devices need your TP-Link account credentials to authenticate."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["tplink-p105"],
+    "sources": [
+      "tplink-p105"
+    ],
     "note": "Connects straight to 2.4 GHz Wi-Fi; TP-Link says no hub is required."
   },
   "localControl": {
     "value": true,
-    "sources": ["ha-tplink"],
+    "sources": [
+      "ha-tplink"
+    ],
     "note": "Home Assistant's integration talks to the plug on the local network. The Tapo app itself goes through the cloud."
   },
   "energyMonitoring": {
     "value": false,
-    "sources": ["tplink-faq-tapo-plug"],
+    "sources": [
+      "tplink-faq-tapo-plug"
+    ],
     "note": "TP-Link says the P110 and P115 measure energy; the P100 and P105 don't."
   },
   "maxLoadWatts": {
     "value": 1800,
-    "sources": ["tplink-p105", "tplink-p105-datasheet"],
+    "sources": [
+      "tplink-p105",
+      "tplink-p105-datasheet"
+    ],
     "note": "15 A, 1800 W at 120 V general use / resistive load; 1/6 HP motor. The US page gives 100–125 V input; the 2020 datasheet and some boxes say 100–240 V."
   },
-  "summary": "The Tapo P105 is a mini US Wi-Fi plug rated 15 A / 1800 W. It works with Alexa, Google Home and SmartThings through your Tapo account, with no hub, and Home Assistant's official TP-Link integration lists it. TP-Link doesn't list Apple Home or Matter for it, and it doesn't measure energy use.",
+  "summary": "TP-Link's Tapo P105 is a mini US plug for Alexa, Google Home and SmartThings, each linked through your Tapo account. Home Assistant's official TP-Link integration supports it too and controls it on your local network. It joins 2.4 GHz Wi-Fi directly, using Bluetooth only for setup, and is rated 15 A / 1800 W. Two gaps: no energy monitoring, and TP-Link doesn't list Apple Home or Matter.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "No energy monitoring; the Tapo P115 is the mini plug with a power meter.",
-    "TP-Link doesn't list Apple Home or Matter support.",
-    "Home Assistant needs your TP-Link account credentials to authenticate Tapo devices."
+    "No energy monitoring; TP-Link says the P110 and P115 are the Tapo plugs that measure power.",
+    "TP-Link doesn't list Apple Home or Matter; its Matter plugs carry an M suffix, such as the P125M.",
+    "Home Assistant needs your TP-Link account credentials to authenticate Tapo devices.",
+    "Motor loads are limited to 1/6 HP."
   ],
   "sources": [
     {

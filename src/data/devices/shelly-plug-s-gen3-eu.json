@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Shelly",
   "model": "Plug S Gen3 (S3PL-00112EU)",
-  "name": "Shelly Plug S Gen3 / Plug S MTR Gen3 (EU)",
+  "name": "Shelly Plug S Gen3 (EU)",
   "regions": [
     "EU"
   ],
@@ -99,13 +99,13 @@
     ],
     "note": "12 A / 2500 W, resistive loads only."
   },
-  "summary": "The Shelly Plug S Gen3 (S3PL-00112EU, also sold as Plug S MTR Gen3) is a compact Wi-Fi plug with Bluetooth 4.2 that measures power, energy, voltage and current. It is Matter-certified and Shelly says it carries Works with Apple Home. Google Home, Alexa and SmartThings reach it through Matter; Home Assistant controls it locally. Rated 12 A / 2500 W resistive. Shelly has discontinued it.",
+  "summary": "Matter-certified and local-first, the Shelly Plug S Gen3 (S3PL-00112EU) works with Apple Home, Google Home, Alexa and SmartThings over Matter, and Shelly says it carries Works with Apple Home. Home Assistant's official Shelly integration controls it locally with push updates. It runs on Wi-Fi with Bluetooth 4.2, has a built-in web interface, and needs no hub or cloud account. It measures power, energy, voltage and current, rated 12 A / 2500 W for resistive loads.",
   "caveats": [
-    "Discontinued: Shelly says it no longer makes or sells this plug and points buyers to the Shelly Plug M Gen3.",
-    "Rated 12 A / 2500 W for resistive loads only, below the 16 A of many EU plugs.",
-    "Scripting only works when Matter is turned off.",
-    "Shelly now lists this model as 'Plug S MTR Gen3'; it is the same S3PL-00112EU.",
-    "Apple Home, Google Home, Alexa and SmartThings go through Matter and need a Matter controller from that platform."
+    "Matter arrives with firmware 1.6.0, so update the plug before pairing.",
+    "Scripting only works with Matter turned off.",
+    "The 12 A / 2500 W rating covers resistive loads only.",
+    "Each platform other than Home Assistant needs its own Matter controller; Apple Home needs a home hub for remote control and automations.",
+    "The CSA and Shelly's knowledge base list it as the Shelly Plug S MTR Gen3."
   ],
   "sources": [
     {

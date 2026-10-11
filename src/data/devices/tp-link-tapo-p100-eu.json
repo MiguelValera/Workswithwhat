@@ -92,12 +92,14 @@
     ],
     "note": "10 A / 2300 W for the EU version, 1/6 HP motor. The UK version is rated 13 A and the US version 10 A / 1200 W; don't mix them up."
   },
-  "summary": "The EU Tapo P100 is a basic 2.4 GHz Wi-Fi plug rated 10 A / 2300 W, with no energy monitoring. TP-Link lists Alexa, Google Assistant and SmartThings, all through account linking from the Tapo app. Home Assistant supports it through its TP-Link integration. TP-Link doesn't list Apple Home or Matter for it; the separate Tapo P100M is the Matter version.",
+  "summary": "For Alexa, Google Home or SmartThings, the EU Tapo P100 does the basics: on, off and schedules, linked through your TP-Link account in the Tapo app. Home Assistant's TP-Link integration also supports it locally. It's a 2.4 GHz Wi-Fi plug rated 10 A / 2300 W with no hub and no energy monitoring. TP-Link doesn't list Apple Home or Matter for it; the separate Tapo P100M is the Matter version.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "TP-Link doesn't list Apple Home or Matter for the P100. If you need Apple Home, the Tapo P100M is the Matter version.",
-    "Rated 10 A / 2300 W in the EU, lower than the 16 A Tapo P110.",
-    "Home Assistant's TP-Link integration asks for your TP-Link account credentials once on newer firmware."
+    "TP-Link doesn't list Apple Home or Matter; the Tapo P100M is the Matter version.",
+    "No energy monitoring; TP-Link says the P110 and P115 are the Tapo plugs that measure power.",
+    "Ratings differ by region: this EU version is 10 A / 2300 W, the UK version 13 A and the US version 10 A / 1200 W.",
+    "Home Assistant's TP-Link integration asks for your TP-Link account credentials once on newer firmware.",
+    "Motor loads are limited to 1/6 HP."
   ],
   "sources": [
     {

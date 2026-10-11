@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Meross",
   "model": "MSS210",
-  "name": "Meross Smart Wi-Fi Plug MSS210 (EU)",
+  "name": "Meross MSS210 (EU)",
   "regions": [
     "EU"
   ],
@@ -83,11 +83,13 @@
     ],
     "note": "Meross rates the EU/FR version at 16 A max but gives no wattage. At 230 V that would be about 3680 W."
   },
-  "summary": "The Meross MSS210 (EU) is a 2.4 GHz Wi-Fi plug with no hub, rated 16 A. Meross lists Alexa, Google Assistant and SmartThings, which work by linking your Meross account. Apple Home depends on the variant: Meross sells HomeKit (MSS210HK) and non-HomeKit versions under the same name. It has no energy monitoring.",
+  "summary": "Check the box before you buy the Meross MSS210 (EU) for Apple Home: Meross sells HomeKit (MSS210HK) and non-HomeKit versions under the same name, and its shop says only the HomeKit one works with Apple Home. Every version works with Alexa, Google Home and SmartThings through your Meross account. It's a 2.4 GHz Wi-Fi plug rated 16 A, with no hub and no energy monitoring.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Sold in HomeKit and non-HomeKit versions; only the HomeKit version (MSS210HK) works with Apple Home.",
-    "No official Home Assistant integration; owners rely on community add-ons."
+    "Only the HomeKit version (MSS210HK) works with Apple Home, according to Meross's shop.",
+    "No energy monitoring; Meross sells metering plugs as separate models, such as the MSS210PZF and MSS310.",
+    "Matter isn't confirmed for the EU model; we found no CSA listing.",
+    "Home Assistant has no official Meross integration; owners rely on community add-ons."
   ],
   "sources": [
     {
