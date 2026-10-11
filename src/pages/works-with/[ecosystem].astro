@@ -84,22 +84,22 @@ const description = `${yes.length} ${what} confirmed to work with ${label}${viaM
         <h2>{g.cat.label} that work with {label}</h2>
         {g.yes.length > 0 ? (
           <div class="table-scroll">
-            <table class="stack pair">
-              <thead>
-                <tr><th scope="col">Device</th><th scope="col">How</th><th scope="col">Radio</th><th scope="col">Notes</th></tr>
+            <table role="table" class="stack pair">
+              <thead role="rowgroup">
+                <tr role="row"><th role="columnheader" scope="col">Device</th><th role="columnheader" scope="col">How</th><th role="columnheader" scope="col">Radio</th><th role="columnheader" scope="col">Notes</th></tr>
               </thead>
-              <tbody>
+              <tbody role="rowgroup">
                 {g.yes.map((d) => {
                   const c = d.data.compatibility[eco];
                   return (
-                    <tr>
-                      <th scope="row" class="name">
+                    <tr role="row">
+                      <th role="rowheader" scope="row" class="name">
                         <a href={devicePath(d)}>{d.data.name}</a>
                         <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
                       </th>
-                      <td data-label="How"><Status status={c.status} via={c.via} /></td>
-                      <td data-label="Radio">{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
-                      <td class="wide">{c.note}<Refs ids={c.sources} all={d.data.sources} base={devicePath(d)} /></td>
+                      <td role="cell" data-label="How"><Status status={c.status} via={c.via} /></td>
+                      <td role="cell" data-label="Radio">{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+                      <td role="cell" class="wide">{c.note}<Refs ids={c.sources} all={d.data.sources} base={devicePath(d)} /></td>
                     </tr>
                   );
                 })}

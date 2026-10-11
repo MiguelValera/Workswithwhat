@@ -108,7 +108,7 @@
     ],
     "note": "16 A / 3680 W for general use and resistive loads; 1/6 HP motor."
   },
-  "summary": "Apple Home, Google Home, Alexa and SmartThings reach the EU Tapo P110M through Matter, while Home Assistant can use either its TP-Link integration or Matter. The Tapo app needs no hub, but each third-party platform needs its own Matter controller. It's a 2.4 GHz Wi-Fi plug rated 16 A / 3680 W, with Bluetooth used only for setup. Energy use, history and bill estimates show in the Tapo app; firmware 1.3.2 added Matter energy reporting, which TP-Link has verified in SmartThings and Home Assistant.",
+  "summary": "Matter is how the EU Tapo P110M reaches Apple Home, Google Home, Alexa and SmartThings, while Home Assistant can use either its TP-Link integration or Matter. The Tapo app needs no hub, but each third-party platform needs its own Matter controller. It's a 2.4 GHz Wi-Fi plug rated 16 A / 3680 W, with Bluetooth used only for setup. Energy use, history and bill estimates show in the Tapo app; firmware 1.3.2 added Matter energy reporting, which TP-Link has verified in SmartThings and Home Assistant.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
     "There's no HomeKit mode, so Apple Home works only through Matter and needs a controller such as an Apple TV or HomePod.",

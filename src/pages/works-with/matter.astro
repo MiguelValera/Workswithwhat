@@ -59,25 +59,25 @@ const description = `${matter.length} Matter-certified ${what}, split by Wi-Fi a
             <>
               <h2>Matter {g.cat.plural} {t.label}</h2>
               <div class="table-scroll">
-                <table class="stack pair">
-                  <thead>
-                    <tr>
-                      <th scope="col">Device</th>
-                      <th scope="col">Radios</th>
-                      <th scope="col">{g.cat.specs[0].label}</th>
-                      <th scope="col">Notes</th>
+                <table role="table" class="stack pair">
+                  <thead role="rowgroup">
+                    <tr role="row">
+                      <th role="columnheader" scope="col">Device</th>
+                      <th role="columnheader" scope="col">Radios</th>
+                      <th role="columnheader" scope="col">{g.cat.specs[0].label}</th>
+                      <th role="columnheader" scope="col">Notes</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody role="rowgroup">
                     {t.list.map((d) => (
-                      <tr>
-                        <th scope="row" class="name">
+                      <tr role="row">
+                        <th role="rowheader" scope="row" class="name">
                           <a href={devicePath(d)}>{d.data.name}</a>
                           <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
                         </th>
-                        <td data-label="Radios">{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
-                        <td data-label={g.cat.specs[0].label}>{specFacts(d.data)[0].text}</td>
-                        <td class="wide">{d.data.matter.note}<Refs ids={d.data.matter.sources} all={d.data.sources} base={devicePath(d)} /></td>
+                        <td role="cell" data-label="Radios">{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+                        <td role="cell" data-label={g.cat.specs[0].label}>{specFacts(d.data)[0].text}</td>
+                        <td role="cell" class="wide">{d.data.matter.note}<Refs ids={d.data.matter.sources} all={d.data.sources} base={devicePath(d)} /></td>
                       </tr>
                     ))}
                   </tbody>

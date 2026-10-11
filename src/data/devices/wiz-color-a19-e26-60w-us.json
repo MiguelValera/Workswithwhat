@@ -66,7 +66,7 @@
     "value": "E26 (A19)",
     "sources": ["wiz-a19-us"]
   },
-  "summary": "For Alexa, Google Home and SmartThings, the WiZ Color A19 needs nothing but your Wi-Fi: it connects over 2.4 GHz, uses Bluetooth for setup, and each platform works through WiZ's own integration. Home Assistant's official WiZ integration controls it locally. This US bulb (product code 046677603441) has an E26 base and gives 800 lumens at 8.8 W, a 60 W equivalent, with full colour and white from 2200 to 6500 K. Apple Home is unconfirmed, since WiZ lists no HomeKit support and Matter isn't confirmed for this code.",
+  "summary": "Your Wi-Fi is all the WiZ Color A19 needs for Alexa, Google Home and SmartThings: it connects over 2.4 GHz, uses Bluetooth for setup, and each platform works through WiZ's own integration. Home Assistant's official WiZ integration controls it locally. This US bulb (product code 046677603441) has an E26 base and gives 800 lumens at 8.8 W, a 60 W equivalent, with full colour and white from 2200 to 6500 K. Apple Home is unconfirmed, since WiZ lists no HomeKit support and Matter isn't confirmed for this code.",
   "caveats": [
     "Needs 2.4 GHz Wi-Fi.",
     "No confirmed Apple Home route: WiZ lists no HomeKit support, and Siri Shortcuts isn't the same as Apple Home.",
