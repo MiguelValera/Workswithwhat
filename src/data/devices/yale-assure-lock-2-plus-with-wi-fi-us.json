@@ -1,0 +1,155 @@
+{
+  "category": "smart-lock",
+  "brand": "Yale",
+  "model": "Assure Lock 2 Plus with Wi-Fi",
+  "name": "Yale Assure Lock 2 Plus Wi-Fi (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://shopyalehome.com/products/yale-assure-lock-2-plus-with-wi-fi-and-apple-home-keys",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "yale-plus-wifi",
+      "yale-plus-faq",
+      "yale-plus-news"
+    ],
+    "note": "Wi-Fi is 2.4 GHz per Yale's store page and FAQ. Yale's launch release says Bluetooth and Apple HomeKit come standard on the Plus, with Wi-Fi added for remote access. Home Key uses NFC, which is not a radio in our schema."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No CSA listing for the Assure Lock 2 Plus found. Yale's Matter Smart Module is a separate add-on and Yale's Plus FAQ does not mention Matter for this lock."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "yale-plus-wifi",
+        "yale-plus-page",
+        "yale-plus-news"
+      ],
+      "note": "Apple Home Key is built into the lock (iPhone XS or later on iOS 15+, or Apple Watch Series 4 or later on watchOS 8+). Remote control through Apple Home needs a HomePod, HomePod mini or Apple TV as home hub."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "yale-plus-page",
+        "yale-plus-news"
+      ],
+      "note": "Yale says all partner integrations work on Wi-Fi models, and its launch release names Google Home for the Wi-Fi version. Not available on the Bluetooth-only Plus."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "yale-plus-page",
+        "yale-plus-news"
+      ],
+      "note": "Yale's launch release names Alexa voice control for the Wi-Fi version, and its Plus page says partner integrations work on Wi-Fi models only."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Yale pages seen do not mention SmartThings and the lock has no Matter listing, so we do not mark it 'no'."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [
+        "ha-august"
+      ],
+      "note": "Home Assistant's August page lists the Assure Lock 2 as working but with a Connect Bridge or doorbell flag set, and community posts say newer Yale Home accounts need the Yale integration. Whether this Wi-Fi model works without extra hardware is not confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "yale-plus-wifi",
+      "yale-plus-page"
+    ],
+    "note": "Yale says the Wi-Fi model gives remote access through the Yale Access app. Remote use in Apple Home still needs a home hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Remote control runs through the Yale Access app and cloud; no source confirms local-only control."
+  },
+  "lockFit": {
+    "value": "deadbolt",
+    "sources": [
+      "yale-plus-wifi",
+      "yale-plus-page"
+    ],
+    "note": "Replaces the deadbolt on standard US doors. Yale sells the Plus without a key cylinder, and also bundled with Norwood or Ridgefield handles as separate listings."
+  },
+  "keypad": {
+    "value": true,
+    "sources": [
+      "yale-plus-wifi",
+      "yale-plus-page"
+    ],
+    "note": "Touchscreen keypad on the lock. Yale does not list a fingerprint reader on the Plus."
+  },
+  "power": {
+    "value": "4 × AA",
+    "sources": [
+      "yale-plus-wifi"
+    ],
+    "note": "Four AA alkaline batteries are included, per Yale's store page."
+  },
+  "summary": "The Yale Assure Lock 2 Plus with Wi-Fi replaces a US deadbolt and works natively with Apple Home (including Home Key), Google Home and Alexa, with no extra hub for remote access through the Yale Access app. Tap an iPhone or Apple Watch on the touchscreen keypad lock to unlock it. There is no Matter listing, and SmartThings and Home Assistant are unconfirmed. It runs on four included AA batteries.",
+  "caveats": [
+    "Home Key needs an iPhone XS or later (iOS 15+) or an Apple Watch Series 4 or later (watchOS 8+).",
+    "Remote control through Apple Home needs a HomePod, HomePod mini or Apple TV as home hub.",
+    "Wi-Fi is 2.4 GHz only.",
+    "Google Home and Alexa work on the Wi-Fi model only, not the Bluetooth-only Plus.",
+    "Yale sells this version without a key cylinder."
+  ],
+  "sources": [
+    {
+      "id": "yale-plus-wifi",
+      "url": "https://shopyalehome.com/products/yale-assure-lock-2-plus-with-wi-fi-and-apple-home-keys",
+      "title": "Yale Assure Lock 2 Plus with Wi-Fi and Apple Home Keys - Yale Home",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "yale-plus-page",
+      "url": "https://shopyalehome.com/pages/yale-assure-lock-2-plus",
+      "title": "Yale Assure Lock 2 Plus - Yale Home",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "yale-plus-faq",
+      "url": "https://support.shopyalehome.com/faq-assure-lock-2-plus-rkOYTEbah",
+      "title": "FAQ: Assure Lock 2 Plus - Yale support",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "yale-plus-news",
+      "url": "https://shopyalehome.com/blogs/news-room/yale-home-expands-best-selling-smart-lock-collection-with",
+      "title": "Yale Home Expands Best-Selling Smart Lock Collection with Assure Lock 2 Touch and Assure Lock 2 Plus",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-august",
+      "url": "https://www.home-assistant.io/integrations/august/",
+      "title": "August - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

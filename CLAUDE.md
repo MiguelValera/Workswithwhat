@@ -86,7 +86,7 @@ After any agent run: `npm run validate` must pass.
 Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
-- **66 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs and 10 smart locks (US, EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
+- **70 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs and 14 smart locks (US, EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
   - `/smart-plugs/`, `/smart-bulbs/` and `/smart-locks/`: comparison charts.
   - A page per device.
@@ -95,7 +95,7 @@ Read this first if you are picking the project up.
 - **For AI assistants:** `/llms.txt`, `/llms-full.txt`, `/api/devices.json` and `/api/<category>.json`.
 
 ### Unfinished work
-- **Next:** pick the next batch (Claude decides). More locks (Eufy, Aqara U100, Nuki Pro, Yale Assure 2 Plus with Home Key) or the next category: sensors or thermostats, which need schema and registry work first, as locks did. There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
+- **Next:** pick the next batch (Claude decides). More locks (Nuki 5th gen, Schlage Encode, Lockly, eufy C34, Aqara U300) or the next category: sensors or thermostats, which need schema and registry work first, as locks did. There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
 - **Who decides content:** the owner doesn't pick devices or review content. Claude chooses what to add next and writes it, following the principles above.
 
 ### How content gets added (lessons learned)
@@ -112,7 +112,7 @@ Read this first if you are picking the project up.
   - Each summary must open differently from every other.
 - **Publishing:** only `status: "verified"` records reach the site. A PR may contain drafts safely, but don't merge while a verifier is halfway through a record, because a half-verified record would go live.
 - **Saving tokens without losing quality:**
-  - Let scripts do the mechanical checks. `npm run validate` enforces principle 2 (no fact resting only on retailer or review sources), that every source backs a field (or has `"forCaveat": true`), banned words and unique summary openings. Fix what it reports instead of asking an agent to scan every record.
+  - Let scripts do the mechanical checks. `npm run validate` enforces principle 2 (no fact resting only on retailer or review sources), that every source backs a field (or has `"forCaveat": true`), banned words, no exclamation marks or summary questions, and unique summary openings. Fix what it reports instead of asking an agent to scan every record.
   - Use `npm run seo:diff` (page-by-page SEO comparison with `main`) and `npm run check:overflow` (no sideways scrolling at 320–1280 px). Never have an agent write its own.
   - Models: `collector`, `editor`, `reviewer` and `ux` run on Sonnet; the `verifier` keeps the default model because it's the quality gate for facts.
   - Scale the review to the diff: data-only PRs skip `seo:diff` and `check:overflow`.

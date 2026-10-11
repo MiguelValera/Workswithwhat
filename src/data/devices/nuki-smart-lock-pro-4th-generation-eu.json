@@ -1,0 +1,226 @@
+{
+  "category": "smart-lock",
+  "brand": "Nuki",
+  "model": "Smart Lock Pro (4th generation)",
+  "name": "Nuki Smart Lock Pro 4th Gen (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://nuki.io/en-at/products/smart-lock-pro-4th-generation",
+  "radios": {
+    "value": [
+      "bluetooth",
+      "wifi",
+      "thread"
+    ],
+    "sources": [
+      "nuki-pro4",
+      "nuki-generations",
+      "csa-nuki-pro4"
+    ],
+    "note": "Nuki's generations table lists built-in Wi-Fi and Matter over Thread for the Pro. CSA describes the lock as operated manually, via Bluetooth, Wi-Fi and Matter over Thread."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "csa-nuki-pro4"
+    ],
+    "note": "CSA lists 'Nuki Smart Lock Pro (4th Generation)' (listing seen: firmware 1.4.0, hardware 7.07, certified 2025-04-23). Wi-Fi is used for the Nuki app and remote access, not for Matter."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "nuki-integrations",
+        "nuki-matter-help"
+      ],
+      "note": "Matter over Thread; needs a Thread border router such as a HomePod mini or Apple TV 4K."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "nuki-google",
+        "nuki-integrations"
+      ],
+      "note": "Nuki Web cloud integration through Works with Google. It needs remote access, which the Pro's built-in Wi-Fi provides, and a Nuki Web account. Nuki's help centre says voice locking and unlocking is currently not supported in Google Home. Matter over Thread is also supported."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "nuki-alexa",
+        "nuki-integrations"
+      ],
+      "note": "Nuki Smart Home skill through Nuki Web. It needs remote access, which the Pro's built-in Wi-Fi provides, and a Nuki Web account; voice unlocking asks for a security code. Matter over Thread is also supported."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "nuki-integrations",
+        "nuki-matter-help"
+      ],
+      "note": "Nuki lists Samsung SmartThings as a Matter hub. A Thread border router is needed."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "ha-nuki"
+      ],
+      "note": "Home Assistant's Nuki page says 4th generation Smart Locks support Matter over Thread and integrate through the Matter integration. Needs a Thread border router. MQTT is also documented."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "nuki-remote",
+      "nuki-generations"
+    ],
+    "note": "Nuki says Pro models have a built-in Wi-Fi module, so remote access needs no extra accessory such as a Bridge. Matter control needs a Thread border router."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Nuki source describes offline or local-only control explicitly."
+  },
+  "lockFit": {
+    "value": "retrofit",
+    "sources": [
+      "nuki-pro4",
+      "nuki-cylinder"
+    ],
+    "note": "Mounts on the inside of the door over the existing Europrofile cylinder. The key only works from outside if the cylinder has an emergency function; Nuki sells a Universal Cylinder for doors whose cylinder does not."
+  },
+  "keypad": {
+    "value": false,
+    "sources": [
+      "nuki-keypad2-help"
+    ],
+    "note": "No keypad on the lock. Nuki sells the Keypad 2 NFC as a separate accessory for its 4th-generation locks."
+  },
+  "power": {
+    "value": "Rechargeable Power Pack",
+    "sources": [
+      "nuki-pro4",
+      "nuki-powerpack"
+    ],
+    "note": "Nuki's rechargeable Power Pack, rated for up to 6 months per charge."
+  },
+  "summary": "Apple Home, SmartThings and Home Assistant reach the Nuki Smart Lock Pro (4th generation) over Matter on Thread, while Google Home and Alexa connect through Nuki Web. Built-in Wi-Fi handles remote access, so no Bridge is needed. It is a retrofit lock that sits on the inside of a Europrofile cylinder, runs on a rechargeable Power Pack (up to 6 months per charge) and has no keypad of its own.",
+  "caveats": [
+    "Matter needs a Thread border router, such as a HomePod mini or Apple TV 4K.",
+    "Google Home and Alexa need a Nuki Web account; Nuki says voice locking and unlocking is currently not supported in Google Home.",
+    "Your key only works from outside if the cylinder has an emergency function.",
+    "The Keypad 2 NFC is a separate accessory.",
+    "Nuki launched a 5th-generation Smart Lock Pro in 2025; this page covers the 4th generation."
+  ],
+  "sources": [
+    {
+      "id": "nuki-pro4",
+      "url": "https://nuki.io/en-at/products/smart-lock-pro-4th-generation",
+      "title": "Smart Lock Pro (4th generation)",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nuki-generations",
+      "url": "https://help.nuki.io/hc/en-001/articles/33659819862289-Smart-Lock-Generations",
+      "title": "Smart Lock Generations",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nuki-matter-help",
+      "url": "https://help.nuki.io/hc/en-001/articles/14596875392017-Setting-up-your-Matter-integration",
+      "title": "Setting up your Matter integration",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nuki-integrations",
+      "url": "https://help.nuki.io/hc/en-001/articles/4407671333521-What-Smart-Home-integrations-does-Nuki-offer",
+      "title": "What Smart Home integrations does Nuki offer?",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nuki-alexa",
+      "url": "https://help.nuki.io/hc/en-001/articles/360017685278-Nuki-Web-integration-with-Amazon-Alexa",
+      "title": "Nuki Web integration with Amazon Alexa",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nuki-google",
+      "url": "https://help.nuki.io/hc/en-001/articles/360017685978-Nuki-Web-integration-with-Google-Home",
+      "title": "Nuki Web integration with Google Home",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-nuki-pro4",
+      "url": "https://csa-iot.org/csa_product/nuki-smart-lock-pro-4th-generation/",
+      "title": "Nuki Smart Lock Pro (4th Generation) - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-nuki",
+      "url": "https://www.home-assistant.io/integrations/nuki/",
+      "title": "Nuki Bridge - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nuki-remote",
+      "url": "https://help.nuki.io/hc/en-001/articles/4402921104145-I-want-to-control-my-Smart-Lock-remotely-Which-options-do-I-have",
+      "title": "I want to control my Smart Lock remotely. Which options do I have?",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nuki-powerpack",
+      "url": "https://help.nuki.io/hc/articles/4406552099857",
+      "title": "Mounting and charging the Power Pack of your Smart Lock",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nuki-cylinder",
+      "url": "https://nuki.io/en/universal-cylinder",
+      "title": "Universal Cylinder",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nuki-keypad2-help",
+      "url": "https://help.nuki.io/hc/en-001/articles/34963351511057",
+      "title": "Keypad 2 NFC",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nuki-pro5-launch",
+      "url": "https://nuki.io/en/company/press-releases/launch-go-and-pro",
+      "title": "Now without cylinder change",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11",
+      "forCaveat": true
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}
