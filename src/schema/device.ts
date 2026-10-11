@@ -96,6 +96,9 @@ export const COLOR_TYPES = ['white', 'tunable-white', 'color'] as const;
 // interior thumb-turn or cylinder and keeps your keys; cylinder = replaces a
 // European (euro-profile) cylinder; lever = handle set with the lock built in
 export const LOCK_FITS = ['deadbolt', 'retrofit', 'cylinder', 'lever'] as const;
+// wall = wall thermostat that switches a heating/cooling system (US HVAC, boiler);
+// radiator-valve = thermostatic head that replaces a radiator's valve head (TRV)
+export const THERMOSTAT_TYPES = ['wall', 'radiator-valve'] as const;
 
 // Category-specific facts. Add a category here, in CATEGORY_FACTS and in
 // src/lib/categories.ts (labels and routes).
@@ -132,7 +135,19 @@ const lockSchema = z
   })
   .strict();
 
-export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock'] as const;
+const thermostatSchema = z
+  .object({
+    ...baseShape,
+    category: z.literal('smart-thermostat'),
+    thermostatType: fact(z.enum(THERMOSTAT_TYPES)),
+    // what it can control, e.g. "24 V HVAC, incl. heat pumps", "Boilers with OpenTherm"
+    systems: fact(z.string().min(2).max(80)),
+    // e.g. "C-wire (24 V)", "2 × AA", "Rechargeable battery"
+    power: fact(z.string().min(2).max(40)),
+  })
+  .strict();
+
+export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat'] as const;
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const COMMON_FACTS = ['radios', 'hubRequired', 'localControl'] as const;
@@ -140,12 +155,13 @@ export const CATEGORY_FACTS = {
   'smart-plug': ['energyMonitoring', 'maxLoadWatts'],
   'smart-bulb': ['colorType', 'lumens', 'bulbBase'],
   'smart-lock': ['lockFit', 'keypad', 'power'],
+  'smart-thermostat': ['thermostatType', 'systems', 'power'],
 } as const satisfies Record<CategoryKey, readonly string[]>;
 
 type FactValue = { value: unknown; sources: string[] };
 
 export const deviceSchema = z
-  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema])
+  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema])
   .superRefine((d, ctx) => {
     const ids = d.sources.map((s) => s.id);
     const known = new Set(ids);

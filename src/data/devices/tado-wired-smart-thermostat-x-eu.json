@@ -1,0 +1,176 @@
+{
+  "category": "smart-thermostat",
+  "brand": "tado°",
+  "model": "Wired Smart Thermostat X",
+  "name": "tado° Smart Thermostat X (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://shop.tado.com/en-eu/products/smart-thermostat-x-wired",
+  "radios": {
+    "value": [
+      "thread"
+    ],
+    "sources": [
+      "tado-wired",
+      "tado-matter-code"
+    ],
+    "note": "tado° pages say it needs a Thread border router. Bluetooth for setup was not confirmed for this model."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "tado-matter-code",
+      "tado-wired"
+    ],
+    "note": "tado° documents a Matter setup code for its X devices, including this thermostat. A search snippet showed CSA certificate CSA23C79MAT41789-24 (Smart Thermostat X, Thread), but the CSA page itself did not surface, so it is not cited."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "tado-apple",
+        "tado-wired"
+      ],
+      "note": "Linked with a Matter code from the tado° app or the device QR code. Needs a Thread border router."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "tado-google",
+        "tado-wired"
+      ],
+      "note": "tado° has a setup guide for Google Home over Matter. Needs a Thread border router."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "tado-alexa",
+        "tado-wired"
+      ],
+      "note": "Needs a Matter-capable Echo or eero plus a Thread border router. tado° advises adding the device in its own app first to keep firmware updates."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No tado° SmartThings setup guide was found."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "ha-matter",
+        "tado-matter-code",
+        "tado-ha"
+      ],
+      "note": "Through Home Assistant's Matter integration, which needs a Thread border router. tado° says it does not officially support Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "tado-wired"
+    ],
+    "note": "No tado° bridge is needed for basic control: tado° says the Bridge X or another compatible Thread border router connects it to the internet. Without any Thread border router it cannot reach the internet. tado° X products do not work with V3+ devices."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No tado° page found that describes offline or local-only control."
+  },
+  "thermostatType": {
+    "value": "wall",
+    "sources": [
+      "tado-wired"
+    ]
+  },
+  "systems": {
+    "value": "Boilers and heat pumps via relay or OpenTherm",
+    "sources": [
+      "tado-wired"
+    ],
+    "note": "Wired to the heating system. tado° says it works with most such systems; check its compatibility checker for your boiler."
+  },
+  "power": {
+    "value": "3 × AAA",
+    "sources": [
+      "tado-batteries"
+    ],
+    "note": "tado° says the Smart Thermostat X takes three AAA alkaline (LR03) cells. The Wired Smart Thermostat X (2nd gen) uses a built-in rechargeable battery instead and is a different product."
+  },
+  "summary": "As a wall thermostat for boilers and heat pumps, the tado° Wired Smart Thermostat X switches heating through a relay or OpenTherm. It pairs over Matter on Thread with Apple Home, Google Home and Alexa, and Home Assistant works through its Matter integration, although tado° says it does not officially support Home Assistant. Any Thread border router will do, including tado°'s Bridge X. It runs on 3 × AAA batteries.",
+  "caveats": [
+    "Needs a Thread border router, such as tado°'s Bridge X (sold separately, not compatible with tado° V3+ devices) or a third-party one.",
+    "tado° also sells a 2nd-generation wired model with a built-in rechargeable battery; this record is the 3 × AAA version.",
+    "tado° says it works with most boilers and heat pumps; check its compatibility checker for yours before buying."
+  ],
+  "sources": [
+    {
+      "id": "tado-wired",
+      "url": "https://shop.tado.com/en-eu/products/smart-thermostat-x-wired",
+      "title": "smart thermostat x wired",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-apple",
+      "url": "https://help.tado.com/en/articles/9240313-how-do-i-set-up-my-tado-x-devices-with-apple-home",
+      "title": "How do I set up my tado° X devices with Apple Home?",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-google",
+      "url": "https://help.tado.com/en/articles/9184568-how-can-i-set-up-my-tado-x-devices-with-google-home",
+      "title": "How can I set up my tado° X devices with Google Home?",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-alexa",
+      "url": "https://help.tado.com/en/articles/9184565-how-can-i-set-up-my-tado-x-devices-with-alexa",
+      "title": "How can I set up my tado° X devices with Alexa?",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-matter-code",
+      "url": "https://help.tado.com/en/articles/9242001-where-can-i-find-the-matter-setup-code-for-my-tado-x-device",
+      "title": "Where can I find the Matter setup code for my tado° X device?",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-batteries",
+      "url": "https://help.tado.com/en/articles/8804660",
+      "title": "Replacing the batteries in the Smart Thermostat X and Wireless Temperature Sensor X",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-ha",
+      "url": "https://help.tado.com/en/articles/16554948-using-tado-with-home-assistant",
+      "title": "Using tado° with Home Assistant",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

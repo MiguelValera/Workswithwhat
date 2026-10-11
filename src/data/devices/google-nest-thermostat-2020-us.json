@@ -1,0 +1,188 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Google Nest",
+  "model": "Nest Thermostat (2020)",
+  "name": "Nest Thermostat 2020 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://store.google.com/product/nest_thermostat_specs?hl=en-US",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "google-nest-specs"
+    ],
+    "note": "Google lists Wi-Fi 802.11n. No Google page we saw lists a Thread radio for this model, so it is left out."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "csa-nest-thermostat",
+      "google-nest-specs",
+      "google-nest-updates"
+    ],
+    "note": "CSA lists Google's Nest Thermostat as Matter certified over Wi-Fi (firmware 1.3, Feb 2023; later listings cover 1.3a and 2.2). No model number is given, but firmware 1.3 matches Google's update history: Matter arrived in version 1.3-10."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "csa-nest-thermostat",
+        "google-nest-specs"
+      ],
+      "note": "Through Matter: add it to Google Home first, then link it to Apple Home. Google caps a thermostat at 5 Matter apps. Needs an Apple home hub."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "google-nest-2020",
+        "google-nest-specs"
+      ],
+      "note": "Set up and controlled in the Google Home app."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "google-nest-alexa",
+        "google-nest-2020"
+      ],
+      "note": "Through Google's Nest skill for Alexa, enabled from the Google Home app. Google's tech specs say it works with Alexa (needs a compatible device)."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Google or Samsung page found lists this model. Only a SmartThings forum post mentions a Nest thermostat over Matter."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-nest",
+        "google-device-access"
+      ],
+      "note": "Official Google Nest integration using the Smart Device Management API, which Google says supports all Nest thermostat models; Google charges a one-time US$5 Device Access fee. Matter is a second route."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "google-nest-2020",
+      "google-nest-specs"
+    ],
+    "note": "Connects over Wi-Fi and is set up in the Google Home app; no bridge needed."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No maker source states what works without internet. Home Assistant's Nest integration is cloud-based."
+  },
+  "thermostatType": {
+    "value": "wall",
+    "sources": [
+      "google-nest-2020"
+    ],
+    "note": "Wall-mounted thermostat."
+  },
+  "systems": {
+    "value": "Most 24 V systems, incl. heat pumps",
+    "sources": [
+      "google-nest-2020"
+    ],
+    "note": "Google lists most 24 V systems (gas, electric, oil, forced air, heat pump, radiant). Use g.co/nest/works to check yours."
+  },
+  "power": {
+    "value": "HVAC wires, 2 × AAA backup",
+    "sources": [
+      "google-nest-2020",
+      "google-nest-batteries",
+      "google-power-connector"
+    ],
+    "note": "Google says it draws power from the HVAC wires and is designed to work without a C-wire, with 2 AAA alkaline batteries as backup or supplement. Heat-only, cool-only and zoned systems may need a C-wire or Nest Power Connector."
+  },
+  "summary": "Google Home runs the Nest Thermostat (2020), a US wall thermostat that gained Matter in a 2023 firmware update (version 1.3-10). Matter is what lets it pair with Apple Home, and Home Assistant has an official Nest integration. It is built to work without a C-wire, though some systems still need one. SmartThings support is not confirmed.",
+  "caveats": [
+    "Matter arrived with firmware 1.3-10, so it needs that version or later.",
+    "Google says heat-only, cool-only and zone-controller systems may need a C-wire or other power accessory.",
+    "Low power can disable features including Matter, per Google's Nest Power Connector page.",
+    "SmartThings support is not confirmed."
+  ],
+  "sources": [
+    {
+      "id": "google-nest-2020",
+      "url": "https://store.google.com/product/nest_thermostat_specs?hl=en-US",
+      "title": "Nest Thermostat Tech Specs - Google Store",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-nest-specs",
+      "url": "https://support.google.com/googlehome/answer/9230098?hl=en",
+      "title": "Nest thermostat technical specifications - Google Home and Nest Help",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-nest-thermostat",
+      "url": "https://csa-iot.org/csa_product/nest-thermostat-2/",
+      "title": "Nest Thermostat - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-nest-alexa",
+      "url": "https://support.google.com/googlehome/answer/9325080?hl=en",
+      "title": "Control Google Nest products with Amazon Alexa - Google Home and Nest Help",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-nest",
+      "url": "https://www.home-assistant.io/integrations/nest/",
+      "title": "Google Nest - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-nest-updates",
+      "url": "https://support.google.com/googlehome/answer/9263516?hl=en",
+      "title": "Learn about Nest thermostat software update history - Google Home and Nest Help",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-device-access",
+      "url": "https://developers.google.com/nest/device-access/supported-devices",
+      "title": "Supported Devices - Device Access",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-nest-batteries",
+      "url": "https://support.google.com/googlehome/answer/10119271?hl=en",
+      "title": "How to change Nest Thermostat batteries (Low battery message) - Google Home and Nest Help",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-power-connector",
+      "url": "https://support.google.com/googlehome/answer/10523126?hl=en",
+      "title": "Nest Power Connector - Google Home and Nest Help",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}
