@@ -14,7 +14,7 @@
     "certified": true,
     "transport": "thread",
     "sources": ["csa-nuki-pro", "nuki-generations"],
-    "note": "CSA lists 'Nuki Smart Lock Pro' (certified 2025-11-18, firmware 1.4.1); the listing does not say '5th Gen', so the match to this model rests on Nuki's own Matter-over-Thread claims."
+    "note": "CSA lists 'Nuki Smart Lock Pro' (hardware 10.00, firmware 1.4.1, certified 2025-11-18) with no generation label, separate from the 4th Gen Pro listings (hardware 7.x). Nuki's generations table marks Matter over Thread for the Pro (5th Gen)."
   },
   "compatibility": {
     "apple_home": {
@@ -55,7 +55,7 @@
   },
   "lockFit": {
     "value": "retrofit",
-    "sources": ["nuki-pro5"],
+    "sources": ["nuki-pro5", "nuki-universal-cylinder"],
     "note": "Fits over the existing interior cylinder without a cylinder swap; Nuki says it suits Europrofile cylinders and selected Swiss Round cylinders. It is not compatible with Nuki's Universal Cylinder."
   },
   "keypad": {
@@ -68,14 +68,17 @@
     "sources": ["nuki-pro5"],
     "note": "Built-in lithium-ion battery that recharges in about 2 hours, on or off the door."
   },
-  "summary": "Nuki Smart Lock Pro (5th Gen) is a retrofit lock for Europrofile cylinders that needs no cylinder change. Matter over Thread links it to Apple Home, Google Home, Alexa and SmartThings, and built-in Wi-Fi covers remote access without a Bridge. It charges a built-in battery in about two hours and has no keypad of its own. Home Assistant is not confirmed.",
+  "summary": "This retrofit lock, the 5th-generation Nuki Pro, is built for Europrofile cylinders and needs no cylinder change. Matter over Thread links it to Apple Home, Google Home, Alexa and SmartThings, and built-in Wi-Fi covers remote access without a Bridge. It charges a built-in battery in about two hours and has no keypad of its own. Home Assistant is not confirmed.",
   "caveats": ["Matter needs a Thread border router; a Wi-Fi-only Matter hub will not work.", "Not all Matter hubs support Remote Access via Thread, per Nuki's troubleshooting guide.", "Not compatible with Nuki's Universal Cylinder.", "The Keypad 2 NFC is a separate accessory."],
   "sources": [
     { "id": "nuki-pro5", "url": "https://nuki.io/en/products/smart-lock-pro-5th-gen", "title": "Smart Lock Pro (5th Gen)", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "nuki-generations", "url": "https://help.nuki.io/hc/en-001/articles/33659819862289-Smart-Lock-Generations", "title": "Smart Lock Generations", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "nuki-integrations-page", "url": "https://nuki.io/en-at/solutions/for-your-home/smart-home-integrations", "title": "Smart home integrations", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "nuki-universal-cylinder", "url": "https://nuki.io/en-it/products/universal-cylinder-2nd-generation", "title": "Universal Cylinder (2nd Gen)", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "nuki-matter-thread-troubleshooting", "url": "https://help.nuki.io/hc/en-001/articles/23823024269457-Troubleshooting-Matter-over-Thread-connection", "title": "Troubleshooting Matter over Thread connection", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11", "forCaveat": true },
     { "id": "csa-nuki-pro", "url": "https://csa-iot.org/csa_product/nuki-smart-lock-pro/", "title": "Nuki Smart Lock Pro - CSA-IOT", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11" }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
