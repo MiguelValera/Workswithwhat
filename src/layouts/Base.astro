@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getActiveCategories } from '../lib/devices';
+import { OPERATOR } from '../site.config';
 
 interface Crumb {
   name: string;
@@ -103,7 +104,7 @@ if (crumbs.length) {
       <div class="wrap">
         <p>
           Every claim links to its source. Spotted something wrong or out of date?{' '}
-          <a href="https://github.com/miguelvalera/workswithwhat/issues">Tell us</a>.
+          <a href={`mailto:${OPERATOR.email}?subject=${encodeURIComponent('Correction for workswithwhat.com')}`}>Tell us</a>.
         </p>
         <p class="muted">
           Not affiliated with any brand mentioned. Trademarks belong to their owners. No cookies, no trackers.
