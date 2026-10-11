@@ -14,7 +14,7 @@
     "certified": true,
     "transport": "wifi",
     "sources": ["govee-h6006", "csa-govee-rgbww-bulb"],
-    "note": "Product page lists Matter control; CSA lists 'Govee RGBWW Smart LED Bulb' with family variant H6006 (certificate CSA251E5MAT45367-24, April 2025)."
+    "note": "Product page lists Matter control; CSA lists 'Govee RGBWW Smart LED Bulb' with family SKU H6008 and variant SKU H6006 (certificate CSA251E5MAT45367-24, 9 April 2025)."
   },
   "compatibility": {
     "apple_home": {
@@ -100,7 +100,7 @@
     },
     {
       "id": "csa-govee-rgbww-bulb",
-      "url": "https://csa-iot.org/csa_product/govee-rgbww-smart-led-bulb-3/",
+      "url": "https://csa-iot.org/csa_product/govee-rgbww-smart-led-bulb-4/",
       "title": "Govee RGBWW Smart LED Bulb - CSA-IOT",
       "publisher": "Connectivity Standards Alliance",
       "kind": "certification",
@@ -115,6 +115,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

@@ -11,9 +11,9 @@
     "note": "Zigbee 3.0 for the Aqara hub; Bluetooth is also listed."
   },
   "matter": {
-    "certified": false,
+    "certified": null,
     "sources": ["aqara-t1"],
-    "note": "The bulb is a Zigbee device; Aqara says Matter comes through an OTA update of Aqara hubs, which bridge it. The bulb itself is not a Matter device."
+    "note": "Aqara does not say outright that the bulb lacks Matter. It says Matter comes via an OTA update of Aqara hubs, so Matter is reached only through an Aqara hub's Matter bridge, not the Zigbee bulb itself."
   },
   "compatibility": {
     "apple_home": {
@@ -101,6 +101,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
