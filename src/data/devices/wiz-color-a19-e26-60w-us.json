@@ -11,31 +11,30 @@
     "note": "2.4 GHz Wi-Fi with Bluetooth Low Energy (used for setup)."
   },
   "matter": {
-    "certified": true,
-    "transport": "wifi",
-    "sources": ["wiz-a19-us", "wiz-a19-us-3pack", "wiz-matter-faq", "csa-wiz-full-color"],
-    "note": "The product page lists Matter over Wi-Fi; the 3-pack of the same bulb says Matter certified. CSA lists WiZ 'LED lamp - Full color' certificates, but we could not tie one to this exact product code."
+    "certified": null,
+    "sources": ["wiz-a19-us", "wiz-a19-us-3pack"],
+    "note": "Unconfirmed for code 046677603441. Its own page says only 'Matter: via 3rd party hubs'; the 3-pack page says 'Matter certified'. We found no CSA or WiZ list entry for this exact product code."
   },
   "compatibility": {
     "apple_home": {
-      "status": "matter",
-      "sources": ["wiz-a19-us", "wiz-apple-home-faq"],
-      "note": "Added to Apple Home via Matter; WiZ says this needs iOS 16.1+ and a home hub such as a HomePod mini or Apple TV."
+      "status": "unknown",
+      "sources": [],
+      "note": "WiZ lists no HomeKit support (Siri Shortcuts is not Apple Home). Apple Home would need Matter, which is unconfirmed for this product code."
     },
     "google_home": {
       "status": "native",
       "sources": ["wiz-a19-us", "wiz-works-with"],
-      "note": "Works through WiZ's Google Home integration; Matter is also possible."
+      "note": "Works through WiZ's Google Home integration."
     },
     "alexa": {
       "status": "native",
       "sources": ["wiz-a19-us", "wiz-works-with"],
-      "note": "Works through the WiZ Alexa skill; Matter is also possible."
+      "note": "Works through the WiZ Alexa skill."
     },
     "smartthings": {
       "status": "native",
       "sources": ["wiz-a19-us", "wiz-works-with"],
-      "note": "WiZ lists Samsung SmartThings among compatible platforms; Matter is also possible."
+      "note": "WiZ lists Samsung SmartThings among compatible platforms."
     },
     "home_assistant": {
       "status": "native",
@@ -67,10 +66,9 @@
     "value": "E26 (A19)",
     "sources": ["wiz-a19-us"]
   },
-  "summary": "The WiZ 60W A19 colour bulb (product code 046677603441) is a US E26 bulb rated at 800 lumens, with full colour and white from 2200 to 6500 K. It uses 2.4 GHz Wi-Fi plus Bluetooth for setup, so no hub is needed. Alexa, Google Home and SmartThings work through WiZ's own integrations, and Apple Home works via Matter.",
+  "summary": "The WiZ 60W A19 colour bulb (product code 046677603441) is a US E26 bulb rated at 800 lumens, with full colour and white from 2200 to 6500 K. It uses 2.4 GHz Wi-Fi plus Bluetooth for setup, so no hub is needed. Alexa, Google Home and SmartThings work through WiZ's own integrations. Matter support is unconfirmed for this product code.",
   "caveats": [
-    "Needs 2.4 GHz Wi-Fi.",
-    "Apple Home needs Matter and an Apple home hub (HomePod mini or Apple TV)."
+    "Needs 2.4 GHz Wi-Fi."
   ],
   "sources": [
     {
@@ -103,30 +101,6 @@
       "title": "Smart Activated Lights (Works with)",
       "publisher": "Signify (WiZ)",
       "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "wiz-matter-faq",
-      "url": "https://faq.wizconnected.com/hc/en/7-wiz-v2/faq/531-do-all-wiz-devices-support-matter/",
-      "title": "Do all WiZ devices support Matter? — WiZ V2 Help Center",
-      "publisher": "Signify (WiZ)",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "wiz-apple-home-faq",
-      "url": "https://faq.wizconnected.com/hc/en/3-wiz-legacy/faq/604-how-to-setup-my-wiz-light-in-apple-home/",
-      "title": "How to setup my WiZ light in Apple Home?",
-      "publisher": "Signify (WiZ)",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "csa-wiz-full-color",
-      "url": "https://csa-iot.org/csa_product/wiz-led-lamp-full-color-119/",
-      "title": "WiZ LED lamp - Full color - CSA-IOT",
-      "publisher": "Connectivity Standards Alliance",
-      "kind": "certification",
       "accessed": "2026-10-11"
     },
     {
