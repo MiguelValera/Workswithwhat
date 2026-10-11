@@ -138,7 +138,8 @@
       "title": "Philips HueWA GU10 4.2W 2200-6500K WW GU10 400lm",
       "publisher": "Ahlsell",
       "kind": "retailer",
-      "accessed": "2026-10-11"
+      "accessed": "2026-10-11",
+      "forCaveat": true
     },
     {
       "id": "ha-hue",

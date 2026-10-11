@@ -80,6 +80,7 @@
   "energyMonitoring": {
     "value": true,
     "sources": [
+      "innr-smart-plug-product",
       "innr-sp240-eu-doc",
       "z2m-sp240"
     ],
@@ -87,7 +88,7 @@
   },
   "maxLoadWatts": {
     "value": null,
-    "sources": [],
+    "sources": ["innr-smart-plug-product"],
     "note": "Innr's product page gives a maximum load current of 16 A; no watt figure found on an Innr page."
   },
   "summary": "Zigbee only, so plan on a hub. The Innr SP 240 (EU) works with Alexa through an Echo that has a built-in Zigbee hub (other Echos need a bridge such as a Hue Bridge), with SmartThings through a SmartThings Zigbee hub, and with Home Assistant through ZHA or Zigbee2MQTT. It meters power and is rated for 16 A; Innr gives no watt figure. Innr doesn't confirm Apple Home or Google Home, and no Matter listing was found.",
