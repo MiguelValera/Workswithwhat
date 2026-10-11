@@ -96,10 +96,8 @@
     ],
     "note": "ecobee powers it from a 24 V supply on the C-wire. ecobee says the Power Extender Kit comes with every model except the Essential and Lite, for homes without a C-wire; the kit has limits (see caveats)."
   },
-  "summary": "The ecobee Smart Thermostat Premium is a US Wi-Fi wall thermostat that ecobee lists as working with Apple HomeKit, Alexa, Google Assistant and SmartThings. It has a built-in speaker with Siri or Alexa, and Home Assistant has an official ecobee integration. Matter support is not confirmed on any page we found.",
+  "summary": "The ecobee Smart Thermostat Premium connects over Wi-Fi with no hub and is listed by ecobee for Apple HomeKit, Alexa, Google Assistant and SmartThings. Home Assistant has an official ecobee integration, and built-in Alexa is an option on the thermostat itself. It controls most 24 V systems, heat pumps included, and the Power Extender Kit comes in the box for homes without a C-wire. Matter is not confirmed.",
   "caveats": [
-    "Only one voice assistant (Siri or Alexa) can be active on the thermostat at a time.",
-    "Siri on the thermostat needs iOS or iPadOS 15 and a HomePod or HomePod mini on version 15 or later.",
     "Without a C-wire the Power Extender Kit needs a spare wire; it does not work with dual-transformer, millivolt or high-voltage systems."
   ],
   "sources": [

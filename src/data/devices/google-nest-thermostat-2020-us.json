@@ -101,9 +101,9 @@
     ],
     "note": "Google says it draws power from the HVAC wires and is designed to work without a C-wire, with 2 AAA alkaline batteries as backup or supplement. Heat-only, cool-only and zoned systems may need a C-wire or Nest Power Connector."
   },
-  "summary": "Google Home runs the Nest Thermostat (2020), a US wall thermostat that gained Matter in a June 2023 update. Matter is what lets it pair with Apple Home, and Home Assistant has an official Nest integration. It is built to work without a C-wire, though some systems still need one. SmartThings support is not confirmed.",
+  "summary": "Google Home runs the Nest Thermostat (2020), a US wall thermostat that gained Matter in a 2023 firmware update (version 1.3-10). Matter is what lets it pair with Apple Home, and Home Assistant has an official Nest integration. It is built to work without a C-wire, though some systems still need one. SmartThings support is not confirmed.",
   "caveats": [
-    "Matter came in a 2023 firmware update; older firmware will not offer it.",
+    "Matter arrived with firmware 1.3-10, so it needs that version or later.",
     "Google says heat-only, cool-only and zone-controller systems may need a C-wire or other power accessory.",
     "Low power can disable features including Matter, per Google's Nest Power Connector page.",
     "SmartThings support is not confirmed."

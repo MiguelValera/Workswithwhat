@@ -91,7 +91,7 @@
     ],
     "note": "Honeywell says the T9 needs 24 V through a C-wire and ships with a C-wire adapter for homes without one. The install guide says adapter installation is more complicated on zoned systems."
   },
-  "summary": "Honeywell Home sells the T9 as a US Wi-Fi wall thermostat with optional wireless room sensors. Alexa and Google Assistant can read the thermostat and sensors, while HomeKit and SmartThings can only change setpoints, according to Honeywell. Home Assistant and Matter support are not confirmed on any page we found.",
+  "summary": "Honeywell Home sells the T9 as a US Wi-Fi wall thermostat with optional wireless room sensors, and it needs 24 V on a C-wire (an adapter is included). Alexa and Google Assistant can read the thermostat and sensors, while HomeKit and SmartThings can only change setpoints, according to Honeywell. It suits most 24 V heat, cool and heat pump systems. Home Assistant and Matter support are not confirmed.",
   "caveats": [
     "HomeKit and SmartThings cannot read room sensor values, per Honeywell's support article.",
     "A C-wire is required; the supplied adapter covers homes without one, but Honeywell says fitting it on zoned systems is more complicated and suggests a pro.",

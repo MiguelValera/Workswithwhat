@@ -98,11 +98,11 @@
     ],
     "note": "Google's specs page says it runs without a C-wire in most homes and that in limited cases (under 1%) a C-wire or Nest Power Connector is needed. Google's product page adds that heating-only, cooling-only, zoned and heat pump systems need one."
   },
-  "summary": "Google Home is the main app for the Nest Learning Thermostat (4th gen), a US wall thermostat with Wi-Fi and Matter certification. That Matter listing is how it reaches Apple Home, and Home Assistant has an official Nest integration too. Alexa works through Google's Nest skill, and SmartThings is not confirmed.",
+  "summary": "Google Home is the main app for the Nest Learning Thermostat (4th gen), a US wall thermostat with Wi-Fi and Matter certification. That Matter listing is how it reaches Apple Home, and Home Assistant has an official Nest integration too. Alexa works through Google's Nest skill, and SmartThings is not confirmed. It runs without a C-wire in most homes and covers most 24 V systems.",
   "caveats": [
     "Setup requires the Google Home app.",
     "Google says heating-only, cooling-only, zoned and heat pump systems need a C-wire or Nest Power Connector; its checker is g.co/nest/works.",
-    "Home Assistant over Matter exposes only the climate entity in community reports; presets and extra sensors are missing.",
+    "Google caps a thermostat at 5 Matter apps, and Apple Home also needs an Apple home hub.",
     "SmartThings support is not confirmed."
   ],
   "sources": [
