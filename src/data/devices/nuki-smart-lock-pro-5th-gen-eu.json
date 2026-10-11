@@ -1,0 +1,81 @@
+{
+  "category": "smart-lock",
+  "brand": "Nuki",
+  "model": "Smart Lock Pro (5th Gen)",
+  "name": "Nuki Smart Lock Pro 5th Gen (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://nuki.io/en/products/smart-lock-pro-5th-gen",
+  "radios": {
+    "value": ["bluetooth", "wifi", "thread"],
+    "sources": ["nuki-pro5", "nuki-generations", "csa-nuki-pro"],
+    "note": "Nuki's generations table marks built-in Wi-Fi and Matter over Thread as yes for the Pro (5th Gen). When Remote Access via Thread is available, Nuki says Wi-Fi is switched off."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": ["csa-nuki-pro", "nuki-generations"],
+    "note": "CSA lists 'Nuki Smart Lock Pro' (certified 2025-11-18, firmware 1.4.1); the listing does not say '5th Gen', so the match to this model rests on Nuki's own Matter-over-Thread claims."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["nuki-pro5", "nuki-integrations-page"],
+      "note": "Matter over Thread. Nuki says you need a hub that supports Matter via Thread; a Wi-Fi-only Matter hub will not work."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["nuki-pro5", "nuki-integrations-page"],
+      "note": "Matter over Thread, which needs a Thread border router. Nuki also documents a Nuki Web cloud link to Google Home for its locks; not checked for this generation."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["nuki-pro5", "nuki-integrations-page"],
+      "note": "Matter over Thread, which needs a Thread border router. Nuki also documents a Nuki Web skill for Alexa; not checked for this generation."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["nuki-pro5", "nuki-integrations-page"],
+      "note": "Nuki names Samsung SmartThings as a Matter-over-Thread platform; a Thread border router is needed."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's Nuki page seen covers 4th generation locks; no official source names the 5th-gen Pro. A forum thread reports Matter commissioning problems, which is not an official source."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["nuki-pro5", "nuki-generations"],
+    "note": "Built-in Wi-Fi and Remote Access are included, so no Bridge is needed. Matter control needs a Thread border router."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Nuki source describes offline or local-only control explicitly."
+  },
+  "lockFit": {
+    "value": "retrofit",
+    "sources": ["nuki-pro5"],
+    "note": "Fits over the existing interior cylinder without a cylinder swap; Nuki says it suits Europrofile cylinders and selected Swiss Round cylinders. It is not compatible with Nuki's Universal Cylinder."
+  },
+  "keypad": {
+    "value": false,
+    "sources": ["nuki-pro5"],
+    "note": "No keypad on the lock. Nuki's Keypad 2 NFC is a separate accessory."
+  },
+  "power": {
+    "value": "Built-in rechargeable battery",
+    "sources": ["nuki-pro5"],
+    "note": "Built-in lithium-ion battery that recharges in about 2 hours, on or off the door."
+  },
+  "summary": "Nuki Smart Lock Pro (5th Gen) is a retrofit lock for Europrofile cylinders that needs no cylinder change. Matter over Thread links it to Apple Home, Google Home, Alexa and SmartThings, and built-in Wi-Fi covers remote access without a Bridge. It charges a built-in battery in about two hours and has no keypad of its own. Home Assistant is not confirmed.",
+  "caveats": ["Matter needs a Thread border router; a Wi-Fi-only Matter hub will not work.", "Not all Matter hubs support Remote Access via Thread, per Nuki's troubleshooting guide.", "Not compatible with Nuki's Universal Cylinder.", "The Keypad 2 NFC is a separate accessory."],
+  "sources": [
+    { "id": "nuki-pro5", "url": "https://nuki.io/en/products/smart-lock-pro-5th-gen", "title": "Smart Lock Pro (5th Gen)", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "nuki-generations", "url": "https://help.nuki.io/hc/en-001/articles/33659819862289-Smart-Lock-Generations", "title": "Smart Lock Generations", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "nuki-integrations-page", "url": "https://nuki.io/en-at/solutions/for-your-home/smart-home-integrations", "title": "Smart home integrations", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "csa-nuki-pro", "url": "https://csa-iot.org/csa_product/nuki-smart-lock-pro/", "title": "Nuki Smart Lock Pro - CSA-IOT", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11" }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
