@@ -1,0 +1,149 @@
+{
+  "category": "smart-sensor",
+  "brand": "Aqara",
+  "model": "Presence Sensor FP2",
+  "name": "Aqara Presence Sensor FP2 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://eu.aqara.com/en-eu/products/aqara-presence-sensor-fp2",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "aqara-fp2-specs"
+    ],
+    "note": "2.4 GHz Wi-Fi 802.11 b/g/n and Bluetooth 4.2. WPA/WPA2 enterprise networks are not supported."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Aqara's FP2 pages we saw do not mention Matter, and an Aqara forum moderator says it does not support it. Not confirmed from a CSA listing either way."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "aqara-fp2-specs",
+        "aqara-fp2-manual"
+      ],
+      "note": "Connects over HomeKit with no hub. Aqara's manual says it appears as several separate sensors; third-party platforms get only basic sensor data."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "aqara-fp2-specs",
+        "aqara-fp2-manual"
+      ],
+      "note": "Aqara lists Google Home with no hub needed. Aqara's manual says it appears as several separate sensors; third-party platforms get only basic sensor data."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "aqara-fp2-specs",
+        "aqara-fp2-manual"
+      ],
+      "note": "Aqara lists Alexa with no hub needed. Aqara's manual says it appears as several separate sensors; third-party platforms get only basic sensor data."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [
+        "aqara-fp2-smartthings"
+      ],
+      "note": "Samsung has a SmartThings catalogue page for the FP2, but Aqara's platform list omits SmartThings and we could not open Samsung's page to see how it connects."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "aqara-fp2-manual",
+        "ha-homekit"
+      ],
+      "note": "Aqara's manual says to add it with Home Assistant's HomeKit Device integration. A device paired to Apple Home must be removed from there first."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "aqara-fp2-specs"
+    ],
+    "note": "Aqara's spec table says no hub is required. Full local automation needs an Aqara hub with Wi-Fi, per the manual."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [
+      "aqara-fp2-manual"
+    ],
+    "note": "HomeKit/Home Assistant control may stay on the local network but Aqara does not state local-only control."
+  },
+  "senses": {
+    "value": [
+      "presence",
+      "light"
+    ],
+    "sources": [
+      "aqara-fp2-specs",
+      "aqara-fp2-eu"
+    ],
+    "note": "mmWave presence with multi-zone tracking (up to 5 people, up to 30 zones) and fall detection in ceiling mode; a built-in light sensor is also listed."
+  },
+  "power": {
+    "value": "USB-C 5 V (mains)",
+    "sources": [
+      "aqara-fp2-specs"
+    ],
+    "note": "5 V / 1 A over USB-C; no battery."
+  },
+  "summary": "Aqara Presence Sensor FP2 is a mains-powered mmWave sensor that detects people even when they sit still. It tracks up to 5 people and can divide a room of up to 40 square metres into up to 30 zones. It joins over 2.4 GHz Wi-Fi without a hub and shows up as separate sensors in Apple Home, Google Home, Alexa and Home Assistant.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only; WPA/WPA2 enterprise networks are not supported.",
+    "Zones, fall detection and other advanced features need the Aqara app; other platforms get basic sensor data.",
+    "Not Matter-certified as far as we can confirm.",
+    "Fall detection works only when ceiling-mounted."
+  ],
+  "sources": [
+    {
+      "id": "aqara-fp2-eu",
+      "url": "https://eu.aqara.com/en-eu/products/aqara-presence-sensor-fp2",
+      "title": "Aqara Presence Sensor FP2",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-fp2-specs",
+      "url": "https://www.aqara.com/us/product/presence-sensor-fp2/specs/",
+      "title": "Presence Sensor FP2 Specs",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-fp2-manual",
+      "url": "https://www.aqara.com/wp-content/uploads/2023/06/Presence-Sensor-FP2_User-Manual.pdf",
+      "title": "Presence Sensor FP2 User Manual",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-fp2-smartthings",
+      "url": "https://www.samsung.com/uk/smartthings/sensor/aqara-presence-sensor-fp2-as055glw02/",
+      "title": "Aqara Presence Sensor FP2 AS055GLW02",
+      "publisher": "Samsung SmartThings",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-homekit",
+      "url": "https://www.home-assistant.io/integrations/homekit_controller/",
+      "title": "HomeKit Device - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

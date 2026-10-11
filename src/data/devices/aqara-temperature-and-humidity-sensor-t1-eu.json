@@ -1,0 +1,77 @@
+{
+  "category": "smart-sensor",
+  "brand": "Aqara",
+  "model": "Temperature and Humidity Sensor T1 (TH-S02D)",
+  "name": "Aqara Temperature and Humidity Sensor T1 (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.aqara.com/en/product/temperature-and-humidity-sensor-t1/",
+  "radios": {
+    "value": ["zigbee"],
+    "sources": ["aqara-th-t1-specs"],
+    "note": "Zigbee 3.0."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No CSA listing found. Retailers say it works with Matter via an Aqara hub; no Aqara page seen confirms it."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Aqara hub",
+      "sources": ["aqara-th-t1-faq"],
+      "note": "Retailers say it reaches HomeKit once bound to an Aqara hub. The exact Aqara wording was not seen; the FAQ is a snippet only."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Only retailer listings say Google Home works."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Only retailer listings say Alexa works."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Only retailer listings mention SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant docs seen name no Aqara T1 support. A generic Zigbee coordinator is not documented for it."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": ["aqara-th-t1-faq"],
+    "note": "The FAQ's range figures refer to the Aqara hub; retailers say a hub is required. The explicit Aqara statement was not seen."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No page seen describes hub-local operation."
+  },
+  "senses": {
+    "value": ["temperature", "humidity"],
+    "sources": ["aqara-th-t1-specs"],
+    "note": "It also measures air pressure (30–110 kPa), which the site does not list as a sensing type."
+  },
+  "power": {
+    "value": "CR2032",
+    "sources": ["aqara-th-t1-specs"],
+    "note": "Aqara's EU product page was reported to say CR2450; the T1 specs page says CR2032."
+  },
+  "summary": "The Temperature and Humidity Sensor T1 (TH-S02D) is Aqara's current Zigbee 3.0 climate sensor. It reads temperature (±0.3 °C), humidity (±3%) and air pressure, and reports hourly unless values change sharply. It is for indoor use and runs on a CR2032 cell. An Aqara hub connects it to Apple Home.",
+  "caveats": [
+    "Indoor use only.",
+    "Needs an Aqara hub; support for Google Home, Alexa and SmartThings is unconfirmed on Aqara pages seen."
+  ],
+  "sources": [
+    { "id": "aqara-th-t1-specs", "url": "https://www.aqara.com/en/product/temperature-and-humidity-sensor-t1/temperature-and-humidity-sensor-t1-specs/", "title": "Temperature and Humidity Sensor T1 Specs - Aqara", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-th-t1-faq", "url": "https://www.aqara.com/en/temperature-and-humidity-sensor-t1/temperature-and-humidity-sensor-t1-faq/", "title": "Temperature and Humidity Sensor T1 FAQ - Aqara", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

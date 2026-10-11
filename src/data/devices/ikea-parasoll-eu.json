@@ -1,0 +1,84 @@
+{
+  "category": "smart-sensor",
+  "brand": "IKEA",
+  "model": "PARASOLL door/window sensor",
+  "name": "IKEA PARASOLL (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.ikea.com/se/en/p/parasoll-door-window-sensor-smart-white-80504308/",
+  "radios": {
+    "value": ["zigbee"],
+    "sources": ["ikea-sensors-news"],
+    "note": "IKEA's launch release describes the three sensors as built on Zigbee."
+  },
+  "matter": {
+    "certified": null,
+    "sources": ["ikea-dirigera-matter"],
+    "note": "IKEA says Zigbee devices on DIRIGERA can be made available through its Matter bridge. No page seen says PARASOLL itself is exposed, and no CSA listing was found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "IKEA DIRIGERA hub",
+      "sources": ["ikea-parasoll-integrations", "ikea-voice"],
+      "note": "IKEA says the sensor works with Apple HomeKit through DIRIGERA."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "IKEA DIRIGERA hub",
+      "sources": ["ikea-parasoll-integrations", "ikea-voice"]
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "IKEA DIRIGERA hub",
+      "sources": ["ikea-parasoll-integrations", "ikea-voice"],
+      "note": "IKEA's example is asking Alexa whether the door is open."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No IKEA or SmartThings page seen covers PARASOLL."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's docs seen name no PARASOLL support. It pairs with ZHA or Zigbee2MQTT per forum posts only, and via DIRIGERA's Matter bridge it reportedly does not show up."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": ["ikea-se-parasoll", "ikea-sensors-no-hub"],
+    "note": "Phone notifications and smart-home links need a DIRIGERA hub (sold separately). Without one it can only trigger a paired TRÅDFRI bulb directly."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No page seen says whether it works without internet through DIRIGERA."
+  },
+  "senses": {
+    "value": ["contact"],
+    "sources": ["ikea-se-parasoll"]
+  },
+  "power": {
+    "value": "AAA battery (not included)",
+    "sources": ["ikea-us-parasoll"],
+    "note": "The US listing says it is sold without batteries and recommends LADDA rechargeable AAA (HR03). The cell count was not confirmed; EU page not read."
+  },
+  "summary": "PARASOLL is a two-part door and window contact sensor from IKEA that talks Zigbee. IKEA's DIRIGERA hub brings it into the IKEA Home smart app and on to Apple Home, Google Home and Alexa. Without a hub it can only switch a paired TRÅDFRI bulb. Batteries are sold separately.",
+  "caveats": [
+    "Needs a DIRIGERA hub for notifications and for Apple Home, Google Home and Alexa.",
+    "IKEA's Austrian help page says PARASOLL has left the range, with MYGGBETT as its replacement.",
+    "Home Assistant users report short battery life and dropouts in forum threads."
+  ],
+  "sources": [
+    { "id": "ikea-se-parasoll", "url": "https://www.ikea.com/se/en/p/parasoll-door-window-sensor-smart-white-80504308/", "title": "PARASOLL door/window sensor, smart/white - IKEA Sweden", "publisher": "IKEA", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "ikea-us-parasoll", "url": "https://www.ikea.com/us/en/p/parasoll-door-window-sensor-smart-white-70504318/", "title": "PARASOLL door/window sensor, smart/white - IKEA", "publisher": "IKEA", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "ikea-sensors-news", "url": "https://www.ikea.com/global/en/newsroom/innovation/parasoll-badring-vallhorn-smart-sensors-231128/", "title": "IKEA launches trio of smart sensors", "publisher": "IKEA", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "ikea-parasoll-integrations", "url": "https://www.ikea.com/gb/en/customer-service/knowledge/articles/b0afb2e2-9e1f-4ca1-9b1f-b0a44740617f.html", "title": "Can I connect the PARASOLL open/close sensor to integrations - IKEA United kingdom", "publisher": "IKEA", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "ikea-voice", "url": "https://www.ikea.com/gb/en/customer-service/knowledge/articles/bddc4415-f680-4889-91bg-d010gdee91db.html", "title": "Can I use my voice to control my smart home from IKEA? - IKEA United kingdom", "publisher": "IKEA", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "ikea-sensors-no-hub", "url": "https://www.ikea.com/gb/en/customer-service/knowledge/articles/6e35f4f2-g08g-45fb-b7b3-205b60fgc6e1.html", "title": "Can I use IKEA sensors without the DIRIGERA hub and the IKEA - IKEA United kingdom", "publisher": "IKEA", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "ikea-dirigera-matter", "url": "https://www.ikea.com/global/en/newsroom/innovation/ikea-dirigera-matter-bridge-240911/", "title": "IKEA Introduces Matter support for the DIRIGERA Hub", "publisher": "IKEA", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "ikea-myggbett", "url": "https://www.ikea.com/at/en/customer-service/knowledge/articles/e1710f7e-8179-404f-a2e6-38270d8e389d.html", "title": "What is the MYGGBETT door/window sensor and is it the altern - IKEA Austria", "publisher": "IKEA", "kind": "manufacturer", "accessed": "2026-10-11", "forCaveat": true }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
