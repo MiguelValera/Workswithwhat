@@ -1,0 +1,84 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Aqara",
+  "model": "Radiator Thermostat E1 (SRTS-A01)",
+  "name": "Aqara Radiator Thermostat E1 (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://eu.aqara.com/products/aqara-smart-radiator-thermostat-e1",
+  "radios": {
+    "value": ["zigbee"],
+    "sources": ["aqara-e1-eu", "aqara-e1-global"]
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Aqara says Matter support would come later as an OTA update of a compatible Aqara hub. No CSA listing was found for the E1 itself."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Aqara Zigbee 3.0 hub",
+      "sources": ["aqara-e1-eu", "aqara-e1-global"],
+      "note": "Aqara lists HomeKit support, exposed through an Aqara hub."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Aqara Zigbee 3.0 hub",
+      "sources": ["aqara-e1-eu"],
+      "note": "Aqara lists Google support through the Aqara hub."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Aqara Zigbee 3.0 hub",
+      "sources": ["aqara-e1-eu"],
+      "note": "Aqara lists Alexa support through the Aqara hub."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not on Aqara's platform list as seen in search results."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": ["aqara-news"],
+      "note": "Aqara says Home Assistant works via the HomeKit Controller integration, which needs an Aqara hub with HomeKit. That is Home Assistant reaching it through the hub, not a direct integration."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": ["aqara-e1-eu", "aqara-e1-global"],
+    "note": "Aqara says an Aqara Zigbee 3.0 hub is required and sold separately."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Aqara page seen describes hub-local control."
+  },
+  "thermostatType": {
+    "value": "radiator-valve",
+    "sources": ["aqara-e1-eu"]
+  },
+  "systems": {
+    "value": "M30 × 1.5 valves; RA, RAV, RAVL adapters included",
+    "sources": ["aqara-e1-eu"],
+    "note": "Retailers say manual, return-temperature-limiter and monotube systems are not supported; not confirmed on an Aqara page."
+  },
+  "power": {
+    "value": null,
+    "sources": [],
+    "note": "Retailers say 2 × AA with about one year of battery life; no Aqara page seen confirmed it."
+  },
+  "summary": "The Aqara Radiator Thermostat E1 replaces the head on a radiator valve and connects over Zigbee 3.0. It fits M30 × 1.5 mm valves directly, with RA, RAV and RAVL adapters in the box. Apple Home, Google Home and Alexa all go through an Aqara Zigbee hub, which is sold separately. Matter was promised as a later hub update.",
+  "caveats": [
+    "Needs an Aqara Zigbee 3.0 hub, sold separately.",
+    "Matter was announced as a future hub update; it is not confirmed on Aqara pages seen.",
+    "Aqara's own Hub E1 page says the hub cannot itself be controlled by third-party ecosystems."
+  ],
+  "sources": [
+    { "id": "aqara-e1-eu", "url": "https://eu.aqara.com/products/aqara-smart-radiator-thermostat-e1", "title": "Smart Radiator Thermostat E1", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-e1-global", "url": "https://www.aqara.com/en/product/radiator-thermostat-e1/", "title": "Radiator Thermostat E1 - Aqara", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-news", "url": "https://www.aqara.com/en/news/aqara-adds-a-smart-radiator-thermostat-to-its-product-portfolio/", "title": "Aqara Adds a Smart Radiator Thermostat to its Product Portfolio", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

@@ -1,0 +1,87 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Netatmo",
+  "model": "Smart Thermostat (NTH01-EN-EU)",
+  "name": "Netatmo Smart Thermostat (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.netatmo.com/en-eu/smart-thermostat",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["netatmo-relay"],
+    "note": "The mains relay joins Wi-Fi; the thermostat talks to the relay over a long-range radio link, which is not in our radio list."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No source found that says this thermostat has Matter. Netatmo's newer ORIGINAL range is a different product."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": ["netatmo-homekit"],
+      "note": "HomeKit works if the Setup HomeKit menu appears in the Netatmo Energy app. Remote control needs a home hub such as an Apple TV."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["netatmo-google"],
+      "note": "Netatmo's help centre documents Google Assistant control."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["netatmo-voice"],
+      "note": "Netatmo's guide lists the Smart Thermostat as compatible with Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Netatmo or SmartThings source found."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-netatmo"],
+      "note": "Official Netatmo integration, which uses Netatmo's cloud and needs a Netatmo account."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["netatmo-relay", "netatmo-thermostat"],
+    "note": "The relay that bridges the thermostat to Wi-Fi comes with the thermostat. Nothing else is sold separately."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Netatmo pages seen do not describe local-only control. HomeKit is reported to run locally by community posts only."
+  },
+  "thermostatType": {
+    "value": "wall",
+    "sources": ["netatmo-thermostat"]
+  },
+  "systems": {
+    "value": "Boilers via 2-wire dry-contact relay (on/off)",
+    "sources": ["netatmo-thermostat"],
+    "note": "Netatmo points buyers to check.netatmo.com to confirm boiler compatibility. The OpenTherm model is a different product."
+  },
+  "power": {
+    "value": "3 × AAA",
+    "sources": ["netatmo-batteries", "netatmo-relay"],
+    "note": "Thermostat runs on three AAA alkaline cells; the relay runs on mains power."
+  },
+  "summary": "The Netatmo Smart Thermostat controls a boiler through a wired relay that comes in the box. The thermostat itself runs on three AAA cells and talks to the relay by radio. Apple Home, Google Home and Alexa each connect through Netatmo's own integration, and Home Assistant uses the official Netatmo integration. No Matter support is documented.",
+  "caveats": [
+    "Switches on/off boilers only; OpenTherm boilers need Netatmo's separate modulating thermostat.",
+    "Check your boiler on check.netatmo.com before buying.",
+    "Home Assistant control goes through Netatmo's cloud.",
+    "Apple Home control away from home needs a home hub such as an Apple TV."
+  ],
+  "sources": [
+    { "id": "netatmo-thermostat", "url": "https://www.netatmo.com/en-eu/smart-thermostat", "title": "Smart and Connected Thermostat", "publisher": "Netatmo", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "netatmo-relay", "url": "https://helpcenter.netatmo.com/hc/en-us/articles/5603907477266-How-do-the-Relay-and-the-Smart-Thermostat-communicate", "title": "How do the Relay and the Smart Thermostat communicate?", "publisher": "Netatmo", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "netatmo-batteries", "url": "https://helpcenter.netatmo.com/hc/en-us/articles/5603906886034-My-Thermostat-s-batteries-have-nearly-run-out-or-have-run-out", "title": "My Thermostat's batteries have nearly run out or have run out.", "publisher": "Netatmo", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "netatmo-homekit", "url": "https://helpcenter.netatmo.com/hc/en-us/articles/5604055429266-Is-my-product-compatible-with-Apple-Homekit", "title": "Is my product compatible with Apple Homekit?", "publisher": "Netatmo", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "netatmo-google", "url": "https://helpcenter.netatmo.com/hc/en-us/articles/360021928399-How-do-I-use-my-product-on-Google-Assistant", "title": "How do I use my product on Google Assistant?", "publisher": "Netatmo", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "netatmo-voice", "url": "https://www.netatmo.com/smart-home-guide/voice-recognition-how-to-understand-and-use-it", "title": "Voice recognition: How to understand and use it", "publisher": "Netatmo", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "ha-netatmo", "url": "https://www.home-assistant.io/integrations/netatmo/", "title": "Netatmo - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11" }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

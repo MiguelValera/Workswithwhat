@@ -1,0 +1,158 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Google Nest",
+  "model": "Learning Thermostat (4th gen)",
+  "name": "Nest Learning Thermostat 4th gen (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://store.google.com/product/nest_learning_thermostat_4th_gen?hl=en-US",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "google-nest-4th-specs"
+    ],
+    "note": "Google lists Wi-Fi 802.11n. Google's information menu mentions Thread addressing, but no maker page we saw lists a Thread radio, so it is left out."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "csa-nest-4th",
+      "google-nest-specs"
+    ],
+    "note": "CSA lists the 4th gen as Matter certified with Wi-Fi as its transport. Google says it works with Google Home and Matter-enabled apps."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "csa-nest-4th",
+        "google-nest-specs"
+      ],
+      "note": "Through Matter: add it to Google Home first, then link it to Apple Home. Google caps a thermostat at 5 Matter apps. Needs an Apple home hub."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "google-nest-4th",
+        "google-nest-specs"
+      ],
+      "note": "Set up and controlled in the Google Home app."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "google-nest-alexa"
+      ],
+      "note": "Google's Nest skill for Alexa covers Nest thermostats; the page does not name the 4th gen specifically, so confirm in the Alexa app."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Google or Samsung page found lists this model. Only a SmartThings forum post mentions a Nest thermostat over Matter."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-nest"
+      ],
+      "note": "Official Google Nest integration using the Smart Device Management API; Google charges a one-time US$5 Device Access fee. Matter is a second route."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "google-nest-4th",
+      "google-nest-specs"
+    ],
+    "note": "Connects over Wi-Fi and is set up in the Google Home app; no bridge needed."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No maker source states what works without internet. Home Assistant's Nest integration is cloud-based."
+  },
+  "thermostatType": {
+    "value": "wall",
+    "sources": [
+      "google-nest-4th"
+    ],
+    "note": "Wall-mounted thermostat."
+  },
+  "systems": {
+    "value": "Most 24 V systems, incl. heat pumps",
+    "sources": [
+      "google-nest-4th-specs"
+    ],
+    "note": "Google lists most 24 V systems (gas, electric, oil, forced air, heat pump, radiant). Use g.co/nest/works to check yours."
+  },
+  "power": {
+    "value": "No C-wire needed in most homes",
+    "sources": [
+      "google-nest-4th-specs"
+    ],
+    "note": "Google says Power Sharing lets it run without a C-wire in most homes; in limited cases (under 1%) a C-wire or Nest Power Connector is needed."
+  },
+  "summary": "Google Home is the main app for the Nest Learning Thermostat (4th gen), a US wall thermostat with Wi-Fi and Matter certification. That Matter listing is how it reaches Apple Home, and Home Assistant has an official Nest integration too. Alexa works through Google's Nest skill, and SmartThings is not confirmed.",
+  "caveats": [
+    "Setup requires the Google Home app.",
+    "Google says in under 1% of homes a C-wire or Nest Power Connector may still be needed; its compatibility checker is g.co/nest/works.",
+    "Home Assistant over Matter exposes only the climate entity in community reports; presets and extra sensors are missing.",
+    "SmartThings support is not confirmed."
+  ],
+  "sources": [
+    {
+      "id": "google-nest-4th",
+      "url": "https://store.google.com/product/nest_learning_thermostat_4th_gen?hl=en-US",
+      "title": "Nest Learning Thermostat (4th gen)",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-nest-specs",
+      "url": "https://support.google.com/googlehome/answer/9230098?hl=en",
+      "title": "Nest thermostat technical specifications - Google Home and Nest Help",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-nest-4th",
+      "url": "https://csa-iot.org/csa_product/nest-learning-thermostat-4th-gen/",
+      "title": "Nest Learning Thermostat 4th gen - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-nest-alexa",
+      "url": "https://support.google.com/googlehome/answer/9325080?hl=en",
+      "title": "Control Google Nest products with Amazon Alexa - Google Home and Nest Help",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-nest",
+      "url": "https://www.home-assistant.io/integrations/nest/",
+      "title": "Google Nest - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-nest-4th-specs",
+      "url": "https://store.google.com/us/product/nest_learning_thermostat_4th_gen_specs?hl=en-US",
+      "title": "Specs & Wiring Compatibility of Nest Learning Thermostat (4th gen)",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

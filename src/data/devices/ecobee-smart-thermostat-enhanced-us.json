@@ -1,0 +1,166 @@
+{
+  "category": "smart-thermostat",
+  "brand": "ecobee",
+  "model": "Smart Thermostat Enhanced",
+  "name": "ecobee Smart Thermostat Enhanced (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.ecobee.com/en-us/smart-thermostats/smart-thermostat-enhanced/",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "ecobee-line"
+    ],
+    "note": "ecobee describes its smart thermostats as Wi-Fi-enabled. Retailers also list Bluetooth and a 915 MHz sensor radio; no maker page we saw confirms those."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No ecobee page or CSA listing found for this model mentions Matter. Absence is not a statement that it lacks it."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "ecobee-enhanced",
+        "ecobee-launch"
+      ],
+      "note": "ecobee lists Apple HomeKit among supported platforms. HomeKit is a direct local pairing, separate from Matter."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "ecobee-enhanced",
+        "ecobee-launch"
+      ],
+      "note": "ecobee lists Google Assistant among supported platforms."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "ecobee-enhanced",
+        "ecobee-launch"
+      ],
+      "note": "ecobee lists Amazon Alexa among supported platforms."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "ecobee-enhanced",
+        "ecobee-launch"
+      ],
+      "note": "ecobee lists SmartThings among supported platforms."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-ecobee"
+      ],
+      "note": "Official ecobee integration (climate entity with Home, Away and Sleep comfort settings). HomeKit pairing is a separate local route."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "ecobee-line"
+    ],
+    "note": "Connects over Wi-Fi; no bridge needed."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No maker source states what works without internet. The Home Assistant ecobee integration uses ecobee's cloud."
+  },
+  "thermostatType": {
+    "value": "wall",
+    "sources": [
+      "ecobee-enhanced"
+    ],
+    "note": "Wall-mounted thermostat."
+  },
+  "systems": {
+    "value": "Most 24 V HVAC systems, incl. heat pumps",
+    "sources": [
+      "ecobee-hvac"
+    ],
+    "note": "ecobee says it supports most 24 V residential systems in North America; high-voltage and millivolt systems are not compatible."
+  },
+  "power": {
+    "value": "C-wire 24 V; Power Extender Kit in box",
+    "sources": [
+      "ecobee-enhanced",
+      "ecobee-pek",
+      "ecobee-accessories"
+    ],
+    "note": "ecobee powers it from a 24 V supply on the C-wire. The kit is not included with the Essential and Lite, which implies the Enhanced ships with it; the Enhanced page was not opened, so verify."
+  },
+  "summary": "Apple HomeKit, Alexa, Google Assistant and SmartThings are all listed by ecobee for the Smart Thermostat Enhanced, a US wall thermostat that connects over Wi-Fi. It is the lower-priced sibling of the Premium and has no built-in speaker. Home Assistant supports it through the official ecobee integration.",
+  "caveats": [
+    "Does not support dual-transformer systems (boiler plus AC), according to ecobee's HVAC support page.",
+    "Without a C-wire the Power Extender Kit needs a spare wire and is not compatible with dual-transformer, millivolt or high-voltage systems.",
+    "Matter support is not confirmed."
+  ],
+  "sources": [
+    {
+      "id": "ecobee-enhanced",
+      "url": "https://www.ecobee.com/en-us/smart-thermostats/smart-thermostat-enhanced/",
+      "title": "Smart Thermostat Enhanced",
+      "publisher": "ecobee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ecobee-line",
+      "url": "https://www.ecobee.com/en-us/smart-thermostats/",
+      "title": "Wi-Fi-enabled smart thermostats",
+      "publisher": "ecobee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ecobee-launch",
+      "url": "https://www.ecobee.com/en-us/newsroom/press-releases/redefining-excellence-introducing-ecobee-smart-thermostat-premium-and-smart/",
+      "title": "Redefining Excellence: Introducing ecobee Smart Thermostat Premium & Smart Thermostat Enhanced",
+      "publisher": "ecobee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ecobee-hvac",
+      "url": "https://support.ecobee.com/s/articles/What-types-of-HVAC-systems-are-ecobee-thermostats-compatible-with?language=en_US",
+      "title": "What types of HVAC systems are ecobee thermostats compatible with?",
+      "publisher": "ecobee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ecobee-pek",
+      "url": "https://www.ecobee.com/en-us/thermostat-accessories/power-extender-kit/",
+      "title": "Power Extender Kit",
+      "publisher": "ecobee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-ecobee",
+      "url": "https://www.home-assistant.io/integrations/ecobee/",
+      "title": "ecobee - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ecobee-accessories",
+      "url": "https://www.ecobee.com/en-us/thermostat-accessories/",
+      "title": "Thermostat Accessories",
+      "publisher": "ecobee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

@@ -1,0 +1,147 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Honeywell Home",
+  "model": "T9 Smart Thermostat",
+  "name": "Honeywell Home T9 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.honeywellhome.com/products/t9-smart-thermostat",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "honeywell-t9"
+    ],
+    "note": "Honeywell lists Wi-Fi (2.4 and 5 GHz). The room sensors use a separate proprietary 900 MHz radio, not a standard smart-home protocol."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Honeywell or CSA page found mentions Matter for the T9. Absence is not a statement that it lacks it."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "honeywell-t9-apps",
+        "honeywell-t9"
+      ],
+      "note": "Honeywell lists HomeKit. Its support article says HomeKit can change setpoints but cannot read the room sensors."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "honeywell-t9-apps",
+        "honeywell-t9"
+      ],
+      "note": "Honeywell says Google Assistant can view and control both the thermostat and its sensors."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "honeywell-t9-apps",
+        "honeywell-t9"
+      ],
+      "note": "Honeywell says Alexa can view and control both the thermostat and its sensors."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "honeywell-t9-apps",
+        "honeywell-t9"
+      ],
+      "note": "Honeywell lists SmartThings. Its support article says SmartThings can change setpoints but cannot read the sensors."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's Honeywell integration is for Total Connect Comfort and lists other models; the docs seen do not name the T9. A forum user runs a T9 through HomeKit, which is not a maker source."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "honeywell-t9"
+    ],
+    "note": "Built-in Wi-Fi; room sensors pair directly with the thermostat."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No maker source states what works without internet."
+  },
+  "thermostatType": {
+    "value": "wall",
+    "sources": [
+      "honeywell-t9"
+    ],
+    "note": "Wall-mounted thermostat."
+  },
+  "systems": {
+    "value": "Most 24 V heat, cool and heat pump systems",
+    "sources": [
+      "honeywell-t9-install"
+    ],
+    "note": "Honeywell's guide says it does not work with electric baseboard (120-240 V) or millivolt systems. Contact a pro for line voltage, dual fuel or fan coil setups."
+  },
+  "power": {
+    "value": "C-wire (24 V); adapter included",
+    "sources": [
+      "honeywell-t9-cwire",
+      "honeywell-t9-guide"
+    ],
+    "note": "Honeywell says the T9 runs on 24 V through the C-wire and ships with a C-wire adapter for homes without one. Honeywell's separate adapter page says it does not work with heat-only systems."
+  },
+  "summary": "Honeywell Home sells the T9 as a US Wi-Fi wall thermostat with optional wireless room sensors. Alexa and Google Assistant can read the thermostat and sensors, while HomeKit and SmartThings can only change setpoints, according to Honeywell. Home Assistant and Matter support are not confirmed on any page we found.",
+  "caveats": [
+    "HomeKit and SmartThings cannot read room sensor values, per Honeywell's support article.",
+    "A C-wire is required; the supplied adapter covers homes without one, but Honeywell says its adapter does not work with heat-only systems.",
+    "Not for electric baseboard or millivolt systems."
+  ],
+  "sources": [
+    {
+      "id": "honeywell-t9",
+      "url": "https://www.honeywellhome.com/products/t9-smart-thermostat",
+      "title": "T9 Smart Home Thermostat with Remote Room Sensor - WiFi",
+      "publisher": "Honeywell Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "honeywell-t9-apps",
+      "url": "https://www.honeywellhome.com/blogs/support/which-smart-home-apps-are-compatible-with-the-t9-smart-thermostat-and-t10-pro-smart-thermostat",
+      "title": "Which smart home apps are compatible with the T9 Smart Thermostat and T10 Pro Smart Thermostat?",
+      "publisher": "Honeywell Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "honeywell-t9-cwire",
+      "url": "https://www.honeywellhome.com/blogs/support/do-i-need-a-c-wire-to-install-the-t9-smart-thermostat",
+      "title": "Do I need a c wire to install the T9 Smart Thermostat?",
+      "publisher": "Honeywell Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "honeywell-t9-guide",
+      "url": "https://customer.resideo.com/resources/techlit/TechLitDocuments/33-00000s/33-00478.pdf?_ga=2.153971512.1068263060.1574291722-1735836705.1574291722",
+      "title": "T9 Smart thermostat with Smart Room sensor User Guide 33-00478",
+      "publisher": "Resideo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "honeywell-t9-install",
+      "url": "https://customer.resideo.com/resources/techlit/TechLitDocuments/33-00000s/33-00421EF.pdf",
+      "title": "T9 Smart Thermostat RCHT9510WFW2001, RCHT9510WFW2017, RCHT9610WFSW2003 installation guide",
+      "publisher": "Resideo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

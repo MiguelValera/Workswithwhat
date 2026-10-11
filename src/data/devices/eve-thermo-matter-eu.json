@@ -1,0 +1,86 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Eve",
+  "model": "Eve Thermo (Matter)",
+  "name": "Eve Thermo (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.evehome.com/en/eve-thermo",
+  "radios": {
+    "value": ["thread", "bluetooth"],
+    "sources": ["csa-eve-thermo", "eve-thermo"],
+    "note": "CSA lists Thread and Bluetooth for Eve Thermo."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": ["csa-eve-thermo", "eve-thermo"],
+    "note": "CSA has several Eve Thermo entries (product IDs 0x007D and 0x004F at firmware 3.6.5, older ones at 3.5.x). Which matches the unit sold in the EU today was not confirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["eve-thermo", "eve-hub"],
+      "note": "Eve says the first platform needs a hub with both Matter controller and Thread border router functions."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["eve-thermo", "eve-hub"],
+      "note": "Eve lists Google Home. Eve says its on-device schedules need the Eve app, which is on Android for Google Home users."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["eve-thermo", "eve-hub"],
+      "note": "Eve lists Alexa through Matter, with Echo devices as hubs. Eve says on-device schedules are not supported on Alexa."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["eve-thermo", "eve-hub"],
+      "note": "Eve lists Samsung SmartThings through Matter. Eve says on-device schedules are not supported on SmartThings."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": ["ha-eve", "eve-thermo"],
+      "note": "Home Assistant's Eve page lists Eve Thermo as a Matter device. Some settings, such as offset calibration and child lock, are reportedly only in the Eve app."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["eve-hub", "eve-thermo"],
+    "note": "No Eve bridge is needed, but Eve says you need a hub from your platform with Matter controller and Thread border router functions."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["eve-thermo"],
+    "note": "Eve says it works without subscriptions or a cloud dependency."
+  },
+  "thermostatType": {
+    "value": "radiator-valve",
+    "sources": ["eve-thermo", "eve-features"]
+  },
+  "systems": {
+    "value": "M30 × 1.5 valves; Danfoss RA, RAV, RAVL adapters included",
+    "sources": ["eve-features"],
+    "note": "Eve says it fits most radiators without an adapter. Non-M30 valves, such as Herz M28, need a third-party adapter. Adapter list is from a retailer listing; verify against Eve."
+  },
+  "power": {
+    "value": null,
+    "sources": [],
+    "note": "Reviews and retailers say 2 × AA, but no Eve page seen in search confirmed it."
+  },
+  "summary": "Eve Thermo is a radiator valve head that speaks Matter over Thread. It fits M30 × 1.5 mm valves, and Danfoss adapters come in the box. Eve lists Apple Home, Google Home, Alexa, SmartThings and Home Assistant. It needs no cloud account, but each platform needs a hub with Matter and Thread border router support.",
+  "caveats": [
+    "Needs a hub with Matter controller and Thread border router functions, such as a HomePod mini, Echo or Google Nest hub.",
+    "Eve says on-device schedules are not supported on Alexa or SmartThings and need the Eve app.",
+    "Eve Thermo Control, the room sensor, only works with Apple Home, per Eve.",
+    "Older Eve Thermo units need a Matter firmware update that requires an iPhone or iPad."
+  ],
+  "sources": [
+    { "id": "eve-thermo", "url": "https://www.evehome.com/en/eve-thermo", "title": "Eve Thermo", "publisher": "Eve Systems", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "eve-features", "url": "https://evehome.com/en/node/3170", "title": "Product Features | Eve Thermo", "publisher": "Eve Systems", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "eve-hub", "url": "https://www.evehome.com/en/hub", "title": "Which hub is right for me?", "publisher": "Eve Systems", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "csa-eve-thermo", "url": "https://csa-iot.org/csa_product/eve-thermo/", "title": "Eve Thermo", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11" },
+    { "id": "ha-eve", "url": "https://www.home-assistant.io/integrations/eve/", "title": "Eve - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11" }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
