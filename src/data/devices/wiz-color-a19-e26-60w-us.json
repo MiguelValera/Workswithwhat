@@ -1,0 +1,143 @@
+{
+  "category": "smart-bulb",
+  "brand": "WiZ",
+  "model": "Bulb 60W A19 E26 full colour (046677603441)",
+  "name": "WiZ Color A19 60W E26 Wi-Fi bulb (US)",
+  "regions": ["US"],
+  "officialUrl": "https://www.wizconnected.com/en-us/p/modern-bulb-bulb-60w-a19-e26/046677603441",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["wiz-a19-us", "wiz-a19-us-leaflet"],
+    "note": "2.4 GHz Wi-Fi with Bluetooth Low Energy (used for setup)."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["wiz-a19-us", "wiz-a19-us-3pack", "wiz-matter-faq", "csa-wiz-full-color"],
+    "note": "The product page lists Matter over Wi-Fi; the 3-pack of the same bulb says Matter certified. CSA lists WiZ 'LED lamp - Full color' certificates, but we could not tie one to this exact product code."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["wiz-a19-us", "wiz-apple-home-faq"],
+      "note": "Added to Apple Home via Matter; WiZ says this needs iOS 16.1+ and a home hub such as a HomePod mini or Apple TV."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["wiz-a19-us", "wiz-works-with"],
+      "note": "Works through WiZ's Google Home integration; Matter is also possible."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["wiz-a19-us", "wiz-works-with"],
+      "note": "Works through the WiZ Alexa skill; Matter is also possible."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": ["wiz-a19-us", "wiz-works-with"],
+      "note": "WiZ lists Samsung SmartThings among compatible platforms; Matter is also possible."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-wiz"],
+      "note": "Official WiZ integration (local push). Requires 'Allow local communication' in the WiZ app, which is on by default."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["wiz-a19-us", "wiz-works-with"],
+    "note": "For bulbs, this means needing a bridge or hub for basic app control. The bulb joins Wi-Fi directly and is controlled from the WiZ app."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-wiz"],
+    "note": "Home Assistant's WiZ integration controls bulbs over the LAN (local push)."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": ["wiz-a19-us", "wiz-a19-us-leaflet"],
+    "note": "Full colour plus tunable white from 2200 to 6500 K."
+  },
+  "lumens": {
+    "value": 800,
+    "sources": ["wiz-a19-us", "wiz-a19-us-leaflet"],
+    "note": "800 lm nominal at 8.8 W (60 W equivalent)."
+  },
+  "bulbBase": {
+    "value": "E26 (A19)",
+    "sources": ["wiz-a19-us"]
+  },
+  "summary": "The WiZ 60W A19 colour bulb (product code 046677603441) is a US E26 bulb rated at 800 lumens, with full colour and white from 2200 to 6500 K. It uses 2.4 GHz Wi-Fi plus Bluetooth for setup, so no hub is needed. Alexa, Google Home and SmartThings work through WiZ's own integrations, and Apple Home works via Matter.",
+  "caveats": [
+    "Needs 2.4 GHz Wi-Fi.",
+    "Apple Home needs Matter and an Apple home hub (HomePod mini or Apple TV)."
+  ],
+  "sources": [
+    {
+      "id": "wiz-a19-us",
+      "url": "https://www.wizconnected.com/en-us/p/modern-bulb-bulb-60w-a19-e26/046677603441",
+      "title": "MODERN BULB Bulb 60W A19 E26",
+      "publisher": "Signify (WiZ)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wiz-a19-us-leaflet",
+      "url": "https://www.assets.signify.com/is/content/Signify/US.en_US.046677603441",
+      "title": "Bulb 60W A19 E26 product leaflet",
+      "publisher": "Signify (WiZ)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wiz-a19-us-3pack",
+      "url": "https://www.wizconnected.com/en-us/p/modern-bulb-bulb-60w-a19-e26-x3/046677605636",
+      "title": "MODERN BULB Bulb 60W A19 E26 x3",
+      "publisher": "Signify (WiZ)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wiz-works-with",
+      "url": "https://www.wizconnected.com/en-us/explore-wiz/works-with",
+      "title": "Smart Activated Lights (Works with)",
+      "publisher": "Signify (WiZ)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wiz-matter-faq",
+      "url": "https://faq.wizconnected.com/hc/en/7-wiz-v2/faq/531-do-all-wiz-devices-support-matter/",
+      "title": "Do all WiZ devices support Matter? — WiZ V2 Help Center",
+      "publisher": "Signify (WiZ)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wiz-apple-home-faq",
+      "url": "https://faq.wizconnected.com/hc/en/3-wiz-legacy/faq/604-how-to-setup-my-wiz-light-in-apple-home/",
+      "title": "How to setup my WiZ light in Apple Home?",
+      "publisher": "Signify (WiZ)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-wiz-full-color",
+      "url": "https://csa-iot.org/csa_product/wiz-led-lamp-full-color-119/",
+      "title": "WiZ LED lamp - Full color - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-wiz",
+      "url": "https://www.home-assistant.io/integrations/wiz/",
+      "title": "WiZ - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

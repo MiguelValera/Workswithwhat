@@ -1,0 +1,120 @@
+{
+  "category": "smart-bulb",
+  "brand": "Govee",
+  "model": "H6006",
+  "name": "Govee Smart A19 LED Bulb H6006 (US)",
+  "regions": ["US"],
+  "officialUrl": "https://us.govee.com/products/govee-smart-a19-led-light-bulbs",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["govee-h6006"],
+    "note": "2.4 GHz Wi-Fi plus Bluetooth per Govee's spec list."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["govee-h6006", "csa-govee-rgbww-bulb"],
+    "note": "Product page lists Matter control; CSA lists 'Govee RGBWW Smart LED Bulb' with family variant H6006 (certificate CSA251E5MAT45367-24, April 2025)."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["govee-h6006", "govee-matter-faq"],
+      "note": "Via Matter. Govee's Matter FAQ requires a Matter controller, 2.4 GHz Wi-Fi and IPv6 enabled on the router."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["govee-h6006"],
+      "note": "Govee lists Google Assistant voice control through its own integration; Matter is also possible."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["govee-h6006"],
+      "note": "Govee lists Alexa voice control through its own skill; Matter is also possible."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["govee-smartthings", "govee-h6006"],
+      "note": "Govee's SmartThings guide adds Matter devices by scanning the Matter QR code; a Matter-capable SmartThings hub is required."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-govee-local"],
+      "note": "The official Govee lights local integration lists the H6006. It uses Govee's LAN API, which must be enabled per device in the Govee Home app. Matter is an alternative."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["govee-h6006"],
+    "note": "For bulbs, this means needing a bridge or hub for basic app control. The H6006 connects over Wi-Fi or Bluetooth to the Govee Home app with no hub."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-govee-local"],
+    "note": "Home Assistant controls it over Govee's LAN API. Some users report the LAN toggle missing on their units, so check the app."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": ["govee-h6006"],
+    "note": "RGBWW: full colour plus white from 2700 to 6500 K."
+  },
+  "lumens": {
+    "value": 1000,
+    "sources": ["govee-h6006"],
+    "note": "1000 lm at 9 W; Govee calls it a 75 W equivalent."
+  },
+  "bulbBase": {
+    "value": "E26 (A19)",
+    "sources": ["govee-h6006"]
+  },
+  "summary": "The Govee H6006 is a US A19 colour bulb with an E26 base, rated at 1000 lumens and white from 2700 to 6500 K. It uses 2.4 GHz Wi-Fi and Bluetooth, needs no hub, and is Matter-certified over Wi-Fi. Alexa and Google work through Govee's own integrations; Apple Home and SmartThings use Matter.",
+  "caveats": [
+    "Matter setup needs 2.4 GHz Wi-Fi and IPv6 enabled on the router.",
+    "Through Matter you get on/off, brightness, colour and colour temperature; scenes, effects and music sync stay in the Govee Home app.",
+    "Govee says the bulb should not be used with smart switches; turning it off in the app leaves a small standby draw."
+  ],
+  "sources": [
+    {
+      "id": "govee-h6006",
+      "url": "https://us.govee.com/products/govee-smart-a19-led-light-bulbs",
+      "title": "Govee A19 Smart LED Light Bulbs E26 1000 Lumens",
+      "publisher": "Govee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "govee-matter-faq",
+      "url": "https://us.govee.com/pages/matter-faq",
+      "title": "Matter FAQ",
+      "publisher": "Govee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "govee-smartthings",
+      "url": "https://us.govee.com/pages/smartthings",
+      "title": "Govee and SmartThings",
+      "publisher": "Govee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-govee-rgbww-bulb",
+      "url": "https://csa-iot.org/csa_product/govee-rgbww-smart-led-bulb-3/",
+      "title": "Govee RGBWW Smart LED Bulb - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-govee-local",
+      "url": "https://www.home-assistant.io/integrations/govee_light_local/",
+      "title": "Govee lights local - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
