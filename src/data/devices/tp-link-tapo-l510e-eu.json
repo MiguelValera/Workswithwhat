@@ -67,12 +67,12 @@
     "sources": ["tapo-l510e-specs"],
     "note": "A60 shape with E27 base for the EU version."
   },
-  "summary": "The Tapo L510E (EU) is a dimmable, fixed warm white (2700 K) E27 bulb rated at 806 lumens. It joins 2.4 GHz Wi-Fi directly, with no hub, and works with Alexa and Google Home through TP-Link's skill and integration. Home Assistant's official TP-Link Smart Home integration lists it. Apple Home, SmartThings and Matter are unconfirmed.",
+  "summary": "A plain warm white Wi-Fi bulb, the Tapo L510E (EU) works with Alexa and Google Home through TP-Link's skill and Google Home integration, no hub needed. Home Assistant supports it through the official TP-Link Smart Home integration, which controls it on the local network but asks for your TP-Link account credentials. It's an E27 A60 bulb rated at 806 lumens (60 W equivalent), fixed at 2700 K. Apple Home, SmartThings and Matter aren't confirmed.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Dimming works from the app and voice only; TP-Link says not to use it with traditional wall dimmers.",
-    "Apple Home, SmartThings and Matter support aren't confirmed for this model.",
-    "Home Assistant needs your TP-Link account credentials."
+    "Dimming works only through the Tapo app and cloud.",
+    "Home Assistant's TP-Link integration needs your TP-Link account credentials, even though control is local.",
+    "Apple Home, SmartThings and Matter aren't confirmed; TP-Link's spec pages list only Alexa and Google."
   ],
   "sources": [
     {

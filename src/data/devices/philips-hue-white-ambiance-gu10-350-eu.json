@@ -67,11 +67,11 @@
     "value": "GU10",
     "sources": ["hue-gu10-gb", "hue-gu10-be"]
   },
-  "summary": "The EU Philips Hue White Ambiance GU10 (EAN 8719514339903) is a tunable white spotlight, 2200 to 6500 K, rated at 350 lumens. It has Bluetooth and Zigbee: the Hue app controls it directly over Bluetooth, while voice assistants and Apple Home need a Hue Bridge. Home Assistant supports it through the official Hue and Hue BLE integrations.",
+  "summary": "No longer sold in Hue's UK shop, the EU Philips Hue White Ambiance GU10 (EAN 8719514339903) works with Apple Home through a Hue Bridge, and Hue's product page lists Alexa and Google Assistant under 'Hue Bridge required' too. Without a bridge, the Hue app controls it over Bluetooth. It's a tunable white spotlight, 2200 to 6500 K, rated at 350 lumens. Home Assistant supports it through the official Hue and Hue BLE integrations; SmartThings isn't confirmed.",
   "caveats": [
-    "Apple Home and voice assistants need a Hue Bridge, according to Hue's product page for this EAN.",
-    "Hue's UK shop lists this EAN as no longer available; its successor (EAN 8720169229976) is rated at 400 lm.",
-    "Bluetooth mode is limited to a few lights in short range and has no remote access."
+    "Hue's UK shop lists this EAN as no longer available; the successor (EAN 8720169229976) is rated at 400 lm, so check the EAN on the box.",
+    "Apple Home needs a Hue Bridge, and Hue's product page lists Alexa and Google Assistant under 'Hue Bridge required' as well.",
+    "SmartThings support isn't confirmed for this EAN."
   ],
   "sources": [
     {

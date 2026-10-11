@@ -67,11 +67,10 @@
     "value": "E26 (A19)",
     "sources": ["lifx-color"]
   },
-  "summary": "The current US LIFX Color A19, now sold as the SuperColor 1100 lm bulb, is a full-colour E26 bulb rated at 1100 lumens with whites from 1500 to 9000 K. It joins 2.4 GHz Wi-Fi directly, with no hub, and ships with Matter enabled. It works with Alexa, Google Home and SmartThings through LIFX's own integrations, and with Apple Home via Matter. Home Assistant controls it locally through the official LIFX integration.",
+  "summary": "Four of the five big platforms connect to the LIFX SuperColor A19 1100 lm (US) through LIFX's own integrations: Alexa, Google Home, SmartThings and Home Assistant, with no hub. Apple Home is the exception. It pairs over Matter, and only the LCM4 edition of this bulb (part A19L4AE26) has Matter. The bulb itself is a full-colour E26 at 1100 lumens with whites from 1500 to 9000 K, on 2.4 GHz Wi-Fi. Home Assistant controls it locally over the LIFX LAN protocol.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Matter is only on the LCM4 edition (part A19L4AE26). If the LIFX app shows firmware starting with v3, the bulb has no Matter.",
-    "Remote control through Matter needs a Matter home hub, such as an Apple TV, HomePod or Nest Hub."
+    "Apple Home needs the LCM4 edition (part A19L4AE26); if the LIFX app shows firmware starting with v3, the bulb has no Matter."
   ],
   "sources": [
     {
