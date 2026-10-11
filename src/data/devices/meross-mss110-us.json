@@ -1,0 +1,140 @@
+{
+  "category": "smart-plug",
+  "brand": "Meross",
+  "model": "MSS110 (MSS110HK / MSS110US, HomeKit version)",
+  "name": "Meross Smart Wi-Fi Plug Mini MSS110 (US, HomeKit)",
+  "regions": [
+    "US",
+    "CA"
+  ],
+  "officialUrl": "https://www.meross.com/Detail/2/Smart%20Wi-Fi%20Plug%20Mini",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "meross-mss110-product",
+      "meross-mss110-shop"
+    ],
+    "note": "2.4 GHz Wi-Fi only; Meross says Enterprise Wi-Fi is not supported."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "The MSS110 pages describe HomeKit, not Matter. Meross's Matter mini plug is the separate MSS115. We found no explicit statement either way for the MSS110."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "meross-mss110-product",
+        "meross-mss110-shop"
+      ],
+      "note": "HomeKit (HAP) over Wi-Fi. Remote control needs an Apple home hub (HomePod, Apple TV or iPad)."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "meross-mss110-product",
+        "meross-faq-google"
+      ],
+      "note": "Through the Meross 'Works with Google Home' account link; add the plug in the Meross app first."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "meross-mss110-product",
+        "meross-faq-alexa"
+      ],
+      "note": "Through the Meross Alexa skill, linked to your Meross account."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "meross-mss110-product",
+        "meross-faq-smartthings"
+      ],
+      "note": "Meross lists SmartThings for this plug; it connects through the Meross partner integration in the SmartThings app (cloud to cloud)."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Meross integration in Home Assistant. Forum users report pairing it via the HomeKit Device integration or the community Meross LAN add-on, but no official page names this model."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "meross-mss110-product",
+      "meross-mss110-shop"
+    ],
+    "note": "Joins your existing 2.4 GHz Wi-Fi directly; no bridge needed. An Apple home hub is only needed for remote HomeKit control."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "HomeKit accessories normally work over the LAN, but we found no Meross page that states local control for this model."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [],
+    "note": "The US/CA MSS110 pages don't mention power metering. An EU MSS110 listing does mention consumption tracking, so we don't assume either way for the US unit."
+  },
+  "maxLoadWatts": {
+    "value": 1800,
+    "sources": [
+      "meross-mss110-product"
+    ],
+    "note": "Meross rates the US/CA/JP version at 15 A / 1800 W."
+  },
+  "summary": "The Meross MSS110 is a compact US/Canada Wi-Fi plug with built-in HomeKit, so it pairs straight into Apple Home without Matter. Meross also lists Alexa, Google Home and SmartThings through its account link. It runs on 2.4 GHz Wi-Fi with no hub and is rated 15 A / 1800 W.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only; Enterprise Wi-Fi networks aren't supported.",
+    "Controlling it from outside the home in Apple Home needs an Apple home hub (HomePod, Apple TV or iPad).",
+    "Not the Matter model: Meross's Matter mini plug is the MSS115."
+  ],
+  "sources": [
+    {
+      "id": "meross-mss110-product",
+      "url": "https://www.meross.com/Detail/2/Smart%20Wi-Fi%20Plug%20Mini",
+      "title": "Meross HomeKit Smart Plug, Smart Mini Wi-Fi Plug In American Standard - MSS110US MSS110JP",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "meross-mss110-shop",
+      "url": "https://shop.meross.com/products/meross-smart-plug-mini",
+      "title": "Meross Smart Wi-Fi Plug Mini, MSS110HK, 4-Pack (US/CA Version)",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "meross-faq-google",
+      "url": "https://meross.com/faq/46.html",
+      "title": "How to connect Meross device to Google Assistant?",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "meross-faq-alexa",
+      "url": "https://www.meross.com/en-gc/faq/43.html",
+      "title": "How to connect Meross device to Amazon Alexa?",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "meross-faq-smartthings",
+      "url": "https://www.meross.com/en-gc/FAQ/201.html",
+      "title": "How can I use my Meross device with the SmartThings?",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

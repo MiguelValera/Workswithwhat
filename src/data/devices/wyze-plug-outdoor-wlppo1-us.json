@@ -1,0 +1,159 @@
+{
+  "category": "smart-plug",
+  "brand": "Wyze",
+  "model": "WLPPO1",
+  "name": "Wyze Plug Outdoor (WLPPO1)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://wyze.com/wyze-plug-outdoor.html",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "wyze-plug-outdoor-product",
+      "wyze-plug-outdoor-setup-ts"
+    ],
+    "note": "2.4 GHz Wi-Fi (no 5 GHz). Bluetooth 4.2 is used during setup."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Wyze's pages for this plug name Alexa and Google Assistant only and don't mention Matter. That's an absence, not an explicit no."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [
+        "wyze-integrations"
+      ],
+      "note": "Wyze's integration list (Alexa, Google Assistant, IFTTT) leaves out HomeKit, but we found no Wyze page saying the outdoor plug is unsupported."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "wyze-plug-outdoor-product",
+        "wyze-plug-outdoor-about",
+        "wyze-google-assistant"
+      ],
+      "note": "Link your Wyze account in the Google Home app. Wyze says Google Assistant is officially supported in the US only."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "wyze-plug-outdoor-product",
+        "wyze-plug-outdoor-about"
+      ],
+      "note": "Through the Wyze Alexa skill."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [
+        "wyze-integrations"
+      ],
+      "note": "SmartThings isn't on Wyze's integration list, but Wyze doesn't say it's unsupported."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Wyze integration in Home Assistant; only community custom integrations that use the Wyze cloud."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "wyze-plug-outdoor-product",
+      "wyze-plug-outdoor-setup"
+    ],
+    "note": "Connects to 2.4 GHz Wi-Fi directly and is set up in the Wyze app; no bridge is listed."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [
+      "wyze-plug-outdoor-wifi"
+    ],
+    "note": "Wyze says the light sensor keeps switching the plug without Wi-Fi once configured, but we found no statement on local network control without the Wyze cloud."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "wyze-plug-outdoor-product",
+      "wyze-plug-outdoor-about"
+    ],
+    "note": "Usage history in the Wyze app, with alerts when monthly use passes a set level."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [],
+    "note": "Wyze gives 15 A max per outlet (120 V, 60 Hz) with overload protection and a 1/2 HP motor limit, but no wattage figure."
+  },
+  "summary": "The Wyze Plug Outdoor (WLPPO1) is an IP64 two-outlet plug, and each outlet can be switched separately in the Wyze app. It connects over 2.4 GHz Wi-Fi with Bluetooth for setup, tracks energy use, and has a light sensor for dusk-to-dawn switching. Wyze lists Alexa and Google Assistant; Apple Home, SmartThings and Matter aren't on its list.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Wyze says its Google Assistant integration is officially supported in the US only.",
+    "Rated 15 A per outlet; Wyze doesn't publish a wattage limit.",
+    "No official Home Assistant integration."
+  ],
+  "sources": [
+    {
+      "id": "wyze-plug-outdoor-product",
+      "url": "https://wyze.com/wyze-plug-outdoor.html",
+      "title": "Wyze Plug Outdoor",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wyze-plug-outdoor-about",
+      "url": "https://support.wyze.com/hc/en-us/articles/360052744011-About-Wyze-Plug-Outdoor",
+      "title": "About Wyze Plug Outdoor",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wyze-plug-outdoor-setup",
+      "url": "https://support.wyze.com/hc/en-us/articles/360056419552-Wyze-Plug-Outdoor-Setup-Guide",
+      "title": "Wyze Plug Outdoor Setup Guide",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wyze-plug-outdoor-setup-ts",
+      "url": "https://support.wyze.com/hc/en-us/articles/360056699932-Wyze-Plug-Outdoor-Setup-Troubleshooting",
+      "title": "Wyze Plug Outdoor Setup Troubleshooting",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wyze-plug-outdoor-wifi",
+      "url": "https://support.wyze.com/hc/en-us/articles/360052740671-Do-I-need-Wi-Fi-to-use-the-outdoor-plug",
+      "title": "Do I need Wi-Fi to use the outdoor plug?",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wyze-integrations",
+      "url": "https://support.wyze.com/hc/en-us/articles/360036860811-Third-Party-Integrations-with-Wyze",
+      "title": "Third-Party Integrations with Wyze",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wyze-google-assistant",
+      "url": "https://support.wyze.com/hc/en-us/articles/360032991931-Google-Assistant",
+      "title": "Google Assistant",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

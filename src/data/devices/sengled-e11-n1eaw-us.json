@@ -3,17 +3,23 @@
   "brand": "Sengled",
   "model": "E11-N1EAW",
   "name": "Sengled Smart LED Multicolor A19 Zigbee (US)",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://us.sengled.com/products/zigbee-color-a19-e26-hub-required",
   "radios": {
-    "value": ["zigbee"],
-    "sources": ["sengled-zigbee-color-a19"],
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "sengled-zigbee-color-a19"
+    ],
     "note": "Zigbee only; Sengled sells this bulb as 'Hub Required'."
   },
   "matter": {
-    "certified": false,
-    "sources": ["sengled-zigbee-color-a19", "sengled-matter-blog"],
-    "note": "Zigbee-only bulb. Sengled's Matter bulb is a separate Wi-Fi model."
+    "certified": null,
+    "sources": [],
+    "note": "Sengled sells it as a Zigbee, hub-required bulb and does not mention Matter. We found no explicit statement or CSA listing either way."
   },
   "compatibility": {
     "apple_home": {
@@ -24,19 +30,28 @@
     "google_home": {
       "status": "hub",
       "via": "Sengled Smart Hub",
-      "sources": ["sengled-zigbee-color-a19", "sengled-hub-faq"],
-      "note": "Google Assistant works through the Sengled hub and Sengled Home cloud. Google Home speakers are not Zigbee hubs. Sengled's cloud had outages in 2025."
+      "sources": [
+        "sengled-google-home",
+        "sengled-hub-faq"
+      ],
+      "note": "Sengled's guide links the Sengled Home account (hub and its bulbs) to Google Home, so it depends on Sengled's cloud. Google Home speakers are not Zigbee hubs."
     },
     "alexa": {
       "status": "hub",
       "via": "Echo with built-in Zigbee hub",
-      "sources": ["sengled-hub-faq", "pcworld-sengled-skill"],
-      "note": "Pairs directly with Echo models that have a Zigbee hub. Amazon removed the Sengled Alexa skill on 1 Aug 2025, so the Sengled-hub route to Alexa no longer works."
+      "sources": [
+        "sengled-hub-faq",
+        "sengled-zigbee-color-a19"
+      ],
+      "note": "Sengled lists Echo models with a built-in Zigbee hub (Echo Plus, Echo Show 2, Echo Studio). Echo and Echo Dot are not hubs. The Sengled Alexa skill route was reportedly withdrawn in 2025 (see caveats)."
     },
     "smartthings": {
       "status": "hub",
       "via": "SmartThings hub",
-      "sources": ["sengled-smartthings", "sengled-hub-faq"],
+      "sources": [
+        "sengled-smartthings",
+        "sengled-hub-faq"
+      ],
       "note": "Sengled lists the SmartThings hub as compatible and documents pairing."
     },
     "home_assistant": {
@@ -47,7 +62,10 @@
   },
   "hubRequired": {
     "value": true,
-    "sources": ["sengled-zigbee-color-a19", "sengled-hub-faq"],
+    "sources": [
+      "sengled-zigbee-color-a19",
+      "sengled-hub-faq"
+    ],
     "note": "For bulbs, this means needing a bridge or hub for basic app control. This Zigbee bulb needs a Sengled hub, SmartThings hub or Zigbee Echo."
   },
   "localControl": {
@@ -57,16 +75,23 @@
   },
   "colorType": {
     "value": "color",
-    "sources": ["sengled-zigbee-color-a19"],
+    "sources": [
+      "sengled-zigbee-color-a19"
+    ],
     "note": "16 million colours plus tunable white."
   },
   "lumens": {
     "value": 800,
-    "sources": ["sengled-zigbee-color-a19"]
+    "sources": [
+      "sengled-starter-kit-color"
+    ],
+    "note": "800 lm per Sengled's starter-kit listing for the same Zigbee Color A19/E26 bulb; the single-bulb page gives 8.6 W (60 W equivalent) but no lumen figure."
   },
   "bulbBase": {
     "value": "E26 (A19)",
-    "sources": ["sengled-zigbee-color-a19"]
+    "sources": [
+      "sengled-zigbee-color-a19"
+    ]
   },
   "summary": "The Sengled Smart LED Multicolor A19 (E11-N1EAW) is a US Zigbee colour bulb with an E26 base, rated at 800 lumens. It needs a Zigbee hub: a Sengled Smart Hub, a SmartThings hub or an Echo with a built-in Zigbee hub. Amazon removed the Sengled Alexa skill in August 2025 after repeated outages, so Alexa control now means pairing the bulb directly to a Zigbee Echo.",
   "caveats": [
@@ -100,9 +125,17 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "sengled-matter-blog",
-      "url": "https://us.sengled.com/blogs/news/introducing-our-matter-smart-light-bulb-now-available-on-amazon",
-      "title": "Introducing our Matter smart light bulb - now available on Amazon",
+      "id": "sengled-google-home",
+      "url": "https://support.sengled.com/hc/en-us/articles/360012331634-Setting-up-the-devices-on-your-Sengled-Home-app-to-work-with-your-Google-Home-Assistant-device-s",
+      "title": "Setting up the devices on your Sengled Home app to work with your Google Home Assistant device(s)",
+      "publisher": "Sengled",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "sengled-starter-kit-color",
+      "url": "https://us.sengled.com/products/starter-kit-2-zigbee-color-a19-e26",
+      "title": "Starter Kit: 2 Zigbee Color A19/E26",
       "publisher": "Sengled",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -116,6 +149,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

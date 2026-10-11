@@ -1,0 +1,167 @@
+{
+  "category": "smart-plug",
+  "brand": "TP-Link",
+  "model": "Tapo P110 (UK, 13 A)",
+  "name": "Tapo P110 (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.tapo.com/uk/product/smart-plug/tapo-p110/",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "tplink-p110-uk"
+    ],
+    "note": "2.4 GHz Wi-Fi (802.11b/g/n). TP-Link's US datasheet mentions Bluetooth for setup, but we didn't confirm that for the UK model."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "The UK P110 pages don't mention Matter or rule it out. TP-Link's Matter version is the separate Tapo P110M."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "TP-Link lists Alexa, Google Assistant and SmartThings for the P110 and doesn't mention Apple Home, but no page says it's unsupported. The P110M is the Matter version."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "tapo-p110-uk-store",
+        "tapo-faq-201-uk",
+        "tapo-faq-73"
+      ],
+      "note": "Link your TP-Link account in Google Home ('Works with Google Home') after setting the plug up in the Tapo app."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "tapo-p110-uk-store",
+        "tapo-faq-201-uk",
+        "tapo-faq-74"
+      ],
+      "note": "Through the Tapo Alexa skill, linked from the Tapo app or the Alexa app."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "tapo-p110-uk-store",
+        "tplink-faq-3158"
+      ],
+      "note": "Through the TP-Link partner integration in SmartThings. On/off only; energy data stays in the Tapo app."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-tplink"
+      ],
+      "note": "Home Assistant's TP-Link Smart Home integration lists the P110 among supported Tapo plugs. Set it up in the Tapo app first."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "tapo-faq-201-uk",
+      "tplink-p110-uk"
+    ],
+    "note": "Wi-Fi plug that joins your router directly and is set up in the Tapo app."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "We found no TP-Link page on control without the internet. Home Assistant's integration covers it, but we didn't confirm local operation from the docs."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "tapo-p110-uk-store",
+      "tapo-p110-uk"
+    ],
+    "note": "Live and historical energy use in the Tapo app."
+  },
+  "maxLoadWatts": {
+    "value": 2990,
+    "sources": [
+      "tplink-p110-uk"
+    ],
+    "note": "TP-Link's UK spec sheet: 2990 W, 13 A, 1/6 HP motor, 220-240 V. Tapo's UK page says EV charging isn't supported."
+  },
+  "summary": "The UK Tapo P110 is a 13 A, 2.4 GHz Wi-Fi plug with energy monitoring in the Tapo app and no hub. TP-Link lists Alexa, Google Assistant and SmartThings through your TP-Link account, and Home Assistant's TP-Link integration supports it. TP-Link rates it at 2990 W. For Apple Home or Matter, TP-Link's model is the P110M.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Apple Home and Matter aren't listed; the Tapo P110M is the Matter version.",
+    "Energy data isn't passed to SmartThings; it stays in the Tapo app.",
+    "Tapo says it isn't for EV charging. Indoor use only."
+  ],
+  "sources": [
+    {
+      "id": "tapo-p110-uk",
+      "url": "https://www.tapo.com/uk/product/smart-plug/tapo-p110/",
+      "title": "Tapo P110",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-p110-uk",
+      "url": "https://www.tp-link.com/uk/home-networking/smart-plug/tapo-p110/",
+      "title": "Tapo P110",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-p110-uk-store",
+      "url": "https://uk.store.tapo.com/products/smarthome-tapo-p110-smart-plug-energy-monitoring",
+      "title": "Energy Monitoring Wi-Fi Plug, Tapo P110",
+      "publisher": "TP-Link (Tapo UK store)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-faq-201-uk",
+      "url": "https://www.tapo.com/uk/faq/201/",
+      "title": "Tapo Smart Plug FAQ: Common Questions About Features, Setup, and Compatibility",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-faq-73",
+      "url": "https://www.tapo.com/us/faq/73/",
+      "title": "How to Connect Tapo and Kasa Smart Devices to Google Home",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-faq-74",
+      "url": "https://www.tapo.com/us/faq/74/",
+      "title": "How to Connect Tapo and Kasa Devices to Amazon Alexa: Two Setup Methods",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-faq-3158",
+      "url": "https://www.tp-link.com/us/support/faq/3158/",
+      "title": "Connect Tapo and Kasa Devices to SmartThings",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
