@@ -3,12 +3,18 @@
   "brand": "Google",
   "model": "Nest Cam (indoor, wired) 2nd gen",
   "name": "Google Nest Cam Indoor Wired 2nd gen (US)",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://support.google.com/googlehome/answer/9259110",
   "radios": {
-    "value": ["wifi", "bluetooth"],
-    "sources": ["google-nest-camera-specs"],
-    "note": "Dual-band Wi-Fi 802.11a/b/g/n/ac; Bluetooth Low Energy is used for setup."
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "google-nest-camera-specs"
+    ],
+    "note": "Wi-Fi camera. Bluetooth Low Energy for setup appears on retailer listings and on Google's 3rd gen spec page, but we did not see it confirmed for the 2nd gen on a Google page."
   },
   "matter": {
     "certified": null,
@@ -23,13 +29,18 @@
     },
     "google_home": {
       "status": "native",
-      "sources": ["google-nest-camera-specs", "google-stream-displays"],
+      "sources": [
+        "google-nest-camera-specs",
+        "google-stream-displays"
+      ],
       "note": "Set up in the Google Home app. Live video streams to Nest displays and Chromecast devices."
     },
     "alexa": {
       "status": "native",
-      "sources": ["google-nest-alexa"],
-      "note": "Live view on Echo Show screens by voice; wired cameras stop after 12 hours until you ask again. Google lists this model for motion and person announcements."
+      "sources": [
+        "google-nest-alexa"
+      ],
+      "note": "Through the Google Nest skill: 'Alexa, show [camera name]' streams live video to an Echo Show. Live view from wired Nest cameras stops after 12 hours until you ask again."
     },
     "smartthings": {
       "status": "unknown",
@@ -38,13 +49,17 @@
     },
     "home_assistant": {
       "status": "native",
-      "sources": ["ha-nest"],
-      "note": "Home Assistant's Google Nest integration lists this camera under WebRTC with motion and person events. Snapshot and stream-recording actions are not supported for WebRTC cameras."
+      "sources": [
+        "ha-nest"
+      ],
+      "note": "Home Assistant's Google Nest integration supports Nest cameras with live streams and events through Google Device Access, which has a one-time US$5 fee. For WebRTC cameras such as this one, HA says stream recording is not supported."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["google-nest-camera-specs"],
+    "sources": [
+      "google-nest-camera-specs"
+    ],
     "note": "Connects over Wi-Fi to the Google Home app; no bridge is listed."
   },
   "localControl": {
@@ -54,13 +69,19 @@
   },
   "cameraType": {
     "value": "indoor",
-    "sources": ["google-nest-camera-specs"],
+    "sources": [
+      "google-nest-camera-specs",
+      "google-store-specs-gb"
+    ],
     "note": "Google lists it for indoor use only."
   },
   "power": {
     "value": "USB-A adapter (mains), 10 ft cable",
-    "sources": ["google-nest-camera-specs"],
-    "note": "7.5 W adapter included; power stays on for 24/7 video history with a plan."
+    "sources": [
+      "google-nest-camera-specs",
+      "google-store-specs-gb"
+    ],
+    "note": "7.5 W USB-A adapter included. The 3rd gen model uses USB-C instead."
   },
   "localStorage": {
     "value": null,
@@ -69,13 +90,16 @@
   },
   "subscription": {
     "value": "Optional: longer event history and 24/7 recording",
-    "sources": ["google-nest-camera-specs"],
-    "note": "Google's spec page ties 24/7 history to a paid plan; retailers say 3 hours of event video are free. Plan names (Nest Aware / Google Home Premium) not confirmed from an official page."
+    "sources": [
+      "google-nest-camera-specs",
+      "google-store-specs-gb"
+    ],
+    "note": "Google's store page includes up to 3 hours of event video history; longer history and 24/7 recording need a paid Google plan. Plan names for this model were not confirmed from a Google page."
   },
   "summary": "The Nest Cam (indoor, wired) 2nd gen is a plug-in indoor camera with 1080p HDR video and a 135 degree view, powered by a 10 ft USB-A cable. It works with Google Home and Nest displays, with Alexa for live view on Echo Show, and with Home Assistant's Nest integration. Apple Home and SmartThings support are not confirmed.",
   "caveats": [
     "The 3rd gen indoor camera has different specs (2K, 152 degrees, USB-C); make sure you read the 2nd gen figures.",
-    "Home Assistant cannot snapshot or record this WebRTC camera through the integration.",
+    "Home Assistant can't record this camera's WebRTC stream through the integration, and the Nest integration needs a one-time US$5 Google Device Access fee.",
     "Alexa live view on wired Nest cameras stops after 12 hours.",
     "24/7 recording and longer history need a paid Google plan."
   ],
@@ -84,6 +108,14 @@
       "id": "google-nest-camera-specs",
       "url": "https://support.google.com/googlehome/answer/9259110",
       "title": "Technical specs for Google Nest cameras and doorbells",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-store-specs-gb",
+      "url": "https://store.google.com/gb/product/nest_cam_indoor_specs?hl=en-GB",
+      "title": "Tech specs for Nest Cam (indoor, wired) – Google Store",
       "publisher": "Google",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -98,7 +130,7 @@
     },
     {
       "id": "google-nest-alexa",
-      "url": "https://support.google.com/googlenest/answer/9325080?hl=en",
+      "url": "https://support.google.com/googlenest/answer/9325080?hl=en-GB",
       "title": "Control Google Nest products with Amazon Alexa",
       "publisher": "Google",
       "kind": "manufacturer",
@@ -113,6 +145,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

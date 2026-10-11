@@ -3,12 +3,18 @@
   "brand": "Eve",
   "model": "Outdoor Cam",
   "name": "Eve Outdoor Cam (EU)",
-  "regions": ["EU"],
-  "officialUrl": "https://evehome.com/en/node/8260",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://evehome.com/en/node/5906",
   "radios": {
-    "value": ["wifi"],
-    "sources": ["eve-outdoor-cam-page"],
-    "note": "2.4 GHz Wi-Fi only."
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "eve-outdoor-cam-manual"
+    ],
+    "note": "The manual says it connects only to 2.4 GHz Wi-Fi networks."
   },
   "matter": {
     "certified": null,
@@ -18,17 +24,24 @@
   "compatibility": {
     "apple_home": {
       "status": "native",
-      "sources": ["eve-outdoor-cam-page", "eve-ces-2022"],
+      "sources": [
+        "eve-outdoor-cam-features",
+        "eve-ces-2022"
+      ],
       "note": "Built exclusively for HomeKit Secure Video: clips are analysed on an Apple TV or HomePod and stored encrypted in iCloud; live view goes through the home hub."
     },
     "google_home": {
       "status": "unknown",
-      "sources": ["eve-ces-2022"],
+      "sources": [
+        "eve-ces-2022"
+      ],
       "note": "Eve describes it as designed exclusively for HomeKit Secure Video and does not list Google Home; no page says explicitly that it is unsupported."
     },
     "alexa": {
       "status": "unknown",
-      "sources": ["eve-ces-2022"],
+      "sources": [
+        "eve-ces-2022"
+      ],
       "note": "Eve describes it as designed exclusively for HomeKit Secure Video and does not list Alexa; no page says explicitly that it is unsupported."
     },
     "smartthings": {
@@ -44,23 +57,32 @@
   },
   "hubRequired": {
     "value": false,
-    "sources": ["eve-outdoor-cam-page"],
+    "sources": [
+      "eve-outdoor-cam-manual"
+    ],
     "note": "No Eve bridge. An Apple home hub (Apple TV or HomePod) is needed for HomeKit Secure Video and remote access."
   },
   "localControl": {
     "value": null,
-    "sources": ["eve-outdoor-cam-page"],
-    "note": "Eve says access, local or remote, goes through the home hub and never reaches the cloud unencrypted; fully local-only operation is not stated."
+    "sources": [
+      "eve-ces-2022"
+    ],
+    "note": "Eve says live video never touches a cloud and access runs through the home hub; fully local-only operation is not stated."
   },
   "cameraType": {
     "value": "floodlight",
-    "sources": ["eve-ces-2022"],
+    "sources": [
+      "eve-ces-2022",
+      "eve-outdoor-cam-features"
+    ],
     "note": "Floodlight camera with a dimmable light, designed to replace an existing outdoor light."
   },
   "power": {
-    "value": "Mains AC 100-240 V (hardwired)",
-    "sources": ["eve-outdoor-cam-page"],
-    "note": "Needs neutral and ground wires; the install replaces an existing floodlight."
+    "value": "Hardwired mains (neutral + ground)",
+    "sources": [
+      "eve-outdoor-cam-manual"
+    ],
+    "note": "Eve's manual requires AC power with both a neutral and a ground wire; without them the camera can't be installed at that spot. Retailers give 100-240 V AC; not seen on an Eve page."
   },
   "localStorage": {
     "value": null,
@@ -69,8 +91,11 @@
   },
   "subscription": {
     "value": "iCloud+ (HomeKit Secure Video)",
-    "sources": ["eve-outdoor-cam-page"],
-    "note": "An iCloud+ plan is needed for recording; Apple's plan size sets how many cameras are allowed."
+    "sources": [
+      "eve-outdoor-cam-manual",
+      "eve-ces-2022"
+    ],
+    "note": "An iCloud+ plan (not included) is needed for recording; Apple's plan size sets how many cameras are allowed."
   },
   "summary": "The Eve Outdoor Cam is a hardwired floodlight camera with 1080p video at 24 fps, a 157 degree view, two-way audio and an IP55 rating. It is built only for Apple HomeKit Secure Video, so recording needs iCloud+ and an Apple TV or HomePod as home hub. Google Home, Alexa and SmartThings are not listed by Eve.",
   "caveats": [
@@ -81,9 +106,17 @@
   ],
   "sources": [
     {
-      "id": "eve-outdoor-cam-page",
-      "url": "https://evehome.com/en/node/8260",
-      "title": "Eve Outdoor Cam",
+      "id": "eve-outdoor-cam-features",
+      "url": "https://evehome.com/en/node/5906",
+      "title": "Product Features | Eve Outdoor Cam",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-outdoor-cam-manual",
+      "url": "https://www.evehome.com/sites/default/files/inline-files/Eve_Outdoor_Cam_Manual_EN_DE_FR_51ECA9901_0.pdf",
+      "title": "Eve Outdoor Cam Manual (EN, DE, FR)",
       "publisher": "Eve Systems",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -97,6 +130,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

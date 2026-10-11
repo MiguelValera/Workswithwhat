@@ -3,12 +3,19 @@
   "brand": "TP-Link",
   "model": "Tapo C210",
   "name": "Tapo C210 (EU)",
-  "regions": ["EU"],
+  "regions": [
+    "EU"
+  ],
   "officialUrl": "https://www.tapo.com/en/product/smart-camera/tapo-c210/v2/",
   "radios": {
-    "value": ["wifi"],
-    "sources": ["tapo-c210-page"],
-    "note": "2.4 GHz Wi-Fi only per the maker's spec pages we saw in search snippets; no Ethernet port."
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "tapo-c210-page",
+      "tapo-c210-datasheet"
+    ],
+    "note": "2.4 GHz Wi-Fi (802.11b/g/n) per the C210 V2 datasheet; no Ethernet port."
   },
   "matter": {
     "certified": null,
@@ -23,12 +30,16 @@
     },
     "google_home": {
       "status": "native",
-      "sources": ["tapo-google-stream-faq"],
-      "note": "Link the Tapo account to Google; say 'show me [camera]' to stream to a Nest Hub or Chromecast display. Cloud-to-cloud, stops after 10 minutes. Tapo says live view in the Google Home app is not supported."
+      "sources": [
+        "tapo-google-stream-faq"
+      ],
+      "note": "Link Tapo in Google Home; say 'show me [camera]' to stream to a Nest Hub or Chromecast. Cloud-to-cloud, stops after 10 minutes. Tapo's English FAQ says live view also opens from the Google Home app; some regional versions say it doesn't."
     },
     "alexa": {
       "status": "native",
-      "sources": ["tapo-alexa-faq"],
+      "sources": [
+        "tapo-alexa-faq"
+      ],
       "note": "Enable the Tapo skill; 'Alexa, show me [camera]' works on Echo Show, Echo Spot and Fire TV. Cloud-to-cloud, stops after 10 minutes. Camera on/off commands are not supported."
     },
     "smartthings": {
@@ -37,53 +48,86 @@
       "note": "Only marketplace listings claim SmartThings; no Tapo or Samsung page confirms it."
     },
     "home_assistant": {
-      "status": "unknown",
-      "sources": ["tapo-onvif-faq"],
-      "note": "Tapo documents RTSP and ONVIF Profile S for wired cameras, which generic ONVIF clients can use. We did not see a Home Assistant page covering this camera."
+      "status": "native",
+      "sources": [
+        "ha-tplink"
+      ],
+      "note": "Home Assistant's built-in TP-Link Smart Home integration lists the C210 among supported cameras. Live view needs a camera account set in the Tapo app; some firmware also needs third-party access turned on in Tapo Lab."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["tapo-alexa-faq"],
+    "sources": [
+      "tapo-alexa-faq"
+    ],
     "note": "Alexa setup runs through the Tapo app and skill with no hub or bridge."
   },
   "localControl": {
     "value": null,
-    "sources": ["tapo-onvif-faq"],
+    "sources": [
+      "tapo-onvif-faq"
+    ],
     "note": "RTSP and ONVIF streams are available on the local network, but Tapo does not state that app control works without the cloud."
   },
   "cameraType": {
     "value": "indoor",
-    "sources": ["tapo-c210-page"],
-    "note": "Sold as a pan/tilt home security camera; the indoor-only wording was not seen on the page snippet."
+    "sources": [
+      "tapo-c210-page",
+      "tapo-c210-de"
+    ],
+    "note": "Tapo's English page calls it a pan/tilt indoor camera; the German page is titled 'Indoor WLAN-Sicherheitskamera'."
   },
   "power": {
-    "value": null,
-    "sources": [],
-    "note": "Retailer listings give a 9 V DC adapter; no maker page we could open states the power input."
+    "value": "Plug-in power adapter (mains)",
+    "sources": [
+      "tapo-c210-datasheet"
+    ],
+    "note": "The datasheet lists a power adapter in the box. Retailers give 9 V DC; no maker page we saw states the rating."
   },
   "localStorage": {
     "value": true,
-    "sources": ["tapo-c210-page"],
-    "note": "One microSD slot, up to 512 GB."
+    "sources": [
+      "tapo-c210-page",
+      "tapo-care-page"
+    ],
+    "note": "microSD slot. Tapo's English V2 page says up to 512 GB; the German and Italian V1 pages say up to 256 GB, so the limit depends on the hardware version. Tapo lists local storage among the features that work without Tapo Care."
   },
   "subscription": {
-    "value": "Optional Tapo Care cloud storage",
-    "sources": ["tapo-care-plans"],
-    "note": "Cloud video history needs a Tapo Care plan; microSD recording and RTSP/ONVIF do not. Plan details seen are US pages; EU pricing not confirmed."
+    "value": "Optional Tapo Care plan for cloud video history",
+    "sources": [
+      "tapo-care-page",
+      "tapo-care-pricing-eu"
+    ],
+    "note": "Tapo lists local storage as free and 30-day cloud clip history as a Tapo Care feature. Tapo says plan types and features vary by region; EU prices not checked."
   },
-  "summary": "The Tapo C210 is a pan/tilt Wi-Fi camera with 3 MP (2304 x 1296) video, 30 ft of infrared night vision and a microSD slot for up to 512 GB. It works with Alexa and Google through Tapo's cloud link, and wired Tapo cameras expose RTSP and ONVIF streams. Cloud history is a separate Tapo Care plan. Apple Home and SmartThings support are not confirmed.",
+  "summary": "The Tapo C210 is a pan/tilt indoor Wi-Fi camera with 3 MP (2304 x 1296) video, 30 ft of infrared night vision and a microSD slot. It works with Alexa and Google through Tapo's cloud link, and Home Assistant's TP-Link integration supports it directly. Cloud history is a separate Tapo Care plan. Apple Home and SmartThings support are not confirmed.",
   "caveats": [
     "Alexa and Google streams are cloud-to-cloud and stop after 10 minutes; you ask again to keep watching.",
-    "Tapo says live view in the Google Home app is not supported; streaming works on Nest displays and Chromecast.",
     "2.4 GHz Wi-Fi only.",
-    "Tapo Care cloud storage cannot run together with an NVR and a microSD card on some models."
+    "The maximum microSD size differs by hardware version: 512 GB on Tapo's V2 page, 256 GB on older V1 pages.",
+    "Cloud storage, microSD and NVR recording can't all run at once; with all three on, Tapo disables NVR recording."
   ],
   "sources": [
     {
       "id": "tapo-c210-page",
       "url": "https://www.tapo.com/en/product/smart-camera/tapo-c210/v2/?app=t",
       "title": "Pan/Tilt Home Security Wi-Fi Camera",
+      "publisher": "TP-Link Tapo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-c210-datasheet",
+      "url": "https://static.tp-link.com/upload/product-overview/2022/202212/20221209/Tapo%20C210(EU&US)2.0_Datasheet.pdf",
+      "title": "Tapo C210(EU&US) 2.0 Datasheet",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-c210-de",
+      "url": "https://www.tapo.com/de/product/smart-camera/tapo-c210/v1/",
+      "title": "Indoor WLAN-Sicherheitskamera",
       "publisher": "TP-Link Tapo",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -98,8 +142,8 @@
     },
     {
       "id": "tapo-google-stream-faq",
-      "url": "https://www.tapo.com/us/faq/776/",
-      "title": "How to Stream Tapo / Kasa Camera on Google Device",
+      "url": "https://www.tapo.com/en/faq/776/",
+      "title": "How to stream Tapo / Kasa Camera on Google device",
       "publisher": "TP-Link Tapo",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -113,14 +157,31 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "tapo-care-plans",
-      "url": "https://www.tp-link.com/us/support/faq/3408/",
-      "title": "Tapo Care Plans: Price, Cost, and Features",
-      "publisher": "TP-Link",
+      "id": "tapo-care-page",
+      "url": "https://tapo.com/tapocare",
+      "title": "Tapo Care: Get a 30-day Free Trial",
+      "publisher": "TP-Link Tapo",
       "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-care-pricing-eu",
+      "url": "https://www.tapo.com/ro/faq/367",
+      "title": "What Is the Subscription Pricing of the Tapo Care Plan?",
+      "publisher": "TP-Link Tapo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://home-assistant.io/integrations/tplink",
+      "title": "TP-Link Smart Home",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

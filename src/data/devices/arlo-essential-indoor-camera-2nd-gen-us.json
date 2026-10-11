@@ -3,11 +3,18 @@
   "brand": "Arlo",
   "model": "Essential Indoor Camera (2nd Generation)",
   "name": "Arlo Essential Indoor 2nd gen (US)",
-  "regions": ["US"],
-  "officialUrl": "https://asia.arlo.com/cameras/essential/arlo-essential-indoor-v2.html",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://arlo.com/en-us/cameras/VMC2060-100NAS.html",
   "radios": {
-    "value": ["wifi"],
-    "sources": ["arlo-indoor-faq"],
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "arlo-indoor-faq",
+      "arlo-indoor-product"
+    ],
     "note": "Connects directly to a 2.4 GHz Wi-Fi network."
   },
   "matter": {
@@ -18,18 +25,23 @@
   "compatibility": {
     "apple_home": {
       "status": "unknown",
-      "sources": ["arlo-indoor-faq", "arlo-apple-home-faq"],
-      "note": "Arlo's pages conflict: the FAQ we saw says Apple Home is not yet available, while newer Arlo pages say it works only through an Arlo SmartHub or Base Station, not direct Wi-Fi."
+      "sources": [
+        "arlo-indoor-product",
+        "arlo-apple-home-faq"
+      ],
+      "note": "Arlo's pages conflict: the US product page says Apple Home support is still in the works, while Arlo's HomeKit FAQ says Arlo devices reach Apple Home only through a SmartHub or Base Station, with a device list that varies by region."
     },
     "google_home": {
-      "status": "native",
-      "sources": ["arlo-indoor-faq"],
-      "note": "Arlo lists Google Home. Nest Hub live view was only seen in an Arlo community answer, not for this model."
+      "status": "unknown",
+      "sources": [],
+      "note": "Retailers and Arlo's 3rd gen FAQ list Google Assistant, and Arlo's Google Assistant FAQ names camera families, but we found no Arlo page that lists this 2nd gen indoor camera."
     },
     "alexa": {
       "status": "native",
-      "sources": ["arlo-indoor-faq", "arlo-alexa-view"],
-      "note": "Enable the Arlo skill; 'show me [camera]' works on Echo Show, Echo Spot and Fire TV. Last-event playback needs a subscription or trial."
+      "sources": [
+        "arlo-alexa-pair"
+      ],
+      "note": "Arlo says all Arlo cameras work with the Arlo Alexa skill; 'Alexa, show me [camera]' streams on Echo Show, Echo Spot and Fire TV. Last-motion playback needs a subscription or trial."
     },
     "smartthings": {
       "status": "unknown",
@@ -44,8 +56,10 @@
   },
   "hubRequired": {
     "value": false,
-    "sources": ["arlo-indoor-faq"],
-    "note": "Connects straight to Wi-Fi with no SmartHub or Base Station. A hub is only needed for Apple Home and local storage."
+    "sources": [
+      "arlo-indoor-faq"
+    ],
+    "note": "Connects straight to Wi-Fi with no SmartHub or Base Station. Arlo's product page says it can also be added to a SmartHub or Base Station."
   },
   "localControl": {
     "value": null,
@@ -54,7 +68,10 @@
   },
   "cameraType": {
     "value": "indoor",
-    "sources": ["arlo-indoor-faq"],
+    "sources": [
+      "arlo-indoor-faq",
+      "arlo-indoor-product"
+    ],
     "note": "Sold as an indoor camera."
   },
   "power": {
@@ -65,24 +82,35 @@
   "localStorage": {
     "value": null,
     "sources": [],
-    "note": "No slot on the camera. Arlo's compatibility pages say local microSD or USB storage is on a SmartHub, which a directly connected camera cannot use."
+    "note": "No slot on the camera. Arlo says it now works with a SmartHub or Base Station, which offer local storage, but we found no Arlo page confirming local recording for this camera."
   },
   "subscription": {
-    "value": "Arlo Secure (cloud video, detection)",
-    "sources": ["arlo-indoor-faq"],
-    "note": "Cloud storage and features such as activity zones need an active Arlo Secure plan; a 30-day trial is bundled. Continuous recording needs a separate plan."
+    "value": "Arlo Secure for premium features after the 30-day trial",
+    "sources": [
+      "arlo-indoor-faq",
+      "arlo-indoor-product"
+    ],
+    "note": "A 30-day Arlo Secure trial is included; Arlo says a paid plan is needed to keep premium features after it. Continuous recording needs a separate CVR plan."
   },
-  "summary": "The Arlo Essential Indoor Camera (2nd Generation) is a plug-in indoor camera with a 130 degree view and a privacy shield that closes over the lens. It connects to 2.4 GHz Wi-Fi without a hub and works with Alexa and Google Home. Cloud video and detection features need an Arlo Secure plan. Apple Home support is reported only through an Arlo hub and is unconfirmed here.",
+  "summary": "The Arlo Essential Indoor Camera (2nd Generation) is a plug-in indoor camera with a 130 degree view and an automated privacy shield over the lens. It connects to 2.4 GHz Wi-Fi without a hub and works with Alexa through the Arlo skill. Premium features need an Arlo Secure plan after the trial. Apple Home and Google Home support are unconfirmed for this model.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "Cloud recording and detection need an Arlo Secure subscription after the trial.",
-    "Sold in HD and 2K versions with different model numbers; this record does not pin down which one.",
-    "Close the privacy shield through the app, not by hand."
+    "Premium features need an Arlo Secure subscription after the 30-day trial; continuous recording is a separate plan.",
+    "Sold in HD (VMC2060) and 2K versions; this record covers the 2nd gen line as Arlo's FAQ does.",
+    "The privacy shield closes automatically when you disarm the camera."
   ],
   "sources": [
     {
+      "id": "arlo-indoor-product",
+      "url": "https://arlo.com/en-us/cameras/VMC2060-100NAS.html",
+      "title": "Arlo Essential Indoor Camera (2nd Gen), VMC2060-100NAS",
+      "publisher": "Arlo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
       "id": "arlo-indoor-faq",
-      "url": "https://kb.arlo.com/000063191/Arlo-Essential-Indoor-Camera-2nd-Generation-FAQ",
+      "url": "https://www.arlo.com/en_gb/support/faq/000063191/arlo-essential-indoor-camera-2nd-generation-faq",
       "title": "Arlo Essential Indoor Camera (2nd Generation) FAQ",
       "publisher": "Arlo",
       "kind": "manufacturer",
@@ -90,24 +118,16 @@
     },
     {
       "id": "arlo-apple-home-faq",
-      "url": "https://www.arlo.com/en_gb/support/faq/000062279/How-do-I-connect-my-Arlo-camera-to-Apple-HomeKit",
-      "title": "How do I connect my Arlo camera to Apple HomeKit?",
+      "url": "https://www.arlo.com/en_ch/support/faq/000062279/How-do-I-connect-my-Arlo-camera-to-Apple-HomeKit",
+      "title": "How do I connect my Arlo device to Apple Home?",
       "publisher": "Arlo",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
     {
-      "id": "arlo-alexa-view",
-      "url": "https://kb.arlo.com/000044725/What-Alexa-commands-can-I-use-with-the-Amazon-Echo-Show-to-view-my-Arlo-cameras",
-      "title": "What Alexa commands can I use with Amazon devices to view my Arlo cameras?",
-      "publisher": "Arlo",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "arlo-indoor-product",
-      "url": "https://asia.arlo.com/cameras/essential/arlo-essential-indoor-v2.html",
-      "title": "Essential Indoor Security Camera - 2nd Gen",
+      "id": "arlo-alexa-pair",
+      "url": "https://devtest.arlo.com/en_be/support/faq/000044726/How-can-I-pair-my-Arlo-cameras-with-Amazon-Alexa",
+      "title": "How can I pair my Arlo cameras with Amazon Alexa?",
       "publisher": "Arlo",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
