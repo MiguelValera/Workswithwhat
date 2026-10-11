@@ -29,8 +29,8 @@
     },
     "alexa": {
       "status": "matter",
-      "sources": ["nanoleaf-a19-us", "csa-nanoleaf-a19"],
-      "note": "Nanoleaf lists Alexa as supported via Matter; needs an Echo that acts as a Thread border router. An older Nanoleaf FAQ still said Alexa was 'coming soon'."
+      "sources": ["nanoleaf-a19-us", "csa-nanoleaf-a19", "amazon-matter"],
+      "note": "Nanoleaf's SKU page lists Alexa; Amazon supports Matter-over-Thread lights on Echo devices. Needs an Echo or eero that is a Thread border router. Nanoleaf's older FAQ still says Alexa is 'coming soon'."
     },
     "smartthings": {
       "status": "matter",
@@ -59,16 +59,16 @@
     "note": "Over 16 million colours plus tunable white (2700–6500 K)."
   },
   "lumens": {
-    "value": 1100,
+    "value": 806,
     "sources": ["nanoleaf-a19-us", "nanoleaf-a19-us-shop"],
-    "note": "Maximum 1100 lm, 806 lm average per the SKU page and single-bulb shop page. Nanoleaf's US 3-pack bundle page gives 1000 lm max / 900 lm average instead."
+    "note": "Nanoleaf's SKU page gives 806 lm average and 1100 lm max, and rates the bulb as a 60 W equivalent, which matches 806 lm, so we use 806. Its US 3-pack page says 900 lm average / 1000 lm max."
   },
   "bulbBase": {
     "value": "E26 (A19)",
     "sources": ["nanoleaf-a19-us"]
   },
-  "summary": "The Nanoleaf Essentials Matter A19 (NF080B03-1A19E) is a colour bulb with an E26 base that runs Matter over Thread. It is Matter-certified, so it works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant once a Thread border router is on the network. Without one, the Nanoleaf app can still control it over Bluetooth. Nanoleaf rates it at 1100 lumens maximum and 806 lumens average.",
-  "caveats": ["Ecosystem control needs a Thread border router (for example a HomePod mini, Nest Hub 2nd gen or a Thread-capable Echo).", "Nanoleaf's own pages disagree on brightness: 1100 lm max on the SKU page, 1000 lm max on a bundle page."],
+  "summary": "The Nanoleaf Essentials Matter A19 (NF080B03-1A19E) is a colour bulb with an E26 base that runs Matter over Thread. It is Matter-certified, so it works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant once a Thread border router is on the network. Without one, the Nanoleaf app can still control it over Bluetooth. Nanoleaf rates it at 806 lumens average (a 60 W equivalent) and 1100 lumens maximum.",
+  "caveats": ["Ecosystem control needs a Thread border router (for example a HomePod mini, Nest Hub 2nd gen or a Thread-capable Echo).", "Nanoleaf's own pages disagree on brightness: 806 lm average / 1100 lm max on the SKU page, 900 lm average / 1000 lm max on a bundle page."],
   "sources": [
     {
       "id": "nanoleaf-a19-us",
@@ -109,8 +109,17 @@
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-11"
+    },
+    {
+      "id": "amazon-matter",
+      "url": "https://developer.amazon.com/en-US/docs/alexa/smarthome/matter-support.html",
+      "title": "Connect Your Device to Alexa with Matter",
+      "publisher": "Amazon",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

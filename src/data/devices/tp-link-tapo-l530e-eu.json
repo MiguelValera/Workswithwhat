@@ -11,15 +11,15 @@
     "note": "IEEE 802.11b/g/n, 2.4 GHz only."
   },
   "matter": {
-    "certified": false,
-    "sources": ["tapo-l530e-gr", "tplink-community-matter"],
-    "note": "The spec sheet lists only Alexa and Google, with no Matter. A TP-Link community moderator confirmed the L530E has no Matter and pointed to the L535E instead."
+    "certified": null,
+    "sources": [],
+    "note": "No official source states Matter either way: the EU spec page lists only Alexa and Google, and we found no CSA listing for the L530E. TP-Link's Matter colour bulb is the L535E. Not confirmed."
   },
   "compatibility": {
     "apple_home": {
-      "status": "no",
-      "sources": ["tapo-l530e-gr", "tplink-community-matter"],
-      "note": "TP-Link's supported platforms (Alexa, Google) leave out Apple Home, and the bulb has no Matter or HomeKit; a TP-Link moderator said it can't be added to Apple Home."
+      "status": "unknown",
+      "sources": [],
+      "note": "The EU spec page lists only Alexa and Google, but no official source says Apple Home is unsupported, and TP-Link's US bulb listing tags the L530E as HomeKit-supported. Not confirmed."
     },
     "google_home": {
       "status": "native",
@@ -33,8 +33,8 @@
     },
     "smartthings": {
       "status": "native",
-      "sources": ["tapo-l530e-ug"],
-      "note": "The L530E user guide names SmartThings for voice control, with a footnote that supported assistants vary by model; the product spec sheet lists only Alexa and Google."
+      "sources": ["tapo-l530e-ug", "tplink-smartthings-faq"],
+      "note": "Via TP-Link account linking in the SmartThings app (Partner devices > Tapo). TP-Link's SmartThings FAQ lists the L530E; the user guide names SmartThings too. Basic controls only. The FAQ cited is the US edition."
     },
     "home_assistant": {
       "status": "native",
@@ -67,12 +67,8 @@
     "sources": ["tapo-l530e-gr"],
     "note": "E27 for the EU/TW version; the US version is E26."
   },
-  "summary": "The Tapo L530E is an 806-lumen colour bulb with an E27 base that connects straight to 2.4 GHz Wi-Fi, with no hub. TP-Link lists Alexa and Google Home support, and the user guide also names SmartThings. It has no Matter or HomeKit, so it doesn't work with Apple Home. Home Assistant supports it locally through the official TP-Link Smart Home integration.",
-  "caveats": [
-    "2.4 GHz Wi-Fi only.",
-    "No Matter or HomeKit, so no Apple Home; the Matter sibling is the Tapo L535E.",
-    "Home Assistant needs your TP-Link account credentials, and you may have to turn on Third-Party Compatibility in the Tapo app."
-  ],
+  "summary": "The Tapo L530E is an 806-lumen colour bulb with an E27 base that connects straight to 2.4 GHz Wi-Fi, with no hub. TP-Link lists Alexa and Google Home support, and SmartThings works by linking your TP-Link account. We couldn't confirm Matter or Apple Home support from an official source. Home Assistant supports it locally through the official TP-Link Smart Home integration.",
+  "caveats": ["2.4 GHz Wi-Fi only.", "Apple Home and Matter support are unconfirmed; TP-Link's Matter colour bulb is the Tapo L535E.", "Home Assistant needs your TP-Link account credentials, and you may have to turn on Third-Party Compatibility in the Tapo app."],
   "sources": [
     {
       "id": "tapo-l530e-gr",
@@ -99,22 +95,23 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "tplink-community-matter",
-      "url": "https://community.tp-link.com/us/smart-home/forum/topic/852542?moduleId=2454",
-      "title": "Tapo L530E and Matter - Smart Home Community",
-      "publisher": "TP-Link Community",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
       "id": "ha-tplink",
       "url": "https://www.home-assistant.io/integrations/tplink/",
       "title": "TP-Link Smart Home - Home Assistant",
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-smartthings-faq",
+      "url": "https://www.tp-link.com/us/support/faq/3158/",
+      "title": "Connect Tapo and Kasa Devices to SmartThings",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

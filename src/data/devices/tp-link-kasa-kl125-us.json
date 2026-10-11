@@ -19,7 +19,7 @@
     "apple_home": {
       "status": "unknown",
       "sources": ["kasa-kl125", "tplink-apple-home-guide"],
-      "note": "Kasa lists Alexa, Google Assistant and SmartThings for this bulb, and TP-Link's Apple Home guide lists no Kasa lights. No source states 'not supported' outright, and Matter status is unconfirmed."
+      "note": "Kasa lists Alexa, Google Assistant and SmartThings for this bulb, and a TP-Link community guide to Apple Home lists no Kasa lights. No source states 'not supported' outright, and Matter status is unconfirmed."
     },
     "google_home": {
       "status": "native",
@@ -93,7 +93,7 @@
       "url": "https://community.tp-link.com/us/smart-home/stories/detail/502242",
       "title": "Getting Started with Apple Home and TP-Link",
       "publisher": "TP-Link Community",
-      "kind": "manufacturer",
+      "kind": "review",
       "accessed": "2026-10-11"
     },
     {
@@ -105,6 +105,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

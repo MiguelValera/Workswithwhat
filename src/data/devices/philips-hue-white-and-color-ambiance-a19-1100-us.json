@@ -7,41 +7,41 @@
   "officialUrl": "https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-75w-a19-e26-smart-bulb/046677591168",
   "radios": {
     "value": ["bluetooth", "zigbee"],
-    "sources": ["hue-a19-us", "hue-a19-us-2pack"],
-    "note": "Hue lists Bluetooth and Zigbee as the communication protocols. Bluetooth is for direct app control in one room; Zigbee connects the bulb to a Hue Bridge."
+    "sources": ["hue-a19-us"],
+    "note": "Hue lists Bluetooth and Zigbee. CSA's 1100lm A19/A60 Matter listing also gives a Thread transport, but we can't tie it to this product code, so Thread is not listed here."
   },
   "matter": {
     "certified": null,
-    "sources": ["hue-a19-us-2pack", "hue-matter-guide", "csa-hue-light-1100"],
-    "note": "Hue's pages describe Matter via the Hue Bridge and list no Thread radio. CSA lists 'White and Color Ambiance 1100lm A19/A60' certificates, but we could not tie one to this SKU or see its transport."
+    "sources": ["hue-matter-guide", "csa-hue-light-1100"],
+    "note": "Official sources disagree. CSA's 'White and Color Ambiance 1100lm A19/A60' listing gives Thread and Bluetooth transport (Matter 1.3), but Hue's page for this product code lists only Bluetooth and Zigbee. Hue's guide also offers Matter through the Hue Bridge."
   },
   "compatibility": {
     "apple_home": {
       "status": "hub",
       "via": "Philips Hue Bridge",
       "sources": ["hue-a19-us", "hue-matter-guide"],
-      "note": "The product page lists Apple Home among assistants that need a Hue Bridge. The Bridge links to Apple Home via HomeKit or Matter."
+      "note": "Hue's product page lists Apple Home under 'Hue Bridge required'; the Bridge links via HomeKit or Matter. If this bulb is the CSA-listed Thread model it may also pair directly via Matter; not confirmed."
     },
     "google_home": {
       "status": "native",
       "sources": ["hue-no-bridge-faq", "hue-google-support", "hue-a19-us"],
-      "note": "Works through Hue's own Google Home integration. Without a Bridge it works over Bluetooth only with Google Nest speakers and displays; the Bridge adds full features and remote access."
+      "note": "Hue's own integration. Hue's FAQ and Google support pages say Bluetooth bulbs work bridgeless with Google Nest speakers and displays only; the product page lists Google under 'Hue Bridge required', which unlocks full features."
     },
     "alexa": {
       "status": "native",
       "sources": ["hue-no-bridge-faq", "hue-alexa-setup", "hue-a19-us"],
-      "note": "Hue says Bluetooth bulbs can be linked to Alexa without a Bridge on supported Echo devices; with a Hue Bridge more features are available."
+      "note": "Hue's own integration. Hue's FAQ and Alexa setup page say Bluetooth bulbs can be added directly on supported Echo devices; the product page lists Alexa under 'Hue Bridge required', which adds the Hue skill and more features."
     },
     "smartthings": {
       "status": "hub",
       "via": "Philips Hue Bridge",
       "sources": ["hue-a19-us"],
-      "note": "The product page lists Samsung SmartThings among assistants that need a Hue Bridge."
+      "note": "Hue's product page lists SmartThings under 'Hue Bridge required'. Direct Matter pairing is unconfirmed for this product code (see Matter)."
     },
     "home_assistant": {
       "status": "native",
       "sources": ["ha-hue", "ha-hue-ble"],
-      "note": "Official Hue integration controls lights on a Hue Bridge; the official Hue BLE integration (added in 2025.12) controls Hue Bluetooth lights without a Bridge."
+      "note": "Official Hue integration (via Hue Bridge) and official Hue BLE integration (2025.12, bridgeless Bluetooth). The BLE docs name specific Hue models and say others should work; this product code isn't named."
     }
   },
   "hubRequired": {
@@ -61,32 +61,20 @@
   },
   "lumens": {
     "value": 1100,
-    "sources": ["hue-a19-us", "hue-a19-us-2pack"],
-    "note": "Up to 1100 lm at 4000 K per Hue. Older A19 colour SKUs were rated 1055 lm or less; check the product code on the box."
+    "sources": ["hue-a19-us"],
+    "note": "Up to 1100 lm per Hue's page for product code 046677591168. Hue also sells A19 colour bulbs with lower output (e.g. 800 lm), so check the code on the box."
   },
   "bulbBase": {
     "value": "E26 (A19)",
     "sources": ["hue-a19-us"]
   },
   "summary": "The current US Philips Hue White and Color Ambiance A19 (product code 046677591168) is a colour bulb with an E26 base, rated up to 1100 lumens. It has Bluetooth for bridgeless control from the Hue app and Zigbee for the Hue Bridge. Alexa and Google Home work through Hue's own integrations, over Bluetooth on supported speakers or through the Bridge. Apple Home and SmartThings need the Hue Bridge.",
-  "caveats": [
-    "Apple Home and SmartThings need a Hue Bridge; Bluetooth-only setups can't use Matter.",
-    "Bridgeless Google control works only with Google Nest speakers and displays, not third-party Google Assistant devices.",
-    "Bluetooth mode is limited to about 10 lights in one room and has no remote access."
-  ],
+  "caveats": ["Apple Home and SmartThings need a Hue Bridge; Bluetooth-only setups can't use Matter.", "Bridgeless Google control works only with Google Nest speakers and displays, not third-party Google Assistant devices.", "Bluetooth mode is limited to about 10 lights in one room and has no remote access."],
   "sources": [
     {
       "id": "hue-a19-us",
       "url": "https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-75w-a19-e26-smart-bulb/046677591168",
       "title": "Hue White and color ambiance 75W A19- E26 smart bulb",
-      "publisher": "Signify (Philips Hue)",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "hue-a19-us-2pack",
-      "url": "https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-75w-a19-2pack-e26-smart-bulbs/046677591175",
-      "title": "Hue White and color ambiance 75W A19 2PACK- E26 smart bulbs",
       "publisher": "Signify (Philips Hue)",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -148,6 +136,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }
