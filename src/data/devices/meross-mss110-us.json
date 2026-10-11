@@ -30,7 +30,7 @@
         "meross-mss110-product",
         "meross-mss110-shop"
       ],
-      "note": "HomeKit (HAP) over Wi-Fi. Remote control needs an Apple home hub (HomePod, Apple TV or iPad)."
+      "note": "HomeKit (HAP) over Wi-Fi; the HomeKit unit is sold as MSS110HK (US/CA). Remote control needs an Apple home hub (HomePod, Apple TV or iPad)."
     },
     "google_home": {
       "status": "native",
@@ -54,7 +54,7 @@
         "meross-mss110-product",
         "meross-faq-smartthings"
       ],
-      "note": "Meross lists SmartThings for this plug; it connects through the Meross partner integration in the SmartThings app (cloud to cloud)."
+      "note": "Meross's MSS110US page lists SmartThings. It connects by linking your Meross account in the SmartThings app (cloud to cloud), per Meross's generic SmartThings FAQ."
     },
     "home_assistant": {
       "status": "unknown",
@@ -76,9 +76,11 @@
     "note": "HomeKit accessories normally work over the LAN, but we found no Meross page that states local control for this model."
   },
   "energyMonitoring": {
-    "value": null,
-    "sources": [],
-    "note": "The US/CA MSS110 pages don't mention power metering. An EU MSS110 listing does mention consumption tracking, so we don't assume either way for the US unit."
+    "value": false,
+    "sources": [
+      "meross-mss110-product"
+    ],
+    "note": "Meross's US/JP MSS110 page lists Energy Monitor: No. For metering, Meross sells other models (e.g. the MSS315)."
   },
   "maxLoadWatts": {
     "value": 1800,
@@ -112,7 +114,7 @@
     },
     {
       "id": "meross-faq-google",
-      "url": "https://meross.com/faq/46.html",
+      "url": "https://www.meross.com/en-gc/faq/46.html",
       "title": "How to connect Meross device to Google Assistant?",
       "publisher": "Meross",
       "kind": "manufacturer",
@@ -128,13 +130,14 @@
     },
     {
       "id": "meross-faq-smartthings",
-      "url": "https://www.meross.com/en-gc/FAQ/201.html",
+      "url": "https://www.meross.com/en-gc/support/FAQ/201.html",
       "title": "How can I use my Meross device with the SmartThings?",
       "publisher": "Meross",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

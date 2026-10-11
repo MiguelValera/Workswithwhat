@@ -6,7 +6,7 @@
   "regions": [
     "US"
   ],
-  "officialUrl": "https://wyze.com/wyze-plug-outdoor.html",
+  "officialUrl": "https://www.wyze.com/products/wyze-plug-outdoor",
   "radios": {
     "value": [
       "wifi",
@@ -35,10 +35,10 @@
       "status": "native",
       "sources": [
         "wyze-plug-outdoor-product",
-        "wyze-plug-outdoor-about",
-        "wyze-google-assistant"
+        "wyze-google-devices",
+        "wyze-google-setup"
       ],
-      "note": "Link your Wyze account in the Google Home app. Wyze says Google Assistant is officially supported in the US only."
+      "note": "Link your Wyze account in the Google Home app. Wyze's Google Assistant device list names the Plug Outdoor, and Wyze says the integration is supported in the US only."
     },
     "alexa": {
       "status": "native",
@@ -67,7 +67,7 @@
       "wyze-plug-outdoor-product",
       "wyze-plug-outdoor-setup"
     ],
-    "note": "Connects to 2.4 GHz Wi-Fi directly and is set up in the Wyze app; no bridge is listed."
+    "note": "Wyze's product page lists Hub Required: No. It joins 2.4 GHz Wi-Fi directly and is set up in the Wyze app."
   },
   "localControl": {
     "value": null,
@@ -99,7 +99,7 @@
   "sources": [
     {
       "id": "wyze-plug-outdoor-product",
-      "url": "https://wyze.com/wyze-plug-outdoor.html",
+      "url": "https://www.wyze.com/products/wyze-plug-outdoor",
       "title": "Wyze Plug Outdoor",
       "publisher": "Wyze",
       "kind": "manufacturer",
@@ -107,7 +107,7 @@
     },
     {
       "id": "wyze-plug-outdoor-about",
-      "url": "https://support.wyze.com/hc/en-us/articles/360052744011-About-Wyze-Plug-Outdoor",
+      "url": "https://support.wyze.com/hc/en-us/articles/360052744011-Introducing-Wyze-Plug-Outdoor",
       "title": "About Wyze Plug Outdoor",
       "publisher": "Wyze",
       "kind": "manufacturer",
@@ -146,14 +146,23 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "wyze-google-assistant",
-      "url": "https://support.wyze.com/hc/en-us/articles/360032991931-Google-Assistant",
-      "title": "Google Assistant",
+      "id": "wyze-google-devices",
+      "url": "https://support.wyze.com/hc/en-us/articles/50040708337435-Which-Wyze-devices-are-compatible-with-Google-Assistant",
+      "title": "Which Wyze devices are compatible with Google Assistant?",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wyze-google-setup",
+      "url": "https://support.wyze.com/hc/en-us/articles/360033120892-Google-Assistant-Setup-Guide",
+      "title": "Google Assistant Setup Guide",
       "publisher": "Wyze",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

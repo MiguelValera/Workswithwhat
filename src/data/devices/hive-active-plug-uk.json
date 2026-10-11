@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Hive",
   "model": "Active Plug",
-  "name": "Hive Active Plug (UK)",
+  "name": "Hive Active Plug (Hive Plug, UK)",
   "regions": [
     "UK"
   ],
@@ -12,7 +12,8 @@
       "zigbee"
     ],
     "sources": [
-      "hive-plug-specs"
+      "hive-plug-specs",
+      "hive-plug-shop"
     ],
     "note": "Zigbee to the Hive Hub; it doesn't join Wi-Fi itself. UK/Ireland type G plug."
   },
@@ -29,7 +30,7 @@
         "hive-plug-shop",
         "hive-homekit"
       ],
-      "note": "Hive lists Apple HomeKit and Siri Shortcuts, through the Hive Hub. A Screwfix listing says it doesn't work with HomeKit, so check before relying on it."
+      "note": "Hive's support site lists Hive Plugs for Apple Home, enabled from the Hive app via the Hive Hub. Schedules and Actions can't be controlled from the Home app. A retailer listing says no HomeKit; Hive's own pages say yes."
     },
     "google_home": {
       "status": "hub",
@@ -66,9 +67,9 @@
     "value": true,
     "sources": [
       "hive-plug-shop",
-      "hive-product-news"
+      "hive-plug-specs"
     ],
-    "note": "Needs a Hive Hub; first-time Hive buyers must buy one. Hive has retired some older hub models, so check yours is still supported."
+    "note": "Needs a Hive Hub; Hive says first-time Hive buyers must buy one. Existing Hive users can add it to their current hub."
   },
   "localControl": {
     "value": null,
@@ -76,11 +77,12 @@
     "note": "We found no Hive statement on control without the internet."
   },
   "energyMonitoring": {
-    "value": null,
+    "value": true,
     "sources": [
-      "hive-energy-costs"
+      "hive-energy-costs",
+      "hive-plug-shop"
     ],
-    "note": "A Hive support page describes power readings in watts for the 'Hive Plug', but Hive's site mixes the Active Plug and newer Hive Plug names, so we can't confirm it for this model."
+    "note": "The Hive app shows the plugged-in appliance's power draw in watts. 'Hive Plug' is Hive's current name for the Active Plug (same shop page and spec URL)."
   },
   "maxLoadWatts": {
     "value": null,
@@ -113,8 +115,8 @@
     },
     {
       "id": "hive-homekit",
-      "url": "https://community.hivehome.com/s/article/What-is-HomeKit-and-does-it-work-with-Hive",
-      "title": "What is HomeKit and does it work with Hive?",
+      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=240322121756750",
+      "title": "Integrating Hive Devices with Apple HomeKit - Hive Support",
       "publisher": "Hive",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -136,14 +138,6 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "hive-product-news",
-      "url": "https://www.hivehome.com/product-news",
-      "title": "Product News",
-      "publisher": "Hive",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
       "id": "ha-hive",
       "url": "https://www.home-assistant.io/integrations/hive/",
       "title": "Hive - Home Assistant",
@@ -152,6 +146,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

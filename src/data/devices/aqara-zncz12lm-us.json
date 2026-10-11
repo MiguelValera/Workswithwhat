@@ -54,7 +54,7 @@
       "sources": [
         "aqara-plug-us-partners"
       ],
-      "note": "Aqara's partnerships page lists SmartThings, but the US store page and spec sheet don't, so the official sources disagree."
+      "note": "Aqara's partnerships page lists SmartThings, but the US spec sheet and store page don't, and that partner page also shows EU ratings (10 A / 2300 W). Official sources disagree."
     },
     "home_assistant": {
       "status": "unknown",
@@ -66,7 +66,8 @@
     "value": true,
     "sources": [
       "aqara-plug-us-specs",
-      "aqara-plug-us-store"
+      "aqara-plug-us-store",
+      "aqara-plug-us-partners"
     ],
     "note": "Spec sheet: hub required (Aqara Zigbee 3.0 hub). Sold without a hub."
   },
@@ -80,7 +81,7 @@
     "sources": [
       "aqara-plug-us-store"
     ],
-    "note": "Aqara says the app tracks the power use of whatever is plugged in."
+    "note": "Aqara says the app records the plugged-in appliance's power use on a daily and monthly basis."
   },
   "maxLoadWatts": {
     "value": 1875,
@@ -122,6 +123,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

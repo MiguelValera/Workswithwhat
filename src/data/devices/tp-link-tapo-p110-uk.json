@@ -34,7 +34,7 @@
         "tapo-faq-201-uk",
         "tapo-faq-73"
       ],
-      "note": "Link your TP-Link account in Google Home ('Works with Google Home') after setting the plug up in the Tapo app."
+      "note": "Link your TP-Link account in Google Home after setting the plug up in the Tapo app. The step-by-step guide is TP-Link's general FAQ on its US site; the UK pages list Google Assistant."
     },
     "alexa": {
       "status": "native",
@@ -43,15 +43,15 @@
         "tapo-faq-201-uk",
         "tapo-faq-74"
       ],
-      "note": "Through the Tapo Alexa skill, linked from the Tapo app or the Alexa app."
+      "note": "Through the Tapo Alexa skill, linked from the Tapo app or the Alexa app. The how-to is TP-Link's general FAQ on its US site; the UK pages list Alexa."
     },
     "smartthings": {
       "status": "native",
       "sources": [
-        "tapo-p110-uk-store",
+        "tapo-p110-uk",
         "tplink-faq-3158"
       ],
-      "note": "Through the TP-Link partner integration in SmartThings. On/off only; energy data stays in the Tapo app."
+      "note": "Link your TP-Link ID in the SmartThings app. TP-Link's SmartThings FAQ (general, on its US site) lists the P110; the UK page shows SmartThings. TP-Link FAQs disagree on whether energy data reaches SmartThings."
     },
     "home_assistant": {
       "status": "native",
@@ -70,9 +70,11 @@
     "note": "Wi-Fi plug that joins your router directly and is set up in the Tapo app."
   },
   "localControl": {
-    "value": null,
-    "sources": [],
-    "note": "We found no TP-Link page on control without the internet. Home Assistant's integration covers it, but we didn't confirm local operation from the docs."
+    "value": true,
+    "sources": [
+      "tapo-faq-201-uk"
+    ],
+    "note": "TP-Link's Tapo plug FAQ (P100/P105/P110/P115) says the Tapo app can control the plug locally without internet; Smart Actions then need a Tapo hub."
   },
   "energyMonitoring": {
     "value": true,
@@ -85,7 +87,8 @@
   "maxLoadWatts": {
     "value": 2990,
     "sources": [
-      "tplink-p110-uk"
+      "tplink-p110-uk",
+      "tapo-p110-uk"
     ],
     "note": "TP-Link's UK spec sheet: 2990 W, 13 A, 1/6 HP motor, 220-240 V. Tapo's UK page says EV charging isn't supported."
   },
@@ -162,6 +165,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
