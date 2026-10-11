@@ -19,19 +19,15 @@
     "note": "2.4 GHz Wi-Fi only. TP-Link says Bluetooth is used to speed up setup."
   },
   "matter": {
-    "certified": false,
-    "sources": [
-      "tapo-p110-en"
-    ],
-    "note": "The P110 page lists no Matter support. The Matter version is the separate Tapo P110M, which has its own record."
+    "certified": null,
+    "sources": [],
+    "note": "No official source states Matter support or explicitly rules it out for the P110; product pages simply don't list it. TP-Link's Matter version is the separate Tapo P110M."
   },
   "compatibility": {
     "apple_home": {
-      "status": "no",
-      "sources": [
-        "tapo-p110-en"
-      ],
-      "note": "TP-Link lists Alexa, Google Assistant and SmartThings as the third-party platforms and leaves out Apple Home. There is no HomeKit mode and no Matter. The P110M is the Matter version."
+      "status": "unknown",
+      "sources": [],
+      "note": "TP-Link's P110 pages list Alexa, Google Assistant and SmartThings and don't mention Apple Home, but no official page says it is unsupported. The Tapo P110M is the Matter version."
     },
     "google_home": {
       "status": "native",
@@ -92,17 +88,18 @@
     "value": 3680,
     "sources": [
       "tapo-p110-en",
-      "tplink-p110-nordic"
+      "tplink-p110-nordic",
+      "tapo-faq-667"
     ],
-    "note": "16 A / 3680 W for general use and resistive loads. TP-Link says it is not meant for EV charging."
+    "note": "16 A / 3680 W for general use and resistive loads. TP-Link's load FAQ says EV chargers are not supported on Tapo/Kasa plugs."
   },
-  "summary": "The EU Tapo P110 is a 2.4 GHz Wi-Fi plug rated 16 A / 3680 W that tracks energy use in the Tapo app. TP-Link lists Alexa, Google Assistant and SmartThings, all through account linking, and Home Assistant supports it through its TP-Link integration. It has no Matter and no Apple Home support; the separate Tapo P110M is the Matter version.",
+  "summary": "The EU Tapo P110 is a 2.4 GHz Wi-Fi plug rated 16 A / 3680 W that tracks energy use in the Tapo app. TP-Link lists Alexa, Google Assistant and SmartThings, all through account linking, and Home Assistant supports it through its TP-Link integration. TP-Link doesn't list Apple Home or Matter for it; the separate Tapo P110M is the Matter version.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "No Apple Home: there is no HomeKit mode and no Matter. Buy the Tapo P110M if you need Apple Home.",
-    "Energy readings show in the Tapo app; TP-Link says the SmartThings link covers basic on/off control.",
+    "TP-Link doesn't list Apple Home or Matter for the P110. If you need Apple Home, the Tapo P110M is the Matter version.",
+    "Energy readings show in the Tapo app; TP-Link's SmartThings article says advanced features such as energy data stay in the Tapo or Kasa app.",
     "Home Assistant's TP-Link integration asks for your TP-Link account credentials once on newer firmware.",
-    "Not meant for EV charging."
+    "Not for EV chargers: TP-Link's load FAQ says their charging current can exceed the plug's rating."
   ],
   "sources": [
     {
@@ -160,8 +157,17 @@
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-faq-667",
+      "url": "https://www.tapo.com/uk/faq/667/",
+      "title": "What Loads Can Be Connected to the Tapo/Kasa Plug",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

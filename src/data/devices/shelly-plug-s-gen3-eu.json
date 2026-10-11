@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Shelly",
   "model": "Plug S Gen3 (S3PL-00112EU)",
-  "name": "Shelly Plug S Gen3 (EU)",
+  "name": "Shelly Plug S Gen3 / Plug S MTR Gen3 (EU)",
   "regions": [
     "EU"
   ],
@@ -23,9 +23,9 @@
     "sources": [
       "csa-shelly-plug-s-mtr-gen3",
       "shelly-kb-plug-s-mtr-gen3",
-      "shelly-apple-home-press"
+      "shelly-support-matter"
     ],
-    "note": "CSA lists it as Shelly Plug S MTR Gen3 (cert CSA243B1MAT43620-24, July 2024, firmware 1.2.0-s1). Shelly now sells the same S3PL-00112EU under the 'MTR' name. Scripting only works with Matter turned off."
+    "note": "CSA lists it as Shelly Plug S MTR Gen3 (CSA243B1MAT43620-24, July 2024, firmware 1.2.0-s1). Shelly's Matter FAQ says Gen3 units like this get Matter from firmware 1.6.0, so update first. Scripting only works with Matter off."
   },
   "compatibility": {
     "apple_home": {
@@ -34,13 +34,13 @@
         "shelly-apple-home-press",
         "csa-shelly-plug-s-mtr-gen3"
       ],
-      "note": "Shelly says the Plug S MTR Gen3 earned Apple's Works with Apple Home badge through Matter. Needs an Apple home hub for remote control and automations."
+      "note": "Matter-certified (CSA), and Shelly's press release says the Plug S MTR Gen3 earned Works with Apple Home. Apple's own list was not checked. Needs an Apple home hub for remote control and automations."
     },
     "google_home": {
       "status": "matter",
       "sources": [
         "shelly-plug-s-gen3-product",
-        "shelly-kb-plug-s-mtr-gen3"
+        "csa-shelly-plug-s-mtr-gen3"
       ],
       "note": "Shelly marks Google Smart Home 'Yes' without saying whether that means its cloud link or Matter, so we only claim Matter. Needs a Google Matter controller."
     },
@@ -48,7 +48,7 @@
       "status": "matter",
       "sources": [
         "shelly-plug-s-gen3-product",
-        "shelly-kb-plug-s-mtr-gen3"
+        "csa-shelly-plug-s-mtr-gen3"
       ],
       "note": "Shelly marks Alexa 'Yes'; no Shelly page we found confirms the Shelly Cloud skill for this model, so we only claim Matter. Needs an Echo that works as a Matter controller."
     },
@@ -56,7 +56,7 @@
       "status": "matter",
       "sources": [
         "shelly-apple-home-press",
-        "shelly-plug-s-gen3-product"
+        "csa-shelly-plug-s-mtr-gen3"
       ],
       "note": "Shelly says it is certified under Samsung's Works with SmartThings program for Matter."
     },
@@ -72,14 +72,14 @@
     "value": false,
     "sources": [
       "shelly-kb-plug-s-mtr-gen3",
-      "shelly-kb-plug-s-mtr-gen3-manual"
+      "shelly-doc-plug-s-mtr-gen3"
     ],
     "note": "Wi-Fi device with its own access-point setup and built-in web interface; the Shelly app and cloud are optional. Third-party platforms need their own Matter controller."
   },
   "localControl": {
     "value": true,
     "sources": [
-      "shelly-kb-plug-s-mtr-gen3-manual",
+      "shelly-doc-plug-s-mtr-gen3",
       "ha-shelly"
     ],
     "note": "Built-in web interface for control and configuration, and local push control from Home Assistant's Shelly integration."
@@ -99,8 +99,9 @@
     ],
     "note": "12 A / 2500 W, resistive loads only."
   },
-  "summary": "The Shelly Plug S Gen3 (S3PL-00112EU) is a compact Wi-Fi plug with Bluetooth 4.2 that measures power, energy, voltage and current. It is Matter-certified, now sold as the Plug S MTR Gen3, and Shelly says it carries Apple's Works with Apple Home badge. Google Home, Alexa and SmartThings reach it through Matter, and Home Assistant controls it locally through the official Shelly integration. It is rated 12 A / 2500 W for resistive loads.",
+  "summary": "The Shelly Plug S Gen3 (S3PL-00112EU, also sold as Plug S MTR Gen3) is a compact Wi-Fi plug with Bluetooth 4.2 that measures power, energy, voltage and current. It is Matter-certified and Shelly says it carries Works with Apple Home. Google Home, Alexa and SmartThings reach it through Matter; Home Assistant controls it locally. Rated 12 A / 2500 W resistive. Shelly has discontinued it.",
   "caveats": [
+    "Discontinued: Shelly says it no longer makes or sells this plug and points buyers to the Shelly Plug M Gen3.",
     "Rated 12 A / 2500 W for resistive loads only, below the 16 A of many EU plugs.",
     "Scripting only works when Matter is turned off.",
     "Shelly now lists this model as 'Plug S MTR Gen3'; it is the same S3PL-00112EU.",
@@ -124,10 +125,10 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "shelly-kb-plug-s-mtr-gen3-manual",
-      "url": "https://kb.shelly.cloud/knowledge-base/plug-s-mtr-gen3",
-      "title": "Ръководство за употреба и безопасност (Plug S MTR Gen3)",
-      "publisher": "Shelly Knowledge Base",
+      "id": "shelly-doc-plug-s-mtr-gen3",
+      "url": "https://www.shelly.com/blogs/documentation/plug-s-mtr-gen3",
+      "title": "Plug S MTR Gen3 - Shelly Europe",
+      "publisher": "Shelly Group",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
@@ -154,8 +155,17 @@
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-support-matter",
+      "url": "https://support.shelly.cloud/en/support/solutions/articles/103000060376-do-you-support-matter-",
+      "title": "Matter support",
+      "publisher": "Shelly Support",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

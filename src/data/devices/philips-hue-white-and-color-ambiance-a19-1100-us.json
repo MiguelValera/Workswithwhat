@@ -1,0 +1,153 @@
+{
+  "category": "smart-bulb",
+  "brand": "Philips Hue",
+  "model": "White and Color Ambiance A19 E26 1100 lm (046677591168)",
+  "name": "Philips Hue White and Color Ambiance A19 1100 lm (US)",
+  "regions": ["US"],
+  "officialUrl": "https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-75w-a19-e26-smart-bulb/046677591168",
+  "radios": {
+    "value": ["bluetooth", "zigbee"],
+    "sources": ["hue-a19-us", "hue-a19-us-2pack"],
+    "note": "Hue lists Bluetooth and Zigbee as the communication protocols. Bluetooth is for direct app control in one room; Zigbee connects the bulb to a Hue Bridge."
+  },
+  "matter": {
+    "certified": null,
+    "sources": ["hue-a19-us-2pack", "hue-matter-guide", "csa-hue-light-1100"],
+    "note": "Hue's pages describe Matter via the Hue Bridge and list no Thread radio. CSA lists 'White and Color Ambiance 1100lm A19/A60' certificates, but we could not tie one to this SKU or see its transport."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-a19-us", "hue-matter-guide"],
+      "note": "The product page lists Apple Home among assistants that need a Hue Bridge. The Bridge links to Apple Home via HomeKit or Matter."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["hue-no-bridge-faq", "hue-google-support", "hue-a19-us"],
+      "note": "Works through Hue's own Google Home integration. Without a Bridge it works over Bluetooth only with Google Nest speakers and displays; the Bridge adds full features and remote access."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["hue-no-bridge-faq", "hue-alexa-setup", "hue-a19-us"],
+      "note": "Hue says Bluetooth bulbs can be linked to Alexa without a Bridge on supported Echo devices; with a Hue Bridge more features are available."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-a19-us"],
+      "note": "The product page lists Samsung SmartThings among assistants that need a Hue Bridge."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-hue", "ha-hue-ble"],
+      "note": "Official Hue integration controls lights on a Hue Bridge; the official Hue BLE integration (added in 2025.12) controls Hue Bluetooth lights without a Bridge."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["hue-a19-us", "hue-no-bridge-faq"],
+    "note": "Basic control works over Bluetooth from the Hue app (up to 10 lights, one room). A Hue Bridge is needed for Apple Home, SmartThings, remote access and larger setups."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["hue-no-bridge-faq", "ha-hue"],
+    "note": "Bluetooth control from a phone needs no internet; the Hue Bridge also offers a local API that Home Assistant uses."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": ["hue-a19-us"],
+    "note": "Full colour plus tunable white; Hue quotes a 1000–20000 K range."
+  },
+  "lumens": {
+    "value": 1100,
+    "sources": ["hue-a19-us", "hue-a19-us-2pack"],
+    "note": "Up to 1100 lm at 4000 K per Hue. Older A19 colour SKUs were rated 1055 lm or less; check the product code on the box."
+  },
+  "bulbBase": {
+    "value": "E26 (A19)",
+    "sources": ["hue-a19-us"]
+  },
+  "summary": "The current US Philips Hue White and Color Ambiance A19 (product code 046677591168) is a colour bulb with an E26 base, rated up to 1100 lumens. It has Bluetooth for bridgeless control from the Hue app and Zigbee for the Hue Bridge. Alexa and Google Home work through Hue's own integrations, over Bluetooth on supported speakers or through the Bridge. Apple Home and SmartThings need the Hue Bridge.",
+  "caveats": [
+    "Apple Home and SmartThings need a Hue Bridge; Bluetooth-only setups can't use Matter.",
+    "Bridgeless Google control works only with Google Nest speakers and displays, not third-party Google Assistant devices.",
+    "Bluetooth mode is limited to about 10 lights in one room and has no remote access."
+  ],
+  "sources": [
+    {
+      "id": "hue-a19-us",
+      "url": "https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-75w-a19-e26-smart-bulb/046677591168",
+      "title": "Hue White and color ambiance 75W A19- E26 smart bulb",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-a19-us-2pack",
+      "url": "https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-75w-a19-2pack-e26-smart-bulbs/046677591175",
+      "title": "Hue White and color ambiance 75W A19 2PACK- E26 smart bulbs",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-matter-guide",
+      "url": "https://www.philips-hue.com/en-us/support/article/philips-hue-and-matter-complete-setup-and-support-guide/000012",
+      "title": "Philips Hue and Matter: Complete Setup & Support Guide",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-no-bridge-faq",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/faq/controls/how-to-connect-philips-hue-without-a-bridge",
+      "title": "How to connect Philips Hue without a Bridge?",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-alexa-setup",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/works-with/amazon-alexa/set-up",
+      "title": "How to connect Philips Hue to Amazon Alexa",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-google-support",
+      "url": "https://www.philips-hue.com/en-us/support/topic/google-assistant/100020",
+      "title": "Google Home (support)",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-hue-light-1100",
+      "url": "https://csa-iot.org/csa_product/philips-hue-light-14/",
+      "title": "Philips Hue Light - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-hue",
+      "url": "https://www.home-assistant.io/integrations/hue/",
+      "title": "Philips Hue - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-hue-ble",
+      "url": "https://www.home-assistant.io/integrations/hue_ble/",
+      "title": "Philips Hue BLE - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

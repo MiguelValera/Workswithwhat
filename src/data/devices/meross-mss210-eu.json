@@ -19,13 +19,15 @@
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "Meross's EU page lists HomeKit, Alexa, Google and SmartThings but not Matter, and we found no CSA listing. A Meross listing for the MSS210HK variant mentions Matter, so we leave it unconfirmed."
+    "note": "Meross's EU page and spec sheet list HomeKit, Alexa, Google and SmartThings but not Matter, and we found no CSA listing. Only a Meross UK shop page for the MSS210HK mentions Matter, so we leave it unconfirmed."
   },
   "compatibility": {
     "apple_home": {
       "status": "unknown",
-      "sources": [],
-      "note": "The MSS210 is sold in HomeKit (MSS210HK) and non-HomeKit versions. Meross's shop says only the HomeKit version works with Apple Home, while its EU product page lists HomeKit without separating them. Check for the HomeKit label."
+      "sources": [
+        "meross-mss210-shop-eu"
+      ],
+      "note": "Sold as HomeKit (MSS210HK) and non-HomeKit versions under one name. Meross's shop says only the HomeKit version supports Apple Home; the EU product page lists HomeKit without separating them. Check for the HomeKit label."
     },
     "google_home": {
       "status": "native",
@@ -71,7 +73,7 @@
     "sources": [
       "meross-mss210eu-product"
     ],
-    "note": "The MSS210 spec lists no power metering. Meross sells metering plugs as separate models (e.g. MSS210PZF, MSS310)."
+    "note": "Meross's EU spec lists 'Energy Monitor: No'. Meross sells metering plugs as separate models (e.g. MSS210PZF, MSS310)."
   },
   "maxLoadWatts": {
     "value": null,
@@ -105,6 +107,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

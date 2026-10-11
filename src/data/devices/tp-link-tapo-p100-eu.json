@@ -19,20 +19,15 @@
     "note": "2.4 GHz Wi-Fi only (IEEE 802.11b/g/n). TP-Link lists Bluetooth for setup only."
   },
   "matter": {
-    "certified": false,
-    "sources": [
-      "tapo-p100-en",
-      "tapo-p100m"
-    ],
-    "note": "The P100 page lists no Matter support. TP-Link sells a separate Matter-certified model, the Tapo P100M."
+    "certified": null,
+    "sources": [],
+    "note": "No official source states Matter support or explicitly rules it out for the P100; product pages simply don't list it. TP-Link's Matter version is the separate Tapo P100M."
   },
   "compatibility": {
     "apple_home": {
-      "status": "no",
-      "sources": [
-        "tapo-p100-en"
-      ],
-      "note": "TP-Link lists Alexa, Google Assistant and SmartThings as the third-party platforms and leaves out Apple Home. There is no HomeKit mode and no Matter. The P100M is the Matter version."
+      "status": "unknown",
+      "sources": [],
+      "note": "TP-Link's P100 pages list Alexa, Google Assistant and SmartThings and don't mention Apple Home, but no official page says it is unsupported. The Tapo P100M is the Matter version."
     },
     "google_home": {
       "status": "native",
@@ -97,10 +92,10 @@
     ],
     "note": "10 A / 2300 W for the EU version, 1/6 HP motor. The UK version is rated 13 A and the US version 10 A / 1200 W; don't mix them up."
   },
-  "summary": "The EU Tapo P100 is a basic 2.4 GHz Wi-Fi plug rated 10 A / 2300 W, with no energy monitoring and no Matter. TP-Link lists Alexa, Google Assistant and SmartThings, all through account linking from the Tapo app. Home Assistant supports it through its TP-Link integration. There is no Apple Home support; the separate Tapo P100M is the Matter version.",
+  "summary": "The EU Tapo P100 is a basic 2.4 GHz Wi-Fi plug rated 10 A / 2300 W, with no energy monitoring. TP-Link lists Alexa, Google Assistant and SmartThings, all through account linking from the Tapo app. Home Assistant supports it through its TP-Link integration. TP-Link doesn't list Apple Home or Matter for it; the separate Tapo P100M is the Matter version.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "No Apple Home: there is no HomeKit mode and no Matter. Buy the Tapo P100M if you need Apple Home.",
+    "TP-Link doesn't list Apple Home or Matter for the P100. If you need Apple Home, the Tapo P100M is the Matter version.",
     "Rated 10 A / 2300 W in the EU, lower than the 16 A Tapo P110.",
     "Home Assistant's TP-Link integration asks for your TP-Link account credentials once on newer firmware."
   ],
@@ -118,14 +113,6 @@
       "url": "https://www.tp-link.com/nordic/home-networking/smart-plug/tapo-p100/",
       "title": "Tapo P100",
       "publisher": "TP-Link",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "tapo-p100m",
-      "url": "https://www.tapo.com/en/product/smart-plug/tapo-p100m/",
-      "title": "Tapo P100M",
-      "publisher": "TP-Link (Tapo)",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
@@ -170,6 +157,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }
