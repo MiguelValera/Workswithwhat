@@ -11,7 +11,7 @@ Read `CLAUDE.md` and `src/schema/device.ts` before you start. The schema decides
 
 ## Categories
 
-Set `category` to `smart-plug`, `smart-bulb`, `smart-lock`, `smart-thermostat` or `smart-sensor`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
+Set `category` to `smart-plug`, `smart-bulb`, `smart-lock`, `smart-thermostat`, `smart-sensor` or `smart-camera`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
 - smart-plug: `energyMonitoring` (boolean), `maxLoadWatts` (integer).
 - smart-bulb: `colorType` ("white", "tunable-white" or "color"), `lumens` (integer), `bulbBase` (e.g. "E27", "E26 (A19)", "GU10", "B22").
 - smart-lock: `lockFit` ("deadbolt" = replaces a whole US deadbolt, "retrofit" = fits over the existing interior thumb-turn or cylinder and keeps your keys, "cylinder" = replaces a euro-profile cylinder, "lever" = handle set with the lock built in), `keypad` (boolean: a keypad on the lock itself, not a separate accessory), `power` (string, e.g. "4 × AA", "Rechargeable battery").
@@ -20,6 +20,8 @@ Set `category` to `smart-plug`, `smart-bulb`, `smart-lock`, `smart-thermostat` o
   For thermostats, `hubRequired` means a bridge or gateway is needed for basic app control (e.g. tado's Internet Bridge, a Zigbee gateway); a boiler relay or receiver that's part of the kit is not a hub, mention it in the note.
 - smart-sensor: `senses` (array of "contact", "motion", "presence" (mmWave-style, sees people sitting still), "temperature", "humidity", "leak", "light", "vibration", "air-quality"; list only what the maker states the device reports), `power` (string, e.g. "CR2032", "2 × AAA", "USB-C (mains)").
   For sensors, `hubRequired` means a brand hub or gateway is needed for basic app control (e.g. an Aqara Zigbee hub, a Hue Bridge); a generic Thread border router is not a hub, say so in the note.
+- smart-camera (cameras and video doorbells): `cameraType` ("indoor", "outdoor", "doorbell", "floodlight"), `power` (string, e.g. "Wired (doorbell 16–24 V AC)", "Rechargeable battery", "USB-C (mains)"), `localStorage` (boolean: records video without a cloud plan, on microSD, a base station or an NVR), `subscription` (string, max 80 chars: what a paid plan is needed for as the maker states it, e.g. "Video history and person alerts (Ring Protect)", or "None: all features free"; null if the maker doesn't say).
+  For cameras, `hubRequired` means a base station or hub is needed for basic use (e.g. a HomeBase for some eufy cameras, a Sync Module for Blink). Ecosystem support for cameras usually means live view on a smart display or in the Home app; put what works (live view, doorbell chime, HomeKit Secure Video, recordings) in the note. Matter camera support is new: don't assume it.
 A bulb sold in several bases or brightness variants is one record per model number; pick the one asked for.
 
 ## Process

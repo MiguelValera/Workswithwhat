@@ -100,6 +100,8 @@ export const LOCK_FITS = ['deadbolt', 'retrofit', 'cylinder', 'lever'] as const;
 // radiator-valve = thermostatic head that replaces a radiator's valve head (TRV)
 export const THERMOSTAT_TYPES = ['wall', 'radiator-valve'] as const;
 // what a sensor reports; presence = mmWave-style presence that sees people who sit still
+// indoor / outdoor = standalone cameras; doorbell = video doorbell; floodlight = camera with built-in lights
+export const CAMERA_TYPES = ['indoor', 'outdoor', 'doorbell', 'floodlight'] as const;
 export const SENSES = ['contact', 'motion', 'presence', 'temperature', 'humidity', 'leak', 'light', 'vibration', 'air-quality'] as const;
 
 // Category-specific facts. Add a category here, in CATEGORY_FACTS and in
@@ -159,7 +161,21 @@ const sensorSchema = z
   })
   .strict();
 
-export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor'] as const;
+const cameraSchema = z
+  .object({
+    ...baseShape,
+    category: z.literal('smart-camera'),
+    cameraType: fact(z.enum(CAMERA_TYPES)),
+    // e.g. "Wired (doorbell 16–24 V AC)", "Rechargeable battery", "USB-C (mains)"
+    power: fact(z.string().min(2).max(40)),
+    // records video without a cloud plan (microSD, a base station or NVR)
+    localStorage: fact(z.boolean()),
+    // what a paid plan is needed for, as the maker states it, e.g. "Video history (Ring Protect)"
+    subscription: fact(z.string().min(2).max(80)),
+  })
+  .strict();
+
+export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor', 'smart-camera'] as const;
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const COMMON_FACTS = ['radios', 'hubRequired', 'localControl'] as const;
@@ -169,12 +185,13 @@ export const CATEGORY_FACTS = {
   'smart-lock': ['lockFit', 'keypad', 'power'],
   'smart-thermostat': ['thermostatType', 'systems', 'power'],
   'smart-sensor': ['senses', 'power'],
+  'smart-camera': ['cameraType', 'power', 'localStorage', 'subscription'],
 } as const satisfies Record<CategoryKey, readonly string[]>;
 
 type FactValue = { value: unknown; sources: string[] };
 
 export const deviceSchema = z
-  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema])
+  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema, cameraSchema])
   .superRefine((d, ctx) => {
     const ids = d.sources.map((s) => s.id);
     const known = new Set(ids);
