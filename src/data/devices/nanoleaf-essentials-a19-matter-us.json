@@ -2,7 +2,7 @@
   "category": "smart-bulb",
   "brand": "Nanoleaf",
   "model": "Essentials Matter A19 (NF080B03-1A19E)",
-  "name": "Nanoleaf Essentials Matter A19 Smart Bulb (US)",
+  "name": "Nanoleaf Essentials A19 (Matter, US)",
   "regions": ["US"],
   "officialUrl": "https://nanoleaf.me/en-US/products/essentials/bulbs/a19-or-e26-matter-bulb/",
   "radios": {
@@ -67,8 +67,8 @@
     "value": "E26 (A19)",
     "sources": ["nanoleaf-a19-us"]
   },
-  "summary": "The Nanoleaf Essentials Matter A19 (NF080B03-1A19E) is a colour bulb with an E26 base that runs Matter over Thread. It is Matter-certified, so it works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant once a Thread border router is on the network. Without one, the Nanoleaf app can still control it over Bluetooth. Nanoleaf rates it at 806 lumens average (a 60 W equivalent) and 1100 lumens maximum.",
-  "caveats": ["Ecosystem control needs a Thread border router (for example a HomePod mini, Nest Hub 2nd gen or a Thread-capable Echo).", "Nanoleaf's own pages disagree on brightness: 806 lm average / 1100 lm max on the SKU page, 900 lm average / 1000 lm max on a bundle page."],
+  "summary": "Apple Home, Google Home, Alexa, SmartThings and Home Assistant all control the Nanoleaf Essentials A19 (NF080B03-1A19E) as a Matter light, once a Thread border router such as a HomePod mini or Nest Hub (2nd gen) is on your network. Without one, the Nanoleaf app still runs it directly over Bluetooth. It's a full-colour E26 bulb with tunable white from 2700 to 6500 K. Nanoleaf rates it at 806 lumens average, a 60 W equivalent, and 1100 lumens at maximum.",
+  "caveats": ["Ecosystem control needs a Thread border router, such as a HomePod mini, Nest Hub (2nd gen), or a Thread-capable Echo or eero.","Nanoleaf's brightness figures vary: 806 lm average and 1100 lm max on the SKU page, 900 lm average and 1000 lm max on its US 3-pack page.","Nanoleaf's older FAQ still calls Alexa support 'coming soon', though the current product page lists it."],
   "sources": [
     {
       "id": "nanoleaf-a19-us",

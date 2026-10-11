@@ -2,7 +2,7 @@
   "category": "smart-bulb",
   "brand": "IKEA",
   "model": "KAJPLATS LED bulb E27 1055 lm, colour and white spectrum (706.085.75)",
-  "name": "IKEA KAJPLATS E27 1055 lm Smart Colour and White Spectrum Bulb (EU)",
+  "name": "IKEA KAJPLATS E27 colour bulb (EU)",
   "regions": ["EU"],
   "officialUrl": "https://www.ikea.com/se/en/p/kajplats-led-bulb-e27-1055-lumen-smart-colour-and-white-spectrum-globe-opal-white-70608575/",
   "radios": {
@@ -66,8 +66,8 @@
     "value": "E27",
     "sources": ["ikea-kajplats-e27-cws-se"]
   },
-  "summary": "IKEA says its KAJPLATS range replaced TRÅDFRI in January 2026, so this record covers the KAJPLATS E27 colour and white spectrum bulb. It is a 1055-lumen colour bulb that runs Matter over Thread and is Matter-certified. It works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant through Matter, but it needs a Thread border router such as IKEA's DIRIGERA hub.",
-  "caveats": ["Needs a Thread border router (e.g. IKEA DIRIGERA, HomePod mini, Nest Hub 2nd gen) even for phone control."],
+  "summary": "Bring a Thread border router and the IKEA KAJPLATS E27 colour bulb works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter. Without one, not even your phone can control it. IKEA's DIRIGERA hub does the job, as does a HomePod, Nest Hub or Thread-capable Echo. The bulb (706.085.75) puts out 1055 lumens with full colour plus adjustable white, and it's Matter-certified (Matter 1.4). IKEA says KAJPLATS replaced TRÅDFRI in January 2026.",
+  "caveats": ["Needs a Thread border router (IKEA DIRIGERA, HomePod, Nest Hub or a Thread-capable Echo) even for phone control."],
   "sources": [
     {
       "id": "ikea-kajplats-e27-cws-se",

@@ -2,7 +2,7 @@
   "category": "smart-bulb",
   "brand": "Philips Hue",
   "model": "White and Color Ambiance A60 E27 1100 lm (8720169364066)",
-  "name": "Philips Hue White and Color Ambiance A60 E27 1100 lm (EU)",
+  "name": "Philips Hue White and Colour Ambiance E27 (1100 lm, EU)",
   "regions": ["EU"],
   "officialUrl": "https://www.philips-hue.com/fr-fr/p/hue-white-and-color-ambiance-a60-ampoule-connectee-e27-1100/8720169364066",
   "radios": {
@@ -68,8 +68,8 @@
     "value": "E27",
     "sources": ["hue-a60-fr"]
   },
-  "summary": "The current EU Philips Hue White and Color Ambiance A60 (EAN 8720169364066) is a colour bulb with an E27 base, rated at 1100 lumens. It has Bluetooth for bridgeless control from the Hue app and Zigbee for the Hue Bridge. Apple Home and SmartThings need the Bridge. Alexa and Google Home work through Hue's own integrations.",
-  "caveats": ["Apple Home and SmartThings need a Hue Bridge; Bluetooth-only setups can't use Matter.", "Bluetooth mode is limited to about 10 lights in one room and has no remote access.", "Hue sells an older E27 colour bulb also labelled 1100 but rated 1055 lm; check the EAN."],
+  "summary": "Pair the EU Philips Hue White and Colour Ambiance A60 with a Hue Bridge and it works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant. Alexa, Google and Home Assistant go through Hue's own integrations; Apple Home and SmartThings need the Bridge. On its own, the bulb runs over Bluetooth from the Hue app. This is EAN 8720169364066, a full-colour E27 bulb rated at 1100 lumens at 4000 K. Matter is unconfirmed for this EAN.",
+  "caveats": ["Apple Home and SmartThings need a Hue Bridge; direct Matter pairing isn't confirmed for this EAN.","Hue's EU product page lists Alexa and Google Home under 'Hue Bridge required'; bridgeless voice control is described only in Hue's US FAQ.","Bluetooth mode tops out at about 10 lights in one room and has no remote access.","An older Hue E27 colour bulb also sold as '1100' (EAN 8719514291171) is rated up to 1055 lm, so check the EAN on the box."],
   "sources": [
     {
       "id": "hue-a60-fr",

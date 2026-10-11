@@ -2,7 +2,7 @@
   "category": "smart-bulb",
   "brand": "Philips Hue",
   "model": "White and Color Ambiance A19 E26 1100 lm (046677591168)",
-  "name": "Philips Hue White and Color Ambiance A19 1100 lm (US)",
+  "name": "Philips Hue White and Color Ambiance A19 (1100 lm, US)",
   "regions": ["US"],
   "officialUrl": "https://www.philips-hue.com/en-us/p/hue-white-and-color-ambiance-75w-a19-e26-smart-bulb/046677591168",
   "radios": {
@@ -68,8 +68,8 @@
     "value": "E26 (A19)",
     "sources": ["hue-a19-us"]
   },
-  "summary": "The current US Philips Hue White and Color Ambiance A19 (product code 046677591168) is a colour bulb with an E26 base, rated up to 1100 lumens. It has Bluetooth for bridgeless control from the Hue app and Zigbee for the Hue Bridge. Alexa and Google Home work through Hue's own integrations, over Bluetooth on supported speakers or through the Bridge. Apple Home and SmartThings need the Hue Bridge.",
-  "caveats": ["Apple Home and SmartThings need a Hue Bridge; Bluetooth-only setups can't use Matter.", "Bridgeless Google control works only with Google Nest speakers and displays, not third-party Google Assistant devices.", "Bluetooth mode is limited to about 10 lights in one room and has no remote access."],
+  "summary": "Alexa and Google Home control the Philips Hue White and Color Ambiance A19 through Hue's own integrations, either bridgeless over Bluetooth on supported Echo and Google Nest speakers or through a Hue Bridge. Apple Home and SmartThings need the Bridge, and Home Assistant has official integrations for both routes. This US version (product code 046677591168) is a full-colour bulb with an E26 base, rated up to 1100 lumens. Matter is unconfirmed: CSA lists an 1100 lm A19/A60 Hue bulb, but Hue's page for this code mentions only Bluetooth and Zigbee.",
+  "caveats": ["Apple Home and SmartThings need a Hue Bridge; direct Matter pairing isn't confirmed for this product code.","Without a Bridge, Google control works only from Google Nest speakers and displays.","Bluetooth mode tops out at about 10 lights in one room and has no remote access.","Hue also sells lower-output A19 colour bulbs (e.g. 800 lm), so check for product code 046677591168 on the box."],
   "sources": [
     {
       "id": "hue-a19-us",
