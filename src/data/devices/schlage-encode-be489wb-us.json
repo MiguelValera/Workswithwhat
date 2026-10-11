@@ -1,0 +1,83 @@
+{
+  "category": "smart-lock",
+  "brand": "Schlage",
+  "model": "Encode (BE489WB)",
+  "name": "Schlage Encode (US)",
+  "regions": ["US"],
+  "officialUrl": "https://www.schlage.com/en/home/smart-locks/encode.html",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["allegion-encode-zwave", "schlage-be489-gr"],
+    "note": "Allegion says the Encode (BE489) has Bluetooth and Wi-Fi for pairing with the Schlage Home app. Wi-Fi is 2.4 GHz."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Schlage or Allegion page found says either way for the non-Plus Encode. Allegion says the Encode Plus does not support Matter; that article does not cover this model."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": ["allegion-homekit", "schlage-encode"],
+      "note": "Schlage and Allegion point Apple Home and Home Key users to the Encode Plus (BE499). A search snippet of Allegion's knowledge base says the BE489 has no HomeKit support, but we could not open the exact article, so this stays unknown."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["schlage-encode-works-with", "schlage-google"],
+      "note": "Through the Schlage Home app and Google Assistant. Schlage says Encode products need no hub or adapter."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["schlage-encode-works-with", "schlage-encode"],
+      "note": "Alexa skill via the Schlage Home app."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Schlage's pages seen list Alexa and Google but not SmartThings. Absence from the list is not a statement that it will not work."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-schlage"],
+      "note": "Official Schlage integration; the docs list the Encode Smart WiFi Deadbolt as tested. It uses Schlage's cloud API."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["schlage-encode", "schlage-google"],
+    "note": "Built-in Wi-Fi; Schlage says no extra hub or accessory is needed for remote control."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Home Assistant control goes through Schlage's cloud; no source states what works with the internet down."
+  },
+  "lockFit": {
+    "value": "deadbolt",
+    "sources": ["schlage-be489-gr"],
+    "note": "Complete smart deadbolt with 5-pin C keyway, sold with Camelot, Century or Greenwich trim."
+  },
+  "keypad": {
+    "value": true,
+    "sources": ["schlage-be489-gr", "schlage-encode"],
+    "note": "Touchscreen keypad on the lock; up to 100 access codes."
+  },
+  "power": {
+    "value": "4 × AA",
+    "sources": ["schlage-be489-gr"],
+    "note": "Four AA alkaline batteries included; Schlage estimates up to six months in typical use."
+  },
+  "summary": "The Schlage Encode is a US smart deadbolt with a touchscreen keypad and built-in 2.4 GHz Wi-Fi, so no hub is needed. It works with Alexa and Google Assistant through the Schlage Home app, and Home Assistant has an official integration. It is the non-Plus model: Schlage points Apple Home and Home Key users to the Encode Plus. Four AA batteries are included.",
+  "caveats": ["Wi-Fi is 2.4 GHz only.", "Apple Home is not confirmed for this model; Schlage's Apple Home Key lock is the Encode Plus.", "Matter and SmartThings support are not confirmed.", "The Home Assistant integration goes through Schlage's cloud."],
+  "sources": [
+    { "id": "schlage-encode", "url": "https://www.schlage.com/en/home/smart-locks/encode.html", "title": "WiFi Smart Lock with Smart Home Integration - Schlage Encode", "publisher": "Schlage", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "schlage-encode-works-with", "url": "https://www.schlage.com/en/home/smart-locks/schlage-encode-works-with.html", "title": "Schlage Encode Works With", "publisher": "Schlage", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "schlage-be489-gr", "url": "https://www.schlage.com/en/home/products/BE489WBGRWFFF.html", "title": "Schlage Encode Smart WiFi Deadbolt with Greenwich Trim", "publisher": "Schlage", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "schlage-google", "url": "https://www.schlage.com/en/home/smart-locks/works-with/google-home.html", "title": "Smart Locks Compatible with Google Home", "publisher": "Schlage", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "allegion-encode-zwave", "url": "https://kc.allegion.com/kb/article/are-schlage-encode-series-locks-z-wave-compatible/", "title": "Are Schlage Encode Series Locks Z-Wave Compatible?", "publisher": "Allegion", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "allegion-homekit", "url": "https://kc.allegion.com/kb/article/how-to-pair-my-schlage-encode-plus-smart-lock-with-apple-homekit/", "title": "How to Pair my Schlage Encode Plus Smart Lock with Apple HomeKit?", "publisher": "Allegion", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "ha-schlage", "url": "https://www.home-assistant.io/integrations/schlage/", "title": "Schlage - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11" }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
