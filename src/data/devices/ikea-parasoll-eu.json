@@ -90,9 +90,9 @@
     ],
     "note": "IKEA recommends one LADDA rechargeable AAA (HR03, 1.2 V) cell."
   },
-  "summary": "PARASOLL is a two-part door and window contact sensor from IKEA that talks Zigbee. IKEA's DIRIGERA hub brings it into the IKEA Home smart app and on to Apple Home, Google Home and Alexa. Without a hub it can only switch a paired TRÅDFRI bulb. It takes one AAA cell, and IKEA recommends its LADDA rechargeable.",
+  "summary": "IKEA PARASOLL is a Zigbee door and window contact sensor that needs an IKEA DIRIGERA hub to reach Apple Home, Google Home and Alexa. Without the hub it can only trigger a paired TRÅDFRI bulb. SmartThings and Home Assistant support are not confirmed. It takes one AAA cell, and IKEA recommends its LADDA rechargeable.",
   "caveats": [
-    "Needs a DIRIGERA hub for notifications and for Apple Home, Google Home and Alexa.",
+    "Needs a DIRIGERA hub, sold separately, for phone notifications and for Apple Home, Google Home and Alexa.",
     "IKEA's Austrian help page says PARASOLL has left the range, with MYGGBETT as its replacement."
   ],
   "sources": [

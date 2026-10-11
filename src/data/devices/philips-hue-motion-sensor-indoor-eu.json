@@ -104,9 +104,9 @@
     ],
     "note": "2 × AAA included. Hue's US page quotes at least two years of battery life."
   },
-  "summary": "The Hue Motion Sensor (indoor) detects movement, and also reports temperature and light level. It talks Zigbee to a Hue Bridge, so Apple Home, Google Home, Alexa and SmartThings all reach it through the Bridge. Two AAA batteries come in the box, and Hue quotes at least two years of life.",
+  "summary": "Motion, temperature and light level are what the Hue Motion Sensor (indoor) reports, all over Zigbee to a Hue Bridge. The Bridge is what connects it to Apple Home, Google Home, Alexa, SmartThings and Home Assistant. Two AAA batteries are included, and Hue quotes at least two years of life.",
   "caveats": [
-    "Needs a Hue Bridge; Hue says products connected over Bluetooth can't be used with Matter.",
+    "Needs a Hue Bridge, sold separately; Hue says Bluetooth-connected products don't work with Matter.",
     "Hue lists a limit of 12 accessories with a Hue Bridge."
   ],
   "sources": [

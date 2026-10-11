@@ -77,9 +77,8 @@
     ],
     "note": "Aqara's T1 specs page says CR2032. Some Aqara pages for other temperature sensors say CR2450."
   },
-  "summary": "The Temperature and Humidity Sensor T1 (TH-S02D) is Aqara's Zigbee 3.0 climate sensor. It reads temperature (±0.3 °C), humidity (±3%) and air pressure, and reports hourly unless values change sharply. It is for indoor use, runs on a CR2032 cell and pairs only through an Aqara hub.",
+  "summary": "Pair the Aqara Temperature and Humidity Sensor T1 (TH-S02D) to an Aqara hub first; it can't connect to a phone directly. It reads temperature, humidity and air pressure (30–110 kPa) over Zigbee 3.0. Support for Apple Home, Google Home, Alexa, SmartThings and Home Assistant is not confirmed. Power is a CR2032 cell.",
   "caveats": [
-    "Indoor use only.",
     "Needs an Aqara hub; Aqara's T1 pages seen don't confirm Apple Home, Google Home, Alexa or SmartThings support."
   ],
   "sources": [

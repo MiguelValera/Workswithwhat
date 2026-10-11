@@ -79,7 +79,7 @@
     ],
     "note": "IKEA recommends one LADDA rechargeable AAA (HR03, 1.2 V) cell, sold separately."
   },
-  "summary": "BADRING is IKEA's Zigbee water leak sensor, meant to sit wherever a leak can occur. It beeps when it touches water, and with a DIRIGERA hub it also sends a phone notification. It runs on one AAA cell, sold separately, and is rated IP44.",
+  "summary": "Water leaks are what IKEA's BADRING detects, over Zigbee through a DIRIGERA hub. On its own it still sounds a built-in alarm; with the hub it also sends a phone notification. Apple Home, Google Home, Alexa, SmartThings and Home Assistant are all unconfirmed. One AAA cell is needed and is not included.",
   "caveats": [
     "Needs a DIRIGERA hub for phone notifications; without one it only sounds its own alarm.",
     "IKEA has not confirmed on any page seen that BADRING appears in Apple Home, Google Home or Alexa."

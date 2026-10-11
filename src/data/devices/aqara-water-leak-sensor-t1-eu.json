@@ -81,7 +81,7 @@
     ],
     "note": "Aqara says typical battery life is about two years."
   },
-  "summary": "The Water Leak Sensor T1 (WL-S02D) is Aqara's Zigbee 3.0 leak sensor. Its probes raise an alarm from about 0.5 mm of water, and an Aqara hub is required for alerts and for Apple Home. A CR2032 cell lasts about two years, and Aqara describes the unit as IP67.",
+  "summary": "Aqara's Water Leak Sensor T1 (WL-S02D) detects water between two probes from about 0.5 mm deep, using Zigbee 3.0. It must be paired to an Aqara hub, which is also how it reaches Apple Home. Google Home, Alexa, SmartThings and Home Assistant are not confirmed. A CR2032 cell lasts about two years.",
   "caveats": [
     "Needs an Aqara hub; it is not a standalone Zigbee device.",
     "Google Home, Alexa and SmartThings support is unconfirmed on Aqara pages seen."
