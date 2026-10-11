@@ -1,0 +1,137 @@
+{
+  "category": "smart-camera",
+  "brand": "Aqara",
+  "model": "Camera Hub G3",
+  "name": "Aqara Camera Hub G3 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.aqara.cn/eu/product/camera-hub-g3/",
+  "radios": {
+    "value": [
+      "wifi",
+      "zigbee"
+    ],
+    "sources": [
+      "aqara-g3-specs"
+    ],
+    "note": "Dual-band 2.4/5 GHz Wi-Fi and a built-in Zigbee 3.0 hub."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Aqara's G3 pages we saw name HomeKit, Alexa and Google Home but not Matter for the camera. Press reports say a 2023 firmware added a Matter bridge for Zigbee devices paired to the G3, not for the camera itself; we found no Aqara page or CSA listing confirming it."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "aqara-g3-eu"
+      ],
+      "note": "Supports HomeKit Secure Video. In that mode recording drops to 1080p and pan/tilt control is not available. Needs an Apple home hub for HSV."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "aqara-g3-eu"
+      ],
+      "note": "Aqara lists Google Home and says the G3 is exposed to it as a camera only. Whether live view works on Nest Hub displays was not confirmed from an Aqara page."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "aqara-g3-eu"
+      ],
+      "note": "Aqara lists Alexa and says the G3 is exposed as a camera only. Whether live view works on Echo Show was not confirmed from an Aqara page."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Aqara or Samsung page we found mentions SmartThings for the G3."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through a community integration (Aqara Open API) or HomeKit pairing per third-party pages; no official Home Assistant docs found."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "aqara-g3-eu"
+    ],
+    "note": "The G3 is itself a Zigbee hub for Aqara sensors; it needs no separate hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [
+      "aqara-g3-eu"
+    ],
+    "note": "Aqara says face, gesture and pet recognition and storage in the Aqara Home app run locally; local-only control is not stated."
+  },
+  "cameraType": {
+    "value": "indoor",
+    "sources": [
+      "aqara-g3-manual"
+    ],
+    "note": "The user manual says the product is for indoor use only."
+  },
+  "power": {
+    "value": "USB-C 5 V / 2 A (mains)",
+    "sources": [
+      "aqara-g3-specs"
+    ],
+    "note": "Maximum consumption 10 W."
+  },
+  "localStorage": {
+    "value": true,
+    "sources": [
+      "aqara-g3-specs"
+    ],
+    "note": "microSD card, not included; class 4 or above, up to 128 GB."
+  },
+  "subscription": {
+    "value": "None for local features; HomeKit Secure Video may need a paid plan",
+    "sources": [
+      "aqara-g3-eu"
+    ],
+    "note": "Aqara says the local AI features need no subscription, while third-party cloud storage such as HomeKit Secure Video, or future cloud options, may need a paid plan. Aqara does not name the plan."
+  },
+  "summary": "Aqara lists HomeKit Secure Video, Google Home and Alexa for the Camera Hub G3, an indoor pan/tilt camera that is also a Zigbee 3.0 hub for Aqara sensors, so no separate hub is needed. Face, gesture and pet recognition run on the device and need no subscription, and a microSD card of up to 128 GB takes local recordings. It runs on a USB-C 5 V / 2 A adapter. Aqara has not confirmed live view on Echo Show or Nest displays, and SmartThings and Home Assistant support are not confirmed.",
+  "caveats": [
+    "HomeKit Secure Video limits recording to 1080p and disables pan/tilt control, and it needs an Apple home hub.",
+    "HomeKit Secure Video cloud storage, or future cloud options, may need a paid plan; Aqara does not name one.",
+    "Google Home and Alexa see it as a camera only, not as a Zigbee hub.",
+    "The microSD card is not included.",
+    "Indoor use only, per Aqara's manual."
+  ],
+  "sources": [
+    {
+      "id": "aqara-g3-eu",
+      "url": "https://www.aqara.cn/eu/product/camera-hub-g3/",
+      "title": "Camera Hub G3",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-g3-specs",
+      "url": "https://aqara.cn/en/product/camera-hub-g3/specs",
+      "title": "Camera Hub G3 Specs",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-g3-manual",
+      "url": "https://www.aqara.com/wp-content/uploads/2023/08/Camera-Hub-G3_User-Mannual.pdf",
+      "title": "Camera Hub G3 User Manual",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

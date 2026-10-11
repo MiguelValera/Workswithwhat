@@ -1,0 +1,136 @@
+{
+  "category": "smart-camera",
+  "brand": "Eve",
+  "model": "Outdoor Cam",
+  "name": "Eve Outdoor Cam (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://evehome.com/en/node/5906",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "eve-outdoor-cam-manual"
+    ],
+    "note": "The manual says it connects only to 2.4 GHz Wi-Fi networks."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Eve page we found says the Outdoor Cam supports Matter; it is described as built for HomeKit Secure Video."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "eve-outdoor-cam-features",
+        "eve-ces-2022"
+      ],
+      "note": "Built exclusively for HomeKit Secure Video: clips are analysed on an Apple TV or HomePod and stored encrypted in iCloud; live view goes through the home hub."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [
+        "eve-ces-2022"
+      ],
+      "note": "Eve describes it as designed exclusively for HomeKit Secure Video and does not list Google Home; no page says explicitly that it is unsupported."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [
+        "eve-ces-2022"
+      ],
+      "note": "Eve describes it as designed exclusively for HomeKit Secure Video and does not list Alexa; no page says explicitly that it is unsupported."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No maker or Samsung page found."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Only a community guide pairs it via the HomeKit integration plus go2rtc; no official Home Assistant docs for this camera."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "eve-outdoor-cam-manual"
+    ],
+    "note": "No Eve bridge. An Apple home hub (Apple TV or HomePod) is needed for HomeKit Secure Video and remote access."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [
+      "eve-ces-2022"
+    ],
+    "note": "Eve says live video never touches a cloud and access runs through the home hub; fully local-only operation is not stated."
+  },
+  "cameraType": {
+    "value": "floodlight",
+    "sources": [
+      "eve-ces-2022",
+      "eve-outdoor-cam-features"
+    ],
+    "note": "Floodlight camera with a dimmable light, designed to replace an existing outdoor light."
+  },
+  "power": {
+    "value": "Hardwired mains (neutral + ground)",
+    "sources": [
+      "eve-outdoor-cam-manual"
+    ],
+    "note": "Eve's manual requires AC power with both a neutral and a ground wire; without them the camera can't be installed at that spot. Retailers give 100-240 V AC; not seen on an Eve page."
+  },
+  "localStorage": {
+    "value": null,
+    "sources": [],
+    "note": "Recordings go to iCloud via HomeKit Secure Video; no maker page we saw mentions local storage."
+  },
+  "subscription": {
+    "value": "iCloud+ (HomeKit Secure Video)",
+    "sources": [
+      "eve-outdoor-cam-manual",
+      "eve-ces-2022"
+    ],
+    "note": "An iCloud+ plan (not included) is needed for recording; Apple's plan size sets how many cameras are allowed."
+  },
+  "summary": "The Eve Outdoor Cam is a hardwired floodlight camera built exclusively for Apple HomeKit Secure Video. Clips are analysed on an Apple TV or HomePod and stored encrypted in iCloud, so recording needs an iCloud+ plan, and live view goes through the home hub. Installation needs mains power with neutral and ground wires. Eve does not list Google Home, Alexa or SmartThings, which leaves them unconfirmed.",
+  "caveats": [
+    "Needs an iCloud+ plan and an Apple home hub; no recording without them.",
+    "Installation needs neutral and ground wires; without them it can't go in that spot.",
+    "2.4 GHz Wi-Fi only.",
+    "Specs and ecosystem facts come from 2022 launch-era pages; the EU variant's exact model number was not found."
+  ],
+  "sources": [
+    {
+      "id": "eve-outdoor-cam-features",
+      "url": "https://evehome.com/en/node/5906",
+      "title": "Product Features | Eve Outdoor Cam",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-outdoor-cam-manual",
+      "url": "https://www.evehome.com/sites/default/files/inline-files/Eve_Outdoor_Cam_Manual_EN_DE_FR_51ECA9901_0.pdf",
+      "title": "Eve Outdoor Cam Manual (EN, DE, FR)",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-ces-2022",
+      "url": "https://www.evehome.com/en/node/5506",
+      "title": "CES 2022: Eve Introduces Eve Outdoor Cam, the Only Floodlight Camera Designed Exclusively for HomeKit Secure Video",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

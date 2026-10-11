@@ -47,6 +47,13 @@ const SENSE_LABELS: Record<string, string> = {
   'air-quality': 'Air quality',
 };
 
+const CAMERA_LABELS: Record<string, string> = {
+  indoor: 'Indoor camera',
+  outdoor: 'Outdoor camera',
+  doorbell: 'Video doorbell',
+  floodlight: 'Floodlight camera',
+};
+
 export const CATEGORIES: Category[] = [
   {
     key: 'smart-plug',
@@ -108,6 +115,19 @@ export const CATEGORIES: Category[] = [
         format: (v) => (v as string[]).map((x) => SENSE_LABELS[x] ?? x).join(', '),
       },
       { key: 'power', label: 'Power', format: String },
+    ],
+  },
+  {
+    key: 'smart-camera',
+    path: 'smart-cameras',
+    label: 'Smart cameras and doorbells',
+    singular: 'smart camera',
+    plural: 'smart cameras',
+    specs: [
+      { key: 'cameraType', label: 'Type', format: (v) => CAMERA_LABELS[String(v)] ?? String(v) },
+      { key: 'power', label: 'Power', format: String },
+      { key: 'localStorage', label: 'Local recording', format: yesNo },
+      { key: 'subscription', label: 'Paid plan needed for', format: String },
     ],
   },
 ];
