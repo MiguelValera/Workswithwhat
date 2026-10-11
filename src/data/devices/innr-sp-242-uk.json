@@ -26,12 +26,12 @@
   "compatibility": {
     "apple_home": {
       "status": "unknown",
-      "sources": [],
+      "sources": ["innr-works-with"],
       "note": "Innr's Works-with page says Innr devices on a Hue Bridge are not passed to Apple HomeKit. No source covers other routes, so not marked 'no'."
     },
     "google_home": {
       "status": "unknown",
-      "sources": [],
+      "sources": ["innr-works-with"],
       "note": "Innr's Works-with page doesn't list Google Home for this plug."
     },
     "alexa": {

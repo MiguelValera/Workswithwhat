@@ -8,33 +8,33 @@ const { devices } = Astro.props;
 ---
 
 <div class="table-scroll">
-  <table class="stack">
-    <thead>
-      <tr>
-        <th scope="col">Device</th>
-        <th scope="col">Radio</th>
-        <th scope="col">Matter</th>
-        {ECOSYSTEMS.map((e) => <th scope="col">{ECOSYSTEM_LABELS[e]}</th>)}
+  <table role="table" class="stack">
+    <thead role="rowgroup">
+      <tr role="row">
+        <th role="columnheader" scope="col">Device</th>
+        <th role="columnheader" scope="col">Radio</th>
+        <th role="columnheader" scope="col">Matter</th>
+        {ECOSYSTEMS.map((e) => <th role="columnheader" scope="col">{ECOSYSTEM_LABELS[e]}</th>)}
       </tr>
     </thead>
-    <tbody>
+    <tbody role="rowgroup">
       {
         devices.map((dev) => {
           const d = dev.data;
           return (
-            <tr>
-              <th scope="row" class="name">
+            <tr role="row">
+              <th role="rowheader" scope="row" class="name">
                 <a href={devicePath(dev)}>{d.name}</a>
                 <span class="note">{d.model} · {d.regions.join('/')}</span>
               </th>
-              <td data-label="Radio">{(d.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
-              <td data-label="Matter">
+              <td role="cell" data-label="Radio">{(d.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+              <td role="cell" data-label="Matter">
                 <span class={`badge s-${d.matter.certified}`}>
                   {d.matter.certified === null ? 'Unconfirmed' : d.matter.certified ? 'Yes' : 'No'}
                 </span>
               </td>
               {ECOSYSTEMS.map((e) => (
-                <td data-label={ECOSYSTEM_LABELS[e]}>
+                <td role="cell" data-label={ECOSYSTEM_LABELS[e]}>
                   <Status status={d.compatibility[e].status} via={d.compatibility[e].via} compact />
                 </td>
               ))}

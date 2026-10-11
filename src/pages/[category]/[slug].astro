@@ -120,15 +120,15 @@ const jsonLd = [
 
     <h2>Ecosystem compatibility</h2>
     <div class="table-scroll">
-      <table class="stack kv">
-        <thead>
-          <tr><th scope="col">Platform</th><th scope="col">Works?</th><th scope="col">Details</th></tr>
+      <table role="table" class="stack kv">
+        <thead role="rowgroup">
+          <tr role="row"><th role="columnheader" scope="col">Platform</th><th role="columnheader" scope="col">Works?</th><th role="columnheader" scope="col">Details</th></tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Matter</th>
-            <td><span class={`badge s-${d.matter.certified}`}>{matterText}</span></td>
-            <td class="wide">
+        <tbody role="rowgroup">
+          <tr role="row">
+            <th role="rowheader" scope="row">Matter</th>
+            <td role="cell"><span class={`badge s-${d.matter.certified}`}>{matterText}</span></td>
+            <td role="cell" class="wide">
               {d.matter.note}<Refs ids={d.matter.sources} all={src} />
               {d.matter.certified && <> <a href="/works-with/matter/">Other Matter {cat.plural}</a></>}
             </td>
@@ -137,10 +137,10 @@ const jsonLd = [
             ECOSYSTEMS.map((e) => {
               const c = d.compatibility[e];
               return (
-                <tr>
-                  <th scope="row">{ECOSYSTEM_LABELS[e]}</th>
-                  <td><Status status={c.status} via={c.via} /></td>
-                  <td class="wide">{c.note}<Refs ids={c.sources} all={src} /></td>
+                <tr role="row">
+                  <th role="rowheader" scope="row">{ECOSYSTEM_LABELS[e]}</th>
+                  <td role="cell"><Status status={c.status} via={c.via} /></td>
+                  <td role="cell" class="wide">{c.note}<Refs ids={c.sources} all={src} /></td>
                 </tr>
               );
             })

@@ -108,7 +108,9 @@ ul.caveats li { margin-bottom: 6px; }
 .faq dt { font-weight: 600; }
 .faq dd { margin: 4px 0 0; }
 
-/* Phones and tablets: each table row becomes a card, so nothing scrolls sideways. */
+/* Phones and tablets: each table row becomes a card, so nothing scrolls sideways.
+   The explicit ARIA roles in the markup keep table semantics for screen readers
+   (Safari drops them when a table's display changes). */
 @media (max-width: 979px) {
   .table-scroll:has(> table.stack) { overflow: visible; }
   table.stack, table.stack tbody { display: block; }

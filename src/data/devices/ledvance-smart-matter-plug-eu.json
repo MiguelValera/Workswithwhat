@@ -1,7 +1,7 @@
 {
   "category": "smart-plug",
   "brand": "LEDVANCE",
-  "model": "SMART+ MATTER Plug EU White (EAN 4099854295195)",
+  "model": "SMART+ MATTER Plug EU White",
   "name": "LEDVANCE SMART+ Matter Plug (EU)",
   "regions": [
     "EU"
@@ -25,7 +25,7 @@
       "ledvance-plug-eu-wh",
       "matteralpha-plug-eu-wh"
     ],
-    "note": "LEDVANCE's page for this EU White plug says Matter 1.3 certified, with energy metering over Matter. Matter Alpha lists cert CSA24264MAT43287-24 (May 2024); the CSA page itself wasn't found."
+    "note": "LEDVANCE's page for this EU White plug (EAN 4099854295195) says Matter 1.3 certified, with energy metering over Matter. Matter Alpha lists cert CSA24264MAT43287-24 (May 2024); the CSA page itself wasn't found."
   },
   "compatibility": {
     "apple_home": {
