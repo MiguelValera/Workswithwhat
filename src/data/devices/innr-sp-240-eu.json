@@ -13,8 +13,7 @@
     ],
     "sources": [
       "innr-sp240-eu-doc",
-      "innr-smart-plug-product",
-      "innr-smart-plug-eu-product"
+      "innr-smart-plug-product"
     ],
     "note": "Zigbee 3.0 on 2.4 GHz; no Wi-Fi. Innr's EU declaration calls it a Zigbee 3.0 smart plug."
   },
@@ -25,11 +24,11 @@
   },
   "compatibility": {
     "apple_home": {
-      "status": "no",
+      "status": "unknown",
       "sources": [
-        "innr-smart-plug-eu-product"
+        "innr-works-with"
       ],
-      "note": "Innr's EU product page states the plug does not work with Apple HomeKit."
+      "note": "Innr says its devices on a Hue Bridge don't work with Apple HomeKit. No Innr source rules out other routes, so not marked 'no'."
     },
     "google_home": {
       "status": "unknown",
@@ -40,8 +39,8 @@
       "status": "hub",
       "via": "Echo with built-in Zigbee hub or Hue Bridge",
       "sources": [
-        "innr-smart-plug-eu-product",
-        "innr-smart-plug-product"
+        "innr-smart-plug-product",
+        "innr-works-with"
       ],
       "note": "Innr says it pairs directly with Echo speakers that have a built-in Zigbee hub; other Alexa devices need a bridge such as Philips Hue."
     },
@@ -49,16 +48,16 @@
       "status": "hub",
       "via": "SmartThings hub (Zigbee)",
       "sources": [
-        "innr-smart-plug-eu-product",
-        "innr-smart-plug-product"
+        "innr-smart-plug-product",
+        "innr-works-with"
       ],
-      "note": "Innr lists Samsung SmartThings as a compatible Zigbee hub, including power readings."
+      "note": "Innr says it needs a SmartThings Zigbee hub and lists SmartThings among systems that show its power readings."
     },
     "home_assistant": {
       "status": "hub",
       "via": "Zigbee coordinator (ZHA or Zigbee2MQTT)",
       "sources": [
-        "innr-smart-plug-eu-product",
+        "innr-smart-plug-product",
         "innr-works-with",
         "z2m-sp240"
       ],
@@ -82,7 +81,6 @@
     "value": true,
     "sources": [
       "innr-sp240-eu-doc",
-      "innr-smart-plug-eu-product",
       "z2m-sp240"
     ],
     "note": "Innr's EU declaration calls it a Zigbee 3.0 smart plug with power metering. Innr says Philips Hue doesn't show the readings; SmartThings, Hubitat, the Innr bridge and Home Assistant do."
@@ -92,7 +90,7 @@
     "sources": [],
     "note": "Innr's product page gives a maximum load current of 16 A; no watt figure found on an Innr page."
   },
-  "summary": "The Innr SP 240 (EU) is a Zigbee 3.0 smart plug for EU Type F sockets with power metering and a 16 A maximum load current. It needs a Zigbee hub such as a Hue Bridge, SmartThings or an Echo with a built-in Zigbee hub. Innr says it does not work with Apple HomeKit.",
+  "summary": "The Innr SP 240 (EU) is a Zigbee 3.0 smart plug for EU Type F sockets with power metering and a 16 A maximum load current. It needs a Zigbee hub such as a Hue Bridge, SmartThings or an Echo with a built-in Zigbee hub.",
   "caveats": [
     "Needs a Zigbee hub; there is no Wi-Fi.",
     "Philips Hue can switch it but doesn't show its energy readings."
@@ -101,15 +99,7 @@
     {
       "id": "innr-smart-plug-product",
       "url": "https://innr.com/products/innr-smart-plug",
-      "title": "Innr Smart Plug",
-      "publisher": "Innr",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "innr-smart-plug-eu-product",
-      "url": "https://www.innr.com/en/product/innr-smart-plug-eu-with-power-monitoring",
-      "title": "Innr Smart Plug EU with power monitoring",
+      "title": "Innr Smart Plug (Zigbee 3.0, 16 A, power monitoring)",
       "publisher": "Innr",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -139,6 +129,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }
