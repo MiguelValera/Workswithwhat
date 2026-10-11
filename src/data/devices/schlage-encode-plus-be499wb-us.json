@@ -8,7 +8,7 @@
   "radios": {
     "value": ["wifi"],
     "sources": ["schlage-encode-plus", "schlage-google"],
-    "note": "Schlage describes it as a Wi-Fi deadbolt with built-in Wi-Fi. Retailer listings also mention Bluetooth, but no Schlage page seen confirms it."
+    "note": "Schlage describes it as a deadbolt with built-in Wi-Fi (2.4 GHz). Retailer listings also mention Bluetooth, and Allegion's setup guide has you turn on your phone's Bluetooth to pair, but no Schlage page seen lists Bluetooth as a lock radio."
   },
   "matter": {
     "certified": false,
@@ -64,8 +64,8 @@
   },
   "power": {
     "value": "4 × AA",
-    "sources": ["allegion-batteries"],
-    "note": "Allegion says four AA alkaline cells, up to about six months in typical use. Its article lists the model as BE489, so the BE499 match should be checked."
+    "sources": ["schlage-be499-cam"],
+    "note": "Schlage's BE499WB product page lists four AA alkaline batteries (included) and up to six months of battery life in typical use."
   },
   "summary": "The Schlage Encode Plus is a Wi-Fi deadbolt with a touchscreen keypad that you can also open by tapping an iPhone or Apple Watch (Apple Home Key). It works with Apple Home, Google Home and Alexa without a hub, and Home Assistant has an official Schlage integration that runs through Schlage's cloud. It is not a Matter device, and SmartThings support is not listed by Schlage.",
   "caveats": [
@@ -124,10 +124,10 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "allegion-batteries",
-      "url": "https://kc.allegion.com/kb/article/how-to-change-the-batteries-in-a-schlage-encode-lock/",
-      "title": "How to Change the Batteries in a Schlage Encode Lock",
-      "publisher": "Allegion",
+      "id": "schlage-be499-cam",
+      "url": "https://www.schlage.com/en/home/products/BE499WBCAMFFF.html",
+      "title": "Schlage Encode Plus Smart WiFi Deadbolt with Camelot Trim",
+      "publisher": "Schlage",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
@@ -140,6 +140,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

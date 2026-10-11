@@ -6,9 +6,9 @@
   "regions": ["US"],
   "officialUrl": "https://u-tec.com/products/ultraloq-u-bolt-pro-series",
   "radios": {
-    "value": ["wifi"],
+    "value": ["wifi", "bluetooth"],
     "sources": ["utec-bolt-pro", "utec-wifi-setup"],
-    "note": "2.4 GHz Wi-Fi only (802.11 b/g/n); 5 GHz is not supported. The lock is also set up from the Ultraloq app, but Bluetooth is not confirmed on pages seen."
+    "note": "U-tec's spec lists standard Bluetooth plus 2.4 GHz Wi-Fi (802.11 b/g/n); 5 GHz is not supported. The app reaches the lock over Bluetooth nearby."
   },
   "matter": {
     "certified": null,
@@ -17,9 +17,9 @@
   },
   "compatibility": {
     "apple_home": {
-      "status": "unknown",
-      "sources": [],
-      "note": "Ultraloq's spec lists Alexa, Google Assistant, IFTTT and SmartThings but not Apple Home. Its support site says only the Bolt Fingerprint (HomeKit version) supports HomeKit. Not marked 'no' because no page says it explicitly for this model."
+      "status": "no",
+      "sources": ["utec-homekit"],
+      "note": "U-tec's 'Does Ultraloq work with HomeKit?' article says only the Bolt Fingerprint (HomeKit version) and Bolt Fingerprint Matter support HomeKit, and lists the U-Bolt Wi-Fi models with Google Assistant, Alexa, IFTTT and SmartThings instead."
     },
     "google_home": {
       "status": "native",
@@ -44,8 +44,8 @@
   },
   "hubRequired": {
     "value": false,
-    "sources": ["utec-bridge-faq"],
-    "note": "Built-in Wi-Fi chip, so the Ultraloq Bridge is not required."
+    "sources": ["utec-difference"],
+    "note": "Built-in Wi-Fi chip, so the Ultraloq Bridge is not required; U-tec says the Bridge is for the non-Wi-Fi U-Bolt models."
   },
   "localControl": {
     "value": null,
@@ -59,19 +59,19 @@
   },
   "keypad": {
     "value": true,
-    "sources": ["utec-bolt-pro", "utec-capacity"],
-    "note": "Keypad plus fingerprint reader; the spec lists 50 codes and 100 fingerprints."
+    "sources": ["utec-bolt-pro"],
+    "note": "Keypad plus fingerprint reader; the spec lists 50 users, 50 codes and 100 fingerprints."
   },
   "power": {
     "value": "4 × AA",
     "sources": ["utec-bolt-pro"],
-    "note": "6 V from four AA batteries. U-tec's pages give 3 to 6 months on one page and up to 1 year (lithium) or 8 months (alkaline) on another."
+    "note": "6 V from four AA alkaline batteries, with a micro-USB port for emergency power. U-tec gives 3 to 6 months for the Wi-Fi model and up to a year for the non-Wi-Fi versions."
   },
-  "summary": "The Ultraloq U-Bolt Pro WiFi is a deadbolt with keypad and fingerprint reader that connects directly to 2.4 GHz Wi-Fi without a bridge. Alexa, Google Assistant and SmartThings are supported. Apple Home and Matter are not listed for it, and Home Assistant is documented only for the Z-Wave version.",
+  "summary": "The Ultraloq U-Bolt Pro WiFi is a deadbolt with keypad and fingerprint reader that connects directly to 2.4 GHz Wi-Fi without a bridge. Alexa, Google Assistant and SmartThings are supported. U-tec says it does not work with Apple Home, Matter is not listed, and Home Assistant is documented only for the Z-Wave version.",
   "caveats": [
-    "2.4 GHz Wi-Fi only; 5 GHz networks, static IP and range extenders are not supported.",
-    "No Apple Home or Matter listing for this Wi-Fi model; Ultraloq's Matter lock is a different product.",
-    "Battery life figures differ between U-tec pages, from 3 months to about 1 year."
+    "2.4 GHz Wi-Fi only; 5 GHz networks are not supported.",
+    "No Apple Home support and no Matter listing for this Wi-Fi model; Ultraloq's HomeKit and Matter locks are different products.",
+    "Battery life is short: U-tec gives 3 to 6 months for the Wi-Fi model."
   ],
   "sources": [
     {
@@ -91,30 +91,23 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "utec-bridge-faq",
-      "url": "https://support.u-tec.com/hc/en-us/articles/360060208191-Does-the-U-Bolt-WiFi-U-Bolt-Pro-WiFi-Bolt-Fingerprint-Bolt-NFC-need-to-be-paired-with-an-Ultraloq-Bridge",
-      "title": "Does the U-Bolt WiFi / U-Bolt Pro WiFi / Bolt Fingerprint / Bolt NFC need to be paired with an Ultraloq Bridge?",
+      "id": "utec-homekit",
+      "url": "https://support.u-tec.com/hc/en-us/articles/360041904672-Does-Ultraloq-Work-With-HomeKit",
+      "title": "Does Ultraloq Work With HomeKit?",
       "publisher": "U-tec",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
     {
       "id": "utec-wifi-setup",
-      "url": "https://support.u-tec.com/hc/en-us/articles/360060210311-Setting-Up-WiFi-Connection-for-U-Bolt-WiFi-U-Bolt-Pro-WiFi-Latch-5-Series",
+      "url": "https://support.u-tec.com/hc/en-us/articles/360060210311-Setting-Up-WiFi-Connection-for-U-Bolt-WiFi-U-Bolt-Pro-WiFi",
       "title": "Setting Up WiFi Connection for U-Bolt WiFi / U-Bolt Pro WiFi / Latch 5 Series",
-      "publisher": "U-tec",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "utec-capacity",
-      "url": "https://support.u-tec.com/hc/en-us/articles/360059768552-What-is-the-user-capacity-for-the-U-Bolt-WiFi-U-Bolt-Pro-WiFi-Bolt-Fingerprint-Bolt-NFC",
-      "title": "What is the user capacity for the U-Bolt WiFi / U-Bolt Pro WiFi / Bolt Fingerprint / Bolt NFC?",
       "publisher": "U-tec",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

@@ -7,20 +7,20 @@
   "officialUrl": "https://level.co/products/level-lock/matter/",
   "radios": {
     "value": ["thread", "bluetooth"],
-    "sources": ["csa-level-lock-matter", "level-press"],
-    "note": "Runs Bluetooth and Matter over Thread at the same time."
+    "sources": ["csa-level-lock-matter", "level-lock-matter", "level-press"],
+    "note": "Level lists Bluetooth 4.0/5.0 and Matter over Thread, running at the same time."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
     "sources": ["csa-level-lock-matter"],
-    "note": "CSA lists 'Level Lock+ (Matter)' with Thread and Bluetooth transports. Several listings exist for different firmware versions; the newest seen is firmware 3.6.2, certified 2026-02-04."
+    "note": "CSA lists 'Level Lock+ (Matter)' from Assa Abloy with Thread and Bluetooth transports. There are several listings, one per firmware version (2024 to January 2026)."
   },
   "compatibility": {
     "apple_home": {
       "status": "matter",
-      "sources": ["level-press", "level-lock-matter", "level-matter-guide"],
-      "note": "Matter over Thread, with Apple Home Key. Needs a HomePod mini, HomePod (2nd gen) or Apple TV 4K (3rd gen, Wi-Fi + Ethernet) as hub; other models need a separate Thread border router."
+      "sources": ["level-press", "level-lock-matter"],
+      "note": "Matter over Thread, with Apple Home Key. Needs a Thread border router acting as home hub, such as a HomePod mini or a Thread-capable Apple TV 4K."
     },
     "google_home": {
       "status": "matter",
@@ -55,18 +55,18 @@
   },
   "lockFit": {
     "value": "deadbolt",
-    "sources": ["level-matter-guide"],
-    "note": "Replaces your deadbolt (fit guide covers 1 3/4 in door thickness, 2 1/8 in bore). Do not confuse it with the Level Bolt, the retrofit model that keeps your keys."
+    "sources": ["level-smart-lock-guide", "level-lockplus-specs"],
+    "note": "Level says the Lock+ replaces your existing lock and comes with its own house keys; the spec page lists a 1 3/4 in door, 2 1/8 in bore and 2 3/8 in backset. Do not confuse it with the Level Bolt, the retrofit model that keeps your current keys."
   },
   "keypad": {
     "value": false,
-    "sources": ["level-matter-guide"],
-    "note": "Keypad is a separate accessory sold on its own."
+    "sources": ["level-lock-matter"],
+    "note": "The Level Keypad is a separate accessory, sold on its own."
   },
   "power": {
     "value": "1 × CR2",
     "sources": ["level-lock-matter"],
-    "note": "Battery sits inside the bolt; Level gives about 6 to 12 months. Found in search results only, not opened."
+    "note": "One CR2 lithium (non-rechargeable) battery hidden inside the bolt; Level gives up to a year of life in typical use."
   },
   "summary": "The Level Lock+ (Matter) is a compact deadbolt that talks Bluetooth and Matter over Thread at once, so one lock can join Apple Home, Google Home, Alexa and SmartThings. Apple Home owners can also open it with Home Key. Home Assistant works with it through its Matter integration. Every Matter platform needs a Thread border router, but the Level app works over Bluetooth without one.",
   "caveats": [
@@ -93,9 +93,17 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "level-matter-guide",
-      "url": "https://level.co/matter-smart-lock-guide/",
-      "title": "Guide to Matter-Enabled Smart Locks",
+      "id": "level-smart-lock-guide",
+      "url": "https://level.co/stories/smart-lock/",
+      "title": "What Is a Smart Lock? The Ultimate Guide",
+      "publisher": "Level",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "level-lockplus-specs",
+      "url": "https://level.co/smart-lock/lock-plus/matter",
+      "title": "Level Lock+ (Matter) Technical Specifications",
       "publisher": "Level",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -134,6 +142,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

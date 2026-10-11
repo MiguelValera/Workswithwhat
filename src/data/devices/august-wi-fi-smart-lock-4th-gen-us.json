@@ -34,7 +34,7 @@
     "smartthings": {
       "status": "unknown",
       "sources": [],
-      "note": "An older August page lists Samsung SmartThings, but we could not confirm it for the 4th-gen lock on a current page."
+      "note": "August's Wi-Fi Smart Lock FAQ and its older integrations pages list Samsung SmartThings (cloud integration, no Z-Wave), but the current product page does not, and no SmartThings page confirms the integration is still offered."
     },
     "home_assistant": {
       "status": "native",
@@ -65,7 +65,7 @@
   "power": {
     "value": "2 × CR123A",
     "sources": ["august-faq"],
-    "note": "August's FAQ says two 3V CR123 lithium cells, with about 3 months of life under typical Wi-Fi use. Retailers disagree (some say 4 AA), and Home Assistant's page calls the batteries lithium-ion."
+    "note": "August's FAQ says two 3V CR123 or CR123A lithium (non-rechargeable) cells, with up to 3 months of life under typical Wi-Fi use. The 4 × AA seen on some listings belongs to older August locks."
   },
   "summary": "August's 4th-gen lock sits over the inside of your existing deadbolt and has Wi-Fi built in, so no separate bridge is required. It works with Alexa, Google Assistant and Apple Home (via Bluetooth), and Home Assistant lists it as supported. Remote Siri control needs an Apple TV, HomePod or iPad as a home hub, and the lock has no Matter listing.",
   "caveats": [
@@ -116,6 +116,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
