@@ -101,10 +101,10 @@
     ],
     "note": "tado° says the battery pack charges over USB-C in about 2 hours and lasts about a year. Capacity is not stated; the EU shop does not include a USB-C cable."
   },
-  "summary": "The tado° Smart Radiator Thermostat X replaces the head on a radiator valve and talks Matter over Thread. It fits M30 × 1.5 mm valves directly, and tado° ships Danfoss RA, RAV and RAVL adapters in the box. Apple Home, Google Home and Alexa connect through Matter, and Home Assistant uses its Matter integration. It needs a Thread border router, typically tado°'s Bridge X.",
+  "summary": "The tado° Smart Radiator Thermostat X reaches Apple Home, Google Home and Alexa through Matter on Thread, and Home Assistant picks it up through its Matter integration. tado° says it does not officially support Home Assistant, though. You need a Thread border router, but it can be a HomePod mini or Apple TV 4K rather than tado°'s own Bridge X. It fits M30 × 1.5 valves, with Danfoss RA, RAV and RAVL adapters included, and runs on a rechargeable USB-C battery that tado° says lasts about a year.",
   "caveats": [
     "Needs a Thread border router, such as tado°'s Bridge X (sold separately, not compatible with tado° V3+ devices) or a third-party one.",
-    "Adding the valve to several Matter platforms can slightly shorten battery life, per tado°.",
+    "tado° says the battery charges in about 2 hours over USB-C, and the EU shop does not include a USB-C cable.",
     "Oventrop M30 × 1.0 valves need an adapter that tado° does not provide."
   ],
   "sources": [

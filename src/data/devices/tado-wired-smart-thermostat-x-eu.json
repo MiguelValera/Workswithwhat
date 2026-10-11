@@ -98,11 +98,11 @@
     ],
     "note": "tado° says the Smart Thermostat X takes three AAA alkaline (LR03) cells. The Wired Smart Thermostat X (2nd gen) uses a built-in rechargeable battery instead and is a different product."
   },
-  "summary": "The tado° Wired Smart Thermostat X replaces a wall thermostat and switches a boiler or heat pump through a relay or OpenTherm. It talks Matter over Thread, so Apple Home, Google Home and Alexa work through Matter, and Home Assistant uses its Matter integration. A Thread border router is needed, typically tado°'s Bridge X.",
+  "summary": "As a wall thermostat for boilers and heat pumps, the tado° Wired Smart Thermostat X switches heating through a relay or OpenTherm. It pairs over Matter on Thread with Apple Home, Google Home and Alexa, and Home Assistant works through its Matter integration, although tado° says it does not officially support Home Assistant. Any Thread border router will do, including tado°'s Bridge X. It runs on 3 × AAA batteries.",
   "caveats": [
     "Needs a Thread border router, such as tado°'s Bridge X (sold separately, not compatible with tado° V3+ devices) or a third-party one.",
-    "tado° now also sells a 2nd-generation wired model with a rechargeable battery; check which one you are buying.",
-    "Check boiler or heat pump compatibility with tado° before buying; wiring may need a qualified installer."
+    "tado° also sells a 2nd-generation wired model with a built-in rechargeable battery; this record is the 3 × AAA version.",
+    "tado° says it works with most boilers and heat pumps; check its compatibility checker for yours before buying."
   ],
   "sources": [
     {

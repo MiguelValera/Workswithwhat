@@ -98,7 +98,7 @@
     ],
     "note": "Aqara's spec page lists two 1.5 V AA batteries (included) and claims up to a year of battery life, depending on use."
   },
-  "summary": "The Aqara Radiator Thermostat E1 replaces the head on a radiator valve and connects over Zigbee 3.0. It fits M30 × 1.5 mm valves directly, with RA, RAV and RAVL adapters in the box. Apple Home, Google Home and Alexa all go through an Aqara Zigbee hub, which is sold separately. Matter was promised as a later hub update.",
+  "summary": "Zigbee, not Thread: the Aqara Radiator Thermostat E1 only reaches Apple Home, Google Home and Alexa through an Aqara Zigbee 3.0 hub, which is sold separately. Home Assistant works via the HomeKit Controller integration on that hub's HomeKit bridge. The valve fits M30 × 1.5 with RA, RAV and RAVL adapters included, and takes 2 × AA batteries (included) for up to a year. Aqara says Matter may arrive later through a hub update.",
   "caveats": [
     "Needs an Aqara Zigbee 3.0 hub, sold separately.",
     "Matter was announced as a future hub update; it is not confirmed on Aqara pages seen."

@@ -92,7 +92,7 @@
     ],
     "note": "Thermostat runs on three AAA alkaline cells; the relay runs on mains power."
   },
-  "summary": "The Netatmo Smart Thermostat controls a boiler through a wired relay that comes in the box. The thermostat itself runs on three AAA cells and talks to the relay by radio. Apple Home, Google Home and Alexa each connect through Netatmo's own integration, and Home Assistant uses the official Netatmo integration. No Matter support is documented.",
+  "summary": "Netatmo's own integrations connect its Smart Thermostat (EU) to Apple Home, Google Home and Alexa, and Home Assistant has an official Netatmo integration. Matter support is not confirmed. A mains relay in the box joins Wi-Fi and switches an on/off boiler, heat pump or stove. The thermostat itself runs on 3 × AAA and talks to the relay by radio.",
   "caveats": [
     "Works only with on/off (dry-contact) systems; OpenTherm boilers need Netatmo's separate modulating thermostat.",
     "Check your boiler on check.netatmo.com before buying.",

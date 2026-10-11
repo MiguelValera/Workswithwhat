@@ -105,9 +105,9 @@
     "sources": [],
     "note": "Reviews and retailers say 2 × AA, but no Eve page seen in search confirmed it."
   },
-  "summary": "Eve Thermo is a radiator valve head that speaks Matter over Thread. It fits M30 × 1.5 mm valves, and Danfoss adapters come in the box. Eve lists Apple Home, Google Home, Alexa, SmartThings and Home Assistant. It needs no cloud account, but each platform needs a hub with Matter and Thread border router support.",
+  "summary": "Eve Thermo (5th generation) is a radiator valve head that Eve says works locally, with no cloud, subscription or registration. It uses Matter over Thread and is listed for Apple Home, Google Home, Alexa, SmartThings and Home Assistant. Your platform needs a hub that is both a Matter controller and a Thread border router. It fits M30 × 1.5 valves, and Danfoss RA, RAV and RAVL adapters are included.",
   "caveats": [
-    "Needs a hub with Matter controller and Thread border router functions, such as a HomePod mini, Echo or Google Nest hub.",
+    "Needs a hub from your platform with Matter controller and Thread border router functions; no Eve bridge is needed.",
     "Eve says on-device schedules are not supported on Alexa or SmartThings and need the Eve app."
   ],
   "sources": [
