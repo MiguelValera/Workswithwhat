@@ -71,7 +71,7 @@
     "sources": ["ring-indoor-cam-support"],
     "note": "Ring says live view works without a plan; with one, motion videos are saved for up to 180 days."
   },
-  "summary": "Ring Indoor Cam (2nd Gen) is a plug-in 1080p indoor camera with two-way audio and a manual privacy cover. It works with Alexa, including live view on Echo Show, and Home Assistant lists it in the official Ring integration. Without a Ring Protect plan you can watch live but videos are not saved.",
+  "summary": "Plugged into a wall outlet through its USB adapter, the Ring Indoor Cam (2nd Gen) works with Alexa via the Ring skill: ask an Echo Show for live view. Home Assistant also lists it in the official Ring integration. Live view is free, while saved motion videos, kept up to 180 days, need a Ring Protect plan. No hub is involved. Apple Home and Google Home are not confirmed.",
   "caveats": [
     "Wi-Fi is 2.4 GHz only.",
     "Saved video needs a Ring Protect plan.",

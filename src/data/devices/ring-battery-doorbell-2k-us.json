@@ -71,9 +71,9 @@
     "sources": ["ring-bd2k-page", "ring-alexa-announcements"],
     "note": "Ring says recordings are stored through a Ring Protect plan; live view works without one. Retention and prices were not read on the US page."
   },
-  "summary": "Ring Battery Doorbell 2K is a Wi-Fi video doorbell with a built-in rechargeable battery and a 2K picture. It works with Alexa through the Ring skill, with live view and doorbell announcements on Echo Show and Echo speakers. Ring does not state Apple Home or Google Home support on the pages we checked, and Home Assistant's Ring integration does not name this model.",
+  "summary": "Alexa is the one ecosystem Ring confirms for the Battery Doorbell 2K: through the Ring skill you get announcements, two-way talk and live view on an Echo Show. Live view is free, but saved video and the person and package announcements need a Ring Protect plan. The doorbell runs on a rechargeable battery and connects over Wi-Fi with no hub, and it can also be wired to an 8 to 24 V AC doorbell transformer. Apple Home, Google Home and SmartThings are not confirmed.",
   "caveats": [
-    "Saved video and person alerts depend on a Ring Protect plan.",
+    "Saved video, plus person and package announcements with automatic live view on Echo Show, need a Ring Protect plan.",
     "Ring's pages disagree on whether the Wi-Fi is 2.4 GHz only or dual band.",
     "Apple Home, Google Home and Home Assistant support is not confirmed for this model."
   ],

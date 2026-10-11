@@ -71,7 +71,7 @@
     "sources": ["google-compare-doorbells"],
     "note": "Google's comparison page lists 3 hours of event video with no plan and up to 60 days of event history with Google Home Premium."
   },
-  "summary": "Nest Doorbell (wired, 2nd gen) is a Wi-Fi video doorbell that runs on existing 16 to 24 V AC doorbell wiring. It works natively with Google Home and also with Alexa, which announces doorbell presses and can show live view on Echo Show. Home Assistant supports it through the Google Nest integration. Without a plan it keeps 3 hours of event video; Google Home Premium extends that.",
+  "summary": "Set up in the Google Home app, the Nest Doorbell (wired, 2nd gen) announces visitors on Google speakers and displays in the same home. Alexa works through the Google Nest skill, with doorbell-press announcements and live view on Echo Show, and Home Assistant gets it via the Google Nest integration. It needs existing 16 to 24 V AC doorbell wiring and no hub. Free use keeps 3 hours of event video; up to 60 days needs Google Home Premium.",
   "caveats": [
     "Needs doorbell wiring and a transformer rated 16–24 V AC, 10–40 VA; some homes need a new transformer.",
     "Video history beyond 3 hours needs a paid Google Home Premium plan.",

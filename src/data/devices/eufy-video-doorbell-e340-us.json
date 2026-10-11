@@ -71,7 +71,7 @@
     "sources": ["eufy-e340-page"],
     "note": "eufy markets the doorbell as working without a subscription; whether optional paid plans exist was not checked."
   },
-  "summary": "eufy Video Doorbell E340 has two cameras, one aimed at visitors and one at the ground for packages, and records to 8 GB of built-in storage. It runs on a battery or doorbell wiring and uses 2.4 GHz Wi-Fi. Alexa and Google Assistant are supported with limited features, and eufy states there is no HomeKit support.",
+  "summary": "The eufy Video Doorbell E340 records to 8 GB of built-in storage, which eufy says holds about 90 days of clips, and markets itself as needing no monthly fee. Alexa and Google Assistant work through the eufy Security integration, with limited features. Apple Home is a flat no: eufy's own spec sheet says HomeKit is not supported. It runs on a removable battery or doorbell wiring, over 2.4 GHz Wi-Fi.",
   "caveats": [
     "Wi-Fi is 2.4 GHz only.",
     "Alexa and Google Assistant support is limited: no two-way talk and no motion announcements; Google also lacks doorbell-press announcements.",

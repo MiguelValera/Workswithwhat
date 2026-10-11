@@ -72,7 +72,7 @@
     "sources": ["blink-mini-2-faq", "blink-mini-2-features"],
     "note": "Blink lists 60-day cloud storage in the US with a plan. Person detection and Extended Live View (up to 90 minutes) also need a subscription."
   },
-  "summary": "Blink Mini 2 is a small plug-in 1080p camera with color night view, a built-in spotlight and two-way audio. It uses 5 V USB power and Wi-Fi, and can run outdoors with a separately sold adapter. Alexa is its supported voice platform. Local clips need a Sync Module 2 and USB drive.",
+  "summary": "Alexa is where the Blink Mini 2 shines: live view on Echo and Fire devices with a screen, motion announcements and arming by voice. It plugs into a 5 V USB adapter, needs no Sync Module, and can go outdoors with the separately sold weather-resistant adapter. Cloud storage (60 days in the US), person detection and Extended Live View need a Blink plan. Without one, clips can go to a USB drive via a Sync Module 2. Home Assistant support exists but is limited.",
   "caveats": [
     "Local storage needs a Sync Module 2 and a USB drive, both sold separately.",
     "Cloud storage and person detection need a Blink subscription plan.",
