@@ -100,11 +100,12 @@
     ],
     "note": "Single rocker version; the double rocker is a separate model (WS-EUK04)."
   },
-  "summary": "The Aqara Smart Wall Switch H1 EU with neutral and a single rocker replaces your wall switch in an 86 mm or round EU box. It uses Zigbee 3.0, adds power monitoring and overload protection, and acts as a Zigbee router. It needs an Aqara hub, which then links it to Apple Home, Alexa and Google Home.",
+  "summary": "Aqara Wall Switch H1 (WS-EUK03) swaps in for the switch in an 86 mm square or round EU wall box. It is a single-rocker, on/off Zigbee 3.0 switch rated 8 A, needs a neutral wire, reports power statistics and acts as a Zigbee router. An Aqara hub (G2H, M1S and M2 are named) links it to Apple Home, Google Home and Alexa; SmartThings and Home Assistant are not confirmed.",
   "caveats": [
-    "Needs an Aqara Zigbee 3.0 hub; the switch alone does not connect to Wi-Fi or Matter.",
-    "Requires a neutral wire; Aqara sells a separate no-neutral H1 version.",
-    "Wrong wiring can burn out the switch; Aqara advises an electrician if unsure."
+    "Needs an Aqara hub, sold separately; app control, timers and power statistics work after binding to it.",
+    "Requires a neutral wire (L, N and L1 terminals).",
+    "The switch is Zigbee only and not Matter-certified on its own; Matter would come from a Matter-capable Aqara hub.",
+    "This is the single-rocker model; the double rocker is the separate WS-EUK04."
   ],
   "sources": [
     {

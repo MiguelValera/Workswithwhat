@@ -85,6 +85,7 @@
     {"id": "ks220-ug", "url": "https://static.tp-link.com/upload/manual/2024/202406/20240627/1910013682_KS220(US)_UG_V1.pdf", "title": "Smart Wi-Fi Light Switch, Dimmer KS220 - User Guide", "publisher": "TP-Link", "kind": "manufacturer", "accessed": "2026-10-11"},
     {"id": "ha-tplink", "url": "https://www.home-assistant.io/integrations/tplink/", "title": "TP-Link Smart Home - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

@@ -102,12 +102,10 @@
     ],
     "note": "Single-channel dimming controller, max 200 W."
   },
-  "summary": "The Shelly Dimmer Gen3 is a single-channel trailing-edge dimmer module for the box behind an existing wall switch. It works with or without a neutral wire and handles up to 200 W. It runs on Wi-Fi with Bluetooth, has a local web interface, and connects to Alexa, Google, SmartThings and Home Assistant.",
+  "summary": "Shelly Dimmer Gen3 is a single-channel trailing-edge dimmer module, max 200 W, that goes in the box behind an existing wall switch. It runs on Wi-Fi and Bluetooth, works with or without a neutral wire, and has a local web interface that needs no cloud. Shelly lists Google, Alexa and SmartThings support, Home Assistant has an official integration, and Apple Home is not confirmed.",
   "caveats": [
-    "Without a neutral wire the minimum load is 20 W unless you add Shelly's Bypass; low-wattage LEDs may flicker otherwise.",
-    "Power measurement is not available without a neutral wire.",
-    "Matter and Apple Home support are unconfirmed for this model.",
-    "Not compatible with rotary dimmer switches; LED lamps are limited to 150 W and incandescent or halogen to 200 W."
+    "Without a neutral wire and without Shelly's Bypass, the minimum load is 20 W.",
+    "No Matter certification is confirmed for this model, so Apple Home support is unconfirmed."
   ],
   "sources": [
     {

@@ -113,10 +113,10 @@
     ],
     "note": "Single relay output with one switch input."
   },
-  "summary": "The Shelly 1PM Gen4 is a 16 A relay module with power metering that hides behind an existing switch or socket. It ships with Matter over Wi-Fi and is CSA-certified, so Apple Home, Google Home, Alexa and SmartThings can add it without a hub. Home Assistant's Shelly integration controls it locally. It needs a neutral wire.",
+  "summary": "Behind your existing switch or socket, the Shelly 1PM Gen4 adds a 16 A relay with power metering (no dimming) and needs a neutral wire. Its default firmware is CSA-certified Matter over Wi-Fi, so Apple Home, Google Home and SmartThings can add it without a hub, and Alexa works through the Shelly Cloud skill or Matter. Home Assistant has an official local integration.",
   "caveats": [
-    "Needs a neutral wire at the box; it cannot be installed on a live-only switch loop.",
-    "Zigbee is an alternative firmware mode you switch to; Matter is the default.",
+    "Needs a neutral wire at the box; Shelly's spec lists neutral as required.",
+    "Zigbee is an alternative firmware mode you switch to, and it needs a Zigbee coordinator; Matter over Wi-Fi is the default.",
     "Apple Home needs a home hub for remote control and automations."
   ],
   "sources": [

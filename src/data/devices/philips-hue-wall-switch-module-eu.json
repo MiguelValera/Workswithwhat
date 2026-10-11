@@ -108,11 +108,11 @@
     "sources": [],
     "note": "Number of switch inputs per module not confirmed in the sources found."
   },
-  "summary": "The Philips Hue Wall Switch Module is a battery-powered module that connects to the free contacts of an existing wall switch and turns it into a Hue control. It runs on a CR2450 coin cell that Hue rates at five years or more. It needs a Hue Bridge, and Matter reaches it only through the Bridge. It is not for conventional bulbs.",
+  "summary": "Battery-powered and wired to no mains, the Philips Hue Wall Switch Module connects to the free contacts of an existing wall switch (43 x 38 x 10 mm) and turns it into a Hue control. It does not dim or switch the load itself; it sends commands to Hue lights. Everything goes through a Hue Bridge, which covers Apple Home, Google Home, Alexa, SmartThings and Home Assistant, and Matter reaches it only via the Bridge. A CR2450 cell is rated at five years or more.",
   "caveats": [
     "Needs a Hue Bridge; without one it cannot control Hue lights.",
-    "The wall switch only sends commands. Non-Hue lights on that circuit stay on permanently.",
-    "Does not work with switches that have built-in dimmers or combined switch-and-socket plates.",
+    "It only sends commands to Hue lights and does not switch a load.",
+    "Does not work with switches that have built-in dimmers.",
     "There is also a wired Hue wall switch module that needs a neutral wire; this record covers the battery one."
   ],
   "sources": [

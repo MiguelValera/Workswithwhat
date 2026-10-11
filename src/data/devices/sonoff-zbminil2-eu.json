@@ -101,12 +101,12 @@
     "sources": [],
     "note": "Sonoff's pages describe one relay output with S1/S2 switch inputs but don't state a channel or gang count; only retailers say single-channel."
   },
-  "summary": "The Sonoff ZBMINI-L2, also sold as ZBMINI Extreme, is a small Zigbee relay for a switch box with no neutral wire. It switches up to 6 A at 100-240 V and supports two-way switching from an external wall switch. It needs a Zigbee gateway, and Sonoff lists compatible ones for eWeLink, Alexa, SmartThings and Home Assistant.",
+  "summary": "For a switch box with no neutral, the Sonoff ZBMINI-L2 (also sold as ZBMINI Extreme) is a small 6 A Zigbee relay that keeps your wall switch working through its S1/S2 inputs. It is not dimmable and needs a Zigbee 3.0 gateway: a Sonoff gateway for Google Home, an Echo with built-in Zigbee for Alexa, a SmartThings Hub V3, or a Zigbee coordinator with ZHA or Zigbee2MQTT for Home Assistant. Apple Home is not confirmed.",
   "caveats": [
     "Needs a Zigbee 3.0 gateway; Philips Hue, IKEA and Fritzbox gateways are not supported.",
     "It is an end device and does not extend your Zigbee mesh.",
-    "No-neutral operation needs a minimum load of about 3 W and does not support flash suppression modules.",
-    "The ZBMINIL2-E in Sonoff's docs is a different, larger model."
+    "Without a neutral it needs a minimum load of about 3 W, and flash suppression modules are not supported.",
+    "Apple Home and Matter support are not confirmed."
   ],
   "sources": [
     {

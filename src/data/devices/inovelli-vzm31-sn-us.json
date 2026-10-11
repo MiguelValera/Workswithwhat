@@ -30,18 +30,19 @@
       "status": "hub",
       "via": "Amazon Echo with built-in Zigbee hub",
       "sources": ["inovelli-2-1"],
-      "note": "Inovelli names Amazon Echo as a compatible hub, only for supported Echo models, and says its advanced features don't work with Amazon."
+      "note": "Inovelli lists Amazon Echo as a compatible hub, but only Echo versions with a built-in Zigbee hub (Inovelli keeps a compatibility chart). Firmware features such as multi-tap scenes work only where the hub supports them."
     },
     "smartthings": {
       "status": "hub",
       "via": "SmartThings hub (Zigbee)",
-      "sources": ["inovelli-2-1"],
-      "note": "Inovelli lists SmartThings, including its advanced features."
+      "sources": ["inovelli-2-1", "inovelli-smartthings"],
+      "note": "Inovelli lists SmartThings among hubs that support the switch's advanced features and publishes a SmartThings setup guide."
     },
     "home_assistant": {
-      "status": "native",
+      "status": "hub",
+      "via": "Zigbee coordinator (ZHA/Zigbee2MQTT)",
       "sources": ["inovelli-2-1", "ha-zha"],
-      "note": "Inovelli lists ZHA and Zigbee2MQTT. Home Assistant needs a Zigbee coordinator (USB adapter) for this."
+      "note": "Inovelli lists Home Assistant through ZHA and Zigbee2MQTT. Both are generic Zigbee integrations, not an Inovelli integration, and need a Zigbee coordinator such as a USB adapter."
     }
   },
   "hubRequired": {
@@ -51,8 +52,8 @@
   },
   "localControl": {
     "value": true,
-    "sources": ["inovelli-2-1"],
-    "note": "Zigbee runs locally through your own hub or coordinator. Inovelli doesn't use the word local on the pages we saw."
+    "sources": ["inovelli-2-1", "ha-zha"],
+    "note": "Inovelli lists Home Assistant's ZHA, which controls Zigbee devices through a local coordinator with no cloud. Other hubs, such as an Echo, may route control differently."
   },
   "switchForm": {
     "value": "wall-switch",
@@ -67,7 +68,7 @@
   "neutralRequired": {
     "value": false,
     "sources": ["inovelli-2-1"],
-    "note": "Works without a neutral, but Inovelli says a bypass is needed then, and it isn't included. A neutral jumper is in the box."
+    "note": "Works without a neutral, but Inovelli says a bypass must then be installed at the light fixture, and it isn't included. Without a neutral there is no energy monitoring, and multi-way setups need an Inovelli aux switch."
   },
   "gangs": {
     "value": null,
@@ -78,14 +79,16 @@
   "caveats": [
     "Needs a Zigbee hub or coordinator; no direct Wi-Fi or Matter.",
     "Without a neutral wire a bypass is required, and it isn't included.",
-    "Advanced features such as multi-tap scenes and energy reporting work only on some hubs; Inovelli says they don't work with Amazon.",
+    "Advanced features such as multi-tap scenes work only on hubs that support them; Inovelli names SmartThings, Hubitat and Home Assistant.",
     "Apple Home and Google Home support is not documented by Inovelli for this version."
   ],
   "sources": [
     {"id": "inovelli-2-1", "url": "https://inovelli.com/products/zigbee-matter-blue-series-smart-2-1-on-off-dimmer-switch", "title": "Inovelli Blue Series 2-1 Smart Switch", "publisher": "Inovelli", "kind": "manufacturer", "accessed": "2026-10-11"},
     {"id": "inovelli-dimmer-manual", "url": "https://help.inovelli.com/en/articles/8266282-blue-series-dimmer-switch-manual", "title": "Blue Series Dimmer Switch - Manual", "publisher": "Inovelli", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "inovelli-smartthings", "url": "https://help.inovelli.com/en/articles/8422981-blue-series-dimmer-switch-setup-instructions-smartthings", "title": "Blue Series Dimmer Switch - Setup Instructions - SmartThings", "publisher": "Inovelli", "kind": "manufacturer", "accessed": "2026-10-11"},
     {"id": "ha-zha", "url": "https://www.home-assistant.io/integrations/zha/", "title": "Zigbee Home Automation - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

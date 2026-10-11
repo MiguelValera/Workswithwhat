@@ -90,6 +90,7 @@
     {"id": "csa-d26hd-2", "url": "https://csa-iot.org/csa_product/d26hd-2/", "title": "D26HD - CSA-IOT", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11"},
     {"id": "ha-matter", "url": "https://www.home-assistant.io/integrations/matter/", "title": "Matter - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

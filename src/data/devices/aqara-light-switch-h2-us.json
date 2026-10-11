@@ -86,6 +86,7 @@
     {"id": "csa-h2-us-1ch", "url": "https://csa-iot.org/pt/csa_product/interruptor-de-luz-h2-us2-bot%C3%A3o1-canal/", "title": "Interruptor de luz H2 US (2 botões, 1 canais) - CSA-IOT", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11"},
     {"id": "ha-matter", "url": "https://www.home-assistant.io/integrations/matter/", "title": "Matter - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

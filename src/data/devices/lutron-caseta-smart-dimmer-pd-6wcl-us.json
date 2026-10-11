@@ -90,6 +90,7 @@
     {"id": "lutron-smartthings", "url": "https://support.lutron.com/us/en/product/casetawireless/article/connected-products/Samsung-SmartThings-with-Caseta-RA2-Select", "title": "Samsung SmartThings with Caséta / RA2 Select", "publisher": "Lutron", "kind": "manufacturer", "accessed": "2026-10-11"},
     {"id": "ha-lutron-caseta", "url": "https://www.home-assistant.io/integrations/lutron_caseta/", "title": "Lutron Caséta - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
