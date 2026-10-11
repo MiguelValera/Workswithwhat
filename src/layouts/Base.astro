@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getActiveCategories } from '../lib/devices';
+import { getActiveMarkets, getRegionPages } from '../lib/markets';
 import { OPERATOR } from '../site.config';
 
 interface Crumb {
@@ -21,7 +22,21 @@ const navCategories = await getActiveCategories();
 const canonical = new URL(Astro.url.pathname, site).href;
 // marks the main-nav link for the current section (aria-current is also the styling hook)
 const here = Astro.url.pathname;
-const current = (path: string) => (here === path ? 'page' : here.startsWith(path) ? 'true' : undefined);
+
+
+// Region switch: the same page for another market when it exists, else that market's
+// closest page (its chart for a device page, then its home). "All" is the page without a region.
+const markets = await getActiveMarkets();
+const regionPaths = new Set((await getRegionPages()).map((p) => p.path));
+const hereMarket = markets.find((m) => here === `/${m.key}/` || here.startsWith(`/${m.key}/`));
+const rest = hereMarket ? here.slice(hereMarket.key.length + 1) : here;
+const firstSegment = rest.split('/')[1];
+// main nav: /us/smart-plugs/ still belongs to the Plugs section
+const current = (path: string) => (here === path ? 'page' : rest.startsWith(path) ? 'true' : undefined);
+const regionLinks = markets.map((m) => {
+  const candidates = [`/${m.key}${rest}`, firstSegment ? `/${m.key}/${firstSegment}/` : '', `/${m.key}/`];
+  return { m, href: candidates.find((c) => regionPaths.has(c)) ?? `/${m.key}/` };
+});
 // keep titles short enough for search results; long question titles drop the brand suffix
 const fullTitle = Astro.url.pathname === '/' || title.length > 50 ? title : `${title} | Workswithwhat`;
 
@@ -87,6 +102,19 @@ if (crumbs.length) {
           <a href="/works-with/" aria-current={current('/works-with/')}>By ecosystem</a>
           <a href="/methodology/" aria-current={current('/methodology/')}>How we verify</a>
         </nav>
+        {
+          markets.length > 1 && (
+            <nav class="region" aria-label="Region">
+              <span class="muted">Region:</span>
+              <a href={rest} aria-current={hereMarket ? undefined : 'true'}>All</a>
+              {regionLinks.map(({ m, href }) => (
+                <a href={href} aria-current={hereMarket === m ? 'true' : undefined} title={m.label}>
+                  {m.short.length <= 3 ? m.short : m.label}
+                </a>
+              ))}
+            </nav>
+          )
+        }
       </div>
     </header>
     <main class="wrap" id="main" tabindex="-1">

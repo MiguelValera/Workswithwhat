@@ -1,0 +1,16 @@
+---
+import MatterPage from '../../../components/pages/MatterPage.astro';
+import { getRegionPages, type Market } from '../../../lib/markets';
+
+// /us/works-with/matter/ and friends, only where the market has enough Matter devices
+export async function getStaticPaths() {
+  const pages = await getRegionPages();
+  return pages
+    .filter(({ market, path }) => path === `/${market.key}/works-with/matter/`)
+    .map(({ market }) => ({ params: { market: market.key }, props: { market } }));
+}
+
+const { market } = Astro.props as { market: Market };
+---
+
+<MatterPage market={market} />

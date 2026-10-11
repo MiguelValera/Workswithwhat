@@ -1,0 +1,19 @@
+---
+import EcosystemPage from '../../../components/pages/EcosystemPage.astro';
+import { ECOSYSTEMS, ecosystemSlug } from '../../../lib/devices';
+import { getRegionPages, type Market } from '../../../lib/markets';
+import type { Ecosystem } from '../../../lib/devices';
+
+// /us/works-with/apple-home/ and friends, only where the market has enough devices
+export async function getStaticPaths() {
+  const pages = await getRegionPages();
+  return pages.flatMap(({ market, path }) => {
+    const eco = ECOSYSTEMS.find((e) => path === `/${market.key}/works-with/${ecosystemSlug(e)}/`);
+    return eco ? [{ params: { market: market.key, ecosystem: ecosystemSlug(eco) }, props: { market, eco } }] : [];
+  });
+}
+
+const { market, eco } = Astro.props as { market: Market; eco: Ecosystem };
+---
+
+<EcosystemPage eco={eco} market={market} />
