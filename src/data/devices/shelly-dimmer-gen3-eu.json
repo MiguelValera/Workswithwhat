@@ -3,17 +3,25 @@
   "brand": "Shelly",
   "model": "Dimmer Gen3 (S3DM-0A101WWL)",
   "name": "Shelly Dimmer Gen3 (EU)",
-  "regions": ["EU"],
+  "regions": [
+    "EU"
+  ],
   "officialUrl": "https://www.shelly.com/products/shelly-dimmer-gen3",
   "radios": {
-    "value": ["wifi", "bluetooth"],
-    "sources": ["shelly-kb-dimmer-gen3", "shelly-dimmer-gen3-product"],
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "shelly-kb-dimmer-gen3",
+      "shelly-dimmer-gen3-product"
+    ],
     "note": "Wi-Fi 802.11 b/g/n and Bluetooth (KB lists a Bluetooth ID)."
   },
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "Shelly says Gen3 devices are built to be upgradable to Matter, but its Matter lists do not name this dimmer and no CSA page for it was found. A CSA certificate ID for it showed only in a sidebar, so unconfirmed."
+    "note": "Shelly says Gen3 devices did not ship with Matter and not all will get it; its Matter firmware notes name relays, not this dimmer. A certificate ID was seen in passing but no CSA listing for this dimmer surfaced, so unconfirmed."
   },
   "compatibility": {
     "apple_home": {
@@ -23,53 +31,75 @@
     },
     "google_home": {
       "status": "native",
-      "sources": ["shelly-kb-dimmer-gen3"],
+      "sources": [
+        "shelly-kb-dimmer-gen3"
+      ],
       "note": "Shelly's spec table marks Google Smart Home traits as supported."
     },
     "alexa": {
       "status": "native",
-      "sources": ["shelly-kb-dimmer-gen3"],
+      "sources": [
+        "shelly-kb-dimmer-gen3"
+      ],
       "note": "Shelly's spec table marks Amazon Alexa capabilities as supported."
     },
     "smartthings": {
       "status": "native",
-      "sources": ["shelly-kb-dimmer-gen3"],
+      "sources": [
+        "shelly-kb-dimmer-gen3"
+      ],
       "note": "Shelly's spec table marks Samsung SmartThings capabilities as supported."
     },
     "home_assistant": {
       "status": "native",
-      "sources": ["ha-shelly"],
+      "sources": [
+        "ha-shelly"
+      ],
       "note": "Official Shelly integration with local push."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["shelly-kb-dimmer-gen3", "shelly-dimmer-gen3-product"],
+    "sources": [
+      "shelly-kb-dimmer-gen3",
+      "shelly-dimmer-gen3-product"
+    ],
     "note": "Wi-Fi device with its own access point and web interface."
   },
   "localControl": {
     "value": true,
-    "sources": ["shelly-kb-web-interface-dimmer-gen3", "ha-shelly"],
-    "note": "Built-in web interface plus local push in Home Assistant; Shelly lists scripting, MQTT and webhooks."
+    "sources": [
+      "shelly-kb-web-interface-dimmer-gen3",
+      "ha-shelly"
+    ],
+    "note": "Built-in web interface works without internet or Shelly Cloud; Home Assistant's Shelly integration uses local push."
   },
   "switchForm": {
     "value": "module",
-    "sources": ["shelly-kb-dimmer-gen3"],
+    "sources": [
+      "shelly-kb-dimmer-gen3"
+    ],
     "note": "Compact dimming controller that sits behind an existing wall switch."
   },
   "dimmer": {
     "value": true,
-    "sources": ["shelly-kb-dimmer-gen3"],
+    "sources": [
+      "shelly-kb-dimmer-gen3"
+    ],
     "note": "Trailing-edge dimmer for dimmable LED, incandescent and halogen loads."
   },
   "neutralRequired": {
     "value": false,
-    "sources": ["shelly-kb-dimmer-gen3"],
+    "sources": [
+      "shelly-kb-dimmer-gen3"
+    ],
     "note": "Works with or without neutral. Without neutral and without a Bypass the minimum load is 20 W."
   },
   "gangs": {
     "value": "1 channel",
-    "sources": ["shelly-kb-dimmer-gen3"],
+    "sources": [
+      "shelly-kb-dimmer-gen3"
+    ],
     "note": "Single-channel dimming controller, max 200 W."
   },
   "summary": "The Shelly Dimmer Gen3 is a single-channel trailing-edge dimmer module for the box behind an existing wall switch. It works with or without a neutral wire and handles up to 200 W. It runs on Wi-Fi with Bluetooth, has a local web interface, and connects to Alexa, Google, SmartThings and Home Assistant.",
@@ -80,11 +110,40 @@
     "Not compatible with rotary dimmer switches; LED lamps are limited to 150 W and incandescent or halogen to 200 W."
   ],
   "sources": [
-    {"id": "shelly-dimmer-gen3-product", "url": "https://www.shelly.com/products/shelly-dimmer-gen3", "title": "Shelly Dimmer Gen3", "publisher": "Shelly Group", "kind": "manufacturer", "accessed": "2026-10-11"},
-    {"id": "shelly-kb-dimmer-gen3", "url": "https://kb.shelly.cloud/knowledge-base/shelly-dimmer-gen3", "title": "Shelly Dimmer Gen3", "publisher": "Shelly Knowledge Base", "kind": "manufacturer", "accessed": "2026-10-11"},
-    {"id": "shelly-kb-web-interface-dimmer-gen3", "url": "https://kb.shelly.cloud/knowledge-base/shelly-dimmer-gen3-web-interface-guide", "title": "Shelly Dimmer Gen3 web interface guide", "publisher": "Shelly Knowledge Base", "kind": "manufacturer", "accessed": "2026-10-11"},
-    {"id": "ha-shelly", "url": "https://www.home-assistant.io/integrations/shelly/", "title": "Shelly - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
+    {
+      "id": "shelly-dimmer-gen3-product",
+      "url": "https://www.shelly.com/products/shelly-dimmer-gen3",
+      "title": "Shelly Dimmer Gen3",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-kb-dimmer-gen3",
+      "url": "https://kb.shelly.cloud/knowledge-base/shelly-dimmer-gen3",
+      "title": "Shelly Dimmer Gen3",
+      "publisher": "Shelly Knowledge Base",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-kb-web-interface-dimmer-gen3",
+      "url": "https://www.shelly.com/blogs/documentation/shelly-dimmer-gen3-web-interface-guide",
+      "title": "Shelly Dimmer Gen3 Web Interface Guide",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-shelly",
+      "url": "https://www.home-assistant.io/integrations/shelly/",
+      "title": "Shelly - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }
