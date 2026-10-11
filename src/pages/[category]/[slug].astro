@@ -120,7 +120,7 @@ const jsonLd = [
 
     <h2>Ecosystem compatibility</h2>
     <div class="table-scroll">
-      <table>
+      <table class="stack kv">
         <thead>
           <tr><th scope="col">Platform</th><th scope="col">Works?</th><th scope="col">Details</th></tr>
         </thead>
@@ -128,7 +128,7 @@ const jsonLd = [
           <tr>
             <th scope="row">Matter</th>
             <td><span class={`badge s-${d.matter.certified}`}>{matterText}</span></td>
-            <td>
+            <td class="wide">
               {d.matter.note}<Refs ids={d.matter.sources} all={src} />
               {d.matter.certified && <> <a href="/works-with/matter/">Other Matter {cat.plural}</a></>}
             </td>
@@ -140,7 +140,7 @@ const jsonLd = [
                 <tr>
                   <th scope="row">{ECOSYSTEM_LABELS[e]}</th>
                   <td><Status status={c.status} via={c.via} /></td>
-                  <td>{c.note}<Refs ids={c.sources} all={src} /></td>
+                  <td class="wide">{c.note}<Refs ids={c.sources} all={src} /></td>
                 </tr>
               );
             })

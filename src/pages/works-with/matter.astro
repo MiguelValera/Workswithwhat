@@ -59,7 +59,7 @@ const description = `${matter.length} Matter-certified ${what}, split by Wi-Fi a
             <>
               <h2>Matter {g.cat.plural} {t.label}</h2>
               <div class="table-scroll">
-                <table>
+                <table class="stack pair">
                   <thead>
                     <tr>
                       <th scope="col">Device</th>
@@ -75,9 +75,9 @@ const description = `${matter.length} Matter-certified ${what}, split by Wi-Fi a
                           <a href={devicePath(d)}>{d.data.name}</a>
                           <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
                         </th>
-                        <td>{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
-                        <td>{specFacts(d.data)[0].text}</td>
-                        <td>{d.data.matter.note}<Refs ids={d.data.matter.sources} all={d.data.sources} base={devicePath(d)} /></td>
+                        <td data-label="Radios">{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+                        <td data-label={g.cat.specs[0].label}>{specFacts(d.data)[0].text}</td>
+                        <td class="wide">{d.data.matter.note}<Refs ids={d.data.matter.sources} all={d.data.sources} base={devicePath(d)} /></td>
                       </tr>
                     ))}
                   </tbody>

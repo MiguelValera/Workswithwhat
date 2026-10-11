@@ -1,0 +1,163 @@
+{
+  "category": "smart-plug",
+  "brand": "LEDVANCE",
+  "model": "SMART+ MATTER Plug EU White (EAN 4099854295195)",
+  "name": "LEDVANCE SMART+ Matter Plug (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.ledvance.com/en-int/home-lighting/products/smart-home/smart-components/smart-matter/smart-matter/plug-with-smart-socket-to-control-non-smart-devices-with-matter-over-wifi-technology-c317769?productId=302480",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "ledvance-plug-eu-wh",
+      "ledvance-datasheet-eu-wh",
+      "ledvance-shortlink-4099854295195"
+    ],
+    "note": "Matter over 2.4 GHz Wi-Fi per LEDVANCE's page and datasheet for EAN 4099854295195. Bluetooth not confirmed either way."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "ledvance-plug-eu-wh",
+      "matteralpha-plug-eu-wh"
+    ],
+    "note": "LEDVANCE's page for this EU White plug says Matter 1.3 certified, with energy metering over Matter. Matter Alpha lists cert CSA24264MAT43287-24 (May 2024); the CSA page itself wasn't found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "ledvance-plug-eu-wh",
+        "ledvance-datasheet-eu-wh"
+      ],
+      "note": "LEDVANCE lists Apple Home via Matter. Needs an Apple home hub as Matter controller."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "ledvance-plug-eu-wh",
+        "ledvance-datasheet-eu-wh"
+      ],
+      "note": "LEDVANCE lists Google Home via Matter. Needs a Google Matter controller."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "ledvance-plug-eu-wh",
+        "ledvance-datasheet-eu-wh"
+      ],
+      "note": "LEDVANCE lists Alexa via Matter. Needs an Echo that works as a Matter controller."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "ledvance-plug-eu-wh",
+        "ledvance-datasheet-eu-wh"
+      ],
+      "note": "LEDVANCE lists SmartThings via Matter. Needs a SmartThings Matter controller."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "ha-matter",
+        "ledvance-plug-eu-wh"
+      ],
+      "note": "Through HA's Matter integration, as a certified Matter device; HA's docs don't name this plug."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "ledvance-faq-smart",
+      "ledvance-plug-eu-wh"
+    ],
+    "note": "The SMART+ app adds Matter over Wi-Fi devices without a gateway. Other ecosystems need their own Matter controller (speaker or hub)."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "ledvance-faq-smart",
+      "ha-matter"
+    ],
+    "note": "LEDVANCE's FAQ says Matter devices communicate locally and the cloud is optional; HA says Matter devices are controlled locally. No LEDVANCE test of offline app control found."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "ledvance-plug-eu-wh",
+      "ledvance-faq-smart"
+    ],
+    "note": "Built-in energy meter; the SMART+ app shows hourly (7 days), daily (365 days) and monthly use. LEDVANCE says metering is also exposed over Matter."
+  },
+  "maxLoadWatts": {
+    "value": 2300,
+    "sources": [
+      "ledvance-plug-eu-wh",
+      "ledvance-datasheet-eu-wh"
+    ],
+    "note": "2300 W / 10 A at 230 V, 50 Hz."
+  },
+  "summary": "Certified to Matter 1.3 over Wi-Fi, the LEDVANCE SMART+ Matter Plug (EU) works with Apple Home, Google Home, Alexa and SmartThings, and Home Assistant adds it through its Matter integration. LEDVANCE says the energy meter is exposed over Matter too, not only in its SMART+ app, which shows hourly, daily and monthly use. Control runs locally with the cloud optional, per LEDVANCE. The load limit is 2300 W / 10 A at 230 V.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Each ecosystem needs its own Matter controller; Apple Home needs an Apple home hub.",
+    "Limited to 10 A / 2300 W, so check the rating of high-draw appliances."
+  ],
+  "sources": [
+    {
+      "id": "ledvance-plug-eu-wh",
+      "url": "https://www.ledvance.com/en-int/home-lighting/products/smart-home/smart-components/smart-matter/smart-matter/plug-with-smart-socket-to-control-non-smart-devices-with-matter-over-wifi-technology-c317769?productId=302480",
+      "title": "SMART+ MATTER Plug EU White",
+      "publisher": "LEDVANCE",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ledvance-datasheet-eu-wh",
+      "url": "https://www.ledvance.com/en/product-datasheet/419597/302480",
+      "title": "Product datasheet SMART+ MATTER Plug EU White",
+      "publisher": "LEDVANCE",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ledvance-shortlink-4099854295195",
+      "url": "https://www.ledvance.com/shortlink/4099854295195",
+      "title": "SMART+ MATTER PLUG WITH MATTER TECHNOLOGY",
+      "publisher": "LEDVANCE",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ledvance-faq-smart",
+      "url": "https://www.ledvance.com/en-int/home-lighting/services/faq/faq-for-smart-app_matter-products",
+      "title": "FAQ for SMART+",
+      "publisher": "LEDVANCE",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "matteralpha-plug-eu-wh",
+      "url": "https://www.matteralpha.com/ledvance/smart-wifi-mat-plug-eu-wh-p2151",
+      "title": "SMART WIFI MAT PLUG EU WH Information, Specification, News & More",
+      "publisher": "Matter Alpha",
+      "kind": "review",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://home-assistant.io/integrations/matter",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

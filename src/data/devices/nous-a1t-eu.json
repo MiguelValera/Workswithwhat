@@ -1,0 +1,119 @@
+{
+  "category": "smart-plug",
+  "brand": "Nous",
+  "model": "A1T",
+  "name": "Nous A1T (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://nous.technology/product/a1t.html",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "nous-a1t"
+    ],
+    "note": "2.4 GHz Wi-Fi only; Nous says it does not work on 5 GHz networks."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Nous's A1T page doesn't mention Matter and no CSA listing was found. It ships with Tasmota firmware."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Nous's A1T page doesn't mention Apple Home."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Nous says Google Assistant works only after connecting the plug to Home Assistant or similar software. There is no Nous cloud link or bridge, so this relies on Home Assistant's own Google integration, not the plug."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Nous says Alexa works only after connecting the plug to Home Assistant or similar software. There is no Nous cloud link or bridge, so this relies on Home Assistant's own Alexa integration, not the plug."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Nous's A1T page doesn't mention SmartThings."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "nous-a1t",
+        "ha-tasmota"
+      ],
+      "note": "Through HA's official Tasmota integration over MQTT (needs an MQTT broker and Tasmota 9.2+). Nous names Home Assistant as the intended platform."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "nous-a1t"
+    ],
+    "note": "Wi-Fi plug running Tasmota, configured through its own web interface. Voice assistants need Home Assistant or similar."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "nous-a1t",
+      "ha-tasmota"
+    ],
+    "note": "Tasmota firmware runs locally with a built-in web UI and MQTT; no vendor cloud."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "nous-a1t",
+      "blakadder-nous-a1t"
+    ],
+    "note": "Measures and records consumption. Nous and the Tasmota template both say it needs power-monitoring calibration for accurate readings."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [],
+    "note": "Nous's own page conflicts: the spec table says 10 A max load / 2500 W, while the product name and relay description say 16 A. Retailers list 16 A / 3680 W."
+  },
+  "summary": "Tasmota comes preinstalled on the Nous A1T (EU), so there's no vendor cloud: it goes straight into Home Assistant through the official Tasmota integration, which needs an MQTT broker and Tasmota 9.2 or later. It measures and records energy use, though readings need calibrating to be accurate. Alexa and Google Assistant only work through Home Assistant or similar software, not the plug itself. Nous's own page gives conflicting load ratings (10 A in the spec table, 16 A in the name), so we don't list a maximum.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only; Nous says it won't join a 5 GHz network.",
+    "The Home Assistant Tasmota integration needs an MQTT broker and Tasmota 9.2 or later.",
+    "Energy readings need power-monitoring calibration before they're accurate.",
+    "Nous's spec table says 10 A / 2500 W while the product name says 16 A, so check before plugging in a heavy load.",
+    "No Alexa or Google Assistant without Home Assistant or similar software in between."
+  ],
+  "sources": [
+    {
+      "id": "nous-a1t",
+      "url": "https://nous.technology/product/a1t.html",
+      "title": "Nous A1T Tasmota Smart WiFi Socket 16A with Power monitoring",
+      "publisher": "Nous technology",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-tasmota",
+      "url": "https://home-assistant.io/integrations/tasmota/",
+      "title": "Tasmota - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "blakadder-nous-a1t",
+      "url": "https://templates.blakadder.com/nous_A1T.html",
+      "title": "Nous A1T 16A Power Monitoring Plug (A1T) Configuration for Tasmota",
+      "publisher": "Tasmota Device Templates Repository (blakadder)",
+      "kind": "review",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

@@ -1,0 +1,133 @@
+{
+  "category": "smart-plug",
+  "brand": "Innr",
+  "model": "SP 242",
+  "name": "Innr SP 242 (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.innr.com/wp-content/uploads/2024/04/INNR_IM_SP-242_WT10.pdf",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "innr-sp242-manual",
+      "innr-sp242-uk-doc",
+      "innr-works-with"
+    ],
+    "note": "Zigbee 3.0 on 2.4 GHz (max 10 dBm per the manual). Acts as a Zigbee repeater."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Zigbee-only plug; Innr doesn't mention Matter for it and no CSA listing was found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Innr's Works-with page says Innr devices on a Hue Bridge are not passed to Apple HomeKit. No source covers other routes, so not marked 'no'."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Innr's Works-with page doesn't list Google Home for this plug."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Echo with Zigbee hub, Hue Bridge or SmartThings",
+      "sources": [
+        "innr-works-with"
+      ],
+      "note": "Pairs directly with Echo models that have a built-in Zigbee hub (e.g. Echo 4th gen, Studio, Show 10), or via a Hue Bridge or SmartThings."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "SmartThings hub (Zigbee)",
+      "sources": [
+        "innr-works-with"
+      ],
+      "note": "Innr lists SmartThings as a supported Zigbee hub."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "Zigbee coordinator (ZHA or Zigbee2MQTT)",
+      "sources": [
+        "innr-works-with",
+        "z2m-sp242"
+      ],
+      "note": "Innr says its products work with ZHA or Zigbee2MQTT, including plug power metering, but it doesn't support those setups itself. Zigbee2MQTT lists the SP 242."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "innr-works-with"
+    ],
+    "note": "Zigbee plug: needs a Zigbee hub such as a Hue Bridge, SmartThings, an Echo with Zigbee, Homey or the Innr bridge."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Innr statement on control without internet found."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "innr-sp242-uk-doc",
+      "innr-works-with",
+      "z2m-sp242"
+    ],
+    "note": "Innr's UK declaration calls the SP 242 a Zigbee 3.0 smart plug with power metering. Innr says Philips Hue doesn't show the readings; SmartThings, Hubitat, Homey and Home Assistant do."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [],
+    "note": "Innr's manual gives a 13 A total current limit; no watt figure found."
+  },
+  "summary": "Echo speakers with a built-in Zigbee hub can pair the Innr SP 242 (UK) directly for Alexa; otherwise it needs a bridge such as a Hue Bridge or SmartThings. Home Assistant picks it up through ZHA or Zigbee2MQTT, power metering included. It's a Zigbee 3.0 plug with a 13 A limit, and it repeats the Zigbee mesh. Google Home isn't on Innr's list, and Apple Home is unconfirmed: Innr says its devices on a Hue Bridge aren't passed to HomeKit.",
+  "caveats": [
+    "Needs a Zigbee hub; there is no Wi-Fi.",
+    "Philips Hue can switch it but doesn't show its energy readings.",
+    "Innr devices on a Hue Bridge aren't passed through to Apple HomeKit.",
+    "Innr says it works with ZHA and Zigbee2MQTT but doesn't support those setups itself."
+  ],
+  "sources": [
+    {
+      "id": "innr-sp242-manual",
+      "url": "https://www.innr.com/wp-content/uploads/2024/04/INNR_IM_SP-242_WT10.pdf",
+      "title": "Innr SP 242 user manual",
+      "publisher": "Innr",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "innr-sp242-uk-doc",
+      "url": "https://www.innr.com/wp-content/uploads/2023/09/innr-SAR-002-2000-UK-DoC-SP-242-v1.0.pdf",
+      "title": "UK Declaration of Conformity SP 242 v1.0",
+      "publisher": "Innr",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "innr-works-with",
+      "url": "https://innr.com/pages/works-with",
+      "title": "Works with",
+      "publisher": "Innr",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "z2m-sp242",
+      "url": "https://www.zigbee2mqtt.io/devices/SP_242.html",
+      "title": "Innr SP 242 control via MQTT",
+      "publisher": "Zigbee2MQTT",
+      "kind": "review",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

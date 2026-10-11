@@ -70,10 +70,10 @@ main { padding-bottom: 48px; }
 
 .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
 table { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
-th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
 tr:last-child td, tr:last-child th { border-bottom: 0; }
-thead th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); white-space: nowrap; }
-.name { min-width: 210px; }
+thead th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.name { min-width: 150px; }
 .note { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
 
 .badge { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
@@ -89,7 +89,7 @@ thead th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em;
 .card h3 a:hover { color: var(--accent); }
 .card .eco { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 
-.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin: 0; }
+.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 0; }
 .facts div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
 .facts dt { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
 .facts dd { margin: 2px 0 0; font-weight: 600; }
@@ -107,3 +107,21 @@ ul.caveats li { margin-bottom: 6px; }
 .faq div:last-child { border-bottom: 0; }
 .faq dt { font-weight: 600; }
 .faq dd { margin: 4px 0 0; }
+
+/* Phones and tablets: each table row becomes a card, so nothing scrolls sideways. */
+@media (max-width: 979px) {
+  .table-scroll:has(> table.stack) { overflow: visible; }
+  table.stack, table.stack tbody { display: block; }
+  table.stack thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  table.stack tr { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  table.stack tr:last-child { border-bottom: 0; }
+  table.stack th, table.stack td { display: block; padding: 0; border: 0; min-width: 0; }
+  table.stack th[scope='row'], table.stack td.wide { grid-column: 1 / -1; }
+  table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 0.78rem; color: var(--muted); line-height: 1.3; margin-bottom: 3px; white-space: nowrap; }
+  table.stack .badge { white-space: normal; border-radius: 8px; }
+  table.stack.pair tr { grid-template-columns: minmax(0, 1fr) auto; }
+  table.stack td.wide { color: var(--muted); font-size: 0.88rem; }
+  table.stack.kv tr { grid-template-columns: 1fr auto; align-items: center; gap: 6px 12px; }
+  table.stack.kv th[scope='row'] { grid-column: auto; }
+  table.stack.kv td.wide { grid-column: 1 / -1; }
+}
