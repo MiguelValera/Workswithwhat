@@ -61,7 +61,7 @@ After any agent run: `npm run validate` must pass.
 - `/<category>/` (e.g. `/smart-plugs/`, `/smart-bulbs/`): comparison table. A category gets pages only once it has a verified device.
 - `/<category>/<slug>/`: device page with a compatibility table, specs, sources, last-verified date, and Product JSON-LD.
 - `/works-with/<ecosystem>/`: e.g. "Smart home devices that work with Apple Home", one section per category. Titles name the categories only up to three; past that they say "smart home devices" and the description names them in brackets (`categoryPhrase()` in `src/lib/devices.ts`). `/works-with/matter/` lists Matter-certified devices.
-- Categories are registered in `src/lib/categories.ts` (routes, labels, which facts to show) and `src/schema/device.ts` (fields).
+- Categories are registered in `src/lib/categories.ts` (routes, labels, a short `navLabel` for the site header, which facts to show) and `src/schema/device.ts` (fields).
 - `/methodology/`: how we verify (trust signal).
 - Every page needs a unique `<title>` and meta description, a canonical URL, OG tags and breadcrumbs (with BreadcrumbList JSON-LD). Sitemap via `@astrojs/sitemap`.
 - Keep pages light: no client JS (the CSP allows none), system fonts, no trackers.

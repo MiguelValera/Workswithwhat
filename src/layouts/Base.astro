@@ -83,7 +83,7 @@ if (crumbs.length) {
       <div class="wrap">
         <a class="logo" href="/">works<span>with</span>what</a>
         <nav aria-label="Main">
-          {navCategories.map((c) => <a href={`/${c.path}/`} aria-current={current(`/${c.path}/`)}>{c.label}</a>)}
+          {navCategories.map((c) => <a href={`/${c.path}/`} aria-current={current(`/${c.path}/`)}>{c.navLabel}</a>)}
           <a href="/works-with/" aria-current={current('/works-with/')}>By ecosystem</a>
           <a href="/methodology/" aria-current={current('/methodology/')}>How we verify</a>
         </nav>

@@ -8,6 +8,8 @@ export interface Category {
   path: string;
   /** "Smart plugs" */
   label: string;
+  /** "Plugs": short label for the site header */
+  navLabel: string;
   /** "smart plug" */
   singular: string;
   /** "smart plugs" */
@@ -59,6 +61,7 @@ export const CATEGORIES: Category[] = [
     key: 'smart-plug',
     path: 'smart-plugs',
     label: 'Smart plugs',
+    navLabel: 'Plugs',
     singular: 'smart plug',
     plural: 'smart plugs',
     specs: [
@@ -70,6 +73,7 @@ export const CATEGORIES: Category[] = [
     key: 'smart-bulb',
     path: 'smart-bulbs',
     label: 'Smart bulbs',
+    navLabel: 'Bulbs',
     singular: 'smart bulb',
     plural: 'smart bulbs',
     specs: [
@@ -82,6 +86,7 @@ export const CATEGORIES: Category[] = [
     key: 'smart-lock',
     path: 'smart-locks',
     label: 'Smart locks',
+    navLabel: 'Locks',
     singular: 'smart lock',
     plural: 'smart locks',
     specs: [
@@ -94,6 +99,7 @@ export const CATEGORIES: Category[] = [
     key: 'smart-thermostat',
     path: 'smart-thermostats',
     label: 'Smart thermostats',
+    navLabel: 'Thermostats',
     singular: 'smart thermostat',
     plural: 'smart thermostats',
     specs: [
@@ -106,6 +112,7 @@ export const CATEGORIES: Category[] = [
     key: 'smart-sensor',
     path: 'smart-sensors',
     label: 'Smart sensors',
+    navLabel: 'Sensors',
     singular: 'smart sensor',
     plural: 'smart sensors',
     specs: [
@@ -121,6 +128,7 @@ export const CATEGORIES: Category[] = [
     key: 'smart-camera',
     path: 'smart-cameras',
     label: 'Smart cameras and doorbells',
+    navLabel: 'Cameras',
     singular: 'smart camera',
     plural: 'smart cameras',
     specs: [
