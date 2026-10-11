@@ -50,6 +50,7 @@ Pipeline: **collector → verifier → editor**, then **reviewer** on the PR.
 | `collector` | Researches a device and drafts its JSON with sources. | New `src/data/devices/*.json` with `status: "draft"`. |
 | `verifier` | Re-checks every claim against its cited source, independently. Downgrades anything unsupported to `unknown`. | Edits the record and sets `status: "verified"` + `verifiedAt` only if everything holds. |
 | `editor` | Writes `summary` and `caveats` from the verified data, plus SEO copy. Never changes facts. | `summary`, `caveats`. |
+| `ux` | HTML/CSS-only UX work on pages and components. Proves SEO is unchanged with a before/after snapshot diff of `dist/`. | Layouts, components, pages, `global.css`. |
 | `reviewer` | Reviews an open PR against these rules (validate, build, CI, data, CSP, secrets, copy). Never merges. | One PR comment: **Ready to merge** or **Not ready**, with blockers. |
 
 After any agent run: `npm run validate` must pass.
@@ -63,7 +64,8 @@ After any agent run: `npm run validate` must pass.
 - Categories are registered in `src/lib/categories.ts` (routes, labels, which facts to show) and `src/schema/device.ts` (fields).
 - `/methodology/`: how we verify (trust signal).
 - Every page needs a unique `<title>` and meta description, a canonical URL, OG tags and breadcrumbs (with BreadcrumbList JSON-LD). Sitemap via `@astrojs/sitemap`.
-- Keep pages light: no client JS unless needed, system fonts, no trackers.
+- Keep pages light: no client JS (the CSP allows none), system fonts, no trackers.
+- Device pages open with a "Compatibility at a glance" tile grid linking to `#compat-<eco>` rows, then an "On this page" list. Chart pages have brand jump links (`#brand-<brand>`). Keep these when editing pages.
 - Tables with `class="stack"` turn into one card per row below 980 px (labels come from `data-label`; `td.wide` spans the card). New tables should use it, so nothing scrolls sideways on phones.
 
 ### AI search and agents (GEO)
@@ -84,7 +86,7 @@ After any agent run: `npm run validate` must pass.
 Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
-- **54 verified devices:** 39 smart plugs (US, EU, UK) and 15 smart bulbs, each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
+- **56 verified devices:** 41 smart plugs (US, EU, UK) and 15 smart bulbs, each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
   - `/smart-plugs/` and `/smart-bulbs/`: comparison charts.
   - A page per device.
@@ -93,7 +95,7 @@ Read this first if you are picking the project up.
 - **For AI assistants:** `/llms.txt`, `/llms-full.txt`, `/api/devices.json` and `/api/<category>.json`.
 
 ### Unfinished work
-- **Next plug batch (not started):** Innr SP 240 (EU, sibling of the SP 242 UK) and Shelly Plug US Gen4. There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
+- **Next:** pick the next batch (Claude decides). Sensors are the next category on the roadmap and need schema and registry work first. There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
 - **Who decides content:** the owner doesn't pick devices or review content. Claude chooses what to add next and writes it, following the principles above.
 
 ### How content gets added (lessons learned)
