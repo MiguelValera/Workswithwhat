@@ -99,12 +99,12 @@
     "sources": [],
     "note": "Not stated in the pages we saw; it works in single-pole and multi-way setups."
   },
-  "summary": "Inovelli's Blue Series 2-1 (VZM31-SN) is a Zigbee wall switch that runs as a dimmer or an on/off switch. It works with or without a neutral, but without one you need a bypass that is not in the box. It needs a Zigbee hub: Inovelli lists SmartThings, Hubitat, Home Assistant (ZHA or Zigbee2MQTT) and supported Echo models. It supports multi-way setups with an aux switch.",
+  "summary": "Zigbee only, the Inovelli Blue Series 2-1 (VZM31-SN) is a wall switch that runs as a dimmer or a plain on/off switch. It works with or without a neutral, but without one you need a bypass at the fixture that is not in the box. It needs a Zigbee hub: Inovelli lists SmartThings, Hubitat, Home Assistant (ZHA or Zigbee2MQTT) and Echo models with a built-in Zigbee hub. Apple Home and Google Home are not confirmed.",
   "caveats": [
-    "Needs a Zigbee hub or coordinator; no direct Wi-Fi or Matter.",
+    "Zigbee only, so it needs a hub or coordinator; Matter is not confirmed for this model.",
     "Without a neutral wire a bypass is required, and it isn't included.",
-    "Advanced features such as multi-tap scenes work only on hubs that support them; Inovelli names SmartThings, Hubitat and Home Assistant.",
-    "Apple Home and Google Home support is not documented by Inovelli for this version."
+    "Advanced features such as multi-tap scenes work only on hubs that support them, and Alexa works only with Echo models that have a built-in Zigbee hub.",
+    "Apple Home and Google Home support is not confirmed for this version."
   ],
   "sources": [
     {

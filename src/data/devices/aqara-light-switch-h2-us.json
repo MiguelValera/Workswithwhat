@@ -3,88 +3,155 @@
   "brand": "Aqara",
   "model": "WS-K02E",
   "name": "Aqara Light Switch H2, 1 Channel (US)",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://us.aqara.com/products/aqara-light-switch-h2-us",
   "radios": {
-    "value": ["thread", "zigbee", "bluetooth"],
-    "sources": ["aqara-h2-us", "aqara-h2-specs"],
+    "value": [
+      "thread",
+      "zigbee",
+      "bluetooth"
+    ],
+    "sources": [
+      "aqara-h2-us",
+      "aqara-h2-specs"
+    ],
     "note": "Runs Matter over Thread by default or Zigbee with an Aqara hub; Bluetooth is for setup."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
-    "sources": ["aqara-h2-us", "csa-h2-us-1ch"],
+    "sources": [
+      "aqara-h2-us",
+      "csa-h2-us-1ch"
+    ],
     "note": "Aqara's page states Matter over Thread. CSA lists the Light Switch H2 US (2 Button, 1 Channel) from Lumi United (Aqara's maker): Matter 1.3, certified 2024-09-09, certificate CSA244D0MAT43907-24. The search only surfaced CSA's Portuguese-language copy of the listing."
   },
   "compatibility": {
     "apple_home": {
       "status": "matter",
-      "sources": ["aqara-h2-us"],
+      "sources": [
+        "aqara-h2-us"
+      ],
       "note": "Thread mode needs a Thread-enabled Matter controller, such as an Apple TV or HomePod that is a Thread border router."
     },
     "google_home": {
       "status": "matter",
-      "sources": ["aqara-h2-us"],
+      "sources": [
+        "aqara-h2-us"
+      ],
       "note": "Needs a Thread-capable Google hub or speaker as Matter controller."
     },
     "alexa": {
       "status": "matter",
-      "sources": ["aqara-h2-us"],
+      "sources": [
+        "aqara-h2-us"
+      ],
       "note": "Needs a Thread-capable Echo as Matter controller."
     },
     "smartthings": {
       "status": "matter",
-      "sources": ["aqara-h2-us"],
+      "sources": [
+        "aqara-h2-us"
+      ],
       "note": "Aqara's compatibility list names SmartThings. In Thread mode Aqara says the ecosystem needs a Thread-enabled Matter controller, here a Thread-capable SmartThings hub."
     },
     "home_assistant": {
       "status": "matter",
-      "sources": ["aqara-h2-us", "ha-matter"],
+      "sources": [
+        "aqara-h2-us",
+        "ha-matter"
+      ],
       "note": "Through Home Assistant's Matter integration, which needs a Thread border router. Zigbee mode through an Aqara hub is the alternative."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["aqara-h2-us"],
+    "sources": [
+      "aqara-h2-us"
+    ],
     "note": "Thread mode needs no Aqara hub, only a Thread border router for the Matter controller. Zigbee mode does need an Aqara Zigbee hub."
   },
   "localControl": {
     "value": true,
-    "sources": ["ha-matter", "csa-h2-us-1ch"],
+    "sources": [
+      "ha-matter",
+      "csa-h2-us-1ch"
+    ],
     "note": "Matter controllers reach it locally over Thread. Aqara doesn't state local control for its own app."
   },
   "switchForm": {
     "value": "wall-switch",
-    "sources": ["aqara-h2-us", "aqara-h2-specs"],
+    "sources": [
+      "aqara-h2-us",
+      "aqara-h2-specs"
+    ],
     "note": "Replaces a US wall switch; single-pole and 3-way setups."
   },
   "dimmer": {
     "value": false,
-    "sources": ["aqara-h2-us"],
+    "sources": [
+      "aqara-h2-us"
+    ],
     "note": "On/off only. Aqara sells a separate Dimmer Switch H2 US."
   },
   "neutralRequired": {
     "value": false,
-    "sources": ["aqara-h2-us", "aqara-h2-specs"],
+    "sources": [
+      "aqara-h2-us",
+      "aqara-h2-specs"
+    ],
     "note": "Works with or without a neutral. Power monitoring and overload protection need one; without it the minimum load is 5 W."
   },
   "gangs": {
     "value": "2 Buttons, 1 Channel",
-    "sources": ["aqara-h2-us", "aqara-h2-specs"],
+    "sources": [
+      "aqara-h2-us",
+      "aqara-h2-specs"
+    ],
     "note": "Aqara's spec sheet lists this as model WS-K02E. The 2-button 2-channel (WS-K03E) and 4-button 3-channel (WS-K04E) versions are separate models."
   },
-  "summary": "The Aqara Light Switch H2 (US) is a wall switch with two buttons and one relay channel. It works with or without a neutral wire. By default it uses Matter over Thread, so Apple Home, Google Home, Alexa, SmartThings and Home Assistant can add it without an Aqara hub, given a Thread-capable Matter controller. In Zigbee mode it needs an Aqara hub instead. Power monitoring needs a neutral.",
+  "summary": "The Aqara Light Switch H2 (US, WS-K02E) is an on/off wall switch with two buttons and one relay channel, and it works with or without a neutral wire. By default it uses Matter over Thread, so Apple Home, Google Home, Alexa, SmartThings and Home Assistant can add it without an Aqara hub, given a Thread-capable Matter controller. In Zigbee mode it needs an Aqara hub instead. Power monitoring needs a neutral.",
   "caveats": [
     "Thread mode needs a Matter controller that is also a Thread border router.",
-    "Aqara recommends Zigbee mode with an Aqara hub for full features; some are limited through third-party Matter.",
+    "On/off only; Aqara sells a separate Dimmer Switch H2 US.",
     "Without a neutral wire there is a 5 W minimum load, and no power monitoring or overload protection.",
     "Versions with other button and channel counts have different model numbers; check the box."
   ],
   "sources": [
-    {"id": "aqara-h2-us", "url": "https://us.aqara.com/products/aqara-light-switch-h2-us", "title": "Aqara Light Switch H2 US - Smart Home Lighting Control with Dual Protocol Support", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11"},
-    {"id": "aqara-h2-specs", "url": "https://www.aqara.com/en/product/light-switch-h2-us-specs/", "title": "Light Switch H2 US-Specs", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11"},
-    {"id": "csa-h2-us-1ch", "url": "https://csa-iot.org/pt/csa_product/interruptor-de-luz-h2-us2-bot%C3%A3o1-canal/", "title": "Interruptor de luz H2 US (2 botões, 1 canais) - CSA-IOT", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11"},
-    {"id": "ha-matter", "url": "https://www.home-assistant.io/integrations/matter/", "title": "Matter - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
+    {
+      "id": "aqara-h2-us",
+      "url": "https://us.aqara.com/products/aqara-light-switch-h2-us",
+      "title": "Aqara Light Switch H2 US - Smart Home Lighting Control with Dual Protocol Support",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-h2-specs",
+      "url": "https://www.aqara.com/en/product/light-switch-h2-us-specs/",
+      "title": "Light Switch H2 US-Specs",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-h2-us-1ch",
+      "url": "https://csa-iot.org/pt/csa_product/interruptor-de-luz-h2-us2-bot%C3%A3o1-canal/",
+      "title": "Interruptor de luz H2 US (2 botões, 1 canais) - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
   ],
   "status": "verified",
   "verifiedAt": "2026-10-11",

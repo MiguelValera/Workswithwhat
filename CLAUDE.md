@@ -78,7 +78,7 @@ After any agent run: `npm run validate` must pass.
 ## Roadmap
 
 - **Phase 1 (done):** Astro setup, schema and validation, agents, first smart plugs, GitHub Pages + Cloudflare deploy, security hardening, legal pages, SEO/GEO.
-- **Phase 2 (in progress):** more devices and categories. Plugs, bulbs, locks, thermostats, sensors, and cameras and doorbells are live; wall switches and dimmers come next. Each new category needs code: schema in `src/schema/device.ts`, plus registry and labels in `src/lib/categories.ts`. Then filters, comparison pages ("X vs Y") and per-ecosystem buying guides.
+- **Phase 2 (in progress):** more devices and categories. Plugs, bulbs, locks, thermostats, sensors, cameras and doorbells, and switches and dimmers are live; robot vacuums come next. Each new category needs code: schema in `src/schema/device.ts`, plus registry and labels in `src/lib/categories.ts`. Then filters, comparison pages ("X vs Y") and per-ecosystem buying guides.
 - **Phase 3:** data freshness (re-verify records older than 6 months), contribution and corrections form, monetisation (see below).
 
 ## Current state (handoff, updated 2026-10-11)
@@ -86,16 +86,16 @@ After any agent run: `npm run validate` must pass.
 Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
-- **103 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs, 18 smart locks, 10 smart thermostats (US, EU), 10 smart sensors (EU) and 9 smart cameras and doorbells (US, EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
+- **113 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs, 18 smart locks, 10 smart thermostats (US, EU), 10 smart sensors (EU), 9 smart cameras and doorbells (US, EU) and 10 smart switches and dimmers (US, EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
-  - `/smart-plugs/`, `/smart-bulbs/`, `/smart-locks/`, `/smart-thermostats/`, `/smart-sensors/` and `/smart-cameras/`: comparison charts.
+  - `/smart-plugs/`, `/smart-bulbs/`, `/smart-locks/`, `/smart-thermostats/`, `/smart-sensors/`, `/smart-cameras/` and `/smart-switches/`: comparison charts.
   - A page per device.
   - `/works-with/<ecosystem>/` and `/works-with/matter/`.
   - `/methodology/`, `/legal/` and `/privacy/`.
 - **For AI assistants:** `/llms.txt`, `/llms-full.txt`, `/api/devices.json` and `/api/<category>.json`.
 
 ### Unfinished work
-- **Next:** pick the next batch (Claude decides). Agreed category order: wall switches and dimmers, robot vacuums; LED strips are a cheap add on the bulb schema. Each new category needs schema and registry work first, as thermostats did. More thermostats (Honeywell T6 Pro, Bosch, Danfoss Ally) and sensors (US versions, IKEA MYGGBETT and KLIPPBOK, SwitchBot, Shelly) are also open. More cameras are open too (Arlo, Reolink, Wyze, Ring outdoor, eufy indoor). Arlo Essential Indoor (2nd gen) was dropped: its only Alexa source was on Arlo's staging host. For cameras, ecosystem notes say what works (live view, announcements, HomeKit Secure Video); Matter camera support is new, so never assume it. Lockly Secure Pro was dropped: no lockly.com page surfaced in search.
+- **Next:** pick the next batch (Claude decides). Agreed category order: robot vacuums; LED strips are a cheap add on the bulb schema. Each new category needs schema and registry work first, as thermostats did. More thermostats (Honeywell T6 Pro, Bosch, Danfoss Ally) and sensors (US versions, IKEA MYGGBETT and KLIPPBOK, SwitchBot, Shelly) are also open. More cameras are open too (Arlo, Reolink, Wyze, Ring outdoor, eufy indoor). Arlo Essential Indoor (2nd gen) was dropped: its only Alexa source was on Arlo's staging host. Switches: a radio outside the enum (e.g. Lutron Clear Connect) means `radios: null` with a note, and a generic Zigbee coordinator (ZHA, Zigbee2MQTT) is `hub`, not `native`. For cameras, ecosystem notes say what works (live view, announcements, HomeKit Secure Video); Matter camera support is new, so never assume it. Lockly Secure Pro was dropped: no lockly.com page surfaced in search.
 - There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
 - **Who decides content:** the owner doesn't pick devices or review content. Claude chooses what to add next and writes it, following the principles above.
 
