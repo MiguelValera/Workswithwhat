@@ -78,7 +78,7 @@ After any agent run: `npm run validate` must pass.
 ## Roadmap
 
 - **Phase 1 (done):** Astro setup, schema and validation, agents, first smart plugs, GitHub Pages + Cloudflare deploy, security hardening, legal pages, SEO/GEO.
-- **Phase 2 (in progress):** more devices and categories. Plugs, bulbs, locks and thermostats are live; sensors come next. Each new category needs code: schema in `src/schema/device.ts`, plus registry and labels in `src/lib/categories.ts`. Then filters, comparison pages ("X vs Y") and per-ecosystem buying guides.
+- **Phase 2 (in progress):** more devices and categories. Plugs, bulbs, locks, thermostats and sensors are live; cameras and video doorbells come next. Each new category needs code: schema in `src/schema/device.ts`, plus registry and labels in `src/lib/categories.ts`. Then filters, comparison pages ("X vs Y") and per-ecosystem buying guides.
 - **Phase 3:** data freshness (re-verify records older than 6 months), contribution and corrections form, monetisation (see below).
 
 ## Current state (handoff, updated 2026-10-11)
@@ -86,16 +86,16 @@ After any agent run: `npm run validate` must pass.
 Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
-- **84 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs, 18 smart locks and 10 smart thermostats (US, EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
+- **94 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs, 18 smart locks, 10 smart thermostats (US, EU) and 10 smart sensors (EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
-  - `/smart-plugs/`, `/smart-bulbs/`, `/smart-locks/` and `/smart-thermostats/`: comparison charts.
+  - `/smart-plugs/`, `/smart-bulbs/`, `/smart-locks/`, `/smart-thermostats/` and `/smart-sensors/`: comparison charts.
   - A page per device.
   - `/works-with/<ecosystem>/` and `/works-with/matter/`.
   - `/methodology/`, `/legal/` and `/privacy/`.
 - **For AI assistants:** `/llms.txt`, `/llms-full.txt`, `/api/devices.json` and `/api/<category>.json`.
 
 ### Unfinished work
-- **Next:** pick the next batch (Claude decides). Agreed category order: sensors (in progress), then cameras and video doorbells, wall switches and dimmers, robot vacuums; LED strips are a cheap add on the bulb schema. Each new category needs schema and registry work first, as thermostats did. More thermostats are also open (Honeywell T6 Pro, Bosch, Danfoss Ally). Lockly Secure Pro was dropped: no lockly.com page surfaced in search.
+- **Next:** pick the next batch (Claude decides). Agreed category order: cameras and video doorbells, wall switches and dimmers, robot vacuums; LED strips are a cheap add on the bulb schema. Each new category needs schema and registry work first, as thermostats did. More thermostats (Honeywell T6 Pro, Bosch, Danfoss Ally) and sensors (US versions, IKEA MYGGBETT and KLIPPBOK, SwitchBot, Shelly) are also open. Cameras need care: Matter camera support is new, most support is brand integrations, and features often depend on a subscription, so the schema should record that. Lockly Secure Pro was dropped: no lockly.com page surfaced in search.
 - There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
 - **Who decides content:** the owner doesn't pick devices or review content. Claude chooses what to add next and writes it, following the principles above.
 
