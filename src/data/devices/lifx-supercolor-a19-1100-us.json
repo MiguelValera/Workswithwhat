@@ -1,0 +1,120 @@
+{
+  "category": "smart-bulb",
+  "brand": "LIFX",
+  "model": "SuperColor A19 1100 lm (Matter, LHLA19E26US)",
+  "name": "LIFX Color / SuperColor A19 1100 lm (Matter, US)",
+  "regions": ["US"],
+  "officialUrl": "https://www.lifx.com/products/lifx-color-1pk",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["lifx-color-1pk"],
+    "note": "2.4 GHz Wi-Fi only."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["lifx-color-1pk", "csa-lifx-supercolor-a19-1100"],
+    "note": "LIFX's page says Matter is enabled out of the box. CSA lists a 'LIFX SuperColor A19 (1100 lumens)'; we couldn't tie its certificate to a model number. The older HomeKit-only version (LHLA19E26CA) has no Matter."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["lifx-color-1pk", "lifx-matter-setup"],
+      "note": "Pairs with Apple Home via Matter. The older HomeKit edition pairs natively instead; check the model number."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["lifx-color-1pk", "lifx-integrations"],
+      "note": "LIFX lists Google Home support; it can also pair via Matter."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["lifx-color-1pk", "lifx-integrations"],
+      "note": "LIFX lists Alexa support; it can also pair via Matter."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["lifx-color-1pk", "lifx-matter-setup"],
+      "note": "LIFX lists SmartThings for its Matter bulbs; a SmartThings Matter controller is needed."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-lifx"],
+      "note": "Official LIFX integration controls lights over the local network (LIFX LAN protocol). The Matter integration is an alternative."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["lifx-color-1pk"],
+    "note": "Here this means needing a bridge or hub for basic app control. It joins 2.4 GHz Wi-Fi directly and is controlled from the LIFX app."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-lifx"],
+    "note": "Home Assistant's LIFX integration talks to the bulb on the local network without the LIFX cloud."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": ["lifx-color-1pk"],
+    "note": "Full colour plus white from 1500 to 9000 K."
+  },
+  "lumens": {
+    "value": 1100,
+    "sources": ["lifx-color-1pk"],
+    "note": "1100 lm, sold as a 75 W equivalent; 11.5 W."
+  },
+  "bulbBase": {
+    "value": "E26 (A19)",
+    "sources": ["lifx-color-1pk"]
+  },
+  "summary": "The current US LIFX Color A19, now sold as the SuperColor 1100 lm bulb, is a full-colour E26 bulb rated at 1100 lumens with whites from 1500 to 9000 K. It joins 2.4 GHz Wi-Fi directly, with no hub, and ships with Matter enabled. It works with Alexa and Google Home through LIFX's own integrations, and with Apple Home and SmartThings via Matter. Home Assistant controls it locally through the official LIFX integration.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "LIFX also sells an older HomeKit-only A19 1100 lm (LHLA19E26CA) without Matter; check the model number on the box.",
+    "Remote control through Matter needs a Matter home hub, such as an Apple TV, HomePod or Nest Hub."
+  ],
+  "sources": [
+    {
+      "id": "lifx-color-1pk",
+      "url": "https://www.lifx.com/products/lifx-color-1pk",
+      "title": "LIFX SuperColor Smart Bulb 1100lm",
+      "publisher": "LIFX (Feit Electric)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "lifx-integrations",
+      "url": "https://www.lifx.com/pages/integrations",
+      "title": "LIFX Integrations: Works With What You Already Have",
+      "publisher": "LIFX (Feit Electric)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "lifx-matter-setup",
+      "url": "https://www.lifx.com/pages/matter-light-bulb",
+      "title": "How to Set Up Matter Smart Light Bulbs",
+      "publisher": "LIFX (Feit Electric)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-lifx-supercolor-a19-1100",
+      "url": "https://csa-iot.org/csa_product/lifx-supercolor-a19-1100-lumens/",
+      "title": "LIFX SuperColor A19 (1100 lumens) - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-lifx",
+      "url": "https://www.home-assistant.io/integrations/lifx/",
+      "title": "LIFX - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

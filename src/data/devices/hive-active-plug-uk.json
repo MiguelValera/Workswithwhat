@@ -12,7 +12,8 @@
       "zigbee"
     ],
     "sources": [
-      "hive-plug-specs"
+      "hive-plug-specs",
+      "hive-plug-shop"
     ],
     "note": "Zigbee to the Hive Hub; it doesn't join Wi-Fi itself. UK/Ireland type G plug."
   },
@@ -29,7 +30,7 @@
         "hive-plug-shop",
         "hive-homekit"
       ],
-      "note": "Hive lists Apple HomeKit and Siri Shortcuts, through the Hive Hub. A Screwfix listing says it doesn't work with HomeKit, so check before relying on it."
+      "note": "Hive's support site lists Hive Plugs for Apple Home, enabled from the Hive app via the Hive Hub. Schedules and Actions can't be controlled from the Home app. A retailer listing says no HomeKit; Hive's own pages say yes."
     },
     "google_home": {
       "status": "hub",
@@ -66,9 +67,9 @@
     "value": true,
     "sources": [
       "hive-plug-shop",
-      "hive-product-news"
+      "hive-plug-specs"
     ],
-    "note": "Needs a Hive Hub; first-time Hive buyers must buy one. Hive has retired some older hub models, so check yours is still supported."
+    "note": "Needs a Hive Hub; Hive says first-time Hive buyers must buy one. Existing Hive users can add it to their current hub."
   },
   "localControl": {
     "value": null,
@@ -76,23 +77,25 @@
     "note": "We found no Hive statement on control without the internet."
   },
   "energyMonitoring": {
-    "value": null,
+    "value": true,
     "sources": [
-      "hive-energy-costs"
+      "hive-energy-costs",
+      "hive-plug-shop"
     ],
-    "note": "A Hive support page describes power readings in watts for the 'Hive Plug', but Hive's site mixes the Active Plug and newer Hive Plug names, so we can't confirm it for this model."
+    "note": "The Hive app shows the plugged-in appliance's power draw in watts. 'Hive Plug' is Hive's current name for the Active Plug (same shop page and spec URL)."
   },
   "maxLoadWatts": {
     "value": null,
     "sources": [],
     "note": "Hive's pages don't give a load rating. UK retailers list it as 13 A, but no official wattage figure was found."
   },
-  "summary": "The Hive Active Plug is a UK Zigbee plug that needs a Hive Hub; first-time Hive buyers have to buy the hub too. Through the hub and Hive app, Hive lists Alexa, Google Assistant, Apple HomeKit and IFTTT, and Home Assistant's official Hive integration supports it. It takes up to six on/off schedule slots a day and is for indoor use only.",
+  "summary": "If you're new to Hive, budget for a Hive Hub: the Hive Active Plug is a UK Zigbee plug that reaches Apple Home, Google Home, Alexa and Home Assistant only through that hub. Existing Hive users can add it to the hub they already have. The Hive app shows the plugged-in appliance's power draw in watts. Neither Hive nor SmartThings documents SmartThings support.",
   "caveats": [
-    "Needs a Hive Hub; it can't connect to Wi-Fi on its own.",
-    "Indoor use only. Hive advises against using it for fridges, freezers, heaters or medical and safety equipment.",
+    "Needs a Hive Hub; the plug can't join Wi-Fi on its own.",
+    "Schedules and Actions can't be controlled from Apple's Home app.",
     "Hive's Alexa link doesn't support multi-user or multi-home setups.",
-    "Home Assistant needs the Hive account owner's login with two-factor authentication on."
+    "Home Assistant needs the Hive account owner's login with two-factor authentication on.",
+    "UK/Ireland type G plug only, and Hive doesn't publish a load rating."
   ],
   "sources": [
     {
@@ -113,8 +116,8 @@
     },
     {
       "id": "hive-homekit",
-      "url": "https://community.hivehome.com/s/article/What-is-HomeKit-and-does-it-work-with-Hive",
-      "title": "What is HomeKit and does it work with Hive?",
+      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=240322121756750",
+      "title": "Integrating Hive Devices with Apple HomeKit - Hive Support",
       "publisher": "Hive",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -136,14 +139,6 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "hive-product-news",
-      "url": "https://www.hivehome.com/product-news",
-      "title": "Product News",
-      "publisher": "Hive",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
       "id": "ha-hive",
       "url": "https://www.home-assistant.io/integrations/hive/",
       "title": "Hive - Home Assistant",
@@ -152,6 +147,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

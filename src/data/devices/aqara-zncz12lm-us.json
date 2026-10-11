@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Aqara",
   "model": "ZNCZ12LM",
-  "name": "Aqara Smart Plug (US, ZNCZ12LM)",
+  "name": "Aqara Smart Plug (US)",
   "regions": [
     "US"
   ],
@@ -54,7 +54,7 @@
       "sources": [
         "aqara-plug-us-partners"
       ],
-      "note": "Aqara's partnerships page lists SmartThings, but the US store page and spec sheet don't, so the official sources disagree."
+      "note": "Aqara's partnerships page lists SmartThings, but the US spec sheet and store page don't, and that partner page also shows EU ratings (10 A / 2300 W). Official sources disagree."
     },
     "home_assistant": {
       "status": "unknown",
@@ -66,7 +66,8 @@
     "value": true,
     "sources": [
       "aqara-plug-us-specs",
-      "aqara-plug-us-store"
+      "aqara-plug-us-store",
+      "aqara-plug-us-partners"
     ],
     "note": "Spec sheet: hub required (Aqara Zigbee 3.0 hub). Sold without a hub."
   },
@@ -80,7 +81,7 @@
     "sources": [
       "aqara-plug-us-store"
     ],
-    "note": "Aqara says the app tracks the power use of whatever is plugged in."
+    "note": "Aqara says the app records the plugged-in appliance's power use on a daily and monthly basis."
   },
   "maxLoadWatts": {
     "value": 1875,
@@ -90,11 +91,12 @@
     ],
     "note": "1875 W, 15 A, 100-125 V AC, 60 Hz. One Aqara partnerships page shows 10 A / 2300 W, which matches the EU model, not this one."
   },
-  "summary": "The Aqara Smart Plug for the US (ZNCZ12LM) is a Zigbee plug that needs an Aqara hub; it can't join Wi-Fi itself. Through the hub, Aqara lists Apple HomeKit, Alexa and Google Assistant, and the Aqara app tracks energy use. Aqara rates it at 15 A / 1875 W.",
+  "summary": "Zigbee is the catch with the Aqara Smart Plug (ZNCZ12LM): it reaches Apple Home, Alexa and Google Home only through an Aqara Zigbee 3.0 hub, which is sold separately. Once it's on a hub, the Aqara app records the appliance's power use daily and monthly. This US version is rated 15 A / 1875 W at 100-125 V.",
   "caveats": [
-    "Needs an Aqara Zigbee hub, sold separately.",
-    "SmartThings support is unclear: Aqara's own pages disagree.",
-    "No Matter on the plug itself; a Matter bridge such as the Aqara Hub M3 is the route to Matter."
+    "Needs an Aqara Zigbee 3.0 hub, sold separately.",
+    "SmartThings support is unclear because Aqara's own pages disagree.",
+    "No Matter certification found for the plug itself; Aqara's Hub M3 can bridge Aqara Zigbee devices to Matter, but no Aqara page names this plug.",
+    "No official Home Assistant page names this model."
   ],
   "sources": [
     {
@@ -122,6 +124,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

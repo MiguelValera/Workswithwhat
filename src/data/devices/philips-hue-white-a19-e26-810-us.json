@@ -1,0 +1,130 @@
+{
+  "category": "smart-bulb",
+  "brand": "Philips Hue",
+  "model": "White 60W A19 E26 (810 lm, 046677591045 4-pack)",
+  "name": "Philips Hue White A19 E26 (810 lm, US)",
+  "regions": ["US"],
+  "officialUrl": "https://www.philips-hue.com/en-us/p/hue-white-60w-a19-4pack-e26-smart-bulbs/046677591045",
+  "radios": {
+    "value": ["bluetooth", "zigbee"],
+    "sources": ["hue-white-a19-4pk", "hue-white-a19-2pk"],
+    "note": "Hue lists Bluetooth and Zigbee as the communication protocols for this bulb."
+  },
+  "matter": {
+    "certified": null,
+    "sources": ["hue-white-a19-4pk", "hue-matter-guide"],
+    "note": "Hue's page lists Matter among third-party systems, but under 'Hue Bridge required' and with only Bluetooth and Zigbee radios, so this looks like Matter via the Bridge. We found no CSA listing for the bulb itself."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-white-a19-4pk", "hue-matter-guide"],
+      "note": "Hue's product page lists Apple Home under 'Hue Bridge required'; the Bridge connects via HomeKit or Matter."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["hue-white-a19-4pk", "hue-no-bridge-faq"],
+      "note": "Through Hue's own Google Home integration. Hue's FAQ says Bluetooth bulbs work bridgeless only with Google Nest speakers and displays; the product page lists Google under 'Hue Bridge required'."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["hue-white-a19-4pk", "hue-no-bridge-faq"],
+      "note": "Through Hue's own Alexa integration. Hue's FAQ says Bluetooth bulbs can pair with most Echo devices without a Bridge; the product page lists Alexa under 'Hue Bridge required'."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-white-a19-4pk"],
+      "note": "Hue's product page lists Samsung SmartThings among third-party systems, under 'Hue Bridge required'."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-hue", "ha-hue-ble"],
+      "note": "Official Hue integration (via Hue Bridge) and official Hue BLE integration (since 2025.12, bridgeless Bluetooth). The BLE docs don't name this specific bulb."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["hue-white-a19-4pk", "hue-no-bridge-faq"],
+    "note": "Here this means needing a bridge for basic app control. The Hue app controls it over Bluetooth (about 10 lights, short range); a Hue Bridge is needed for Apple Home, SmartThings and remote access."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["hue-no-bridge-faq", "ha-hue"],
+    "note": "Bluetooth control from a phone works without internet; Home Assistant talks to the Hue Bridge over its local API."
+  },
+  "colorType": {
+    "value": "white",
+    "sources": ["hue-white-a19-4pk", "hue-white-a19-2pk"],
+    "note": "Fixed warm white, 2700 K."
+  },
+  "lumens": {
+    "value": 810,
+    "sources": ["hue-white-a19-4pk", "hue-white-a19-2pk"],
+    "note": "Hue gives 810 lm as maximum brightness; no separate rated figure was shown. The older single-pack Hue White A19 (046677476861, now discontinued) is rated up to 806 lm."
+  },
+  "bulbBase": {
+    "value": "E26 (A19)",
+    "sources": ["hue-white-a19-4pk"]
+  },
+  "summary": "The current US Philips Hue White A19 is a warm white (2700 K) E26 bulb rated at up to 810 lumens, with Bluetooth and Zigbee radios. Without a bridge it runs over Bluetooth from the Hue app and can pair with some Echo and Nest devices. With a Hue Bridge it works with Apple Home, SmartThings and Matter controllers. Home Assistant supports it through the official Hue and Hue BLE integrations.",
+  "caveats": [
+    "Apple Home and SmartThings need a Hue Bridge.",
+    "White only: no colour and no adjustable colour temperature.",
+    "Bluetooth mode is limited to about 10 lights in a short range and has no remote access.",
+    "Hue sells this generation mainly in 2- and 4-packs; the older single bulb (806 lm) has a different product number."
+  ],
+  "sources": [
+    {
+      "id": "hue-white-a19-4pk",
+      "url": "https://www.philips-hue.com/en-us/p/hue-white-60w-a19-4pack-e26-smart-bulbs/046677591045",
+      "title": "Hue White 60W A19 4PACK- E26 smart bulbs",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-white-a19-2pk",
+      "url": "https://www.philips-hue.com/en-us/p/hue-white-a60-e26-smart-bulb-810/046677590970",
+      "title": "Hue White 60W A19 2PACK- E26 smart bulbs",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-no-bridge-faq",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/faq/controls/how-to-connect-philips-hue-without-a-bridge",
+      "title": "How to connect Philips Hue without a Bridge?",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hue-matter-guide",
+      "url": "https://www.philips-hue.com/en-us/support/article/philips-hue-and-matter-complete-setup-and-support-guide/000012",
+      "title": "Philips Hue and Matter: Complete Setup & Support Guide",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-hue",
+      "url": "https://www.home-assistant.io/integrations/hue/",
+      "title": "Philips Hue - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-hue-ble",
+      "url": "https://www.home-assistant.io/integrations/hue_ble/",
+      "title": "Philips Hue BLE - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

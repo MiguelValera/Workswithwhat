@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Meross",
   "model": "MSS110 (MSS110HK / MSS110US, HomeKit version)",
-  "name": "Meross Smart Wi-Fi Plug Mini MSS110 (US, HomeKit)",
+  "name": "Meross MSS110 (HomeKit, US)",
   "regions": [
     "US",
     "CA"
@@ -30,7 +30,7 @@
         "meross-mss110-product",
         "meross-mss110-shop"
       ],
-      "note": "HomeKit (HAP) over Wi-Fi. Remote control needs an Apple home hub (HomePod, Apple TV or iPad)."
+      "note": "HomeKit (HAP) over Wi-Fi; the HomeKit unit is sold as MSS110HK (US/CA). Remote control needs an Apple home hub (HomePod, Apple TV or iPad)."
     },
     "google_home": {
       "status": "native",
@@ -54,7 +54,7 @@
         "meross-mss110-product",
         "meross-faq-smartthings"
       ],
-      "note": "Meross lists SmartThings for this plug; it connects through the Meross partner integration in the SmartThings app (cloud to cloud)."
+      "note": "Meross's MSS110US page lists SmartThings. It connects by linking your Meross account in the SmartThings app (cloud to cloud), per Meross's generic SmartThings FAQ."
     },
     "home_assistant": {
       "status": "unknown",
@@ -76,9 +76,11 @@
     "note": "HomeKit accessories normally work over the LAN, but we found no Meross page that states local control for this model."
   },
   "energyMonitoring": {
-    "value": null,
-    "sources": [],
-    "note": "The US/CA MSS110 pages don't mention power metering. An EU MSS110 listing does mention consumption tracking, so we don't assume either way for the US unit."
+    "value": false,
+    "sources": [
+      "meross-mss110-product"
+    ],
+    "note": "Meross's US/JP MSS110 page lists Energy Monitor: No. For metering, Meross sells other models (e.g. the MSS315)."
   },
   "maxLoadWatts": {
     "value": 1800,
@@ -87,11 +89,13 @@
     ],
     "note": "Meross rates the US/CA/JP version at 15 A / 1800 W."
   },
-  "summary": "The Meross MSS110 is a compact US/Canada Wi-Fi plug with built-in HomeKit, so it pairs straight into Apple Home without Matter. Meross also lists Alexa, Google Home and SmartThings through its account link. It runs on 2.4 GHz Wi-Fi with no hub and is rated 15 A / 1800 W.",
+  "summary": "Native HomeKit is the reason to pick the Meross MSS110 (sold as MSS110HK): it pairs straight into Apple Home over Wi-Fi without going through Matter or a bridge. Google Home, Alexa and SmartThings work too, each by linking your Meross account. It's a US/Canada plug rated 15 A / 1800 W, and it doesn't track energy use.",
   "caveats": [
-    "2.4 GHz Wi-Fi only; Enterprise Wi-Fi networks aren't supported.",
-    "Controlling it from outside the home in Apple Home needs an Apple home hub (HomePod, Apple TV or iPad).",
-    "Not the Matter model: Meross's Matter mini plug is the MSS115."
+    "2.4 GHz Wi-Fi only, and Meross says Enterprise Wi-Fi networks aren't supported.",
+    "Remote control in Apple Home needs an Apple home hub (HomePod, Apple TV or iPad).",
+    "No energy monitoring; Meross sells metering plugs such as the MSS315 for that.",
+    "Meross doesn't say whether the MSS110 supports Matter; its Matter mini plug is the separate MSS115.",
+    "Home Assistant has no official Meross integration."
   ],
   "sources": [
     {
@@ -112,7 +116,7 @@
     },
     {
       "id": "meross-faq-google",
-      "url": "https://meross.com/faq/46.html",
+      "url": "https://www.meross.com/en-gc/faq/46.html",
       "title": "How to connect Meross device to Google Assistant?",
       "publisher": "Meross",
       "kind": "manufacturer",
@@ -128,13 +132,14 @@
     },
     {
       "id": "meross-faq-smartthings",
-      "url": "https://www.meross.com/en-gc/FAQ/201.html",
+      "url": "https://www.meross.com/en-gc/support/FAQ/201.html",
       "title": "How can I use my Meross device with the SmartThings?",
       "publisher": "Meross",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

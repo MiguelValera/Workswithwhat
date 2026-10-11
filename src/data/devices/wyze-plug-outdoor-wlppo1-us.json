@@ -2,11 +2,11 @@
   "category": "smart-plug",
   "brand": "Wyze",
   "model": "WLPPO1",
-  "name": "Wyze Plug Outdoor (WLPPO1)",
+  "name": "Wyze Plug Outdoor (US)",
   "regions": [
     "US"
   ],
-  "officialUrl": "https://wyze.com/wyze-plug-outdoor.html",
+  "officialUrl": "https://www.wyze.com/products/wyze-plug-outdoor",
   "radios": {
     "value": [
       "wifi",
@@ -35,10 +35,10 @@
       "status": "native",
       "sources": [
         "wyze-plug-outdoor-product",
-        "wyze-plug-outdoor-about",
-        "wyze-google-assistant"
+        "wyze-google-devices",
+        "wyze-google-setup"
       ],
-      "note": "Link your Wyze account in the Google Home app. Wyze says Google Assistant is officially supported in the US only."
+      "note": "Link your Wyze account in the Google Home app. Wyze's Google Assistant device list names the Plug Outdoor, and Wyze says the integration is supported in the US only."
     },
     "alexa": {
       "status": "native",
@@ -67,7 +67,7 @@
       "wyze-plug-outdoor-product",
       "wyze-plug-outdoor-setup"
     ],
-    "note": "Connects to 2.4 GHz Wi-Fi directly and is set up in the Wyze app; no bridge is listed."
+    "note": "Wyze's product page lists Hub Required: No. It joins 2.4 GHz Wi-Fi directly and is set up in the Wyze app."
   },
   "localControl": {
     "value": null,
@@ -89,17 +89,18 @@
     "sources": [],
     "note": "Wyze gives 15 A max per outlet (120 V, 60 Hz) with overload protection and a 1/2 HP motor limit, but no wattage figure."
   },
-  "summary": "The Wyze Plug Outdoor (WLPPO1) is an IP64 two-outlet plug, and each outlet can be switched separately in the Wyze app. It connects over 2.4 GHz Wi-Fi with Bluetooth for setup, tracks energy use, and has a light sensor for dusk-to-dawn switching. Wyze lists Alexa and Google Assistant; Apple Home, SmartThings and Matter aren't on its list.",
+  "summary": "Only two assistants are confirmed for the Wyze Plug Outdoor (WLPPO1): Alexa through the Wyze skill, and Google Home through a Wyze account link that Wyze supports in the US only. Apple Home and SmartThings aren't on Wyze's integration list, and Wyze doesn't mention Matter. It joins 2.4 GHz Wi-Fi directly, uses Bluetooth for setup, and logs energy use in the Wyze app with alerts when a month's use passes your limit. Once set up, its light sensor keeps switching the plug even if Wi-Fi drops.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
     "Wyze says its Google Assistant integration is officially supported in the US only.",
+    "Apple Home and SmartThings aren't on Wyze's integration list.",
     "Rated 15 A per outlet; Wyze doesn't publish a wattage limit.",
-    "No official Home Assistant integration."
+    "No official Home Assistant integration, only community ones that use the Wyze cloud."
   ],
   "sources": [
     {
       "id": "wyze-plug-outdoor-product",
-      "url": "https://wyze.com/wyze-plug-outdoor.html",
+      "url": "https://www.wyze.com/products/wyze-plug-outdoor",
       "title": "Wyze Plug Outdoor",
       "publisher": "Wyze",
       "kind": "manufacturer",
@@ -107,7 +108,7 @@
     },
     {
       "id": "wyze-plug-outdoor-about",
-      "url": "https://support.wyze.com/hc/en-us/articles/360052744011-About-Wyze-Plug-Outdoor",
+      "url": "https://support.wyze.com/hc/en-us/articles/360052744011-Introducing-Wyze-Plug-Outdoor",
       "title": "About Wyze Plug Outdoor",
       "publisher": "Wyze",
       "kind": "manufacturer",
@@ -146,14 +147,23 @@
       "accessed": "2026-10-11"
     },
     {
-      "id": "wyze-google-assistant",
-      "url": "https://support.wyze.com/hc/en-us/articles/360032991931-Google-Assistant",
-      "title": "Google Assistant",
+      "id": "wyze-google-devices",
+      "url": "https://support.wyze.com/hc/en-us/articles/50040708337435-Which-Wyze-devices-are-compatible-with-Google-Assistant",
+      "title": "Which Wyze devices are compatible with Google Assistant?",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "wyze-google-setup",
+      "url": "https://support.wyze.com/hc/en-us/articles/360033120892-Google-Assistant-Setup-Guide",
+      "title": "Google Assistant Setup Guide",
       "publisher": "Wyze",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
