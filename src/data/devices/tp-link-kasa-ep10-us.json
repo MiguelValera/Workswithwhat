@@ -1,0 +1,115 @@
+{
+  "category": "smart-plug",
+  "brand": "TP-Link",
+  "model": "Kasa EP10",
+  "name": "Kasa EP10",
+  "regions": ["US"],
+  "officialUrl": "https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-plug-mini-ep10",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["tplink-ep10-datasheet", "tplink-ep10"],
+    "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n); no 5 GHz."
+  },
+  "matter": {
+    "certified": false,
+    "sources": ["tplink-ep10", "kasa-ep10-product"],
+    "note": "TP-Link and Kasa list Alexa, Google and SmartThings (plus IFTTT) for the EP10, with no Matter."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "no",
+      "sources": ["tplink-ep10", "tplink-ep10-ug"],
+      "note": "TP-Link's platform list for the EP10 (Alexa, Google Assistant, SmartThings) leaves out HomeKit, and it has no Matter."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["tplink-ep10", "kasa-ep10-product", "tplink-ep10-ug"],
+      "note": "Cloud-to-cloud link between the Kasa and Google accounts."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["tplink-ep10", "kasa-ep10-product", "tplink-ep10-ug"],
+      "note": "Cloud-to-cloud link via the Kasa skill."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": ["tplink-ep10", "tplink-ep10-ug"],
+      "note": "TP-Link lists Samsung SmartThings, and the user guide has SmartThings setup steps."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink"],
+      "note": "Listed by the official TP-Link Smart Home integration. One forum user reported EP10 units that weren't discovered."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["kasa-ep10-product"],
+    "note": "Connects straight to 2.4 GHz Wi-Fi; Kasa says no hub is required."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-tplink"],
+    "note": "Home Assistant's integration controls Kasa plugs over the local network. The Kasa app itself goes through the cloud."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [],
+    "note": "TP-Link's EP10 pages don't list a power meter, and a TP-Link community reply says it has none, but we found no official spec saying so."
+  },
+  "maxLoadWatts": {
+    "value": 1800,
+    "sources": ["tplink-ep10-datasheet"],
+    "note": "15 A, 1800 W general use / resistive load at 100–120 V AC."
+  },
+  "summary": "The Kasa EP10 is a compact US Wi-Fi plug rated 15 A / 1800 W. It works with Alexa, Google Home and SmartThings through your Kasa account, with no hub, and Home Assistant's official TP-Link integration lists it. TP-Link doesn't list Apple Home or Matter for it.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "No Apple Home or Matter support listed.",
+    "TP-Link doesn't advertise energy monitoring on this model; the EP25 is Kasa's metering version."
+  ],
+  "sources": [
+    {
+      "id": "kasa-ep10-product",
+      "url": "https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-plug-mini-ep10",
+      "title": "Kasa Smart Wi-Fi Plug Mini",
+      "publisher": "TP-Link (Kasa Smart)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-ep10",
+      "url": "https://www.tp-link.com/us/home-networking/smart-plug/ep10/v1/",
+      "title": "EP10",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-ep10-datasheet",
+      "url": "https://static.tp-link.com/upload/product-overview/2021/202111/20211105/EP10(US)1.0%20&%201.8_Datasheet.pdf",
+      "title": "EP10 Kasa Smart Wi-Fi Plug Mini Compact Design Away Mode Remote Control",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-ep10-ug",
+      "url": "https://static.tp-link.com/2021/202105/20210513/1910012920_EP10(US)_UG_V1.pdf",
+      "title": "User Guide Kasa Smart Wi-Fi Plug Mini EP10",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
