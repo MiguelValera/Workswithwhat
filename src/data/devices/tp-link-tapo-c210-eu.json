@@ -1,0 +1,126 @@
+{
+  "category": "smart-camera",
+  "brand": "TP-Link",
+  "model": "Tapo C210",
+  "name": "Tapo C210 (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.tapo.com/en/product/smart-camera/tapo-c210/v2/",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["tapo-c210-page"],
+    "note": "2.4 GHz Wi-Fi only per the maker's spec pages we saw in search snippets; no Ethernet port."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "None of the Tapo pages we found mention Matter for this camera, and we found no CSA listing."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Tapo page we found lists Apple Home or HomeKit for the C210. Only a review and retailer listings mention it."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["tapo-google-stream-faq"],
+      "note": "Link the Tapo account to Google; say 'show me [camera]' to stream to a Nest Hub or Chromecast display. Cloud-to-cloud, stops after 10 minutes. Tapo says live view in the Google Home app is not supported."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["tapo-alexa-faq"],
+      "note": "Enable the Tapo skill; 'Alexa, show me [camera]' works on Echo Show, Echo Spot and Fire TV. Cloud-to-cloud, stops after 10 minutes. Camera on/off commands are not supported."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Only marketplace listings claim SmartThings; no Tapo or Samsung page confirms it."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": ["tapo-onvif-faq"],
+      "note": "Tapo documents RTSP and ONVIF Profile S for wired cameras, which generic ONVIF clients can use. We did not see a Home Assistant page covering this camera."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["tapo-alexa-faq"],
+    "note": "Alexa setup runs through the Tapo app and skill with no hub or bridge."
+  },
+  "localControl": {
+    "value": null,
+    "sources": ["tapo-onvif-faq"],
+    "note": "RTSP and ONVIF streams are available on the local network, but Tapo does not state that app control works without the cloud."
+  },
+  "cameraType": {
+    "value": "indoor",
+    "sources": ["tapo-c210-page"],
+    "note": "Sold as a pan/tilt home security camera; the indoor-only wording was not seen on the page snippet."
+  },
+  "power": {
+    "value": null,
+    "sources": [],
+    "note": "Retailer listings give a 9 V DC adapter; no maker page we could open states the power input."
+  },
+  "localStorage": {
+    "value": true,
+    "sources": ["tapo-c210-page"],
+    "note": "One microSD slot, up to 512 GB."
+  },
+  "subscription": {
+    "value": "Optional Tapo Care cloud storage",
+    "sources": ["tapo-care-plans"],
+    "note": "Cloud video history needs a Tapo Care plan; microSD recording and RTSP/ONVIF do not. Plan details seen are US pages; EU pricing not confirmed."
+  },
+  "summary": "The Tapo C210 is a pan/tilt Wi-Fi camera with 3 MP (2304 x 1296) video, 30 ft of infrared night vision and a microSD slot for up to 512 GB. It works with Alexa and Google through Tapo's cloud link, and wired Tapo cameras expose RTSP and ONVIF streams. Cloud history is a separate Tapo Care plan. Apple Home and SmartThings support are not confirmed.",
+  "caveats": [
+    "Alexa and Google streams are cloud-to-cloud and stop after 10 minutes; you ask again to keep watching.",
+    "Tapo says live view in the Google Home app is not supported; streaming works on Nest displays and Chromecast.",
+    "2.4 GHz Wi-Fi only.",
+    "Tapo Care cloud storage cannot run together with an NVR and a microSD card on some models."
+  ],
+  "sources": [
+    {
+      "id": "tapo-c210-page",
+      "url": "https://www.tapo.com/en/product/smart-camera/tapo-c210/v2/?app=t",
+      "title": "Pan/Tilt Home Security Wi-Fi Camera",
+      "publisher": "TP-Link Tapo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-alexa-faq",
+      "url": "https://www.tp-link.com/support/faq/2738",
+      "title": "How to control Tapo camera by Amazon Alexa with voice commands",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-google-stream-faq",
+      "url": "https://www.tapo.com/us/faq/776/",
+      "title": "How to Stream Tapo / Kasa Camera on Google Device",
+      "publisher": "TP-Link Tapo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-onvif-faq",
+      "url": "https://tp-link.com/support/faq/2680",
+      "title": "How to view a Tapo camera on PC/NAS/NVR through the RTSP/ONVIF Protocol",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-care-plans",
+      "url": "https://www.tp-link.com/us/support/faq/3408/",
+      "title": "Tapo Care Plans: Price, Cost, and Features",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

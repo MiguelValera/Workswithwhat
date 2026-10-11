@@ -1,0 +1,102 @@
+{
+  "category": "smart-camera",
+  "brand": "Eve",
+  "model": "Outdoor Cam",
+  "name": "Eve Outdoor Cam (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://evehome.com/en/node/8260",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["eve-outdoor-cam-page"],
+    "note": "2.4 GHz Wi-Fi only."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Eve page we found says the Outdoor Cam supports Matter; it is described as built for HomeKit Secure Video."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": ["eve-outdoor-cam-page", "eve-ces-2022"],
+      "note": "Built exclusively for HomeKit Secure Video: clips are analysed on an Apple TV or HomePod and stored encrypted in iCloud; live view goes through the home hub."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": ["eve-ces-2022"],
+      "note": "Eve describes it as designed exclusively for HomeKit Secure Video and does not list Google Home; no page says explicitly that it is unsupported."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": ["eve-ces-2022"],
+      "note": "Eve describes it as designed exclusively for HomeKit Secure Video and does not list Alexa; no page says explicitly that it is unsupported."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No maker or Samsung page found."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Only a community guide pairs it via the HomeKit integration plus go2rtc; no official Home Assistant docs for this camera."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["eve-outdoor-cam-page"],
+    "note": "No Eve bridge. An Apple home hub (Apple TV or HomePod) is needed for HomeKit Secure Video and remote access."
+  },
+  "localControl": {
+    "value": null,
+    "sources": ["eve-outdoor-cam-page"],
+    "note": "Eve says access, local or remote, goes through the home hub and never reaches the cloud unencrypted; fully local-only operation is not stated."
+  },
+  "cameraType": {
+    "value": "floodlight",
+    "sources": ["eve-ces-2022"],
+    "note": "Floodlight camera with a dimmable light, designed to replace an existing outdoor light."
+  },
+  "power": {
+    "value": "Mains AC 100-240 V (hardwired)",
+    "sources": ["eve-outdoor-cam-page"],
+    "note": "Needs neutral and ground wires; the install replaces an existing floodlight."
+  },
+  "localStorage": {
+    "value": null,
+    "sources": [],
+    "note": "Recordings go to iCloud via HomeKit Secure Video; no maker page we saw mentions local storage."
+  },
+  "subscription": {
+    "value": "iCloud+ (HomeKit Secure Video)",
+    "sources": ["eve-outdoor-cam-page"],
+    "note": "An iCloud+ plan is needed for recording; Apple's plan size sets how many cameras are allowed."
+  },
+  "summary": "The Eve Outdoor Cam is a hardwired floodlight camera with 1080p video at 24 fps, a 157 degree view, two-way audio and an IP55 rating. It is built only for Apple HomeKit Secure Video, so recording needs iCloud+ and an Apple TV or HomePod as home hub. Google Home, Alexa and SmartThings are not listed by Eve.",
+  "caveats": [
+    "Needs an iCloud+ plan and an Apple home hub; no recording without them.",
+    "Installation needs neutral and ground wires.",
+    "2.4 GHz Wi-Fi only.",
+    "Specs and ecosystem facts come from 2022 launch-era pages; the EU variant's exact model number was not found."
+  ],
+  "sources": [
+    {
+      "id": "eve-outdoor-cam-page",
+      "url": "https://evehome.com/en/node/8260",
+      "title": "Eve Outdoor Cam",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-ces-2022",
+      "url": "https://www.evehome.com/en/node/5506",
+      "title": "CES 2022: Eve Introduces Eve Outdoor Cam, the Only Floodlight Camera Designed Exclusively for HomeKit Secure Video",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

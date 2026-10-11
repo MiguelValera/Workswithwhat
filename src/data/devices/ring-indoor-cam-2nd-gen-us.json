@@ -1,0 +1,108 @@
+{
+  "category": "smart-camera",
+  "brand": "Ring",
+  "model": "Indoor Cam (2nd Gen)",
+  "name": "Ring Indoor Cam 2nd Gen (US)",
+  "regions": ["US"],
+  "officialUrl": "https://ring.com/support/products/cameras/indoor-cam-gen-2?page=1",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["ring-indoor-cam-support"],
+    "note": "Ring's support page lists 802.11 b/g/n on 2.4 GHz."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim found in the Ring pages checked; the CSA database was not searched."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Neither the Ring support page nor its Alexa help pages mention Apple Home or HomeKit."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Ring page found that lists Google Home or Google Assistant for this camera. Only forum and review mentions were seen, and those are not cited."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["ring-indoor-cam-support", "ring-alexa-control"],
+      "note": "Ring lists Works with Alexa. Through the Ring skill you can ask an Echo Show or Fire TV to show live view and use two-way talk. Motion announcements and saved-clip viewing depend on a Ring Protect plan."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No SmartThings listing found."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-ring"],
+      "note": "The official Ring integration lists Indoor Cam (2nd Gen) among its stick-up cams, with live view and last-recording camera entities. Playing the last recording needs a Ring Protect plan."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["ring-indoor-cam-support"],
+    "note": "Connects over Wi-Fi to the Ring app; no Ring bridge is mentioned."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Ring does not state whether any control works without its cloud."
+  },
+  "cameraType": {
+    "value": "indoor",
+    "sources": ["ring-indoor-cam-support"]
+  },
+  "power": {
+    "value": "USB adapter (mains)",
+    "sources": ["ring-indoor-cam-support"],
+    "note": "Plugs into an outlet; the box has a USB-A power adapter and a micro-USB cable, per Ring's regional pages."
+  },
+  "localStorage": {
+    "value": null,
+    "sources": [],
+    "note": "No local recording option found on the Ring pages."
+  },
+  "subscription": {
+    "value": "Saved video history (Ring Protect plan)",
+    "sources": ["ring-indoor-cam-support"],
+    "note": "Ring says live view works without a plan; with one, motion videos are saved for up to 180 days."
+  },
+  "summary": "Ring Indoor Cam (2nd Gen) is a plug-in 1080p indoor camera with two-way audio and a manual privacy cover. It works with Alexa, including live view on Echo Show, and Home Assistant lists it in the official Ring integration. Without a Ring Protect plan you can watch live but videos are not saved.",
+  "caveats": [
+    "Wi-Fi is 2.4 GHz only.",
+    "Saved video needs a Ring Protect plan.",
+    "Apple Home and Google Home support is not confirmed by Ring."
+  ],
+  "sources": [
+    {
+      "id": "ring-indoor-cam-support",
+      "url": "https://ring.com/support/products/cameras/indoor-cam-gen-2?page=1",
+      "title": "Indoor Cam (2nd Gen)",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ring-alexa-control",
+      "url": "https://ring.com/support/articles/4j9pd/Control-Ring-Doorbell-Security-Camera-Alexa",
+      "title": "Control Your Ring Doorbell or Security Camera with Alexa",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-ring",
+      "url": "https://www.home-assistant.io/integrations/ring/",
+      "title": "Ring - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
