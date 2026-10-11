@@ -2,7 +2,7 @@
   "category": "smart-bulb",
   "brand": "Aqara",
   "model": "LEDLBT1-L01",
-  "name": "Aqara LED Bulb T1 Tunable White E27 (EU)",
+  "name": "Aqara LED Bulb T1 (EU)",
   "regions": ["EU"],
   "officialUrl": "https://www.aqara.com/en/product/led-bulb-t1/",
   "radios": {
@@ -69,11 +69,12 @@
     "value": "E27",
     "sources": ["aqara-t1-specs", "aqara-t1-manual"]
   },
-  "summary": "The Aqara LED Bulb T1 (LEDLBT1-L01) is a tunable-white E27 bulb rated at 806 lumens, adjustable from 2700 to 6500 K. It uses Zigbee 3.0 and needs an Aqara hub. Through the hub it works with Apple Home (including Adaptive Lighting), Alexa and Google Home.",
+  "summary": "Through an Aqara Zigbee 3.0 hub, the Aqara LED Bulb T1 (LEDLBT1-L01) works with Apple Home, Alexa and Google Home, and Aqara lists Adaptive Lighting support in Apple Home. There's no way around the hub: the bulb itself has no Matter, so Matter is only reachable through a Matter-capable Aqara hub acting as a bridge. It's a white-only E27 bulb for the EU, 806 lumens, tunable from 2700 to 6500 K with CRI 90. SmartThings and Home Assistant support are unconfirmed.",
   "caveats": [
-    "Requires an Aqara Zigbee 3.0 hub, sold separately.",
-    "White only: it has no RGB colour.",
-    "Matter works only through a Matter-capable Aqara hub, not from the bulb itself."
+    "Requires an Aqara Zigbee 3.0 hub, even for basic app control.",
+    "Tunable white only: there's no RGB colour.",
+    "Matter works only through a Matter-capable Aqara hub, not from the bulb directly.",
+    "No official source confirms SmartThings or Home Assistant support."
   ],
   "sources": [
     {

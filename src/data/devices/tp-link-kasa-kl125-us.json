@@ -2,7 +2,7 @@
   "category": "smart-bulb",
   "brand": "TP-Link Kasa",
   "model": "KL125",
-  "name": "Kasa Smart Light Bulb Multicolor KL125 (US)",
+  "name": "Kasa KL125 (US)",
   "regions": ["US"],
   "officialUrl": "https://www.kasasmart.com/us/products/smart-lighting/kasa-smart-light-bulb-multicolor-kl125",
   "radios": {
@@ -66,10 +66,12 @@
     "value": "E26 (A19)",
     "sources": ["kl125-datasheet"]
   },
-  "summary": "The Kasa KL125 is a US A19 colour bulb with an E26 base, rated at 800 lumens and tunable from 2500 to 6500 K. It connects directly to 2.4 GHz Wi-Fi, so no hub is needed. Kasa lists Alexa, Google Assistant and SmartThings, and Home Assistant supports it through the official TP-Link integration.",
+  "summary": "No hub, no bridge: the Kasa KL125 joins your 2.4 GHz Wi-Fi directly and works with Alexa, Google Home and SmartThings through Kasa's own integrations. Home Assistant's official TP-Link Smart Home integration runs it on the local network. It's a US full-colour bulb on an E26 base, 800 lumens (a 60 W equivalent), with tunable white from 2500 to 6500 K. Apple Home is the gap: Kasa doesn't list it, and we found no Matter certification for the KL125.",
   "caveats": [
-    "Needs a 2.4 GHz Wi-Fi network; 5 GHz is not supported.",
-    "No Apple Home support is listed for this bulb."
+    "2.4 GHz Wi-Fi only; it won't join a 5 GHz network.",
+    "Apple Home isn't listed by Kasa, and there's no confirmed Matter support to fall back on.",
+    "On newer firmware, Home Assistant may ask for your TP-Link cloud credentials once to authenticate.",
+    "Home Assistant doesn't offer the bulb's light effects."
   ],
   "sources": [
     {

@@ -2,7 +2,7 @@
   "category": "smart-bulb",
   "brand": "WiZ",
   "model": "Bulb 60W A19 E26 full colour (046677603441)",
-  "name": "WiZ Color A19 60W E26 Wi-Fi bulb (US)",
+  "name": "WiZ Color A19 (US)",
   "regions": ["US"],
   "officialUrl": "https://www.wizconnected.com/en-us/p/modern-bulb-bulb-60w-a19-e26/046677603441",
   "radios": {
@@ -66,9 +66,12 @@
     "value": "E26 (A19)",
     "sources": ["wiz-a19-us"]
   },
-  "summary": "The WiZ 60W A19 colour bulb (product code 046677603441) is a US E26 bulb rated at 800 lumens, with full colour and white from 2200 to 6500 K. It uses 2.4 GHz Wi-Fi plus Bluetooth for setup, so no hub is needed. Alexa, Google Home and SmartThings work through WiZ's own integrations. Matter support is unconfirmed for this product code.",
+  "summary": "For Alexa, Google Home and SmartThings, the WiZ Color A19 needs nothing but your Wi-Fi: it connects over 2.4 GHz, uses Bluetooth for setup, and each platform works through WiZ's own integration. Home Assistant's official WiZ integration controls it locally. This US bulb (product code 046677603441) has an E26 base and gives 800 lumens at 8.8 W, a 60 W equivalent, with full colour and white from 2200 to 6500 K. Apple Home is unconfirmed, since WiZ lists no HomeKit support and Matter isn't confirmed for this code.",
   "caveats": [
-    "Needs 2.4 GHz Wi-Fi."
+    "Needs 2.4 GHz Wi-Fi.",
+    "No confirmed Apple Home route: WiZ lists no HomeKit support, and Siri Shortcuts isn't the same as Apple Home.",
+    "WiZ's own pages disagree on Matter: this bulb's page says 'via 3rd party hubs', while the 3-pack page says 'Matter certified'.",
+    "Home Assistant needs 'Allow local communication' enabled in the WiZ app; it's on by default."
   ],
   "sources": [
     {

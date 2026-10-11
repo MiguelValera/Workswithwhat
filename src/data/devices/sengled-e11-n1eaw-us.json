@@ -2,7 +2,7 @@
   "category": "smart-bulb",
   "brand": "Sengled",
   "model": "E11-N1EAW",
-  "name": "Sengled Smart LED Multicolor A19 Zigbee (US)",
+  "name": "Sengled Zigbee Color A19 (US)",
   "regions": [
     "US"
   ],
@@ -93,11 +93,12 @@
       "sengled-zigbee-color-a19"
     ]
   },
-  "summary": "The Sengled Smart LED Multicolor A19 (E11-N1EAW) is a US Zigbee colour bulb with an E26 base, rated at 800 lumens. It needs a Zigbee hub: a Sengled Smart Hub, a SmartThings hub or an Echo with a built-in Zigbee hub. Amazon removed the Sengled Alexa skill in August 2025 after repeated outages, so Alexa control now means pairing the bulb directly to a Zigbee Echo.",
+  "summary": "Nothing controls the Sengled Zigbee Color A19 (E11-N1EAW) without a Zigbee hub. SmartThings works through a SmartThings hub, Alexa through an Echo with a built-in Zigbee hub (Echo Plus, Echo Show 2, Echo Studio), and Google Home through a Sengled Smart Hub linked via Sengled's cloud. Apple Home and Home Assistant are unconfirmed. It's a US full-colour bulb on an E26 base, rated at 800 lumens, with 16 million colours plus tunable white. Amazon reportedly withdrew the Sengled Alexa skill in 2025, so pairing directly to a Zigbee Echo is the Alexa route that doesn't rely on Sengled's account.",
   "caveats": [
-    "Requires a Zigbee hub; it has no Wi-Fi or Bluetooth.",
-    "Sengled's cloud had extended outages in mid-2025 and Amazon pulled the Sengled Alexa skill on 1 August 2025. We found no official Sengled statement on service status.",
-    "Sengled says these bulbs should not be used on dimmer switches."
+    "Zigbee only: it needs a Zigbee hub and has no Wi-Fi or Bluetooth.",
+    "Amazon removed the Sengled Alexa skill in 2025, according to a PCWorld report citing a series of Sengled service outages.",
+    "Google Home control goes through Sengled's cloud, so it depends on that service being up.",
+    "A regular Echo or Echo Dot can't control it; you need an Echo model with a built-in Zigbee hub."
   ],
   "sources": [
     {

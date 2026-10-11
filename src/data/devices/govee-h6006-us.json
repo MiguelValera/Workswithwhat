@@ -2,7 +2,7 @@
   "category": "smart-bulb",
   "brand": "Govee",
   "model": "H6006",
-  "name": "Govee Smart A19 LED Bulb H6006 (US)",
+  "name": "Govee Smart Bulb H6006 (US)",
   "regions": ["US"],
   "officialUrl": "https://us.govee.com/products/govee-smart-a19-led-light-bulbs",
   "radios": {
@@ -67,11 +67,11 @@
     "value": "E26 (A19)",
     "sources": ["govee-h6006"]
   },
-  "summary": "The Govee H6006 is a US A19 colour bulb with an E26 base, rated at 1000 lumens and white from 2700 to 6500 K. It uses 2.4 GHz Wi-Fi and Bluetooth, needs no hub, and is Matter-certified over Wi-Fi. Alexa and Google work through Govee's own integrations; Apple Home and SmartThings use Matter.",
+  "summary": "Matter-certified over Wi-Fi, the Govee H6006 joins Apple Home and SmartThings as a Matter light, while Alexa and Google Home use Govee's own integrations. Home Assistant runs it locally through the official Govee lights local integration. You don't need a hub for the Govee Home app, which reaches the bulb over 2.4 GHz Wi-Fi or Bluetooth. It's a US A19 bulb on an E26 base rated at 1000 lumens at 9 W (Govee calls it a 75 W equivalent), with full colour and white from 2700 to 6500 K.",
   "caveats": [
-    "Matter setup needs 2.4 GHz Wi-Fi and IPv6 enabled on the router.",
-    "Through Matter you get on/off, brightness, colour and colour temperature; scenes, effects and music sync stay in the Govee Home app.",
-    "Turning it off in the app leaves a small standby draw (about 0.5 W); cut power at the wall switch for a full power-off."
+    "Matter setup needs a Matter controller, 2.4 GHz Wi-Fi and IPv6 enabled on your router.",
+    "SmartThings needs a Matter-capable SmartThings hub.",
+    "Home Assistant's local integration needs the LAN API switched on for each bulb in the Govee Home app, and some users report the toggle is missing."
   ],
   "sources": [
     {
