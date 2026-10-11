@@ -45,7 +45,7 @@ for (const file of files) {
 // catching them here is free and immediate.
 const BANNED = ['seamless', 'elevate', "in today's", 'game-changer', 'robust', 'unlock', 'effortless', 'delve', "whether you're", 'look no further'];
 const WEAK = new Set(['retailer', 'review']);
-const FACTS = ['radios', 'hubRequired', 'localControl', 'energyMonitoring', 'maxLoadWatts', 'colorType', 'lumens', 'bulbBase', 'lockFit', 'keypad', 'power'];
+const FACTS = ['radios', 'hubRequired', 'localControl', 'energyMonitoring', 'maxLoadWatts', 'colorType', 'lumens', 'bulbBase', 'lockFit', 'keypad', 'power', 'thermostatType', 'systems'];
 const openings = new Map();
 
 for (const { file, d } of records) {

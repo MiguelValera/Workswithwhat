@@ -30,6 +30,11 @@ const FIT_LABELS: Record<string, string> = {
   lever: 'Lever handle',
 };
 
+const THERMOSTAT_LABELS: Record<string, string> = {
+  wall: 'Wall thermostat',
+  'radiator-valve': 'Radiator valve',
+};
+
 export const CATEGORIES: Category[] = [
   {
     key: 'smart-plug',
@@ -63,6 +68,18 @@ export const CATEGORIES: Category[] = [
     specs: [
       { key: 'lockFit', label: 'Fit', format: (v) => FIT_LABELS[String(v)] ?? String(v) },
       { key: 'keypad', label: 'Keypad', format: yesNo },
+      { key: 'power', label: 'Power', format: String },
+    ],
+  },
+  {
+    key: 'smart-thermostat',
+    path: 'smart-thermostats',
+    label: 'Smart thermostats',
+    singular: 'smart thermostat',
+    plural: 'smart thermostats',
+    specs: [
+      { key: 'thermostatType', label: 'Type', format: (v) => THERMOSTAT_LABELS[String(v)] ?? String(v) },
+      { key: 'systems', label: 'Controls', format: String },
       { key: 'power', label: 'Power', format: String },
     ],
   },

@@ -11,11 +11,13 @@ Read `CLAUDE.md` and `src/schema/device.ts` before you start. The schema decides
 
 ## Categories
 
-Set `category` to `smart-plug`, `smart-bulb` or `smart-lock`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
+Set `category` to `smart-plug`, `smart-bulb`, `smart-lock` or `smart-thermostat`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
 - smart-plug: `energyMonitoring` (boolean), `maxLoadWatts` (integer).
 - smart-bulb: `colorType` ("white", "tunable-white" or "color"), `lumens` (integer), `bulbBase` (e.g. "E27", "E26 (A19)", "GU10", "B22").
 - smart-lock: `lockFit` ("deadbolt" = replaces a whole US deadbolt, "retrofit" = fits over the existing interior thumb-turn or cylinder and keeps your keys, "cylinder" = replaces a euro-profile cylinder, "lever" = handle set with the lock built in), `keypad` (boolean: a keypad on the lock itself, not a separate accessory), `power` (string, e.g. "4 × AA", "Rechargeable battery").
   For locks, `hubRequired` means a bridge is needed for the lock's basic app control (e.g. a Wi-Fi bridge for a Bluetooth-only lock); name it in the note. Apple Home "Home Key" and remote access needing a home hub go in notes and caveats, not in `hubRequired`.
+- smart-thermostat: `thermostatType` ("wall" = wall thermostat that switches the heating/cooling system, "radiator-valve" = thermostatic head that replaces a radiator's valve head), `systems` (string, max 80 chars: what it can control as the maker states it, e.g. "24 V HVAC, incl. heat pumps", "Boilers (on/off or OpenTherm)", "Radiators with M30×1.5 valves"), `power` (string, e.g. "C-wire (24 V)", "2 × AA", "Rechargeable battery"; for a wall thermostat say whether it needs a C-wire).
+  For thermostats, `hubRequired` means a bridge or gateway is needed for basic app control (e.g. tado's Internet Bridge, a Zigbee gateway); a boiler relay or receiver that's part of the kit is not a hub, mention it in the note.
 A bulb sold in several bases or brightness variants is one record per model number; pick the one asked for.
 
 ## Process
