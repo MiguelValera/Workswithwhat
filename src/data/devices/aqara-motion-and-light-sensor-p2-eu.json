@@ -100,11 +100,11 @@
     ],
     "note": "Two CR2450 cells included; Aqara claims up to 2 years."
   },
-  "summary": "Aqara Motion and Light Sensor P2 combines a PIR motion detector with an ambient light sensor. Aqara quotes a 170 degree by 45 degree field and up to 7 m range. It joins Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter on Thread, so each setup needs a Thread border router. Two CR2450 cells power it.",
+  "summary": "Aqara Motion and Light Sensor P2 pairs a PIR motion detector with an ambient light sensor that works independently of motion. Matter over Thread connects it to Apple Home, Google Home, Alexa, SmartThings and Home Assistant, using any Matter-compatible Thread border router instead of an Aqara hub. Two CR2450 cells are included, and Aqara claims up to 2 years.",
   "caveats": [
     "Needs a Matter-compatible Thread border router.",
     "Aqara says Alexa does not support the light sensor.",
-    "Aqara's FAQ says that after it detects motion it won't report motion again for 1 minute."
+    "The Aqara Home app and its settings need Aqara's Hub M3."
   ],
   "sources": [
     {

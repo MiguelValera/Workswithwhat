@@ -103,10 +103,11 @@
     ],
     "note": "Eve's spec lists two replaceable AAA cells; one press article says AA, which the spec contradicts."
   },
-  "summary": "Eve Motion is a battery motion sensor with a built-in light sensor, and it can go indoors or outdoors with an IPX3 rating. It covers a 120 degree field of view out to about 9 m. The Matter version uses Thread, so Apple Home, Google Home, Alexa, SmartThings and Home Assistant can add it, each through a Thread border router. It takes two AAA cells.",
+  "summary": "Eve Motion is a battery motion sensor with an integrated light sensor and a twilight setting from 0 to 15,000 lux. Apple Home, Google Home, Alexa, SmartThings and Home Assistant all add it over Matter on Thread, each via a Thread border router rather than an Eve hub. Control stays local with no Eve cloud. Power is two AAA cells.",
   "caveats": [
-    "Needs a Thread border router; it does not join a network without one.",
-    "Units sold before the Matter version were HomeKit devices; Eve offers a free Matter firmware update for the latest Thread-enabled models."
+    "Needs a Thread border router, which must also be a Matter controller.",
+    "Whether every platform exposes the light reading is not confirmed.",
+    "Older HomeKit/Thread units need Eve's free firmware update to get Matter."
   ],
   "sources": [
     {

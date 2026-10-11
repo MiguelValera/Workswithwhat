@@ -98,11 +98,10 @@
     ],
     "note": "One CR123A cell."
   },
-  "summary": "Aqara Door and Window Sensor P2 is a Hall-effect contact sensor that reports open or closed, with an adjustable sensitivity of 1 to 3 cm and a tamper alarm. It speaks Matter over Thread, so Apple Home, Google Home, Alexa, SmartThings and Home Assistant can use it through a Thread border router. It runs on one CR123A cell.",
+  "summary": "Aqara Door and Window Sensor P2 uses a Hall sensor to report open or closed and has a tamper alarm. It reaches Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter on Thread, so you need a Matter-compatible Thread border router but not an Aqara hub. Power is one CR123A cell.",
   "caveats": [
-    "Needs a Matter-compatible Thread border router.",
-    "Aqara Home app support was tied to the Hub M3; Aqara pages disagree on whether it is available.",
-    "Older Aqara Zigbee hubs (E1, M1S, M2, G2H, G3) do not pair with the P2."
+    "Needs a Matter-compatible Thread border router, such as a HomePod mini, Nest Hub 2nd gen or Echo 4th gen.",
+    "The Aqara Home app and extras like the tamper alert need Aqara's Hub M3."
   ],
   "sources": [
     {

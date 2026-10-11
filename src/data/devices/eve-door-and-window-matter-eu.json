@@ -103,11 +103,10 @@
     ],
     "note": "Eve's page lists one replaceable ½ AA (ER14250, 3.6 V) cell, included."
   },
-  "summary": "Eve Door & Window is a small contact sensor that tells you whether a door, window or drawer is open. The Matter version talks Thread, so Apple Home, Google Home, Alexa, SmartThings and Home Assistant can all use it through Matter. Each platform needs a Thread border router, and Eve says it needs no account or cloud. It runs on one replaceable half-AA cell.",
+  "summary": "Eve Door & Window reports whether a door or window is open or closed, with time and duration statistics. It works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter on Thread, so you need a Thread border router such as a HomePod mini or Apple TV 4K but no Eve bridge. Eve says there is no Eve cloud or registration. One replaceable half-AA (ER14250) cell is included.",
   "caveats": [
-    "Needs a Thread border router; it does not join a network without one.",
-    "Units sold before the Matter version were HomeKit devices; Eve offers a free Matter firmware update for the latest Thread-enabled models.",
-    "Pairing to several platforms uses Matter multi-admin; each extra platform needs its own Matter controller."
+    "Needs a Thread border router, which must also be a Matter controller; there is no Eve bridge option.",
+    "Older HomeKit/Thread units need Eve's free firmware update to get Matter."
   ],
   "sources": [
     {

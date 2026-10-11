@@ -96,12 +96,12 @@
     ],
     "note": "5 V / 1 A over USB-C; no battery."
   },
-  "summary": "Aqara Presence Sensor FP2 is a mains-powered mmWave sensor that detects people even when they sit still. It tracks up to 5 people and can divide a room of up to 40 square metres into up to 30 zones. It joins over 2.4 GHz Wi-Fi without a hub and shows up as separate sensors in Apple Home, Google Home, Alexa and Home Assistant.",
+  "summary": "Aqara Presence Sensor FP2 senses presence with mmWave, tracking up to 5 people across up to 30 zones, and has a built-in light sensor. It connects over 2.4 GHz Wi-Fi with no hub and is powered by USB-C at 5 V, with no battery. Apple Home, Google Home and Alexa support it natively, and Home Assistant uses its HomeKit Device integration. SmartThings is unconfirmed, and Matter isn't confirmed either.",
   "caveats": [
     "2.4 GHz Wi-Fi only; WPA/WPA2 enterprise networks are not supported.",
-    "Zones, fall detection and other advanced features need the Aqara app; other platforms get basic sensor data.",
-    "Not Matter-certified as far as we can confirm.",
-    "Fall detection works only when ceiling-mounted."
+    "It appears as several separate sensors, and third-party platforms get only basic sensor data.",
+    "Fall detection works only in ceiling mode.",
+    "Full local automation needs an Aqara hub with Wi-Fi, per the manual."
   ],
   "sources": [
     {
