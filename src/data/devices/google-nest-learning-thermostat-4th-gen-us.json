@@ -14,7 +14,7 @@
     "sources": [
       "google-nest-4th-specs"
     ],
-    "note": "Google lists Wi-Fi 802.11n. Google's information menu mentions Thread addressing, but no maker page we saw lists a Thread radio, so it is left out."
+    "note": "Google's 4th gen specs list Wi-Fi 802.11n (2.4/5 GHz). No Google page we saw lists a Thread radio for this model, so it is left out."
   },
   "matter": {
     "certified": true,
@@ -23,7 +23,7 @@
       "csa-nest-4th",
       "google-nest-specs"
     ],
-    "note": "CSA lists the 4th gen as Matter certified with Wi-Fi as its transport. Google says it works with Google Home and Matter-enabled apps."
+    "note": "CSA lists the 4th gen as Matter certified over Wi-Fi (firmware 2.3, Matter 1.4, October 2025; an earlier 2024 listing covers firmware 2.1). Google says it works with Google Home and other Matter-enabled apps."
   },
   "compatibility": {
     "apple_home": {
@@ -45,9 +45,10 @@
     "alexa": {
       "status": "native",
       "sources": [
-        "google-nest-alexa"
+        "google-nest-alexa",
+        "google-compare"
       ],
-      "note": "Google's Nest skill for Alexa covers Nest thermostats; the page does not name the 4th gen specifically, so confirm in the Alexa app."
+      "note": "Through Google's Nest skill for Alexa, enabled from the Google Home app. Google's thermostat comparison lists Works with Amazon Alexa for the 4th gen."
     },
     "smartthings": {
       "status": "unknown",
@@ -57,9 +58,10 @@
     "home_assistant": {
       "status": "native",
       "sources": [
-        "ha-nest"
+        "ha-nest",
+        "google-device-access"
       ],
-      "note": "Official Google Nest integration using the Smart Device Management API; Google charges a one-time US$5 Device Access fee. Matter is a second route."
+      "note": "Official Google Nest integration using the Smart Device Management API, which Google says supports all Nest thermostat models; Google charges a one-time US$5 Device Access fee. Matter is a second route."
     }
   },
   "hubRequired": {
@@ -94,12 +96,12 @@
     "sources": [
       "google-nest-4th-specs"
     ],
-    "note": "Google says Power Sharing lets it run without a C-wire in most homes; in limited cases (under 1%) a C-wire or Nest Power Connector is needed."
+    "note": "Google's specs page says it runs without a C-wire in most homes and that in limited cases (under 1%) a C-wire or Nest Power Connector is needed. Google's product page adds that heating-only, cooling-only, zoned and heat pump systems need one."
   },
   "summary": "Google Home is the main app for the Nest Learning Thermostat (4th gen), a US wall thermostat with Wi-Fi and Matter certification. That Matter listing is how it reaches Apple Home, and Home Assistant has an official Nest integration too. Alexa works through Google's Nest skill, and SmartThings is not confirmed.",
   "caveats": [
     "Setup requires the Google Home app.",
-    "Google says in under 1% of homes a C-wire or Nest Power Connector may still be needed; its compatibility checker is g.co/nest/works.",
+    "Google says heating-only, cooling-only, zoned and heat pump systems need a C-wire or Nest Power Connector; its checker is g.co/nest/works.",
     "Home Assistant over Matter exposes only the climate entity in community reports; presets and extra sensors are missing.",
     "SmartThings support is not confirmed."
   ],
@@ -151,8 +153,25 @@
       "publisher": "Google",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-compare",
+      "url": "https://store.google.com/magazine/compare_thermostats?hl=en-US",
+      "title": "Compare Google Nest Smart Thermostat Specs - Google Store",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-device-access",
+      "url": "https://developers.google.com/nest/device-access/supported-devices",
+      "title": "Supported Devices - Device Access",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

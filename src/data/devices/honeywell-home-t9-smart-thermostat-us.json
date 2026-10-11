@@ -14,7 +14,7 @@
     "sources": [
       "honeywell-t9"
     ],
-    "note": "Honeywell lists Wi-Fi (2.4 and 5 GHz). The room sensors use a separate proprietary 900 MHz radio, not a standard smart-home protocol."
+    "note": "Honeywell lists Wi-Fi (2.4 and 5 GHz). The room sensors link directly to the thermostat; the pages we saw don't name their radio."
   },
   "matter": {
     "certified": null,
@@ -26,31 +26,28 @@
       "status": "native",
       "sources": [
         "honeywell-t9-apps",
-        "honeywell-t9"
+        "honeywell-t9-guide"
       ],
-      "note": "Honeywell lists HomeKit. Its support article says HomeKit can change setpoints but cannot read the room sensors."
+      "note": "Honeywell's T9 user guide has a HomeKit pairing procedure (Connect HomeKit on the thermostat, then scan the code in the Home app). Its support article says HomeKit can change setpoints but cannot read the room sensors."
     },
     "google_home": {
       "status": "native",
       "sources": [
-        "honeywell-t9-apps",
-        "honeywell-t9"
+        "honeywell-t9-apps"
       ],
       "note": "Honeywell says Google Assistant can view and control both the thermostat and its sensors."
     },
     "alexa": {
       "status": "native",
       "sources": [
-        "honeywell-t9-apps",
-        "honeywell-t9"
+        "honeywell-t9-apps"
       ],
       "note": "Honeywell says Alexa can view and control both the thermostat and its sensors."
     },
     "smartthings": {
       "status": "native",
       "sources": [
-        "honeywell-t9-apps",
-        "honeywell-t9"
+        "honeywell-t9-apps"
       ],
       "note": "Honeywell lists SmartThings. Its support article says SmartThings can change setpoints but cannot read the sensors."
     },
@@ -84,7 +81,7 @@
     "sources": [
       "honeywell-t9-install"
     ],
-    "note": "Honeywell's guide says it does not work with electric baseboard (120-240 V) or millivolt systems. Contact a pro for line voltage, dual fuel or fan coil setups."
+    "note": "Honeywell's guide says it does not work with electric baseboard (120-240 V) or millivolt systems. Contact a pro for line voltage, dual fuel or fan coil setups. One record covers the RCHT9510WFW (no sensor) and RCHT9610WFSW (with sensor), which share the same installation guide."
   },
   "power": {
     "value": "C-wire (24 V); adapter included",
@@ -92,12 +89,12 @@
       "honeywell-t9-cwire",
       "honeywell-t9-guide"
     ],
-    "note": "Honeywell says the T9 runs on 24 V through the C-wire and ships with a C-wire adapter for homes without one. Honeywell's separate adapter page says it does not work with heat-only systems."
+    "note": "Honeywell says the T9 needs 24 V through a C-wire and ships with a C-wire adapter for homes without one. The install guide says adapter installation is more complicated on zoned systems."
   },
   "summary": "Honeywell Home sells the T9 as a US Wi-Fi wall thermostat with optional wireless room sensors. Alexa and Google Assistant can read the thermostat and sensors, while HomeKit and SmartThings can only change setpoints, according to Honeywell. Home Assistant and Matter support are not confirmed on any page we found.",
   "caveats": [
     "HomeKit and SmartThings cannot read room sensor values, per Honeywell's support article.",
-    "A C-wire is required; the supplied adapter covers homes without one, but Honeywell says its adapter does not work with heat-only systems.",
+    "A C-wire is required; the supplied adapter covers homes without one, but Honeywell says fitting it on zoned systems is more complicated and suggests a pro.",
     "Not for electric baseboard or millivolt systems."
   ],
   "sources": [
@@ -142,6 +139,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

@@ -92,10 +92,10 @@
     "value": "C-wire 24 V; Power Extender Kit in box",
     "sources": [
       "ecobee-enhanced",
-      "ecobee-pek",
-      "ecobee-accessories"
+      "ecobee-accessories",
+      "ecobee-pek"
     ],
-    "note": "ecobee powers it from a 24 V supply on the C-wire. The kit is not included with the Essential and Lite, which implies the Enhanced ships with it; the Enhanced page was not opened, so verify."
+    "note": "24 V on the C-wire. ecobee's Enhanced page says the included Power Extender Kit allows installation in most homes without a C-wire; its accessories page says every model except the Essential and Lite comes with the kit."
   },
   "summary": "Apple HomeKit, Alexa, Google Assistant and SmartThings are all listed by ecobee for the Smart Thermostat Enhanced, a US wall thermostat that connects over Wi-Fi. It is the lower-priced sibling of the Premium and has no built-in speaker. Home Assistant supports it through the official ecobee integration.",
   "caveats": [
@@ -161,6 +161,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }
