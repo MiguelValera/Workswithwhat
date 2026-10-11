@@ -1,0 +1,129 @@
+{
+  "category": "smart-plug",
+  "brand": "TP-Link",
+  "model": "Tapo P115",
+  "name": "Tapo P115 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.tapo.com/en/product/smart-plug/tapo-p115",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "tapo-p115-en",
+      "tapo-p115-fr-specs"
+    ],
+    "note": "2.4 GHz Wi-Fi 802.11b/g/n. The spec sheet we saw lists no Bluetooth; not confirmed either way."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "TP-Link's P115 pages don't mention Matter and no CSA listing was found. Not stated as unsupported either."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "TP-Link's P115 pages list Alexa and Google Assistant only; no page says Apple Home is unsupported."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "tapo-p115-en"
+      ],
+      "note": "Tapo's product page lists Google Assistant voice control through the Tapo account link."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "tapo-p115-en"
+      ],
+      "note": "Tapo's product page lists Amazon Alexa voice control through the Tapo skill."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The EU product page lists only Alexa and Google. TP-Link's US P115 pages and its generic SmartThings FAQ mention SmartThings, but nothing EU-specific was found."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-tplink",
+        "python-kasa"
+      ],
+      "note": "HA's TP-Link Smart Home integration covers Tapo devices; python-kasa, the library it uses, lists the P115 among Tapo plugs. The HA docs snippet we saw did not show the P115 row."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "tapo-p115-en",
+      "tapo-p115-fr-specs"
+    ],
+    "note": "Wi-Fi plug set up in the Tapo app; no hub listed."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "tapo-p115-en"
+    ],
+    "note": "Tapo says devices on your LAN stay reachable in the Tapo app when the internet is down."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "tapo-p115-en",
+      "tapo-p115-fr-specs"
+    ],
+    "note": "Tracks the energy use of connected devices; you can enter your electricity rate for cost estimates."
+  },
+  "maxLoadWatts": {
+    "value": 3680,
+    "sources": [
+      "tapo-p115-fr-specs"
+    ],
+    "note": "16 A / 3680 W at 220-240 V."
+  },
+  "summary": "The Tapo P115 is TP-Link's compact EU Wi-Fi plug with energy monitoring. TP-Link lists Alexa and Google Assistant, and Home Assistant's TP-Link integration covers Tapo plugs. It is rated 16 A / 3680 W and needs no hub.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only."
+  ],
+  "sources": [
+    {
+      "id": "tapo-p115-en",
+      "url": "https://www.tapo.com/en/product/smart-plug/tapo-p115",
+      "title": "Mini Smart Wi-Fi Socket, Energy Monitoring (Tapo P115)",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-p115-fr-specs",
+      "url": "https://www.tapo.com/fr/product/tapo-p115-smart-plug/v1/specs/",
+      "title": "Tapo P115 specifications",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://home-assistant.io/integrations/tplink",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "python-kasa",
+      "url": "https://pypi.org/project/python-kasa/",
+      "title": "python-kasa: Python API for TP-Link Kasa and Tapo devices",
+      "publisher": "python-kasa project (PyPI)",
+      "kind": "review",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

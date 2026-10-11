@@ -1,0 +1,129 @@
+{
+  "category": "smart-plug",
+  "brand": "Innr",
+  "model": "SP 242",
+  "name": "Innr SP 242 (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.innr.com/wp-content/uploads/2024/04/INNR_IM_SP-242_WT10.pdf",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "innr-sp242-manual",
+      "innr-works-with"
+    ],
+    "note": "Zigbee on 2.4 GHz (max 10 dBm per the manual). Acts as a Zigbee repeater."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Zigbee-only plug; Innr doesn't mention Matter for it and no CSA listing was found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Innr's Works-with page says Innr devices on a Hue Bridge are not passed to Apple HomeKit. No source covers other routes, so not marked 'no'."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Innr's Works-with page doesn't list Google Home for this plug."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Echo with Zigbee hub, Hue Bridge or SmartThings",
+      "sources": [
+        "innr-works-with"
+      ],
+      "note": "Pairs directly with Echo models that have a built-in Zigbee hub (e.g. Echo 4th gen, Studio, Show 10), or via a Hue Bridge or SmartThings."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "SmartThings hub (Zigbee)",
+      "sources": [
+        "innr-works-with"
+      ],
+      "note": "Innr lists SmartThings as a supported Zigbee hub."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "Zigbee coordinator (ZHA or Zigbee2MQTT)",
+      "sources": [
+        "innr-works-with",
+        "z2m-sp242"
+      ],
+      "note": "Innr says its products work with ZHA or Zigbee2MQTT, including plug power metering, but it doesn't support those setups itself. Zigbee2MQTT lists the SP 242."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "innr-works-with"
+    ],
+    "note": "Zigbee plug: needs a Zigbee hub such as a Hue Bridge, SmartThings, an Echo with Zigbee, Homey or the Innr bridge."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Innr statement on control without internet found."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "z2m-sp242",
+      "amazon-uk-sp242",
+      "innr-works-with"
+    ],
+    "note": "Reports power, voltage, current and energy. Innr says Philips Hue doesn't show the readings; SmartThings, Hubitat, Homey and Home Assistant do."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [],
+    "note": "Innr's manual gives a 13 A total current limit; no watt figure found."
+  },
+  "summary": "The Innr SP 242 is a UK (Type G) Zigbee smart plug with power metering. It needs a Zigbee hub: Innr lists Hue, SmartThings, Echo speakers with a built-in Zigbee hub, and Home Assistant via ZHA or Zigbee2MQTT. Its manual gives a 13 A limit.",
+  "caveats": [
+    "Needs a Zigbee hub; there is no Wi-Fi.",
+    "Philips Hue can switch it but doesn't show its energy readings."
+  ],
+  "sources": [
+    {
+      "id": "innr-sp242-manual",
+      "url": "https://www.innr.com/wp-content/uploads/2024/04/INNR_IM_SP-242_WT10.pdf",
+      "title": "Innr SP 242 user manual",
+      "publisher": "Innr",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "innr-works-with",
+      "url": "https://innr.com/pages/works-with",
+      "title": "Works with",
+      "publisher": "Innr",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "z2m-sp242",
+      "url": "https://www.zigbee2mqtt.io/devices/SP_242.html",
+      "title": "Innr SP 242 control via MQTT",
+      "publisher": "Zigbee2MQTT",
+      "kind": "review",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "amazon-uk-sp242",
+      "url": "https://www.amazon.co.uk/Innr-UK-SP-242-parent/dp/B0FY77KFMR",
+      "title": "Innr Smart Plug with Power Monitoring, works with Hue* and Zigbee Hubs",
+      "publisher": "Amazon UK",
+      "kind": "retailer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
