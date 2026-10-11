@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Refs from '../../components/Refs.astro';
 import { RADIO_LABELS, devicePath, getPublishedDevices, categoryPhrase } from '../../lib/devices';
 import { CATEGORIES, specFacts } from '../../lib/categories';
+import { byMarket } from '../../lib/markets';
 
 const all = await getPublishedDevices();
 const matter = all.filter((d) => d.data.matter.certified);
@@ -68,6 +69,9 @@ const description = `${matter.length} Matter-certified ${whatLong}, split by Wi-
           t.list.length > 0 && (
             <>
               <h2 id={t.id}>Matter {g.cat.plural} {t.label}</h2>
+              {byMarket(t.list).map((m) => (
+              <>
+              <h3 id={`${t.id}-${m.market.key}`}>{m.market.label} ({m.devices.length})</h3>
               <div class="table-scroll">
                 <table role="table" class="stack pair">
                   <thead role="rowgroup">
@@ -79,7 +83,7 @@ const description = `${matter.length} Matter-certified ${whatLong}, split by Wi-
                     </tr>
                   </thead>
                   <tbody role="rowgroup">
-                    {t.list.map((d) => (
+                    {m.devices.map((d) => (
                       <tr role="row">
                         <th role="rowheader" scope="row" class="name">
                           <a href={devicePath(d)}>{d.data.name}</a>
@@ -93,6 +97,8 @@ const description = `${matter.length} Matter-certified ${whatLong}, split by Wi-
                   </tbody>
                 </table>
               </div>
+              </>
+              ))}
             </>
           ),
       ),

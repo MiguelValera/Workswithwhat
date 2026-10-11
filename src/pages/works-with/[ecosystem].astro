@@ -14,6 +14,7 @@ import {
   type Ecosystem,
 } from '../../lib/devices';
 import { CATEGORIES } from '../../lib/categories';
+import { byMarket } from '../../lib/markets';
 
 export function getStaticPaths() {
   return ECOSYSTEMS.map((e) => ({ params: { ecosystem: ecosystemSlug(e) }, props: { eco: e } }));
@@ -88,13 +89,16 @@ const description = `${yes.length} ${whatLong} confirmed to work with ${label}${
       <section aria-labelledby={g.cat.path}>
         <h2 id={g.cat.path}>{g.cat.label} that work with {label}</h2>
         {g.yes.length > 0 ? (
+          byMarket(g.yes).map((m) => (
+          <>
+          <h3 id={`${g.cat.path}-${m.market.key}`}>{m.market.label} ({m.devices.length})</h3>
           <div class="table-scroll">
             <table role="table" class="stack pair">
               <thead role="rowgroup">
                 <tr role="row"><th role="columnheader" scope="col">Device</th><th role="columnheader" scope="col">How</th><th role="columnheader" scope="col">Radio</th><th role="columnheader" scope="col">Notes</th></tr>
               </thead>
               <tbody role="rowgroup">
-                {g.yes.map((d) => {
+                {m.devices.map((d) => {
                   const c = d.data.compatibility[eco];
                   return (
                     <tr role="row">
@@ -111,6 +115,8 @@ const description = `${yes.length} ${whatLong} confirmed to work with ${label}${
               </tbody>
             </table>
           </div>
+          </>
+          ))
         ) : (
           <p>None of the {g.cat.plural} we've checked so far are confirmed for {label}.</p>
         )}

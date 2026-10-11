@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import CompareTable from '../../components/CompareTable.astro';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemSlug, formatDate, getPublishedDevices } from '../../lib/devices';
 import { CATEGORIES, type Category } from '../../lib/categories';
+import { byMarket } from '../../lib/markets';
 
 // one chart per category that has published devices (no empty pages)
 export async function getStaticPaths() {
@@ -19,6 +20,7 @@ const singularTitle = cat.singular.replace(/^./, (c) => c.toUpperCase());
 const title = `${singularTitle} compatibility chart: Apple Home, Google Home, Alexa, Matter`;
 const description = `${devices.length} ${cat.plural} compared by ecosystem support, radio, Matter certification and hub needs. Every cell links back to a source.`;
 const api = `/api/${cat.path}.json`;
+const groups = byMarket(devices);
 
 const newest = devices.map((d) => d.data.updatedAt).sort().at(-1);
 const jsonLd = [
@@ -53,7 +55,18 @@ const jsonLd = [
     Which {cat.singular} works with which platform, and how it gets there: directly, over Matter, or through a hub.
     Open any one for the details and the sources behind each answer.
   </p>
-  <CompareTable devices={devices} brandJump />
+  <nav class="toc" aria-label="Jump to region">
+    <span class="toc-label">Region:</span>
+    {groups.map((g) => <a href={`#${g.market.key}`}>{g.market.label} ({g.devices.length})</a>)}
+  </nav>
+  {
+    groups.map((g) => (
+      <section aria-labelledby={g.market.key}>
+        <h2 id={g.market.key}>{cat.label} for {g.market.phrase}</h2>
+        <CompareTable devices={g.devices} brandJump anchorPrefix={`${g.market.key}-`} />
+      </section>
+    ))
+  }
   {newest && <p class="muted small">Last updated <time datetime={newest}>{formatDate(newest)}</time>. The same data is available as <a href={api}>JSON</a>.</p>}
   <p class="muted">
     Looking for one platform?{' '}
