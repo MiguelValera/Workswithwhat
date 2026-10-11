@@ -1,0 +1,90 @@
+{
+  "category": "smart-switch",
+  "brand": "TP-Link",
+  "model": "KS220",
+  "name": "Kasa Smart Dimmer KS220 (US)",
+  "regions": ["US"],
+  "officialUrl": "https://www.tp-link.com/us/home-networking/smart-switch/ks220/v1/",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["tp-link-ks220", "ks220-datasheet"],
+    "note": "2.4 GHz Wi-Fi only. TP-Link lists Bluetooth 4.2 for setup only."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "TP-Link's Matter dimmer is the separate KS225; the KS220 pages we saw make no Matter claim. KS220 is still sold alongside it, so we used it."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": ["tp-link-ks220", "ks220-ug"],
+      "note": "Pairs through HomeKit with a HomeKit code; the user guide has a HomeKit setup section."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["tp-link-ks220"],
+      "note": "Listed by TP-Link as a supported third-party platform."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["tp-link-ks220"],
+      "note": "Listed by TP-Link as a supported third-party platform."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": ["tp-link-ks220"],
+      "note": "Listed by TP-Link as a supported third-party platform."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink"],
+      "note": "Home Assistant's TP-Link Smart Home integration lists the KS220 as a supported wall switch."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["ks220-datasheet", "tp-link-ks220"],
+    "note": "Connects straight to 2.4 GHz Wi-Fi; TP-Link's datasheet title says no hub required."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-tplink"],
+    "note": "Home Assistant's integration is listed as local polling. Newer Kasa devices may ask for your TP-Link cloud login during setup; TP-Link itself doesn't state local control for its app."
+  },
+  "switchForm": {
+    "value": "wall-switch",
+    "sources": ["tp-link-ks220", "ks220-datasheet"],
+    "note": "Replaces a standard wall switch and comes with a wall plate."
+  },
+  "dimmer": {
+    "value": true,
+    "sources": ["tp-link-ks220", "ks220-datasheet"],
+    "note": "TRIAC dimming; 300 W incandescent/halogen, 150 W LED."
+  },
+  "neutralRequired": {
+    "value": true,
+    "sources": ["kasa-ks220", "ks220-datasheet"]
+  },
+  "gangs": {
+    "value": "Single-pole only",
+    "sources": ["ks220-datasheet"],
+    "note": "TP-Link's datasheet says it doesn't work with 3-way (multi-location) wiring."
+  },
+  "summary": "The Kasa KS220 is a Wi-Fi dimmer that replaces a standard US wall switch and needs a neutral wire. TP-Link lists Apple Home (through HomeKit), Alexa, Google Assistant and SmartThings, and Home Assistant supports it in its TP-Link integration. No hub is needed. It handles 150 W of LED or 300 W of incandescent, on single-pole circuits only.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Needs a neutral wire and does not support 3-way wiring.",
+    "Not a Matter device; TP-Link's Matter dimmer is the KS225.",
+    "LED loads are capped at 150 W."
+  ],
+  "sources": [
+    {"id": "tp-link-ks220", "url": "https://www.tp-link.com/us/home-networking/smart-switch/ks220/v1/", "title": "KS220", "publisher": "TP-Link", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "kasa-ks220", "url": "https://www.kasasmart.com/us/products/smart-switches/kasa-smart-wifi-light-switch-dimmer-ks220", "title": "Smart Wi-Fi Dimmer Switch", "publisher": "Kasa Smart", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "ks220-datasheet", "url": "https://static.tp-link.com/upload/product-overview/2022/202212/20221209/KS220(US)1.0_Datasheet.pdf", "title": "KS220 Smart Wi-Fi Light Switch, Dimmer No Hub Required Remote Control", "publisher": "TP-Link", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "ks220-ug", "url": "https://static.tp-link.com/upload/manual/2024/202406/20240627/1910013682_KS220(US)_UG_V1.pdf", "title": "Smart Wi-Fi Light Switch, Dimmer KS220 - User Guide", "publisher": "TP-Link", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "ha-tplink", "url": "https://www.home-assistant.io/integrations/tplink/", "title": "TP-Link Smart Home - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

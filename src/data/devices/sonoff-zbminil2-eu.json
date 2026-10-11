@@ -1,0 +1,92 @@
+{
+  "category": "smart-switch",
+  "brand": "Sonoff",
+  "model": "ZBMINIL2",
+  "name": "Sonoff ZBMINI-L2 (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://sonoff.tech/en-us/products/sonoff-zbmini-extreme-zigbee-smart-switch-zbminil2",
+  "radios": {
+    "value": ["zigbee"],
+    "sources": ["sonoff-zbminil2-product", "sonoff-help-zbminil2"],
+    "note": "Zigbee 3.0 end device; it does not relay Zigbee traffic for other devices."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim found on Sonoff's pages and no CSA Matter listing found. Not treated as 'no'."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Sonoff's help centre does not list Apple Home."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Zigbee gateway (e.g. SONOFF ZBBridge)",
+      "sources": ["sonoff-help-zbminil2"],
+      "note": "Sonoff lists Google Home as a third-party voice platform without naming the gateway; it works through a supported Zigbee gateway."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Echo with built-in Zigbee hub",
+      "sources": ["sonoff-help-zbminil2"],
+      "note": "Sonoff's list names Echo Plus 2nd gen, Echo 4th gen and Echo Show 2nd gen as supported Zigbee gateways."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "SmartThings Hub V3 / Aeotec Hub V3",
+      "sources": ["sonoff-help-zbminil2"],
+      "note": "Listed by Sonoff as a supported gateway."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "Zigbee coordinator (e.g. SONOFF ZBDongle-P/E)",
+      "sources": ["sonoff-help-zbminil2"],
+      "note": "Sonoff lists ZBDongle-P and ZBDongle-E with ZHA or Zigbee2MQTT. Needs a coordinator; Philips, IKEA and Fritzbox gateways are not supported."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": ["sonoff-zbminil2-product", "sonoff-help-zbminil2"],
+    "note": "Needs a Zigbee 3.0 gateway such as the SONOFF ZBBridge, NSPanel Pro, iHost or a supported Echo or SmartThings hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Sonoff's pages say it works with local-capable gateways, but no page states local control explicitly."
+  },
+  "switchForm": {
+    "value": "module",
+    "sources": ["sonoff-zbminil2-product"],
+    "note": "39.5 x 32 x 18.4 mm relay for the back box of an existing switch, with S1/S2 inputs for the wall switch."
+  },
+  "dimmer": {
+    "value": false,
+    "sources": ["sonoff-zbminil2-product"],
+    "note": "On/off relay, 6 A."
+  },
+  "neutralRequired": {
+    "value": false,
+    "sources": ["sonoff-zbminil2-product", "sonoff-help-zbminil2"],
+    "note": "Sold as no-neutral; the lamp's own neutral is used. Minimum load is about 3 W and flash suppression modules are not supported."
+  },
+  "gangs": {
+    "value": "1 channel",
+    "sources": ["sonoff-zbminil2-product"],
+    "note": "Single relay with a two-way switching input."
+  },
+  "summary": "The Sonoff ZBMINI-L2, also sold as ZBMINI Extreme, is a small Zigbee relay for a switch box with no neutral wire. It switches up to 6 A at 100-240 V and supports two-way switching from an external wall switch. It needs a Zigbee gateway, and Sonoff lists compatible ones for eWeLink, Alexa, SmartThings and Home Assistant.",
+  "caveats": [
+    "Needs a Zigbee 3.0 gateway; Philips Hue, IKEA and Fritzbox gateways are not supported.",
+    "It is an end device and does not extend your Zigbee mesh.",
+    "No-neutral operation needs a minimum load of about 3 W and does not support flash suppression modules.",
+    "The ZBMINIL2-E in Sonoff's docs is a different, larger model."
+  ],
+  "sources": [
+    {"id": "sonoff-zbminil2-product", "url": "https://sonoff.tech/en-us/products/sonoff-zbmini-extreme-zigbee-smart-switch-zbminil2", "title": "SONOFF ZBMINI Extreme Zigbee Smart Switch ZBMINIL2", "publisher": "SONOFF", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "sonoff-help-zbminil2", "url": "https://help.sonoff.tech/docs/zbminil2", "title": "SONOFF ZBMINIL2", "publisher": "SONOFF Help Center", "kind": "manufacturer", "accessed": "2026-10-11"}
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

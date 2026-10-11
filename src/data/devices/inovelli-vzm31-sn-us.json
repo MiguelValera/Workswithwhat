@@ -1,0 +1,91 @@
+{
+  "category": "smart-switch",
+  "brand": "Inovelli",
+  "model": "VZM31-SN",
+  "name": "Inovelli Blue Series 2-1 Switch (US)",
+  "regions": ["US"],
+  "officialUrl": "https://inovelli.com/products/zigbee-matter-blue-series-smart-2-1-on-off-dimmer-switch",
+  "radios": {
+    "value": ["zigbee"],
+    "sources": ["inovelli-2-1"],
+    "note": "Zigbee 3.0."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "This is the Zigbee version. The Inovelli page also covers a Matter version, which is a different model; we found no Matter claim for the VZM31-SN."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Inovelli's pages we saw don't mention Apple Home for the Zigbee version."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Inovelli's pages we saw don't mention Google Home for the Zigbee version."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Amazon Echo with built-in Zigbee hub",
+      "sources": ["inovelli-2-1"],
+      "note": "Inovelli names Amazon Echo as a compatible hub, only for supported Echo models, and says its advanced features don't work with Amazon."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "SmartThings hub (Zigbee)",
+      "sources": ["inovelli-2-1"],
+      "note": "Inovelli lists SmartThings, including its advanced features."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["inovelli-2-1", "ha-zha"],
+      "note": "Inovelli lists ZHA and Zigbee2MQTT. Home Assistant needs a Zigbee coordinator (USB adapter) for this."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": ["inovelli-2-1", "inovelli-dimmer-manual"],
+    "note": "Needs a Zigbee hub or coordinator (SmartThings, Hubitat, an Echo with Zigbee, or a USB adapter with Home Assistant)."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["inovelli-2-1"],
+    "note": "Zigbee runs locally through your own hub or coordinator. Inovelli doesn't use the word local on the pages we saw."
+  },
+  "switchForm": {
+    "value": "wall-switch",
+    "sources": ["inovelli-2-1", "inovelli-dimmer-manual"],
+    "note": "Replaces a wall switch; it can run as a dimmer or as an on/off switch."
+  },
+  "dimmer": {
+    "value": true,
+    "sources": ["inovelli-2-1"],
+    "note": "One switch with a dimmer or on/off mode."
+  },
+  "neutralRequired": {
+    "value": false,
+    "sources": ["inovelli-2-1"],
+    "note": "Works without a neutral, but Inovelli says a bypass is needed then, and it isn't included. A neutral jumper is in the box."
+  },
+  "gangs": {
+    "value": null,
+    "sources": [],
+    "note": "Not stated in the pages we saw; it works in single-pole and multi-way setups."
+  },
+  "summary": "Inovelli's Blue Series 2-1 (VZM31-SN) is a Zigbee wall switch that runs as a dimmer or an on/off switch. It works with or without a neutral, but without one you need a bypass that is not in the box. It needs a Zigbee hub: Inovelli lists SmartThings, Hubitat, Home Assistant (ZHA or Zigbee2MQTT) and supported Echo models. It supports multi-way setups with an aux switch.",
+  "caveats": [
+    "Needs a Zigbee hub or coordinator; no direct Wi-Fi or Matter.",
+    "Without a neutral wire a bypass is required, and it isn't included.",
+    "Advanced features such as multi-tap scenes and energy reporting work only on some hubs; Inovelli says they don't work with Amazon.",
+    "Apple Home and Google Home support is not documented by Inovelli for this version."
+  ],
+  "sources": [
+    {"id": "inovelli-2-1", "url": "https://inovelli.com/products/zigbee-matter-blue-series-smart-2-1-on-off-dimmer-switch", "title": "Inovelli Blue Series 2-1 Smart Switch", "publisher": "Inovelli", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "inovelli-dimmer-manual", "url": "https://help.inovelli.com/en/articles/8266282-blue-series-dimmer-switch-manual", "title": "Blue Series Dimmer Switch - Manual", "publisher": "Inovelli", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "ha-zha", "url": "https://www.home-assistant.io/integrations/zha/", "title": "Zigbee Home Automation - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

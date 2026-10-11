@@ -1,0 +1,95 @@
+{
+  "category": "smart-switch",
+  "brand": "Philips Hue",
+  "model": "Wall switch module (929003017101)",
+  "name": "Philips Hue Wall Switch Module (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.philips-hue.com/en-gb/p/hue-philips-hue-wall-switch-module/8719514318045",
+  "radios": {
+    "value": ["zigbee", "bluetooth"],
+    "sources": ["hue-wall-switch-module-product", "csa-hue-wall-switch-module"],
+    "note": "Zigbee 3.0 per CSA; Hue's page also lists Bluetooth."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "CSA lists the module as Zigbee 3.0 only. Hue says Matter reaches it only via the Hue Bridge, which has its own Matter certificate."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Hue Bridge",
+      "sources": ["hue-in-wall-guide", "hue-wall-switch-module-product"],
+      "note": "Hue's page lists Apple HomeKit among third-party systems; exposure of the module itself was not checked."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Hue Bridge",
+      "sources": ["hue-in-wall-guide", "hue-wall-switch-module-product"],
+      "note": "Hue lists Google Home and says Matter support is via the Bridge only."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Hue Bridge",
+      "sources": ["hue-in-wall-guide", "hue-wall-switch-module-product"],
+      "note": "Hue lists Alexa; the Bridge is the link."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "Hue Bridge",
+      "sources": ["hue-wall-switch-module-product"],
+      "note": "Hue's page lists Samsung SmartThings among third-party systems."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "Hue Bridge",
+      "sources": ["ha-hue"],
+      "note": "Home Assistant's Hue integration exposes Hue switches as device triggers and battery sensors; its docs do not name this module."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": ["hue-in-wall-guide", "hue-wall-switch-module-product"],
+    "note": "Hue's FAQ says a Hue Bridge is needed to control Hue lights with the module; without it, functions are limited."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not stated in the sources found."
+  },
+  "switchForm": {
+    "value": "module",
+    "sources": ["hue-wall-switch-module-product", "hue-in-wall-guide"],
+    "note": "43 x 38 x 10 mm module connected to the free contacts of an existing wall switch."
+  },
+  "dimmer": {
+    "value": false,
+    "sources": ["hue-in-wall-guide"],
+    "note": "It does not switch a load; it sends commands to Hue lights, which do the dimming. It does not work with switches that have built-in dimmers."
+  },
+  "neutralRequired": {
+    "value": false,
+    "sources": ["hue-in-wall-guide"],
+    "note": "Battery powered (CR2450, at least 5 years), no wiring to mains. The separate wired module needs neutral."
+  },
+  "gangs": {
+    "value": null,
+    "sources": [],
+    "note": "Number of switch inputs per module not confirmed in the sources found."
+  },
+  "summary": "The Philips Hue Wall Switch Module is a battery-powered module that connects to the free contacts of an existing wall switch and turns it into a Hue control. It runs on a CR2450 coin cell that Hue rates at five years or more. It needs a Hue Bridge, and Matter reaches it only through the Bridge. It is not for conventional bulbs.",
+  "caveats": [
+    "Needs a Hue Bridge; without one only limited functions work.",
+    "The wall switch only sends commands. Non-Hue lights on that circuit stay on permanently.",
+    "Does not work with switches that have built-in dimmers or combined switch-and-socket plates.",
+    "There is also a wired Hue wall switch module that needs a neutral wire; this record covers the battery one."
+  ],
+  "sources": [
+    {"id": "hue-wall-switch-module-product", "url": "https://www.philips-hue.com/en-gb/p/hue-philips-hue-wall-switch-module/8719514318045", "title": "Hue Wall switch module", "publisher": "Philips Hue", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "hue-in-wall-guide", "url": "https://www.philips-hue.com/en-us/support/article/hue-in-wall-solutions/000016", "title": "Full Guide For Hue In-Wall Solutions", "publisher": "Philips Hue", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "csa-hue-wall-switch-module", "url": "https://csa-iot.org/csa_product/philips-hue-wall-switch-module/", "title": "Philips Hue Wall Switch Module - CSA-IOT", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11"},
+    {"id": "ha-hue", "url": "https://www.home-assistant.io/integrations/hue/", "title": "Philips Hue - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
