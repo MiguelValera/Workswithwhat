@@ -1,0 +1,22 @@
+---
+import CategoryChart from '../../../components/pages/CategoryChart.astro';
+import { getPublishedDevices, type Device } from '../../../lib/devices';
+import { CATEGORIES, type Category } from '../../../lib/categories';
+import { getRegionPages, marketOf, type Market } from '../../../lib/markets';
+
+// /us/smart-plugs/ and friends: only where the market has enough devices (see getRegionPages)
+export async function getStaticPaths() {
+  const pages = await getRegionPages();
+  const all = await getPublishedDevices();
+  return pages.flatMap(({ market, path }) => {
+    const cat = CATEGORIES.find((c) => path === `/${market.key}/${c.path}/`);
+    if (!cat) return [];
+    const devices = all.filter((d) => d.data.category === cat.key && marketOf(d) === market);
+    return [{ params: { market: market.key, category: cat.path }, props: { market, cat, devices } }];
+  });
+}
+
+const { market, cat, devices } = Astro.props as { market: Market; cat: Category; devices: Device[] };
+---
+
+<CategoryChart cat={cat} devices={devices} market={market} />

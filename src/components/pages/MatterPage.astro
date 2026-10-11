@@ -1,0 +1,126 @@
+---
+// Matter-certified devices: every market (/works-with/matter/) or one (/us/works-with/matter/).
+import Base from '../../layouts/Base.astro';
+import Refs from '../Refs.astro';
+import { RADIO_LABELS, devicePath, getPublishedDevices, categoryPhrase, type Device } from '../../lib/devices';
+import { CATEGORIES, specFacts } from '../../lib/categories';
+import { byMarket, marketOf, type Market } from '../../lib/markets';
+
+interface Props {
+  market?: Market;
+}
+const { market } = Astro.props;
+const all = (await getPublishedDevices()).filter((d) => !market || marketOf(d) === market);
+const path = market ? `/${market.key}/works-with/matter/` : '/works-with/matter/';
+const split = (list: Device[]) => (market ? [{ market, devices: list }] : byMarket(list));
+const matter = all.filter((d) => d.data.matter.certified);
+const groups = CATEGORIES.map((cat) => {
+  const list = matter.filter((d) => d.data.category === cat.key);
+  return {
+    cat,
+    list,
+    wifi: list.filter((d) => d.data.matter.transport === 'wifi'),
+    thread: list.filter((d) => d.data.matter.transport === 'thread'),
+  };
+}).filter((g) => g.list.length > 0);
+const { short: what, long: whatLong } = categoryPhrase(groups.map((g) => g.cat.plural));
+
+const title = market ? `Matter ${what} for ${market.phrase}` : `Matter ${what}`;
+const description = `${matter.length} Matter-certified ${whatLong}${market ? ` for ${market.phrase}` : ''}, split by Wi-Fi and Thread, with what each needs to work in Apple Home, Google Home, Alexa, SmartThings and Home Assistant.`;
+---
+
+<Base
+  title={title}
+  description={description}
+  crumbs={
+    market
+      ? [
+          { name: market.label, path: `/${market.key}/` },
+          { name: 'Matter', path },
+        ]
+      : [
+          { name: 'By ecosystem', path: '/works-with/' },
+          { name: 'Matter', path },
+        ]
+  }
+>
+  <h1>{title.replace(/^./, (c) => c.toUpperCase())}</h1>
+  <p class="lede">
+    {matter.length} of the {all.length} devices we've checked are Matter-certified:
+    {' '}{matter.filter((d) => d.data.matter.transport === 'wifi').length} over Wi-Fi and
+    {' '}{matter.filter((d) => d.data.matter.transport === 'thread').length} over Thread.
+  </p>
+
+  <nav class="toc" aria-label="On this page">
+    <span class="toc-label">Jump to:</span>
+    {
+      groups.flatMap((g) => [
+        g.wifi.length > 0 && <a href={`#${g.cat.path}-wifi`}>{g.cat.label} over Wi-Fi ({g.wifi.length})</a>,
+        g.thread.length > 0 && <a href={`#${g.cat.path}-thread`}>{g.cat.label} over Thread ({g.thread.length})</a>,
+      ])
+    }
+    <a href="#what-matter-means">What Matter means</a>
+  </nav>
+  <h2 id="what-matter-means">What Matter means for a device</h2>
+  <p>
+    A Matter-certified device can be added to any platform that acts as a Matter controller, including Apple Home,
+    Google Home, Alexa, SmartThings and Home Assistant, without the brand's own skill or cloud. You can also share
+    it with more than one platform at once.
+  </p>
+  <p>
+    <strong>Wi-Fi devices</strong> join your existing network. <strong>Thread devices</strong> use a low-power mesh and
+    need a Thread border router, which many recent smart speakers and streaming boxes include. Either way, the
+    platform you add it to needs its own Matter hub for automations and remote access.
+  </p>
+
+  {
+    groups.map((g) =>
+      [
+        { label: 'over Wi-Fi', list: g.wifi, id: `${g.cat.path}-wifi` },
+        { label: 'over Thread', list: g.thread, id: `${g.cat.path}-thread` },
+      ].map(
+        (t) =>
+          t.list.length > 0 && (
+            <>
+              <h2 id={t.id}>Matter {g.cat.plural} {t.label}</h2>
+              {split(t.list).map((m) => (
+              <>
+              {!market && <h3 id={`${t.id}-${m.market.key}`}>{m.market.label} ({m.devices.length})</h3>}
+              <div class="table-scroll">
+                <table role="table" class="stack pair">
+                  <thead role="rowgroup">
+                    <tr role="row">
+                      <th role="columnheader" scope="col">Device</th>
+                      <th role="columnheader" scope="col">Radios</th>
+                      <th role="columnheader" scope="col">{g.cat.specs[0].label}</th>
+                      <th role="columnheader" scope="col">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody role="rowgroup">
+                    {m.devices.map((d) => (
+                      <tr role="row">
+                        <th role="rowheader" scope="row" class="name">
+                          <a href={devicePath(d)}>{d.data.name}</a>
+                          <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
+                        </th>
+                        <td role="cell" data-label="Radios">{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+                        <td role="cell" data-label={g.cat.specs[0].label}>{specFacts(d.data)[0].text}</td>
+                        <td role="cell" class="wide">{d.data.matter.note}<Refs ids={d.data.matter.sources} all={d.data.sources} base={devicePath(d)} /></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              </>
+              ))}
+            </>
+          ),
+      ),
+    )
+  }
+
+  <p class="muted small">
+    Only devices that are Matter-certified themselves are listed. Devices that reach Matter through a bridge (such as
+    a Zigbee device behind a hub) are on the full charts.
+  </p>
+</Base>

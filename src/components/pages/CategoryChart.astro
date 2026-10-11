@@ -1,0 +1,110 @@
+---
+// The comparison chart for one category: all markets (/smart-plugs/, one table per
+// market) or one market (/us/smart-plugs/, one table).
+import Base from '../../layouts/Base.astro';
+import CompareTable from '../CompareTable.astro';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemSlug, formatDate, type Device } from '../../lib/devices';
+import type { Category } from '../../lib/categories';
+import { byMarket, regionPath, type Market } from '../../lib/markets';
+
+interface Props {
+  cat: Category;
+  devices: Device[];
+  market?: Market;
+}
+const { cat, devices, market } = Astro.props;
+const singularTitle = cat.singular.replace(/^./, (c) => c.toUpperCase());
+const path = market ? `/${market.key}/${cat.path}/` : `/${cat.path}/`;
+const title = market
+  ? `${market.short} ${cat.singular} compatibility chart: Apple Home, Google Home, Alexa, Matter`
+  : `${singularTitle} compatibility chart: Apple Home, Google Home, Alexa, Matter`;
+const description = market
+  ? `${devices.length} ${cat.plural} for ${market.phrase} compared by ecosystem support, radio, Matter certification and hub needs. Every cell links back to a source.`
+  : `${devices.length} ${cat.plural} compared by ecosystem support, radio, Matter certification and hub needs. Every cell links back to a source.`;
+const api = `/api/${cat.path}.json`;
+const groups = await Promise.all(
+  byMarket(devices).map(async (g) => ({ ...g, regionPage: await regionPath(g.market, `/${cat.path}/`) })),
+);
+const ecoLinks = await Promise.all(
+  ECOSYSTEMS.map(async (e) => {
+    const global = `/works-with/${ecosystemSlug(e)}/`;
+    return { e, href: (market && (await regionPath(market, global))) || global };
+  }),
+);
+
+const newest = devices.map((d) => d.data.updatedAt).sort().at(-1);
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: market ? `${market.short} ${cat.singular} ecosystem compatibility` : `${singularTitle} ecosystem compatibility`,
+    description,
+    url: new URL(path, Astro.site).href,
+    ...(newest && { dateModified: newest }),
+    creator: { '@type': 'Organization', name: 'Workswithwhat', url: Astro.site!.href },
+    variableMeasured: ['Matter certification', ...ECOSYSTEMS.map((e) => `${ECOSYSTEM_LABELS[e]} compatibility`)],
+    distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: new URL(api, Astro.site).href }],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: market ? `${cat.label} for ${market.phrase}` : cat.label,
+    itemListElement: devices.map((d, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: new URL(devicePath(d), Astro.site).href,
+      name: d.data.name,
+    })),
+  },
+];
+const crumbs = market
+  ? [
+      { name: market.label, path: `/${market.key}/` },
+      { name: cat.label, path },
+    ]
+  : [{ name: cat.label, path }];
+---
+
+<Base title={title} description={description} crumbs={crumbs} jsonLd={jsonLd}>
+  <h1>{singularTitle} compatibility chart{market && ` for ${market.phrase}`}</h1>
+  <p class="lede">
+    Which {cat.singular} works with which platform, and how it gets there: directly, over Matter, or through a hub.
+    Open any one for the details and the sources behind each answer.
+    {market && <> Only models sold in {market.phrase} are listed; <a href={`/${cat.path}/`}>see every region</a>.</>}
+  </p>
+  {
+    market ? (
+      <CompareTable devices={devices} brandJump />
+    ) : (
+      <>
+        <nav class="toc" aria-label="Jump to region">
+          <span class="toc-label">Region:</span>
+          {groups.map((g) => <a href={`#${g.market.key}`}>{g.market.label} ({g.devices.length})</a>)}
+        </nav>
+        {groups.map((g) => (
+          <section aria-labelledby={g.market.key}>
+            <h2 id={g.market.key}>{cat.label} for {g.market.phrase}</h2>
+            {g.regionPage && (
+              <p class="muted small">
+                <a href={g.regionPage}>Only {g.market.label}: the {g.market.short} {cat.singular} chart</a>
+              </p>
+            )}
+            <CompareTable devices={g.devices} brandJump anchorPrefix={`${g.market.key}-`} />
+          </section>
+        ))}
+      </>
+    )
+  }
+  {newest && <p class="muted small">Last updated <time datetime={newest}>{formatDate(newest)}</time>. The same data is available as <a href={api}>JSON</a>.</p>}
+  <p class="muted">
+    Looking for one platform?{' '}
+    {
+      ecoLinks.map(({ e, href }, i) => (
+        <>
+          {i > 0 && ' · '}
+          <a href={href}>{ECOSYSTEM_LABELS[e]}</a>
+        </>
+      ))
+    }
+  </p>
+</Base>
