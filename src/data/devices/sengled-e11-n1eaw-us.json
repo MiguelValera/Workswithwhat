@@ -1,0 +1,156 @@
+{
+  "category": "smart-bulb",
+  "brand": "Sengled",
+  "model": "E11-N1EAW",
+  "name": "Sengled Zigbee Color A19 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://us.sengled.com/products/zigbee-color-a19-e26-hub-required",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "sengled-zigbee-color-a19"
+    ],
+    "note": "Zigbee only; Sengled sells this bulb as 'Hub Required'."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Sengled sells it as a Zigbee, hub-required bulb and does not mention Matter. We found no explicit statement or CSA listing either way."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Sengled does not list Apple Home for this bulb; no official source either way."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Sengled Smart Hub",
+      "sources": [
+        "sengled-google-home",
+        "sengled-hub-faq"
+      ],
+      "note": "Sengled's guide links the Sengled Home account (hub and its bulbs) to Google Home, so it depends on Sengled's cloud. Google Home speakers are not Zigbee hubs."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Echo with built-in Zigbee hub",
+      "sources": [
+        "sengled-hub-faq",
+        "sengled-zigbee-color-a19"
+      ],
+      "note": "Sengled lists Echo models with a built-in Zigbee hub (Echo Plus, Echo Show 2, Echo Studio). Echo and Echo Dot are not hubs. The Sengled Alexa skill route was reportedly withdrawn in 2025 (see caveats)."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "SmartThings hub",
+      "sources": [
+        "sengled-smartthings",
+        "sengled-hub-faq"
+      ],
+      "note": "Sengled lists the SmartThings hub as compatible and documents pairing."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant or Sengled source names this bulb; a generic Zigbee coordinator likely works but is unconfirmed."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "sengled-zigbee-color-a19",
+      "sengled-hub-faq"
+    ],
+    "note": "For bulbs, this means needing a bridge or hub for basic app control. This Zigbee bulb needs a Sengled hub, SmartThings hub or Zigbee Echo."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No official source describes local control. The Sengled app path depends on Sengled's cloud; third-party Zigbee hubs may differ."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": [
+      "sengled-zigbee-color-a19"
+    ],
+    "note": "16 million colours plus tunable white."
+  },
+  "lumens": {
+    "value": 800,
+    "sources": [
+      "sengled-starter-kit-color"
+    ],
+    "note": "800 lm per Sengled's starter-kit listing for the same Zigbee Color A19/E26 bulb; the single-bulb page gives 8.6 W (60 W equivalent) but no lumen figure."
+  },
+  "bulbBase": {
+    "value": "E26 (A19)",
+    "sources": [
+      "sengled-zigbee-color-a19"
+    ]
+  },
+  "summary": "Nothing controls the Sengled Zigbee Color A19 (E11-N1EAW) without a Zigbee hub. SmartThings works through a SmartThings hub, Alexa through an Echo with a built-in Zigbee hub (Echo Plus, Echo Show 2, Echo Studio), and Google Home through a Sengled Smart Hub linked via Sengled's cloud. Apple Home and Home Assistant are unconfirmed. It's a US full-colour bulb on an E26 base, rated at 800 lumens, with 16 million colours plus tunable white. Amazon reportedly withdrew the Sengled Alexa skill in 2025, so pairing directly to a Zigbee Echo is the Alexa route that doesn't rely on Sengled's account.",
+  "caveats": [
+    "Zigbee only: it needs a Zigbee hub and has no Wi-Fi or Bluetooth.",
+    "Amazon removed the Sengled Alexa skill in 2025, according to a PCWorld report citing a series of Sengled service outages.",
+    "Google Home control goes through Sengled's cloud, so it depends on that service being up.",
+    "A regular Echo or Echo Dot can't control it; you need an Echo model with a built-in Zigbee hub."
+  ],
+  "sources": [
+    {
+      "id": "sengled-zigbee-color-a19",
+      "url": "https://us.sengled.com/products/zigbee-color-a19-e26-hub-required",
+      "title": "Sengled Zigbee Color A19/E26 Bulbs",
+      "publisher": "Sengled",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "sengled-hub-faq",
+      "url": "https://support.sengled.com/hc/en-us/articles/360009014534-Do-I-need-a-hub-to-control-the-Zigbee-Smart-LED-s-and-Accessories",
+      "title": "Do I need a hub to control the Zigbee Smart LED's and Accessories?",
+      "publisher": "Sengled",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "sengled-smartthings",
+      "url": "https://support.sengled.com/hc/en-us/articles/360020226334-Adding-Sengled-Smart-LED-bulbs-to-your-Samsung-SmartThings-hub",
+      "title": "Adding Sengled Smart LED bulbs to your Samsung SmartThings hub",
+      "publisher": "Sengled",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "sengled-google-home",
+      "url": "https://support.sengled.com/hc/en-us/articles/360012331634-Setting-up-the-devices-on-your-Sengled-Home-app-to-work-with-your-Google-Home-Assistant-device-s",
+      "title": "Setting up the devices on your Sengled Home app to work with your Google Home Assistant device(s)",
+      "publisher": "Sengled",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "sengled-starter-kit-color",
+      "url": "https://us.sengled.com/products/starter-kit-2-zigbee-color-a19-e26",
+      "title": "Starter Kit: 2 Zigbee Color A19/E26",
+      "publisher": "Sengled",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "pcworld-sengled-skill",
+      "url": "https://www.pcworld.com/article/2864586/amazon-yanks-sengleds-alexa-skill-after-a-series-of-service-outages.html",
+      "title": "Amazon yanks Sengled's Alexa skill after a series of service outages",
+      "publisher": "PCWorld",
+      "kind": "review",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
+  "updatedAt": "2026-10-11"
+}

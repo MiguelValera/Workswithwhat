@@ -2,51 +2,51 @@
   "category": "smart-bulb",
   "brand": "IKEA",
   "model": "KAJPLATS LED bulb E27 1055 lm, colour and white spectrum (706.085.75)",
-  "name": "IKEA KAJPLATS E27 1055 lm Smart Colour and White Spectrum Bulb (EU)",
+  "name": "IKEA KAJPLATS E27 colour bulb (EU)",
   "regions": ["EU"],
-  "officialUrl": "https://www.ikea.com/lt/en/p/kajplats-led-bulb-e27-1055-lumen-smart-colour-and-white-spectrum-globe-opal-white-70608575/",
+  "officialUrl": "https://www.ikea.com/se/en/p/kajplats-led-bulb-e27-1055-lumen-smart-colour-and-white-spectrum-globe-opal-white-70608575/",
   "radios": {
     "value": ["thread", "bluetooth"],
-    "sources": ["csa-kajplats-e27-cws", "ikea-kajplats-e27-cws-lt"],
-    "note": "IKEA describes it as Matter over Thread. The CSA listing gives Thread and Bluetooth as transports; Bluetooth is presumably for Matter commissioning."
+    "sources": ["csa-kajplats-e27-cws", "ikea-kajplats-e27-cws-se"],
+    "note": "IKEA describes it as Matter over Thread. Bluetooth comes only from the CSA certification listing (Thread and Bluetooth transports); IKEA's page doesn't mention it, and it is presumably for Matter commissioning."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
-    "sources": ["csa-kajplats-e27-cws", "ikea-kajplats-e27-cws-lt"],
-    "note": "CSA lists 'KAJPLATS E27 CWS globe 1055lm' as Matter-certified (certified 2025-12-16) with Thread and Bluetooth transport."
+    "sources": ["csa-kajplats-e27-cws", "ikea-kajplats-e27-cws-se", "ikea-kajplats-faq"],
+    "note": "CSA certificate CSA25G1ZMAT49049-24 (certified 2025-12-16, Matter 1.4, Thread and Bluetooth). IKEA says KAJPLATS replaced TRÅDFRI in January 2026, mainly for security and Matter compatibility."
   },
   "compatibility": {
     "apple_home": {
       "status": "matter",
-      "sources": ["ikea-kajplats-e27-cws-lt", "csa-kajplats-e27-cws"],
+      "sources": ["ikea-kajplats-e27-cws-se", "csa-kajplats-e27-cws"],
       "note": "IKEA names Apple among compatible systems; works via Matter over Thread and needs a Thread border router."
     },
     "google_home": {
       "status": "matter",
-      "sources": ["ikea-kajplats-e27-cws-lt", "csa-kajplats-e27-cws"],
+      "sources": ["ikea-kajplats-e27-cws-se", "csa-kajplats-e27-cws"],
       "note": "IKEA names Google among compatible systems; works via Matter over Thread and needs a Thread border router."
     },
     "alexa": {
       "status": "matter",
-      "sources": ["ikea-kajplats-e27-cws-lt", "csa-kajplats-e27-cws"],
+      "sources": ["ikea-kajplats-e27-cws-se", "csa-kajplats-e27-cws"],
       "note": "IKEA names Amazon among compatible systems; works via Matter over Thread and needs an Echo that is a Thread border router."
     },
     "smartthings": {
       "status": "matter",
-      "sources": ["ikea-kajplats-e27-cws-lt", "csa-kajplats-e27-cws"],
+      "sources": ["ikea-kajplats-e27-cws-se", "csa-kajplats-e27-cws"],
       "note": "IKEA names Samsung among compatible systems; works via Matter over Thread and needs a SmartThings hub that is a Thread border router."
     },
     "home_assistant": {
       "status": "matter",
       "sources": ["ha-matter", "csa-kajplats-e27-cws"],
-      "note": "Via the official Matter integration with a Thread border router. Users also report a Zigbee pairing mode, which we haven't confirmed officially."
+      "note": "Via the official Matter integration with a Thread border router."
     }
   },
   "hubRequired": {
     "value": true,
-    "sources": ["ikea-kajplats-e27-cws-lt"],
-    "note": "IKEA says phone control needs a Thread border router, e.g. its DIRIGERA hub. A HomePod, Nest Hub or Thread-capable Echo also works; there's no direct Bluetooth app control."
+    "sources": ["ikea-kajplats-e27-cws-se"],
+    "note": "IKEA says phone control needs a Thread border router, e.g. its DIRIGERA hub. A HomePod, Nest Hub or Thread-capable Echo also works as a border router."
   },
   "localControl": {
     "value": true,
@@ -55,24 +55,32 @@
   },
   "colorType": {
     "value": "color",
-    "sources": ["ikea-kajplats-e27-cws-lt"],
+    "sources": ["ikea-kajplats-e27-cws-se"],
     "note": "Colour and white spectrum: full colour plus adjustable white."
   },
   "lumens": {
     "value": 1055,
-    "sources": ["ikea-kajplats-e27-cws-lt", "csa-kajplats-e27-cws"]
+    "sources": ["ikea-kajplats-e27-cws-se", "csa-kajplats-e27-cws"]
   },
   "bulbBase": {
     "value": "E27",
-    "sources": ["ikea-kajplats-e27-cws-lt"]
+    "sources": ["ikea-kajplats-e27-cws-se"]
   },
-  "summary": "IKEA's KAJPLATS range has taken over from TRÅDFRI, so this record covers the KAJPLATS E27 colour and white spectrum bulb rather than TRÅDFRI. It is a 1055-lumen colour bulb that runs Matter over Thread and is Matter-certified. It works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant through Matter, but it needs a Thread border router such as IKEA's DIRIGERA hub.",
-  "caveats": ["Needs a Thread border router (e.g. IKEA DIRIGERA, HomePod mini, Nest Hub 2nd gen) even for phone control.", "Phone control depends on the Thread network: there is no Bluetooth fallback for direct app control."],
+  "summary": "Bring a Thread border router and the IKEA KAJPLATS E27 colour bulb works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter. Without one, not even your phone can control it. IKEA's DIRIGERA hub does the job, as does a HomePod, Nest Hub or Thread-capable Echo. The bulb (706.085.75) puts out 1055 lumens with full colour plus adjustable white, and it's Matter-certified (Matter 1.4). IKEA says KAJPLATS replaced TRÅDFRI in January 2026.",
+  "caveats": ["Needs a Thread border router (IKEA DIRIGERA, HomePod, Nest Hub or a Thread-capable Echo) even for phone control."],
   "sources": [
     {
-      "id": "ikea-kajplats-e27-cws-lt",
-      "url": "https://www.ikea.com/lt/en/p/kajplats-led-bulb-e27-1055-lumen-smart-colour-and-white-spectrum-globe-opal-white-70608575/",
-      "title": "KAJPLATS LED bulb E27 1055 lumen, smart colour and white spectrum/globe opal white",
+      "id": "ikea-kajplats-e27-cws-se",
+      "url": "https://www.ikea.com/se/en/p/kajplats-led-bulb-e27-1055-lumen-smart-colour-and-white-spectrum-globe-opal-white-70608575/",
+      "title": "KAJPLATS LED bulb E27 1055 lumen, smart colour and white spectrum/globe opal white - IKEA Sweden",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ikea-kajplats-faq",
+      "url": "https://www.ikea.com/se/en/customer-service/knowledge/articles/ac4f925d-8e4d-4a75-abaa-02b454876f1a.html",
+      "title": "Has KAJPLATS replaced TRÅDFRI LED bulb?",
       "publisher": "IKEA",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -94,6 +102,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

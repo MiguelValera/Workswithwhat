@@ -1,0 +1,127 @@
+{
+  "category": "smart-plug",
+  "brand": "Aqara",
+  "model": "ZNCZ12LM",
+  "name": "Aqara Smart Plug (US, ZNCZ12LM)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.aqara.com/us/product/smart-plug/",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "aqara-plug-us-specs"
+    ],
+    "note": "Zigbee; it talks to an Aqara Zigbee 3.0 hub, not to Wi-Fi."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No CSA listing found for ZNCZ12LM; the plug itself is Zigbee. Aqara's Hub M3 can expose Aqara Zigbee devices to Matter as a bridge, but no page names this plug."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Aqara Zigbee hub",
+      "sources": [
+        "aqara-plug-us-store",
+        "aqara-plug-us-specs"
+      ],
+      "note": "Aqara lists Apple HomeKit; it reaches Apple Home through an Aqara hub."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Aqara Zigbee hub",
+      "sources": [
+        "aqara-plug-us-store",
+        "aqara-plug-us-specs"
+      ],
+      "note": "Aqara lists Google Assistant; works through an Aqara hub and the Aqara account link."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Aqara Zigbee hub",
+      "sources": [
+        "aqara-plug-us-store",
+        "aqara-plug-us-specs"
+      ],
+      "note": "Aqara lists Amazon Alexa; works through an Aqara hub and the Aqara skill."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [
+        "aqara-plug-us-partners"
+      ],
+      "note": "Aqara's partnerships page lists SmartThings, but the US store page and spec sheet don't, so the official sources disagree."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Aqara or Home Assistant page names this model. Users run Aqara Zigbee plugs through Zigbee coordinators, but that isn't documented here."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "aqara-plug-us-specs",
+      "aqara-plug-us-store"
+    ],
+    "note": "Spec sheet: hub required (Aqara Zigbee 3.0 hub). Sold without a hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "We found no Aqara US page on whether it keeps working through the hub without internet."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "aqara-plug-us-store"
+    ],
+    "note": "Aqara says the app tracks the power use of whatever is plugged in."
+  },
+  "maxLoadWatts": {
+    "value": 1875,
+    "sources": [
+      "aqara-plug-us-specs",
+      "aqara-plug-us-store"
+    ],
+    "note": "1875 W, 15 A, 100-125 V AC, 60 Hz. One Aqara partnerships page shows 10 A / 2300 W, which matches the EU model, not this one."
+  },
+  "summary": "The Aqara Smart Plug for the US (ZNCZ12LM) is a Zigbee plug that needs an Aqara hub; it can't join Wi-Fi itself. Through the hub, Aqara lists Apple HomeKit, Alexa and Google Assistant, and the Aqara app tracks energy use. Aqara rates it at 15 A / 1875 W.",
+  "caveats": [
+    "Needs an Aqara Zigbee hub, sold separately.",
+    "SmartThings support is unclear: Aqara's own pages disagree.",
+    "No Matter on the plug itself; a Matter bridge such as the Aqara Hub M3 is the route to Matter."
+  ],
+  "sources": [
+    {
+      "id": "aqara-plug-us-specs",
+      "url": "https://www.aqara.com/us/product/smart-plug/specs/",
+      "title": "Smart Plug (US Version) Specs - Aqara",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-plug-us-store",
+      "url": "https://us.aqara.com/products/smart-plug",
+      "title": "Aqara Smart Plug - Remote Control, Energy Monitoring, and App-Controlled Plug",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-plug-us-partners",
+      "url": "https://partnerships.aqara.com/products/smart-plug",
+      "title": "Smart Plug US",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

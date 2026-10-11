@@ -1,0 +1,157 @@
+{
+  "category": "smart-plug",
+  "brand": "Hive",
+  "model": "Active Plug",
+  "name": "Hive Active Plug (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.hivehome.com/shop/smart-home/hive-plug",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "hive-plug-specs"
+    ],
+    "note": "Zigbee to the Hive Hub; it doesn't join Wi-Fi itself. UK/Ireland type G plug."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Hive's plug pages don't mention Matter, and we found no CSA listing for it."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Hive Hub",
+      "sources": [
+        "hive-plug-shop",
+        "hive-homekit"
+      ],
+      "note": "Hive lists Apple HomeKit and Siri Shortcuts, through the Hive Hub. A Screwfix listing says it doesn't work with HomeKit, so check before relying on it."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Hive Hub",
+      "sources": [
+        "hive-plug-shop"
+      ],
+      "note": "Hive lists Google Assistant; the plug reaches it through the Hive Hub and Hive account."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Hive Hub",
+      "sources": [
+        "hive-plug-shop",
+        "hive-alexa"
+      ],
+      "note": "Through the Hive Alexa skill and the Hive Hub. Hive says the Alexa link doesn't support multi-user or multi-home setups."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Hive or SmartThings page covers it. SmartThings forum users report mixed results pairing it directly over Zigbee."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "Hive Hub",
+      "sources": [
+        "ha-hive"
+      ],
+      "note": "Home Assistant's official Hive integration lists the Active Plug as a switch. It uses your Hive account (owner login, 2FA on) and the Hive Hub."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "hive-plug-shop",
+      "hive-product-news"
+    ],
+    "note": "Needs a Hive Hub; first-time Hive buyers must buy one. Hive has retired some older hub models, so check yours is still supported."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "We found no Hive statement on control without the internet."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [
+      "hive-energy-costs"
+    ],
+    "note": "A Hive support page describes power readings in watts for the 'Hive Plug', but Hive's site mixes the Active Plug and newer Hive Plug names, so we can't confirm it for this model."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [],
+    "note": "Hive's pages don't give a load rating. UK retailers list it as 13 A, but no official wattage figure was found."
+  },
+  "summary": "The Hive Active Plug is a UK Zigbee plug that needs a Hive Hub; first-time Hive buyers have to buy the hub too. Through the hub and Hive app, Hive lists Alexa, Google Assistant, Apple HomeKit and IFTTT, and Home Assistant's official Hive integration supports it. It takes up to six on/off schedule slots a day and is for indoor use only.",
+  "caveats": [
+    "Needs a Hive Hub; it can't connect to Wi-Fi on its own.",
+    "Indoor use only. Hive advises against using it for fridges, freezers, heaters or medical and safety equipment.",
+    "Hive's Alexa link doesn't support multi-user or multi-home setups.",
+    "Home Assistant needs the Hive account owner's login with two-factor authentication on."
+  ],
+  "sources": [
+    {
+      "id": "hive-plug-shop",
+      "url": "https://www.hivehome.com/shop/smart-home/hive-plug",
+      "title": "Hive Plug",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hive-plug-specs",
+      "url": "https://hivehome.com/products/hive-active-plug/tech-specs",
+      "title": "Hive Plug",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hive-homekit",
+      "url": "https://community.hivehome.com/s/article/What-is-HomeKit-and-does-it-work-with-Hive",
+      "title": "What is HomeKit and does it work with Hive?",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hive-alexa",
+      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=240318152810310&view=print",
+      "title": "Amazon Alexa Integration with Hive",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hive-energy-costs",
+      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=240902091740520",
+      "title": "Understanding Appliance Energy Costs with Your Hive Plug - Hive Support",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "hive-product-news",
+      "url": "https://www.hivehome.com/product-news",
+      "title": "Product News",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-hive",
+      "url": "https://www.home-assistant.io/integrations/hive/",
+      "title": "Hive - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
