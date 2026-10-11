@@ -99,6 +99,9 @@ export const LOCK_FITS = ['deadbolt', 'retrofit', 'cylinder', 'lever'] as const;
 // wall = wall thermostat that switches a heating/cooling system (US HVAC, boiler);
 // radiator-valve = thermostatic head that replaces a radiator's valve head (TRV)
 export const THERMOSTAT_TYPES = ['wall', 'radiator-valve'] as const;
+// wall-switch = replaces a wall switch (US/UK style or EU rocker); module = in-wall relay or
+// dimmer module that sits behind an existing switch (e.g. Shelly, Sonoff)
+export const SWITCH_FORMS = ['wall-switch', 'module'] as const;
 // indoor / outdoor = standalone cameras; doorbell = video doorbell; floodlight = camera with built-in lights
 export const CAMERA_TYPES = ['indoor', 'outdoor', 'doorbell', 'floodlight'] as const;
 // what a sensor reports; presence = mmWave-style presence that sees people who sit still
@@ -175,7 +178,20 @@ const cameraSchema = z
   })
   .strict();
 
-export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor', 'smart-camera'] as const;
+const switchSchema = z
+  .object({
+    ...baseShape,
+    category: z.literal('smart-switch'),
+    switchForm: fact(z.enum(SWITCH_FORMS)),
+    dimmer: fact(z.boolean()),
+    // needs a neutral wire at the switch box
+    neutralRequired: fact(z.boolean()),
+    // e.g. "1 gang", "2 channels"; the maker's wording
+    gangs: fact(z.string().min(1).max(30)),
+  })
+  .strict();
+
+export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor', 'smart-camera', 'smart-switch'] as const;
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const COMMON_FACTS = ['radios', 'hubRequired', 'localControl'] as const;
@@ -186,12 +202,13 @@ export const CATEGORY_FACTS = {
   'smart-thermostat': ['thermostatType', 'systems', 'power'],
   'smart-sensor': ['senses', 'power'],
   'smart-camera': ['cameraType', 'power', 'localStorage', 'subscription'],
+  'smart-switch': ['switchForm', 'dimmer', 'neutralRequired', 'gangs'],
 } as const satisfies Record<CategoryKey, readonly string[]>;
 
 type FactValue = { value: unknown; sources: string[] };
 
 export const deviceSchema = z
-  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema, cameraSchema])
+  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema, cameraSchema, switchSchema])
   .superRefine((d, ctx) => {
     const ids = d.sources.map((s) => s.id);
     const known = new Set(ids);

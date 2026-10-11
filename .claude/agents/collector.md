@@ -11,7 +11,7 @@ Read `CLAUDE.md` and `src/schema/device.ts` before you start. The schema decides
 
 ## Categories
 
-Set `category` to `smart-plug`, `smart-bulb`, `smart-lock`, `smart-thermostat`, `smart-sensor` or `smart-camera`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
+Set `category` to `smart-plug`, `smart-bulb`, `smart-lock`, `smart-thermostat`, `smart-sensor`, `smart-camera` or `smart-switch`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
 - smart-plug: `energyMonitoring` (boolean), `maxLoadWatts` (integer).
 - smart-bulb: `colorType` ("white", "tunable-white" or "color"), `lumens` (integer), `bulbBase` (e.g. "E27", "E26 (A19)", "GU10", "B22").
 - smart-lock: `lockFit` ("deadbolt" = replaces a whole US deadbolt, "retrofit" = fits over the existing interior thumb-turn or cylinder and keeps your keys, "cylinder" = replaces a euro-profile cylinder, "lever" = handle set with the lock built in), `keypad` (boolean: a keypad on the lock itself, not a separate accessory), `power` (string, e.g. "4 × AA", "Rechargeable battery").
@@ -22,6 +22,8 @@ Set `category` to `smart-plug`, `smart-bulb`, `smart-lock`, `smart-thermostat`, 
   For sensors, `hubRequired` means a brand hub or gateway is needed for basic app control (e.g. an Aqara Zigbee hub, a Hue Bridge); a generic Thread border router is not a hub, say so in the note.
 - smart-camera (cameras and video doorbells): `cameraType` ("indoor", "outdoor", "doorbell", "floodlight"), `power` (string, e.g. "Wired (doorbell 16–24 V AC)", "Rechargeable battery", "USB-C (mains)"), `localStorage` (boolean: records video without a cloud plan, on microSD, a base station or an NVR), `subscription` (string, max 80 chars: what a paid plan is needed for as the maker states it, e.g. "Video history and person alerts (Ring Protect)", or "None: all features free"; null if the maker doesn't say).
   For cameras, `hubRequired` means a base station or hub is needed for basic use (e.g. a HomeBase for some eufy cameras, a Sync Module for Blink). Ecosystem support for cameras usually means live view on a smart display or in the Home app; put what works (live view, doorbell chime, HomeKit Secure Video, recordings) in the note. Matter camera support is new: don't assume it.
+- smart-switch (wall switches, dimmers and in-wall modules): `switchForm` ("wall-switch" = replaces the switch itself, "module" = relay or dimmer that sits behind an existing switch), `dimmer` (boolean), `neutralRequired` (boolean: needs a neutral wire at the box; if the maker says "neutral or no-neutral" or gives a no-neutral variant, use false and explain), `gangs` (string, the maker's wording, e.g. "1 gang", "2 channels").
+  Regional variants matter a lot here (US 120 V vs EU 230 V, box sizes): one record per region. For switches, `hubRequired` means a brand hub is needed for basic app control (e.g. Lutron Caséta's Smart Bridge, a Hue Bridge, a Zigbee hub).
 A bulb sold in several bases or brightness variants is one record per model number; pick the one asked for.
 
 ## Process
