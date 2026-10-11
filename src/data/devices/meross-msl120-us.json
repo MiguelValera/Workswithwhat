@@ -60,7 +60,7 @@
   "lumens": {
     "value": 810,
     "sources": ["meross-msl120"],
-    "note": "810 lm, sold as a 60 W equivalent; 9 W, per Meross's MSL120 page. Meross's shop also uses the name MSL120HK for a newer 'Pro' bulb, which this record doesn't cover."
+    "note": "810 lm, sold as a 60 W equivalent; 9 W, per Meross's MSL120 page."
   },
   "bulbBase": {
     "value": "E26 (A19)",
@@ -70,7 +70,7 @@
   "summary": "Siri and the Home app control the Meross MSL120 directly: Meross lists Apple HomeKit for this colour bulb, and it joins 2.4 GHz Wi-Fi without a hub. Meross also lists Alexa, Google Assistant and SmartThings. This US version is an E26 bulb rated at 810 lumens (60 W equivalent, 9 W), with RGB colour and tunable white from 2700 to 6500 K. Home Assistant has no official Meross integration, and Matter isn't confirmed.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
-    "This record follows Meross's MSL120 product page. Meross's shop also uses the name MSL120HK for a newer 'Pro' bulb, which isn't covered here; check the box for the HomeKit logo.",
+    "This record follows Meross's MSL120 product page; check the box for the HomeKit logo.",
     "This record is the US E26 (90–125 V) version; Meross sells E27 and B22 versions for other markets.",
     "Home Assistant has no official Meross integration; pairing through HA's HomeKit Device integration may work but isn't documented for this model.",
     "The 'works with Matter' line on some Meross shop pages is brand-wide, and nothing confirms Matter for this bulb."
@@ -80,14 +80,6 @@
       "id": "meross-msl120",
       "url": "https://www.meross.com/en-gc/product/28/article/",
       "title": "Smart Light Bulb that Changes Color - Meross MSL120",
-      "publisher": "Meross",
-      "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "meross-msl120hk-pro-shop",
-      "url": "https://shop.meross.com/products/upgraded-meross-smart-bulb-eu-version",
-      "title": "Meross Smart LED Light Bulb Pro, MSL120HK, 2 Pack(E26/E27 Base)",
       "publisher": "Meross",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
