@@ -100,9 +100,10 @@
     ],
     "note": "15 A / 1800 W, with overheating, overvoltage, overcurrent and overpower protection."
   },
-  "summary": "The Shelly Plug Gen4 (US), model S4PL-00116US, is a Matter-certified Wi-Fi smart plug that also has Bluetooth and Zigbee radios. It measures power and is rated 15 A / 1800 W. Shelly lists Alexa, Google Home and SmartThings support, and Home Assistant's official Shelly integration supports it.",
+  "summary": "Matter over Wi-Fi connects the Shelly Plug Gen4 (US), model S4PL-00116US, to Apple Home, Google Home, Alexa and SmartThings, and Home Assistant picks it up locally through its official Shelly integration. It's CSA-certified, needs no hub, and also carries Bluetooth and Zigbee radios (it can act as a Zigbee router). Rated 15 A / 1800 W, it has a built-in power meter and keeps schedules and scripts on the device.",
   "caveats": [
-    "Apple Home works through Matter only; Apple Home needs a home hub for remote control and automations."
+    "Apple Home needs a home hub for remote control and automations.",
+    "Alexa, Google Home and SmartThings are confirmed only through Matter, so you need a Matter-capable Echo, Google Matter controller or SmartThings Matter hub."
   ],
   "sources": [
     {

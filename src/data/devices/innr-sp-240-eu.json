@@ -90,10 +90,11 @@
     "sources": [],
     "note": "Innr's product page gives a maximum load current of 16 A; no watt figure found on an Innr page."
   },
-  "summary": "The Innr SP 240 (EU) is a Zigbee 3.0 smart plug for EU Type F sockets with power metering and a 16 A maximum load current. It needs a Zigbee hub such as a Hue Bridge, SmartThings or an Echo with a built-in Zigbee hub.",
+  "summary": "Zigbee only, so plan on a hub. The Innr SP 240 (EU) works with Alexa through an Echo that has a built-in Zigbee hub (other Echos need a bridge such as a Hue Bridge), with SmartThings through a SmartThings Zigbee hub, and with Home Assistant through ZHA or Zigbee2MQTT. It meters power and is rated for 16 A; Innr gives no watt figure. Innr doesn't confirm Apple Home or Google Home, and no Matter listing was found.",
   "caveats": [
     "Needs a Zigbee hub; there is no Wi-Fi.",
-    "Philips Hue can switch it but doesn't show its energy readings."
+    "A Hue Bridge can switch it but won't show its power readings; SmartThings, Hubitat, the Innr bridge and Home Assistant do.",
+    "Innr says its devices on a Hue Bridge don't work with Apple HomeKit, so the Hue route won't get it into Apple Home."
   ],
   "sources": [
     {

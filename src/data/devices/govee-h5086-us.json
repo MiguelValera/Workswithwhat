@@ -82,7 +82,7 @@
     ],
     "note": "15 A at 120 V, 1800 W maximum. Govee says a surge protector may be plugged in if the total stays within that rating."
   },
-  "summary": "Alexa and Google Assistant are the two platforms Govee lists for the H5086, and both go through Govee's cloud. Apple Home, SmartThings and Matter aren't listed for this model. It's a 2.4 GHz Wi-Fi and Bluetooth plug rated 15 A / 1800 W at 120 V, controlled from the Govee Home app with no hub, and it tracks energy use there. Govee's Matter plug is the separate Smart Plug Pro B5085.",
+  "summary": "Govee lists only Alexa and Google Assistant for the H5086, and both go through Govee's cloud. Apple Home, SmartThings and Matter aren't listed for this model. It's a 2.4 GHz Wi-Fi and Bluetooth plug rated 15 A / 1800 W at 120 V, controlled from the Govee Home app with no hub, and it tracks energy use there. Govee's Matter plug is the separate Smart Plug Pro B5085.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
     "No confirmed Apple Home or Matter support; Govee gives Matter only to the separate Smart Plug Pro (B5085).",
