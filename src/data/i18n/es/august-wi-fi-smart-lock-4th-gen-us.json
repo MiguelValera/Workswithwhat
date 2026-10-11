@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "La August Wi-Fi Smart Lock (4.ª gen.) se monta sobre la cara interior de tu cerrojo actual, así que se quedan el bombín y las llaves de siempre, y trae wifi integrado sin necesidad de puente. Apple Home funciona por Bluetooth, Google Home y Alexa exigen que la cerradura esté conectada al wifi, y la integración de August en Home Assistant la incluye. No hay Matter confirmado y lo de SmartThings no está claro. Dos pilas CR123A duran unos 3 meses con uso típico por wifi.",
+  "caveats": [
+    "La batería dura poco: August habla de hasta 3 meses de uso típico por wifi con dos pilas CR123A.",
+    "Controlarla fuera de casa con Apple Home requiere un Apple TV, un HomePod o un iPad como centro de la casa.",
+    "El desbloqueo por voz con Alexa exige definir un PIN.",
+    "En Home Assistant, la lectura de batería de la 4.ª gen. suele ser errónea.",
+    "La cerradura no lleva teclado; los teclados se venden aparte."
+  ],
+  "notes": {
+    "radios": "Wifi integrado para el control remoto y por voz; Bluetooth para el funcionamiento local y para comunicarse con HomeKit.",
+    "matter": "No hemos encontrado ninguna declaración oficial sobre Matter. Una ficha técnica de Best Buy Canadá lo marca como no compatible, pero los datos de tiendas no bastan para marcarlo como «no».",
+    "hubRequired": "El wifi viene integrado; August dice que no hace falta puente. El uso remoto con HomeKit sigue necesitando un centro de la casa de Apple.",
+    "localControl": "El control por Bluetooth desde la app es local, pero ninguna fuente confirma control local a través de una plataforma de hogar inteligente.",
+    "lockFit": "Se monta sobre la parte interior de tu cerrojo actual, así que se conservan el herraje exterior y las llaves.",
+    "keypad": "La cerradura no lleva teclado; Yale/August venden versiones con teclado como productos aparte.",
+    "power": "La FAQ de August indica dos pilas de litio CR123 o CR123A de 3 V (no recargables), con hasta 3 meses de duración con uso típico por wifi. Las 4 × AA que aparecen en algunos anuncios son de cerraduras August antiguas.",
+    "compatibility.apple_home": "HomeKit por Bluetooth. Controlarla fuera de casa requiere un centro de la casa de Apple (Apple TV, HomePod o iPad). No se menciona Home Key.",
+    "compatibility.google_home": "La integración con Google Assistant exige que la cerradura esté conectada al wifi.",
+    "compatibility.alexa": "Necesita wifi. El desbloqueo por voz exige definir un PIN.",
+    "compatibility.smartthings": "La FAQ de la Wi-Fi Smart Lock de August y sus páginas de integraciones antiguas incluyen Samsung SmartThings (integración en la nube, sin Z-Wave), pero la página actual del producto no, y ninguna página de SmartThings confirma que la integración siga disponible.",
+    "compatibility.home_assistant": "La integración de August incluye la Wi-Fi Smart Lock (4.ª gen.) y funciona sin Connect Bridge. En Home Assistant, la lectura de batería de la 4.ª gen. suele ser errónea."
+  }
+}

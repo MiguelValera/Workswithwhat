@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "La Eve Outdoor Cam es una cámara con foco, cableada a la red eléctrica y pensada en exclusiva para HomeKit Secure Video. Los clips se analizan en un Apple TV o un HomePod y se guardan cifrados en iCloud, así que grabar exige un plan de iCloud+, y la visualización en directo pasa por el centro de la casa. La instalación pide corriente de red con cables neutro y de tierra. Eve no menciona Google Home, Alexa ni SmartThings, por lo que siguen sin confirmar.",
+  "caveats": [
+    "Necesita un plan de iCloud+ y un centro de la casa de Apple; sin ellos no graba.",
+    "La instalación exige cables neutro y de tierra; sin ellos no se puede colocar en ese punto.",
+    "Solo wifi de 2,4 GHz.",
+    "Las especificaciones y los datos de ecosistemas proceden de páginas de la época del lanzamiento, en 2022; no hemos encontrado el número de modelo exacto de la variante europea."
+  ],
+  "notes": {
+    "radios": "El manual dice que solo se conecta a redes wifi de 2,4 GHz.",
+    "hubRequired": "Sin puente de Eve. Hace falta un centro de la casa de Apple (Apple TV o HomePod) para HomeKit Secure Video y el acceso remoto.",
+    "localControl": "Eve dice que el vídeo en directo nunca pasa por una nube y que el acceso se hace a través del centro de la casa; no indica que funcione solo en local.",
+    "cameraType": "Cámara con foco regulable, pensada para sustituir una luz exterior existente.",
+    "power": "El manual de Eve exige corriente alterna con cable neutro y de tierra; sin ellos la cámara no se puede instalar en ese punto. Los minoristas indican 100-240 V CA, pero no lo hemos visto en ninguna página de Eve.",
+    "localStorage": "Las grabaciones van a iCloud mediante HomeKit Secure Video; ninguna página del fabricante que hayamos visto menciona almacenamiento local.",
+    "subscription": "Para grabar hace falta un plan de iCloud+ (no incluido); el tamaño del plan de Apple determina cuántas cámaras se permiten.",
+    "matter": "Ninguna página de Eve que hayamos encontrado dice que la Outdoor Cam sea compatible con Matter; se describe como diseñada para HomeKit Secure Video.",
+    "compatibility.apple_home": "Diseñada en exclusiva para HomeKit Secure Video: los clips se analizan en un Apple TV o un HomePod y se guardan cifrados en iCloud; la visualización en directo pasa por el centro de la casa.",
+    "compatibility.google_home": "Eve la describe como diseñada en exclusiva para HomeKit Secure Video y no menciona Google Home; ninguna página dice de forma explícita que no sea compatible.",
+    "compatibility.alexa": "Eve la describe como diseñada en exclusiva para HomeKit Secure Video y no menciona Alexa; ninguna página dice de forma explícita que no sea compatible.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página del fabricante ni de Samsung.",
+    "compatibility.home_assistant": "Solo una guía de la comunidad la empareja mediante la integración HomeKit más go2rtc; no hay documentación oficial de Home Assistant para esta cámara."
+  },
+  "values": {
+    "power": "Red eléctrica cableada (neutro + tierra)",
+    "subscription": "iCloud+ (HomeKit Secure Video)"
+  }
+}

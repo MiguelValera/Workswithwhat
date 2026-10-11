@@ -1,0 +1,33 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El Aqara Wall Switch H1 (WS-EUK03) sustituye al interruptor de una caja de pared europea cuadrada o redonda de 86 mm. Es un interruptor Zigbee 3.0 de una tecla, de encendido y apagado, de 8 A, que necesita cable neutro, muestra estadísticas de consumo y actúa como router Zigbee. Un hub de Aqara (se nombran el G2H, el M1S y el M2) lo enlaza con Apple Home, Google Home y Alexa; SmartThings y Home Assistant no están confirmados.",
+  "caveats": [
+    "Necesita un hub de Aqara, que se vende aparte; el control desde la app, los temporizadores y las estadísticas de consumo funcionan tras vincularlo a él.",
+    "Requiere cable neutro (bornes L, N y L1).",
+    "El interruptor es solo Zigbee y no tiene certificación Matter por sí mismo; Matter llegaría desde un hub de Aqara compatible con Matter.",
+    "Este es el modelo de una tecla; el de dos teclas es el WS-EUK04, aparte."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0. La versión con neutro también actúa como router Zigbee.",
+    "matter": "La CSA solo indica Zigbee 3.0 para este interruptor. Aqara dice que Matter llega mediante un hub de Aqara compatible con Matter, no desde el propio interruptor, así que el interruptor no tiene certificación Matter por sí mismo.",
+    "hubRequired": "El manual de Aqara dice que el control desde la app, los temporizadores y las estadísticas de consumo funcionan tras vincularlo a un hub de Aqara; el hub se vende aparte.",
+    "localControl": "No consta en las fuentes que hemos encontrado. La tecla funciona como un interruptor normal cuando la red no funciona.",
+    "gangs": "Versión de una tecla; la de dos teclas es un modelo aparte (WS-EUK04).",
+    "compatibility.apple_home": "La página de Aqara de la versión con neutro indica HomeKit, con un hub de Aqara (por ejemplo, G2H, M1S, M2) como puente.",
+    "compatibility.google_home": "La página de Aqara de la versión con neutro indica Google, a través de un hub de Aqara.",
+    "compatibility.alexa": "La página de Aqara de la versión con neutro indica Alexa, a través de un hub de Aqara.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página de Aqara que nombre SmartThings para este interruptor.",
+    "compatibility.home_assistant": "Se puede llegar a él mediante los hubs de Aqara con puente Matter o un coordinador Zigbee, pero no se ha confirmado ninguna fuente oficial.",
+    "switchForm": "Sustituye al interruptor de las cajas de pared europeas cuadradas o redondas de 86 mm (85,8 x 86 x 37,55 mm).",
+    "dimmer": "Interruptor de encendido y apagado, carga resistiva de 8 A a 100-250 V.",
+    "neutralRequired": "Versión con neutro; el cableado usa los bornes L, N y L1."
+  },
+  "via": {
+    "apple_home": "hub de Aqara",
+    "google_home": "hub de Aqara",
+    "alexa": "hub de Aqara"
+  },
+  "values": {
+    "gangs": "1 tecla"
+  }
+}

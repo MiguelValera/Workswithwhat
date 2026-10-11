@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "La imagen en directo en dispositivos Echo y Fire con pantalla, los avisos de movimiento y el armado por voz llegan con la integración de Blink en Alexa. La Blink Mini 2 se enchufa a un adaptador USB de 5 V, no necesita Sync Module y puede ir en exterior con el adaptador resistente a la intemperie que se vende aparte. El almacenamiento en la nube (60 días en EE. UU.), la detección de personas y la imagen en directo ampliada requieren un plan de Blink. Sin plan, los clips pueden guardarse en una unidad USB mediante un Sync Module 2. La compatibilidad con Home Assistant para este modelo no está confirmada.",
+  "caveats": [
+    "El almacenamiento local necesita un Sync Module 2 y una unidad USB, ambos a la venta por separado.",
+    "El almacenamiento en la nube y la detección de personas requieren un plan de suscripción de Blink.",
+    "La compatibilidad de este modelo con Apple Home, Google Home y Home Assistant no está confirmada."
+  ],
+  "notes": {
+    "radios": "La página de especificaciones de Blink indica 802.11b/g/n a 2,4 GHz; la FAQ dice que necesita una conexión wifi siempre activa.",
+    "matter": "Las páginas de Blink no mencionan Matter, y en las búsquedas no apareció ningún registro de certificación de la CSA para una cámara Blink.",
+    "hubRequired": "Blink dice que la Mini 2 no necesita un Sync Module. El Sync Module 2 solo hace falta para el almacenamiento local.",
+    "localControl": "Blink no indica si algún control funciona sin su nube.",
+    "cameraType": "Se vende como cámara de interior con enchufe. Blink dice que puede usarse en exterior (IP65) con un adaptador de corriente para exteriores que se vende aparte.",
+    "power": "La FAQ de Blink indica alimentación USB de 5 V y 1 A con el adaptador incluido, o con el adaptador de corriente resistente a la intemperie que se vende aparte para uso en exterior. La página de especificaciones indica un conector USB-C.",
+    "localStorage": "Solo con un Sync Module 2 en el mismo sistema Blink y una unidad USB de 1–256 GB; sin suscripción, los clips se guardan entonces en la unidad.",
+    "subscription": "Blink indica 60 días de almacenamiento en la nube en EE. UU. con un plan. La detección de personas y la imagen en directo ampliada (hasta 90 minutos) también requieren suscripción.",
+    "compatibility.apple_home": "No hemos encontrado ninguna página de Blink que incluya HomeKit para la Mini 2. La FAQ de Blink para la Outdoor y la Indoor de 3.ª gen. dice que HomeKit no es compatible en el lanzamiento, pero es otro modelo.",
+    "compatibility.google_home": "No hemos encontrado ninguna página de Blink que incluya Google Assistant para la Mini 2. La FAQ de Blink para la Outdoor y la Indoor de 3.ª gen. dice que no es compatible en el lanzamiento, pero es otro modelo.",
+    "compatibility.alexa": "Mediante la skill de Blink. La página de funciones de la Mini 2 incluye imagen en directo en dispositivos Echo y Fire con pantalla, avisos de movimiento, armado y desarmado, y detección de movimiento en rutinas de Alexa. La imagen en directo iniciada por voz dura 5 minutos.",
+    "compatibility.smartthings": "No hay ninguna página oficial de Blink ni de SmartThings; solo mensajes antiguos de foros, que no citamos.",
+    "compatibility.home_assistant": "La integración oficial de Blink en Home Assistant cubre las «cámaras Mini» con soporte limitado (sin sensores ni estado de batería), pero su documentación no nombra la Mini 2, así que la compatibilidad de este modelo no está confirmada."
+  },
+  "values": {
+    "power": "Adaptador USB de 5 V (corriente)",
+    "subscription": "Almacenamiento de vídeo en la nube, detección de personas (plan de Blink)"
+  }
+}

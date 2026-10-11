@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El Water Leak Sensor T1 (WL-S02D) de Aqara detecta agua entre dos sondas desde unos 0,5 mm de profundidad y usa Zigbee 3.0. Hay que emparejarlo con un hub de Aqara, que es también la vía para llegar a Apple Home. Google Home, Alexa, SmartThings y Home Assistant no están confirmados. Una pila CR2032 dura unos dos años.",
+  "caveats": [
+    "Necesita un hub de Aqara; no es un dispositivo Zigbee independiente.",
+    "La compatibilidad con Google Home, Alexa y SmartThings no está confirmada en las páginas de Aqara consultadas."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0.",
+    "matter": "No hemos encontrado ningún registro de la CSA. El hub M3 de Aqara funciona como puente Matter para los dispositivos Zigbee de Aqara; ninguna página consultada dice que este sensor se exponga.",
+    "hubRequired": "La FAQ de Aqara dice que el sensor no puede funcionar solo y debe usarse con un hub de Aqara.",
+    "localControl": "Ninguna página consultada describe un funcionamiento local a través del hub.",
+    "senses": "Detecta agua entre dos sondas, desde unos 0,5 mm de agua.",
+    "power": "Aqara indica que la duración típica de la pila es de unos dos años.",
+    "compatibility.apple_home": "La FAQ del T1 de Aqara dice que hace falta un hub de Aqara para que el sensor funcione con HomeKit.",
+    "compatibility.google_home": "Solo los anuncios de tiendas dicen que funciona con Google; ninguna página de Aqara consultada para el T1 lo confirma.",
+    "compatibility.alexa": "Solo los anuncios de tiendas dicen que funciona con Alexa; la página estadounidense del Water Leak Sensor anterior lo incluye, pero no se consultó la del T1.",
+    "compatibility.smartthings": "Solo los anuncios de tiendas mencionan SmartThings.",
+    "compatibility.home_assistant": "La documentación de Home Assistant consultada no nombra ninguna compatibilidad con el Aqara T1. No hay documentación de un coordinador Zigbee genérico para este sensor."
+  },
+  "via": {
+    "apple_home": "hub de Aqara"
+  }
+}

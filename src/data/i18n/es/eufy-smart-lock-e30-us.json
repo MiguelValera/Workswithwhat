@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Matter sobre Thread lleva la eufy Smart Lock E30 a Apple Home y SmartThings. Alexa y Google Home se conectan vinculando tu cuenta de eufy. Es un cerrojo estadounidense de recambio con teclado, lector de huellas y cerradura para llave mecánica, alimentado con ocho pilas AA. Home Assistant no está confirmado.",
+  "caveats": [
+    "El control con Matter necesita un router de borde Thread: un HomePod mini o Apple TV 4K, un hub Nest o un Echo compatible con Matter, o un hub SmartThings compatible con Matter.",
+    "El control remoto con Apple Home necesita un centro de la casa, aunque iOS 18 pueda añadir la cerradura sin él.",
+    "Hacen falta ocho pilas AA."
+  ],
+  "notes": {
+    "radios": "La CSA y eufy describen Matter sobre Thread más wifi integrado para la app de eufy y el control remoto. Ninguna fuente consultada confirma una radio Bluetooth en este modelo, así que no figura.",
+    "matter": "La CSA registra la eufy Smart Lock E30 de Anker Innovations (Matter 1.2, certificada el 2024-07-02, firmware V1.0.0.0, hardware V3). Es Matter sobre Thread, no sobre wifi.",
+    "hubRequired": "El wifi integrado conecta la cerradura a la app de eufy sin puente. Cada plataforma Matter necesita su propio controlador Matter con router de borde Thread, y el control remoto con Apple Home necesita un centro de la casa.",
+    "localControl": "Ninguna fuente de eufy describe de forma explícita un control solo local.",
+    "lockFit": "Sustituye a un cerrojo estadounidense estándar y conserva una cerradura física para la llave mecánica.",
+    "keypad": "Teclado en la cerradura, además de lector de huellas.",
+    "power": "Ocho pilas AA; eufy afirma que duran hasta 8 meses por juego.",
+    "compatibility.apple_home": "Matter sobre Thread. eufy dice que iOS 18 puede añadir dispositivos Matter sin hub y que un iPhone 15 Pro o posterior puede controlar dispositivos Thread directamente, pero el control remoto necesita como hub un HomePod mini, un HomePod o un Apple TV 4K.",
+    "compatibility.google_home": "eufy documenta cómo vincular la cuenta de eufy mediante Works with Google para la C34/E30, con un código de 4 dígitos para desbloquear por voz. Matter sobre Thread también funciona con un hub Nest compatible con Matter.",
+    "compatibility.alexa": "eufy documenta cómo vincular la cuenta de eufy en la app Alexa para la C34/E30, con un PIN de voz opcional para desbloquear. Matter sobre Thread también funciona con un Echo compatible con Matter.",
+    "compatibility.smartthings": "La página de producto de eufy incluye SmartThings; su FAQ de Matter dice que hace falta un hub SmartThings compatible con Matter, con router de borde Thread.",
+    "compatibility.home_assistant": "No hemos encontrado ninguna página de documentación de Home Assistant para esta cerradura. Al ser una cerradura Matter sobre Thread, quizá funcione con la integración de Matter y un router de borde Thread, pero ninguna fuente oficial lo confirma."
+  }
+}

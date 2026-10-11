@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Con un hub Zigbee 3.0 de Aqara, la Aqara LED Bulb T1 (LEDLBT1-L01) funciona con Apple Home, Alexa y Google Home, y Aqara indica compatibilidad con Adaptive Lighting en Apple Home. No hay forma de evitar el hub: la bombilla no tiene Matter, así que a Matter solo se llega con un hub de Aqara compatible con Matter que actúe de puente. Es una bombilla europea E27 de luz blanca, de 806 lúmenes, regulable de 2700 a 6500 K con CRI 90. El soporte de SmartThings y Home Assistant no está confirmado.",
+  "caveats": [
+    "Requiere un hub Zigbee 3.0 de Aqara, incluso para el control básico desde la app.",
+    "Solo blanco regulable: no hay color RGB.",
+    "Matter solo funciona a través de un hub de Aqara compatible con Matter, no directamente desde la bombilla.",
+    "Ninguna fuente oficial confirma el soporte de SmartThings ni de Home Assistant."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0 para el hub de Aqara; también se indica Bluetooth.",
+    "matter": "Aqara no dice de forma explícita que la bombilla carezca de Matter. Dice que Matter llega mediante una actualización OTA de los hubs de Aqara, así que a Matter solo se llega por el puente Matter de un hub de Aqara, no por la bombilla Zigbee en sí.",
+    "hubRequired": "En las bombillas, esto significa necesitar un puente o hub para el control básico desde la app. El manual dice que hace falta un hub Zigbee 3.0 de Aqara.",
+    "localControl": "Ninguna fuente oficial describe el control local (sin internet) de esta bombilla ni de su ruta a través del hub.",
+    "compatibility.apple_home": "Aqara indica HomeKit (con Adaptive Lighting); hace falta un hub de Aqara. Un hub de Aqara compatible con Matter también puede hacer de puente.",
+    "compatibility.google_home": "Aqara indica Google Assistant; funciona a través de un hub de Aqara.",
+    "compatibility.alexa": "Aqara indica Alexa; funciona a través de un hub de Aqara.",
+    "compatibility.smartthings": "La página de la bombilla de Aqara no menciona SmartThings; no hemos encontrado ninguna fuente oficial en un sentido ni en otro.",
+    "compatibility.home_assistant": "Ninguna fuente oficial de Home Assistant ni de Aqara nombra esta bombilla. Rutas como un hub de Aqara mediante HomeKit Controller o Matter, o un coordinador Zigbee, son plausibles pero no están confirmadas.",
+    "colorType": "Solo blanco, 2700–6500 K, CRI Ra90. Sin color RGB.",
+    "lumens": "806 lm; la tabla de especificaciones de Aqara indica 8,5 W de potencia nominal, y algunos materiales dicen 9 W."
+  },
+  "via": {
+    "apple_home": "hub Zigbee 3.0 de Aqara",
+    "google_home": "hub Zigbee 3.0 de Aqara",
+    "alexa": "hub Zigbee 3.0 de Aqara"
+  }
+}

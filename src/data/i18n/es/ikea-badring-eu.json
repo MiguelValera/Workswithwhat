@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Las fugas de agua son lo que detecta el BADRING de IKEA, por Zigbee a través de un hub DIRIGERA. Por sí solo hace sonar una alarma integrada; con el hub, además envía una notificación al móvil. Apple Home, Google Home, Alexa, SmartThings y Home Assistant están sin confirmar. Necesita una pila AAA, que no se incluye.",
+  "caveats": [
+    "Necesita un hub DIRIGERA para las notificaciones al móvil; sin él solo hace sonar su propia alarma.",
+    "IKEA no ha confirmado en ninguna página que hayamos visto que el BADRING aparezca en Apple Home, Google Home ni Alexa."
+  ],
+  "notes": {
+    "radios": "El comunicado de lanzamiento de IKEA describe los tres sensores como basados en Zigbee.",
+    "hubRequired": "IKEA dice que hace falta un hub DIRIGERA (se vende aparte) para usarlo como producto inteligente. Sin él sigue haciendo sonar su alarma integrada.",
+    "localControl": "Ninguna página que hayamos visto dice si funciona sin internet a través de DIRIGERA.",
+    "power": "IKEA recomienda una pila recargable LADDA AAA (HR03, 1,2 V), que se vende aparte.",
+    "matter": "IKEA dice que los dispositivos Zigbee de DIRIGERA pueden estar disponibles mediante su puente Matter. Ninguna página que hayamos visto dice que el BADRING se exponga, y los mensajes de foros dicen que no. No hemos encontrado ningún registro de la CSA.",
+    "compatibility.apple_home": "IKEA dice que DIRIGERA puede vincular los productos inteligentes de IKEA con Apple Home, Google Home y Alexa, pero ninguna página de IKEA que hayamos visto confirma que el propio BADRING aparezca ahí (IKEA tiene una página así para PARASOLL, no para BADRING).",
+    "compatibility.google_home": "IKEA dice que DIRIGERA puede vincular los productos inteligentes de IKEA con Apple Home, Google Home y Alexa, pero ninguna página de IKEA que hayamos visto confirma que el propio BADRING aparezca ahí (IKEA tiene una página así para PARASOLL, no para BADRING).",
+    "compatibility.alexa": "IKEA dice que DIRIGERA puede vincular los productos inteligentes de IKEA con Apple Home, Google Home y Alexa, pero ninguna página de IKEA que hayamos visto confirma que el propio BADRING aparezca ahí (IKEA tiene una página así para PARASOLL, no para BADRING).",
+    "compatibility.smartthings": "Ninguna página de IKEA ni de SmartThings que hayamos visto cubre el BADRING.",
+    "compatibility.home_assistant": "La documentación de Home Assistant que vimos no nombra compatibilidad con el BADRING. Los mensajes de foros describen que se empareja con ZHA solo con trucos, y que no aparece en el puente Matter."
+  },
+  "values": {
+    "power": "1 × AAA (no incluida)"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El Aqara Light Switch H2 (EE. UU., WS-K02E) es un interruptor de pared de encendido y apagado con dos botones y un canal de relé, que funciona con o sin cable neutro. De serie usa Matter sobre Thread, así que Apple Home, Google Home, Alexa, SmartThings y Home Assistant pueden añadirlo sin hub de Aqara, siempre que tengan un controlador Matter con Thread. En modo Zigbee necesita un hub de Aqara. La medición de consumo requiere neutro.",
+  "caveats": [
+    "El modo Thread necesita un controlador Matter que además sea un router de borde Thread.",
+    "Solo encendido y apagado; Aqara vende aparte el Dimmer Switch H2 US.",
+    "Sin cable neutro hay una carga mínima de 5 W, y no hay medición de consumo ni protección contra sobrecarga.",
+    "Las versiones con otro número de botones y canales tienen otros números de modelo; mira la caja."
+  ],
+  "notes": {
+    "radios": "Funciona con Matter sobre Thread de serie o con Zigbee y un hub de Aqara; el Bluetooth es para la configuración.",
+    "matter": "La página de Aqara indica Matter sobre Thread. La CSA registra el Light Switch H2 US (2 botones, 1 canal) de Lumi United (el fabricante de Aqara): Matter 1.3, certificado el 2024-09-09, certificado CSA244D0MAT43907-24. La búsqueda solo mostró la copia del registro de la CSA en portugués.",
+    "hubRequired": "El modo Thread no necesita hub de Aqara, solo un router de borde Thread para el controlador Matter. El modo Zigbee sí necesita un hub Zigbee de Aqara.",
+    "localControl": "Los controladores Matter lo alcanzan en local por Thread. Aqara no indica control local para su propia app.",
+    "gangs": "La ficha técnica de Aqara lo recoge como modelo WS-K02E. Las versiones de 2 botones y 2 canales (WS-K03E) y de 4 botones y 3 canales (WS-K04E) son modelos distintos.",
+    "compatibility.apple_home": "El modo Thread necesita un controlador Matter con Thread, como un Apple TV o un HomePod que sea router de borde Thread.",
+    "compatibility.google_home": "Necesita como controlador Matter un hub o altavoz de Google con Thread.",
+    "compatibility.alexa": "Necesita como controlador Matter un Echo con Thread.",
+    "compatibility.smartthings": "La lista de compatibilidad de Aqara nombra SmartThings. En modo Thread, Aqara dice que el ecosistema necesita un controlador Matter con Thread, aquí un hub SmartThings con Thread.",
+    "compatibility.home_assistant": "Mediante la integración Matter de Home Assistant, que necesita un router de borde Thread. La alternativa es el modo Zigbee con un hub de Aqara.",
+    "switchForm": "Sustituye a un interruptor de pared estadounidense; admite instalaciones unipolares y de 3 vías.",
+    "dimmer": "Solo encendido y apagado. Aqara vende aparte el Dimmer Switch H2 US.",
+    "neutralRequired": "Funciona con o sin neutro. La medición de consumo y la protección contra sobrecarga lo necesitan; sin él, la carga mínima es de 5 W."
+  },
+  "values": {
+    "gangs": "2 botones, 1 canal"
+  }
+}

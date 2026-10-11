@@ -1,0 +1,76 @@
+// Interface strings. Device prose comes from the records (and their translations);
+// everything else a page says is here, so both languages stay in step.
+import type { Lang } from './lang';
+
+const en = {
+  skip: 'Skip to content',
+  navByEcosystem: 'By ecosystem',
+  navHowWeVerify: 'How we verify',
+  mainNav: 'Main',
+  region: 'Region',
+  regionAll: 'All',
+  language: 'Language',
+  home: 'Home',
+  breadcrumb: 'Breadcrumb',
+  footerCorrection: 'Every claim links to its source. Spotted something wrong or out of date?',
+  footerTellUs: 'Tell us',
+  footerMailSubject: 'Correction for workswithwhat.com',
+  footerNotAffiliated: 'Not affiliated with any brand mentioned. Trademarks belong to their owners. No cookies, no trackers.',
+  legalNotice: 'Legal notice',
+  privacy: 'Privacy and cookies',
+  ogImageAlt: 'Workswithwhat: smart home compatibility, checked against official sources',
+  // tables
+  device: 'Device',
+  radio: 'Radio',
+  radios: 'Radios',
+  matter: 'Matter',
+  how: 'How',
+  notes: 'Notes',
+  yes: 'Yes',
+  no: 'No',
+  unconfirmed: 'Unconfirmed',
+  jumpToBrand: 'Jump to brand:',
+  jumpTo: 'Jump to:',
+  noConfirmedEcosystems: 'No confirmed ecosystems',
+  viaX: (via: string) => `Via ${via}`,
+  needsX: (via: string) => `Needs ${via}`,
+  source: (n: number) => `Source ${n}`,
+};
+
+export type UI = typeof en;
+
+const es: UI = {
+  skip: 'Ir al contenido',
+  navByEcosystem: 'Por ecosistema',
+  navHowWeVerify: 'Cómo verificamos',
+  mainNav: 'Principal',
+  region: 'Región',
+  regionAll: 'Todas',
+  language: 'Idioma',
+  home: 'Inicio',
+  breadcrumb: 'Ruta de navegación',
+  footerCorrection: 'Cada dato enlaza a su fuente. ¿Has visto algo incorrecto o desactualizado?',
+  footerTellUs: 'Avísanos',
+  footerMailSubject: 'Corrección para workswithwhat.com',
+  footerNotAffiliated: 'Sin relación con ninguna de las marcas mencionadas. Las marcas pertenecen a sus propietarios. Sin cookies ni rastreadores.',
+  legalNotice: 'Aviso legal',
+  privacy: 'Privacidad y cookies',
+  ogImageAlt: 'Workswithwhat: compatibilidad domótica, comprobada con fuentes oficiales',
+  device: 'Dispositivo',
+  radio: 'Radio',
+  radios: 'Radios',
+  matter: 'Matter',
+  how: 'Cómo',
+  notes: 'Notas',
+  yes: 'Sí',
+  no: 'No',
+  unconfirmed: 'Sin confirmar',
+  jumpToBrand: 'Ir a la marca:',
+  jumpTo: 'Ir a:',
+  noConfirmedEcosystems: 'Ningún ecosistema confirmado',
+  viaX: (via: string) => `Vía ${via}`,
+  needsX: (via: string) => `Necesita ${via}`,
+  source: (n: number) => `Fuente ${n}`,
+};
+
+export const ui = (lang: Lang): UI => (lang === 'es' ? es : en);
