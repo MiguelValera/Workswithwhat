@@ -27,7 +27,9 @@ The site is in **English**; it targets the global search market. Internal docs a
 | `radios` | Fact: wifi / thread / zigbee / z-wave / bluetooth / ethernet. |
 | `matter` | `certified` (true / false / null), plus `transport` when certified. |
 | `compatibility.<ecosystem>` | `native` · `matter` · `hub` (needs `via`) · `no` · `unknown`, with `sources`. Ecosystems: apple_home, google_home, alexa, smartthings, home_assistant. |
-| `hubRequired`, `localControl`, `energyMonitoring`, `maxLoadWatts` | Facts `{ value, sources, note? }`; `value: null` = not confirmed. |
+| `category` | `smart-plug` or `smart-bulb` (more to come). Decides the URL section and the category facts below. |
+| `hubRequired`, `localControl` | Facts `{ value, sources, note? }`; `value: null` = not confirmed. Every category has them. |
+| Category facts | Plugs: `energyMonitoring`, `maxLoadWatts`. Bulbs: `colorType` (white / tunable-white / color), `lumens`, `bulbBase` (e.g. "E27", "E26 (A19)", "GU10"). |
 | `summary`, `caveats` | Human copy (written by the editor agent). |
 | `sources[]` | `{ id, url, title, publisher, kind, accessed }`. At least one source must be `kind: manufacturer`. |
 | `status` | `draft` (collector output) → `verified` (after the verifier signs off, with `verifiedAt`). **Only verified records are published.** |
@@ -54,16 +56,17 @@ After any agent run: `npm run validate` must pass.
 ## Site structure (SEO)
 
 - `/` home: what the site is, latest verified devices.
-- `/smart-plugs/`: category comparison table.
-- `/smart-plugs/<slug>/`: device page with a compatibility table, specs, sources, last-verified date, and Product JSON-LD.
-- `/works-with/<ecosystem>/`: e.g. "Smart plugs that work with Apple Home".
+- `/<category>/` (e.g. `/smart-plugs/`, `/smart-bulbs/`): comparison table. A category gets pages only once it has a verified device.
+- `/<category>/<slug>/`: device page with a compatibility table, specs, sources, last-verified date, and Product JSON-LD.
+- `/works-with/<ecosystem>/`: e.g. "Smart plugs and smart bulbs that work with Apple Home", one section per category. `/works-with/matter/` lists Matter-certified devices.
+- Categories are registered in `src/lib/categories.ts` (routes, labels, which facts to show) and `src/schema/device.ts` (fields).
 - `/methodology/`: how we verify (trust signal).
 - Every page needs a unique `<title>` and meta description, a canonical URL, OG tags and breadcrumbs (with BreadcrumbList JSON-LD). Sitemap via `@astrojs/sitemap`.
 - Keep pages light: no client JS unless needed, system fonts, no trackers.
 
 ### AI search and agents (GEO)
 
-- `/llms.txt` (site map for assistants), `/llms-full.txt` (every device as Markdown) and `/api/smart-plugs.json` (published records plus a ready-made answer per ecosystem) are generated from the same data. Drafts never appear in them.
+- `/llms.txt` (site map for assistants), `/llms-full.txt` (every device as Markdown), `/api/devices.json` and `/api/<category>.json` (published records plus a ready-made answer per ecosystem) are generated from the same data. Drafts never appear in them.
 - Every device page has a visible "Quick answers" block ("Does X work with Y?") mirrored in FAQPage JSON-LD. The wording comes from `answerFor()` in `src/lib/devices.ts`, so the page, the FAQ, llms.txt and the API always agree.
 - `robots.txt` explicitly allows AI search and assistant crawlers. Don't block them at Cloudflare (no Bot Fight Mode, no "Block AI bots"): the live site check warns if they get blocked.
 - After each deploy, CI submits the sitemap URLs to IndexNow (Bing, Yandex…).

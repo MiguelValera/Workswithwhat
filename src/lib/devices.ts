@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS } from '../schema/device.ts';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, type CategoryKey } from '../schema/device.ts';
+import { CATEGORIES, categoryOf } from './categories';
 
 export type Device = CollectionEntry<'devices'>;
 export type Ecosystem = (typeof ECOSYSTEMS)[number];
@@ -8,8 +9,11 @@ export { ECOSYSTEMS, ECOSYSTEM_LABELS };
 
 // Drafts never reach the public site; only records the verifier signed off.
 // `astro dev` shows drafts too, so they can be reviewed before publishing.
-export async function getPublishedDevices(): Promise<Device[]> {
-  const all = await getCollection('devices', (d) => import.meta.env.DEV || d.data.status === 'verified');
+export async function getPublishedDevices(category?: CategoryKey): Promise<Device[]> {
+  const all = await getCollection(
+    'devices',
+    (d) => (import.meta.env.DEV || d.data.status === 'verified') && (!category || d.data.category === category),
+  );
   return all.sort((a, b) => `${a.data.brand} ${a.data.name}`.localeCompare(`${b.data.brand} ${b.data.name}`));
 }
 
@@ -41,7 +45,7 @@ export const RADIO_LABELS: Record<string, string> = {
 export const formatDate = (iso: string) =>
   new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
 
-export const devicePath = (d: Device) => `/smart-plugs/${d.id}/`;
+export const devicePath = (d: Device) => `/${categoryOf(d.data).path}/${d.id}/`;
 
 export const listJoin = (xs: string[]) =>
   xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`;
@@ -73,3 +77,9 @@ export function answerFor(d: Device, e: Ecosystem): string {
 }
 
 export const deviceTitle = (d: Device) => `Does the ${d.data.name} work with Apple Home, Google Home or Alexa?`;
+
+/** Categories that have at least one published device (only these get pages). */
+export async function getActiveCategories() {
+  const devices = await getPublishedDevices();
+  return CATEGORIES.filter((c) => devices.some((d) => d.data.category === c.key));
+}

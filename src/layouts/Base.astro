@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { getActiveCategories } from '../lib/devices';
 
 interface Crumb {
   name: string;
@@ -15,6 +16,7 @@ interface Props {
 
 const { title, description, crumbs = [], jsonLd = [], ogType = 'website' } = Astro.props;
 const site = Astro.site!;
+const navCategories = await getActiveCategories();
 const canonical = new URL(Astro.url.pathname, site).href;
 // keep titles short enough for search results; long question titles drop the brand suffix
 const fullTitle = Astro.url.pathname === '/' || title.length > 50 ? title : `${title} | Workswithwhat`;
@@ -61,7 +63,7 @@ if (crumbs.length) {
     <meta property="og:image:alt" content="Workswithwhat: smart home compatibility, checked against official sources" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Site summary for AI assistants" />
-    <link rel="alternate" type="application/json" href="/api/smart-plugs.json" title="Smart plug data (JSON)" />
+    <link rel="alternate" type="application/json" href="/api/devices.json" title="Device data (JSON)" />
     {structured.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj).replace(/</g, '\\u003c')} />)}
   </head>
   <body>
@@ -69,7 +71,7 @@ if (crumbs.length) {
       <div class="wrap">
         <a class="logo" href="/">works<span>with</span>what</a>
         <nav aria-label="Main">
-          <a href="/smart-plugs/">Smart plugs</a>
+          {navCategories.map((c) => <a href={`/${c.path}/`}>{c.label}</a>)}
           <a href="/works-with/">By ecosystem</a>
           <a href="/methodology/">How we verify</a>
         </nav>

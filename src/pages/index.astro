@@ -1,9 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import DeviceCard from '../components/DeviceCard.astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getPublishedDevices } from '../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getActiveCategories, getPublishedDevices, listJoin } from '../lib/devices';
 
 const devices = await getPublishedDevices();
+const cats = await getActiveCategories();
+const what = listJoin(cats.map((c) => c.plural)) || 'smart home devices';
 const recent = [...devices].sort((a, b) => (b.data.verifiedAt ?? '').localeCompare(a.data.verifiedAt ?? '')).slice(0, 6);
 
 const jsonLd = [
@@ -29,7 +31,7 @@ const jsonLd = [
 
 <Base
   title="Workswithwhat: does this smart home device work with my system?"
-  description="Check if a smart plug works with Apple Home, Google Home, Alexa, SmartThings or Home Assistant. Every answer links to the manufacturer or certification source."
+  description={`Check if ${what} work with Apple Home, Google Home, Alexa, SmartThings or Home Assistant. Every answer links to the manufacturer or certification source.`}
   jsonLd={jsonLd}
 >
   <h1>Will it work with your smart home?</h1>
@@ -39,8 +41,19 @@ const jsonLd = [
     databases, and link every answer to where we found it.
   </p>
 
+  <ul class="cards">
+    {
+      cats.map((c) => (
+        <li class="card">
+          <h3><a href={`/${c.path}/`}>{c.label}</a></h3>
+          <div class="muted">{devices.filter((d) => d.data.category === c.key).length} checked, with sources</div>
+        </li>
+      ))
+    }
+  </ul>
+
   <p class="callout">
-    Start with the <a href="/smart-plugs/">smart plug compatibility chart</a>, or jump to a platform:{' '}
+    Or jump to a platform:{' '}
     {
       ECOSYSTEMS.map((e, i) => (
         <>

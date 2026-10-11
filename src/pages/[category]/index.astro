@@ -1,0 +1,69 @@
+---
+import Base from '../../layouts/Base.astro';
+import CompareTable from '../../components/CompareTable.astro';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemSlug, formatDate, getPublishedDevices } from '../../lib/devices';
+import { CATEGORIES, type Category } from '../../lib/categories';
+
+// one chart per category that has published devices (no empty pages)
+export async function getStaticPaths() {
+  const paths = [];
+  for (const cat of CATEGORIES) {
+    const devices = await getPublishedDevices(cat.key);
+    if (devices.length) paths.push({ params: { category: cat.path }, props: { cat, devices } });
+  }
+  return paths;
+}
+
+const { cat, devices } = Astro.props as { cat: Category; devices: Awaited<ReturnType<typeof getPublishedDevices>> };
+const singularTitle = cat.singular.replace(/^./, (c) => c.toUpperCase());
+const title = `${singularTitle} compatibility chart: Apple Home, Google Home, Alexa, Matter`;
+const description = `${devices.length} ${cat.plural} compared by ecosystem support, radio, Matter certification and hub needs. Every cell links back to a source.`;
+const api = `/api/${cat.path}.json`;
+
+const newest = devices.map((d) => d.data.updatedAt).sort().at(-1);
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: `${singularTitle} ecosystem compatibility`,
+    description,
+    url: new URL(`/${cat.path}/`, Astro.site).href,
+    ...(newest && { dateModified: newest }),
+    creator: { '@type': 'Organization', name: 'Workswithwhat', url: Astro.site!.href },
+    variableMeasured: ['Matter certification', ...ECOSYSTEMS.map((e) => `${ECOSYSTEM_LABELS[e]} compatibility`)],
+    distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: new URL(api, Astro.site).href }],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: cat.label,
+    itemListElement: devices.map((d, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: new URL(devicePath(d), Astro.site).href,
+      name: d.data.name,
+    })),
+  },
+];
+---
+
+<Base title={title} description={description} crumbs={[{ name: cat.label, path: `/${cat.path}/` }]} jsonLd={jsonLd}>
+  <h1>{singularTitle} compatibility chart</h1>
+  <p class="lede">
+    Which {cat.singular} works with which platform, and how it gets there: directly, over Matter, or through a hub.
+    Open any one for the details and the sources behind each answer.
+  </p>
+  <CompareTable devices={devices} />
+  {newest && <p class="muted small">Last updated <time datetime={newest}>{formatDate(newest)}</time>. The same data is available as <a href={api}>JSON</a>.</p>}
+  <p class="muted">
+    Looking for one platform?{' '}
+    {
+      ECOSYSTEMS.map((e, i) => (
+        <>
+          {i > 0 && ' · '}
+          <a href={`/works-with/${ecosystemSlug(e)}/`}>{ECOSYSTEM_LABELS[e]}</a>
+        </>
+      ))
+    }
+  </p>
+</Base>

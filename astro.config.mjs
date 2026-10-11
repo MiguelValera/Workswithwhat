@@ -9,7 +9,8 @@ const lastmod = new Map(
     .filter((f) => f.endsWith('.json'))
     .map((f) => {
       const d = JSON.parse(readFileSync(new URL(f, deviceDir), 'utf8'));
-      return [`/smart-plugs/${f.replace(/\.json$/, '')}/`, d.status === 'verified' ? d.updatedAt : null];
+      const section = { 'smart-plug': 'smart-plugs', 'smart-bulb': 'smart-bulbs' }[d.category];
+      return [`/${section}/${f.replace(/\.json$/, '')}/`, d.status === 'verified' ? d.updatedAt : null];
     }),
 );
 const newest = [...lastmod.values()].filter(Boolean).sort().at(-1);

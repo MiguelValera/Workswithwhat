@@ -56,42 +56,77 @@ export const sourceSchema = z
   })
   .strict();
 
-export const deviceSchema = z
+// Fields every device has, whatever its category.
+const baseShape = {
+  brand: z.string().min(1),
+  model: z.string().min(1),
+  name: z.string().min(3),
+  regions: z.array(z.enum(REGIONS)).min(1),
+  officialUrl: z.url(),
+  radios: fact(z.array(z.enum(RADIOS)).min(1)),
+  matter: withSources({
+    certified: z.boolean().nullable(),
+    transport: z.enum(['wifi', 'thread', 'ethernet']).optional(),
+  }).refine((m) => m.certified === null || m.sources.length > 0, {
+    message: 'Matter status must be sourced',
+  }),
+  compatibility: z
+    .object({
+      apple_home: compatibility,
+      google_home: compatibility,
+      alexa: compatibility,
+      smartthings: compatibility,
+      home_assistant: compatibility,
+    })
+    .strict(),
+  hubRequired: fact(z.boolean()),
+  localControl: fact(z.boolean()),
+  summary: z.string().min(80).max(700),
+  caveats: z.array(z.string().min(10).max(300)).default([]),
+  sources: z.array(sourceSchema).min(2),
+  status: z.enum(['draft', 'verified']),
+  verifiedAt: isoDate.optional(),
+  updatedAt: isoDate,
+};
+
+export const COLOR_TYPES = ['white', 'tunable-white', 'color'] as const;
+
+// Category-specific facts. Add a category here, in CATEGORY_FACTS and in
+// src/lib/categories.ts (labels and routes).
+const plugSchema = z
   .object({
+    ...baseShape,
     category: z.literal('smart-plug'),
-    brand: z.string().min(1),
-    model: z.string().min(1),
-    name: z.string().min(3),
-    regions: z.array(z.enum(REGIONS)).min(1),
-    officialUrl: z.url(),
-    radios: fact(z.array(z.enum(RADIOS)).min(1)),
-    matter: withSources({
-      certified: z.boolean().nullable(),
-      transport: z.enum(['wifi', 'thread', 'ethernet']).optional(),
-    }).refine((m) => m.certified === null || m.sources.length > 0, {
-      message: 'Matter status must be sourced',
-    }),
-    compatibility: z
-      .object({
-        apple_home: compatibility,
-        google_home: compatibility,
-        alexa: compatibility,
-        smartthings: compatibility,
-        home_assistant: compatibility,
-      })
-      .strict(),
-    hubRequired: fact(z.boolean()),
-    localControl: fact(z.boolean()),
     energyMonitoring: fact(z.boolean()),
     maxLoadWatts: fact(z.number().int().positive()),
-    summary: z.string().min(80).max(700),
-    caveats: z.array(z.string().min(10).max(300)).default([]),
-    sources: z.array(sourceSchema).min(2),
-    status: z.enum(['draft', 'verified']),
-    verifiedAt: isoDate.optional(),
-    updatedAt: isoDate,
   })
-  .strict()
+  .strict();
+
+const bulbSchema = z
+  .object({
+    ...baseShape,
+    category: z.literal('smart-bulb'),
+    // white = fixed white, tunable-white = adjustable colour temperature, color = full RGB
+    colorType: fact(z.enum(COLOR_TYPES)),
+    lumens: fact(z.number().int().positive()),
+    // e.g. "E27", "E26 (A19)", "GU10", "B22"
+    bulbBase: fact(z.string().min(2).max(30)),
+  })
+  .strict();
+
+export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb'] as const;
+export type CategoryKey = (typeof CATEGORY_KEYS)[number];
+
+const COMMON_FACTS = ['radios', 'hubRequired', 'localControl'] as const;
+export const CATEGORY_FACTS = {
+  'smart-plug': ['energyMonitoring', 'maxLoadWatts'],
+  'smart-bulb': ['colorType', 'lumens', 'bulbBase'],
+} as const satisfies Record<CategoryKey, readonly string[]>;
+
+type FactValue = { value: unknown; sources: string[] };
+
+export const deviceSchema = z
+  .discriminatedUnion('category', [plugSchema, bulbSchema])
   .superRefine((d, ctx) => {
     const ids = d.sources.map((s) => s.id);
     const known = new Set(ids);
@@ -105,11 +140,13 @@ export const deviceSchema = z
       refs.forEach((r, i) => {
         if (!known.has(r)) ctx.addIssue({ code: 'custom', message: `unknown source "${r}"`, path: [...path, i] });
       });
-    for (const k of ['radios', 'matter', 'hubRequired', 'localControl', 'energyMonitoring', 'maxLoadWatts'] as const)
-      check(d[k].sources, [k, 'sources']);
-    for (const k of ['radios', 'hubRequired', 'localControl', 'energyMonitoring', 'maxLoadWatts'] as const)
-      if (d[k].value !== null && d[k].sources.length === 0)
+    check(d.matter.sources, ['matter', 'sources']);
+    const facts = d as unknown as Record<string, FactValue>;
+    for (const k of [...COMMON_FACTS, ...CATEGORY_FACTS[d.category]]) {
+      check(facts[k].sources, [k, 'sources']);
+      if (facts[k].value !== null && facts[k].sources.length === 0)
         ctx.addIssue({ code: 'custom', message: 'a confirmed value needs at least one source', path: [k, 'sources'] });
+    }
     for (const e of ECOSYSTEMS) check(d.compatibility[e].sources, ['compatibility', e, 'sources']);
 
     // a Matter device must say which transport it uses (Wi-Fi vs Thread matters for buyers)
@@ -119,3 +156,5 @@ export const deviceSchema = z
     if (d.status === 'verified' && !d.verifiedAt)
       ctx.addIssue({ code: 'custom', message: 'verified records need verifiedAt', path: ['verifiedAt'] });
   });
+
+export type DeviceData = z.infer<typeof deviceSchema>;
