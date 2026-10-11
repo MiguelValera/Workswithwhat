@@ -1,0 +1,131 @@
+{
+  "category": "smart-lock",
+  "brand": "Aqara",
+  "model": "Smart Lock U100",
+  "name": "Aqara Smart Lock U100 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://us.aqara.com/products/smart-lock-u100",
+  "radios": {
+    "value": [
+      "bluetooth",
+      "zigbee"
+    ],
+    "sources": [
+      "aqara-u100-specs"
+    ],
+    "note": "Aqara's spec sheet lists Bluetooth 5.0 and Zigbee 3.0, plus NFC for Home Key and cards. The lock itself has no Wi-Fi or Thread."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No CSA listing for the lock itself was found. Aqara says Matter support needs a Matter-compatible Aqara hub, which bridges the lock."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "aqara-u100-us",
+        "aqara-u100-news"
+      ],
+      "note": "Aqara lists Apple Home support and Apple Home Key, which works by tapping an iPhone or Apple Watch on the lock's NFC reader."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Aqara Zigbee 3.0 hub",
+      "sources": [
+        "aqara-u100-news"
+      ],
+      "note": "Aqara's launch release says a Zigbee 3.0 Aqara hub is required for Alexa and Google Assistant support."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Aqara Zigbee 3.0 hub",
+      "sources": [
+        "aqara-u100-news"
+      ],
+      "note": "Aqara's launch release says a Zigbee 3.0 Aqara hub is required for Alexa and Google Assistant support."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Aqara says Matter needs a Matter-compatible Aqara hub, but no official page names SmartThings for the U100."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Home Assistant docs page for the U100 found. It may be reachable through an Aqara hub's Matter bridge, but that is not confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "aqara-u100-news",
+      "aqara-u100-us"
+    ],
+    "note": "Aqara says the lock works out of the box over Bluetooth with the Aqara Home app, without a hub. Remote control, remote passcodes, Alexa, Google and Matter need an Aqara hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Aqara source describes local-only control explicitly."
+  },
+  "lockFit": {
+    "value": "deadbolt",
+    "sources": [
+      "aqara-u100-specs",
+      "aqara-u100-us"
+    ],
+    "note": "American-standard deadbolt for a 60 or 70 mm (2 3/8 or 2 3/4 inch) backset and doors 35 to 55 mm thick."
+  },
+  "keypad": {
+    "value": true,
+    "sources": [
+      "aqara-u100-us"
+    ],
+    "note": "Keypad on the lock, plus a fingerprint reader and NFC for Home Key and cards."
+  },
+  "power": {
+    "value": "4 × AA",
+    "sources": [
+      "aqara-u100-us",
+      "aqara-u100-specs"
+    ],
+    "note": "Four AA batteries, over 8 months at about 8 unlocks a day, per Aqara."
+  },
+  "summary": "Aqara's Smart Lock U100 is a US deadbolt replacement with a keypad, fingerprint reader and NFC for Apple Home Key. It works with Apple Home and, over Bluetooth, with the Aqara app without a hub; Alexa, Google Home, remote control and Matter need an Aqara hub. Four AA batteries power it.",
+  "caveats": [
+    "Remote control, remote passcodes, Alexa, Google Home and Matter need an Aqara Zigbee 3.0 or Matter-compatible hub.",
+    "Fits a 2 3/8 or 2 3/4 inch backset and doors 35 to 55 mm thick; it does not fit euro-profile cylinder doors."
+  ],
+  "sources": [
+    {
+      "id": "aqara-u100-us",
+      "url": "https://us.aqara.com/products/smart-lock-u100",
+      "title": "Aqara U100 Smart Door Lock",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-u100-specs",
+      "url": "https://www.aqara.com/en/product/smart-lock-u100/specs/",
+      "title": "Smart Lock U100 Specs - Aqara",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-u100-news",
+      "url": "https://www.aqara.com/us/news-us/aqara-introduces-its-first-deadbolt-smart-lock-u100/",
+      "title": "Aqara Introduces its First Deadbolt Smart Lock U100 - Aqara",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}
