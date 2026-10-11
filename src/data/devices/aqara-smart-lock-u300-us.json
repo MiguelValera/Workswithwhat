@@ -95,7 +95,7 @@
     "sources": [],
     "note": "Retailers and reviews list four AA batteries (up to 10 months) plus a USB-C emergency port; we found no official Aqara page stating it."
   },
-  "summary": "The Aqara Smart Lock U300 is a lever lock that replaces a single-latch handle or knob, with a keypad on the outer panel. It is Matter-certified over Thread, so it joins Apple Home, Google Home, Alexa and SmartThings through a Thread border router. Bluetooth is also built in. We could not confirm from Aqara whether its own hub is required.",
+  "summary": "Aqara's first lever lock, the Smart Lock U300 swaps in for a single-latch handle or knob and has a keypad on the outer panel. Matter over Thread connects it to Apple Home, Google Home, Alexa and SmartThings through a Thread border router. Aqara doesn't say clearly whether its own hub is also required.",
   "caveats": [
     "Matter needs a Thread border router; for Apple that means a HomePod mini, HomePod 2nd gen or Apple TV 4K.",
     "Aqara's FAQ says the outer panel is IPX4 and does not recommend it for exposed outdoor spots.",

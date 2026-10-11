@@ -68,7 +68,7 @@
     "sources": ["nuki-pro5"],
     "note": "Built-in lithium-ion battery that recharges in about 2 hours, on or off the door."
   },
-  "summary": "This retrofit lock, the 5th-generation Nuki Pro, is built for Europrofile cylinders and needs no cylinder change. Matter over Thread links it to Apple Home, Google Home, Alexa and SmartThings, and built-in Wi-Fi covers remote access without a Bridge. It charges a built-in battery in about two hours and has no keypad of its own. Home Assistant is not confirmed.",
+  "summary": "The Nuki Smart Lock Pro (5th Gen) fits over your existing Europrofile cylinder, so there is no cylinder swap. Matter over Thread links it to Apple Home, Google Home, Alexa and SmartThings, and built-in Wi-Fi handles remote access without a Bridge. The battery is built in and recharges in about two hours; there is no keypad on the lock. Home Assistant is not confirmed.",
   "caveats": ["Matter needs a Thread border router; a Wi-Fi-only Matter hub will not work.", "Not all Matter hubs support Remote Access via Thread, per Nuki's troubleshooting guide.", "Not compatible with Nuki's Universal Cylinder.", "The Keypad 2 NFC is a separate accessory."],
   "sources": [
     { "id": "nuki-pro5", "url": "https://nuki.io/en/products/smart-lock-pro-5th-gen", "title": "Smart Lock Pro (5th Gen)", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },

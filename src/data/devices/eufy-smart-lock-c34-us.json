@@ -103,7 +103,7 @@
     ],
     "note": "Eight AA batteries; eufy rates up to 8 months at about 10 unlocks a day."
   },
-  "summary": "The eufy Smart Lock C34 is a keypad deadbolt for standard US doors with built-in Wi-Fi and Matter over Thread. Matter brings it into Apple Home and SmartThings, while Alexa and Google Home connect by linking your eufy account. It runs on eight AA batteries, rated up to 8 months. Home Assistant is not confirmed.",
+  "summary": "The C34 from eufy joins Apple Home and SmartThings through Matter over Thread, while Alexa and Google Home connect by linking your eufy account. It is a keypad deadbolt for standard US doors with built-in Wi-Fi, running on eight AA batteries rated up to 8 months. Home Assistant is not confirmed.",
   "caveats": [
     "Matter control needs a Thread border router such as a HomePod mini, Apple TV 4K, or a Matter-capable Nest hub, Echo or SmartThings hub.",
     "Apple Home remote control needs a home hub even though iOS 18 can add the lock without one.",

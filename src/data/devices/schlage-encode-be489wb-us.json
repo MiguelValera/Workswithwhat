@@ -92,12 +92,11 @@
     ],
     "note": "Allegion rates Encode battery life at about 6 months on alkaline AA cells but no official page we found gives the count; retailers list four AA, included."
   },
-  "summary": "The Schlage Encode is a US smart deadbolt with a touchscreen keypad and built-in Wi-Fi, so no hub is needed. It works with Alexa and Google Assistant through the Schlage Home app, and Home Assistant has an official integration. It is the non-Plus model: Allegion says it has no Apple HomeKit support and cannot be upgraded, so Apple Home buyers need the Encode Plus.",
+  "summary": "Alexa, Google Home and Home Assistant are covered on the Schlage Encode (BE489WB), a US deadbolt with a touchscreen keypad and built-in Wi-Fi, so no hub is needed. Apple Home is not: Allegion says this non-Plus model has no HomeKit support and cannot be upgraded, and points buyers to the Encode Plus (BE499).",
   "caveats": [
-    "No Apple Home support; Schlage's Apple Home Key lock is the Encode Plus (BE499).",
+    "No Apple Home support; Allegion points Apple buyers to the Encode Plus (BE499).",
     "Matter and SmartThings support are not confirmed.",
-    "The Home Assistant integration goes through Schlage's cloud.",
-    "Allegion expects about 6 months of battery life; weak Wi-Fi shortens it."
+    "The Home Assistant integration goes through Schlage's cloud."
   ],
   "sources": [
     {
