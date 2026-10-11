@@ -43,13 +43,14 @@ The site is in **English**; it targets the global search market. Internal docs a
 
 ## Agents (`.claude/agents/`)
 
-Pipeline: **collector → verifier → editor**.
+Pipeline: **collector → verifier → editor**, then **reviewer** on the PR.
 
 | Agent | Job | Writes |
 |---|---|---|
 | `collector` | Researches a device and drafts its JSON with sources. | New `src/data/devices/*.json` with `status: "draft"`. |
 | `verifier` | Re-checks every claim against its cited source, independently. Downgrades anything unsupported to `unknown`. | Edits the record and sets `status: "verified"` + `verifiedAt` only if everything holds. |
 | `editor` | Writes `summary` and `caveats` from the verified data, plus SEO copy. Never changes facts. | `summary`, `caveats`. |
+| `reviewer` | Reviews an open PR against these rules (validate, build, CI, data, CSP, secrets, copy). Never merges. | One PR comment: **Ready to merge** or **Not ready**, with blockers. |
 
 After any agent run: `npm run validate` must pass.
 
@@ -100,7 +101,7 @@ Read this first if you are picking the project up.
 - **Next plug batch (not started):** Tapo P115 (EU), Nous A1T, Innr SP 242, LEDVANCE SMART+ Matter plug, Shelly Plug Gen4 (EU).
 
 ### How content gets added (lessons learned)
-- **Batch size:** 5 devices per agent. Run collector, then verifier, then editor, then open a PR. Merge once CI is green. Run at most ~3 agents at once; more hits the account's usage limit.
+- **Batch size:** 5 devices per agent. Run collector, then verifier, then editor, then open a PR, then run the reviewer on it. The owner squash-merges once CI is green and the reviewer says **Ready to merge**; agents don't merge (the session's permissions block merging without review). Run at most ~3 agents at once; more hits the account's usage limit.
 - **Network:** the cloud container cannot open external sites. WebFetch and curl fail, and only WebSearch works. Agents must cite only URLs that appeared in search results.
 - **Verifier rules that keep coming up:**
   - **Absence is not "no":** if a maker's platform list just doesn't mention Matter or Apple Home, use `null` / `unknown` with a note, not `false` / `no`.
