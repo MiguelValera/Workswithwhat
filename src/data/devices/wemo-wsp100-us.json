@@ -129,7 +129,8 @@
       "title": "Belkin ends support for most Wemo devices and its Wemo app",
       "publisher": "TechCrunch",
       "kind": "review",
-      "accessed": "2026-10-10"
+      "accessed": "2026-10-10",
+      "forCaveat": true
     },
     {
       "id": "ha-homekit-controller",

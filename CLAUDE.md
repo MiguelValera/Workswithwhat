@@ -31,7 +31,7 @@ The site is in **English**; it targets the global search market. Internal docs a
 | `hubRequired`, `localControl` | Facts `{ value, sources, note? }`; `value: null` = not confirmed. Every category has them. |
 | Category facts | Plugs: `energyMonitoring`, `maxLoadWatts`. Bulbs: `colorType` (white / tunable-white / color), `lumens`, `bulbBase` (e.g. "E27", "E26 (A19)", "GU10"). |
 | `summary`, `caveats` | Human copy (written by the editor agent). |
-| `sources[]` | `{ id, url, title, publisher, kind, accessed }`. At least one source must be `kind: manufacturer`. |
+| `sources[]` | `{ id, url, title, publisher, kind, accessed, forCaveat? }`. At least one source must be `kind: manufacturer`. `forCaveat: true` marks a source that backs only a caveat. |
 | `status` | `draft` (collector output) → `verified` (after the verifier signs off, with `verifiedAt`). **Only verified records are published.** |
 
 ### Compatibility semantics
@@ -111,6 +111,13 @@ Read this first if you are picking the project up.
   - The editor may only state what notes and facts support; it drops unsupported claims.
   - Each summary must open differently from every other.
 - **Publishing:** only `status: "verified"` records reach the site. A PR may contain drafts safely, but don't merge while a verifier is halfway through a record, because a half-verified record would go live.
+- **Saving tokens without losing quality:**
+  - Let scripts do the mechanical checks. `npm run validate` enforces principle 2 (no fact resting only on retailer or review sources), that every source backs a field (or has `"forCaveat": true`), banned words and unique summary openings. Fix what it reports instead of asking an agent to scan every record.
+  - Use `npm run seo:diff` (page-by-page SEO comparison with `main`) and `npm run check:overflow` (no sideways scrolling at 320–1280 px). Never have an agent write its own.
+  - Models: `collector`, `editor`, `reviewer` and `ux` run on Sonnet; the `verifier` keeps the default model because it's the quality gate for facts.
+  - Scale the review to the diff: data-only PRs skip `seo:diff` and `check:overflow`.
+  - Keep agent prompts focused and ask for short reports (about 10 lines per record). Give the verifier the collector's doubts so it doesn't rediscover them.
+  - Fix small reviewer suggestions directly in the main session rather than spinning up another agent.
 - **Stop hook:** this environment has a stop hook that demands commits. Agents' intermediate edits therefore get committed as "work in progress" on the branch; that's fine because PRs are squash-merged.
 
 ### Infrastructure
@@ -156,4 +163,6 @@ npm install
 npm run dev        # local dev server
 npm run validate   # schema + cross-checks for all device data
 npm run build      # validate + static build into dist/
+npm run seo:diff   # after build: compare every page's SEO with origin/main
+npm run check:overflow  # after build: no page or table scrolls sideways (global Playwright)
 ```

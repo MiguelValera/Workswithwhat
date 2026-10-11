@@ -103,7 +103,8 @@
       "title": "Product Security Support Policy",
       "publisher": "Aqara",
       "kind": "manufacturer",
-      "accessed": "2026-10-10"
+      "accessed": "2026-10-10",
+      "forCaveat": true
     }
   ],
   "status": "verified",

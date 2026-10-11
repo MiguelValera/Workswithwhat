@@ -147,7 +147,8 @@
       "title": "Amazon yanks Sengled's Alexa skill after a series of service outages",
       "publisher": "PCWorld",
       "kind": "review",
-      "accessed": "2026-10-11"
+      "accessed": "2026-10-11",
+      "forCaveat": true
     }
   ],
   "status": "verified",

@@ -53,6 +53,8 @@ export const sourceSchema = z
     publisher: z.string().min(2),
     kind: z.enum(SOURCE_KINDS),
     accessed: isoDate,
+    // true for a source that backs only a caveat (end of support, safety), not a field
+    forCaveat: z.literal(true).optional(),
   })
   .strict();
 

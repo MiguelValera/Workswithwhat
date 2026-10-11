@@ -8,7 +8,9 @@
     "build": "npm run validate && astro build",
     "preview": "astro preview",
     "validate": "node scripts/validate-data.mjs",
-    "check": "astro check"
+    "check": "astro check",
+    "seo:diff": "node scripts/seo-diff.mjs",
+    "check:overflow": "node scripts/overflow-check.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
