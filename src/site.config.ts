@@ -6,8 +6,8 @@ export const OPERATOR = {
   name: '',
   taxId: '',
   address: '',
-  email: '',
+  email: 'info@workswithwhat.com',
 };
 
 export const CONTACT_URL = 'https://github.com/MiguelValera/Workswithwhat/issues';
-export const LEGAL_UPDATED = '2026-10-10';
+export const LEGAL_UPDATED = '2026-10-11';

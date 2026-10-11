@@ -43,13 +43,14 @@ The site is in **English**; it targets the global search market. Internal docs a
 
 ## Agents (`.claude/agents/`)
 
-Pipeline: **collector → verifier → editor**.
+Pipeline: **collector → verifier → editor**, then **reviewer** on the PR.
 
 | Agent | Job | Writes |
 |---|---|---|
 | `collector` | Researches a device and drafts its JSON with sources. | New `src/data/devices/*.json` with `status: "draft"`. |
 | `verifier` | Re-checks every claim against its cited source, independently. Downgrades anything unsupported to `unknown`. | Edits the record and sets `status: "verified"` + `verifiedAt` only if everything holds. |
 | `editor` | Writes `summary` and `caveats` from the verified data, plus SEO copy. Never changes facts. | `summary`, `caveats`. |
+| `reviewer` | Reviews an open PR against these rules (validate, build, CI, data, CSP, secrets, copy). Never merges. | One PR comment: **Ready to merge** or **Not ready**, with blockers. |
 
 After any agent run: `npm run validate` must pass.
 
@@ -100,7 +101,7 @@ Read this first if you are picking the project up.
 - **Next plug batch (not started):** Tapo P115 (EU), Nous A1T, Innr SP 242, LEDVANCE SMART+ Matter plug, Shelly Plug Gen4 (EU).
 
 ### How content gets added (lessons learned)
-- **Batch size:** 5 devices per agent. Run collector, then verifier, then editor, then open a PR. Merge once CI is green. Run at most ~3 agents at once; more hits the account's usage limit.
+- **Batch size:** 5 devices per agent. Run collector, then verifier, then editor, then open a PR, then run the reviewer on it. The owner squash-merges once CI is green and the reviewer says **Ready to merge**; agents don't merge (the session's permissions block merging without review). Run at most ~3 agents at once; more hits the account's usage limit.
 - **Network:** the cloud container cannot open external sites. WebFetch and curl fail, and only WebSearch works. Agents must cite only URLs that appeared in search results.
 - **Verifier rules that keep coming up:**
   - **Absence is not "no":** if a maker's platform list just doesn't mention Matter or Apple Home, use `null` / `unknown` with a note, not `false` / `no`.
@@ -123,11 +124,12 @@ Read this first if you are picking the project up.
   - A Transform Rule adds `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`.
   - **Bot Fight Mode must stay OFF.** It answered 403 (`cf-mitigated: challenge`) to every HTML page requested from a datacenter.
 - **Security:** a CSP meta tag is emitted in production builds only (`default-src 'none'`, no inline styles). JSON-LD escapes `<`. Dependabot is on. TypeScript is held at 6, because `astro check` rejects TS 7. `upload-pages-artifact` and `deploy-pages` stay on their current majors (open Dependabot PRs #4 and #5) until a deploy test confirms newer versions still publish `/.well-known/`.
-- **Legal:** the site sets no cookies and has no trackers, so there is no consent banner. The privacy policy names GitHub Pages and Cloudflare as processors. Operator details required by Spain's LSSI are empty in `src/site.config.ts` and must be filled in before monetising.
+- **Legal:** the site sets no cookies and has no trackers, so there is no consent banner. The privacy policy names GitHub Pages and Cloudflare as processors, plus Cloudflare Email Routing and Gmail for email. In `src/site.config.ts`, `OPERATOR.email` is `info@workswithwhat.com`; the other operator details required by Spain's LSSI are still empty and must be filled in before monetising.
+- **Email:** `info@workswithwhat.com` is a Cloudflare Email Routing rule that forwards to the owner's Gmail (no mailbox). The footer's "Tell us" link is a `mailto:` to it.
 
 ### Owner's to-do list (not done as of this update)
 - Google Search Console and Bing Webmaster Tools: steps in `docs/launch-kit.md`.
-- DNSSEC, plus SPF (`v=spf1 -all`) and DMARC (`p=reject`) TXT records in Cloudflare.
+- DNSSEC. The domain now receives email, so don't use `v=spf1 -all`: keep the SPF record Email Routing created (add `include:_spf.google.com` if replying as info@ from Gmail), and start DMARC at `p=none`. Only move to `p=reject` once outgoing mail is DKIM-signed with the domain.
 - HSTS in Cloudflare, once the site has been stable for a few days.
 - Verify the domain in GitHub Pages settings, and add a ruleset protecting `main`.
 - Fill in `src/site.config.ts` with operator details.

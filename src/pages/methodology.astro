@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { CONTACT_URL, OPERATOR } from '../site.config';
 ---
 
 <Base
@@ -46,7 +47,7 @@ import Base from '../layouts/Base.astro';
   <h2>Corrections</h2>
   <p>
     Firmware updates change compatibility all the time. If something here is wrong or out of date,
-    <a href="https://github.com/miguelvalera/workswithwhat/issues">open an issue</a> with a link, and we'll re-check it.
+    email <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a> or <a href={CONTACT_URL}>open an issue</a> with a link, and we'll re-check it.
     No brand pays to be listed, and there are no affiliate links.
   </p>
 </Base>
