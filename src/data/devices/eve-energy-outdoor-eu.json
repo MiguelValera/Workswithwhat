@@ -6,7 +6,7 @@
   "regions": [
     "EU"
   ],
-  "officialUrl": "https://www.evehome.com/en-us/eve-energy-outdoor",
+  "officialUrl": "https://www.evehome.com/en/eve-energy-outdoor",
   "radios": {
     "value": [
       "thread"
@@ -23,7 +23,8 @@
     "sources": [
       "eve-outdoor-product",
       "eve-outdoor-launch",
-      "eve-identify"
+      "eve-identify",
+      "eve-outdoor-product-eu"
     ],
     "note": "Eve sells it as a Matter-over-Thread device. A CSA entry that looks like it (CSA23K53MAT42554-24) only showed up in a sidebar on another Eve page, so we don't cite it."
   },
@@ -63,10 +64,11 @@
     "home_assistant": {
       "status": "matter",
       "sources": [
-        "eve-outdoor-product",
+        "eve-outdoor-product-eu",
+        "ha-blog-eve-wwha",
         "ha-matter"
       ],
-      "note": "Eve's product page shows the Works with Home Assistant logo. Pairs through the Matter integration and needs a Thread border router."
+      "note": "Home Assistant's Works with Home Assistant announcement names Eve Energy Outdoor, and Eve's page shows the logo. Pairs through the Matter integration; needs a Thread border router."
     }
   },
   "hubRequired": {
@@ -99,7 +101,7 @@
       "eve-outdoor-product",
       "eve-outdoor-launch"
     ],
-    "note": "10 A / 2300 W continuous; Eve gives 16 A / 3680 W as the peak rating. Incandescent lamps up to 1 A / 240 W."
+    "note": "Eve lists 10 A / 2300 W as the permanent (continuous) load and 16 A / 3680 W as the peak current, so we use 2300 W. Incandescent lamps up to 1 A / 240 W."
   },
   "summary": "Eve Energy Outdoor is an IP44 surface-mounted outdoor socket with a Schuko outlet and a built-in power meter, controlled over Matter via Thread. Apple Home, Google Home, Alexa, SmartThings and Home Assistant all reach it through Matter, and each needs a hub that is a Thread border router. It is rated 10 A / 2300 W continuous (16 A / 3680 W peak). Energy readings show in the Eve app and SmartThings, but not in Alexa or Google Home.",
   "caveats": [
@@ -108,6 +110,14 @@
     "Power metering doesn't show in Alexa or Google Home."
   ],
   "sources": [
+    {
+      "id": "eve-outdoor-product-eu",
+      "url": "https://www.evehome.com/en/eve-energy-outdoor",
+      "title": "Eve Energy Outdoor",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
     {
       "id": "eve-outdoor-product",
       "url": "https://www.evehome.com/en-us/eve-energy-outdoor",
@@ -147,8 +157,17 @@
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-blog-eve-wwha",
+      "url": "https://www.home-assistant.io/blog/2025/04/29/eve-joins-works-with-home-assistant/",
+      "title": "Eve Joins Works with Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

@@ -1,0 +1,99 @@
+{
+  "category": "smart-bulb",
+  "brand": "IKEA",
+  "model": "KAJPLATS LED bulb E27 1055 lm, colour and white spectrum (706.085.75)",
+  "name": "IKEA KAJPLATS E27 1055 lm Smart Colour and White Spectrum Bulb (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.ikea.com/lt/en/p/kajplats-led-bulb-e27-1055-lumen-smart-colour-and-white-spectrum-globe-opal-white-70608575/",
+  "radios": {
+    "value": ["thread", "bluetooth"],
+    "sources": ["csa-kajplats-e27-cws", "ikea-kajplats-e27-cws-lt"],
+    "note": "IKEA describes it as Matter over Thread. The CSA listing gives Thread and Bluetooth as transports; Bluetooth is presumably for Matter commissioning."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": ["csa-kajplats-e27-cws", "ikea-kajplats-e27-cws-lt"],
+    "note": "CSA lists 'KAJPLATS E27 CWS globe 1055lm' as Matter-certified (certified 2025-12-16) with Thread and Bluetooth transport."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["ikea-kajplats-e27-cws-lt", "csa-kajplats-e27-cws"],
+      "note": "IKEA names Apple among compatible systems; works via Matter over Thread and needs a Thread border router."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["ikea-kajplats-e27-cws-lt", "csa-kajplats-e27-cws"],
+      "note": "IKEA names Google among compatible systems; works via Matter over Thread and needs a Thread border router."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["ikea-kajplats-e27-cws-lt", "csa-kajplats-e27-cws"],
+      "note": "IKEA names Amazon among compatible systems; works via Matter over Thread and needs an Echo that is a Thread border router."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["ikea-kajplats-e27-cws-lt", "csa-kajplats-e27-cws"],
+      "note": "IKEA names Samsung among compatible systems; works via Matter over Thread and needs a SmartThings hub that is a Thread border router."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": ["ha-matter", "csa-kajplats-e27-cws"],
+      "note": "Via the official Matter integration with a Thread border router. Users also report a Zigbee pairing mode, which we haven't confirmed officially."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": ["ikea-kajplats-e27-cws-lt"],
+    "note": "IKEA says phone control needs a Thread border router, e.g. its DIRIGERA hub. A HomePod, Nest Hub or Thread-capable Echo also works; there's no direct Bluetooth app control."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-matter", "csa-kajplats-e27-cws"],
+    "note": "Matter over Thread runs on the local network without a cloud service."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": ["ikea-kajplats-e27-cws-lt"],
+    "note": "Colour and white spectrum: full colour plus adjustable white."
+  },
+  "lumens": {
+    "value": 1055,
+    "sources": ["ikea-kajplats-e27-cws-lt", "csa-kajplats-e27-cws"]
+  },
+  "bulbBase": {
+    "value": "E27",
+    "sources": ["ikea-kajplats-e27-cws-lt"]
+  },
+  "summary": "IKEA's KAJPLATS range has taken over from TRÅDFRI, so this record covers the KAJPLATS E27 colour and white spectrum bulb rather than TRÅDFRI. It is a 1055-lumen colour bulb that runs Matter over Thread and is Matter-certified. It works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant through Matter, but it needs a Thread border router such as IKEA's DIRIGERA hub.",
+  "caveats": ["Needs a Thread border router (e.g. IKEA DIRIGERA, HomePod mini, Nest Hub 2nd gen) even for phone control.", "Phone control depends on the Thread network: there is no Bluetooth fallback for direct app control."],
+  "sources": [
+    {
+      "id": "ikea-kajplats-e27-cws-lt",
+      "url": "https://www.ikea.com/lt/en/p/kajplats-led-bulb-e27-1055-lumen-smart-colour-and-white-spectrum-globe-opal-white-70608575/",
+      "title": "KAJPLATS LED bulb E27 1055 lumen, smart colour and white spectrum/globe opal white",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-kajplats-e27-cws",
+      "url": "https://csa-iot.org/csa_product/kajplats-e27-cws-globe-1055lm/",
+      "title": "KAJPLATS E27 CWS globe 1055lm - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
