@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Meross",
   "model": "MSS110 (MSS110HK / MSS110US, HomeKit version)",
-  "name": "Meross Smart Wi-Fi Plug Mini MSS110 (US, HomeKit)",
+  "name": "Meross MSS110 (HomeKit, US)",
   "regions": [
     "US",
     "CA"
@@ -89,11 +89,13 @@
     ],
     "note": "Meross rates the US/CA/JP version at 15 A / 1800 W."
   },
-  "summary": "The Meross MSS110 is a compact US/Canada Wi-Fi plug with built-in HomeKit, so it pairs straight into Apple Home without Matter. Meross also lists Alexa, Google Home and SmartThings through its account link. It runs on 2.4 GHz Wi-Fi with no hub and is rated 15 A / 1800 W.",
+  "summary": "Native HomeKit is the reason to pick the Meross MSS110 (sold as MSS110HK): it pairs straight into Apple Home over Wi-Fi without going through Matter or a bridge. Google Home, Alexa and SmartThings work too, each by linking your Meross account. It's a US/Canada plug rated 15 A / 1800 W, and it doesn't track energy use.",
   "caveats": [
-    "2.4 GHz Wi-Fi only; Enterprise Wi-Fi networks aren't supported.",
-    "Controlling it from outside the home in Apple Home needs an Apple home hub (HomePod, Apple TV or iPad).",
-    "Not the Matter model: Meross's Matter mini plug is the MSS115."
+    "2.4 GHz Wi-Fi only, and Meross says Enterprise Wi-Fi networks aren't supported.",
+    "Remote control in Apple Home needs an Apple home hub (HomePod, Apple TV or iPad).",
+    "No energy monitoring; Meross sells metering plugs such as the MSS315 for that.",
+    "Meross doesn't say whether the MSS110 supports Matter; its Matter mini plug is the separate MSS115.",
+    "Home Assistant has no official Meross integration."
   ],
   "sources": [
     {

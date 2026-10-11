@@ -92,12 +92,12 @@
     ],
     "note": "TP-Link's UK spec sheet: 2990 W, 13 A, 1/6 HP motor, 220-240 V. Tapo's UK page says EV charging isn't supported."
   },
-  "summary": "The UK Tapo P110 is a 13 A, 2.4 GHz Wi-Fi plug with energy monitoring in the Tapo app and no hub. TP-Link lists Alexa, Google Assistant and SmartThings through your TP-Link account, and Home Assistant's TP-Link integration supports it. TP-Link rates it at 2990 W. For Apple Home or Matter, TP-Link's model is the P110M.",
+  "summary": "Linked through your TP-Link account, the UK Tapo P110 works with Alexa, Google Home and SmartThings, and Home Assistant's official TP-Link integration supports it as well. It's a 13 A, 2.4 GHz Wi-Fi plug rated 2990 W, no hub needed, with live and historical energy use in the Tapo app. The app can also control it locally without internet. TP-Link doesn't list Apple Home; its Matter version is the P110M.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
     "Apple Home and Matter aren't listed; the Tapo P110M is the Matter version.",
-    "Energy data isn't passed to SmartThings; it stays in the Tapo app.",
-    "Tapo says it isn't for EV charging. Indoor use only."
+    "TP-Link's own FAQs disagree on whether energy data reaches SmartThings, so expect to check usage in the Tapo app.",
+    "Tapo says it isn't for EV charging."
   ],
   "sources": [
     {

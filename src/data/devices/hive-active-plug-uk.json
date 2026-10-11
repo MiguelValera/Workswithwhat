@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Hive",
   "model": "Active Plug",
-  "name": "Hive Active Plug (Hive Plug, UK)",
+  "name": "Hive Active Plug (UK)",
   "regions": [
     "UK"
   ],
@@ -89,12 +89,13 @@
     "sources": [],
     "note": "Hive's pages don't give a load rating. UK retailers list it as 13 A, but no official wattage figure was found."
   },
-  "summary": "The Hive Active Plug is a UK Zigbee plug that needs a Hive Hub; first-time Hive buyers have to buy the hub too. Through the hub and Hive app, Hive lists Alexa, Google Assistant, Apple HomeKit and IFTTT, and Home Assistant's official Hive integration supports it. It takes up to six on/off schedule slots a day and is for indoor use only.",
+  "summary": "If you're new to Hive, budget for a Hive Hub: the Hive Active Plug is a UK Zigbee plug that reaches Apple Home, Google Home, Alexa and Home Assistant only through that hub. Existing Hive users can add it to the hub they already have. The Hive app shows the plugged-in appliance's power draw in watts. Neither Hive nor SmartThings documents SmartThings support.",
   "caveats": [
-    "Needs a Hive Hub; it can't connect to Wi-Fi on its own.",
-    "Indoor use only. Hive advises against using it for fridges, freezers, heaters or medical and safety equipment.",
+    "Needs a Hive Hub; the plug can't join Wi-Fi on its own.",
+    "Schedules and Actions can't be controlled from Apple's Home app.",
     "Hive's Alexa link doesn't support multi-user or multi-home setups.",
-    "Home Assistant needs the Hive account owner's login with two-factor authentication on."
+    "Home Assistant needs the Hive account owner's login with two-factor authentication on.",
+    "UK/Ireland type G plug only, and Hive doesn't publish a load rating."
   ],
   "sources": [
     {
