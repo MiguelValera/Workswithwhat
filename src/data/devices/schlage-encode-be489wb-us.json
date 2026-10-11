@@ -1,0 +1,170 @@
+{
+  "category": "smart-lock",
+  "brand": "Schlage",
+  "model": "Encode (BE489WB)",
+  "name": "Schlage Encode (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.schlage.com/en/home/smart-locks/encode.html",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "allegion-encode-zwave"
+    ],
+    "note": "Allegion says the Encode (BE489) has Bluetooth and Wi-Fi for pairing with the Schlage Home app, and no Z-Wave."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Schlage or Allegion page found says either way for the non-Plus Encode. Allegion says the Encode Plus does not support Matter; that article does not cover this model."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "no",
+      "sources": [
+        "allegion-be489-homekit"
+      ],
+      "note": "Allegion says the Encode (BE489) does not support Apple HomeKit and cannot be upgraded to it; it points to the Encode Plus (BE499) instead."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "schlage-google"
+      ],
+      "note": "Through the Schlage Home app and Google Assistant. Schlage says Encode locks need no hub or adapter."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "amazon-wwa-schlage"
+      ],
+      "note": "Schlage Home skill for Alexa. Amazon's developer blog covers Works With Alexa certification for Schlage's Encode locks."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Schlage's pages seen list Alexa and Google but not SmartThings. Absence from the list is not a statement that it will not work."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-schlage"
+      ],
+      "note": "Official Schlage integration; the docs list the Encode Smart WiFi Deadbolt as tested. It uses Schlage's cloud API."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "schlage-google",
+      "schlage-encode"
+    ],
+    "note": "Built-in Wi-Fi; Schlage says Encode locks need no hub or adapter."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Home Assistant control goes through Schlage's cloud; no source states what works with the internet down."
+  },
+  "lockFit": {
+    "value": "deadbolt",
+    "sources": [
+      "schlage-google",
+      "schlage-encode"
+    ],
+    "note": "Schlage sells it as the Encode Smart WiFi Deadbolt, a complete replacement deadbolt."
+  },
+  "keypad": {
+    "value": true,
+    "sources": [
+      "allegion-be489-keypad"
+    ],
+    "note": "Touchscreen keypad on the lock; Allegion has a BE489 keypad troubleshooting article."
+  },
+  "power": {
+    "value": null,
+    "sources": [
+      "allegion-battery-life"
+    ],
+    "note": "Allegion rates Encode battery life at about 6 months on alkaline AA cells but no official page we found gives the count; retailers list four AA, included."
+  },
+  "summary": "Alexa, Google Home and Home Assistant are covered on the Schlage Encode (BE489WB), a US deadbolt with a touchscreen keypad and built-in Wi-Fi, so no hub is needed. Apple Home is not: Allegion says this non-Plus model has no HomeKit support and cannot be upgraded, and points buyers to the Encode Plus (BE499).",
+  "caveats": [
+    "No Apple Home support; Allegion points Apple buyers to the Encode Plus (BE499).",
+    "Matter and SmartThings support are not confirmed.",
+    "The Home Assistant integration goes through Schlage's cloud."
+  ],
+  "sources": [
+    {
+      "id": "schlage-encode",
+      "url": "https://www.schlage.com/en/home/smart-locks/encode.html",
+      "title": "WiFi Smart Lock with Smart Home Integration - Schlage Encode",
+      "publisher": "Schlage",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "schlage-google",
+      "url": "https://www.schlage.com/en/home/smart-locks/works-with/google-home.html",
+      "title": "Smart Locks Compatible with Google Home",
+      "publisher": "Schlage",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "allegion-encode-zwave",
+      "url": "https://kc.allegion.com/kb/article/are-schlage-encode-series-locks-z-wave-compatible",
+      "title": "Are Schlage Encode Series Locks Z-Wave Compatible?",
+      "publisher": "Allegion",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "allegion-be489-homekit",
+      "url": "https://kc.allegion.com/kb/article/can-i-upgrade-my-schlage-encode-be489-to-support-apple-homekit",
+      "title": "Can I Upgrade My Schlage Encode (BE489) to Support Apple HomeKit?",
+      "publisher": "Allegion",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "allegion-be489-keypad",
+      "url": "https://kc.allegion.com/kb/article/why-is-my-be489-not-responding",
+      "title": "Encode Series Keypad Not Responding",
+      "publisher": "Allegion",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "allegion-battery-life",
+      "url": "https://kc.allegion.com/kb/article/troubleshooting-poor-battery-life-for-the-encode-series",
+      "title": "Troubleshooting Poor Battery Life for the Encode Series",
+      "publisher": "Allegion",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "amazon-wwa-schlage",
+      "url": "https://developer.amazon.com/en-US/blogs/alexa/device-makers/2021/02/Works-With-Alexa-Schlage",
+      "title": "Works With Alexa (WWA) Brings Peace of Mind for Customers of Schlage's Encode Smart Locks",
+      "publisher": "Amazon",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-schlage",
+      "url": "https://www.home-assistant.io/integrations/schlage/",
+      "title": "Schlage - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

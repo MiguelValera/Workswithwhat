@@ -101,10 +101,10 @@
   "power": {
     "value": "8 × AA",
     "sources": [
-      "csa-eufy-e30",
-      "eufy-e30-page"
+      "eufy-e30-page",
+      "csa-eufy-e30"
     ],
-    "note": "eight AA batteries; eufy claims up to 8 months per set."
+    "note": "Eight AA batteries; eufy claims up to 8 months per set."
   },
   "summary": "Matter over Thread brings the eufy Smart Lock E30 into Apple Home and SmartThings. Alexa and Google Home connect by linking your eufy account. It is a US deadbolt replacement with a keypad, fingerprint reader and a keyhole for a mechanical key, powered by eight AA batteries. Home Assistant is not confirmed.",
   "caveats": [
