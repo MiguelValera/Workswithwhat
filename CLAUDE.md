@@ -27,9 +27,9 @@ The site is in **English**; it targets the global search market. Internal docs a
 | `radios` | Fact: wifi / thread / zigbee / z-wave / bluetooth / ethernet. |
 | `matter` | `certified` (true / false / null), plus `transport` when certified. |
 | `compatibility.<ecosystem>` | `native` · `matter` · `hub` (needs `via`) · `no` · `unknown`, with `sources`. Ecosystems: apple_home, google_home, alexa, smartthings, home_assistant. |
-| `category` | `smart-plug` or `smart-bulb` (more to come). Decides the URL section and the category facts below. |
+| `category` | `smart-plug`, `smart-bulb` or `smart-lock` (more to come). Decides the URL section and the category facts below. |
 | `hubRequired`, `localControl` | Facts `{ value, sources, note? }`; `value: null` = not confirmed. Every category has them. |
-| Category facts | Plugs: `energyMonitoring`, `maxLoadWatts`. Bulbs: `colorType` (white / tunable-white / color), `lumens`, `bulbBase` (e.g. "E27", "E26 (A19)", "GU10"). |
+| Category facts | Plugs: `energyMonitoring`, `maxLoadWatts`. Bulbs: `colorType` (white / tunable-white / color), `lumens`, `bulbBase` (e.g. "E27", "E26 (A19)", "GU10"). Locks: `lockFit` (deadbolt / retrofit / cylinder / lever), `keypad`, `power` (e.g. "4 × AA"). |
 | `summary`, `caveats` | Human copy (written by the editor agent). |
 | `sources[]` | `{ id, url, title, publisher, kind, accessed, forCaveat? }`. At least one source must be `kind: manufacturer`. `forCaveat: true` marks a source that backs only a caveat. |
 | `status` | `draft` (collector output) → `verified` (after the verifier signs off, with `verifiedAt`). **Only verified records are published.** |
@@ -78,7 +78,7 @@ After any agent run: `npm run validate` must pass.
 ## Roadmap
 
 - **Phase 1 (done):** Astro setup, schema and validation, agents, first smart plugs, GitHub Pages + Cloudflare deploy, security hardening, legal pages, SEO/GEO.
-- **Phase 2 (in progress):** more devices and categories. Plugs and bulbs are live; sensors, locks and thermostats come next. Each new category needs code: schema in `src/schema/device.ts`, plus registry and labels in `src/lib/categories.ts`. Then filters, comparison pages ("X vs Y") and per-ecosystem buying guides.
+- **Phase 2 (in progress):** more devices and categories. Plugs, bulbs and locks are live; sensors and thermostats come next. Each new category needs code: schema in `src/schema/device.ts`, plus registry and labels in `src/lib/categories.ts`. Then filters, comparison pages ("X vs Y") and per-ecosystem buying guides.
 - **Phase 3:** data freshness (re-verify records older than 6 months), contribution and corrections form, monetisation (see below).
 
 ## Current state (handoff, updated 2026-10-11)
@@ -86,16 +86,16 @@ After any agent run: `npm run validate` must pass.
 Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
-- **56 verified devices:** 41 smart plugs (US, EU, UK) and 15 smart bulbs, each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
+- **66 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs and 10 smart locks (US, EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
-  - `/smart-plugs/` and `/smart-bulbs/`: comparison charts.
+  - `/smart-plugs/`, `/smart-bulbs/` and `/smart-locks/`: comparison charts.
   - A page per device.
   - `/works-with/<ecosystem>/` and `/works-with/matter/`.
   - `/methodology/`, `/legal/` and `/privacy/`.
 - **For AI assistants:** `/llms.txt`, `/llms-full.txt`, `/api/devices.json` and `/api/<category>.json`.
 
 ### Unfinished work
-- **Next:** pick the next batch (Claude decides). Sensors are the next category on the roadmap and need schema and registry work first. There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
+- **Next:** pick the next batch (Claude decides). More locks (Eufy, Aqara U100, Nuki Pro, Yale Assure 2 Plus with Home Key) or the next category: sensors or thermostats, which need schema and registry work first, as locks did. There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
 - **Who decides content:** the owner doesn't pick devices or review content. Claude chooses what to add next and writes it, following the principles above.
 
 ### How content gets added (lessons learned)

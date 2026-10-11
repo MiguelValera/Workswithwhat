@@ -67,12 +67,8 @@
     "sources": ["utec-bolt-pro"],
     "note": "6 V from four AA alkaline batteries, with a micro-USB port for emergency power. U-tec gives 3 to 6 months for the Wi-Fi model and up to a year for the non-Wi-Fi versions."
   },
-  "summary": "The Ultraloq U-Bolt Pro WiFi is a deadbolt with keypad and fingerprint reader that connects directly to 2.4 GHz Wi-Fi without a bridge. Alexa, Google Assistant and SmartThings are supported. U-tec says it does not work with Apple Home, Matter is not listed, and Home Assistant is documented only for the Z-Wave version.",
-  "caveats": [
-    "2.4 GHz Wi-Fi only; 5 GHz networks are not supported.",
-    "No Apple Home support and no Matter listing for this Wi-Fi model; Ultraloq's HomeKit and Matter locks are different products.",
-    "Battery life is short: U-tec gives 3 to 6 months for the Wi-Fi model."
-  ],
+  "summary": "Ultraloq U-Bolt Pro WiFi is a deadbolt replacement with a keypad and fingerprint reader (50 users, 50 codes, 100 fingerprints) and 2.4 GHz Wi-Fi built in, so it needs no bridge. Google Assistant, Alexa and SmartThings are supported. U-tec says it does not work with Apple Home, and no Matter statement exists for this model. Four AA cells last 3 to 6 months.",
+  "caveats": ["Wi-Fi is 2.4 GHz only; 5 GHz is not supported.","No Apple Home support; only Ultraloq's Bolt Fingerprint models list HomeKit.","Ultraloq's Matter locks are a separate Thread-based Bolt Pro, not this one.","Home Assistant is documented only for the Z-Wave U-Bolt Pro, so this Wi-Fi model is unconfirmed.","Remote and voice control run through Ultraloq's cloud."],
   "sources": [
     {
       "id": "utec-bolt-pro",

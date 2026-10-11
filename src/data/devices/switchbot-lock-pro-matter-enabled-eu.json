@@ -68,11 +68,8 @@
     "sources": ["switchbot-eu-lock-pro-matter"],
     "note": "Dual rechargeable AB packs; one keeps powering the lock while the other charges."
   },
-  "summary": "The SwitchBot Lock Pro Matter Enabled is the Matter version sold in Europe. It has built-in Wi-Fi and Bluetooth, and speaks Matter over Wi-Fi without a SwitchBot hub. SwitchBot's page lists Apple Home, Alexa, Google Home and Home Assistant. It fits over the thumb-turn of European-style cylinders and runs on rechargeable battery packs.",
-  "caveats": [
-    "The original SwitchBot Lock Pro, without Matter Enabled, has no built-in Matter or Wi-Fi and needs a SwitchBot Hub.",
-    "Keypad access needs a separate accessory."
-  ],
+  "summary": "SwitchBot Lock Pro Matter Enabled has Wi-Fi and Bluetooth built in and speaks Matter over Wi-Fi, so Apple Home and Google Home pair without a SwitchBot hub. SwitchBot's page also lists Alexa and Home Assistant. It is a retrofit lock that fits over the thumb-turn of Euro profile, UK oval, Swiss round and knob cylinders, and it runs on dual rechargeable battery packs, one charging while the other powers the lock.",
+  "caveats": ["The original SwitchBot Lock Pro has no Wi-Fi and needs a SwitchBot Hub for Matter; this is the Matter Enabled model.","Apple Home needs a home hub such as a HomePod or Apple TV, and Google Home needs a Nest hub.","SwitchBot's page lists Alexa without saying how; we recorded it as Matter.","SwitchBot's pages do not mention SmartThings for this model.","Keypad access needs a separate accessory, sold in the Touch and Vision combos."],
   "sources": [
     { "id": "switchbot-eu-lock-pro-matter", "url": "https://eu.switch-bot.com/de/products/switchbot-lock-pro-matter-enabled", "title": "SwitchBot Lock Pro Matter Enabled", "publisher": "SwitchBot", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "switchbot-matter-android", "url": "https://support.switch-bot.com/hc/en-us/articles/32092031835031-How-to-Setup-Matter-with-SwitchBot-Lock-Pro-Matter-Enabled-Android", "title": "How to Setup Matter with SwitchBot Lock Pro Matter Enabled (Android)", "publisher": "SwitchBot", "kind": "manufacturer", "accessed": "2026-10-11" },

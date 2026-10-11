@@ -67,13 +67,8 @@
     "sources": ["august-faq"],
     "note": "August's FAQ says two 3V CR123 or CR123A lithium (non-rechargeable) cells, with up to 3 months of life under typical Wi-Fi use. The 4 × AA seen on some listings belongs to older August locks."
   },
-  "summary": "August's 4th-gen lock sits over the inside of your existing deadbolt and has Wi-Fi built in, so no separate bridge is required. It works with Alexa, Google Assistant and Apple Home (via Bluetooth), and Home Assistant lists it as supported. Remote Siri control needs an Apple TV, HomePod or iPad as a home hub, and the lock has no Matter listing.",
-  "caveats": [
-    "Battery life is short: August cites about 3 months with Wi-Fi in typical use.",
-    "Away-from-home control through Apple Home needs an Apple TV, HomePod or iPad acting as a home hub.",
-    "Home Assistant often shows wrong battery levels for this model.",
-    "No keypad on the lock itself; keypads are sold separately."
-  ],
+  "summary": "The August Wi-Fi Smart Lock (4th gen) fits over the inside of your existing deadbolt, so your outside hardware and keys stay, and it has Wi-Fi built in with no bridge. Apple Home works over Bluetooth, Google Home and Alexa need the lock on Wi-Fi, and Home Assistant's August integration lists it. No Matter support is confirmed and SmartThings status is unclear. Two CR123A cells last about 3 months with typical Wi-Fi use.",
+  "caveats": ["Battery life is short: August cites up to 3 months of typical Wi-Fi use on two CR123A cells.","Away-from-home control through Apple Home needs an Apple TV, HomePod or iPad as a home hub.","Alexa voice unlock requires setting a PIN.","Gen 4 battery readings are often wrong in Home Assistant.","There is no keypad on the lock; keypads are sold separately."],
   "sources": [
     {
       "id": "august-product",

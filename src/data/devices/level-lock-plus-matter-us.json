@@ -68,13 +68,8 @@
     "sources": ["level-lock-matter"],
     "note": "One CR2 lithium (non-rechargeable) battery hidden inside the bolt; Level gives up to a year of life in typical use."
   },
-  "summary": "The Level Lock+ (Matter) is a compact deadbolt that talks Bluetooth and Matter over Thread at once, so one lock can join Apple Home, Google Home, Alexa and SmartThings. Apple Home owners can also open it with Home Key. Home Assistant works with it through its Matter integration. Every Matter platform needs a Thread border router, but the Level app works over Bluetooth without one.",
-  "caveats": [
-    "Matter control needs a Thread border router such as a HomePod mini, Nest Hub (2nd gen) or Thread-capable Echo.",
-    "Existing Level Lock+ owners get Matter through a firmware update that Level says cannot be undone.",
-    "The keypad is a separate purchase.",
-    "Home Assistant forum users report pairing failures with Level locks on some Thread setups."
-  ],
+  "summary": "Apple Home Key works on the Level Lock+ (Matter), a deadbolt replacement that also joins Google Home, Alexa, SmartThings and Home Assistant over Matter on Thread. It runs Bluetooth and Thread at the same time, so the Level app works without a border router while Matter platforms and away-from-home control need one. One CR2 battery gives up to a year in typical use. The keypad is a separate purchase.",
+  "caveats": ["Matter control needs a Thread border router such as a HomePod mini, Thread-capable Apple TV 4K, Nest Hub (2nd gen) or Thread-capable Echo.","It replaces your lock and comes with new keys; the Level Bolt is the retrofit model that keeps your current ones.","Check the door first: Level lists a 1 3/4 in door, 2 1/8 in bore and 2 3/8 in backset.","Home Assistant forum users report commissioning problems with the Level Bolt."],
   "sources": [
     {
       "id": "level-lock-matter",

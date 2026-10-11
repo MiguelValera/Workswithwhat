@@ -68,12 +68,8 @@
     "sources": ["aqara-u200-specs-us", "aqara-u200-eu"],
     "note": "7.4 V rechargeable Li-ion pack, included in the EU box; up to about 6 months per charge at 8 unlocks a day. Aqara's spec also allows 4 AA cells through an AA battery adaptor, which the EU box list does not include."
   },
-  "summary": "The Aqara Smart Lock U200 connects over Thread and Bluetooth and speaks Matter, so Aqara lists it for Apple Home, Google Home, Alexa, SmartThings and Home Assistant. Each platform needs a Thread border router that supports Matter, and Aqara points to its M3 hub as the best partner. The lock is powered by a rechargeable Li-ion pack, and the kit includes an outdoor keypad unit.",
-  "caveats": [
-    "Matter needs a Thread border router; Aqara recommends its M3 hub.",
-    "Aqara's manual says third-party platforms currently get only basic lock and unlock functions.",
-    "Do not confuse it with the cheaper Smart Lock U200 Lite."
-  ],
+  "summary": "Aqara Smart Lock U200 is a retrofit lock that mounts on the inside over your existing cylinder and joins Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter on Thread. Every platform needs a Thread border router; for Apple that means a HomePod mini, HomePod 2nd gen or Apple TV 4K. The kit includes a wireless outdoor keypad with fingerprint reader, and the lock runs on a rechargeable 7.4 V Li-ion pack rated at about 6 months per charge.",
+  "caveats": ["Matter needs a Thread border router; on Apple Home it must be a HomePod mini, HomePod 2nd gen or Apple TV 4K.","Aqara's manual says third-party platforms get only basic functions.","Aqara contradicts itself on whether a hub (Aqara M3) is required; its FAQ says the M3 is only needed for remote control and automations.","Euro-profile cylinders need an emergency function to keep using your key from outside.","The US model (AD075) is a separate product with its own Matter certificate."],
   "sources": [
     { "id": "aqara-u200-eu", "url": "https://eu.aqara.com/products/aqara-smart-lock-u200", "title": "Aqara Smart Lock U200", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "aqara-u200-faq", "url": "https://www.aqara.com/en/u200-faq/", "title": "U200 FAQ", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },

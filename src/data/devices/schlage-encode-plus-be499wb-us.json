@@ -67,13 +67,8 @@
     "sources": ["schlage-be499-cam"],
     "note": "Schlage's BE499WB product page lists four AA alkaline batteries (included) and up to six months of battery life in typical use."
   },
-  "summary": "The Schlage Encode Plus is a Wi-Fi deadbolt with a touchscreen keypad that you can also open by tapping an iPhone or Apple Watch (Apple Home Key). It works with Apple Home, Google Home and Alexa without a hub, and Home Assistant has an official Schlage integration that runs through Schlage's cloud. It is not a Matter device, and SmartThings support is not listed by Schlage.",
-  "caveats": [
-    "Not Matter-certified; Allegion says it does not currently support Matter.",
-    "The official Home Assistant integration is cloud-based, so updates depend on Schlage's servers.",
-    "Voice control through Alexa and Google stops working during a home Wi-Fi outage.",
-    "Remote control through Apple Home needs a home hub such as an Apple TV or HomePod."
-  ],
+  "summary": "Tap an iPhone or Apple Watch and the Schlage Encode Plus opens through Apple Home Key. It is a full deadbolt with a touchscreen keypad and built-in 2.4 GHz Wi-Fi, and it works with Apple Home, Google Home and Alexa without a hub. Home Assistant uses the official Schlage integration over Schlage's cloud. It is not Matter-certified, and SmartThings is not listed. Four AA batteries are included, good for up to six months.",
+  "caveats": ["Wi-Fi is 2.4 GHz.","Not Matter-enabled; Allegion says it does not currently support Matter.","Home Key needs iPhone XS or later on iOS 15+, or Apple Watch Series 4+ on watchOS 8+.","Voice control stops during a Wi-Fi outage, and the Home Assistant integration goes through Schlage's cloud.","Schlage does not list SmartThings, and we could not confirm it either way."],
   "sources": [
     {
       "id": "schlage-encode-plus",

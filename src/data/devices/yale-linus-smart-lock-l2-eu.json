@@ -65,12 +65,8 @@
     "sources": ["yale-brochure"],
     "note": "Rechargeable Li-ion pack charged over USB-C after removing it from the lock; up to 6 months per charge, per the brochure."
   },
-  "summary": "The Yale Linus Smart Lock L2 is a retrofit lock for European doors with built-in Wi-Fi and Bluetooth. A firmware update added Matter over Wi-Fi, and Yale lists Apple Home, Google Home, Alexa and SmartThings as supported platforms. It runs on a rechargeable battery and has no keypad of its own; the Yale Dot is an optional accessory.",
-  "caveats": [
-    "Matter needs lock firmware 2.0.20 or later and Yale Home app 2024.11.0 or later.",
-    "Yale says controlling the lock through a Matter hub is more limited than in the Yale Home app.",
-    "Yale's troubleshooting pages note Apple Home can report 'No response' after iOS updates."
-  ],
+  "summary": "Yale Linus Smart Lock L2 fits over an existing Euro-profile cylinder and has Wi-Fi and Bluetooth 5.3 built in. A firmware update added Matter over Wi-Fi, so Apple Home, Google Home, Alexa and SmartThings pair without a Yale bridge, and Home Assistant works through Matter too. It runs on a rechargeable pack charged over USB-C, about 6 months per charge, and has no keypad of its own.",
+  "caveats": ["Matter needs lock firmware 2.0.20 or later and Yale Home app 2024.11.0 or later.","The cylinder must stick out at least 3 mm, and Yale says an incompatible cylinder may need replacing.","PIN access needs the separate Yale Smart Keypad.","Yale's troubleshooting pages mention occasional 'No response' issues in Apple Home.","Home Assistant's own Yale (cloud) integration does not support the L2, so use Matter."],
   "sources": [
     { "id": "yale-l2-launch", "url": "https://www.yalehome.com/it/en/stories/news/introducing-the-yale-linus-smart-lock-l2", "title": "Introducing the Yale Linus Smart Lock L2", "publisher": "Yale", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "yale-matter-uk", "url": "https://yalehome.co.uk/matter-uk/", "title": "Our Linus Smart Lock L2 Just Got Smarter with Matter", "publisher": "Yale", "kind": "manufacturer", "accessed": "2026-10-11" },

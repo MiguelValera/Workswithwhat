@@ -67,13 +67,8 @@
     "sources": ["yale-touch-wifi"],
     "note": "Four AA batteries are included, per Yale's store."
   },
-  "summary": "The Yale Assure Lock 2 Touch with Wi-Fi combines a keypad and fingerprint reader with a built-in Wi-Fi module, so remote access through the Yale Access app needs no bridge. Apple Home, Google Home and Alexa are supported. It runs on four AA batteries. Yale lists Apple Home Key only for the Assure Lock 2 Plus.",
-  "caveats": [
-    "No Apple Home Key listed; Yale offers that feature on the Assure Lock 2 Plus.",
-    "Some Yale pages still say 2.4 GHz only; 5 GHz needs Wi-Fi module firmware 1.0.32 or later.",
-    "Remote control through Apple Home needs an Apple TV, HomePod or iPad as a home hub.",
-    "Yale also sells Bluetooth-only versions of the Assure Lock 2 without voice assistant support."
-  ],
+  "summary": "Yale Assure Lock 2 Touch with Wi-Fi replaces your deadbolt and adds a keypad, a fingerprint reader and a Wi-Fi module, so remote access through the Yale Access app needs no bridge. Apple Home, Google Home and Alexa are supported. Four AA batteries are included. No Matter listing was found, and Home Assistant and SmartThings are unconfirmed.",
+  "caveats": ["Yale lists Apple Home Key only for the Assure Lock 2 Plus, not the Touch.","Remote control through Apple Home needs an Apple TV, iPad or HomePod as a home hub.","Older Yale pages say 2.4 GHz only; 5 GHz works with Wi-Fi module firmware 1.0.32 or later.","This record is the keyed version; Yale also sells a key-free Touch with Wi-Fi.","Home Assistant's pages mostly pair the Assure Lock 2 with a Connect Bridge, so it is unclear whether this model works without one."],
   "sources": [
     {
       "id": "yale-touch-wifi",

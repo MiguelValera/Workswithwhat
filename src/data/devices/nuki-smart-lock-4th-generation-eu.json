@@ -68,13 +68,8 @@
     "sources": ["nuki-batteries", "nuki-generations"],
     "note": "Removable batteries: four AA cells or the rechargeable Nuki Power Pack (sold separately, up to 6 months per charge, per Nuki)."
   },
-  "summary": "The Nuki Smart Lock (4th generation) is a retrofit lock that sits on the inside of a European door and speaks Matter over Thread, with no bridge needed for Matter. It works with Apple Home, Google Home, Alexa and SmartThings, and with Home Assistant through Matter. Remote access needs a Nuki Bridge or Nuki's paid Thread remote-access option. It has no keypad of its own and runs on four AA batteries or Nuki's rechargeable Power Pack.",
-  "caveats": [
-    "Matter control needs a Thread border router at home, such as a HomePod mini or Echo (4th Gen).",
-    "Remote access needs the separate Nuki Bridge or a one-time paid Thread remote-access option.",
-    "The Nuki Smart Lock Pro (4th generation) is a different model and not covered by this record.",
-    "Not every Echo works as a Thread hub for Nuki's Matter mode; check Nuki's hub table first."
-  ],
+  "summary": "Nuki Smart Lock 4th Gen mounts on the inside of the door over your existing cylinder and speaks Matter over Thread, with no bridge needed for Matter. Apple Home, SmartThings and Home Assistant connect through Matter; Google Home and Alexa also work through Nuki's cloud integration. It has no keypad of its own and runs on four AA cells or the rechargeable Nuki Power Pack.",
+  "caveats": ["Matter needs a Thread border router, such as a HomePod mini or Apple TV 4K; Nuki's hub table shows which Echo devices work.","Remote access needs a Nuki Bridge or the paid Thread remote-access option, and the Google and Alexa cloud routes need it plus a Nuki Web account.","Nuki says voice unlock is currently off in Google Home; app controls work.","Your key only works from outside if the cylinder has an emergency function; otherwise Nuki sells a Universal Cylinder.","The Keypad 2 NFC is a separate accessory."],
   "sources": [
     { "id": "nuki-sl4", "url": "https://nuki.io/en-us/products/smart-lock-4th-generation", "title": "Smart Lock (4th generation)", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
     { "id": "nuki-generations", "url": "https://help.nuki.io/hc/en-001/articles/33659819862289-Smart-Lock-Generations", "title": "Smart Lock Generations", "publisher": "Nuki", "kind": "manufacturer", "accessed": "2026-10-11" },
