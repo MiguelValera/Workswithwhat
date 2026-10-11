@@ -3,50 +3,72 @@
   "brand": "Aqara",
   "model": "Smart Lock U300",
   "name": "Aqara Smart Lock U300 (US)",
-  "regions": ["US"],
-  "officialUrl": "https://us.aqara.com/products/smart-lock-u300",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.aqara.com/us/product/smart-lock-u300-faq/",
   "radios": {
-    "value": ["thread", "bluetooth"],
-    "sources": ["csa-u300", "aqara-u300-specs-us"],
-    "note": "CSA lists Thread and Bluetooth. Aqara's spec sheet also lists NFC for cards and phones."
+    "value": [
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "aqara-u300-faq",
+      "csa-u300"
+    ],
+    "note": "Aqara's FAQ says the U300 supports Matter over Thread and Bluetooth 5.0; CSA lists Thread and Bluetooth."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
-    "sources": ["csa-u300"],
-    "note": "CSA lists the Smart Lock U300 from Lumi United (Aqara): Matter 1.2, certified 2024-06-04, product ID 0x2801. The listing does not name a region."
+    "sources": [
+      "csa-u300"
+    ],
+    "note": "CSA lists the Smart Lock U300 from Lumi United (Aqara): Matter 1.2, certified 2024-06-04, product ID 0x2801, Matter over Thread. The listing does not name a region."
   },
   "compatibility": {
     "apple_home": {
       "status": "matter",
-      "sources": ["aqara-u300-faq", "aqara-u300-specs-us"],
-      "note": "Needs an Apple home hub (HomePod mini, HomePod 2nd gen or Apple TV 4K) for Thread, remote control and Siri. Apple Home Key is listed as an unlock method."
+      "sources": [
+        "csa-u300",
+        "aqara-u300-faq"
+      ],
+      "note": "Matter over Thread. Needs an Apple home hub with Thread (HomePod mini, HomePod 2nd gen or Apple TV 4K)."
     },
     "google_home": {
       "status": "matter",
-      "sources": ["aqara-u300-faq", "aqara-u300-specs-us"],
+      "sources": [
+        "csa-u300",
+        "aqara-u300-faq"
+      ],
       "note": "Needs a Thread border router that supports Matter."
     },
     "alexa": {
       "status": "matter",
-      "sources": ["aqara-u300-faq", "aqara-u300-specs-us"],
+      "sources": [
+        "csa-u300",
+        "aqara-u300-faq"
+      ],
       "note": "Needs a Thread border router that supports Matter."
     },
     "smartthings": {
       "status": "matter",
-      "sources": ["aqara-u300-faq", "aqara-u300-specs-us"],
+      "sources": [
+        "csa-u300",
+        "aqara-u300-faq"
+      ],
       "note": "Needs a Thread border router that supports Matter."
     },
     "home_assistant": {
       "status": "unknown",
       "sources": [],
-      "note": "Aqara's pages seen name Apple Home, Alexa, Google Home and SmartThings; none we saw names Home Assistant. The Matter integration may work, unconfirmed."
+      "note": "No Aqara or Home Assistant docs page we found names this lock. The Matter integration may work, unconfirmed."
     }
   },
   "hubRequired": {
     "value": null,
-    "sources": ["aqara-u300-specs-us", "aqara-u300-faq"],
-    "note": "Aqara disagrees with itself: the retail spec table says a hub is required, while the FAQ says basic lock functions work without one and an M3, M100 or G5 Pro is recommended for remote control and automations."
+    "sources": [],
+    "note": "Not settled by an official source we could see. Retailer spec tables say a hub is required; press coverage says the Aqara app works without one and other Matter platforms need a Thread border router."
   },
   "localControl": {
     "value": null,
@@ -55,27 +77,49 @@
   },
   "lockFit": {
     "value": "lever",
-    "sources": ["aqara-u300-us", "csa-u300"],
-    "note": "Aqara's first lever lock; replaces the door handle with a built-in lock for indoor and outdoor use."
+    "sources": [
+      "aqara-u300-faq",
+      "csa-u300"
+    ],
+    "note": "Aqara's first lever lock; the FAQ says it replaces common single-latch handle or knob locks."
   },
   "keypad": {
     "value": true,
-    "sources": ["aqara-u300-specs-us", "aqara-u300-us"],
-    "note": "PIN keypad on the lock, alongside a fingerprint reader. Fingerprint capacity is listed as 50 on the spec sheet and 25 in the FAQ."
+    "sources": [
+      "aqara-u300-faq"
+    ],
+    "note": "Keypad on the outer panel, which Aqara rates IPX4."
   },
   "power": {
-    "value": "4 × AA",
-    "sources": ["aqara-u300-us", "aqara-u300-specs-us"],
-    "note": "Four AA batteries, up to 10 months by Aqara's estimate; a USB-C port gives emergency power."
+    "value": null,
+    "sources": [],
+    "note": "Retailers and reviews list four AA batteries (up to 10 months) plus a USB-C emergency port; we found no official Aqara page stating it."
   },
-  "summary": "The Aqara Smart Lock U300 is a lever lock with a fingerprint reader and PIN keypad. It uses Matter over Thread to join Apple Home, Google Home, Alexa and SmartThings, and supports Apple Home Key. Four AA batteries power it, rated up to 10 months. Aqara's pages disagree on whether a hub is required.",
-  "caveats": ["Matter needs a Thread border router; for Apple that means a HomePod mini, HomePod 2nd gen or Apple TV 4K.", "The lock binds to one Matter ecosystem at a time; others are added by sharing the pairing code.", "Aqara's manual says Matter platforms get only basic functions.", "Aqara's pages conflict on whether a hub is required."],
-  "sources": [
-    { "id": "aqara-u300-us", "url": "https://us.aqara.com/products/smart-lock-u300", "title": "Aqara Smart Lock U300", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "aqara-u300-specs-us", "url": "https://us.aqara.com/pages/product-specs/smart-lock-u-300", "title": "Smart Lock U300", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "aqara-u300-faq", "url": "https://www.aqara.com/us/product/smart-lock-u300-faq/", "title": "Smart Lock U300-faq", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "csa-u300", "url": "https://csa-iot.org/csa_product/smart-lock-u300/", "title": "Smart Lock U300 - CSA-IOT", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11" }
+  "summary": "The Aqara Smart Lock U300 is a lever lock that replaces a single-latch handle or knob, with a keypad on the outer panel. It is Matter-certified over Thread, so it joins Apple Home, Google Home, Alexa and SmartThings through a Thread border router. Bluetooth is also built in. We could not confirm from Aqara whether its own hub is required.",
+  "caveats": [
+    "Matter needs a Thread border router; for Apple that means a HomePod mini, HomePod 2nd gen or Apple TV 4K.",
+    "Aqara's FAQ says the outer panel is IPX4 and does not recommend it for exposed outdoor spots.",
+    "Whether an Aqara hub is required is not confirmed by an official source."
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "sources": [
+    {
+      "id": "aqara-u300-faq",
+      "url": "https://www.aqara.com/us/product/smart-lock-u300-faq/",
+      "title": "Smart Lock U300 FAQ",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-u300",
+      "url": "https://csa-iot.org/csa_product/smart-lock-u300/",
+      "title": "Smart Lock U300 - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

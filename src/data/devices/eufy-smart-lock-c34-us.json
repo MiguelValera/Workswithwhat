@@ -3,39 +3,63 @@
   "brand": "eufy",
   "model": "Smart Lock C34",
   "name": "eufy Smart Lock C34 (US)",
-  "regions": ["US"],
-  "officialUrl": "https://service.eufy.com/product-description/a08J1000000Y1D5IAK",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.eufy.com/products/t85d2111",
   "radios": {
-    "value": ["thread", "wifi", "bluetooth"],
-    "sources": ["csa-eufy-c34", "eufy-c34-page"],
-    "note": "CSA lists Thread and Bluetooth as transport interfaces and describes built-in Wi-Fi for the eufy app."
+    "value": [
+      "thread",
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "csa-eufy-c34",
+      "eufy-c34-page"
+    ],
+    "note": "CSA lists Thread and Bluetooth as Matter transport interfaces; eufy's product page and the CSA listing describe built-in Wi-Fi for the eufy app."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
-    "sources": ["csa-eufy-c34"],
+    "sources": [
+      "csa-eufy-c34"
+    ],
     "note": "CSA lists the eufy Smart Lock C34 from Anker Innovations (Matter 1.2, certified 2024-06-27, firmware V1.0.0.0, hardware V3), Matter over Thread."
   },
   "compatibility": {
     "apple_home": {
       "status": "matter",
-      "sources": ["eufy-matter-faq", "eufy-add-hub-faq", "eufy-matter-hubs"],
+      "sources": [
+        "eufy-matter-faq",
+        "eufy-add-hub-faq",
+        "eufy-matter-hubs"
+      ],
       "note": "Matter over Thread. eufy says iOS 18 can add Matter devices without a hub, but remote control needs a HomePod, HomePod mini or Apple TV 4K."
     },
     "google_home": {
       "status": "native",
-      "sources": ["eufy-voice", "eufy-add-hub-faq"],
+      "sources": [
+        "eufy-voice",
+        "eufy-add-hub-faq"
+      ],
       "note": "eufy documents linking the eufy account to Google Assistant for the C34/E30. Matter also works with a Matter-capable Nest hub."
     },
     "alexa": {
       "status": "native",
-      "sources": ["eufy-voice", "eufy-add-hub-faq"],
+      "sources": [
+        "eufy-voice",
+        "eufy-add-hub-faq"
+      ],
       "note": "eufy documents linking the eufy account in the Alexa app for the C34/E30. Matter also works with a Matter-enabled Echo."
     },
     "smartthings": {
       "status": "matter",
-      "sources": ["eufy-matter-faq", "eufy-matter-hubs"],
-      "note": "eufy's Matter FAQ lists SmartThings and says a Matter hub is required; Thread needs a border router."
+      "sources": [
+        "eufy-matter-faq",
+        "eufy-matter-hubs"
+      ],
+      "note": "eufy's Matter FAQ says SmartThings needs a Matter hub; its hub list for Thread models (incl. T85D2, the C34) names SmartThings Station, Hub v3 and Dongle."
     },
     "home_assistant": {
       "status": "unknown",
@@ -45,8 +69,10 @@
   },
   "hubRequired": {
     "value": false,
-    "sources": ["eufy-c34-page", "csa-eufy-c34"],
-    "note": "Built-in Wi-Fi connects the lock to the eufy app without a bridge. Matter platforms need a Matter controller with a Thread border router."
+    "sources": [
+      "eufy-c34-page"
+    ],
+    "note": "eufy's product page says no additional hub is required; built-in Wi-Fi connects the lock to the eufy app. Matter platforms need a Matter controller with a Thread border router."
   },
   "localControl": {
     "value": null,
@@ -55,30 +81,117 @@
   },
   "lockFit": {
     "value": "deadbolt",
-    "sources": ["eufy-c34-page", "eufy-door-compat"],
-    "note": "Fits standard US and Canadian doors as a deadbolt replacement, with a keyhole for the mechanical key."
+    "sources": [
+      "eufy-door-compat",
+      "eufy-deadbolt-spacer"
+    ],
+    "note": "Replaces a standard deadbolt: eufy lists a 38-54 mm cross bore, 60 or 70 mm backset and 35-55 mm door thickness."
   },
   "keypad": {
     "value": true,
-    "sources": ["csa-eufy-c34", "eufy-c34-page"],
+    "sources": [
+      "eufy-c34-page",
+      "eufy-default-passcode"
+    ],
     "note": "Passcode keypad on the lock. Unlike the E30, no fingerprint reader is listed."
   },
   "power": {
     "value": "8 × AA",
-    "sources": ["eufy-c34-page", "csa-eufy-c34"],
+    "sources": [
+      "eufy-battery-life",
+      "csa-eufy-c34"
+    ],
     "note": "Eight AA batteries; eufy rates up to 8 months at about 10 unlocks a day."
   },
   "summary": "The eufy Smart Lock C34 is a keypad deadbolt for standard US doors with built-in Wi-Fi and Matter over Thread. Matter brings it into Apple Home and SmartThings, while Alexa and Google Home connect by linking your eufy account. It runs on eight AA batteries, rated up to 8 months. Home Assistant is not confirmed.",
-  "caveats": ["Matter control needs a Thread border router such as a HomePod mini, Apple TV 4K, or a Matter-capable Nest hub, Echo or SmartThings hub.", "Apple Home remote control needs a home hub even though iOS 18 can add the lock without one.", "Eight AA batteries are needed."],
-  "sources": [
-    { "id": "eufy-c34-page", "url": "https://service.eufy.com/product-description/a08J1000000Y1D5IAK", "title": "eufy Smart Lock C34", "publisher": "eufy", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "eufy-matter-faq", "url": "https://service.eufy.com/article-description/eufy-Smart-Locks-Matter-Functionality-FAQ", "title": "eufy Smart Locks' Matter Functionality FAQ", "publisher": "eufy", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "eufy-matter-hubs", "url": "https://service.eufy.com/article-description/Which-hubs-are-compatible-with-Matter-integration", "title": "Which hubs are compatible with Matter integration?", "publisher": "eufy", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "eufy-add-hub-faq", "url": "https://service.eufy.com/article-description/Smart-Lock-C34-E30-How-Do-I-Add-My-Smart-Lock-to-Apple-HomeKit-Amazon-Alexa-or-Google-Assistant", "title": "Smart Lock C34/E30: How do I add my Smart Lock to Apple HomeKit, Amazon Alexa or Google Assistant", "publisher": "eufy", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "eufy-voice", "url": "https://service.eufy.com/article-description/Smart-Lock-C34-E30-How-to-Use-Voice-Commands-to-Unlock-Smart-Lock-with-Amazon-Alexa-or-Google-Assistant", "title": "Smart Lock C34/E30: How to Use Voice Commands to Unlock Smart Lock with Amazon Alexa or Google Assistant", "publisher": "eufy", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "eufy-door-compat", "url": "https://service.eufy.com/article-description/Smart-Lock-C34-E30-Door-Compatibility-Requirements", "title": "Smart Lock C34/E30: Door Compatibility Requirements", "publisher": "eufy", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "csa-eufy-c34", "url": "https://csa-iot.org/csa_product/eufy-smart-lock-c34/", "title": "eufy Smart Lock C34 - CSA-IOT", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11" }
+  "caveats": [
+    "Matter control needs a Thread border router such as a HomePod mini, Apple TV 4K, or a Matter-capable Nest hub, Echo or SmartThings hub.",
+    "Apple Home remote control needs a home hub even though iOS 18 can add the lock without one.",
+    "Eight AA batteries are needed."
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "sources": [
+    {
+      "id": "eufy-c34-page",
+      "url": "https://www.eufy.com/products/t85d2111",
+      "title": "eufy Smart Lock C34",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eufy-battery-life",
+      "url": "https://service.eufy.com/article-description/Smart-Lock-C34-E30-How-Long-Do-the-Batteries-Last",
+      "title": "Smart Lock C34/E30: How Long Do the Batteries Last?",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eufy-door-compat",
+      "url": "https://service.eufy.com/article-description/Smart-Lock-C34-E30-Door-Compatibility-Requirements",
+      "title": "Smart Lock C34/E30: Door Compatibility Requirements",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eufy-deadbolt-spacer",
+      "url": "https://service.eufy.com/article-description/Smart-Lock-C34-E30-Installation-Guidance-for-Door-Frame-with-a-Deadbolt-Spacer",
+      "title": "Smart Lock C34/E30: Installation Guidance for Door Frame with a Deadbolt Spacer",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eufy-default-passcode",
+      "url": "https://service.eufy.com/article-description/Smart-Lock-C34-E30-Is-There-a-Default-Passcode",
+      "title": "Smart Lock C34/E30: Is There a Default Passcode?",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eufy-matter-faq",
+      "url": "https://service.eufy.com/article-description/eufy-Smart-Locks-Matter-Functionality-FAQ",
+      "title": "eufy Smart Locks' Matter Functionality FAQ",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eufy-matter-hubs",
+      "url": "https://service.eufy.com/article-description/Which-hubs-are-compatible-with-Matter-integration",
+      "title": "Which hubs are compatible with Matter integration?",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eufy-add-hub-faq",
+      "url": "https://service.eufy.com/article-description/Smart-Lock-C34-E30-How-Do-I-Add-My-Smart-Lock-to-Apple-HomeKit-Amazon-Alexa-or-Google-Assistant",
+      "title": "Smart Lock C34/E30: How do I add my Smart Lock to Apple HomeKit, Amazon Alexa or Google Assistant",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eufy-voice",
+      "url": "https://service.eufy.com/article-description/Smart-Lock-C34-E30-How-to-Use-Voice-Commands-to-Unlock-Smart-Lock-with-Amazon-Alexa-or-Google-Assistant",
+      "title": "Smart Lock C34/E30: How to Use Voice Commands to Unlock Smart Lock with Amazon Alexa or Google Assistant",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-eufy-c34",
+      "url": "https://csa-iot.org/csa_product/eufy-smart-lock-c34/",
+      "title": "eufy Smart Lock C34 - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }
