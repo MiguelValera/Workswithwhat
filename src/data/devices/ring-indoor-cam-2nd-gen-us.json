@@ -13,7 +13,7 @@
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "No Matter claim found in the Ring pages checked; the CSA database was not searched."
+    "note": "No Matter claim on Ring's pages, and no CSA certification listing for a Ring camera surfaced in search."
   },
   "compatibility": {
     "apple_home": {
@@ -29,17 +29,17 @@
     "alexa": {
       "status": "native",
       "sources": ["ring-indoor-cam-support", "ring-alexa-control"],
-      "note": "Ring lists Works with Alexa. Through the Ring skill you can ask an Echo Show or Fire TV to show live view and use two-way talk. Motion announcements and saved-clip viewing depend on a Ring Protect plan."
+      "note": "Ring's support page lists Works with Alexa. Through the Ring skill you can ask an Alexa device with a screen, such as an Echo Show, to show live view."
     },
     "smartthings": {
       "status": "unknown",
       "sources": [],
-      "note": "No SmartThings listing found."
+      "note": "No official Ring or SmartThings page found for this model; only forum posts, which are not cited."
     },
     "home_assistant": {
       "status": "native",
       "sources": ["ha-ring"],
-      "note": "The official Ring integration lists Indoor Cam (2nd Gen) among its stick-up cams, with live view and last-recording camera entities. Playing the last recording needs a Ring Protect plan."
+      "note": "The official Ring integration lists Indoor Cam (2nd Gen) among its supported stick-up cams. Which camera features it exposes was not confirmed."
     }
   },
   "hubRequired": {
@@ -96,13 +96,14 @@
     },
     {
       "id": "ha-ring",
-      "url": "https://www.home-assistant.io/integrations/ring/",
+      "url": "https://www.home-assistant.io/integrations/ring",
       "title": "Ring - Home Assistant",
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

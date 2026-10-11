@@ -4,16 +4,16 @@
   "model": "Mini 2",
   "name": "Blink Mini 2 (US)",
   "regions": ["US"],
-  "officialUrl": "https://support.blinkforhome.com/en_US/mini-2",
+  "officialUrl": "https://support.blinkforhome.com/mini-2",
   "radios": {
     "value": ["wifi"],
-    "sources": ["blink-mini-2-faq"],
-    "note": "Blink's FAQ says it needs USB power and an always-on Wi-Fi connection; the band was not stated in the pages seen."
+    "sources": ["blink-mini-2-specs", "blink-mini-2-faq"],
+    "note": "Blink's spec page lists 2.4 GHz 802.11b/g/n; the FAQ says it needs an always-on Wi-Fi connection."
   },
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "No Matter claim found in the Blink pages checked; the CSA database was not searched."
+    "note": "No Matter claim on Blink's pages, and no CSA certification listing for a Blink camera surfaced in search."
   },
   "compatibility": {
     "apple_home": {
@@ -28,18 +28,18 @@
     },
     "alexa": {
       "status": "native",
-      "sources": ["blink-alexa-faq", "blink-mini-2-faq"],
-      "note": "Works through the Blink Alexa skill; live view and voice control need an Alexa device with a screen, such as an Echo Show. Blink's Alexa pages describe doorbell announcements for Blink doorbells; those pages do not say which features the Mini 2 gets."
+      "sources": ["blink-mini-2-features", "blink-alexa-faq"],
+      "note": "Through the Blink skill. Blink's Mini 2 features page lists live view on Echo and Fire devices with a screen, motion announcements, arming and disarming, and motion detection in Alexa routines. Live view started by voice lasts 5 minutes."
     },
     "smartthings": {
       "status": "unknown",
       "sources": [],
-      "note": "No SmartThings listing found."
+      "note": "No official Blink or SmartThings page found; only old forum posts, which are not cited."
     },
     "home_assistant": {
       "status": "native",
       "sources": ["ha-blink"],
-      "note": "The official Blink integration has limited Mini support: Mini cameras do not report the integration's sensors or battery status, and a Mini linked to a Sync Module cannot be armed or disarmed on its own."
+      "note": "The official Blink integration has limited Mini support: Mini cameras do not report the integration's sensors or battery status, and a Mini linked to a Sync Module cannot be armed or disarmed on its own. The docs refer to Mini cameras in general and do not name the Mini 2."
     }
   },
   "hubRequired": {
@@ -59,18 +59,18 @@
   },
   "power": {
     "value": "USB 5 V adapter (mains)",
-    "sources": ["blink-mini-2-faq"],
-    "note": "5 V, 1 A through the included adapter, or an outdoor adapter sold separately."
+    "sources": ["blink-mini-2-faq", "blink-mini-2-specs"],
+    "note": "Blink's FAQ says 5 V, 1 A USB power through the included adapter, or the Weather Resistant Power Adapter sold separately for outdoor use. The spec page lists a USB-C connector."
   },
   "localStorage": {
     "value": true,
     "sources": ["blink-local-storage", "blink-mini-2-faq"],
-    "note": "Needs a Sync Module 2 and a USB drive of up to 256 GB, both sold separately."
+    "note": "Only with a Sync Module 2 in the same Blink system and a USB drive of 1–256 GB in it; clips then save to the drive when there is no subscription."
   },
   "subscription": {
     "value": "Cloud video storage, person detection (Blink plan)",
-    "sources": ["blink-mini-2-faq"],
-    "note": "Blink lists 60-day cloud storage in the US with a plan; person detection is described as needing a subscription."
+    "sources": ["blink-mini-2-faq", "blink-mini-2-features"],
+    "note": "Blink lists 60-day cloud storage in the US with a plan. Person detection and Extended Live View (up to 90 minutes) also need a subscription."
   },
   "summary": "Blink Mini 2 is a small plug-in 1080p camera with color night view, a built-in spotlight and two-way audio. It uses 5 V USB power and Wi-Fi, and can run outdoors with a separately sold adapter. Alexa is its supported voice platform. Local clips need a Sync Module 2 and USB drive.",
   "caveats": [
@@ -82,7 +82,7 @@
   "sources": [
     {
       "id": "blink-mini-2-support",
-      "url": "https://support.blinkforhome.com/en_US/mini-2",
+      "url": "https://support.blinkforhome.com/mini-2",
       "title": "Mini 2 - Blink Support",
       "publisher": "Blink",
       "kind": "manufacturer",
@@ -90,15 +90,31 @@
     },
     {
       "id": "blink-mini-2-faq",
-      "url": "https://support.blinkforhome.com/en_US/faq-mini-2/mini-2-faq",
+      "url": "https://support.blinkforhome.com/en_US/mini-2-faq",
       "title": "Blink Mini 2 FAQ - Blink Support",
       "publisher": "Blink",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
     {
+      "id": "blink-mini-2-features",
+      "url": "https://support.blinkforhome.com/en_US/using-mini-2/mini-2-features",
+      "title": "Blink Mini 2 Features - Blink Support",
+      "publisher": "Blink",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "blink-mini-2-specs",
+      "url": "https://support.blinkforhome.com/mini-2-tech-specs",
+      "title": "Mini 2 Technical Specifications - Blink Support",
+      "publisher": "Blink",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
       "id": "blink-local-storage",
-      "url": "https://support.blinkforhome.com/en_US/sync-module-2-local-storage-operation",
+      "url": "https://support.blinkforhome.com/using-your-sync-module/sync-module-2-local-storage-operation",
       "title": "Local Storage with Sync Module - Blink Support",
       "publisher": "Blink",
       "kind": "manufacturer",
@@ -121,6 +137,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

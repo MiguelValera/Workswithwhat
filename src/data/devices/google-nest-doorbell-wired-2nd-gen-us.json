@@ -4,16 +4,16 @@
   "model": "Nest Doorbell (wired, 2nd gen)",
   "name": "Nest Doorbell wired 2nd gen (US)",
   "regions": ["US"],
-  "officialUrl": "https://support.google.com/googlehome/answer/12570869?hl=en",
+  "officialUrl": "https://support.google.com/googlehome/answer/12570869",
   "radios": {
     "value": ["wifi"],
     "sources": ["nest-doorbell-install"],
-    "note": "Google's install page requires a Wi-Fi network with at least 2 Mbps upload. The Google spec page for the original wired model lists 2.4 GHz 802.11b/g/n; the retailer listings seen say dual band, so the bands are not confirmed for this model."
+    "note": "Google's install page connects it to Wi-Fi through the Google Home app. No Google page seen states the bands for this model; press and retailer listings say 2.4 and 5 GHz."
   },
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "No Matter claim found in the Google pages checked; the CSA database was not searched."
+    "note": "No Google page states Matter for this model, and no CSA listing for it surfaced in search. A German news site reports Nest cameras and 'the Nest Doorbell' listed by the CSA for Matter 1.5.1 without firmware yet, but it does not name the model."
   },
   "compatibility": {
     "apple_home": {
@@ -24,22 +24,22 @@
     "google_home": {
       "status": "native",
       "sources": ["nest-doorbell-install", "nest-visitor-announcements"],
-      "note": "Set up in the Google Home app. Doorbell visitor announcements play on Google speakers and displays in the same home; familiar-face names need a paid Google plan."
+      "note": "Set up in the Google Home app. Doorbell visitor announcements play on Google speakers and displays in the same home."
     },
     "alexa": {
       "status": "native",
       "sources": ["nest-alexa"],
-      "note": "Linked through Alexa and the Google Home app. Doorbell-press announcements work on this model once Visitor announcements is on in Google Home. Live view works on Echo Show after you ask for it: wired models stream for up to 12 hours before you must ask again."
+      "note": "Through the Google Nest skill in the Alexa app. Google names this model for doorbell-press announcements once Visitor announcements is on in Google Home, and live view works on Echo Show when you ask for it."
     },
     "smartthings": {
       "status": "unknown",
       "sources": [],
-      "note": "No SmartThings listing found."
+      "note": "No official Google or SmartThings page found for this model; only forum posts and a 2020 article about older Nest devices."
     },
     "home_assistant": {
       "status": "native",
-      "sources": ["ha-nest"],
-      "note": "The official Google Nest integration lists the wired 2nd gen doorbell with WebRTC live view and motion, person and chime events. It runs on Google's Device Access API, which has a one-time US$5 fee."
+      "sources": ["ha-nest", "nest-device-access"],
+      "note": "The official Google Nest integration uses Google's Device Access API, which costs US$5. Google's Device Access list includes Nest Doorbell (wired), added in February 2023, with WebRTC live view and clip preview."
     }
   },
   "hubRequired": {
@@ -58,8 +58,8 @@
   },
   "power": {
     "value": "Wired (doorbell 16–24 V AC)",
-    "sources": ["nest-doorbell-install", "nest-camera-specs"],
-    "note": "Needs existing doorbell wiring; some homes need a stronger transformer. It has no battery and cannot use the chime connector from the 1st gen."
+    "sources": ["nest-doorbell-install", "nest-transformer"],
+    "note": "Google requires a transformer rated 16–24 V AC, 10–40 VA; some homes need a new one. Google also lists an optional indoor plug-in power adapter."
   },
   "localStorage": {
     "value": null,
@@ -67,37 +67,45 @@
     "note": "Google says it can hold up to an hour of events in the doorbell if Wi-Fi drops, but no local or microSD storage option is stated."
   },
   "subscription": {
-    "value": "Longer video history (Nest Aware plans)",
-    "sources": ["nest-camera-specs"],
-    "note": "Google lists 3 hours of event video with no plan; Nest Aware adds 30 days of event history and familiar-face alerts, and Nest Aware Plus adds continuous recording."
+    "value": "Event video history beyond 3 hours (Google Home Premium)",
+    "sources": ["google-compare-doorbells"],
+    "note": "Google's comparison page lists 3 hours of event video with no plan and up to 60 days of event history with Google Home Premium."
   },
-  "summary": "Nest Doorbell (wired, 2nd gen) is a Wi-Fi video doorbell that runs on existing 16 to 24 V AC doorbell wiring. It works natively with Google Home and also with Alexa, which announces doorbell presses and can show live view on Echo Show. Home Assistant supports it through the Google Nest integration. Without a plan it keeps 3 hours of event video.",
+  "summary": "Nest Doorbell (wired, 2nd gen) is a Wi-Fi video doorbell that runs on existing 16 to 24 V AC doorbell wiring. It works natively with Google Home and also with Alexa, which announces doorbell presses and can show live view on Echo Show. Home Assistant supports it through the Google Nest integration. Without a plan it keeps 3 hours of event video; Google Home Premium extends that.",
   "caveats": [
-    "Needs doorbell wiring and a transformer that meets the 16–24 V AC requirement; it has no battery.",
-    "Video history beyond 3 hours needs a paid Nest Aware plan.",
-    "Home Assistant access goes through Google's Device Access API, which has a one-time US$5 fee.",
+    "Needs doorbell wiring and a transformer rated 16–24 V AC, 10–40 VA; some homes need a new transformer.",
+    "Video history beyond 3 hours needs a paid Google Home Premium plan.",
+    "Home Assistant access goes through Google's Device Access API, which costs US$5.",
     "Apple Home support is not confirmed."
   ],
   "sources": [
     {
       "id": "nest-doorbell-install",
-      "url": "https://support.google.com/googlehome/answer/12570869?hl=en",
+      "url": "https://support.google.com/googlehome/answer/12570869",
       "title": "Install Nest Doorbell (wired, 2nd gen) - Google Home and Nest Help",
       "publisher": "Google",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
     {
-      "id": "nest-camera-specs",
-      "url": "https://support.google.com/googlehome/answer/9259110?hl=en",
-      "title": "Technical specs for Google Nest cameras and doorbells - Google Home and Nest Help",
+      "id": "nest-transformer",
+      "url": "https://support.google.com/googlehome/answer/12153643?hl=en",
+      "title": "Upgrade your transformer for Nest Doorbell (wired, 2nd gen or 3rd gen)",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "google-compare-doorbells",
+      "url": "https://store.google.com/us/magazine/compare_doorbells?hl=en-US",
+      "title": "Compare Nest Video Doorbells (battery & wired) - Google Store",
       "publisher": "Google",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
     {
       "id": "nest-alexa",
-      "url": "https://support.google.com/googlehome/answer/9325080?hl=en",
+      "url": "https://support.google.com/googlehome/answer/9325080",
       "title": "Control Google Nest products with Amazon Alexa - Google Home and Nest Help",
       "publisher": "Google",
       "kind": "manufacturer",
@@ -105,7 +113,7 @@
     },
     {
       "id": "nest-visitor-announcements",
-      "url": "https://support.google.com/googlehome/answer/10479296?hl=en",
+      "url": "https://support.google.com/googlenest/answer/10479296",
       "title": "How visitor announcements work - Google Home and Nest Help",
       "publisher": "Google",
       "kind": "manufacturer",
@@ -113,13 +121,22 @@
     },
     {
       "id": "ha-nest",
-      "url": "https://www.home-assistant.io/integrations/nest/",
+      "url": "https://www.home-assistant.io/integrations/nest",
       "title": "Google Nest - Home Assistant",
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-11"
+    },
+    {
+      "id": "nest-device-access",
+      "url": "https://developers.home.google.com/device-access/supported-devices",
+      "title": "Supported devices - Device Access",
+      "publisher": "Google",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
