@@ -47,11 +47,9 @@
       "note": "No official Blink or SmartThings page found; only old forum posts, which are not cited."
     },
     "home_assistant": {
-      "status": "native",
-      "sources": [
-        "ha-blink"
-      ],
-      "note": "The official Blink integration has limited Mini support: Mini cameras do not report the integration's sensors or battery status, and a Mini linked to a Sync Module cannot be armed or disarmed on its own. The docs refer to Mini cameras in general and do not name the Mini 2."
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's official Blink integration covers \"Mini cameras\" with limited support (no sensors or battery status), but its docs don't name the Mini 2, so support for this model is not confirmed."
     }
   },
   "hubRequired": {
@@ -98,12 +96,11 @@
     ],
     "note": "Blink lists 60-day cloud storage in the US with a plan. Person detection and Extended Live View (up to 90 minutes) also need a subscription."
   },
-  "summary": "Alexa is where the Blink Mini 2 shines: live view on Echo and Fire devices with a screen, motion announcements and arming by voice. It plugs into a 5 V USB adapter, needs no Sync Module, and can go outdoors with the separately sold weather-resistant adapter. Cloud storage (60 days in the US), person detection and Extended Live View need a Blink plan. Without one, clips can go to a USB drive via a Sync Module 2. Home Assistant support exists but is limited.",
+  "summary": "Live view on Echo and Fire devices with a screen, motion announcements and arming by voice come through Blink's Alexa integration. The Blink Mini 2 plugs into a 5 V USB adapter, needs no Sync Module, and can go outdoors with the separately sold weather-resistant adapter. Cloud storage (60 days in the US), person detection and Extended Live View need a Blink plan. Without one, clips can go to a USB drive via a Sync Module 2. Home Assistant support for this model is not confirmed.",
   "caveats": [
     "Local storage needs a Sync Module 2 and a USB drive, both sold separately.",
     "Cloud storage and person detection need a Blink subscription plan.",
-    "Home Assistant support for Mini cameras is limited.",
-    "Apple Home and Google Home support is not confirmed by Blink."
+    "Apple Home, Google Home and Home Assistant support for this model is not confirmed."
   ],
   "sources": [
     {
@@ -152,14 +149,6 @@
       "title": "Alexa FAQ - Blink Support",
       "publisher": "Blink",
       "kind": "manufacturer",
-      "accessed": "2026-10-11"
-    },
-    {
-      "id": "ha-blink",
-      "url": "https://www.home-assistant.io/integrations/blink/",
-      "title": "Blink - Home Assistant",
-      "publisher": "Home Assistant",
-      "kind": "ecosystem",
       "accessed": "2026-10-11"
     }
   ],

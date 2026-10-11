@@ -99,9 +99,9 @@ export const LOCK_FITS = ['deadbolt', 'retrofit', 'cylinder', 'lever'] as const;
 // wall = wall thermostat that switches a heating/cooling system (US HVAC, boiler);
 // radiator-valve = thermostatic head that replaces a radiator's valve head (TRV)
 export const THERMOSTAT_TYPES = ['wall', 'radiator-valve'] as const;
-// what a sensor reports; presence = mmWave-style presence that sees people who sit still
 // indoor / outdoor = standalone cameras; doorbell = video doorbell; floodlight = camera with built-in lights
 export const CAMERA_TYPES = ['indoor', 'outdoor', 'doorbell', 'floodlight'] as const;
+// what a sensor reports; presence = mmWave-style presence that sees people who sit still
 export const SENSES = ['contact', 'motion', 'presence', 'temperature', 'humidity', 'leak', 'light', 'vibration', 'air-quality'] as const;
 
 // Category-specific facts. Add a category here, in CATEGORY_FACTS and in
