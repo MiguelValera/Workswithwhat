@@ -3,73 +3,117 @@
   "brand": "Philips Hue",
   "model": "White and Color Ambiance A60 E27 1100 lm (8720169364066)",
   "name": "Philips Hue White and Colour Ambiance E27 (1100 lm, EU)",
-  "regions": ["EU"],
+  "regions": [
+    "EU"
+  ],
   "officialUrl": "https://www.philips-hue.com/fr-fr/p/hue-white-and-color-ambiance-a60-ampoule-connectee-e27-1100/8720169364066",
   "radios": {
-    "value": ["bluetooth", "zigbee"],
-    "sources": ["hue-a60-fr"],
+    "value": [
+      "bluetooth",
+      "zigbee"
+    ],
+    "sources": [
+      "hue-a60-fr"
+    ],
     "note": "Hue lists Bluetooth and Zigbee for this EAN. CSA's 1100lm A19/A60 Matter listing also gives a Thread transport, but we can't tie it to this EAN, so Thread is not listed here."
   },
   "matter": {
     "certified": null,
-    "sources": ["hue-a60-fr", "hue-matter-guide", "csa-hue-light-1100"],
+    "sources": [
+      "hue-a60-fr",
+      "hue-matter-guide",
+      "csa-hue-light-1100"
+    ],
     "note": "Official sources disagree. CSA's 'White and Color Ambiance 1100lm A19/A60' listing gives Thread and Bluetooth transport (Matter 1.3), but Hue's page for this EAN lists only Bluetooth and Zigbee. Hue's guide also offers Matter through the Hue Bridge."
   },
   "compatibility": {
     "apple_home": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-a60-fr", "hue-matter-guide"],
+      "sources": [
+        "hue-a60-fr",
+        "hue-matter-guide"
+      ],
       "note": "Hue's product page lists Apple Home under 'Hue Bridge required'; the Bridge links via HomeKit or Matter. If this bulb is the CSA-listed Thread model it may also pair directly via Matter; not confirmed."
     },
     "google_home": {
       "status": "native",
-      "sources": ["hue-a60-fr", "hue-no-bridge-faq"],
+      "sources": [
+        "hue-a60-fr",
+        "hue-no-bridge-faq"
+      ],
       "note": "Works through Hue's own Google Home integration. Hue's (US) FAQ says Bluetooth bulbs work bridgeless only with Google Nest speakers and displays; the EU page lists Google under 'Hue Bridge required'."
     },
     "alexa": {
       "status": "native",
-      "sources": ["hue-a60-fr", "hue-no-bridge-faq"],
+      "sources": [
+        "hue-a60-fr",
+        "hue-no-bridge-faq"
+      ],
       "note": "Works through Hue's own Alexa integration. Hue's (US) FAQ says Bluetooth bulbs can pair with supported Echo devices without a Bridge; the EU page lists Alexa under 'Hue Bridge required'."
     },
     "smartthings": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-a60-fr"],
+      "sources": [
+        "hue-a60-fr"
+      ],
       "note": "Hue's product page lists SmartThings under 'Hue Bridge required'. Direct Matter pairing is unconfirmed for this EAN (see Matter)."
     },
     "home_assistant": {
       "status": "native",
-      "sources": ["ha-hue", "ha-hue-ble"],
+      "sources": [
+        "ha-hue",
+        "ha-hue-ble"
+      ],
       "note": "Official Hue integration (via Hue Bridge) and official Hue BLE integration (2025.12, bridgeless Bluetooth). The BLE docs name specific Hue models and say others should work; this EAN isn't named."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["hue-a60-fr", "hue-no-bridge-faq"],
+    "sources": [
+      "hue-a60-fr",
+      "hue-no-bridge-faq"
+    ],
     "note": "Basic control works over Bluetooth from the Hue app (up to 10 lights, one room). A Hue Bridge is needed for Apple Home, SmartThings, remote access and larger setups."
   },
   "localControl": {
     "value": true,
-    "sources": ["hue-no-bridge-faq", "ha-hue"],
+    "sources": [
+      "hue-no-bridge-faq",
+      "ha-hue"
+    ],
     "note": "Bluetooth control from a phone needs no internet; the Hue Bridge also offers a local API that Home Assistant uses."
   },
   "colorType": {
     "value": "color",
-    "sources": ["hue-a60-fr"],
+    "sources": [
+      "hue-a60-fr"
+    ],
     "note": "Full colour plus tunable white; Hue quotes a 1000–20000 K range."
   },
   "lumens": {
     "value": 1100,
-    "sources": ["hue-a60-fr", "hue-a60-gb", "hue-a60-e27-old-gb"],
+    "sources": [
+      "hue-a60-fr",
+      "hue-a60-gb",
+      "hue-a60-e27-old-gb"
+    ],
     "note": "1100 lm at 4000 K for EAN 8720169364066. Hue's older E27 colour bulb sold as '1100' (EAN 8719514291171) is rated up to 1055 lm; check the EAN on the box."
   },
   "bulbBase": {
     "value": "E27",
-    "sources": ["hue-a60-fr"]
+    "sources": [
+      "hue-a60-fr"
+    ]
   },
   "summary": "Pair the EU Philips Hue White and Colour Ambiance A60 with a Hue Bridge and it works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant. Alexa, Google and Home Assistant go through Hue's own integrations; Apple Home and SmartThings need the Bridge. On its own, the bulb runs over Bluetooth from the Hue app. This is EAN 8720169364066, a full-colour E27 bulb rated at 1100 lumens at 4000 K. Matter is unconfirmed for this EAN.",
-  "caveats": ["Apple Home and SmartThings need a Hue Bridge; direct Matter pairing isn't confirmed for this EAN.","Hue's EU product page lists Alexa and Google Home under 'Hue Bridge required'; bridgeless voice control is described only in Hue's US FAQ.","Bluetooth mode tops out at about 10 lights in one room and has no remote access.","An older Hue E27 colour bulb also sold as '1100' (EAN 8719514291171) is rated up to 1055 lm, so check the EAN on the box."],
+  "caveats": [
+    "Apple Home and SmartThings need a Hue Bridge; direct Matter pairing isn't confirmed for this EAN.",
+    "Hue's EU product page lists Alexa and Google Home under 'Hue Bridge required'; bridgeless voice control is described only in Hue's US FAQ.",
+    "Bluetooth mode tops out at about 10 lights in one room and has no remote access.",
+    "An older Hue E27 colour bulb also sold as '1100' (EAN 8719514291171) is rated up to 1055 lm, so check the EAN on the box."
+  ],
   "sources": [
     {
       "id": "hue-a60-fr",
@@ -135,6 +179,9 @@
       "kind": "ecosystem",
       "accessed": "2026-10-11"
     }
+  ],
+  "variants": [
+    "philips-hue-white-and-color-ambiance-a19-1100-us"
   ],
   "status": "verified",
   "updatedAt": "2026-10-11",

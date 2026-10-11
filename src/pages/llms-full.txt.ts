@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, RADIO_LABELS, answerFor, devicePath, getPublishedDevices } from '../lib/devices';
 import { categoryOf, specFacts } from '../lib/categories';
+import { marketOf } from '../lib/markets';
 
 const fact = (label: string, v: unknown, note?: string) =>
   `- ${label}: ${v === null ? 'unconfirmed' : v === true ? 'yes' : v === false ? 'no' : String(v)}${note ? ` (${note})` : ''}`;
@@ -20,7 +21,8 @@ export const GET: APIRoute = async ({ site }) => {
       `## ${d.name}`,
       '',
       `URL: ${new URL(devicePath(dev), site).href}`,
-      `Category: ${categoryOf(d).singular} · Brand: ${d.brand} · Model: ${d.model} · Regions: ${d.regions.join(', ')} · Verified: ${d.verifiedAt ?? 'n/a'}`,
+      `Category: ${categoryOf(d).singular} · Brand: ${d.brand} · Model: ${d.model} · Market: ${marketOf(dev).label} (${d.regions.join(', ')}) · Verified: ${d.verifiedAt ?? 'n/a'}`,
+      ...(d.variants?.length ? [`Other regions: ${d.variants.map((v) => new URL(`/${categoryOf(d).path}/${v}/`, site).href).join(', ')}`] : []),
       '',
       d.summary,
       '',

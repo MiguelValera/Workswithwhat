@@ -86,6 +86,8 @@ const baseShape = {
   summary: z.string().min(80).max(700),
   caveats: z.array(z.string().min(10).max(300)).default([]),
   sources: z.array(sourceSchema).min(2),
+  // slugs of the same product sold in other regions (e.g. the UK and EU Tapo P110); must be mutual
+  variants: z.array(z.string().regex(/^[a-z0-9-]+$/)).optional(),
   status: z.enum(['draft', 'verified']),
   verifiedAt: isoDate.optional(),
   updatedAt: isoDate,

@@ -165,6 +165,9 @@
       "accessed": "2026-10-11"
     }
   ],
+  "variants": [
+    "tp-link-tapo-p110-eu"
+  ],
   "status": "verified",
   "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"

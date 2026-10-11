@@ -24,6 +24,7 @@ Set `category` to `smart-plug`, `smart-bulb`, `smart-lock`, `smart-thermostat`, 
   For cameras, `hubRequired` means a base station or hub is needed for basic use (e.g. a HomeBase for some eufy cameras, a Sync Module for Blink). Ecosystem support for cameras usually means live view on a smart display or in the Home app; put what works (live view, doorbell chime, HomeKit Secure Video, recordings) in the note. Matter camera support is new: don't assume it.
 - smart-switch (wall switches, dimmers and in-wall modules): `switchForm` ("wall-switch" = replaces the switch itself, "module" = relay or dimmer that sits behind an existing switch), `dimmer` (boolean), `neutralRequired` (boolean: needs a neutral wire at the box; if the maker says "neutral or no-neutral" or gives a no-neutral variant, use false and explain), `gangs` (string, the maker's wording, e.g. "1 gang", "2 channels").
   Regional variants matter a lot here (US 120 V vs EU 230 V, box sizes): one record per region. For switches, `hubRequired` means a brand hub is needed for basic app control (e.g. Lutron Caséta's Smart Bridge, a Hue Bridge, a Zigbee hub).
+If the device is the same product as an existing record for another region (e.g. the UK version of an EU plug), add each slug to the other's `variants` array.
 A bulb sold in several bases or brightness variants is one record per model number; pick the one asked for.
 
 ## Process
