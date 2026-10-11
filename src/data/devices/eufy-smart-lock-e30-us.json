@@ -1,0 +1,82 @@
+{
+  "category": "smart-lock",
+  "brand": "eufy",
+  "model": "Smart Lock E30",
+  "name": "eufy Smart Lock E30 (US)",
+  "regions": ["US"],
+  "officialUrl": "https://www.eufy.com/products/t85f1111",
+  "radios": {
+    "value": ["thread", "wifi", "bluetooth"],
+    "sources": ["csa-eufy-e30", "eufy-matter-faq"],
+    "note": "CSA lists Thread and Bluetooth transports and notes built-in Wi-Fi. eufy's FAQ groups the T85F-series locks as Matter over Thread; Wi-Fi is used for the eufy app and remote control."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": ["csa-eufy-e30"],
+    "note": "CSA lists the eufy Smart Lock E30 from Anker Innovations (Matter 1.2, certified 2024-07-02, firmware V1.0.0.0, hardware V3). It is Matter over Thread, not over Wi-Fi."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["eufy-matter-faq", "eufy-e30-page", "eufy-add-hub-faq"],
+      "note": "Matter over Thread. eufy says iOS 18 can add Matter devices without a hub and iPhone 15 Pro or later can control Thread devices directly, but remote control needs a HomePod mini, HomePod or Apple TV 4K as hub."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["eufy-matter-faq", "eufy-e30-page", "eufy-add-hub-faq"],
+      "note": "Matter over Thread; eufy's FAQ requires a Matter-capable Nest hub."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["eufy-matter-faq", "eufy-e30-page", "eufy-add-hub-faq"],
+      "note": "Matter over Thread; eufy's FAQ requires a Matter-enabled Echo device."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["eufy-matter-faq", "eufy-e30-page", "eufy-add-hub-faq"],
+      "note": "eufy's product page lists SmartThings; its FAQ says a Matter-capable hub is required."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Home Assistant docs page for this lock found. A community thread reports it works through the Matter integration, but forum posts are not enough on their own. Needs a Thread border router."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["eufy-e30-page", "eufy-matter-faq"],
+    "note": "eufy markets it as needing no bridge, and the eufy app uses the lock's own Wi-Fi. Matter platforms need a Thread-capable hub, and Apple Home remote control needs a home hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No eufy source describes local-only control explicitly."
+  },
+  "lockFit": {
+    "value": "deadbolt",
+    "sources": ["eufy-e30-page", "csa-eufy-e30"],
+    "note": "Replaces a standard US deadbolt and keeps a physical keyhole for the mechanical key."
+  },
+  "keypad": {
+    "value": true,
+    "sources": ["eufy-e30-page", "csa-eufy-e30"],
+    "note": "Keypad on the lock, plus a fingerprint reader."
+  },
+  "power": {
+    "value": "8 × AA",
+    "sources": ["csa-eufy-e30", "eufy-e30-page"],
+    "note": "eight AA batteries; eufy claims up to 8 months per set."
+  },
+  "summary": "eufy's Smart Lock E30 is a deadbolt replacement with a keypad and fingerprint reader that joins Apple Home, Google Home, Alexa and SmartThings over Matter on Thread. It also has built-in Wi-Fi for the eufy app. It takes eight AA batteries and keeps a keyhole for a spare key. Home Assistant support is unconfirmed by official docs.",
+  "caveats": ["Matter control needs a Thread border router or Matter hub: HomePod mini or Apple TV 4K, a Nest hub, an Echo, or a SmartThings hub.","Apple Home remote control needs a home hub even though iOS 18 can add the lock without one.","eufy says locks connected through HomeBase 3 cannot use Matter yet.","A Home Assistant forum thread reports early setup problems that a firmware update fixed.","Eight AA batteries are needed."],
+  "sources": [
+    { "id": "eufy-e30-page", "url": "https://www.eufy.com/products/t85f1111", "title": "eufy Smart Lock E30", "publisher": "eufy", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "eufy-matter-faq", "url": "https://service.eufy.com/article-description/eufy-Smart-Locks-Matter-Functionality-FAQ", "title": "eufy Smart Locks' Matter Functionality FAQ", "publisher": "eufy", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "eufy-add-hub-faq", "url": "https://service.eufy.com/article-description/Smart-Lock-C34-E30-How-Do-I-Add-My-Smart-Lock-to-Apple-HomeKit-Amazon-Alexa-or-Google-Assistant", "title": "Smart Lock C34/E30: How do I add my Smart Lock to Apple HomeKit, Amazon Alexa or Google Assistant", "publisher": "eufy", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "csa-eufy-e30", "url": "https://csa-iot.org/csa_product/eufy-smart-lock-e30/", "title": "eufy Smart Lock E30 - CSA-IOT", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11" },
+    { "id": "ha-forum-eufy-e30", "url": "https://community.home-assistant.io/t/eufy-e30-smart-lock-with-matter/781327", "title": "Eufy e30 Smart Lock with Matter - Home Assistant Community", "publisher": "Home Assistant Community", "kind": "review", "accessed": "2026-10-11", "forCaveat": true }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
