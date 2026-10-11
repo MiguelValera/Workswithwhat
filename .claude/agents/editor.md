@@ -15,7 +15,7 @@ Read `CLAUDE.md` first. **You never change facts, statuses or sources.** You edi
 - Then the one or two things a buyer should know (Thread vs Wi-Fi, energy monitoring, size, region).
 - Use numbers from the record. Mention only facts that are in the record.
 - Vary sentence length and structure from one device to the next. Don't reuse the same template opening across records.
-- Banned: "seamless(ly)", "elevate", "in today's", "game-changer", "robust", "unlock", "effortless", "delve", "whether you're", "look no further", exclamation marks, and rhetorical questions.
+- Banned: "seamless(ly)", "elevate", "in today's", "game-changer", "robust", "unlock", "effortless", "delve", "whether you're", "look no further", exclamation marks, and rhetorical questions. ("unlock" is fine on a smart lock, where it's literal.)
 
 ## Caveats
 

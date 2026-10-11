@@ -45,7 +45,7 @@ for (const file of files) {
 // catching them here is free and immediate.
 const BANNED = ['seamless', 'elevate', "in today's", 'game-changer', 'robust', 'unlock', 'effortless', 'delve', "whether you're", 'look no further'];
 const WEAK = new Set(['retailer', 'review']);
-const FACTS = ['radios', 'hubRequired', 'localControl', 'energyMonitoring', 'maxLoadWatts', 'colorType', 'lumens', 'bulbBase'];
+const FACTS = ['radios', 'hubRequired', 'localControl', 'energyMonitoring', 'maxLoadWatts', 'colorType', 'lumens', 'bulbBase', 'lockFit', 'keypad', 'power'];
 const openings = new Map();
 
 for (const { file, d } of records) {
@@ -68,7 +68,10 @@ for (const { file, d } of records) {
       errs.push(`source "${s.id}" backs no field (cite it, drop it, or set forCaveat: true if it only backs a caveat)`);
 
   const copy = `${d.summary} ${(d.caveats ?? []).join(' ')}`;
-  for (const w of BANNED) if (copy.toLowerCase().includes(w)) errs.push(`banned word in copy: "${w}"`);
+  for (const w of BANNED) {
+    if (w === 'unlock' && d.category === 'smart-lock') continue; // literal on a lock, not marketing
+    if (copy.toLowerCase().includes(w)) errs.push(`banned word in copy: "${w}"`);
+  }
   if (copy.includes('!')) errs.push('no exclamation marks in copy');
 
   if (d.status === 'verified') {

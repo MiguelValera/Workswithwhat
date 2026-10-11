@@ -11,9 +11,11 @@ Read `CLAUDE.md` and `src/schema/device.ts` before you start. The schema decides
 
 ## Categories
 
-Set `category` to `smart-plug` or `smart-bulb`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
+Set `category` to `smart-plug`, `smart-bulb` or `smart-lock`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
 - smart-plug: `energyMonitoring` (boolean), `maxLoadWatts` (integer).
 - smart-bulb: `colorType` ("white", "tunable-white" or "color"), `lumens` (integer), `bulbBase` (e.g. "E27", "E26 (A19)", "GU10", "B22").
+- smart-lock: `lockFit` ("deadbolt" = replaces a whole US deadbolt, "retrofit" = fits over the existing interior thumb-turn or cylinder and keeps your keys, "cylinder" = replaces a euro-profile cylinder, "lever" = handle set with the lock built in), `keypad` (boolean: a keypad on the lock itself, not a separate accessory), `power` (string, e.g. "4 × AA", "Rechargeable battery").
+  For locks, `hubRequired` means a bridge is needed for the lock's basic app control (e.g. a Wi-Fi bridge for a Bluetooth-only lock); name it in the note. Apple Home "Home Key" and remote access needing a home hub go in notes and caveats, not in `hubRequired`.
 A bulb sold in several bases or brightness variants is one record per model number; pick the one asked for.
 
 ## Process
