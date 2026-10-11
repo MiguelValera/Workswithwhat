@@ -70,7 +70,8 @@ for (const { file, d } of records) {
   const copy = `${d.summary} ${(d.caveats ?? []).join(' ')}`;
   for (const w of BANNED) {
     if (w === 'unlock' && d.category === 'smart-lock') continue; // literal on a lock, not marketing
-    if (copy.toLowerCase().includes(w)) errs.push(`banned word in copy: "${w}"`);
+    // match at a word start, so "robust" catches "robustly" but "delve" doesn't hit "shelves"
+    if (new RegExp(`\\b${w}`, 'i').test(copy)) errs.push(`banned word in copy: "${w}"`);
   }
   if (copy.includes('!')) errs.push('no exclamation marks in copy');
 
