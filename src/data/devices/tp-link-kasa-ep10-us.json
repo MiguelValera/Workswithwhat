@@ -11,15 +11,15 @@
     "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n); no 5 GHz."
   },
   "matter": {
-    "certified": false,
-    "sources": ["tplink-ep10", "kasa-ep10-product"],
-    "note": "TP-Link and Kasa list Alexa, Google and SmartThings (plus IFTTT) for the EP10, with no Matter."
+    "certified": null,
+    "sources": [],
+    "note": "TP-Link and Kasa list Alexa, Google and SmartThings for the EP10 and don't mention Matter, but never say it has none. We found no CSA listing for the EP10."
   },
   "compatibility": {
     "apple_home": {
-      "status": "no",
-      "sources": ["tplink-ep10", "tplink-ep10-ug"],
-      "note": "TP-Link's platform list for the EP10 (Alexa, Google Assistant, SmartThings) leaves out HomeKit, and it has no Matter."
+      "status": "unknown",
+      "sources": ["tplink-ep10"],
+      "note": "TP-Link's EP10 platform list names Alexa, Google Assistant and SmartThings, not HomeKit, but doesn't rule it out. Kasa's HomeKit plugs are the KP125 and EP25."
     },
     "google_home": {
       "status": "native",
@@ -110,6 +110,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

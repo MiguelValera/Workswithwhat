@@ -11,15 +11,15 @@
     "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n). Bluetooth is used for setup only."
   },
   "matter": {
-    "certified": false,
-    "sources": ["tplink-p105", "tapo-p105-product"],
-    "note": "TP-Link lists Alexa, Google Assistant and SmartThings for the P105, with no Matter. TP-Link sells separate Matter plugs with an M suffix (e.g. P100M)."
+    "certified": null,
+    "sources": [],
+    "note": "TP-Link lists Alexa, Google Assistant and SmartThings for the P105 and doesn't mention Matter, but never says it has none. TP-Link's Matter plugs carry an M suffix (e.g. P125M)."
   },
   "compatibility": {
     "apple_home": {
-      "status": "no",
+      "status": "unknown",
       "sources": ["tplink-p105"],
-      "note": "TP-Link's platform list for the P105 (Alexa, Google Assistant, SmartThings) leaves out HomeKit, and it has no Matter."
+      "note": "TP-Link's P105 platform list names Alexa, Google Assistant and SmartThings, not HomeKit, but doesn't rule it out."
     },
     "google_home": {
       "status": "native",
@@ -60,13 +60,13 @@
   "maxLoadWatts": {
     "value": 1800,
     "sources": ["tplink-p105", "tplink-p105-datasheet"],
-    "note": "15 A, 1800 W at 120 V general use / resistive load; 1/6 HP motor."
+    "note": "15 A, 1800 W at 120 V general use / resistive load; 1/6 HP motor. The US page gives 100–125 V input; the 2020 datasheet and some boxes say 100–240 V."
   },
-  "summary": "The Tapo P105 is a mini US Wi-Fi plug rated 15 A / 1800 W. It works with Alexa, Google Home and SmartThings through your Tapo account, with no hub, and Home Assistant's official TP-Link integration lists it. It has no Apple Home or Matter support and doesn't measure energy use.",
+  "summary": "The Tapo P105 is a mini US Wi-Fi plug rated 15 A / 1800 W. It works with Alexa, Google Home and SmartThings through your Tapo account, with no hub, and Home Assistant's official TP-Link integration lists it. TP-Link doesn't list Apple Home or Matter for it, and it doesn't measure energy use.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
     "No energy monitoring; the Tapo P115 is the mini plug with a power meter.",
-    "No Apple Home or Matter support.",
+    "TP-Link doesn't list Apple Home or Matter support.",
     "Home Assistant needs your TP-Link account credentials to authenticate Tapo devices."
   ],
   "sources": [
@@ -96,9 +96,9 @@
     },
     {
       "id": "tplink-faq-tapo-plug",
-      "url": "https://www.tp-link.com/us/support/faq/3417/",
-      "title": "Tapo Smart Plug: Frequently Asked Questions Answered",
-      "publisher": "TP-Link",
+      "url": "https://www.tapo.com/us/faq/201/",
+      "title": "Tapo Smart Plug FAQ: Common Questions About Features, Setup, and Compatibility",
+      "publisher": "TP-Link (Tapo)",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
     },
@@ -127,6 +127,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

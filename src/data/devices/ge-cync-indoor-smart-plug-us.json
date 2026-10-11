@@ -7,8 +7,8 @@
   "officialUrl": "https://www.gelighting.com/led-lights/bulbs/ge-cync-indoor-smart-plug-smart-outlet-control-wifi-outlet-matter-compatible-works",
   "radios": {
     "value": ["wifi", "bluetooth"],
-    "sources": ["cync-plug-spec-sheet", "csa-cync-indoor-plug"],
-    "note": "2.4 GHz Wi-Fi plus Bluetooth Low Energy. The CSA listing gives Wi-Fi and Bluetooth as transports."
+    "sources": ["csa-cync-indoor-plug", "cync-plug-spec-sheet"],
+    "note": "2.4 GHz Wi-Fi plus Bluetooth LE. The CSA listing gives Wi-Fi and Bluetooth; GE's spec sheet (model CPLGSTDBLW1, no Matter mentioned, so possibly the older version) says the same."
   },
   "matter": {
     "certified": true,
@@ -25,12 +25,12 @@
     "google_home": {
       "status": "native",
       "sources": ["ge-cync-plug-matter-product"],
-      "note": "GE lists Google Home; it can also be added through Matter."
+      "note": "Native through the Cync app's Google Home link; GE says it can also be added through Matter."
     },
     "alexa": {
       "status": "native",
       "sources": ["ge-cync-plug-matter-product"],
-      "note": "GE lists Alexa; it can also be added through Matter."
+      "note": "Native through the Cync Alexa skill; GE says it can also be added through Matter."
     },
     "smartthings": {
       "status": "matter",
@@ -50,8 +50,8 @@
   },
   "localControl": {
     "value": null,
-    "sources": [],
-    "note": "GE doesn't say whether the plug can be controlled without the internet."
+    "sources": ["cync-plug-spec-sheet"],
+    "note": "GE's spec sheet lists 'Local Control via BLE', but it doesn't mention Matter and may describe the older version. Local control of the Matter version isn't confirmed."
   },
   "energyMonitoring": {
     "value": null,
@@ -59,11 +59,11 @@
     "note": "GE's pages and spec sheet don't mention power metering, but we found no explicit statement either way."
   },
   "maxLoadWatts": {
-    "value": 1800,
-    "sources": ["ge-cync-plug-matter-product", "cync-plug-spec-sheet"],
-    "note": "1800 W, 15 A at 120 V general use; 1/3 HP motor."
+    "value": null,
+    "sources": ["cync-plug-spec-sheet"],
+    "note": "GE's store lists 1800 W / 15 A and the spec sheet says 15 A general use, 1/3 HP, but we couldn't tie a watt figure to the Matter version's own page."
   },
-  "summary": "This record covers the Matter version of the GE Cync Indoor Smart Plug, sold in the US. It's a 2.4 GHz Wi-Fi plug rated 15 A / 1800 W that works with Alexa and Google Home and, through Matter, with Apple Home and SmartThings. No hub is needed.",
+  "summary": "This record covers the Matter version of the GE Cync Indoor Smart Plug, sold in the US. It's a 2.4 GHz Wi-Fi plug rated 15 A that works with Alexa and Google Home through the Cync app and, through Matter, with Apple Home and SmartThings. No hub is needed.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
     "Older Cync Indoor Smart Plugs sold under the same name aren't Matter; check the box or listing for 'Matter Compatible'.",
@@ -104,6 +104,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }

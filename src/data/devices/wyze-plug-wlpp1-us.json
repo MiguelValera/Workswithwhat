@@ -105,7 +105,7 @@
     },
     {
       "id": "wyze-alexa-plug",
-      "url": "https://support.wyze.com/hc/en-us/articles/360032991891-Alexa-Voice-Commands-for-Wyze-Plug",
+      "url": "https://support.wyze.com/hc/en-us/articles/360032991891-Wyze-Plug-and-Alexa",
       "title": "Alexa Voice Commands for Wyze Plug",
       "publisher": "Wyze",
       "kind": "manufacturer",
@@ -128,6 +128,7 @@
       "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
   "updatedAt": "2026-10-11"
 }
