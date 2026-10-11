@@ -6,9 +6,9 @@
   "regions": ["US"],
   "officialUrl": "https://support.lutron.com/us/en/product/casetawireless/component/dimmers/in-wall-dimmer/pd-6wcl/faqs/product-selection",
   "radios": {
-    "value": ["ethernet"],
-    "sources": ["lutron-bridge-spec", "lutron-pd6wcl-faq"],
-    "note": "The dimmer talks to the bridge on Lutron's own 431-437 MHz radio (Clear Connect), which our radio list lacks. Ethernet is the bridge's link to your router; the dimmer has no Wi-Fi."
+    "value": null,
+    "sources": [],
+    "note": "The dimmer uses Lutron's own Clear Connect RF radio, which isn't Wi-Fi, Thread, Zigbee, Z-Wave or Bluetooth, so none of our radio values fit. The Smart Bridge (Smart Hub) talks to it over Clear Connect and joins your router by Ethernet."
   },
   "matter": {
     "certified": null,
@@ -19,26 +19,26 @@
     "apple_home": {
       "status": "hub",
       "via": "Lutron Caséta Smart Bridge",
-      "sources": ["lutron-hub-faq", "lutron-apps"],
-      "note": "Lutron says the Smart Bridge carries Apple HomeKit technology, so the dimmer shows up in Apple Home through the bridge."
+      "sources": ["lutron-hub-faq"],
+      "note": "Lutron lists Apple HomeKit (including Siri) among the features the Smart Hub adds, so the dimmer shows up in Apple Home through the bridge."
     },
     "google_home": {
       "status": "hub",
       "via": "Lutron Caséta Smart Bridge",
-      "sources": ["lutron-apps", "lutron-hub-faq"],
-      "note": "Lutron lists Google Assistant and Google Home; it reaches the dimmer through the Smart Bridge."
+      "sources": ["lutron-hub-faq"],
+      "note": "Lutron lists Google Home among the features the Smart Hub adds; it reaches the dimmer through the bridge."
     },
     "alexa": {
       "status": "hub",
       "via": "Lutron Caséta Smart Bridge",
-      "sources": ["lutron-apps", "lutron-hub-faq"],
-      "note": "Lutron lists Alexa voice control; it needs the Smart Bridge."
+      "sources": ["lutron-hub-faq"],
+      "note": "Lutron lists Amazon Alexa among the features the Smart Hub adds; it needs the bridge."
     },
     "smartthings": {
       "status": "hub",
       "via": "Lutron Caséta Smart Bridge",
-      "sources": ["lutron-apps"],
-      "note": "Lutron's integrations page lists SmartThings; it works through the Smart Bridge. The page looked dated, so check it is still current."
+      "sources": ["lutron-smartthings"],
+      "note": "Lutron's support article adds Lutron as a partner in the SmartThings app; the Caséta hub must be connected and reachable in the Lutron app. It is a cloud-to-cloud link, and Pico remotes don't appear in SmartThings."
     },
     "home_assistant": {
       "status": "hub",
@@ -54,8 +54,8 @@
   },
   "localControl": {
     "value": true,
-    "sources": ["ha-lutron-caseta", "lutron-bridge-spec"],
-    "note": "Home Assistant talks to the bridge locally. The bridge keeps running schedules and Pico remotes working if the internet drops, per Lutron."
+    "sources": ["ha-lutron-caseta"],
+    "note": "Home Assistant's Lutron Caséta integration talks to the Smart Bridge over the local network (local push). Lutron's app, Alexa, Google Home and SmartThings links go through Lutron's cloud."
   },
   "switchForm": {
     "value": "wall-switch",
@@ -65,7 +65,7 @@
   "dimmer": {
     "value": true,
     "sources": ["lutron-dimmer-spec", "lutron-pd6wcl-faq"],
-    "note": "Rated 150 W for LED and 600 W for incandescent or halogen, with a 25 W minimum."
+    "note": "Rated 150 W for dimmable LED and 600 W for incandescent or halogen."
   },
   "neutralRequired": {
     "value": false,
@@ -80,15 +80,14 @@
   "summary": "Lutron's Caséta PD-6WCL is a two-wire wall dimmer that replaces a standard US switch and needs no neutral. On its own it pairs only with Pico remotes and Lutron sensors; app control, schedules and voice control all go through the Caséta Smart Bridge. With the bridge, Lutron lists Apple Home, Google Home, Alexa and SmartThings, and Home Assistant has a local integration for it. It handles 150 W of LED or 600 W of incandescent.",
   "caveats": [
     "Needs the Caséta Smart Bridge (now called Smart Hub) for app, voice and ecosystem control; the bridge plugs into your router by Ethernet.",
-    "LED loads are limited to 150 W, with a 25 W minimum, and the bulbs must be dimmable.",
-    "Home Assistant does not receive button presses from the wired dimmer, only from Pico remotes."
+    "LED loads are limited to 150 W, and the bulbs must be dimmable.",
+    "Existing 3-way wiring isn't supported; for a second location you add a Pico remote."
   ],
   "sources": [
     {"id": "lutron-pd6wcl-faq", "url": "https://support.lutron.com/us/en/product/casetawireless/component/dimmers/in-wall-dimmer/pd-6wcl/faqs/product-selection", "title": "Caseta Wireless PD-6WCL product selection FAQ", "publisher": "Lutron", "kind": "manufacturer", "accessed": "2026-10-11"},
     {"id": "lutron-dimmer-spec", "url": "https://assets.lutron.com/a/documents/369804b_Caseta%20In-Wall%20Dimmer%20Spec.pdf", "title": "Caseta Wireless In-Wall Dimmer SPEC (369804)", "publisher": "Lutron", "kind": "manufacturer", "accessed": "2026-10-11"},
     {"id": "lutron-hub-faq", "url": "https://support.lutron.com/us/en/product/casetawireless/article/product-selection/What-is-the-Caseta-Smart-Hub-and-when-do-I-need-one", "title": "What is the Caseta Smart Hub and when do I need one", "publisher": "Lutron", "kind": "manufacturer", "accessed": "2026-10-11"},
-    {"id": "lutron-apps", "url": "https://www.lutron.com/en-US/Products/Pages/SingleRoomControls/CasetaWireless/Applications.aspx", "title": "Caséta Wireless - App & Integration", "publisher": "Lutron", "kind": "manufacturer", "accessed": "2026-10-11"},
-    {"id": "lutron-bridge-spec", "url": "https://assets.lutron.com/a/documents/369816_Smart_Bridge_Pro_Spec.pdf", "title": "Smart Bridge L-BDG & L-BDGPRO specification", "publisher": "Lutron", "kind": "manufacturer", "accessed": "2026-10-11"},
+    {"id": "lutron-smartthings", "url": "https://support.lutron.com/us/en/product/casetawireless/article/connected-products/Samsung-SmartThings-with-Caseta-RA2-Select", "title": "Samsung SmartThings with Caséta / RA2 Select", "publisher": "Lutron", "kind": "manufacturer", "accessed": "2026-10-11"},
     {"id": "ha-lutron-caseta", "url": "https://www.home-assistant.io/integrations/lutron_caseta/", "title": "Lutron Caséta - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11"}
   ],
   "status": "draft",

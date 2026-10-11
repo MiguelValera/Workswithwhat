@@ -19,7 +19,7 @@
     "apple_home": {
       "status": "native",
       "sources": ["tp-link-ks220", "ks220-ug"],
-      "note": "Pairs through HomeKit with a HomeKit code; the user guide has a HomeKit setup section."
+      "note": "TP-Link lists Apple Home as a third-party platform. The user guide covers adding it in the Home app with its HomeKit code; a home hub (HomePod or Apple TV) is optional, for remote access."
     },
     "google_home": {
       "status": "native",
@@ -49,8 +49,8 @@
   },
   "localControl": {
     "value": true,
-    "sources": ["ha-tplink"],
-    "note": "Home Assistant's integration is listed as local polling. Newer Kasa devices may ask for your TP-Link cloud login during setup; TP-Link itself doesn't state local control for its app."
+    "sources": ["ha-tplink", "ks220-ug"],
+    "note": "Home Assistant's TP-Link integration talks to the switch directly on your network, not through TP-Link's cloud. HomeKit control also runs on the local network; TP-Link's guide says a home hub is only optional."
   },
   "switchForm": {
     "value": "wall-switch",
