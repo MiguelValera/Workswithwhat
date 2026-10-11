@@ -71,7 +71,7 @@
   "caveats": [
     "Matter setup needs 2.4 GHz Wi-Fi and IPv6 enabled on the router.",
     "Through Matter you get on/off, brightness, colour and colour temperature; scenes, effects and music sync stay in the Govee Home app.",
-    "Govee says the bulb should not be used with smart switches; turning it off in the app leaves a small standby draw."
+    "Turning it off in the app leaves a small standby draw (about 0.5 W); cut power at the wall switch for a full power-off."
   ],
   "sources": [
     {

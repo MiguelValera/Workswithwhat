@@ -1,0 +1,121 @@
+{
+  "category": "smart-bulb",
+  "brand": "Sengled",
+  "model": "E11-N1EAW",
+  "name": "Sengled Smart LED Multicolor A19 Zigbee (US)",
+  "regions": ["US"],
+  "officialUrl": "https://us.sengled.com/products/zigbee-color-a19-e26-hub-required",
+  "radios": {
+    "value": ["zigbee"],
+    "sources": ["sengled-zigbee-color-a19"],
+    "note": "Zigbee only; Sengled sells this bulb as 'Hub Required'."
+  },
+  "matter": {
+    "certified": false,
+    "sources": ["sengled-zigbee-color-a19", "sengled-matter-blog"],
+    "note": "Zigbee-only bulb. Sengled's Matter bulb is a separate Wi-Fi model."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Sengled does not list Apple Home for this bulb; no official source either way."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Sengled Smart Hub",
+      "sources": ["sengled-zigbee-color-a19", "sengled-hub-faq"],
+      "note": "Google Assistant works through the Sengled hub and Sengled Home cloud. Google Home speakers are not Zigbee hubs. Sengled's cloud had outages in 2025."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Echo with built-in Zigbee hub",
+      "sources": ["sengled-hub-faq", "pcworld-sengled-skill"],
+      "note": "Pairs directly with Echo models that have a Zigbee hub. Amazon removed the Sengled Alexa skill on 1 Aug 2025, so the Sengled-hub route to Alexa no longer works."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "SmartThings hub",
+      "sources": ["sengled-smartthings", "sengled-hub-faq"],
+      "note": "Sengled lists the SmartThings hub as compatible and documents pairing."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant or Sengled source names this bulb; a generic Zigbee coordinator likely works but is unconfirmed."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": ["sengled-zigbee-color-a19", "sengled-hub-faq"],
+    "note": "For bulbs, this means needing a bridge or hub for basic app control. This Zigbee bulb needs a Sengled hub, SmartThings hub or Zigbee Echo."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No official source describes local control. The Sengled app path depends on Sengled's cloud; third-party Zigbee hubs may differ."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": ["sengled-zigbee-color-a19"],
+    "note": "16 million colours plus tunable white."
+  },
+  "lumens": {
+    "value": 800,
+    "sources": ["sengled-zigbee-color-a19"]
+  },
+  "bulbBase": {
+    "value": "E26 (A19)",
+    "sources": ["sengled-zigbee-color-a19"]
+  },
+  "summary": "The Sengled Smart LED Multicolor A19 (E11-N1EAW) is a US Zigbee colour bulb with an E26 base, rated at 800 lumens. It needs a Zigbee hub: a Sengled Smart Hub, a SmartThings hub or an Echo with a built-in Zigbee hub. Amazon removed the Sengled Alexa skill in August 2025 after repeated outages, so Alexa control now means pairing the bulb directly to a Zigbee Echo.",
+  "caveats": [
+    "Requires a Zigbee hub; it has no Wi-Fi or Bluetooth.",
+    "Sengled's cloud had extended outages in mid-2025 and Amazon pulled the Sengled Alexa skill on 1 August 2025. We found no official Sengled statement on service status.",
+    "Sengled says these bulbs should not be used on dimmer switches."
+  ],
+  "sources": [
+    {
+      "id": "sengled-zigbee-color-a19",
+      "url": "https://us.sengled.com/products/zigbee-color-a19-e26-hub-required",
+      "title": "Sengled Zigbee Color A19/E26 Bulbs",
+      "publisher": "Sengled",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "sengled-hub-faq",
+      "url": "https://support.sengled.com/hc/en-us/articles/360009014534-Do-I-need-a-hub-to-control-the-Zigbee-Smart-LED-s-and-Accessories",
+      "title": "Do I need a hub to control the Zigbee Smart LED's and Accessories?",
+      "publisher": "Sengled",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "sengled-smartthings",
+      "url": "https://support.sengled.com/hc/en-us/articles/360020226334-Adding-Sengled-Smart-LED-bulbs-to-your-Samsung-SmartThings-hub",
+      "title": "Adding Sengled Smart LED bulbs to your Samsung SmartThings hub",
+      "publisher": "Sengled",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "sengled-matter-blog",
+      "url": "https://us.sengled.com/blogs/news/introducing-our-matter-smart-light-bulb-now-available-on-amazon",
+      "title": "Introducing our Matter smart light bulb - now available on Amazon",
+      "publisher": "Sengled",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "pcworld-sengled-skill",
+      "url": "https://www.pcworld.com/article/2864586/amazon-yanks-sengleds-alexa-skill-after-a-series-of-service-outages.html",
+      "title": "Amazon yanks Sengled's Alexa skill after a series of service outages",
+      "publisher": "PCWorld",
+      "kind": "review",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
