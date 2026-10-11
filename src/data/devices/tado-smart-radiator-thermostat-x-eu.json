@@ -3,33 +3,53 @@
   "brand": "tado°",
   "model": "Smart Radiator Thermostat X",
   "name": "tado° Smart Radiator Thermostat X (EU)",
-  "regions": ["EU"],
+  "regions": [
+    "EU"
+  ],
   "officialUrl": "https://shop.tado.com/en-eu/products/smart-radiator-thermostat-x",
   "radios": {
-    "value": ["thread", "bluetooth"],
-    "sources": ["csa-tado-srt-x", "tado-srt-x"],
+    "value": [
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "csa-tado-srt-x",
+      "tado-srt-x"
+    ],
     "note": "CSA lists Thread and Bluetooth transport interfaces. Bluetooth is presumably used for setup."
   },
   "matter": {
     "certified": true,
     "transport": "thread",
-    "sources": ["csa-tado-srt-x", "tado-matter-code"],
-    "note": "CSA has several entries for this product (hardware VA04, firmware 1.0 in the snippets seen)."
+    "sources": [
+      "csa-tado-srt-x",
+      "tado-matter-code"
+    ],
+    "note": "CSA lists more than one certification for this product (e.g. hardware VA04, firmware 1.0, Thread and Bluetooth)."
   },
   "compatibility": {
     "apple_home": {
       "status": "matter",
-      "sources": ["tado-apple", "tado-srt-x"],
+      "sources": [
+        "tado-apple",
+        "tado-srt-x"
+      ],
       "note": "Linked with a Matter code from the tado° app or the device QR code. Needs a Thread border router: Bridge X, another tado° X border router, or a third-party one."
     },
     "google_home": {
       "status": "matter",
-      "sources": ["tado-google", "tado-srt-x"],
+      "sources": [
+        "tado-google",
+        "tado-srt-x"
+      ],
       "note": "tado° has a setup guide for Google Home over Matter. Needs a Thread border router."
     },
     "alexa": {
       "status": "matter",
-      "sources": ["tado-alexa", "tado-srt-x"],
+      "sources": [
+        "tado-alexa",
+        "tado-srt-x"
+      ],
       "note": "Needs a Matter-capable Echo or eero plus a Thread border router (tado° names Bridge X, Heat Pump Optimizer X or Wireless Receiver X). tado° advises adding the device in its own app first to keep firmware updates."
     },
     "smartthings": {
@@ -39,14 +59,22 @@
     },
     "home_assistant": {
       "status": "matter",
-      "sources": ["ha-tado"],
-      "note": "Home Assistant's tado page says tado° X devices are not supported by the tado integration and must be used through the Matter integration."
+      "sources": [
+        "ha-matter",
+        "csa-tado-srt-x",
+        "tado-ha"
+      ],
+      "note": "Through Home Assistant's Matter integration, which needs a Thread border router. tado° says it does not officially support Home Assistant."
     }
   },
   "hubRequired": {
-    "value": true,
-    "sources": ["tado-srt-x", "tado-alexa"],
-    "note": "tado° says the Bridge X or any other Thread border router connects it to the internet. The Bridge X is sold separately and does not work with older tado° V3+ devices."
+    "value": false,
+    "sources": [
+      "tado-srt-x",
+      "tado-alexa",
+      "tado-apple"
+    ],
+    "note": "No tado° bridge is needed: tado° says it connects through the Bridge X or any other Thread border router (e.g. HomePod mini, Apple TV 4K). Some Thread border router is required. The Bridge X is sold separately and does not work with tado° V3+."
   },
   "localControl": {
     "value": null,
@@ -55,34 +83,105 @@
   },
   "thermostatType": {
     "value": "radiator-valve",
-    "sources": ["tado-srt-x"]
+    "sources": [
+      "tado-srt-x"
+    ]
   },
   "systems": {
     "value": "M30 × 1.5 valves; Danfoss RA, RAV, RAVL adapters included",
-    "sources": ["tado-adapters"],
+    "sources": [
+      "tado-adapters"
+    ],
     "note": "tado° says most owners can mount it without an adapter. Oventrop M30 × 1.0 valves need an adapter tado° does not supply."
   },
   "power": {
     "value": "Rechargeable battery (USB-C)",
-    "sources": ["tado-srt-x"],
-    "note": "tado° pages are described as saying it charges over USB-C about once a year (about 2 hours). This came from a search summary; capacity was not confirmed."
+    "sources": [
+      "tado-srt-x"
+    ],
+    "note": "tado° says the battery pack charges over USB-C in about 2 hours and lasts about a year. Capacity is not stated; the EU shop does not include a USB-C cable."
   },
   "summary": "The tado° Smart Radiator Thermostat X replaces the head on a radiator valve and talks Matter over Thread. It fits M30 × 1.5 mm valves directly, and tado° ships Danfoss RA, RAV and RAVL adapters in the box. Apple Home, Google Home and Alexa connect through Matter, and Home Assistant uses its Matter integration. It needs a Thread border router, typically tado°'s Bridge X.",
   "caveats": [
-    "Needs a Thread border router; tado° sells the Bridge X, which does not work with tado° V3+ devices.",
+    "Needs a Thread border router, such as tado°'s Bridge X (sold separately, not compatible with tado° V3+ devices) or a third-party one.",
     "Adding the valve to several Matter platforms can slightly shorten battery life, per tado°.",
     "Oventrop M30 × 1.0 valves need an adapter that tado° does not provide."
   ],
   "sources": [
-    { "id": "tado-srt-x", "url": "https://shop.tado.com/en-eu/products/smart-radiator-thermostat-x", "title": "smart radiator thermostat x", "publisher": "tado°", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "tado-adapters", "url": "https://help.tado.com/en/articles/8949346-do-i-need-an-adapter-to-mount-my-smart-radiator-thermostat-x", "title": "Do I need an adapter to mount my Smart Radiator Thermostat X?", "publisher": "tado°", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "tado-apple", "url": "https://help.tado.com/en/articles/9240313-how-do-i-set-up-my-tado-x-devices-with-apple-home", "title": "How do I set up my tado° X devices with Apple Home?", "publisher": "tado°", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "tado-google", "url": "https://help.tado.com/en/articles/9184568-how-can-i-set-up-my-tado-x-devices-with-google-home", "title": "How can I set up my tado° X devices with Google Home?", "publisher": "tado°", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "tado-alexa", "url": "https://help.tado.com/en/articles/9184565-how-can-i-set-up-my-tado-x-devices-with-alexa", "title": "How can I set up my tado° X devices with Alexa?", "publisher": "tado°", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "tado-matter-code", "url": "https://help.tado.com/en/articles/9242001-where-can-i-find-the-matter-setup-code-for-my-tado-x-device", "title": "Where can I find the Matter setup code for my tado° X device?", "publisher": "tado°", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "csa-tado-srt-x", "url": "https://csa-iot.org/csa_product/smart-radiator-thermostat-x-3/", "title": "Smart Radiator Thermostat X", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11" },
-    { "id": "ha-tado", "url": "https://www.home-assistant.io/integrations/tado/", "title": "Tado - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11" }
+    {
+      "id": "tado-srt-x",
+      "url": "https://shop.tado.com/en-eu/products/smart-radiator-thermostat-x",
+      "title": "smart radiator thermostat x",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-adapters",
+      "url": "https://help.tado.com/en/articles/8949346-do-i-need-an-adapter-to-mount-my-smart-radiator-thermostat-x",
+      "title": "Do I need an adapter to mount my Smart Radiator Thermostat X?",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-apple",
+      "url": "https://help.tado.com/en/articles/9240313-how-do-i-set-up-my-tado-x-devices-with-apple-home",
+      "title": "How do I set up my tado° X devices with Apple Home?",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-google",
+      "url": "https://help.tado.com/en/articles/9184568-how-can-i-set-up-my-tado-x-devices-with-google-home",
+      "title": "How can I set up my tado° X devices with Google Home?",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-alexa",
+      "url": "https://help.tado.com/en/articles/9184565-how-can-i-set-up-my-tado-x-devices-with-alexa",
+      "title": "How can I set up my tado° X devices with Alexa?",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-matter-code",
+      "url": "https://help.tado.com/en/articles/9242001-where-can-i-find-the-matter-setup-code-for-my-tado-x-device",
+      "title": "Where can I find the Matter setup code for my tado° X device?",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-tado-srt-x",
+      "url": "https://csa-iot.org/csa_product/smart-radiator-thermostat-x-3/",
+      "title": "Smart Radiator Thermostat X",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tado-ha",
+      "url": "https://help.tado.com/en/articles/16554948-using-tado-with-home-assistant",
+      "title": "Using tado° with Home Assistant",
+      "publisher": "tado°",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }
