@@ -68,7 +68,7 @@
     "value": "E26 (A19)",
     "sources": ["hue-a19-us"]
   },
-  "summary": "Alexa and Google Home control the Philips Hue White and Color Ambiance A19 through Hue's own integrations, either bridgeless over Bluetooth on supported Echo and Google Nest speakers or through a Hue Bridge. Apple Home and SmartThings need the Bridge, and Home Assistant has official integrations for both routes. This US version (product code 046677591168) is a full-colour bulb with an E26 base, rated up to 1100 lumens. Matter is unconfirmed: CSA lists an 1100 lm A19/A60 Hue bulb, but Hue's page for this code mentions only Bluetooth and Zigbee.",
+  "summary": "Hue's own integrations connect the Philips Hue White and Color Ambiance A19 to Alexa and Google Home, either bridgeless over Bluetooth on supported Echo and Google Nest speakers or through a Hue Bridge. Apple Home and SmartThings need the Bridge, and Home Assistant has official integrations for both routes. This US version (product code 046677591168) is a full-colour bulb with an E26 base, rated up to 1100 lumens. Matter is unconfirmed: CSA lists an 1100 lm A19/A60 Hue bulb, but Hue's page for this code mentions only Bluetooth and Zigbee.",
   "caveats": ["Apple Home and SmartThings need a Hue Bridge; direct Matter pairing isn't confirmed for this product code.","Without a Bridge, Google control works only from Google Nest speakers and displays.","Bluetooth mode tops out at about 10 lights in one room and has no remote access.","Hue also sells lower-output A19 colour bulbs (e.g. 800 lm), so check for product code 046677591168 on the box."],
   "sources": [
     {

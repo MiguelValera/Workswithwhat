@@ -1,0 +1,136 @@
+{
+  "category": "smart-plug",
+  "brand": "Innr",
+  "model": "SP 240",
+  "name": "Innr SP 240 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://innr.com/products/innr-smart-plug",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "innr-sp240-eu-doc",
+      "innr-smart-plug-product"
+    ],
+    "note": "Zigbee 3.0 on 2.4 GHz; no Wi-Fi. Innr's EU declaration calls it a Zigbee 3.0 smart plug."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Zigbee-only plug; Innr's pages found don't mention Matter for it and no CSA listing was found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [
+        "innr-works-with"
+      ],
+      "note": "Innr says its devices on a Hue Bridge don't work with Apple HomeKit. No Innr source rules out other routes, so not marked 'no'."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Innr source found that lists Google Home for this plug; only a retailer listing mentions Google Assistant."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Echo with built-in Zigbee hub or Hue Bridge",
+      "sources": [
+        "innr-smart-plug-product",
+        "innr-works-with"
+      ],
+      "note": "Innr says it pairs directly with Echo speakers that have a built-in Zigbee hub; other Alexa devices need a bridge such as Philips Hue."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "SmartThings hub (Zigbee)",
+      "sources": [
+        "innr-smart-plug-product",
+        "innr-works-with"
+      ],
+      "note": "Innr says it needs a SmartThings Zigbee hub and lists SmartThings among systems that show its power readings."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "Zigbee coordinator (ZHA or Zigbee2MQTT)",
+      "sources": [
+        "innr-smart-plug-product",
+        "innr-works-with",
+        "z2m-sp240"
+      ],
+      "note": "Innr names Home Assistant among systems that show its power readings and says its products work with ZHA or Zigbee2MQTT. Zigbee2MQTT lists the SP 240 with power, voltage, current and energy."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "innr-smart-plug-product",
+      "innr-works-with"
+    ],
+    "note": "Zigbee plug: needs a Zigbee hub such as a Hue Bridge, SmartThings, an Echo with a Zigbee hub or the Innr bridge."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Innr statement on control without internet found."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "innr-sp240-eu-doc",
+      "z2m-sp240"
+    ],
+    "note": "Innr's EU declaration calls it a Zigbee 3.0 smart plug with power metering. Innr says Philips Hue doesn't show the readings; SmartThings, Hubitat, the Innr bridge and Home Assistant do."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [],
+    "note": "Innr's product page gives a maximum load current of 16 A; no watt figure found on an Innr page."
+  },
+  "summary": "Zigbee only, so plan on a hub. The Innr SP 240 (EU) works with Alexa through an Echo that has a built-in Zigbee hub (other Echos need a bridge such as a Hue Bridge), with SmartThings through a SmartThings Zigbee hub, and with Home Assistant through ZHA or Zigbee2MQTT. It meters power and is rated for 16 A; Innr gives no watt figure. Innr doesn't confirm Apple Home or Google Home, and no Matter listing was found.",
+  "caveats": [
+    "Needs a Zigbee hub; there is no Wi-Fi.",
+    "A Hue Bridge can switch it but won't show its power readings; SmartThings, Hubitat, the Innr bridge and Home Assistant do.",
+    "Innr says its devices on a Hue Bridge don't work with Apple HomeKit, so the Hue route won't get it into Apple Home."
+  ],
+  "sources": [
+    {
+      "id": "innr-smart-plug-product",
+      "url": "https://innr.com/products/innr-smart-plug",
+      "title": "Innr Smart Plug (Zigbee 3.0, 16 A, power monitoring)",
+      "publisher": "Innr",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "innr-sp240-eu-doc",
+      "url": "https://www.innr.com/wp-content/uploads/2023/09/innr-SAR-001-2004-EU-DoC-SP-240-v1.0.pdf",
+      "title": "EU Declaration of Conformity SP 240 v1.0",
+      "publisher": "Innr",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "innr-works-with",
+      "url": "https://innr.com/pages/works-with",
+      "title": "Works with",
+      "publisher": "Innr",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "z2m-sp240",
+      "url": "https://www.zigbee2mqtt.io/devices/SP_240.html",
+      "title": "SP 240",
+      "publisher": "Zigbee2MQTT",
+      "kind": "review",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

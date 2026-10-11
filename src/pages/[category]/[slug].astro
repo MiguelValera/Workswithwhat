@@ -109,6 +109,20 @@ const jsonLd = [
     <p class="muted">
       {d.brand} · model {d.model} · sold in {d.regions.join(', ')}
     </p>
+    <ul class="glance" aria-label="Compatibility at a glance">
+      <li>
+        <a href="#compat-matter"><span class="glance-eco">Matter</span> <span class={`badge s-${d.matter.certified}`}>{matterText}</span></a>
+      </li>
+      {
+        ECOSYSTEMS.map((e) => (
+          <li>
+            <a href={`#compat-${ecosystemSlug(e)}`}>
+              <span class="glance-eco">{ECOSYSTEM_LABELS[e]}</span> <Status status={d.compatibility[e].status} via={d.compatibility[e].via} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
     <p class="lede">{d.summary}</p>
     {
       d.verifiedAt && (
@@ -118,14 +132,24 @@ const jsonLd = [
       )
     }
 
-    <h2>Ecosystem compatibility</h2>
+    <nav class="toc" aria-label="On this page">
+      <span class="toc-label">On this page:</span>
+      <a href="#compat">Compatibility</a>
+      <a href="#specs">Specs</a>
+      {d.caveats.length > 0 && <a href="#before-you-buy">Before you buy</a>}
+      <a href="#quick-answers">Quick answers</a>
+      <a href="#sources">Sources</a>
+      {related.length > 0 && <a href="#related">Similar {cat.plural}</a>}
+    </nav>
+
+    <h2 id="compat">Ecosystem compatibility</h2>
     <div class="table-scroll">
       <table role="table" class="stack kv">
         <thead role="rowgroup">
           <tr role="row"><th role="columnheader" scope="col">Platform</th><th role="columnheader" scope="col">Works?</th><th role="columnheader" scope="col">Details</th></tr>
         </thead>
         <tbody role="rowgroup">
-          <tr role="row">
+          <tr role="row" id="compat-matter">
             <th role="rowheader" scope="row">Matter</th>
             <td role="cell"><span class={`badge s-${d.matter.certified}`}>{matterText}</span></td>
             <td role="cell" class="wide">
@@ -137,7 +161,7 @@ const jsonLd = [
             ECOSYSTEMS.map((e) => {
               const c = d.compatibility[e];
               return (
-                <tr role="row">
+                <tr role="row" id={`compat-${ecosystemSlug(e)}`}>
                   <th role="rowheader" scope="row">{ECOSYSTEM_LABELS[e]}</th>
                   <td role="cell"><Status status={c.status} via={c.via} /></td>
                   <td role="cell" class="wide">{c.note}<Refs ids={c.sources} all={src} /></td>
@@ -154,7 +178,7 @@ const jsonLd = [
       <a href="/methodology/">How we verify</a>.
     </p>
 
-    <h2>Specs that matter for setup</h2>
+    <h2 id="specs">Specs that matter for setup</h2>
     <dl class="facts">
       <div><dt>Radio</dt><dd>{radios}<Refs ids={d.radios.sources} all={src} /></dd></div>
       <div><dt>Hub required</dt><dd>{yesNo(d.hubRequired.value)}<Refs ids={d.hubRequired.sources} all={src} /></dd></div>
@@ -175,7 +199,7 @@ const jsonLd = [
     {
       d.caveats.length > 0 && (
         <>
-          <h2>Before you buy</h2>
+          <h2 id="before-you-buy">Before you buy</h2>
           <ul class="caveats">
             {d.caveats.map((c) => <li>{c}</li>)}
           </ul>
@@ -183,7 +207,7 @@ const jsonLd = [
       )
     }
 
-    <h2>Quick answers</h2>
+    <h2 id="quick-answers">Quick answers</h2>
     <dl class="faq">
       {
         faq.map((f) => (
@@ -200,7 +224,7 @@ const jsonLd = [
       }
     </dl>
 
-    <h2>Sources</h2>
+    <h2 id="sources">Sources</h2>
     <ol class="sources">
       {
         src.map((s) => (
@@ -218,8 +242,8 @@ const jsonLd = [
 
   {
     related.length > 0 && (
-      <section>
-        <h2>Other {cat.plural} for the same region</h2>
+      <section aria-labelledby="related">
+        <h2 id="related">Other {cat.plural} for the same region</h2>
         <ul class="cards">
           {related.map((r) => <DeviceCard device={r} />)}
         </ul>

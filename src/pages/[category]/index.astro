@@ -53,7 +53,7 @@ const jsonLd = [
     Which {cat.singular} works with which platform, and how it gets there: directly, over Matter, or through a hub.
     Open any one for the details and the sources behind each answer.
   </p>
-  <CompareTable devices={devices} />
+  <CompareTable devices={devices} brandJump />
   {newest && <p class="muted small">Last updated <time datetime={newest}>{formatDate(newest)}</time>. The same data is available as <a href={api}>JSON</a>.</p>}
   <p class="muted">
     Looking for one platform?{' '}

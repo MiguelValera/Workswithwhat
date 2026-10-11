@@ -19,6 +19,9 @@ const { title, description, crumbs = [], jsonLd = [], ogType = 'website' } = Ast
 const site = Astro.site!;
 const navCategories = await getActiveCategories();
 const canonical = new URL(Astro.url.pathname, site).href;
+// marks the main-nav link for the current section (aria-current is also the styling hook)
+const here = Astro.url.pathname;
+const current = (path: string) => (here === path ? 'page' : here.startsWith(path) ? 'true' : undefined);
 // keep titles short enough for search results; long question titles drop the brand suffix
 const fullTitle = Astro.url.pathname === '/' || title.length > 50 ? title : `${title} | Workswithwhat`;
 
@@ -42,6 +45,8 @@ if (crumbs.length) {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Model numbers and EANs aren't phone numbers; stop iOS Safari linking them -->
+    <meta name="format-detection" content="telephone=no" />
     {
       /* production only: the dev server injects its own scripts and styles */
       import.meta.env.PROD && (
@@ -73,17 +78,18 @@ if (crumbs.length) {
     {structured.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj).replace(/</g, '\\u003c')} />)}
   </head>
   <body>
+    <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap">
         <a class="logo" href="/">works<span>with</span>what</a>
         <nav aria-label="Main">
-          {navCategories.map((c) => <a href={`/${c.path}/`}>{c.label}</a>)}
-          <a href="/works-with/">By ecosystem</a>
-          <a href="/methodology/">How we verify</a>
+          {navCategories.map((c) => <a href={`/${c.path}/`} aria-current={current(`/${c.path}/`)}>{c.label}</a>)}
+          <a href="/works-with/" aria-current={current('/works-with/')}>By ecosystem</a>
+          <a href="/methodology/" aria-current={current('/methodology/')}>How we verify</a>
         </nav>
       </div>
     </header>
-    <main class="wrap">
+    <main class="wrap" id="main" tabindex="-1">
       {
         crumbs.length > 0 && (
           <nav class="crumbs" aria-label="Breadcrumb">
