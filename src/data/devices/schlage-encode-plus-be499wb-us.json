@@ -1,0 +1,141 @@
+{
+  "category": "smart-lock",
+  "brand": "Schlage",
+  "model": "Encode Plus (BE499WB)",
+  "name": "Schlage Encode Plus (US)",
+  "regions": ["US"],
+  "officialUrl": "https://www.schlage.com/en/home/smart-locks/encode-plus.html",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["schlage-encode-plus", "schlage-google"],
+    "note": "Schlage describes it as a deadbolt with built-in Wi-Fi (2.4 GHz). Retailer listings also mention Bluetooth, and Allegion's setup guide has you turn on your phone's Bluetooth to pair, but no Schlage page seen lists Bluetooth as a lock radio."
+  },
+  "matter": {
+    "certified": false,
+    "sources": ["allegion-matter"],
+    "note": "Allegion's knowledge base says the Encode Plus is not Matter-enabled and does not currently support Matter."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": ["schlage-encode-plus", "schlage-home-key"],
+      "note": "Added to Apple Home through HomeKit, including Apple Home Key (tap iPhone or Apple Watch). Home Key needs iPhone XS or later with iOS 15+, or Apple Watch Series 4+ with watchOS 8+."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["schlage-works-with", "schlage-google"],
+      "note": "Through the Schlage Home app and Google Assistant: lock, unlock and check status. No hub needed."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["schlage-works-with", "schlage-pair-voice"],
+      "note": "Alexa skill via the Schlage Home app. Voice unlock must be switched on in the Alexa app."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Schlage's pages seen list Alexa, Google and Apple but not SmartThings, and the lock has no Matter. Only forum posts say SmartThings is incompatible, so we do not mark it 'no'."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-schlage"],
+      "note": "Official Schlage integration, which uses Schlage's cloud API for Wi-Fi locks and lists the Encode Plus as working."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["schlage-google"],
+    "note": "Schlage says Encode products need no hub or adapter; the lock has built-in Wi-Fi."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Home Assistant control goes through Schlage's cloud; no source confirms what works with the internet down. Schlage notes voice control stops during a Wi-Fi outage."
+  },
+  "lockFit": {
+    "value": "deadbolt",
+    "sources": ["schlage-encode-plus"],
+    "note": "Sold as a complete smart deadbolt (BE499WB) with Century or Camelot trim, in several finishes."
+  },
+  "keypad": {
+    "value": true,
+    "sources": ["schlage-encode-plus"],
+    "note": "Touchscreen keypad on the lock with unique access codes for each person."
+  },
+  "power": {
+    "value": "4 × AA",
+    "sources": ["schlage-be499-cam"],
+    "note": "Schlage's BE499WB product page lists four AA alkaline batteries (included) and up to six months of battery life in typical use."
+  },
+  "summary": "Tap an iPhone or Apple Watch and the Schlage Encode Plus opens through Apple Home Key. It is a full deadbolt with a touchscreen keypad and built-in 2.4 GHz Wi-Fi, and it works with Apple Home, Google Home and Alexa without a hub. Home Assistant uses the official Schlage integration over Schlage's cloud. It is not Matter-certified, and SmartThings is not listed. Four AA batteries are included, good for up to six months.",
+  "caveats": ["Wi-Fi is 2.4 GHz.","Not Matter-enabled; Allegion says it does not currently support Matter.","Home Key needs iPhone XS or later on iOS 15+, or Apple Watch Series 4+ on watchOS 8+.","Voice control stops during a Wi-Fi outage, and the Home Assistant integration goes through Schlage's cloud.","Schlage does not list SmartThings, and we could not confirm it either way."],
+  "sources": [
+    {
+      "id": "schlage-encode-plus",
+      "url": "https://www.schlage.com/en/home/smart-locks/encode-plus.html",
+      "title": "Apple Home Key Compatible WiFi Smart Lock - Schlage Encode Plus",
+      "publisher": "Schlage",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "schlage-works-with",
+      "url": "https://www.schlage.com/en/home/smart-locks/schlage-encode-plus-works-with.html",
+      "title": "Schlage Encode Plus Works With",
+      "publisher": "Schlage",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "schlage-google",
+      "url": "https://www.schlage.com/en/home/smart-locks/works-with/google-home.html",
+      "title": "Smart Locks Compatible with Google Home",
+      "publisher": "Schlage",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "schlage-home-key",
+      "url": "https://www.schlage.com/en/blog/product_updates/apple-home-keys-smart-lock.html",
+      "title": "Tap to unlock Schlage's latest smart lock with Apple home keys",
+      "publisher": "Schlage",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "schlage-pair-voice",
+      "url": "https://kc.allegion.com/kb/article/how-to-pair-my-schlage-encode-plus-smart-deadbolt-to-a-voice-assistant/",
+      "title": "How to Pair My Schlage Encode Plus Smart Deadbolt to a Voice Assistant",
+      "publisher": "Allegion",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "allegion-matter",
+      "url": "https://kc.allegion.com/kb/article/is-the-schlage-encode-plus-compatible-with-matter-s-device-network",
+      "title": "Is the Schlage Encode Plus Compatible with Matter's Device Network?",
+      "publisher": "Allegion",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "schlage-be499-cam",
+      "url": "https://www.schlage.com/en/home/products/BE499WBCAMFFF.html",
+      "title": "Schlage Encode Plus Smart WiFi Deadbolt with Camelot Trim",
+      "publisher": "Schlage",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-schlage",
+      "url": "https://www.home-assistant.io/integrations/schlage/",
+      "title": "Schlage - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
+  "updatedAt": "2026-10-11"
+}

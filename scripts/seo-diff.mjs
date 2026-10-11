@@ -59,12 +59,22 @@ async function snapshot(dist) {
   return snap;
 }
 
+async function removeWorktree(dir) {
+  execSync(`git worktree remove --force ${dir}`);
+  await rm(dir, { recursive: true, force: true });
+}
+
 async function buildMain() {
   const dir = await mkdtemp(join(tmpdir(), 'seo-main-'));
   execSync('git fetch -q origin main', { stdio: 'inherit' });
   execSync(`git worktree add -q --detach ${dir} origin/main`, { stdio: 'inherit' });
-  await symlink(join(process.cwd(), 'node_modules'), join(dir, 'node_modules'));
-  execSync('npx astro build --silent', { cwd: dir, stdio: 'inherit' });
+  try {
+    await symlink(join(process.cwd(), 'node_modules'), join(dir, 'node_modules'));
+    execSync('npx astro build --silent', { cwd: dir, stdio: 'inherit' });
+  } catch (e) {
+    await removeWorktree(dir); // don't leave a stray worktree behind when the build fails
+    throw e;
+  }
   return dir;
 }
 
@@ -112,10 +122,7 @@ for (const page of new Set([...Object.keys(a), ...Object.keys(b)])) {
   }
 }
 
-if (worktree) {
-  execSync(`git worktree remove --force ${worktree}`);
-  await rm(worktree, { recursive: true, force: true });
-}
+if (worktree) await removeWorktree(worktree);
 
 console.log(`${Object.keys(b).length} files compared; ${notes.length} allowed differences, ${data.length} data-file changes, ${problems.length} page SEO changes.`);
 for (const d of data) console.log(`  data ${d}`);

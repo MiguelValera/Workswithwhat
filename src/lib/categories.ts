@@ -23,6 +23,13 @@ const COLOR_LABELS: Record<string, string> = {
   color: 'Full colour',
 };
 
+const FIT_LABELS: Record<string, string> = {
+  deadbolt: 'Replaces deadbolt',
+  retrofit: 'Retrofit (keeps keys)',
+  cylinder: 'Euro cylinder',
+  lever: 'Lever handle',
+};
+
 export const CATEGORIES: Category[] = [
   {
     key: 'smart-plug',
@@ -45,6 +52,18 @@ export const CATEGORIES: Category[] = [
       { key: 'colorType', label: 'Light', format: (v) => COLOR_LABELS[String(v)] ?? String(v) },
       { key: 'lumens', label: 'Brightness', format: (v) => `${Number(v).toLocaleString('en-US')} lm` },
       { key: 'bulbBase', label: 'Base', format: String },
+    ],
+  },
+  {
+    key: 'smart-lock',
+    path: 'smart-locks',
+    label: 'Smart locks',
+    singular: 'smart lock',
+    plural: 'smart locks',
+    specs: [
+      { key: 'lockFit', label: 'Fit', format: (v) => FIT_LABELS[String(v)] ?? String(v) },
+      { key: 'keypad', label: 'Keypad', format: yesNo },
+      { key: 'power', label: 'Power', format: String },
     ],
   },
 ];

@@ -1,0 +1,117 @@
+{
+  "category": "smart-lock",
+  "brand": "August",
+  "model": "Wi-Fi Smart Lock (4th gen)",
+  "name": "August Wi-Fi Smart Lock Gen 4 (US)",
+  "regions": ["US"],
+  "officialUrl": "https://august.com/products/august-wifi-smart-lock",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["august-faq", "august-product"],
+    "note": "Built-in Wi-Fi for remote and voice control; Bluetooth for local operation and for talking to HomeKit."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No official Matter statement found. A Best Buy Canada spec sheet lists Matter as unsupported, but retailer data is not enough to mark it 'no'."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": ["august-product", "august-faq"],
+      "note": "HomeKit over Bluetooth. Controlling it away from home needs an Apple home hub (Apple TV, HomePod or iPad). No Home Key mentioned."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["august-product", "august-works-with"],
+      "note": "Google Assistant integration needs the lock on Wi-Fi."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["august-product", "august-works-with"],
+      "note": "Needs Wi-Fi. Voice unlock requires setting a PIN."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "August's Wi-Fi Smart Lock FAQ and its older integrations pages list Samsung SmartThings (cloud integration, no Z-Wave), but the current product page does not, and no SmartThings page confirms the integration is still offered."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-august"],
+      "note": "The August integration lists the Wi-Fi Smart Lock (Gen 4) as working with no Connect Bridge. Gen 4 battery readings are often wrong in Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["august-faq", "august-product"],
+    "note": "Wi-Fi is built in; August says no bridge is needed. Remote HomeKit use still needs an Apple home hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Bluetooth control from the app is local, but no source confirms local control through any smart home platform."
+  },
+  "lockFit": {
+    "value": "retrofit",
+    "sources": ["august-product", "august-install"],
+    "note": "Mounts over the interior side of your existing deadbolt, so your outside hardware and keys stay."
+  },
+  "keypad": {
+    "value": false,
+    "sources": ["august-product"],
+    "note": "No keypad on the lock; Yale/August sell keypad versions as separate products."
+  },
+  "power": {
+    "value": "2 × CR123A",
+    "sources": ["august-faq"],
+    "note": "August's FAQ says two 3V CR123 or CR123A lithium (non-rechargeable) cells, with up to 3 months of life under typical Wi-Fi use. The 4 × AA seen on some listings belongs to older August locks."
+  },
+  "summary": "The August Wi-Fi Smart Lock (4th gen) fits over the inside of your existing deadbolt, so your outside hardware and keys stay, and it has Wi-Fi built in with no bridge. Apple Home works over Bluetooth, Google Home and Alexa need the lock on Wi-Fi, and Home Assistant's August integration lists it. No Matter support is confirmed and SmartThings status is unclear. Two CR123A cells last about 3 months with typical Wi-Fi use.",
+  "caveats": ["Battery life is short: August cites up to 3 months of typical Wi-Fi use on two CR123A cells.","Away-from-home control through Apple Home needs an Apple TV, HomePod or iPad as a home hub.","Alexa voice unlock requires setting a PIN.","Gen 4 battery readings are often wrong in Home Assistant.","There is no keypad on the lock; keypads are sold separately."],
+  "sources": [
+    {
+      "id": "august-product",
+      "url": "https://august.com/products/august-wifi-smart-lock",
+      "title": "August Wi-Fi Smart Lock",
+      "publisher": "August",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "august-faq",
+      "url": "https://support.august.com/august-wi-fi-smart-lock-faq-rk6RzQ5YI",
+      "title": "August Wi-Fi Smart Lock FAQ",
+      "publisher": "August",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "august-works-with",
+      "url": "https://august.com/pages/works-with-wifi-smart-lock",
+      "title": "Works With Wi-Fi Smart Lock",
+      "publisher": "August",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "august-install",
+      "url": "https://support.august.com/how-to-install-august-wi-fi-smart-lock-Sk7i8Q5YL",
+      "title": "How to Install: August Wi-Fi Smart Lock",
+      "publisher": "August",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-august",
+      "url": "https://www.home-assistant.io/integrations/august/",
+      "title": "August - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
+  "updatedAt": "2026-10-11"
+}

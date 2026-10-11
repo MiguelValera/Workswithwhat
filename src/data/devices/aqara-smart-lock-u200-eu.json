@@ -1,0 +1,85 @@
+{
+  "category": "smart-lock",
+  "brand": "Aqara",
+  "model": "Smart Lock U200",
+  "name": "Aqara Smart Lock U200 (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://eu.aqara.com/products/aqara-smart-lock-u200",
+  "radios": {
+    "value": ["thread", "bluetooth"],
+    "sources": ["csa-u200", "aqara-u200-specs-us"],
+    "note": "CSA lists Thread and Bluetooth. Aqara's spec sheet also lists NFC for cards and phones."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": ["csa-u200", "aqara-u200-news"],
+    "note": "CSA lists the Smart Lock U200 from Lumi United (Aqara), product ID 0x2802, with Thread and Bluetooth. The listing does not name a region; a separate US model (AD075) has its own certificate."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["aqara-u200-news", "aqara-u200-manual"],
+      "note": "Needs an Apple home hub that is a Thread border router (HomePod mini, HomePod 2nd gen, Apple TV 4K)."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["aqara-u200-news", "aqara-u200-manual"],
+      "note": "Needs a Thread border router that supports Matter."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["aqara-u200-news", "aqara-u200-manual"],
+      "note": "Needs a Thread border router that supports Matter."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["aqara-u200-news", "aqara-u200-manual"],
+      "note": "Needs a Thread border router that supports Matter."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": ["aqara-u200-news"],
+      "note": "Aqara's launch release lists Home Assistant; reached through Matter, which needs a Thread border router. Aqara's manual says third-party platforms get only basic functions."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": ["aqara-u200-specs-us", "aqara-u200-faq"],
+    "note": "Aqara disagrees with itself: the US spec table says a hub is required (Aqara M3), while the U200 FAQ says Aqara Home users need no hub and the M3 is only needed for remote control and automations."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Aqara source states local-only control."
+  },
+  "lockFit": {
+    "value": "retrofit",
+    "sources": ["aqara-u200-news", "aqara-u200-install"],
+    "note": "Aqara calls it a retrofit lock: it mounts on the inside over the existing cylinder. Euro-profile cylinders need an emergency function; Aqara's installation page covers the supported cylinder types."
+  },
+  "keypad": {
+    "value": true,
+    "sources": ["aqara-u200-specs-us", "aqara-u200-eu"],
+    "note": "The lock ships with a pre-paired wireless outdoor keypad with fingerprint reader (4 × AAA or 12-24 V wired); the EU box lists the four AAA batteries for it."
+  },
+  "power": {
+    "value": "Rechargeable Li-ion battery",
+    "sources": ["aqara-u200-specs-us", "aqara-u200-eu"],
+    "note": "7.4 V rechargeable Li-ion pack, included in the EU box; up to about 6 months per charge at 8 unlocks a day. Aqara's spec also allows 4 AA cells through an AA battery adaptor, which the EU box list does not include."
+  },
+  "summary": "Aqara Smart Lock U200 is a retrofit lock that mounts on the inside over your existing cylinder and joins Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter on Thread. Every platform needs a Thread border router; for Apple that means a HomePod mini, HomePod 2nd gen or Apple TV 4K. The kit includes a wireless outdoor keypad with fingerprint reader, and the lock runs on a rechargeable 7.4 V Li-ion pack rated at about 6 months per charge.",
+  "caveats": ["Matter needs a Thread border router; on Apple Home it must be a HomePod mini, HomePod 2nd gen or Apple TV 4K.","Aqara's manual says third-party platforms get only basic functions.","Aqara contradicts itself on whether a hub (Aqara M3) is required; its FAQ says the M3 is only needed for remote control and automations.","Euro-profile cylinders need an emergency function to keep using your key from outside.","The US model (AD075) is a separate product with its own Matter certificate."],
+  "sources": [
+    { "id": "aqara-u200-eu", "url": "https://eu.aqara.com/products/aqara-smart-lock-u200", "title": "Aqara Smart Lock U200", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-u200-faq", "url": "https://www.aqara.com/en/u200-faq/", "title": "U200 FAQ", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-u200-install", "url": "https://www.aqara.com/en/u200-installation-methods/", "title": "U200 Installation Methods", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "csa-u200", "url": "https://csa-iot.org/csa_product/smart-lock-u200/", "title": "Smart Lock U200", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-11" },
+    { "id": "aqara-u200-specs-us", "url": "https://www.aqara.com/us/product/smart-lock-u200-specs/", "title": "Smart Lock U200-Specs - Aqara", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-u200-news", "url": "https://www.aqara.com/en/news/aqara-announces-global-availability-of-smart-lock-u200/", "title": "Aqara Announces Global Availability of Smart Lock U200", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" },
+    { "id": "aqara-u200-manual", "url": "https://www.aqara.com/wp-content/uploads/2024/06/EN_U200-User-Manual-2024-0624.pdf", "title": "Smart Lock U200 User Manual", "publisher": "Aqara", "kind": "manufacturer", "accessed": "2026-10-11" }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
+  "updatedAt": "2026-10-11"
+}

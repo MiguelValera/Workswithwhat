@@ -95,6 +95,7 @@
     "Thread and remote control need an Apple home hub with Thread (Apple TV 4K 2021 or HomePod mini).",
     "Belkin's pages disagree on whether you need an Apple home hub just to set it up.",
     "A HomeKit accessory pairs with only one controller at a time, so Apple Home and Home Assistant can't both hold it.",
+    "Belkin has ended support for most Wemo devices and the Wemo app.",
     "Belkin never mentions Matter for this plug.",
     "No energy monitoring."
   ],
