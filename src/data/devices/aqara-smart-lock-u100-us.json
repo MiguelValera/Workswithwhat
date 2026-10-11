@@ -94,10 +94,10 @@
     ],
     "note": "Four AA batteries, over 8 months at about 8 unlocks a day, per Aqara."
   },
-  "summary": "Aqara's Smart Lock U100 is a US deadbolt replacement with a keypad, fingerprint reader and NFC for Apple Home Key. It works with Apple Home and, over Bluetooth, with the Aqara app without a hub; Alexa, Google Home, remote control and Matter need an Aqara hub. Four AA batteries power it.",
+  "summary": "Aqara's U100 smart lock talks to Apple Home directly, with Home Key by tapping an iPhone or Apple Watch, but Alexa and Google Home go through an Aqara Zigbee 3.0 hub. Out of the box it pairs over Bluetooth with the Aqara Home app. Expect a US deadbolt with keypad, fingerprint reader and four AA batteries. SmartThings and Home Assistant are unconfirmed.",
   "caveats": [
-    "Remote control, remote passcodes, Alexa, Google Home and Matter need an Aqara Zigbee 3.0 or Matter-compatible hub.",
-    "Fits a 2 3/8 or 2 3/4 inch backset and doors 35 to 55 mm thick; it does not fit euro-profile cylinder doors."
+    "Remote control, remote passcodes, Alexa, Google Home and Matter need an Aqara hub; Matter needs a Matter-compatible one.",
+    "Fits a 2 3/8 or 2 3/4 inch backset and doors 35 to 55 mm thick."
   ],
   "sources": [
     {

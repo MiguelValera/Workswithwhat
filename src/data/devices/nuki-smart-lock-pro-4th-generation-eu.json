@@ -105,10 +105,10 @@
     ],
     "note": "Nuki's rechargeable Power Pack, rated for up to 6 months per charge."
   },
-  "summary": "Nuki's Smart Lock Pro (4th generation) mounts on the inside of a Europrofile cylinder and has Wi-Fi built in, so remote access needs no bridge. It speaks Matter over Thread for Apple Home, SmartThings and Home Assistant, and Google Home and Alexa also work through Nuki's cloud. A rechargeable Power Pack runs it, and the keypad is a separate accessory.",
+  "summary": "Apple Home, SmartThings and Home Assistant reach the Nuki Smart Lock Pro (4th generation) over Matter on Thread, while Google Home and Alexa connect through Nuki Web. Built-in Wi-Fi handles remote access, so no Bridge is needed. It is a retrofit lock that sits on the inside of a Europrofile cylinder, runs on a rechargeable Power Pack (up to 6 months per charge) and has no keypad of its own.",
   "caveats": [
-    "Matter needs a Thread border router, such as a HomePod mini or Apple TV 4K; Nuki's hub table shows which Echo devices work.",
-    "Nuki says voice locking and unlocking currently does not work in Google Home; app controls do.",
+    "Matter needs a Thread border router, such as a HomePod mini or Apple TV 4K.",
+    "Google Home and Alexa need a Nuki Web account; Nuki says voice locking and unlocking is currently not supported in Google Home.",
     "Your key only works from outside if the cylinder has an emergency function.",
     "The Keypad 2 NFC is a separate accessory.",
     "Nuki launched a 5th-generation Smart Lock Pro in 2025; this page covers the 4th generation."

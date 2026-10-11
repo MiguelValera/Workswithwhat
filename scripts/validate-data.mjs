@@ -74,6 +74,7 @@ for (const { file, d } of records) {
     if (new RegExp(`\\b${w}`, 'i').test(copy)) errs.push(`banned word in copy: "${w}"`);
   }
   if (copy.includes('!')) errs.push('no exclamation marks in copy');
+  if (d.summary.includes('?')) errs.push('no rhetorical questions in the summary');
 
   if (d.status === 'verified') {
     const open = d.summary.toLowerCase().split(/\s+/).slice(0, 3).join(' ');

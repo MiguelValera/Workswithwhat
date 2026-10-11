@@ -99,13 +99,13 @@
     ],
     "note": "Four AA alkaline batteries are included, per Yale's store page."
   },
-  "summary": "Yale's Assure Lock 2 Plus with Wi-Fi swaps in for a US deadbolt and carries Apple Home Key in the hardware, so an iPhone or Apple Watch unlocks it with a tap. The Wi-Fi version adds remote access through the Yale Access app and lists Google Home and Alexa. No Matter listing was found, and SmartThings and Home Assistant are unconfirmed. Four AA batteries are included.",
+  "summary": "The Yale Assure Lock 2 Plus with Wi-Fi replaces a US deadbolt and works natively with Apple Home (including Home Key), Google Home and Alexa, with no extra hub for remote access through the Yale Access app. Tap an iPhone or Apple Watch on the touchscreen keypad lock to unlock it. There is no Matter listing, and SmartThings and Home Assistant are unconfirmed. It runs on four included AA batteries.",
   "caveats": [
-    "Home Key needs an iPhone XS or later (iOS 15+) or an Apple Watch Series 4 or later (watchOS 8+); Android phones can only use the Yale Access app.",
-    "Away-from-home control in Apple Home needs a HomePod, HomePod mini or Apple TV as home hub.",
-    "Yale says the Wi-Fi models need a 2.4 GHz network.",
-    "The Bluetooth-only Plus is a separate product and works only with Apple Home.",
-    "Yale sells the Plus key-free, with no physical key cylinder."
+    "Home Key needs an iPhone XS or later (iOS 15+) or an Apple Watch Series 4 or later (watchOS 8+).",
+    "Remote control through Apple Home needs a HomePod, HomePod mini or Apple TV as home hub.",
+    "Wi-Fi is 2.4 GHz only.",
+    "Google Home and Alexa work on the Wi-Fi model only, not the Bluetooth-only Plus.",
+    "Yale sells this version without a key cylinder."
   ],
   "sources": [
     {

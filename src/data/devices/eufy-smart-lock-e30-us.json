@@ -106,11 +106,10 @@
     ],
     "note": "eight AA batteries; eufy claims up to 8 months per set."
   },
-  "summary": "eufy's Smart Lock E30 is a deadbolt replacement with a keypad and fingerprint reader that joins Apple Home and SmartThings over Matter on Thread. Built-in Wi-Fi runs the eufy app, and Alexa and Google Home link through the eufy account. It takes eight AA batteries and keeps a keyhole for a spare key. Home Assistant support is unconfirmed by official docs.",
+  "summary": "Matter over Thread brings the eufy Smart Lock E30 into Apple Home and SmartThings. Alexa and Google Home connect by linking your eufy account. It is a US deadbolt replacement with a keypad, fingerprint reader and a keyhole for a mechanical key, powered by eight AA batteries. Home Assistant is not confirmed.",
   "caveats": [
-    "Matter control needs a Thread border router or Matter hub: HomePod mini or Apple TV 4K, a Nest hub, an Echo, or a SmartThings hub.",
-    "Apple Home remote control needs a home hub even though iOS 18 can add the lock without one.",
-    "eufy says locks connected through a HomeBase 3 cannot use Matter yet.",
+    "Matter control needs a Thread border router: a HomePod mini or Apple TV 4K, a Matter-capable Nest hub or Echo, or a Matter-capable SmartThings hub.",
+    "Apple Home remote control needs a home hub, even though iOS 18 can add the lock without one.",
     "Eight AA batteries are needed."
   ],
   "sources": [
