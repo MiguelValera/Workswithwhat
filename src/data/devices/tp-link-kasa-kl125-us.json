@@ -1,0 +1,110 @@
+{
+  "category": "smart-bulb",
+  "brand": "TP-Link Kasa",
+  "model": "KL125",
+  "name": "Kasa Smart Light Bulb Multicolor KL125 (US)",
+  "regions": ["US"],
+  "officialUrl": "https://www.kasasmart.com/us/products/smart-lighting/kasa-smart-light-bulb-multicolor-kl125",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["kl125-datasheet", "kasa-kl125"],
+    "note": "2.4 GHz Wi-Fi (802.11 b/g/n) per the datasheet; the bulb joins the home network directly."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Neither the Kasa product page nor the KL125 datasheet mentions Matter, and we found no CSA listing for the KL125."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": ["kasa-kl125", "tplink-apple-home-guide"],
+      "note": "Kasa lists Alexa, Google Assistant and SmartThings for this bulb, and TP-Link's Apple Home guide lists no Kasa lights. No source states 'not supported' outright, and Matter status is unconfirmed."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["kasa-kl125", "kl125-datasheet"],
+      "note": "Works with Google Assistant through the Kasa cloud integration."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["kasa-kl125", "kl125-datasheet"],
+      "note": "Works with Alexa through the Kasa skill."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": ["kasa-kl125", "kl125-datasheet"],
+      "note": "Kasa lists SmartThings as a supported voice/smart-home platform for the KL125."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink"],
+      "note": "The official TP-Link Smart Home integration lists the KL125 among supported bulbs. It notes no light effects on Kasa bulbs."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["kasa-kl125", "kl125-datasheet"],
+    "note": "For bulbs, this means needing a bridge or hub for basic app control. The KL125 connects straight to 2.4 GHz Wi-Fi and is controlled from the Kasa app."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-tplink"],
+    "note": "Home Assistant's integration talks to Kasa devices on the LAN without the TP-Link cloud (local polling). Newer firmware may need TP-Link cloud credentials once to authenticate."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": ["kasa-kl125", "kl125-datasheet"],
+    "note": "Full colour plus tunable white from 2500 to 6500 K."
+  },
+  "lumens": {
+    "value": 800,
+    "sources": ["kasa-kl125", "kl125-datasheet"],
+    "note": "800 lm, a 60 W equivalent."
+  },
+  "bulbBase": {
+    "value": "E26 (A19)",
+    "sources": ["kl125-datasheet"]
+  },
+  "summary": "The Kasa KL125 is a US A19 colour bulb with an E26 base, rated at 800 lumens and tunable from 2500 to 6500 K. It connects directly to 2.4 GHz Wi-Fi, so no hub is needed. Kasa lists Alexa, Google Assistant and SmartThings, and Home Assistant supports it through the official TP-Link integration.",
+  "caveats": [
+    "Needs a 2.4 GHz Wi-Fi network; 5 GHz is not supported.",
+    "No Apple Home support is listed for this bulb."
+  ],
+  "sources": [
+    {
+      "id": "kasa-kl125",
+      "url": "https://www.kasasmart.com/us/products/smart-lighting/kasa-smart-light-bulb-multicolor-kl125",
+      "title": "Kasa Smart Light Bulb, Multicolor",
+      "publisher": "TP-Link (Kasa Smart)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "kl125-datasheet",
+      "url": "https://static.tp-link.com/upload/product-overview/2021/202111/20211109/KL125(US)3.0_Datasheet.pdf",
+      "title": "KL125 Kasa Smart Light Bulb Multicolor datasheet",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-apple-home-guide",
+      "url": "https://community.tp-link.com/us/smart-home/stories/detail/502242",
+      "title": "Getting Started with Apple Home and TP-Link",
+      "publisher": "TP-Link Community",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
