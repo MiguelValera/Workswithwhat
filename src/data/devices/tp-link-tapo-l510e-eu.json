@@ -1,0 +1,121 @@
+{
+  "category": "smart-bulb",
+  "brand": "TP-Link Tapo",
+  "model": "Tapo L510E",
+  "name": "Tapo L510E (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.tp-link.com/nordic/home-networking/smart-bulb/tapo-l510e/",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["tapo-l510e-nordic", "tapo-l510e-ds-eu"],
+    "note": "2.4 GHz Wi-Fi only."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "TP-Link's EU pages and datasheet list only Alexa and Google, and we found no CSA listing for the L510E. Not confirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "TP-Link's EU pages list only Alexa and Google, but no official source says Apple Home is unsupported. Not confirmed."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["tapo-l510e-nordic", "tapo-l510e-gr", "tapo-bulb-ug-2024"],
+      "note": "Through the Tapo integration in Google Home, linked from the Tapo app."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["tapo-l510e-nordic", "tapo-l510e-gr", "tapo-bulb-ug-2024"],
+      "note": "Through the Tapo Alexa skill."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "A 2024 TP-Link guide covering L510/L520/L530 bulbs mentions SmartThings, but TP-Link's SmartThings FAQ names the L520E and L530E, not the L510E, and the EU product page omits it."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink"],
+      "note": "Listed as supported by the official TP-Link Smart Home integration; needs your TP-Link account credentials."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["tapo-l510e-nordic", "tapo-l510e-ds-eu"],
+    "note": "Here this means needing a bridge or hub for basic app control. It joins 2.4 GHz Wi-Fi directly and is controlled from the Tapo app; no hub needed."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-tplink"],
+    "note": "Home Assistant's TP-Link integration controls supported devices on the local network, though it authenticates with your TP-Link account credentials."
+  },
+  "colorType": {
+    "value": "white",
+    "sources": ["tapo-l510e-nordic", "tapo-l510e-ds-eu"],
+    "note": "Fixed warm white, 2700 K; dimmable from 1 to 100% in the app."
+  },
+  "lumens": {
+    "value": 806,
+    "sources": ["tapo-l510e-nordic", "tapo-l510e-ds-eu"],
+    "note": "806 lm, comparable to a 60 W incandescent."
+  },
+  "bulbBase": {
+    "value": "E27",
+    "sources": ["tapo-l510e-nordic", "tapo-l510e-ds-eu"],
+    "note": "A60 shape with E27 base for the EU version."
+  },
+  "summary": "The Tapo L510E (EU) is a dimmable, fixed warm white (2700 K) E27 bulb rated at 806 lumens. It joins 2.4 GHz Wi-Fi directly, with no hub, and works with Alexa and Google Home through TP-Link's skill and integration. Home Assistant's official TP-Link Smart Home integration lists it. Apple Home, SmartThings and Matter are unconfirmed.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Dimming works from the app and voice only; TP-Link says not to use it with traditional wall dimmers.",
+    "Apple Home, SmartThings and Matter support aren't confirmed for this model.",
+    "Home Assistant needs your TP-Link account credentials."
+  ],
+  "sources": [
+    {
+      "id": "tapo-l510e-nordic",
+      "url": "https://www.tp-link.com/nordic/home-networking/smart-bulb/tapo-l510e/",
+      "title": "Tapo L510E",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-l510e-gr",
+      "url": "https://www.tp-link.com/gr/home-networking/smart-bulb/tapo-l510e/",
+      "title": "Tapo L510E",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-l510e-ds-eu",
+      "url": "https://static.tp-link.com/upload/product-overview/2022/202201/20220107/Tapo%20L510E(EU)2.0%20datasheet.pdf",
+      "title": "Datasheet Model: Tapo L510E Smart Wi-Fi Light Bulb, Dimmable (EU 2.0)",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-bulb-ug-2024",
+      "url": "https://static.tp-link.com/upload/manual/2024/202403/20240306/1910013632_Tapo%20L510&520&530_UG_V1_0305.pdf",
+      "title": "User Guide Tapo Smart Wi-Fi Light Bulb (1910013632 REV1.0.0)",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}
