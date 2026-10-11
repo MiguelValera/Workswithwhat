@@ -1,0 +1,134 @@
+{
+  "category": "smart-plug",
+  "brand": "TP-Link",
+  "model": "Tapo P105",
+  "name": "Tapo P105",
+  "regions": ["US"],
+  "officialUrl": "https://www.tapo.com/us/product/smart-plug/tapo-p105/",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["tplink-p105"],
+    "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n). Bluetooth is used for setup only."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "TP-Link lists Alexa, Google Assistant and SmartThings for the P105 and doesn't mention Matter, but never says it has none. TP-Link's Matter plugs carry an M suffix (e.g. P125M)."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": ["tplink-p105"],
+      "note": "TP-Link's P105 platform list names Alexa, Google Assistant and SmartThings, not HomeKit, but doesn't rule it out."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["tplink-p105", "tapo-faq-google"],
+      "note": "Link the Tapo account in the Google Home app or from the Tapo app."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["tplink-p105", "tplink-faq-alexa"],
+      "note": "Link the Tapo account through the Tapo skill."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": ["tplink-p105"],
+      "note": "TP-Link lists Samsung SmartThings among the P105's platforms."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink"],
+      "note": "The official TP-Link Smart Home integration lists the P105. Tapo devices need your TP-Link account credentials to authenticate."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["tplink-p105"],
+    "note": "Connects straight to 2.4 GHz Wi-Fi; TP-Link says no hub is required."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-tplink"],
+    "note": "Home Assistant's integration talks to the plug on the local network. The Tapo app itself goes through the cloud."
+  },
+  "energyMonitoring": {
+    "value": false,
+    "sources": ["tplink-faq-tapo-plug"],
+    "note": "TP-Link says the P110 and P115 measure energy; the P100 and P105 don't."
+  },
+  "maxLoadWatts": {
+    "value": 1800,
+    "sources": ["tplink-p105", "tplink-p105-datasheet"],
+    "note": "15 A, 1800 W at 120 V general use / resistive load; 1/6 HP motor. The US page gives 100–125 V input; the 2020 datasheet and some boxes say 100–240 V."
+  },
+  "summary": "TP-Link's Tapo P105 is a mini US plug for Alexa, Google Home and SmartThings, each linked through your Tapo account. Home Assistant's official TP-Link integration supports it too and controls it on your local network. It joins 2.4 GHz Wi-Fi directly, using Bluetooth only for setup, and is rated 15 A / 1800 W. Two gaps: no energy monitoring, and TP-Link doesn't list Apple Home or Matter.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "No energy monitoring; TP-Link says the P110 and P115 are the Tapo plugs that measure power.",
+    "TP-Link doesn't list Apple Home or Matter; its Matter plugs carry an M suffix, such as the P125M.",
+    "Home Assistant needs your TP-Link account credentials to authenticate Tapo devices.",
+    "Motor loads are limited to 1/6 HP."
+  ],
+  "sources": [
+    {
+      "id": "tapo-p105-product",
+      "url": "https://www.tapo.com/us/product/smart-plug/tapo-p105/",
+      "title": "Tapo P105",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-p105",
+      "url": "https://www.tp-link.com/us/home-networking/smart-plug/tapo-p105/",
+      "title": "Tapo P105",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-p105-datasheet",
+      "url": "https://static.tp-link.com/2020/202008/20200819/Tapo%20P105(US)1.0_Datasheet.pdf",
+      "title": "Datasheet Model: Tapo P105 Mini Smart Wi-Fi Plug Live Smarter Remote Control",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-faq-tapo-plug",
+      "url": "https://www.tapo.com/us/faq/201/",
+      "title": "Tapo Smart Plug FAQ: Common Questions About Features, Setup, and Compatibility",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tapo-faq-google",
+      "url": "https://www.tapo.com/us/faq/73/",
+      "title": "How to Connect Tapo and Kasa Smart Devices to Google Home",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-faq-alexa",
+      "url": "https://www.tp-link.com/us/support/faq/2780/",
+      "title": "How to Connect Tapo and Kasa Devices to Amazon Alexa",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
+  "updatedAt": "2026-10-11"
+}

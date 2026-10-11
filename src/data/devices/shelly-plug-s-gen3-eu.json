@@ -1,0 +1,171 @@
+{
+  "category": "smart-plug",
+  "brand": "Shelly",
+  "model": "Plug S Gen3 (S3PL-00112EU)",
+  "name": "Shelly Plug S Gen3 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.shelly.com/products/shelly-plug-s-gen3",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "shelly-kb-plug-s-mtr-gen3"
+    ],
+    "note": "Wi-Fi 802.11 b/g/n plus Bluetooth 4.2; Shelly also lists Wi-Fi range extender and BLE gateway functions."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "csa-shelly-plug-s-mtr-gen3",
+      "shelly-kb-plug-s-mtr-gen3",
+      "shelly-support-matter"
+    ],
+    "note": "CSA lists it as Shelly Plug S MTR Gen3 (CSA243B1MAT43620-24, July 2024, firmware 1.2.0-s1). Shelly's Matter FAQ says Gen3 units like this get Matter from firmware 1.6.0, so update first. Scripting only works with Matter off."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "shelly-apple-home-press",
+        "csa-shelly-plug-s-mtr-gen3"
+      ],
+      "note": "Matter-certified (CSA), and Shelly's press release says the Plug S MTR Gen3 earned Works with Apple Home. Apple's own list was not checked. Needs an Apple home hub for remote control and automations."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "shelly-plug-s-gen3-product",
+        "csa-shelly-plug-s-mtr-gen3"
+      ],
+      "note": "Shelly marks Google Smart Home 'Yes' without saying whether that means its cloud link or Matter, so we only claim Matter. Needs a Google Matter controller."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "shelly-plug-s-gen3-product",
+        "csa-shelly-plug-s-mtr-gen3"
+      ],
+      "note": "Shelly marks Alexa 'Yes'; no Shelly page we found confirms the Shelly Cloud skill for this model, so we only claim Matter. Needs an Echo that works as a Matter controller."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "shelly-apple-home-press",
+        "csa-shelly-plug-s-mtr-gen3"
+      ],
+      "note": "Shelly says it is certified under Samsung's Works with SmartThings program for Matter."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-shelly"
+      ],
+      "note": "Official Shelly integration with local push; it supports all Shelly device generations. It can also be added through Matter."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "shelly-kb-plug-s-mtr-gen3",
+      "shelly-doc-plug-s-mtr-gen3"
+    ],
+    "note": "Wi-Fi device with its own access-point setup and built-in web interface; the Shelly app and cloud are optional. Third-party platforms need their own Matter controller."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "shelly-doc-plug-s-mtr-gen3",
+      "ha-shelly"
+    ],
+    "note": "Built-in web interface for control and configuration, and local push control from Home Assistant's Shelly integration."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "shelly-kb-plug-s-mtr-gen3",
+      "shelly-plug-s-gen3-product"
+    ],
+    "note": "Measures power, energy, voltage and current."
+  },
+  "maxLoadWatts": {
+    "value": 2500,
+    "sources": [
+      "shelly-kb-plug-s-mtr-gen3"
+    ],
+    "note": "12 A / 2500 W, resistive loads only."
+  },
+  "summary": "Matter-certified and local-first, the Shelly Plug S Gen3 (S3PL-00112EU) works with Apple Home, Google Home, Alexa and SmartThings over Matter, and Shelly says it carries Works with Apple Home. Home Assistant's official Shelly integration controls it locally with push updates. It runs on Wi-Fi with Bluetooth 4.2, has a built-in web interface, and needs no hub or cloud account. It measures power, energy, voltage and current, rated 12 A / 2500 W for resistive loads.",
+  "caveats": [
+    "Shelly says Matter needs firmware 1.6.0 or later on this model, so update it before pairing.",
+    "Scripting only works with Matter turned off.",
+    "The 12 A / 2500 W rating covers resistive loads only.",
+    "Each platform other than Home Assistant needs its own Matter controller; Apple Home needs a home hub for remote control and automations.",
+    "The CSA and Shelly's knowledge base list it as the Shelly Plug S MTR Gen3."
+  ],
+  "sources": [
+    {
+      "id": "shelly-plug-s-gen3-product",
+      "url": "https://www.shelly.com/products/shelly-plug-s-gen3",
+      "title": "Shelly Plug S Gen3 White",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-kb-plug-s-mtr-gen3",
+      "url": "https://kb.shelly.cloud/knowledge-base/shelly-plug-s-mtr-gen3",
+      "title": "Shelly Plug S MTR Gen3",
+      "publisher": "Shelly Knowledge Base",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-doc-plug-s-mtr-gen3",
+      "url": "https://www.shelly.com/blogs/documentation/plug-s-mtr-gen3",
+      "title": "Plug S MTR Gen3 - Shelly Europe",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-apple-home-press",
+      "url": "https://www.shelly.com/blogs/media-center/two-shelly-group-devices-earn-works-with-apple-home-certification-via-matter-protocol",
+      "title": "Two Shelly Devices Gain Apple Home Certification",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-shelly-plug-s-mtr-gen3",
+      "url": "https://csa-iot.org/csa_product/shelly-plug-s-mtr-gen3/",
+      "title": "Shelly Plug S MTR Gen3 - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-shelly",
+      "url": "https://www.home-assistant.io/integrations/shelly/",
+      "title": "Shelly - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-support-matter",
+      "url": "https://support.shelly.cloud/en/support/solutions/articles/103000060376-do-you-support-matter-",
+      "title": "Matter support",
+      "publisher": "Shelly Support",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

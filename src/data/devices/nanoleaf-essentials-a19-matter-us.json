@@ -1,0 +1,116 @@
+{
+  "category": "smart-bulb",
+  "brand": "Nanoleaf",
+  "model": "Essentials Matter A19 (NF080B03-1A19E)",
+  "name": "Nanoleaf Essentials Matter A19 Smart Bulb (US)",
+  "regions": ["US"],
+  "officialUrl": "https://nanoleaf.me/en-US/products/essentials/bulbs/a19-or-e26-matter-bulb/",
+  "radios": {
+    "value": ["thread", "bluetooth"],
+    "sources": ["csa-nanoleaf-a19", "nanoleaf-a19-us"],
+    "note": "Thread for Matter control; Bluetooth for setup and direct control from the Nanoleaf app."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": ["csa-nanoleaf-a19"],
+    "note": "CSA certificate CSA22099MAT40099-24 (Nanoleaf Essentials A19/A60), certified 2022-11-14, Thread and Bluetooth transport."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["nanoleaf-a19-us", "csa-nanoleaf-a19"],
+      "note": "Via Matter over Thread; needs a Thread border router such as a HomePod mini, HomePod (2nd gen) or Apple TV 4K."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["nanoleaf-a19-us", "csa-nanoleaf-a19"],
+      "note": "Via Matter over Thread; needs a Thread border router such as a Nest Hub (2nd gen), Nest Hub Max or Nest Wifi Pro."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["nanoleaf-a19-us", "csa-nanoleaf-a19"],
+      "note": "Nanoleaf lists Alexa as supported via Matter; needs an Echo that acts as a Thread border router. An older Nanoleaf FAQ still said Alexa was 'coming soon'."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["nanoleaf-a19-us", "csa-nanoleaf-a19"],
+      "note": "Nanoleaf lists SmartThings; works via Matter over Thread with a SmartThings hub that is a Thread border router."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": ["ha-matter", "csa-nanoleaf-a19"],
+      "note": "Via the official Matter integration; Thread devices need a Thread border router."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["nanoleaf-essentials-faq", "nanoleaf-a19-us"],
+    "note": "Nanoleaf says the bulb can be set up and controlled over Bluetooth in the Nanoleaf app with no hub. Matter and ecosystem control need a Thread border router."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-matter", "nanoleaf-essentials-faq"],
+    "note": "Matter runs over the local network (Thread/IPv6), and Bluetooth app control is direct."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": ["nanoleaf-a19-us"],
+    "note": "Over 16 million colours plus tunable white (2700–6500 K)."
+  },
+  "lumens": {
+    "value": 1100,
+    "sources": ["nanoleaf-a19-us", "nanoleaf-a19-us-shop"],
+    "note": "Maximum 1100 lm, 806 lm average per the SKU page and single-bulb shop page. Nanoleaf's US 3-pack bundle page gives 1000 lm max / 900 lm average instead."
+  },
+  "bulbBase": {
+    "value": "E26 (A19)",
+    "sources": ["nanoleaf-a19-us"]
+  },
+  "summary": "The Nanoleaf Essentials Matter A19 (NF080B03-1A19E) is a colour bulb with an E26 base that runs Matter over Thread. It is Matter-certified, so it works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant once a Thread border router is on the network. Without one, the Nanoleaf app can still control it over Bluetooth. Nanoleaf rates it at 1100 lumens maximum and 806 lumens average.",
+  "caveats": ["Ecosystem control needs a Thread border router (for example a HomePod mini, Nest Hub 2nd gen or a Thread-capable Echo).", "Nanoleaf's own pages disagree on brightness: 1100 lm max on the SKU page, 1000 lm max on a bundle page."],
+  "sources": [
+    {
+      "id": "nanoleaf-a19-us",
+      "url": "https://nanoleaf.me/en-US/products/essentials/bulbs/a19-or-e26-matter-bulb/",
+      "title": "Matter Thread A19 Smart Bulb (Each) - NF080B03-1A19E",
+      "publisher": "Nanoleaf",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nanoleaf-a19-us-shop",
+      "url": "https://us-shop.nanoleaf.me/products/matter-thread-a19-smart-bulb-each",
+      "title": "Matter Thread A19 Smart Bulb (Each)",
+      "publisher": "Nanoleaf",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "nanoleaf-essentials-faq",
+      "url": "https://nanoleaf.me/en-US/products/essentials/bulbs/get-started/faq/",
+      "title": "Nanoleaf Essentials Bulbs User Manual - FAQs",
+      "publisher": "Nanoleaf",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-nanoleaf-a19",
+      "url": "https://csa-iot.org/csa_product/nanoleaf-essentials-a19-a60-smart-bulb/",
+      "title": "Nanoleaf Essentials A19/A60 Smart Bulb - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-11"
+}

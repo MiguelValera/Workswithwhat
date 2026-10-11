@@ -1,0 +1,110 @@
+{
+  "category": "smart-plug",
+  "brand": "GE Cync",
+  "model": "Indoor Smart Plug (Matter)",
+  "name": "GE Cync Indoor Smart Plug",
+  "regions": ["US"],
+  "officialUrl": "https://www.gelighting.com/led-lights/bulbs/ge-cync-indoor-smart-plug-smart-outlet-control-wifi-outlet-matter-compatible-works",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["csa-cync-indoor-plug", "cync-plug-spec-sheet"],
+    "note": "2.4 GHz Wi-Fi plus Bluetooth LE. The CSA listing gives Wi-Fi and Bluetooth; GE's spec sheet (model CPLGSTDBLW1, no Matter mentioned, so possibly the older version) says the same."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["csa-cync-indoor-plug", "ge-cync-plug-matter-product", "ge-cync-matter"],
+    "note": "CSA lists 'Cync Indoor Plug' by Savant (certificate CSA257FBMAT46925-24, Matter 1.3); other Cync Indoor Plug certificates also exist. Older non-Matter units were sold under the same name."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["ge-cync-plug-matter-product", "ge-cync-matter"],
+      "note": "Through Matter; needs an Apple home hub."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["ge-cync-plug-matter-product"],
+      "note": "Native through the Cync app's Google Home link; GE says it can also be added through Matter."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["ge-cync-plug-matter-product"],
+      "note": "Native through the Cync Alexa skill; GE says it can also be added through Matter."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["ge-cync-plug-matter-product"],
+      "note": "GE lists SmartThings for the Matter version; needs a SmartThings Matter controller."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "There's no official Cync integration in Home Assistant, and neither GE nor Home Assistant names this plug for HA's Matter integration."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["ge-cync-plug-matter-product"],
+    "note": "GE says no hub is required; it connects to Wi-Fi and is set up in the Cync app or a Matter app."
+  },
+  "localControl": {
+    "value": null,
+    "sources": ["cync-plug-spec-sheet"],
+    "note": "GE's spec sheet lists 'Local Control via BLE', but it doesn't mention Matter and may describe the older version. Local control of the Matter version isn't confirmed."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [],
+    "note": "GE's pages and spec sheet don't mention power metering, but we found no explicit statement either way."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": ["cync-plug-spec-sheet"],
+    "note": "GE's store lists 1800 W / 15 A and the spec sheet says 15 A general use, 1/3 HP, but we couldn't tie a watt figure to the Matter version's own page."
+  },
+  "summary": "The Matter version of the GE Cync Indoor Smart Plug covers four platforms: Alexa and Google Home through the Cync app's own links, and Apple Home and SmartThings through Matter. GE says Alexa and Google can use Matter too. It's a US plug on 2.4 GHz Wi-Fi with Bluetooth LE, and GE says no hub is required. Home Assistant isn't confirmed, and GE doesn't mention energy monitoring.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Older, non-Matter Cync Indoor Plugs were sold under the same name, so make sure you're buying the Matter version.",
+    "Apple Home needs an Apple home hub, and SmartThings needs a SmartThings Matter controller.",
+    "There's no official Cync integration in Home Assistant."
+  ],
+  "sources": [
+    {
+      "id": "ge-cync-plug-matter-product",
+      "url": "https://www.gelighting.com/led-lights/bulbs/ge-cync-indoor-smart-plug-smart-outlet-control-wifi-outlet-matter-compatible-works",
+      "title": "GE Cync Indoor Smart Plug, Smart Outlet Control, WiFi Outlet, Matter Compatible, Works with Alexa and Google Home",
+      "publisher": "GE Lighting (Savant)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "cync-plug-spec-sheet",
+      "url": "https://www.gelighting.com/sites/default/files/products/oxayzv4erpslcnnlumkv.pdf",
+      "title": "Cync Indoor Plug Specifications",
+      "publisher": "GE Lighting (Savant)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ge-cync-matter",
+      "url": "https://www.gelighting.com/smart-pair-cync-and-matter",
+      "title": "A smart pair: Cync and Matter",
+      "publisher": "GE Lighting (Savant)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-cync-indoor-plug",
+      "url": "https://csa-iot.org/csa_product/cync-indoor-plug/",
+      "title": "Cync Indoor Plug - Smart Plug",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
+  "updatedAt": "2026-10-11"
+}

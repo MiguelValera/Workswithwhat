@@ -1,0 +1,108 @@
+{
+  "category": "smart-plug",
+  "brand": "TP-Link",
+  "model": "Kasa KP115",
+  "name": "Kasa KP115",
+  "regions": ["US"],
+  "officialUrl": "https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-plug-slim-energy-monitoring-kp115",
+  "radios": {
+    "value": ["wifi"],
+    "sources": ["kasa-kp115-product", "tplink-kp115-datasheet"],
+    "note": "2.4 GHz Wi-Fi (IEEE 802.11b/g/n)."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "TP-Link lists Alexa, Google Assistant and SmartThings for the KP115 and doesn't mention Matter, but never says it has none. TP-Link's Matter version of this plug is the KP125M."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": ["tplink-kp115"],
+      "note": "TP-Link's KP115 platform list names Alexa, Google Assistant and SmartThings, not HomeKit, but doesn't rule it out. Kasa's HomeKit plugs are the KP125 and EP25."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["tplink-kp115", "kasa-kp115-product"],
+      "note": "Cloud-to-cloud link between the Kasa and Google accounts."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["tplink-kp115", "kasa-kp115-product"],
+      "note": "Cloud-to-cloud link via the Kasa skill."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": ["tplink-kp115", "kasa-kp115-product"],
+      "note": "TP-Link lists Samsung SmartThings among the KP115's platforms."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink"],
+      "note": "Listed by the official TP-Link Smart Home integration, which talks to Kasa plugs locally."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["tplink-kp115-datasheet", "tplink-kp115"],
+    "note": "Connects straight to 2.4 GHz Wi-Fi; TP-Link says no hub is required."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-tplink"],
+    "note": "Home Assistant's integration controls Kasa plugs over the local network. The Kasa app itself goes through the cloud."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": ["kasa-kp115-product", "tplink-kp115-datasheet"],
+    "note": "Real-time and historical power use in the Kasa app."
+  },
+  "maxLoadWatts": {
+    "value": 1800,
+    "sources": ["tplink-kp115", "tplink-kp115-datasheet"],
+    "note": "15 A, 1.8 kW at 120 V."
+  },
+  "summary": "Pick the Kasa KP115 if you live in Alexa, Google Home or SmartThings and want to see what an appliance draws. All three connect through your Kasa account, and Home Assistant's official TP-Link integration runs it over your local network. Energy use, live and historical, shows in the Kasa app. It's a slim US 2.4 GHz Wi-Fi plug rated 15 A / 1800 W, with no hub. Apple Home and Matter aren't on TP-Link's list; the KP125M is the Matter version.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "TP-Link doesn't list Apple Home or Matter; Kasa's HomeKit plugs are the KP125 and EP25, and its Matter version is the KP125M.",
+    "The Kasa app goes through the cloud; local control comes from Home Assistant's TP-Link integration."
+  ],
+  "sources": [
+    {
+      "id": "kasa-kp115-product",
+      "url": "https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-plug-slim-energy-monitoring-kp115",
+      "title": "Kasa Smart WiFi Plug Slim with Energy Monitoring",
+      "publisher": "TP-Link (Kasa Smart)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-kp115",
+      "url": "https://www.tp-link.com/us/home-networking/smart-plug/kp115/v1%20(1-pack)/",
+      "title": "KP115",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "tplink-kp115-datasheet",
+      "url": "https://www.tp-link.com/us/document/76917/",
+      "title": "KP115 Kasa Smart Wi-Fi Plug Slim, Energy Monitoring No Hub Required",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
+  "updatedAt": "2026-10-11"
+}

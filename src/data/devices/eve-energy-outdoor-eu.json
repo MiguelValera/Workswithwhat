@@ -1,0 +1,174 @@
+{
+  "category": "smart-plug",
+  "brand": "Eve",
+  "model": "Eve Energy Outdoor 20ECM8301 (product no. 10ECM8351)",
+  "name": "Eve Energy Outdoor (Matter, EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.evehome.com/en/eve-energy-outdoor",
+  "radios": {
+    "value": [
+      "thread"
+    ],
+    "sources": [
+      "eve-outdoor-product",
+      "eve-outdoor-launch"
+    ],
+    "note": "Matter over Thread. Eve classes it as a mains-powered Full Thread Device, so it can act as a Thread router for other devices."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "eve-outdoor-product",
+      "eve-outdoor-launch",
+      "eve-identify",
+      "eve-outdoor-product-eu"
+    ],
+    "note": "Eve sells it as a Matter-over-Thread device. A CSA entry that looks like it (CSA23K53MAT42554-24) only showed up in a sidebar on another Eve page, so we don't cite it."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "eve-outdoor-product",
+        "eve-outdoor-support"
+      ],
+      "note": "Through Matter. Needs an Apple home hub that is a Thread border router; Eve names HomePod (2nd gen), HomePod mini and Apple TV 4K (2nd gen, or 3rd gen 128 GB)."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "eve-outdoor-product",
+        "eve-outdoor-support"
+      ],
+      "note": "Through Matter. Needs a Google hub that is a Matter controller and Thread border router. Eve says power metering isn't shown in Google Home."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "eve-outdoor-product",
+        "eve-outdoor-support"
+      ],
+      "note": "Through Matter. Needs an Echo that is a Matter controller and Thread border router. Eve says power metering isn't shown in Alexa."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "eve-outdoor-product",
+        "eve-outdoor-support"
+      ],
+      "note": "Through Matter. Needs a SmartThings hub with Thread. Eve says power readings appear in SmartThings Energy."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "eve-outdoor-product-eu",
+        "ha-blog-eve-wwha",
+        "ha-matter"
+      ],
+      "note": "Home Assistant's Works with Home Assistant announcement names Eve Energy Outdoor, and Eve's page shows the logo. Pairs through the Matter integration; needs a Thread border router."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "eve-outdoor-support",
+      "eve-outdoor-product"
+    ],
+    "note": "Eve says it needs a hub that is both a Matter controller and a Thread border router. Eve's iOS 18 hub-free mode exists for some devices, but we couldn't confirm it covers this one."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "eve-outdoor-product",
+      "ha-matter"
+    ],
+    "note": "Matter over Thread runs on the local network through your own hub; no Eve cloud account is involved in control."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "eve-outdoor-product",
+      "eve-outdoor-launch"
+    ],
+    "note": "Built-in power meter with cost estimates in the Eve app. Readings show in Apple Home (via the Eve app) and SmartThings, but not in Alexa or Google Home."
+  },
+  "maxLoadWatts": {
+    "value": 2300,
+    "sources": [
+      "eve-outdoor-product",
+      "eve-outdoor-launch"
+    ],
+    "note": "Eve lists 10 A / 2300 W as the permanent (continuous) load and 16 A / 3680 W as the peak current, so we use 2300 W. Incandescent lamps up to 1 A / 240 W."
+  },
+  "summary": "Eve Energy Outdoor runs on Matter over Thread, which is how it works with Apple Home, Google Home, Alexa, SmartThings and Home Assistant. Each of those needs a hub that's both a Matter controller and a Thread border router. Being mains-powered, it can also act as a Thread router for other devices. Its power meter shows readings in the Eve app and SmartThings, not in Alexa or Google Home. Rated 10 A / 2300 W continuous, 16 A / 3680 W peak.",
+  "caveats": [
+    "Needs a hub that's both a Matter controller and a Thread border router; for Apple Home, Eve names HomePod (2nd gen), HomePod mini and Apple TV 4K (2nd gen, or 3rd gen 128 GB).",
+    "Power readings don't show in Alexa or Google Home.",
+    "Continuous load is 10 A / 2300 W; 16 A / 3680 W is the peak rating only.",
+    "Incandescent lamps are limited to 1 A / 240 W."
+  ],
+  "sources": [
+    {
+      "id": "eve-outdoor-product-eu",
+      "url": "https://www.evehome.com/en/eve-energy-outdoor",
+      "title": "Eve Energy Outdoor",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-outdoor-product",
+      "url": "https://www.evehome.com/en-us/eve-energy-outdoor",
+      "title": "Eve Energy Outdoor",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-outdoor-launch",
+      "url": "https://www.evehome.com/en-us/eve-energy-outdoor-available",
+      "title": "Eve Energy Outdoor Now Available",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-outdoor-support",
+      "url": "https://www.evehome.com/en-us/support/eve-energy-outdoor",
+      "title": "Eve Energy Outdoor",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "eve-identify",
+      "url": "https://www.evehome.com/en/identify-your-eve-accessory",
+      "title": "Identify your Eve accessory",
+      "publisher": "Eve Systems",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-blog-eve-wwha",
+      "url": "https://www.home-assistant.io/blog/2025/04/29/eve-joins-works-with-home-assistant/",
+      "title": "Eve Joins Works with Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

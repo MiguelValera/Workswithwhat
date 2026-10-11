@@ -1,0 +1,115 @@
+{
+  "category": "smart-plug",
+  "brand": "Meross",
+  "model": "MSS210",
+  "name": "Meross MSS210 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.meross.com/product/3/article/",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "meross-mss210eu-product"
+    ],
+    "note": "2.4 GHz Wi-Fi (802.11 b/g/n) with one internal antenna."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Meross's EU page and spec sheet list HomeKit, Alexa, Google and SmartThings but not Matter, and we found no CSA listing. Only a Meross UK shop page for the MSS210HK mentions Matter, so we leave it unconfirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [
+        "meross-mss210-shop-eu"
+      ],
+      "note": "Sold as HomeKit (MSS210HK) and non-HomeKit versions under one name. Meross's shop says only the HomeKit version supports Apple Home; the EU product page lists HomeKit without separating them. Check for the HomeKit label."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "meross-mss210eu-product"
+      ],
+      "note": "Meross lists Google Assistant; works by linking your Meross account."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "meross-mss210eu-product"
+      ],
+      "note": "Meross lists Amazon Alexa; works through the Meross skill linked to your Meross account."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "meross-mss210eu-product"
+      ],
+      "note": "Meross lists SmartThings; works by linking your Meross account in the SmartThings app."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant has no official Meross integration. Owners use community add-ons (HACS), and the HomeKit version may pair via HomeKit Device, but neither is documented for this model."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "meross-mss210eu-product"
+    ],
+    "note": "Meross says no hub is needed; it connects to your 2.4 GHz Wi-Fi."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Meross doesn't say whether it works without internet. The HomeKit version should run locally in Apple Home, but we found no Meross page confirming it."
+  },
+  "energyMonitoring": {
+    "value": false,
+    "sources": [
+      "meross-mss210eu-product"
+    ],
+    "note": "Meross's EU spec lists 'Energy Monitor: No'. Meross sells metering plugs as separate models (e.g. MSS210PZF, MSS310)."
+  },
+  "maxLoadWatts": {
+    "value": null,
+    "sources": [
+      "meross-mss210eu-product",
+      "meross-mss210-shop-eu"
+    ],
+    "note": "Meross rates the EU/FR version at 16 A max but gives no wattage. At 230 V that would be about 3680 W."
+  },
+  "summary": "Check the box before you buy the Meross MSS210 (EU) for Apple Home: Meross sells HomeKit (MSS210HK) and non-HomeKit versions under the same name, and its shop says only the HomeKit one works with Apple Home. Every version works with Alexa, Google Home and SmartThings through your Meross account. It's a 2.4 GHz Wi-Fi plug rated 16 A, with no hub and no energy monitoring.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Only the HomeKit version (MSS210HK) works with Apple Home, according to Meross's shop.",
+    "No energy monitoring; Meross sells metering plugs as separate models, such as the MSS210PZF and MSS310.",
+    "Matter isn't confirmed for the EU model; we found no CSA listing.",
+    "Home Assistant has no official Meross integration; owners rely on community add-ons."
+  ],
+  "sources": [
+    {
+      "id": "meross-mss210eu-product",
+      "url": "https://www.meross.com/product/3/article/",
+      "title": "Alexa Smart Plug - Meross Wifi Plug EU Version - MSS210EU",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "meross-mss210-shop-eu",
+      "url": "https://shop.meross.com/products/meross-smart-plug-eu-version",
+      "title": "Meross Smart Wi-Fi Plug, 2 Pack (EU Version)",
+      "publisher": "Meross",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}
