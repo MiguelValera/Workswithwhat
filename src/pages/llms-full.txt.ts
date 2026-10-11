@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, RADIO_LABELS, answerFor, getPublishedDevices } from '../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, RADIO_LABELS, answerFor, devicePath, getPublishedDevices } from '../lib/devices';
+import { categoryOf, specFacts } from '../lib/categories';
 
 const fact = (label: string, v: unknown, note?: string) =>
   `- ${label}: ${v === null ? 'unconfirmed' : v === true ? 'yes' : v === false ? 'no' : String(v)}${note ? ` (${note})` : ''}`;
@@ -8,7 +9,7 @@ const fact = (label: string, v: unknown, note?: string) =>
 export const GET: APIRoute = async ({ site }) => {
   const devices = await getPublishedDevices();
   const out = [
-    '# Workswithwhat: smart plug compatibility (full text)',
+    '# Workswithwhat: smart home compatibility (full text)',
     '',
     `Source: ${new URL('/', site).href} · Every claim below is backed by the listed sources. "Unconfirmed" means no official source either way.`,
     '',
@@ -18,8 +19,8 @@ export const GET: APIRoute = async ({ site }) => {
     out.push(
       `## ${d.name}`,
       '',
-      `URL: ${new URL(`/smart-plugs/${dev.id}/`, site).href}`,
-      `Brand: ${d.brand} · Model: ${d.model} · Regions: ${d.regions.join(', ')} · Verified: ${d.verifiedAt ?? 'n/a'}`,
+      `URL: ${new URL(devicePath(dev), site).href}`,
+      `Category: ${categoryOf(d).singular} · Brand: ${d.brand} · Model: ${d.model} · Regions: ${d.regions.join(', ')} · Verified: ${d.verifiedAt ?? 'n/a'}`,
       '',
       d.summary,
       '',
@@ -33,8 +34,7 @@ export const GET: APIRoute = async ({ site }) => {
       fact('Radios', d.radios.value?.map((r) => RADIO_LABELS[r]).join(', ') ?? null, d.radios.note),
       fact('Hub required', d.hubRequired.value, d.hubRequired.note),
       fact('Local control', d.localControl.value, d.localControl.note),
-      fact('Energy monitoring', d.energyMonitoring.value, d.energyMonitoring.note),
-      fact('Max load (W)', d.maxLoadWatts.value, d.maxLoadWatts.note),
+      ...specFacts(d).map((s) => `- ${s.label}: ${s.text}${s.fact.note ? ` (${s.fact.note})` : ''}`),
       '',
     );
     if (d.caveats.length) out.push('### Before you buy', '', ...d.caveats.map((c) => `- ${c}`), '');

@@ -8,6 +8,13 @@ You are the **collector** for workswithwhat.com. You turn a device name into a d
 
 Read `CLAUDE.md` and `src/schema/device.ts` before you start. The schema decides what is valid.
 
+## Categories
+
+Set `category` to `smart-plug` or `smart-bulb`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
+- smart-plug: `energyMonitoring` (boolean), `maxLoadWatts` (integer).
+- smart-bulb: `colorType` ("white", "tunable-white" or "color"), `lumens` (integer), `bulbBase` (e.g. "E27", "E26 (A19)", "GU10", "B22").
+A bulb sold in several bases or brightness variants is one record per model number; pick the one asked for.
+
 ## Process
 
 1. **Identify the exact product.** Find the manufacturer's product page for the exact model and region. If several regional variants exist, pick the one you were asked for. If none was named, pick the most widely sold one and say which in your report. Don't merge variants.

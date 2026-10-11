@@ -7,7 +7,7 @@ const all = await getPublishedDevices();
 
 <Base
   title="Smart home devices by ecosystem"
-  description="Find smart plugs that work with Apple Home, Google Home, Amazon Alexa, SmartThings or Home Assistant, with a source for every answer."
+  description="Find smart home devices that work with Apple Home, Google Home, Amazon Alexa, SmartThings or Home Assistant, with a source for every answer."
   crumbs={[{ name: 'By ecosystem', path: '/works-with/' }]}
 >
   <h1>Browse by ecosystem</h1>
@@ -17,13 +17,13 @@ const all = await getPublishedDevices();
       ECOSYSTEMS.map((e) => (
         <li class="card">
           <h3><a href={`/works-with/${ecosystemSlug(e)}/`}>{ECOSYSTEM_LABELS[e]}</a></h3>
-          <div class="muted">{all.filter((d) => worksWith(d, e)).length} compatible smart plugs</div>
+          <div class="muted">{all.filter((d) => worksWith(d, e)).length} compatible devices</div>
         </li>
       ))
     }
     <li class="card">
       <h3><a href="/works-with/matter/">Matter</a></h3>
-      <div class="muted">{all.filter((d) => d.data.matter.certified).length} Matter-certified smart plugs</div>
+      <div class="muted">{all.filter((d) => d.data.matter.certified).length} Matter-certified devices</div>
     </li>
   </ul>
 </Base>

@@ -1,10 +1,12 @@
 import type { APIRoute } from 'astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getPublishedDevices, worksWith } from '../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemSlug, getPublishedDevices, worksWith } from '../lib/devices';
+import { CATEGORIES } from '../lib/categories';
 
 // llms.txt (https://llmstxt.org): a plain map of the site for AI assistants.
 export const GET: APIRoute = async ({ site }) => {
   const devices = await getPublishedDevices();
   const url = (p: string) => new URL(p, site).href;
+  const cats = CATEGORIES.filter((c) => devices.some((d) => d.data.category === c.key));
   const lines = [
     '# Workswithwhat',
     '',
@@ -14,22 +16,27 @@ export const GET: APIRoute = async ({ site }) => {
     '',
     '## Data',
     '',
-    `- [All smart plug data as JSON](${url('/api/smart-plugs.json')}): every published record with statuses, notes, facts and sources`,
+    `- [All devices as JSON](${url('/api/devices.json')}): every published record with statuses, notes, facts, sources and a ready-made answer per ecosystem`,
+    ...cats.map((c) => `- [${c.label} as JSON](${url(`/api/${c.path}.json`)})`),
     `- [Full text for LLMs](${url('/llms-full.txt')}): every device page as Markdown`,
     `- [How we verify](${url('/methodology/')}): sourcing rules and label definitions`,
     '',
-    '## Smart plugs',
-    '',
-    ...devices.map((d) => {
+  ];
+  for (const c of cats) {
+    lines.push(`## ${c.label}`, '', `- [${c.label} compatibility chart](${url(`/${c.path}/`)})`);
+    for (const d of devices.filter((d) => d.data.category === c.key)) {
       const works = ECOSYSTEMS.filter((e) => worksWith(d, e)).map((e) => ECOSYSTEM_LABELS[e]);
-      return `- [${d.data.name}](${url(`/smart-plugs/${d.id}/`)}): ${d.data.model.startsWith(d.data.brand) ? d.data.model : `${d.data.brand} ${d.data.model}`} (${d.data.regions.join('/')}); works with ${works.join(', ') || 'no confirmed ecosystem'}`;
-    }),
-    '',
+      const model = d.data.model.startsWith(d.data.brand) ? d.data.model : `${d.data.brand} ${d.data.model}`;
+      lines.push(`- [${d.data.name}](${url(devicePath(d))}): ${model} (${d.data.regions.join('/')}); works with ${works.join(', ') || 'no confirmed ecosystem'}`);
+    }
+    lines.push('');
+  }
+  lines.push(
     '## By ecosystem',
     '',
-    ...ECOSYSTEMS.map((e) => `- [Smart plugs that work with ${ECOSYSTEM_LABELS[e]}](${url(`/works-with/${ecosystemSlug(e)}/`)})`),
-    `- [Matter smart plugs](${url('/works-with/matter/')}): Matter-certified plugs split by Wi-Fi and Thread`,
+    ...ECOSYSTEMS.map((e) => `- [Devices that work with ${ECOSYSTEM_LABELS[e]}](${url(`/works-with/${ecosystemSlug(e)}/`)})`),
+    `- [Matter devices](${url('/works-with/matter/')}): Matter-certified devices split by Wi-Fi and Thread`,
     '',
-  ];
+  );
   return new Response(lines.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 };
