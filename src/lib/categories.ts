@@ -56,6 +56,11 @@ const CAMERA_LABELS: Record<string, string> = {
   floodlight: 'Floodlight camera',
 };
 
+const SWITCH_LABELS: Record<string, string> = {
+  'wall-switch': 'Wall switch',
+  module: 'In-wall module',
+};
+
 export const CATEGORIES: Category[] = [
   {
     key: 'smart-plug',
@@ -136,6 +141,20 @@ export const CATEGORIES: Category[] = [
       { key: 'power', label: 'Power', format: String },
       { key: 'localStorage', label: 'Local recording', format: yesNo },
       { key: 'subscription', label: 'Paid plan needed for', format: String },
+    ],
+  },
+  {
+    key: 'smart-switch',
+    path: 'smart-switches',
+    label: 'Smart switches and dimmers',
+    navLabel: 'Switches',
+    singular: 'smart switch',
+    plural: 'smart switches',
+    specs: [
+      { key: 'switchForm', label: 'Form', format: (v) => SWITCH_LABELS[String(v)] ?? String(v) },
+      { key: 'dimmer', label: 'Dimmer', format: yesNo },
+      { key: 'neutralRequired', label: 'Needs neutral wire', format: yesNo },
+      { key: 'gangs', label: 'Gangs / channels', format: String },
     ],
   },
 ];

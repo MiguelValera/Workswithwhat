@@ -1,0 +1,147 @@
+{
+  "category": "smart-switch",
+  "brand": "Aqara",
+  "model": "Smart Wall Switch H1 EU (With Neutral, Single Rocker) (WS-EUK03)",
+  "name": "Aqara Wall Switch H1 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.aqara.com/en/product/smart-wall-switch-h1-eu-with-neutral/",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "aqara-h1-neutral-specs",
+      "csa-aqara-h1-neutral-single"
+    ],
+    "note": "Zigbee 3.0. The with-neutral version also acts as a Zigbee router."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "CSA lists only Zigbee 3.0 for this switch. Aqara says Matter comes through a Matter-capable Aqara hub, not from the switch itself, so the switch is not Matter-certified on its own."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Aqara hub",
+      "sources": [
+        "aqara-h1-neutral-product"
+      ],
+      "note": "Aqara's with-neutral page lists HomeKit, with an Aqara hub (e.g. G2H, M1S, M2) as the bridge."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Aqara hub",
+      "sources": [
+        "aqara-h1-neutral-product"
+      ],
+      "note": "Aqara's with-neutral page lists Google, through an Aqara hub."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Aqara hub",
+      "sources": [
+        "aqara-h1-neutral-product"
+      ],
+      "note": "Aqara's with-neutral page lists Alexa, through an Aqara hub."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Aqara page found that names SmartThings for this switch."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable through Aqara's Matter bridge hubs or a Zigbee coordinator, but no official source was confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "aqara-h1-neutral-product",
+      "aqara-h1-neutral-manual"
+    ],
+    "note": "Aqara's manual says app control, timers and power statistics work after binding to an Aqara hub; the hub is sold separately."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not stated in the sources found. The rocker works as a normal switch when the network is down."
+  },
+  "switchForm": {
+    "value": "wall-switch",
+    "sources": [
+      "aqara-h1-neutral-specs"
+    ],
+    "note": "Replaces the switch in 86 mm square or round European wall boxes (85.8 x 86 x 37.55 mm)."
+  },
+  "dimmer": {
+    "value": false,
+    "sources": [
+      "aqara-h1-neutral-specs"
+    ],
+    "note": "On/off switch, 8 A resistive load at 100-250 V."
+  },
+  "neutralRequired": {
+    "value": true,
+    "sources": [
+      "aqara-h1-neutral-specs",
+      "aqara-h1-neutral-manual"
+    ],
+    "note": "With-neutral version; wiring uses L, N and L1 terminals."
+  },
+  "gangs": {
+    "value": "1 rocker",
+    "sources": [
+      "aqara-h1-neutral-specs"
+    ],
+    "note": "Single rocker version; the double rocker is a separate model (WS-EUK04)."
+  },
+  "summary": "Aqara Wall Switch H1 (WS-EUK03) swaps in for the switch in an 86 mm square or round EU wall box. It is a single-rocker, on/off Zigbee 3.0 switch rated 8 A, needs a neutral wire, reports power statistics and acts as a Zigbee router. An Aqara hub (G2H, M1S and M2 are named) links it to Apple Home, Google Home and Alexa; SmartThings and Home Assistant are not confirmed.",
+  "caveats": [
+    "Needs an Aqara hub, sold separately; app control, timers and power statistics work after binding to it.",
+    "Requires a neutral wire (L, N and L1 terminals).",
+    "The switch is Zigbee only and not Matter-certified on its own; Matter would come from a Matter-capable Aqara hub.",
+    "This is the single-rocker model; the double rocker is the separate WS-EUK04."
+  ],
+  "sources": [
+    {
+      "id": "aqara-h1-neutral-product",
+      "url": "https://www.aqara.com/en/product/smart-wall-switch-h1-eu-with-neutral/",
+      "title": "Smart Wall Switch H1 EU (With Neutral) - Aqara",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-h1-neutral-specs",
+      "url": "https://www.aqara.com/en/product/smart-wall-switch-h1-eu-with-neutral/specs/",
+      "title": "Smart Wall Switch H1 EU (With Neutral) - Specs - Aqara",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "aqara-h1-neutral-manual",
+      "url": "https://www.aqara.com/wp-content/uploads/2023/05/Smart-Wall-Switch-H1-With-Neutral_Manual_EN.pdf",
+      "title": "Smart Wall Switch H1 EU (With Neutral) manual",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-aqara-h1-neutral-single",
+      "url": "https://csa-iot.org/csa_product/smart-wall-switch-h1-eu-with-neutral-single-rocker/",
+      "title": "Smart Wall Switch H1 EU (With Neutral, Single Rocker) - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

@@ -1,0 +1,167 @@
+{
+  "category": "smart-switch",
+  "brand": "Shelly",
+  "model": "1PM Gen4 (S4SW-001P16EU)",
+  "name": "Shelly 1PM Gen4 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.shelly.com/products/shelly-1pm-gen4",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth",
+      "zigbee"
+    ],
+    "sources": [
+      "shelly-1pm-gen4-product",
+      "shelly-kb-1pm-gen4"
+    ],
+    "note": "Wi-Fi, Bluetooth and Zigbee. Matter over Wi-Fi is the default firmware; Zigbee is an alternative mode you switch to."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "csa-shelly-1pm-gen4",
+      "shelly-1pm-gen4-product"
+    ],
+    "note": "CSA lists Shelly 1PM Gen4 (CSA250D4MAT45094-24, Matter 1.3, firmware 1.3.0-s2, Wi-Fi). A separate CSA entry covers Zigbee 3.0."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "csa-shelly-1pm-gen4",
+        "shelly-1pm-gen4-product"
+      ],
+      "note": "Through Matter in the default firmware. Needs an Apple home hub for remote use and automations."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "csa-shelly-1pm-gen4",
+        "shelly-1pm-gen4-product"
+      ],
+      "note": "Through Matter. Shelly's page also says it integrates with Google, without saying how, so only Matter is claimed."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "shelly-alexa",
+        "shelly-1pm-gen4-product"
+      ],
+      "note": "Shelly's Alexa guide uses the Shelly Cloud skill and names the 1PM Gen4 for light control. It can also be added through Matter."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "csa-shelly-1pm-gen4",
+        "shelly-1pm-gen4-product"
+      ],
+      "note": "Through Matter. Shelly's page also names SmartThings; the route is not stated."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-shelly"
+      ],
+      "note": "Official Shelly integration with local push, covering all Shelly generations. It can also be added through Matter."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "shelly-kb-1pm-gen4",
+      "shelly-1pm-gen4-product"
+    ],
+    "note": "Wi-Fi device that pairs through Matter or the Shelly app. Zigbee mode needs a Zigbee coordinator, but the default mode does not."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "ha-shelly",
+      "shelly-1pm-gen4-product"
+    ],
+    "note": "Home Assistant's Shelly integration uses local push; Shelly's page lists scripting, MQTT and webhooks."
+  },
+  "switchForm": {
+    "value": "module",
+    "sources": [
+      "shelly-1pm-gen4-product"
+    ],
+    "note": "37 x 42 x 16 mm relay that sits behind an existing switch or socket."
+  },
+  "dimmer": {
+    "value": false,
+    "sources": [
+      "shelly-1pm-gen4-product"
+    ],
+    "note": "On/off relay with power metering, 16 A at 240 V AC."
+  },
+  "neutralRequired": {
+    "value": true,
+    "sources": [
+      "shelly-kb-1pm-gen4"
+    ],
+    "note": "Shelly's spec lists 'Neutral not needed: No'; the AC wiring uses L and N terminals."
+  },
+  "gangs": {
+    "value": "1 channel",
+    "sources": [
+      "shelly-1pm-gen4-product"
+    ],
+    "note": "Single relay output with one switch input."
+  },
+  "summary": "Behind your existing switch or socket, the Shelly 1PM Gen4 adds a 16 A relay with power metering (no dimming) and needs a neutral wire. Its default firmware is CSA-certified Matter over Wi-Fi, so Apple Home, Google Home and SmartThings can add it without a hub, and Alexa works through the Shelly Cloud skill or Matter. Home Assistant has an official local integration.",
+  "caveats": [
+    "Needs a neutral wire at the box; Shelly's spec lists neutral as required.",
+    "Zigbee is an alternative firmware mode you switch to, and it needs a Zigbee coordinator; Matter over Wi-Fi is the default.",
+    "Apple Home needs a home hub for remote control and automations."
+  ],
+  "sources": [
+    {
+      "id": "shelly-1pm-gen4-product",
+      "url": "https://www.shelly.com/products/shelly-1pm-gen4",
+      "title": "Shelly 1PM Gen4",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-kb-1pm-gen4",
+      "url": "https://kb.shelly.cloud/knowledge-base/shelly-1pm-gen4",
+      "title": "Shelly 1PM Gen4",
+      "publisher": "Shelly Knowledge Base",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "csa-shelly-1pm-gen4",
+      "url": "https://csa-iot.org/csa_product/shelly-1pm-gen4-2/",
+      "title": "Shelly 1PM Gen4 - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-shelly",
+      "url": "https://www.home-assistant.io/integrations/shelly/",
+      "title": "Shelly - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "shelly-alexa",
+      "url": "https://www.shelly.com/pages/connect-shelly-to-alexa",
+      "title": "Connect Shelly to Alexa",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
+}

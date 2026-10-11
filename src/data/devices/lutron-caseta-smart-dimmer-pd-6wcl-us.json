@@ -1,0 +1,158 @@
+{
+  "category": "smart-switch",
+  "brand": "Lutron",
+  "model": "PD-6WCL",
+  "name": "Caséta Smart Dimmer PD-6WCL (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://support.lutron.com/us/en/product/casetawireless/component/dimmers/in-wall-dimmer/pd-6wcl/faqs/product-selection",
+  "radios": {
+    "value": null,
+    "sources": [],
+    "note": "The dimmer uses Lutron's own Clear Connect RF radio, which isn't Wi-Fi, Thread, Zigbee, Z-Wave or Bluetooth, so none of our radio values fit. The Smart Bridge (Smart Hub) talks to it over Clear Connect and joins your router by Ethernet."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim found on the Lutron pages we saw; not confirmed either way."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Lutron Caséta Smart Bridge",
+      "sources": [
+        "lutron-hub-faq"
+      ],
+      "note": "Lutron lists Apple HomeKit (including Siri) among the features the Smart Hub adds, so the dimmer shows up in Apple Home through the bridge."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Lutron Caséta Smart Bridge",
+      "sources": [
+        "lutron-hub-faq"
+      ],
+      "note": "Lutron lists Google Home among the features the Smart Hub adds; it reaches the dimmer through the bridge."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Lutron Caséta Smart Bridge",
+      "sources": [
+        "lutron-hub-faq"
+      ],
+      "note": "Lutron lists Amazon Alexa among the features the Smart Hub adds; it needs the bridge."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "Lutron Caséta Smart Bridge",
+      "sources": [
+        "lutron-smartthings"
+      ],
+      "note": "Lutron's support article adds Lutron as a partner in the SmartThings app; the Caséta hub must be connected and reachable in the Lutron app. It is a cloud-to-cloud link, and Pico remotes don't appear in SmartThings."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "Lutron Caséta Smart Bridge",
+      "sources": [
+        "ha-lutron-caseta"
+      ],
+      "note": "Home Assistant's Lutron Caséta integration connects to the Smart Bridge over the local network (local push)."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "lutron-hub-faq",
+      "lutron-pd6wcl-faq"
+    ],
+    "note": "Lutron says remote access, scenes, schedules and voice assistants need the Smart Bridge (now called Smart Hub). Without it the dimmer pairs only with Pico remotes and sensors."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "ha-lutron-caseta"
+    ],
+    "note": "Home Assistant's Lutron Caséta integration talks to the Smart Bridge over the local network (local push). Lutron's app, Alexa, Google Home and SmartThings links go through Lutron's cloud."
+  },
+  "switchForm": {
+    "value": "wall-switch",
+    "sources": [
+      "lutron-dimmer-spec",
+      "lutron-pd6wcl-faq"
+    ],
+    "note": "Replaces a standard single-pole wall dimmer in a 1-gang US wallbox."
+  },
+  "dimmer": {
+    "value": true,
+    "sources": [
+      "lutron-dimmer-spec",
+      "lutron-pd6wcl-faq"
+    ],
+    "note": "Rated 150 W for dimmable LED and 600 W for incandescent or halogen."
+  },
+  "neutralRequired": {
+    "value": false,
+    "sources": [
+      "lutron-pd6wcl-faq",
+      "lutron-dimmer-spec"
+    ],
+    "note": "Two-wire design that installs like a regular switch. A ground wire is optional unless local code demands it."
+  },
+  "gangs": {
+    "value": "1 gang",
+    "sources": [
+      "lutron-dimmer-spec"
+    ],
+    "note": "Lutron's spec calls for a 1-gang US wallbox."
+  },
+  "summary": "The Lutron Caséta PD-6WCL replaces a standard single-pole dimmer in a 1-gang US wallbox, and its two-wire design needs no neutral. Apple Home, Google Home, Alexa and SmartThings all reach it through the Caséta Smart Bridge (now called Smart Hub); Home Assistant also connects to the bridge, over the local network. On its own it pairs only with Pico remotes and sensors. It dims 150 W of LED or 600 W of incandescent and halogen.",
+  "caveats": [
+    "Needs the Caséta Smart Bridge (now called Smart Hub) for app, voice and ecosystem control; the bridge plugs into your router by Ethernet.",
+    "LED loads are limited to 150 W, and the bulbs must be dimmable."
+  ],
+  "sources": [
+    {
+      "id": "lutron-pd6wcl-faq",
+      "url": "https://support.lutron.com/us/en/product/casetawireless/component/dimmers/in-wall-dimmer/pd-6wcl/faqs/product-selection",
+      "title": "Caseta Wireless PD-6WCL product selection FAQ",
+      "publisher": "Lutron",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "lutron-dimmer-spec",
+      "url": "https://assets.lutron.com/a/documents/369804b_Caseta%20In-Wall%20Dimmer%20Spec.pdf",
+      "title": "Caseta Wireless In-Wall Dimmer SPEC (369804)",
+      "publisher": "Lutron",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "lutron-hub-faq",
+      "url": "https://support.lutron.com/us/en/product/casetawireless/article/product-selection/What-is-the-Caseta-Smart-Hub-and-when-do-I-need-one",
+      "title": "What is the Caseta Smart Hub and when do I need one",
+      "publisher": "Lutron",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "lutron-smartthings",
+      "url": "https://support.lutron.com/us/en/product/casetawireless/article/connected-products/Samsung-SmartThings-with-Caseta-RA2-Select",
+      "title": "Samsung SmartThings with Caséta / RA2 Select",
+      "publisher": "Lutron",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-lutron-caseta",
+      "url": "https://www.home-assistant.io/integrations/lutron_caseta/",
+      "title": "Lutron Caséta - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-11",
+  "updatedAt": "2026-10-11"
+}
