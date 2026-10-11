@@ -20,7 +20,7 @@
     "apple_home": {
       "status": "native",
       "sources": ["leviton-homekit-faq", "leviton-matter-update"],
-      "note": "Leviton says the 2nd Gen D26HD works with Apple HomeKit and is set up in the Home app. The optional Matter update removes that HomeKit link; you then re-add it to Apple Home with the Matter code, which needs an Apple home hub (HomePod or Apple TV). Either way Apple Home works; we record native because Leviton documents its HomeKit support."
+      "note": "Leviton says the 2nd Gen D26HD works with Apple HomeKit and is set up in the Home app. The optional Matter update removes that HomeKit link; you then re-add it to Apple Home with the Matter code, which needs an Apple home hub (HomePod or Apple TV)."
     },
     "google_home": {
       "status": "native",
