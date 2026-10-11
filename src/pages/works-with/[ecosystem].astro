@@ -84,7 +84,7 @@ const description = `${yes.length} ${what} confirmed to work with ${label}${viaM
         <h2>{g.cat.label} that work with {label}</h2>
         {g.yes.length > 0 ? (
           <div class="table-scroll">
-            <table>
+            <table class="stack pair">
               <thead>
                 <tr><th scope="col">Device</th><th scope="col">How</th><th scope="col">Radio</th><th scope="col">Notes</th></tr>
               </thead>
@@ -97,9 +97,9 @@ const description = `${yes.length} ${what} confirmed to work with ${label}${viaM
                         <a href={devicePath(d)}>{d.data.name}</a>
                         <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
                       </th>
-                      <td><Status status={c.status} via={c.via} /></td>
-                      <td>{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
-                      <td>{c.note}<Refs ids={c.sources} all={d.data.sources} base={devicePath(d)} /></td>
+                      <td data-label="How"><Status status={c.status} via={c.via} /></td>
+                      <td data-label="Radio">{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+                      <td class="wide">{c.note}<Refs ids={c.sources} all={d.data.sources} base={devicePath(d)} /></td>
                     </tr>
                   );
                 })}

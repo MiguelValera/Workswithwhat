@@ -50,10 +50,9 @@
     "home_assistant": {
       "status": "native",
       "sources": [
-        "ha-tplink",
-        "python-kasa"
+        "ha-tplink"
       ],
-      "note": "HA's TP-Link Smart Home integration covers Tapo devices; python-kasa, the library it uses, lists the P115 among Tapo plugs. The HA docs snippet we saw did not show the P115 row."
+      "note": "Home Assistant's built-in TP-Link Smart Home integration lists the P115 among its supported Tapo plugs. Needs your TP-Link cloud credentials for setup."
     }
   },
   "hubRequired": {
@@ -86,9 +85,11 @@
     ],
     "note": "16 A / 3680 W at 220-240 V."
   },
-  "summary": "The Tapo P115 is TP-Link's compact EU Wi-Fi plug with energy monitoring. TP-Link lists Alexa and Google Assistant, and Home Assistant's TP-Link integration covers Tapo plugs. It is rated 16 A / 3680 W and needs no hub.",
+  "summary": "Rated 16 A / 3680 W at 220-240 V, the EU Tapo P115 works with Alexa and Google Home through your Tapo account, and Home Assistant's built-in TP-Link Smart Home integration lists it by name. It tracks the energy use of whatever is plugged in, and you can enter your electricity rate for cost estimates. No hub needed. TP-Link's EU pages don't mention Apple Home, SmartThings or Matter, so treat those as unconfirmed.",
   "caveats": [
-    "2.4 GHz Wi-Fi only."
+    "2.4 GHz Wi-Fi only.",
+    "Home Assistant setup asks for your TP-Link cloud credentials.",
+    "TP-Link's EU pages list no Apple Home, SmartThings or Matter support for this model."
   ],
   "sources": [
     {
@@ -109,21 +110,14 @@
     },
     {
       "id": "ha-tplink",
-      "url": "https://home-assistant.io/integrations/tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
       "title": "TP-Link Smart Home - Home Assistant",
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-11"
-    },
-    {
-      "id": "python-kasa",
-      "url": "https://pypi.org/project/python-kasa/",
-      "title": "python-kasa: Python API for TP-Link Kasa and Tapo devices",
-      "publisher": "python-kasa project (PyPI)",
-      "kind": "review",
-      "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

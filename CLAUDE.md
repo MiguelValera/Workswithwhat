@@ -64,6 +64,7 @@ After any agent run: `npm run validate` must pass.
 - `/methodology/`: how we verify (trust signal).
 - Every page needs a unique `<title>` and meta description, a canonical URL, OG tags and breadcrumbs (with BreadcrumbList JSON-LD). Sitemap via `@astrojs/sitemap`.
 - Keep pages light: no client JS unless needed, system fonts, no trackers.
+- Tables with `class="stack"` turn into one card per row below 980 px (labels come from `data-label`; `td.wide` spans the card). New tables should use it, so nothing scrolls sideways on phones.
 
 ### AI search and agents (GEO)
 
@@ -83,7 +84,7 @@ After any agent run: `npm run validate` must pass.
 Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
-- **50 verified devices:** 35 smart plugs (US, EU, UK) and 15 smart bulbs, each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
+- **54 verified devices:** 39 smart plugs (US, EU, UK) and 15 smart bulbs, each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
   - `/smart-plugs/` and `/smart-bulbs/`: comparison charts.
   - A page per device.
@@ -92,7 +93,8 @@ Read this first if you are picking the project up.
 - **For AI assistants:** `/llms.txt`, `/llms-full.txt`, `/api/devices.json` and `/api/<category>.json`.
 
 ### Unfinished work
-- **Next plug batch (not started):** Tapo P115 (EU), Nous A1T, Innr SP 242, LEDVANCE SMART+ Matter plug, Shelly Plug Gen4 (EU).
+- **Next plug batch (not started):** Innr SP 240 (EU, sibling of the SP 242 UK) and Shelly Plug US Gen4. There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
+- **Who decides content:** the owner doesn't pick devices or review content. Claude chooses what to add next and writes it, following the principles above.
 
 ### How content gets added (lessons learned)
 - **Batch size:** 5 devices per agent. Run collector, then verifier, then editor, then open a PR, then run the reviewer on it. The owner squash-merges once CI is green and the reviewer says **Ready to merge**; agents don't merge (the session's permissions block merging without review). Run at most ~3 agents at once; more hits the account's usage limit.

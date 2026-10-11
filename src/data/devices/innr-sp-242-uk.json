@@ -13,9 +13,10 @@
     ],
     "sources": [
       "innr-sp242-manual",
+      "innr-sp242-uk-doc",
       "innr-works-with"
     ],
-    "note": "Zigbee on 2.4 GHz (max 10 dBm per the manual). Acts as a Zigbee repeater."
+    "note": "Zigbee 3.0 on 2.4 GHz (max 10 dBm per the manual). Acts as a Zigbee repeater."
   },
   "matter": {
     "certified": null,
@@ -74,27 +75,37 @@
   "energyMonitoring": {
     "value": true,
     "sources": [
-      "z2m-sp242",
-      "amazon-uk-sp242",
-      "innr-works-with"
+      "innr-sp242-uk-doc",
+      "innr-works-with",
+      "z2m-sp242"
     ],
-    "note": "Reports power, voltage, current and energy. Innr says Philips Hue doesn't show the readings; SmartThings, Hubitat, Homey and Home Assistant do."
+    "note": "Innr's UK declaration calls the SP 242 a Zigbee 3.0 smart plug with power metering. Innr says Philips Hue doesn't show the readings; SmartThings, Hubitat, Homey and Home Assistant do."
   },
   "maxLoadWatts": {
     "value": null,
     "sources": [],
     "note": "Innr's manual gives a 13 A total current limit; no watt figure found."
   },
-  "summary": "The Innr SP 242 is a UK (Type G) Zigbee smart plug with power metering. It needs a Zigbee hub: Innr lists Hue, SmartThings, Echo speakers with a built-in Zigbee hub, and Home Assistant via ZHA or Zigbee2MQTT. Its manual gives a 13 A limit.",
+  "summary": "Echo speakers with a built-in Zigbee hub can pair the Innr SP 242 (UK) directly for Alexa; otherwise it needs a bridge such as a Hue Bridge or SmartThings. Home Assistant picks it up through ZHA or Zigbee2MQTT, power metering included. It's a Zigbee 3.0 plug with a 13 A limit, and it repeats the Zigbee mesh. Google Home isn't on Innr's list, and Apple Home is unconfirmed: Innr says its devices on a Hue Bridge aren't passed to HomeKit.",
   "caveats": [
     "Needs a Zigbee hub; there is no Wi-Fi.",
-    "Philips Hue can switch it but doesn't show its energy readings."
+    "Philips Hue can switch it but doesn't show its energy readings.",
+    "Innr devices on a Hue Bridge aren't passed through to Apple HomeKit.",
+    "Innr says it works with ZHA and Zigbee2MQTT but doesn't support those setups itself."
   ],
   "sources": [
     {
       "id": "innr-sp242-manual",
       "url": "https://www.innr.com/wp-content/uploads/2024/04/INNR_IM_SP-242_WT10.pdf",
       "title": "Innr SP 242 user manual",
+      "publisher": "Innr",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "innr-sp242-uk-doc",
+      "url": "https://www.innr.com/wp-content/uploads/2023/09/innr-SAR-002-2000-UK-DoC-SP-242-v1.0.pdf",
+      "title": "UK Declaration of Conformity SP 242 v1.0",
       "publisher": "Innr",
       "kind": "manufacturer",
       "accessed": "2026-10-11"
@@ -114,16 +125,9 @@
       "publisher": "Zigbee2MQTT",
       "kind": "review",
       "accessed": "2026-10-11"
-    },
-    {
-      "id": "amazon-uk-sp242",
-      "url": "https://www.amazon.co.uk/Innr-UK-SP-242-parent/dp/B0FY77KFMR",
-      "title": "Innr Smart Plug with Power Monitoring, works with Hue* and Zigbee Hubs",
-      "publisher": "Amazon UK",
-      "kind": "retailer",
-      "accessed": "2026-10-11"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }

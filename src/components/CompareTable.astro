@@ -8,7 +8,7 @@ const { devices } = Astro.props;
 ---
 
 <div class="table-scroll">
-  <table>
+  <table class="stack">
     <thead>
       <tr>
         <th scope="col">Device</th>
@@ -27,14 +27,14 @@ const { devices } = Astro.props;
                 <a href={devicePath(dev)}>{d.name}</a>
                 <span class="note">{d.model} · {d.regions.join('/')}</span>
               </th>
-              <td>{(d.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
-              <td>
+              <td data-label="Radio">{(d.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+              <td data-label="Matter">
                 <span class={`badge s-${d.matter.certified}`}>
                   {d.matter.certified === null ? 'Unconfirmed' : d.matter.certified ? 'Yes' : 'No'}
                 </span>
               </td>
               {ECOSYSTEMS.map((e) => (
-                <td>
+                <td data-label={ECOSYSTEM_LABELS[e]}>
                   <Status status={d.compatibility[e].status} via={d.compatibility[e].via} compact />
                 </td>
               ))}
