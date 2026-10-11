@@ -3,12 +3,21 @@
   "brand": "Yale",
   "model": "Assure Lock 2 Plus with Wi-Fi",
   "name": "Yale Assure Lock 2 Plus Wi-Fi (US)",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://shopyalehome.com/products/yale-assure-lock-2-plus-with-wi-fi-and-apple-home-keys",
   "radios": {
-    "value": ["wifi", "bluetooth"],
-    "sources": ["yale-plus-wifi", "yale-plus-faq"],
-    "note": "Wi-Fi is 2.4 GHz per Yale's store page and FAQ (the FAQ says 5 GHz is for Wi-Fi-module models). Yale's pages we saw do not state Bluetooth for this SKU in so many words; the Bluetooth-only Plus exists as a separate product. Home Key uses NFC, which is not a radio in our schema."
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "yale-plus-wifi",
+      "yale-plus-faq",
+      "yale-plus-news"
+    ],
+    "note": "Wi-Fi is 2.4 GHz per Yale's store page and FAQ. Yale's launch release says Bluetooth and Apple HomeKit come standard on the Plus, with Wi-Fi added for remote access. Home Key uses NFC, which is not a radio in our schema."
   },
   "matter": {
     "certified": null,
@@ -18,18 +27,28 @@
   "compatibility": {
     "apple_home": {
       "status": "native",
-      "sources": ["yale-plus-wifi", "yale-plus-faq"],
+      "sources": [
+        "yale-plus-wifi",
+        "yale-plus-page",
+        "yale-plus-news"
+      ],
       "note": "Apple Home Key is built into the lock (iPhone XS or later on iOS 15+, or Apple Watch Series 4 or later on watchOS 8+). Remote control through Apple Home needs a HomePod, HomePod mini or Apple TV as home hub."
     },
     "google_home": {
       "status": "native",
-      "sources": ["yale-plus-wifi", "yale-plus-faq"],
-      "note": "Yale says partner integrations work on Wi-Fi models and lists Google Home on the Plus. Not available on the Bluetooth-only Plus."
+      "sources": [
+        "yale-plus-page",
+        "yale-plus-news"
+      ],
+      "note": "Yale says all partner integrations work on Wi-Fi models, and its launch release names Google Home for the Wi-Fi version. Not available on the Bluetooth-only Plus."
     },
     "alexa": {
       "status": "native",
-      "sources": ["yale-plus-wifi", "yale-plus-faq"],
-      "note": "Yale lists Amazon Alexa on the Plus; works on Wi-Fi models only."
+      "sources": [
+        "yale-plus-page",
+        "yale-plus-news"
+      ],
+      "note": "Yale's launch release names Alexa voice control for the Wi-Fi version, and its Plus page says partner integrations work on Wi-Fi models only."
     },
     "smartthings": {
       "status": "unknown",
@@ -38,13 +57,18 @@
     },
     "home_assistant": {
       "status": "unknown",
-      "sources": ["ha-august"],
+      "sources": [
+        "ha-august"
+      ],
       "note": "Home Assistant's August page lists the Assure Lock 2 as working but with a Connect Bridge or doorbell flag set, and community posts say newer Yale Home accounts need the Yale integration. Whether this Wi-Fi model works without extra hardware is not confirmed."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["yale-plus-wifi", "yale-plus-faq"],
+    "sources": [
+      "yale-plus-wifi",
+      "yale-plus-page"
+    ],
     "note": "Yale says the Wi-Fi model gives remote access through the Yale Access app. Remote use in Apple Home still needs a home hub."
   },
   "localControl": {
@@ -54,27 +78,78 @@
   },
   "lockFit": {
     "value": "deadbolt",
-    "sources": ["yale-plus-wifi", "yale-plus-page"],
+    "sources": [
+      "yale-plus-wifi",
+      "yale-plus-page"
+    ],
     "note": "Replaces the deadbolt on standard US doors. Yale sells the Plus without a key cylinder, and also bundled with Norwood or Ridgefield handles as separate listings."
   },
   "keypad": {
     "value": true,
-    "sources": ["yale-plus-wifi", "yale-plus-page"],
+    "sources": [
+      "yale-plus-wifi",
+      "yale-plus-page"
+    ],
     "note": "Touchscreen keypad on the lock. Yale does not list a fingerprint reader on the Plus."
   },
   "power": {
     "value": "4 × AA",
-    "sources": ["yale-plus-wifi"],
+    "sources": [
+      "yale-plus-wifi"
+    ],
     "note": "Four AA alkaline batteries are included, per Yale's store page."
   },
   "summary": "Yale's Assure Lock 2 Plus with Wi-Fi swaps in for a US deadbolt and carries Apple Home Key in the hardware, so an iPhone or Apple Watch unlocks it with a tap. The Wi-Fi version adds remote access through the Yale Access app and lists Google Home and Alexa. No Matter listing was found, and SmartThings and Home Assistant are unconfirmed. Four AA batteries are included.",
-  "caveats": ["Home Key needs an iPhone XS or later (iOS 15+) or an Apple Watch Series 4 or later (watchOS 8+); Android phones can only use the Yale Access app.","Away-from-home control in Apple Home needs a HomePod, HomePod mini or Apple TV as home hub.","Yale says the Wi-Fi models need a 2.4 GHz network.","The Bluetooth-only Plus is a separate product and works only with Apple Home.","Yale sells the Plus key-free, with no physical key cylinder."],
-  "sources": [
-    { "id": "yale-plus-wifi", "url": "https://shopyalehome.com/products/yale-assure-lock-2-plus-with-wi-fi-and-apple-home-keys", "title": "Yale Assure Lock 2 Plus with Wi-Fi and Apple Home Keys - Yale Home", "publisher": "Yale Home", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "yale-plus-page", "url": "https://shopyalehome.com/pages/yale-assure-lock-2-plus", "title": "Yale Assure Lock 2 Plus - Yale Home", "publisher": "Yale Home", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "yale-plus-faq", "url": "https://support.shopyalehome.com/faq-assure-lock-2-plus-rkOYTEbah", "title": "FAQ: Assure Lock 2 Plus - Yale support", "publisher": "Yale Home", "kind": "manufacturer", "accessed": "2026-10-11" },
-    { "id": "ha-august", "url": "https://www.home-assistant.io/integrations/august/", "title": "August - Home Assistant", "publisher": "Home Assistant", "kind": "ecosystem", "accessed": "2026-10-11" }
+  "caveats": [
+    "Home Key needs an iPhone XS or later (iOS 15+) or an Apple Watch Series 4 or later (watchOS 8+); Android phones can only use the Yale Access app.",
+    "Away-from-home control in Apple Home needs a HomePod, HomePod mini or Apple TV as home hub.",
+    "Yale says the Wi-Fi models need a 2.4 GHz network.",
+    "The Bluetooth-only Plus is a separate product and works only with Apple Home.",
+    "Yale sells the Plus key-free, with no physical key cylinder."
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-11"
+  "sources": [
+    {
+      "id": "yale-plus-wifi",
+      "url": "https://shopyalehome.com/products/yale-assure-lock-2-plus-with-wi-fi-and-apple-home-keys",
+      "title": "Yale Assure Lock 2 Plus with Wi-Fi and Apple Home Keys - Yale Home",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "yale-plus-page",
+      "url": "https://shopyalehome.com/pages/yale-assure-lock-2-plus",
+      "title": "Yale Assure Lock 2 Plus - Yale Home",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "yale-plus-faq",
+      "url": "https://support.shopyalehome.com/faq-assure-lock-2-plus-rkOYTEbah",
+      "title": "FAQ: Assure Lock 2 Plus - Yale support",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "yale-plus-news",
+      "url": "https://shopyalehome.com/blogs/news-room/yale-home-expands-best-selling-smart-lock-collection-with",
+      "title": "Yale Home Expands Best-Selling Smart Lock Collection with Assure Lock 2 Touch and Assure Lock 2 Plus",
+      "publisher": "Yale Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-11"
+    },
+    {
+      "id": "ha-august",
+      "url": "https://www.home-assistant.io/integrations/august/",
+      "title": "August - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-11"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-11",
+  "verifiedAt": "2026-10-11"
 }
