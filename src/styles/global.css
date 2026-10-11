@@ -168,3 +168,8 @@ ul.caveats li { margin-bottom: 6px; }
   table.stack.kv th[scope='row'] { grid-column: auto; }
   table.stack.kv td.wide { grid-column: 1 / -1; }
 }
+
+/* region badge on device pages links to that market's chart */
+a.badge.region { text-decoration: none; color: var(--text); border: 1px solid var(--line); background: var(--surface); }
+a.badge.region:hover { border-color: var(--accent); }
+.variants { font-size: 0.95rem; }

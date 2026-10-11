@@ -89,6 +89,26 @@ for (const { file, d } of records) {
   }
 }
 
+// regional variants must point at an existing record of the same category in another
+// region, and both records must list each other
+const bySlug = new Map(records.map((r) => [r.file.replace(/\.json$/, ''), r.d]));
+for (const [slug, d] of bySlug) {
+  const errs = [];
+  for (const v of d.variants ?? []) {
+    const o = bySlug.get(v);
+    if (!o) errs.push(`variant "${v}" does not exist`);
+    else {
+      if (o.category !== d.category) errs.push(`variant "${v}" is a different category`);
+      if (o.regions.some((r) => d.regions.includes(r))) errs.push(`variant "${v}" shares a region; variants are for other regions`);
+      if (!(o.variants ?? []).includes(slug)) errs.push(`variant "${v}" doesn't list "${slug}" back`);
+    }
+  }
+  if (errs.length) {
+    failed++;
+    console.error(`✗ ${slug}.json`);
+    for (const e of errs) console.error(`    ${e}`);
+  }
+}
 
 console.log(`${files.length} device file(s) checked, ${failed} invalid.`);
 if (failed) process.exit(1);

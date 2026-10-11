@@ -3,58 +3,85 @@
   "brand": "Philips Hue",
   "model": "Hue Smart Plug",
   "name": "Philips Hue Smart Plug (US)",
-  "regions": ["US"],
+  "regions": [
+    "US"
+  ],
   "officialUrl": "https://www.philips-hue.com/en-us/p/hue-smart-plug/046677552343",
   "radios": {
-    "value": ["zigbee", "bluetooth"],
-    "sources": ["hue-smart-plug-us"],
+    "value": [
+      "zigbee",
+      "bluetooth"
+    ],
+    "sources": [
+      "hue-smart-plug-us"
+    ],
     "note": "Bluetooth for direct app control; Zigbee to the Hue Bridge."
   },
   "matter": {
     "certified": null,
-    "sources": ["hue-matter-guide"],
+    "sources": [
+      "hue-matter-guide"
+    ],
     "note": "No Matter certification found for the plug itself. Hue says Bridge-connected products are exposed to Matter by the Bridge, and Bluetooth-only setups cannot use Matter."
   },
   "compatibility": {
     "apple_home": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-smart-plug-us", "hue-bridge-us"],
+      "sources": [
+        "hue-smart-plug-us",
+        "hue-bridge-us"
+      ],
       "note": "The product page lists Apple Home among assistants that need a Hue Bridge."
     },
     "google_home": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-smart-plug-us", "hue-bridge-us"],
+      "sources": [
+        "hue-smart-plug-us",
+        "hue-bridge-us"
+      ],
       "note": "The US product page lists Google Assistant among assistants that need a Hue Bridge. Hue's bridgeless Bluetooth voice FAQ covers bulbs, not this plug."
     },
     "alexa": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-smart-plug-us", "hue-bridge-us"],
+      "sources": [
+        "hue-smart-plug-us",
+        "hue-bridge-us"
+      ],
       "note": "The US product page lists Alexa among assistants that need a Hue Bridge. Hue's bridgeless Bluetooth voice FAQ covers bulbs, not this plug."
     },
     "smartthings": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["hue-bridge-us"],
+      "sources": [
+        "hue-bridge-us"
+      ],
       "note": "The Hue Bridge page lists Samsung SmartThings compatibility."
     },
     "home_assistant": {
       "status": "hub",
       "via": "Philips Hue Bridge",
-      "sources": ["ha-hue"],
+      "sources": [
+        "ha-hue"
+      ],
       "note": "Official Hue integration controls devices connected to a Hue Bridge. Users report plugs show up as light entities."
     }
   },
   "hubRequired": {
     "value": false,
-    "sources": ["hue-smart-plug-us"],
+    "sources": [
+      "hue-smart-plug-us"
+    ],
     "note": "Basic control works over Bluetooth from the Hue app; the Hue Bridge is needed for voice assistants, ecosystems and remote access."
   },
   "localControl": {
     "value": true,
-    "sources": ["hue-smart-plug-us", "ha-hue"],
+    "sources": [
+      "hue-smart-plug-us",
+      "ha-hue"
+    ],
     "note": "Bluetooth control without a bridge; the Hue Bridge also offers a local API used by Home Assistant."
   },
   "energyMonitoring": {
@@ -64,7 +91,10 @@
   },
   "maxLoadWatts": {
     "value": 1800,
-    "sources": ["hue-smart-plug-us", "hue-smart-plug-support"],
+    "sources": [
+      "hue-smart-plug-us",
+      "hue-smart-plug-support"
+    ],
     "note": "Hue support gives 1800 W for North America (100–120 V)."
   },
   "summary": "Out of the box, the Philips Hue Smart Plug talks Bluetooth to the Hue app, which covers basic on/off. Apple Home, Google Home, Alexa, SmartThings and Home Assistant all need a Hue Bridge; the plug joins it over Zigbee, and the Bridge also exposes it to Matter platforms. The US model is rated 1800 W for 100–120 V outlets. Hue describes on/off switching only and doesn't list energy metering.",
@@ -114,6 +144,9 @@
       "kind": "ecosystem",
       "accessed": "2026-10-10"
     }
+  ],
+  "variants": [
+    "philips-hue-smart-plug-eu"
   ],
   "status": "verified",
   "verifiedAt": "2026-10-10",

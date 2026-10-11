@@ -17,6 +17,7 @@ import {
   worksWith,
   type Device,
 } from '../../lib/devices';
+import { marketOf, regionPath } from '../../lib/markets';
 
 export async function getStaticPaths() {
   const devices = await getPublishedDevices();
@@ -53,8 +54,16 @@ const matterText =
       ? `Yes, over ${d.matter.transport === 'wifi' ? 'Wi-Fi' : d.matter.transport === 'thread' ? 'Thread' : 'Ethernet'}`
       : 'No';
 
+const market = marketOf(device);
+// the region chart if the market has one, else the market's section on the full chart
+const marketChart = (await regionPath(market, `/${cat.path}/`)) ?? `/${cat.path}/#${market.key}`;
+const variants = (d.variants ?? [])
+  .map((v) => devices.find((o) => o.id === v))
+  .filter((o): o is Device => Boolean(o))
+  .map((o) => ({ device: o, market: marketOf(o) }));
+
 const related = devices
-  .filter((o) => o.id !== device.id && o.data.category === d.category && o.data.regions.some((r) => d.regions.includes(r)))
+  .filter((o) => o.id !== device.id && o.data.category === d.category && marketOf(o) === market)
   .slice(0, 3);
 
 const faq = ECOSYSTEMS.map((e) => ({
@@ -107,8 +116,22 @@ const jsonLd = [
     {d.status === 'draft' && <p class="badge s-hub">Draft, not published (visible in dev only)</p>}
     <h1>{d.name}: what it works with</h1>
     <p class="muted">
-      {d.brand} · model {d.model} · sold in {d.regions.join(', ')}
+      {d.brand} · model {d.model} · <a class="badge region" href={marketChart}>For {market.phrase}</a>
+      {d.regions.length > 1 && <> ({d.regions.join(', ')})</>}
     </p>
+    {
+      variants.length > 0 && (
+        <p class="variants">
+          Other regions:{' '}
+          {variants.map((v, i) => (
+            <>
+              {i > 0 && ' · '}
+              <a href={`/${cat.path}/${v.device.id}/`}>{v.device.data.name}</a> ({v.market.label})
+            </>
+          ))}
+        </p>
+      )
+    }
     <ul class="glance" aria-label="Compatibility at a glance">
       <li>
         <a href="#compat-matter"><span class="glance-eco">Matter</span> <span class={`badge s-${d.matter.certified}`}>{matterText}</span></a>
@@ -243,7 +266,7 @@ const jsonLd = [
   {
     related.length > 0 && (
       <section aria-labelledby="related">
-        <h2 id="related">Other {cat.plural} for the same region</h2>
+        <h2 id="related">Other {cat.plural} for {market.phrase}</h2>
         <ul class="cards">
           {related.map((r) => <DeviceCard device={r} />)}
         </ul>
