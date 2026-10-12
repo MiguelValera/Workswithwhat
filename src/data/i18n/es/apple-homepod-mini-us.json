@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Configura un HomePod mini y se convierte automáticamente en centro de la casa de Apple Home, con acceso remoto y automatizaciones para accesorios HomeKit y Matter. Apple lo llama centro de la casa compatible con Thread, y Home Assistant lo incluye como router de borde Thread. Tiene wifi 802.11n y Bluetooth 5.0. Ninguna fuente oficial muestra sus dispositivos en Google Home, Alexa ni SmartThings.",
+  "caveats": [
+    "Hace falta un centro de la casa para el acceso remoto y para los accesorios Thread; la página de configuración dice que solo los propietarios del hogar pueden añadir uno a la app Casa."
+  ],
+  "notes": {
+    "radios": "Wifi 802.11n, Bluetooth 5.0 y Thread.",
+    "matter": "Apple incluye el HomePod mini como centro de la casa para accesorios Matter. El registro de software de HomePod de la CSA (Matter 1.0, octubre de 2022) es un componente de software y no nombra ningún modelo de HomePod, así que no se confirma un certificado por modelo.",
+    "hubRequired": "Es el propio hub.",
+    "localControl": "Sin confirmar por ninguna fuente oficial.",
+    "compatibility.apple_home": "Al configurar un HomePod mini, este pasa a ser un centro de la casa automáticamente; añade acceso remoto y automatizaciones para accesorios HomeKit y Matter, y hace de hub Thread.",
+    "compatibility.google_home": "Ninguna fuente oficial muestra en Google Home los dispositivos emparejados con el HomePod mini.",
+    "compatibility.alexa": "Ninguna fuente oficial muestra en Alexa los dispositivos emparejados con el HomePod mini.",
+    "compatibility.smartthings": "Ninguna fuente oficial muestra en SmartThings los dispositivos emparejados con el HomePod mini.",
+    "compatibility.home_assistant": "La página de Thread de Home Assistant incluye el HomePod mini como router de borde Thread; no dice que los dispositivos emparejados en Apple Home aparezcan en Home Assistant.",
+    "deviceProtocols": "Apple dice que los accesorios Thread compatibles con HomeKit o Matter se conectan a través de un centro de la casa con Thread, como el HomePod mini.",
+    "matterBridge": "Apple no lo indica.",
+    "threadBorderRouter": "Apple nombra el HomePod mini como centro de la casa con Thread, junto a routers de borde Thread de terceros; la página de Thread de Home Assistant lo incluye como router de borde.",
+    "maxDevices": "No hemos encontrado ningún límite en las fuentes."
+  },
+  "via": {}
+}

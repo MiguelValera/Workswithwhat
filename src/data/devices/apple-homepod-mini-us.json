@@ -1,0 +1,155 @@
+{
+  "category": "smart-hub",
+  "brand": "Apple",
+  "model": "HomePod mini",
+  "name": "HomePod mini (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.apple.com/homepod-mini/specs/",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth",
+      "thread"
+    ],
+    "sources": [
+      "apple-hpm-specs"
+    ],
+    "note": "Wi-Fi 802.11n, Bluetooth 5.0 and Thread."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "apple-home-hub",
+      "csa-homepod-software"
+    ],
+    "note": "Apple lists HomePod mini as a home hub for Matter accessories. CSA's HomePod software listing (Matter 1.0, October 2022) is a software component and names no HomePod model, so a per-model certificate is not confirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "apple-home-hub",
+        "apple-matter"
+      ],
+      "note": "Setting up a HomePod mini makes it a home hub automatically; it adds remote access and automations for HomeKit and Matter accessories, and acts as a Thread hub."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows HomePod mini-paired devices in Google Home."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows HomePod mini-paired devices in Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows HomePod mini-paired devices in SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's Thread page lists HomePod mini as a Thread border router; it does not say devices paired in Apple Home appear in Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "apple-home-hub"
+    ],
+    "note": "It is the hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from an official source."
+  },
+  "hubType": {
+    "value": "speaker-display",
+    "sources": [
+      "apple-home-hub"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "thread"
+    ],
+    "sources": [
+      "apple-hpm-specs",
+      "apple-matter"
+    ],
+    "note": "Apple says HomeKit- or Matter-enabled Thread accessories connect through a Thread-enabled home hub such as HomePod mini."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Not stated by Apple."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "apple-hpm-specs",
+      "apple-matter",
+      "ha-thread"
+    ],
+    "note": "Apple names HomePod mini as a Thread-enabled home hub, alongside third-party Thread border routers; Home Assistant's Thread page lists it as a border router."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "No limit found in the sources."
+  },
+  "summary": "Set up a HomePod mini and it becomes an Apple Home hub automatically, adding remote access and automations for HomeKit and Matter accessories. Apple calls it a Thread-enabled home hub, and Home Assistant lists it as a Thread border router. It has Wi-Fi 802.11n and Bluetooth 5.0. Nothing official shows its devices in Google Home, Alexa or SmartThings.",
+  "sources": [
+    {
+      "id": "apple-hpm-specs",
+      "url": "https://www.apple.com/homepod-mini/specs/",
+      "title": "HomePod mini - Technical Specifications",
+      "publisher": "Apple",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "apple-home-hub",
+      "url": "https://support.apple.com/en-us/102557",
+      "title": "Set up your HomePod, HomePod mini, or Apple TV as a home hub",
+      "publisher": "Apple Support",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "apple-matter",
+      "url": "https://support.apple.com/en-us/102135",
+      "title": "Pair and manage your Matter accessories",
+      "publisher": "Apple Support",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-homepod-software",
+      "url": "https://csa-iot.org/csa_product/homepod-software-5/",
+      "title": "HomePod software",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-thread",
+      "url": "https://www.home-assistant.io/integrations/thread/",
+      "title": "Thread - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "caveats": [
+    "A home hub is needed for remote access and for Thread accessories; the setup page says only home owners can add one to the Home app."
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

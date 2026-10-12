@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Sucesor del ZBT-1, ya descatalogado, el ZBT-2 es una radio USB con un chip Silicon Labs MG24. Durante la configuración eliges Zigbee 3.0 (ZHA o Zigbee2MQTT) o Thread (OpenThread Border Router), uno solo a la vez por adaptador. Es hardware oficial de Home Assistant, y Home Assistant es el único ecosistema confirmado.",
+  "caveats": [
+    "Funciona con Zigbee o con Thread, nunca con ambos en un mismo adaptador.",
+    "Por sí solo no puede actuar como router de borde Thread; para eso hace falta el OpenThread Border Router en Home Assistant.",
+    "ZHA admite una sola instancia, así que dos adaptadores ZBT-2 no pueden funcionar a la vez bajo ZHA."
+  ],
+  "notes": {
+    "radios": "Silicon Labs MG24 a 2,4 GHz con un ESP32-S3 como puente USB. Ejecuta firmware Zigbee 3.0 o Thread, no ambos; sin Bluetooth ni Z-Wave. No se indica número de modelo. Se vende en Norteamérica, Europa (incluidos minoristas del Reino Unido), Australia y Asia.",
+    "matter": "No hemos encontrado ningún registro de la CSA.",
+    "hubRequired": "Ninguna fuente oficial lo confirma.",
+    "localControl": "Home Assistant dice que Zigbee y Thread ofrecen a los dispositivos una conexión local, pero ninguna página oficial afirma el control local del adaptador con esas palabras.",
+    "hubType": "Sucesor del ZBT-1; sustituyó a ese modelo, que está descatalogado.",
+    "deviceProtocols": "Uno a la vez: eliges Zigbee o Thread durante la configuración y puedes cambiar después.",
+    "matterBridge": "No es un puente; los dispositivos Matter sobre Thread se alcanzan mediante la integración Matter de Home Assistant.",
+    "threadBorderRouter": "Con firmware Thread y el OpenThread Border Router en Home Assistant; el fabricante dice que no puede ser un router de borde independiente por sí solo.",
+    "maxDevices": "El fabricante no lo indica.",
+    "compatibility.apple_home": "Solo se llega a él mediante el software de Home Assistant, que no es un hub; sin confirmar.",
+    "compatibility.google_home": "Solo se llega a él mediante el software de Home Assistant; sin confirmar.",
+    "compatibility.alexa": "Solo se llega a él mediante el software de Home Assistant; sin confirmar.",
+    "compatibility.smartthings": "Sin confirmar.",
+    "compatibility.home_assistant": "Hardware oficial de Home Assistant y su adaptador Zigbee recomendado: Zigbee mediante ZHA o Zigbee2MQTT, Thread mediante el OpenThread Border Router."
+  }
+}
