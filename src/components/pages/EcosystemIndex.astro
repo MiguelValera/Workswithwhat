@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getPublishedDevices, worksWith } from '../../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemPath, getPublishedDevices, worksWith } from '../../lib/devices';
 import { langOf, localize } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
 
@@ -24,7 +24,7 @@ const all = await getPublishedDevices();
     {
       ECOSYSTEMS.map((e) => (
         <li class="card">
-          <h2><a href={L(`/works-with/${ecosystemSlug(e)}/`)}>{ECOSYSTEM_LABELS[e]}</a></h2>
+          <h2><a href={L(ecosystemPath(e))}>{ECOSYSTEM_LABELS[e]}</a></h2>
           <div class="muted">{all.filter((d) => worksWith(d, e)).length} {es ? 'dispositivos compatibles' : 'compatible devices'}</div>
         </li>
       ))

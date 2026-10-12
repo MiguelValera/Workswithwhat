@@ -1,6 +1,5 @@
 import type { APIRoute } from 'astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemSlug, getPublishedDevices, worksWith } from '../lib/devices';
-import { CATEGORIES } from '../lib/categories';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemPath, getActiveCategories, getPublishedDevices, worksWith } from '../lib/devices';
 import { ES_ENABLED } from '../site.config';
 import { byMarket, getActiveMarkets, getRegionPages } from '../lib/markets';
 import { compareName, comparePath, getComparisons } from '../lib/compare';
@@ -9,7 +8,7 @@ import { compareName, comparePath, getComparisons } from '../lib/compare';
 export const GET: APIRoute = async ({ site }) => {
   const devices = await getPublishedDevices();
   const url = (p: string) => new URL(p, site).href;
-  const cats = CATEGORIES.filter((c) => devices.some((d) => d.data.category === c.key));
+  const cats = await getActiveCategories();
   const regionPages = await getRegionPages();
   const markets = await getActiveMarkets();
   const lines = [
@@ -54,7 +53,7 @@ export const GET: APIRoute = async ({ site }) => {
   lines.push(
     '## By ecosystem',
     '',
-    ...ECOSYSTEMS.map((e) => `- [Devices that work with ${ECOSYSTEM_LABELS[e]}](${url(`/works-with/${ecosystemSlug(e)}/`)})`),
+    ...ECOSYSTEMS.map((e) => `- [Devices that work with ${ECOSYSTEM_LABELS[e]}](${url(ecosystemPath(e))})`),
     `- [Matter devices](${url('/works-with/matter/')}): Matter-certified devices split by Wi-Fi and Thread`,
     '',
   );

@@ -1,7 +1,7 @@
 // Every Spanish page (/es/…), derived from the English ones so the two sites always
 // match page for page. Nothing is returned while ES_ENABLED is off.
 import { CATEGORIES } from './categories';
-import { ECOSYSTEMS, ecosystemSlug, getPublishedDevices, getTranslations, type Ecosystem, type Device } from './devices';
+import { ECOSYSTEMS, ecosystemPath, getPublishedDevices, getTranslations, type Ecosystem, type Device } from './devices';
 import { getRegionPages, marketOf, type Market } from './markets';
 import { comparePath, getComparisons, type Comparison } from './compare';
 import { localize } from '../i18n/lang';
@@ -31,7 +31,7 @@ export async function getEsPages(): Promise<{ segments: string[]; page: EsPage }
     { en: '/privacy/', page: { kind: 'privacy' } },
     { en: '/works-with/', page: { kind: 'ecosystems' } },
     { en: '/works-with/matter/', page: { kind: 'matter' } },
-    ...ECOSYSTEMS.map((eco) => ({ en: `/works-with/${ecosystemSlug(eco)}/`, page: { kind: 'ecosystem' as const, eco } })),
+    ...ECOSYSTEMS.map((eco) => ({ en: ecosystemPath(eco), page: { kind: 'ecosystem' as const, eco } })),
   ];
   for (const cat of CATEGORIES) {
     const devices = all.filter((d) => d.data.category === cat.key);
@@ -48,7 +48,7 @@ export async function getEsPages(): Promise<{ segments: string[]; page: EsPage }
     const mine = all.filter((d) => marketOf(d) === market);
     const rest = path.slice(market.key.length + 1);
     const cat = CATEGORIES.find((c) => rest === `/${c.path}/`);
-    const eco = ECOSYSTEMS.find((e) => rest === `/works-with/${ecosystemSlug(e)}/`);
+    const eco = ECOSYSTEMS.find((e) => rest === ecosystemPath(e));
     const page: EsPage | undefined =
       rest === '/'
         ? { kind: 'market', market, devices: mine }

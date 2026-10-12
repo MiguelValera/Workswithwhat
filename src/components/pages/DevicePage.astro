@@ -12,20 +12,23 @@ import {
   deviceText,
   devicePathIn,
   deviceTitle,
+  ecosystemPath,
   ecosystemSlug,
   formatDate,
   getTranslations,
   listJoin,
+  matterText as matterWords,
   nameWithModel,
   radioList,
   worksWith,
+  yesNoText,
   type Device,
 } from '../../lib/devices';
-import { marketOf, marketText, regionPath } from '../../lib/markets';
+import { marketChartPath, marketOf, marketText } from '../../lib/markets';
 import { hubFor, devicesViaHub } from '../../lib/hubs';
 import { comparePath, comparisonsFor } from '../../lib/compare';
 import { CATEGORIES } from '../../lib/categories';
-import { langOf, localize } from '../../i18n/lang';
+import { capitalize, langOf, localize } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
 
 interface Props {
@@ -58,16 +61,14 @@ const description = es
     ? `${named} works with ${listJoin(works)}. Connection type, hub needs and specs, each linked to its source.`
     : `${named} compatibility with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, with sources.`;
 
-const yesNo = (v: boolean | null) => (v === null ? t.unconfirmed : v ? t.yes : t.no);
+const yesNo = (v: boolean | null) => yesNoText(v, lang);
 const radios = radioList(d.radios.value, lang) || t.unconfirmed;
-const transport = d.matter.transport === 'wifi' ? (es ? 'wifi' : 'Wi-Fi') : d.matter.transport === 'thread' ? 'Thread' : 'Ethernet';
-const matterText =
-  d.matter.certified === null ? t.unconfirmed : d.matter.certified ? (es ? `Sí, por ${transport}` : `Yes, over ${transport}`) : t.no;
+const matterText = matterWords(device, lang);
 
 const market = marketOf(device);
 const mt = marketText(market, lang);
 // the region chart if the market has one, else the market's section on the full chart
-const marketChart = L((await regionPath(market, `/${cat.path}/`)) ?? `/${cat.path}/#${market.key}`);
+const marketChart = L(await marketChartPath(market, cat));
 const variants = (d.variants ?? [])
   .map((v) => devices.find((o) => o.id === v))
   .filter((o): o is Device => Boolean(o))
@@ -115,7 +116,7 @@ const jsonLd = [
       name: d.name,
       model: d.model,
       brand: { '@type': 'Brand', name: d.brand },
-      category: c.singular.replace(/^./, (x) => x.toUpperCase()),
+      category: capitalize(c.singular),
       description: words.summary,
       url: d.officialUrl,
     },
@@ -187,7 +188,7 @@ const jsonLd = [
       <a href="#sources">{es ? 'Fuentes' : 'Sources'}</a>
       {viaHub.length > 0 && <a href="#works-through">{es ? 'Qué se conecta a través de él' : 'What connects through it'}</a>}
       {comparisons.length > 0 && <a href="#compare">{es ? 'Comparar' : 'Compare'}</a>}
-      {related.length > 0 && <a href="#related">{es ? `${c.plural.replace(/^./, (x) => x.toUpperCase())} ${similar}` : `Similar ${cat.plural}`}</a>}
+      {related.length > 0 && <a href="#related">{es ? `${capitalize(c.plural)} ${similar}` : `Similar ${cat.plural}`}</a>}
     </nav>
 
     <h2 id="compat">{es ? 'Compatibilidad con cada ecosistema' : 'Ecosystem compatibility'}</h2>
@@ -280,7 +281,7 @@ const jsonLd = [
             <dd>
               {f.a}{' '}
               {worksWith(device, f.eco) && (
-                <a href={L(`/works-with/${ecosystemSlug(f.eco)}/`)}>{es ? `Más ${c.plural} para ${ECOSYSTEM_LABELS[f.eco]}` : `More ${cat.plural} for ${ECOSYSTEM_LABELS[f.eco]}`}</a>
+                <a href={L(ecosystemPath(f.eco))}>{es ? `Más ${c.plural} para ${ECOSYSTEM_LABELS[f.eco]}` : `More ${cat.plural} for ${ECOSYSTEM_LABELS[f.eco]}`}</a>
               )}
             </dd>
           </div>
