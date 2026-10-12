@@ -18,9 +18,9 @@ interface Props {
 const { cat, devices, market } = Astro.props;
 const lang = langOf(Astro.url.pathname);
 const es = lang === 'es';
+const t = ui(lang);
 const L = (p: string) => localize(p, lang);
 const c = catText(cat, lang);
-const t = ui(lang);
 const m = market && marketText(market, lang);
 const cap = (s: string) => s.replace(/^./, (x) => x.toUpperCase());
 const translations = await getTranslations();
@@ -103,13 +103,19 @@ const crumbs = market
     market ? (
       <CompareTable devices={devices} brandJump />
     ) : (
-      <>
-        <nav class="toc" aria-label={es ? 'Ir a la región' : 'Jump to region'}>
-          <span class="toc-label">{es ? 'Región:' : 'Region:'}</span>
-          {groups.map((g) => <a href={`#${g.market.key}`}>{g.text.label} ({g.devices.length})</a>)}
-        </nav>
-        {groups.map((g) => (
-          <section aria-labelledby={g.market.key}>
+      <div class="filterable">
+        <form class="toc filters f-region" aria-label={t.filterByRegion.replace(/:$/, '')}>
+          <span class="toc-label">{t.filterByRegion}</span>
+          {groups.map((g, i) => (
+            <label>
+              <input type="checkbox" class={`fr-${i + 1}`} />
+              {g.text.label} ({g.devices.length})
+            </label>
+          ))}
+          <button type="reset">{t.showAll}</button>
+        </form>
+        {groups.map((g, i) => (
+          <section class={`fr-${i + 1}`} aria-labelledby={g.market.key}>
             <h2 id={g.market.key}>{es ? `${c.label} para ${g.text.phrase}` : `${cat.label} for ${g.market.phrase}`}</h2>
             {g.regionPage && (
               <p class="muted small">
@@ -121,7 +127,7 @@ const crumbs = market
             <CompareTable devices={g.devices} brandJump anchorPrefix={`${g.market.key}-`} region={g.text.label} />
           </section>
         ))}
-      </>
+      </div>
     )
   }
   {
