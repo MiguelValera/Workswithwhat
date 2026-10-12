@@ -19,7 +19,7 @@ interface Props {
   ogType?: 'website' | 'article';
   /** false for pages that exist in one language only (the 404 page) */
   alternates?: boolean;
-  /** pages that must stay out of search results (404): noindex and no canonical */
+  /** pages that must stay out of search results (404, extra comparisons): noindex, no canonical, not in the sitemap */
   noindex?: boolean;
 }
 
@@ -134,7 +134,7 @@ if (crumbs.length) {
           <a class="only-wide" href={L('/methodology/')} aria-current={current('/methodology/')}>{t.navHowWeVerify}</a>
         </nav>
         {
-          markets.length > 1 && !noindex && (
+          markets.length > 1 && (!noindex || alternates) && (
             <details class="locale">
               <summary>
                 <span>{lang.toUpperCase()}</span><span class="sep" aria-hidden="true">·</span><span class="only-wide">{hereMarket ? marketText(hereMarket, lang).label : t.regionAllLong}</span>

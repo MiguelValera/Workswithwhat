@@ -73,7 +73,7 @@ const faq = ECOSYSTEMS.map((e) => ({
 
 const others = (await comparisonsFor(a))
   .concat(await comparisonsFor(b))
-  .filter((o) => o.slug !== comparison.slug)
+  .filter((o) => o.indexed && o.slug !== comparison.slug)
   .filter((o, i, all) => all.findIndex((x) => x.slug === o.slug) === i);
 
 const checked = [a.data.verifiedAt, b.data.verifiedAt].filter(Boolean).sort()[0];
@@ -113,6 +113,7 @@ const jsonLd = [
     { name, path: comparePath(comparison) },
   ]}
   alternates={both}
+  noindex={!comparison.indexed}
   jsonLd={jsonLd}
 >
   <article>

@@ -1,7 +1,9 @@
 // "X vs Y" comparison pages (/compare/<a>-vs-<b>/). Pairs are picked from the data, never
 // by hand: two devices of the same category sold in the same market, and only pairs that
-// differ somewhere (an identical pair has nothing to compare). Each device gets its few
-// closest rivals, so the site doesn't grow every possible pair into a thin page.
+// differ somewhere (an identical pair has nothing to compare). Every such pair gets a page,
+// so any two devices of the same type can be compared, but only each device's few closest
+// rivals are indexed (`indexed`); the rest are noindex and stay out of the sitemap, so
+// search engines don't get hundreds of near-identical pages.
 import type { CategoryKey } from '../schema/device.ts';
 import { catText, categoryOf, specFacts } from './categories';
 import {
@@ -20,7 +22,7 @@ import {
 import { marketOf, type Market } from './markets';
 import type { Lang } from '../i18n/lang';
 
-/** Comparisons started from each device (it also appears in its rivals' picks). */
+/** Indexed comparisons started from each device (it also appears in its rivals' picks). */
 export const RIVALS_PER_DEVICE = 3;
 
 // The fact that says what kind of device it is within its category; two devices of the
@@ -42,6 +44,8 @@ export interface Comparison {
   b: Device;
   slug: string;
   market: Market;
+  /** one of the closest rivals: indexed, in the sitemap, /compare/ and llms.txt */
+  indexed: boolean;
 }
 
 export const comparePath = (c: { slug: string }) => `/compare/${c.slug}/`;
@@ -117,7 +121,7 @@ function closeness(a: Device, b: Device) {
 
 let cache: Comparison[] | undefined;
 
-/** Every comparison page, sorted by category, market and names. */
+/** Every comparison page (indexed or not), sorted by category, market and names. */
 export async function getComparisons(): Promise<Comparison[]> {
   if (cache) return cache;
   const devices = await getPublishedDevices();
@@ -127,13 +131,14 @@ export async function getComparisons(): Promise<Comparison[]> {
     const rivals = devices
       .filter((o) => o.id !== d.id && o.data.category === d.data.category && marketOf(o) === market && differ(d, o))
       .map((o) => ({ o, score: closeness(d, o) }))
-      .sort((x, y) => y.score - x.score || x.o.data.name.localeCompare(y.o.data.name))
-      .slice(0, RIVALS_PER_DEVICE);
-    for (const { o } of rivals) {
+      .sort((x, y) => y.score - x.score || x.o.data.name.localeCompare(y.o.data.name));
+    rivals.forEach(({ o }, i) => {
       const [a, b] = d.id < o.id ? [d, o] : [o, d];
       const slug = `${a.id}-vs-${b.id}`;
-      if (!pairs.has(slug)) pairs.set(slug, { a, b, slug, market });
-    }
+      const pair = pairs.get(slug) ?? { a, b, slug, market, indexed: false };
+      pair.indexed ||= i < RIVALS_PER_DEVICE;
+      pairs.set(slug, pair);
+    });
   }
   const order = devices.map((d) => d.id);
   cache = [...pairs.values()].sort(
@@ -145,11 +150,12 @@ export async function getComparisons(): Promise<Comparison[]> {
   return cache;
 }
 
-/** Comparisons that include a device, with the other device first-class. */
+/** Comparisons that include a device, closest rivals (indexed) first. */
 export async function comparisonsFor(device: Device) {
   return (await getComparisons())
     .filter((c) => c.a.id === device.id || c.b.id === device.id)
-    .map((c) => ({ ...c, other: c.a.id === device.id ? c.b : c.a }));
+    .map((c) => ({ ...c, other: c.a.id === device.id ? c.b : c.a }))
+    .sort((x, y) => Number(y.indexed) - Number(x.indexed));
 }
 
 /** "Tapo P110 (EU) vs Meross MSS210 (EU)" */

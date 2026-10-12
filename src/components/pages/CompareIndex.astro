@@ -9,7 +9,7 @@ import { langOf, localize } from '../../i18n/lang';
 const lang = langOf(Astro.url.pathname);
 const es = lang === 'es';
 const L = (p: string) => localize(p, lang);
-const all = await getComparisons();
+const all = (await getComparisons()).filter((x) => x.indexed);
 const groups = CATEGORIES.map((cat) => ({
   cat,
   c: catText(cat, lang),

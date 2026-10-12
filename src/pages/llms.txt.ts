@@ -58,7 +58,7 @@ export const GET: APIRoute = async ({ site }) => {
     `- [Matter devices](${url('/works-with/matter/')}): Matter-certified devices split by Wi-Fi and Thread`,
     '',
   );
-  const comparisons = await getComparisons();
+  const comparisons = (await getComparisons()).filter((c) => c.indexed);
   lines.push(
     '## Comparisons',
     '',

@@ -46,7 +46,7 @@ const ecoLinks = await Promise.all(
   }),
 );
 
-const pairCount = (await getComparisons()).filter((x) => x.a.data.category === cat.key && (!market || x.market === market)).length;
+const pairCount = (await getComparisons()).filter((x) => x.indexed && x.a.data.category === cat.key && (!market || x.market === market)).length;
 const compareLink = L(`/compare/#${market ? `${cat.path}-${market.key}` : cat.path}`);
 
 const newest = devices.map((d) => d.data.updatedAt).sort().at(-1);
