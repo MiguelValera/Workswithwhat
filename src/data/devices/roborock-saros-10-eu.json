@@ -16,7 +16,7 @@
       "roborock-us-product",
       "roborock-support-features"
     ],
-    "note": "Wi-Fi is 2.4 GHz only (5 GHz not supported) per Roborock's product page; Bluetooth is used for quick app setup per Roborock's support article."
+    "note": "Wi-Fi is 2.4 GHz only (5 GHz not supported) per Roborock's US product page; Bluetooth is used for quick app setup per Roborock's support article."
   },
   "matter": {
     "certified": true,
