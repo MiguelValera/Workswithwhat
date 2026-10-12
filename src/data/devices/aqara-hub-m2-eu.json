@@ -1,0 +1,138 @@
+{
+  "category": "smart-hub",
+  "brand": "Aqara",
+  "model": "Hub M2",
+  "name": "Aqara Hub M2 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://eu.aqara.com/products/aqara-smart-hub-m2",
+  "radios": {
+    "value": [
+      "zigbee",
+      "wifi",
+      "bluetooth",
+      "ethernet"
+    ],
+    "sources": [
+      "m2-eu"
+    ],
+    "note": "Zigbee 3.0, Bluetooth LE 5.0, 2.4 GHz Wi-Fi, one RJ-45 Ethernet port and an IR transmitter. No model number on the page."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "The product page does not mention Matter; no CSA listing found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "m2-eu",
+        "m2-us"
+      ],
+      "note": "Through HomeKit. Aqara Zigbee devices appear in Apple Home; the IR controller is not exposed there."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "m2-eu"
+      ],
+      "note": "Aqara lists Apple HomeKit, Google Assistant, Alexa and IFTTT. For IR devices, only some types such as TVs and air conditioners work with Google Assistant and Alexa."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "m2-eu"
+      ],
+      "note": "Aqara lists Apple HomeKit, Google Assistant, Alexa and IFTTT. For IR devices, only some types such as TVs and air conditioners work with Google Assistant and Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not mentioned on the maker pages."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not confirmed by an official source."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "m2-eu"
+    ],
+    "note": "It is the hub."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "m2-eu",
+      "m2-us"
+    ],
+    "note": "Aqara says local automations keep running if the internet goes down."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "m2-eu"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee",
+      "infrared"
+    ],
+    "sources": [
+      "m2-eu"
+    ],
+    "note": "Works only with Aqara Zigbee child devices, not other brands or Aqara Thread devices. Built-in IR controller for TVs, fans and air conditioners. It has a BLE 5.0 radio, but the page does not say it pairs Bluetooth devices."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "The M2 pages do not mention Matter; Aqara's US M2 page points to the Hub M3 for Matter."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "Aqara says it does not support Aqara Thread devices and lists no Thread radio, but no page states whether it is a border router."
+  },
+  "maxDevices": {
+    "value": 128,
+    "sources": [
+      "m2-eu",
+      "m2-us"
+    ],
+    "note": "Aqara Zigbee child devices; repeaters such as a plug or wall switch are required."
+  },
+  "summary": "Aqara Hub M2 (EU) links Aqara Zigbee 3.0 devices to Apple Home, Google Home and Alexa, with Wi-Fi, an Ethernet port and a built-in IR controller. Aqara says it handles up to 128 child devices, and local automations keep running if the internet drops. The pages don't mention Matter, and SmartThings and Home Assistant are unconfirmed.",
+  "sources": [
+    {
+      "id": "m2-eu",
+      "url": "https://eu.aqara.com/products/aqara-smart-hub-m2",
+      "title": "Aqara Smart Hub M2",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "m2-us",
+      "url": "https://www.aqara.com/us/product/hub-m2/",
+      "title": "Hub M2",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "caveats": [
+    "It pairs only with Aqara Zigbee devices, not other brands.",
+    "Google Home and Alexa control only some IR device types, such as TVs and air conditioners.",
+    "The IR controller is not exposed to Apple Home.",
+    "Aqara says repeater devices such as a smart plug are needed to reach 128 devices."
+  ],
+  "verifiedAt": "2026-10-12"
+}

@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El ZBDongle-E es una llave USB Zigbee 3.0 con un chip Silicon Labs EFR32MG21, y el único ecosistema con el que está confirmado es Home Assistant (mediante ZHA o Zigbee2MQTT). No tiene app ni certificación Matter, así que se conecta a un equipo que ya tengas en marcha. SONOFF indica límites contradictorios de dispositivos hijos, desde 21 directos por defecto hasta 30 directos más 30 a través de routers.",
+  "caveats": [
+    "No funciona por sí solo: necesita Home Assistant o Zigbee2MQTT en otro equipo.",
+    "Home Assistant admite una sola instancia de ZHA, así que un segundo dongle necesita Zigbee2MQTT en otro canal.",
+    "Los dispositivos Hue Green Power necesitan que el canal sea el 11, 15, 20 o 25."
+  ],
+  "notes": {
+    "radios": "Silicon Labs EFR32MG21 con firmware de coordinador Zigbee 3.0 de fábrica. Se vende como Zigbee 3.0 USB Dongle Plus-E; Home Assistant lo llama Dongle Plus V2. Regiones: la tienda del fabricante lo vende en USD, EUR y GBP; no indica una lista de envíos.",
+    "matter": "No hemos encontrado ningún registro de la CSA.",
+    "hubRequired": "Ninguna fuente oficial lo confirma.",
+    "localControl": "El fabricante lo presenta como una pasarela para controlar en local todos tus dispositivos Zigbee mediante Home Assistant u otras plataformas de código abierto.",
+    "hubType": "Se conecta a un equipo con Home Assistant o Zigbee2MQTT; no tiene app propia.",
+    "deviceProtocols": "Solo Zigbee 3.0 según la página del fabricante; allí no se ofrece firmware Thread.",
+    "matterBridge": "No es un puente por sí solo; el fabricante menciona Matter únicamente para su software independiente eWeLink CUBE.",
+    "threadBorderRouter": "La página del fabricante no ofrece un modo de router de borde Thread; no se indica en ningún sentido como función.",
+    "maxDevices": "El fabricante da límites contradictorios: 21 hijos directos por defecto (40 como máximo, 100 con cambios) en la descripción, y 30 directos más 30 a través de routers en las FAQ.",
+    "compatibility.apple_home": "Solo se llega a él mediante el software de Home Assistant, que no es un hub; sin confirmar.",
+    "compatibility.google_home": "Solo se llega a él mediante el software de Home Assistant; sin confirmar.",
+    "compatibility.alexa": "Solo se llega a él mediante el software de Home Assistant; sin confirmar.",
+    "compatibility.smartthings": "Sin confirmar.",
+    "compatibility.home_assistant": "Home Assistant lo lista como adaptador probado para ZHA, no como hardware oficial, y la página del fabricante describe su uso con Home Assistant."
+  }
+}
