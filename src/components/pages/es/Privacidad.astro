@@ -1,4 +1,5 @@
 ---
+import MailLink from '../../MailLink.astro';
 import Base from '../../../layouts/Base.astro';
 import { CONTACT_URL, LEGAL_UPDATED, OPERATOR } from '../../../site.config';
 import { formatDate } from '../../../lib/devices';
@@ -58,7 +59,7 @@ import { formatDate } from '../../../lib/devices';
     Puedes enviar correcciones y preguntas {OPERATOR.email && <>por correo electrónico o </>}a través de las
     <a href={CONTACT_URL}>incidencias de GitHub</a>. Las incidencias son públicas y se rigen por la declaración de
     privacidad de GitHub, así que no incluyas datos personales que no quieras publicar.
-    {OPERATOR.email && <> Si nos escribes a <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>, Cloudflare Email Routing reenvía el mensaje a un buzón de Gmail (Google). Lo usamos solo para responderte y lo borramos cuando ya no hace falta.</>}
+    {OPERATOR.email && <> Si nos escribes a <MailLink />, Cloudflare Email Routing reenvía el mensaje a un buzón de Gmail (Google). Lo usamos solo para responderte y lo borramos cuando ya no hace falta.</>}
   </p>
 
   <h2>Tus derechos</h2>
