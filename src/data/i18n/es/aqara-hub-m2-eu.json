@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Con Zigbee 3.0, el Aqara Hub M2 (EU) conecta los dispositivos de Aqara con Apple Home, Google Home y Alexa, y suma wifi, un puerto Ethernet y un mando infrarrojo integrado. Aqara dice que admite hasta 128 dispositivos hijos y que las automatizaciones locales siguen funcionando si se cae internet. Las páginas no mencionan Matter, y SmartThings y Home Assistant están sin confirmar.",
+  "caveats": [
+    "Solo se empareja con dispositivos Zigbee de Aqara, no con otras marcas.",
+    "Google Home y Alexa controlan solo algunos tipos de dispositivos infrarrojos, como televisores y aires acondicionados.",
+    "El mando infrarrojo no se expone a Apple Home.",
+    "Aqara dice que hacen falta repetidores, como un enchufe inteligente, para llegar a 128 dispositivos."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0, Bluetooth LE 5.0, wifi de 2,4 GHz, un puerto Ethernet RJ-45 y un emisor infrarrojo. La página no indica número de modelo.",
+    "matter": "La página del producto no menciona Matter; no hemos encontrado ningún registro de la CSA.",
+    "hubRequired": "Es el propio hub.",
+    "localControl": "Aqara dice que las automatizaciones locales siguen funcionando si se cae internet.",
+    "deviceProtocols": "Funciona solo con dispositivos hijos Zigbee de Aqara, no con otras marcas ni con dispositivos Thread de Aqara. Mando infrarrojo integrado para televisores, ventiladores y aires acondicionados. Tiene una radio BLE 5.0, pero la página no dice que empareje dispositivos Bluetooth.",
+    "matterBridge": "Las páginas del M2 no mencionan Matter; la página estadounidense del M2 de Aqara remite al Hub M3 para Matter.",
+    "threadBorderRouter": "Aqara dice que no admite dispositivos Thread de Aqara y no lista ninguna radio Thread, pero ninguna página indica si es un router de borde.",
+    "maxDevices": "Dispositivos hijos Zigbee de Aqara; hacen falta repetidores, como un enchufe o un interruptor de pared.",
+    "compatibility.apple_home": "Mediante HomeKit. Los dispositivos Zigbee de Aqara aparecen en Apple Home; el mando infrarrojo no se expone ahí.",
+    "compatibility.google_home": "Aqara lista Apple HomeKit, Google Assistant, Alexa e IFTTT. En los dispositivos infrarrojos, solo algunos tipos, como televisores y aires acondicionados, funcionan con Google Assistant y Alexa.",
+    "compatibility.alexa": "Aqara lista Apple HomeKit, Google Assistant, Alexa e IFTTT. En los dispositivos infrarrojos, solo algunos tipos, como televisores y aires acondicionados, funcionan con Google Assistant y Alexa.",
+    "compatibility.smartthings": "No se menciona en las páginas del fabricante.",
+    "compatibility.home_assistant": "Ninguna fuente oficial lo confirma."
+  }
+}

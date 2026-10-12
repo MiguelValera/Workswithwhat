@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El Echo (4th Gen) lleva un hub Zigbee integrado, así que las luces, enchufes, interruptores de pared y cerraduras Zigbee se emparejan directamente con él y aparecen en Alexa sin otro hub. También hace de router de borde Thread 1.1 para dispositivos Matter sobre Thread. Google Home, Apple Home, SmartThings y Home Assistant sin confirmar para los dispositivos emparejados con él.",
+  "caveats": [
+    "El registro de la CSA para este modelo cubre solo Zigbee 3.0; la compatibilidad con Matter se apoya en la documentación para desarrolladores de Amazon."
+  ],
+  "notes": {
+    "radios": "Hub Zigbee (certificado Zigbee 3.0 por la CSA) y router de borde Thread según la documentación para desarrolladores de Amazon. Wifi y Bluetooth no figuran porque ninguna página oficial que hayamos podido leer los menciona.",
+    "matter": "La documentación de Matter de Amazon incluye el Echo (2nd Gen y posteriores) como compatible con Matter, con el Echo como administrador de Matter. El registro de la CSA del Echo (4th Gen) es solo Zigbee 3.0, así que no se confirma ningún certificado Matter para este modelo.",
+    "hubRequired": "El propio Echo es el hub.",
+    "localControl": "Sin confirmar para este modelo. La documentación de Matter de Amazon dice que algunos tipos de conexión permiten a Alexa controlar dispositivos en local, sin nombrar modelos de Echo.",
+    "compatibility.apple_home": "Ninguna fuente oficial muestra en Apple Home los dispositivos Zigbee emparejados con el Echo.",
+    "compatibility.google_home": "Ninguna fuente oficial muestra en Google Home los dispositivos Zigbee emparejados con el Echo.",
+    "compatibility.alexa": "Las luces, enchufes, interruptores de pared y cerraduras Zigbee se emparejan directamente con el hub integrado del Echo y aparecen en Alexa.",
+    "compatibility.smartthings": "Ninguna fuente oficial muestra en SmartThings los dispositivos Zigbee emparejados con el Echo.",
+    "compatibility.home_assistant": "Ninguna página oficial de Home Assistant muestra que los dispositivos emparejados con el Echo aparezcan allí.",
+    "deviceProtocols": "Los dispositivos Zigbee se emparejan con el hub integrado; el router de borde Thread (Thread 1.1) atiende a los dispositivos Matter sobre Thread.",
+    "matterBridge": "La documentación de Matter de Amazon no nombra ningún Echo como puente Matter.",
+    "threadBorderRouter": "Figura con Thread 1.1.",
+    "maxDevices": "No hemos encontrado ningún límite en las fuentes."
+  },
+  "via": {}
+}
