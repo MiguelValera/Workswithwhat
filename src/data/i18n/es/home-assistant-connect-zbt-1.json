@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Para quien ya usa Home Assistant, Connect ZBT-1 es un dongle USB de radio que añade Zigbee mediante ZHA, o Thread con la app OpenThread Border Router. Hay que elegir uno por dongle. Home Assistant es el único ecosistema confirmado, y antes se vendía como SkyConnect.",
+  "caveats": [
+    "Funciona con firmware Zigbee o Thread, nunca los dos; con el firmware Thread, los dispositivos Zigbee dejan de funcionar.",
+    "No es independiente: necesita Home Assistant funcionando en un equipo como Home Assistant Green.",
+    "Home Assistant anunció el nuevo Connect ZBT-2 en noviembre de 2025, así que comprueba que el ZBT-1 sigue a la venta antes de comprarlo."
+  ],
+  "notes": {
+    "radios": "Silicon Labs EFR32MG21, 2,4 GHz. Funciona con firmware Zigbee o Thread, no los dos a la vez; sin Bluetooth ni Z-Wave. Modelo NC-ZBT-9710.",
+    "matter": "No hemos buscado ni encontrado ningún registro en la CSA; el dongle es una radio, no un dispositivo Matter.",
+    "hubRequired": "No es independiente: necesita Home Assistant funcionando en un equipo como Home Assistant Green.",
+    "localControl": "Una radio USB controlada por el equipo con Home Assistant; ninguna página oficial citada aquí afirma el control local con esas palabras.",
+    "hubType": "Antes Home Assistant SkyConnect; es el mismo hardware.",
+    "deviceProtocols": "Uno a la vez: el firmware Thread es solo Thread, así que los dispositivos Zigbee dejan de funcionar mientras está activo.",
+    "matterBridge": "No es un puente; a los dispositivos Matter sobre Thread se llega mediante la integración Matter de Home Assistant.",
+    "threadBorderRouter": "Con firmware Thread y la app OpenThread Border Router.",
+    "maxDevices": "El fabricante no lo indica.",
+    "compatibility.apple_home": "Solo se llega a través del software de Home Assistant, que no es un hub; sin confirmar.",
+    "compatibility.google_home": "Solo se llega a través del software de Home Assistant; sin confirmar.",
+    "compatibility.alexa": "Solo se llega a través del software de Home Assistant; sin confirmar.",
+    "compatibility.smartthings": "Sin confirmar.",
+    "compatibility.home_assistant": "Hardware oficial de Home Assistant: Zigbee mediante ZHA, Thread mediante la app OpenThread Border Router."
+  }
+}
