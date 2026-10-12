@@ -1,0 +1,154 @@
+{
+  "category": "smart-hub",
+  "brand": "Amazon",
+  "model": "Echo Show 8 (3rd Gen)",
+  "name": "Echo Show 8 3rd Gen (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://press.aboutamazon.com/2023/9/amazon-unveils-next-generation-echo-show-8-all-new-echo-hub-and-new-echo-frames",
+  "radios": {
+    "value": [
+      "zigbee",
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "amazon-press-show8"
+    ],
+    "note": "Amazon's 2023 launch release says the built-in hub supports Zigbee, Sidewalk, Thread, Bluetooth and Matter. Sidewalk is not a radio we record. Wi-Fi is not stated on the pages we read."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "amazon-press-show8",
+      "alexa-matter"
+    ],
+    "note": "The 2023 launch release lists Matter support, and Amazon's Matter docs list Echo Show 8 (1st Gen and newer) as Matter-enabled, with the Echo as Matter administrator. No CSA listing naming the Echo Show 8 (3rd Gen) was found, so a certificate is not confirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Echo Show-paired devices in Apple Home."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Echo Show-paired devices in Google Home."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "amazon-press-show8"
+      ],
+      "note": "Amazon's launch release says the Echo Show 8 has a built-in smart home hub with Zigbee, Thread and Matter, so devices pair straight to it and appear in Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Echo Show-paired devices in SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant page shows Echo Show-paired devices appearing there."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "amazon-press-show8"
+    ],
+    "note": "The Echo Show 8 has the hub built in."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "amazon-press-show8",
+      "alexa-matter"
+    ],
+    "note": "Amazon says Alexa handles common smart home requests on the device, such as turning on a light, switch or plug, and that direct Matter connections let Alexa control devices locally."
+  },
+  "hubType": {
+    "value": "speaker-display",
+    "sources": [
+      "amazon-press-show8"
+    ],
+    "note": "A smart display with a built-in smart home hub."
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee",
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "amazon-press-show8"
+    ],
+    "note": "Zigbee devices pair to the built-in hub; Thread serves Matter-over-Thread devices."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Amazon's Matter docs describe Echo as the Matter administrator for Alexa, not as a bridge."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "amazon-press-show8",
+      "alexa-matter"
+    ],
+    "note": "The launch release lists Thread in the built-in hub, and Amazon's Matter docs say Thread-enabled Echo devices act as Thread border routers. No Thread version is confirmed for this model."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "No device limit found in Amazon's sources."
+  },
+  "summary": "Amazon built a smart home hub into the Echo Show 8 (3rd Gen), so Zigbee devices pair straight to the display and show up in Alexa, no separate hub needed. Amazon's launch release lists Zigbee, Thread, Bluetooth and Matter, and says common requests like turning on a light, switch or plug are handled on the device. Nothing official confirms devices paired through it in other ecosystems.",
+  "sources": [
+    {
+      "id": "amazon-press-show8",
+      "url": "https://press.aboutamazon.com/2023/9/amazon-unveils-next-generation-echo-show-8-all-new-echo-hub-and-new-echo-frames",
+      "title": "Amazon unveils next generation Echo Show 8, all-new Echo Hub, and new Echo Frames",
+      "publisher": "Amazon",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "alexa-zigbee",
+      "url": "https://developer.amazon.com/en-US/docs/alexa/smarthome/zigbee-support.html",
+      "title": "Understand Smart Home Zigbee Support",
+      "publisher": "Amazon Alexa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12",
+      "forCaveat": true
+    },
+    {
+      "id": "alexa-thread",
+      "url": "https://www.developer.amazon.com/en-US/docs/alexa/smarthome/thread-support.html",
+      "title": "Understand Smart Home Thread Support",
+      "publisher": "Amazon Alexa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12",
+      "forCaveat": true
+    },
+    {
+      "id": "alexa-matter",
+      "url": "https://developer.amazon.com/en-US/docs/alexa/smarthome/matter-support.html",
+      "title": "Connect Your Device to Alexa with Matter",
+      "publisher": "Amazon Alexa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "caveats": [
+    "Matter support rests on Amazon's launch release and developer docs; no CSA listing naming this model was found.",
+    "Amazon's Zigbee and Thread developer lists name an \"Echo Show 8 (3rd Gen, 2025 release)\", while this model launched in 2023 and the 2025 redesign is widely called the 4th gen, so those lists are not used as evidence here.",
+    "No official page shows devices paired to it appearing in Apple Home, Google Home, SmartThings or Home Assistant."
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Amazon integró un hub de casa inteligente en el Echo Show 8 (3rd Gen), así que los dispositivos Zigbee se emparejan directamente con la pantalla y aparecen en Alexa, sin hub aparte. La nota de lanzamiento de Amazon menciona Zigbee, Thread, Bluetooth y Matter, y dice que peticiones habituales como encender una luz, un interruptor o un enchufe se gestionan en el propio dispositivo. Ninguna fuente oficial confirma que los dispositivos emparejados con él aparezcan en otros ecosistemas.",
+  "caveats": [
+    "La compatibilidad con Matter se basa en la nota de lanzamiento y la documentación para desarrolladores de Amazon; no se encontró ningún registro de la CSA que nombre este modelo.",
+    "Las listas de Zigbee y Thread para desarrolladores de Amazon nombran un \"Echo Show 8 (3rd Gen, 2025 release)\", pero este modelo salió en 2023 y el rediseño de 2025 se conoce ampliamente como 4th gen, así que esas listas no se usan aquí como prueba.",
+    "Ninguna página oficial muestra que los dispositivos emparejados con él aparezcan en Apple Home, Google Home, SmartThings o Home Assistant."
+  ],
+  "notes": {
+    "radios": "La nota de lanzamiento de Amazon de 2023 dice que el hub integrado admite Zigbee, Sidewalk, Thread, Bluetooth y Matter. Sidewalk no es una radio que registremos. El wifi no se indica en las páginas que hemos leído.",
+    "matter": "La nota de lanzamiento de 2023 menciona Matter, y la documentación de Amazon incluye el Echo Show 8 (1st Gen y posteriores) como compatible, con el Echo como administrador Matter. Ningún registro de la CSA nombra el Echo Show 8 (3rd Gen), así que el certificado no está confirmado.",
+    "hubRequired": "El Echo Show 8 lleva el hub integrado.",
+    "localControl": "Amazon dice que Alexa gestiona en el propio dispositivo las peticiones habituales de casa inteligente, como encender una luz, un interruptor o un enchufe, y que las conexiones Matter directas permiten a Alexa controlar los dispositivos en local.",
+    "hubType": "Una pantalla inteligente con un hub de casa inteligente integrado.",
+    "deviceProtocols": "Los dispositivos Zigbee se emparejan con el hub integrado; Thread sirve a los dispositivos Matter sobre Thread.",
+    "matterBridge": "La documentación de Matter de Amazon describe el Echo como administrador Matter para Alexa, no como puente.",
+    "threadBorderRouter": "La nota de lanzamiento incluye Thread en el hub integrado, y la documentación de Matter de Amazon dice que los dispositivos Echo con Thread hacen de routers de borde Thread. No se confirma ninguna versión de Thread para este modelo.",
+    "maxDevices": "No se encontró ningún límite de dispositivos en las fuentes de Amazon.",
+    "compatibility.apple_home": "Ninguna fuente oficial muestra dispositivos emparejados con el Echo Show en Apple Home.",
+    "compatibility.google_home": "Ninguna fuente oficial muestra dispositivos emparejados con el Echo Show en Google Home.",
+    "compatibility.alexa": "La nota de lanzamiento de Amazon dice que el Echo Show 8 tiene un hub de casa inteligente integrado con Zigbee, Thread y Matter, así que los dispositivos se emparejan directamente con él y aparecen en Alexa.",
+    "compatibility.smartthings": "Ninguna fuente oficial muestra dispositivos emparejados con el Echo Show en SmartThings.",
+    "compatibility.home_assistant": "Ninguna página oficial de Home Assistant muestra que los dispositivos emparejados con el Echo Show aparezcan allí."
+  }
+}

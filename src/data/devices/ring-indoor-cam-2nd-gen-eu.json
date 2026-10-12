@@ -1,0 +1,151 @@
+{
+  "category": "smart-camera",
+  "brand": "Ring",
+  "model": "Indoor Cam (2nd Gen) (EU)",
+  "name": "Ring Indoor Cam 2nd Gen (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://ring.com/eu/en/products/mini-indoor-security-camera-plug-in",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "ring-eu-indoor-cam",
+      "ring-de-support"
+    ],
+    "note": "Ring's EU page lists 802.11 b/g/n Wi-Fi on 2.4 GHz."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim on Ring's EU page, and no CSA listing for this camera was found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Ring's EU product page and Alexa help pages don't mention Apple Home or HomeKit."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Ring page found that lists Google Home or Google Assistant for this camera."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "ring-de-support",
+        "ring-alexa-control",
+        "ring-alexa-two-way"
+      ],
+      "note": "Ring's German help page for this camera lists Works with Alexa. Through the Ring skill, Alexa devices with a screen show live view; Ring lists Germany, France, Italy and Spain for two-way talk through Echo."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Ring or SmartThings page found for this model."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-ring"
+      ],
+      "note": "The official Ring integration lists Indoor Cam (2nd Gen) under stick-up cams. It talks to the Ring cloud, not to the camera on your network."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "ring-eu-indoor-cam"
+    ],
+    "note": "Connects over Wi-Fi to the Ring app; the EU page mentions no bridge or base station."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Ring does not say whether any control works without its cloud. Home Assistant's page says its Ring integration is cloud-only."
+  },
+  "cameraType": {
+    "value": "indoor",
+    "sources": [
+      "ring-eu-indoor-cam"
+    ]
+  },
+  "power": {
+    "value": "USB adapter (mains)",
+    "sources": [
+      "ring-eu-indoor-cam",
+      "ring-de-support"
+    ],
+    "note": "Plugs into an outlet through a 1.9 m Micro USB cable and a 5 V, 2 A power adapter with an EU plug."
+  },
+  "localStorage": {
+    "value": null,
+    "sources": [],
+    "note": "The EU page mentions no local recording; saved videos go to the Ring account."
+  },
+  "subscription": {
+    "value": "Saved video history (Ring Protect plan)",
+    "sources": [
+      "ring-eu-indoor-cam"
+    ],
+    "note": "Without a plan you get live view and notifications, but videos and photos are not saved. A trial is included with purchase unless the location already has a plan."
+  },
+  "summary": "The Ring Indoor Cam (2nd Gen) in its EU version works with Alexa through the Ring skill, showing live view on Echo devices with a screen, and with Home Assistant through the official Ring integration. It's a Wi-Fi camera with no hub, powered from an outlet through a 1.9 m Micro USB cable and an EU-plug adapter. Live view and notifications are free; saved video needs a Ring Protect plan. Ring doesn't confirm Apple Home, Google Home or SmartThings.",
+  "caveats": [
+    "Wi-Fi is 2.4 GHz only.",
+    "Without a Ring Protect plan, videos and photos are not saved.",
+    "Home Assistant talks to the Ring cloud, not to the camera on your network.",
+    "Two-way talk through Echo is listed by Ring for Germany, France, Italy and Spain."
+  ],
+  "sources": [
+    {
+      "id": "ring-eu-indoor-cam",
+      "url": "https://ring.com/eu/en/products/mini-indoor-security-camera-plug-in",
+      "title": "Indoor Camera (2nd Gen - EU adapter) - White",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ring-de-support",
+      "url": "https://ring.com/de/de/support/products/cameras/indoor-cam-gen-2",
+      "title": "Indoor Cam (2. Gen)",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ring-alexa-control",
+      "url": "https://ring.com/support/articles/4j9pd/Control-Ring-Doorbell-Security-Camera-Alexa",
+      "title": "Control Your Ring Doorbell or Security Camera with Alexa",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ring-alexa-two-way",
+      "url": "https://ring.com/gb/en/support/articles/26ing/Two-Way-Communication-with-Amazon-Echo-Devices",
+      "title": "Two-way communication through Amazon Echo devices",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-ring",
+      "url": "https://www.home-assistant.io/integrations/ring",
+      "title": "Ring - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "variants": [
+    "ring-indoor-cam-2nd-gen-us"
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-12",
+  "updatedAt": "2026-10-12"
+}
