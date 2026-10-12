@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Ring Outdoor Cam (Battery) es una cámara con wifi de 2,4 GHz y batería de extracción rápida, que Ring indica como compatible con Alexa. La integración oficial de Ring en Home Assistant cubre la Stick Up Cam (3rd Gen), de la que procede con otro nombre, con vídeo en directo y eventos de movimiento. El vídeo en directo y las alertas son gratis, pero guardar vídeos requiere Ring Protect.",
+  "caveats": [
+    "Guardar vídeos requiere un plan Ring Protect.",
+    "Solo wifi de 2,4 GHz.",
+    "Ring cambió el nombre de la Stick Up Cam (3rd Gen) a Outdoor Cam; su página de producto etiqueta el modelo de batería como 'Outdoor Cam (2nd Gen), 2019 release', así que los números de generación difieren entre las páginas de Ring.",
+    "Apple Home, Google Home y Matter están sin confirmar."
+  ],
+  "notes": {
+    "radios": "Solo 802.11 b/g/n a 2,4 GHz.",
+    "matter": "Las páginas de Ring no mencionan Matter; no se ha encontrado ningún registro de la CSA.",
+    "hubRequired": "Se conecta por wifi; no se menciona ningún puente.",
+    "localControl": "Ring no indica si algún control funciona sin su nube.",
+    "cameraType": "Resistente a la intemperie, con un rango de -5 a 122 °F; Ring dice que está pensada para el exterior pero sirve en cualquier sitio.",
+    "power": "Incluye la batería de extracción rápida; el adaptador de corriente y el panel solar se venden aparte.",
+    "localStorage": "Las páginas de Ring describen solo el historial de vídeo en la nube.",
+    "subscription": "El vídeo en directo y las alertas funcionan sin plan; los vídeos no se guardan. Prueba gratuita de 30 días.",
+    "compatibility.apple_home": "No se menciona en las páginas de Ring.",
+    "compatibility.google_home": "No se menciona en las páginas de Ring.",
+    "compatibility.alexa": "Ring incluye Works With Alexa entre las funciones de la Outdoor Cam.",
+    "compatibility.smartthings": "No se menciona en las páginas de Ring.",
+    "compatibility.home_assistant": "La integración oficial de Ring en Home Assistant incluye la Stick Up Battery y la Stick Up Cam (3rd Gen): vídeo en directo, eventos de movimiento y nivel de batería; la última grabación requiere Ring Protect y no hay audio bidireccional."
+  },
+  "values": {
+    "power": "Batería recargable",
+    "subscription": "Historial de vídeo guardado (Ring Protect)"
+  }
+}

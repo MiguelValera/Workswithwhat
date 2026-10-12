@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Caja de streaming que además hace de hub de Apple Home, el Apple TV 4K (3.ª generación) gestiona accesorios HomeKit y Matter y el acceso remoto en cuanto lo añades a una habitación en la app Casa. Solo el modelo con wifi + Ethernet tiene Thread y funciona como router de borde Thread. Las páginas de Apple no lo relacionan con Google Home, Alexa ni SmartThings.",
+  "caveats": [
+    "Solo el modelo con wifi + Ethernet (128 GB) tiene Thread; el modelo con wifi (64 GB) no puede hacer de router de borde Thread.",
+    "No se ha comprobado ningún certificado Matter de la CSA para el propio Apple TV; su papel en Matter se apoya en las páginas de soporte de Apple."
+  ],
+  "notes": {
+    "radios": "Thread solo viene en el modelo con wifi + Ethernet (128 GB); el modelo con wifi (64 GB) no tiene Thread ni Ethernet.",
+    "matter": "Apple dice que el Apple TV 4K puede actuar como centro de la casa para accesorios Matter, pero no se ha comprobado ningún registro de la CSA para este dispositivo, así que la certificación está sin confirmar.",
+    "hubRequired": "El propio Apple TV es el centro de la casa.",
+    "localControl": "Las páginas de Apple no dicen qué automatizaciones se ejecutan en local.",
+    "hubType": "Una caja de streaming que Apple llama hub de casa inteligente. El esquema no tiene un tipo para reproductores multimedia; «speaker-display» (un dispositivo cuya función principal es multimedia, con un hub integrado, como el HomePod) encaja mejor que «hub» (un puente dedicado).",
+    "deviceProtocols": "Thread (modelo con wifi + Ethernet) para accesorios HomeKit y Matter con Thread.",
+    "matterBridge": "Apple no describe el Apple TV como un puente Matter.",
+    "threadBorderRouter": "Solo el modelo con wifi + Ethernet; Apple nombra el Apple TV 4K como centro de la casa con Thread.",
+    "maxDevices": "No se ha encontrado ningún límite en las fuentes.",
+    "compatibility.apple_home": "Se convierte en centro de la casa al añadirlo a una habitación en la app Casa, para accesorios HomeKit y Matter y para el acceso remoto. Los accesorios Thread necesitan el modelo con wifi + Ethernet.",
+    "compatibility.google_home": "Ninguna fuente oficial muestra que el Apple TV aloje dispositivos para Google Home.",
+    "compatibility.alexa": "Ninguna fuente oficial muestra que el Apple TV aloje dispositivos para Alexa.",
+    "compatibility.smartthings": "Ninguna fuente oficial muestra que el Apple TV aloje dispositivos para SmartThings.",
+    "compatibility.home_assistant": "Ninguna fuente oficial muestra que los dispositivos emparejados con el Apple TV aparezcan en Home Assistant."
+  }
+}

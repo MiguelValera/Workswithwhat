@@ -1,0 +1,118 @@
+{
+  "category": "smart-lock",
+  "brand": "Wyze",
+  "model": "Lock Bolt v2 (WLCKB2)",
+  "name": "Wyze Lock Bolt v2 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.wyze.com/products/wyze-lock-bolt-v2",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "wyze-lock-bolt-v2",
+      "wyze-lock-bolt-v2-specs"
+    ],
+    "note": "2.4 GHz Wi-Fi; Bluetooth for setup and some app features."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Neither Wyze page mentions Matter; no CSA listing was checked."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not mentioned on Wyze's pages."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "wyze-lock-bolt-v2"
+      ],
+      "note": "Wyze's page says you can unlock with Google Assistant."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "wyze-lock-bolt-v2"
+      ],
+      "note": "Wyze's page says you can unlock with Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not mentioned on Wyze's pages."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Home Assistant integration page checked for this lock."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "wyze-lock-bolt-v2"
+    ],
+    "note": "Built-in Wi-Fi; no hub or gateway is mentioned."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Wyze doesn't say whether the lock works without its cloud."
+  },
+  "lockFit": {
+    "value": "deadbolt",
+    "sources": [
+      "wyze-lock-bolt-v2"
+    ],
+    "note": "Replaces a single-cylinder deadbolt on wooden doors 1-3/8 to 2-11/64 in thick."
+  },
+  "keypad": {
+    "value": true,
+    "sources": [
+      "wyze-lock-bolt-v2"
+    ],
+    "note": "Backlit tempered-glass keypad."
+  },
+  "power": {
+    "value": "8 × AA",
+    "sources": [
+      "wyze-lock-bolt-v2",
+      "wyze-lock-bolt-v2-specs"
+    ],
+    "note": "Batteries included; USB-C emergency power port."
+  },
+  "summary": "Wyze's Lock Bolt v2 (WLCKB2) is a Wi-Fi deadbolt that you can unlock with Alexa or Google Assistant, with no hub needed. It has a backlit glass keypad and takes eight AA batteries, with a USB-C port for emergency power. Wyze's pages don't mention Matter, Apple Home or SmartThings.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only; Bluetooth is for setup and some app features.",
+    "Not for glass, sliding, mortise or multi-point doors.",
+    "Matter and Apple Home support are not confirmed."
+  ],
+  "sources": [
+    {
+      "id": "wyze-lock-bolt-v2",
+      "url": "https://www.wyze.com/products/wyze-lock-bolt-v2",
+      "title": "Wyze Lock Bolt V2 Smart Door Lock",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "wyze-lock-bolt-v2-specs",
+      "url": "https://support.wyze.com/hc/en-us/articles/43419580075931-Wyze-Lock-Bolt-v2-Tech-Specs",
+      "title": "Wyze Lock Bolt v2 Tech Specs",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-12",
+  "updatedAt": "2026-10-12"
+}

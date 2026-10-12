@@ -1,0 +1,140 @@
+{
+  "category": "smart-lock",
+  "brand": "Kwikset",
+  "model": "Aura Reach (9400 BLE DB 15)",
+  "name": "Kwikset Aura Reach (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.kwikset.com/products/detail/aura-reach-matter-and-bluetooth-enabled-smart-lock",
+  "radios": {
+    "value": [
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "kwikset-aura-reach",
+      "csa-aura-reach"
+    ],
+    "note": "Thread for Matter, Bluetooth for the Kwikset app. Wi-Fi isn't listed."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "kwikset-aura-reach",
+      "csa-aura-reach"
+    ],
+    "note": "CSA lists Aura Reach by ASSA ABLOY (Kwikset's parent): parent SKU 994000-001, Thread and Bluetooth, certified 2025-11-08. Kwikset's page uses model code 9400 BLE DB 15; the name, maker and radios match."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "kwikset-aura-reach",
+        "csa-aura-reach"
+      ],
+      "note": "Kwikset lists Apple Home; Matter over Thread needs a Thread border router such as a HomePod mini or Apple TV. Home Key isn't mentioned."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "kwikset-aura-reach",
+        "csa-aura-reach"
+      ],
+      "note": "Kwikset lists Google Home; Thread needs a border router such as a Nest Hub."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "kwikset-aura-reach",
+        "csa-aura-reach"
+      ],
+      "note": "Kwikset lists Alexa; Matter over Thread needs an Echo that is a Thread border router."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "kwikset-aura-reach",
+        "csa-aura-reach"
+      ],
+      "note": "Kwikset lists SmartThings as compatible; Thread needs a SmartThings hub or other border router."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "ha-matter",
+        "csa-aura-reach"
+      ],
+      "note": "Via the official Matter integration; Thread devices need a border router."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "kwikset-aura-reach"
+    ],
+    "note": "Kwikset's specs say no hub is required; Bluetooth covers the Kwikset app, while smart-home platforms need a Thread border router."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Kwikset says Thread offers local control, but doesn't state outright that the lock works without internet."
+  },
+  "lockFit": {
+    "value": "deadbolt",
+    "sources": [
+      "kwikset-aura-reach"
+    ],
+    "note": "Single-cylinder deadbolt; doors 1-3/8 in to 2-1/4 in thick."
+  },
+  "keypad": {
+    "value": true,
+    "sources": [
+      "kwikset-aura-reach"
+    ],
+    "note": "Backlit touchscreen keypad."
+  },
+  "power": {
+    "value": "4 × AA",
+    "sources": [
+      "kwikset-aura-reach"
+    ],
+    "note": "Four AA batteries included."
+  },
+  "summary": "Aura Reach is Kwikset's Matter-over-Thread deadbolt, working with Apple Home, Google Home, Alexa, SmartThings and Home Assistant. It has a backlit touchscreen keypad and runs on four AA batteries. Bluetooth handles the Kwikset app with no hub, but the smart-home platforms need a Thread border router.",
+  "caveats": [
+    "Smart-home control needs a Thread border router such as a HomePod mini, Apple TV or Nest Hub.",
+    "Apple Home Key support isn't stated by Kwikset.",
+    "CSA's listing names family SKU 994000-001, not the page's 9400 BLE DB 15 code."
+  ],
+  "sources": [
+    {
+      "id": "kwikset-aura-reach",
+      "url": "https://www.kwikset.com/products/detail/aura-reach-matter-and-bluetooth-enabled-smart-lock",
+      "title": "Satin Nickel Aura Reach Matter and Bluetooth Enabled Smart Lock",
+      "publisher": "Kwikset",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-aura-reach",
+      "url": "https://csa-iot.org/csa_product/aura-reach/",
+      "title": "Aura Reach - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-12",
+  "updatedAt": "2026-10-12"
+}

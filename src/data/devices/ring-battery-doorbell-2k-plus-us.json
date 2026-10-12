@@ -1,0 +1,139 @@
+{
+  "category": "smart-camera",
+  "brand": "Ring",
+  "model": "Battery Doorbell 2K Plus",
+  "name": "Ring Battery Doorbell 2K Plus (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://ring.com/products/battery-doorbell-plus",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "ring-bdp-support"
+    ],
+    "note": "Ring's support page lists dual-band 2.4 and 5 GHz (802.11 a/b/g/n/ax)."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim on Ring's pages and no CSA listing was found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Ring's pages for this doorbell don't mention Apple Home or HomeKit."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Ring page found listing Google Home for this doorbell."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "ring-bdp-support",
+        "ring-alexa-devices"
+      ],
+      "note": "Ring's support page lists Works with Alexa for the doorbell, and Ring's Alexa page says all Ring video doorbell models work with Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Ring or SmartThings page found for this model."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [
+        "ha-ring"
+      ],
+      "note": "Home Assistant's Ring integration lists 'Battery Doorbell' and 'Doorbell 3 Plus', not the Battery Doorbell Plus, so support isn't confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "ring-bdp-support"
+    ],
+    "note": "Connects over Wi-Fi; a Ring Chime is optional and no hub is mentioned."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Ring does not state whether any control works without its cloud."
+  },
+  "cameraType": {
+    "value": "doorbell",
+    "sources": [
+      "ring-bdp-product",
+      "ring-bdp-support"
+    ]
+  },
+  "power": {
+    "value": "Rechargeable battery",
+    "sources": [
+      "ring-bdp-product",
+      "ring-bdp-support"
+    ],
+    "note": "Removable Quick Release Battery Pack. It can also be hardwired to an existing doorbell wire with an 8-24 VAC transformer to keep the pack charged; Ring lists a Solar Charger for Battery Doorbells as a compatible accessory."
+  },
+  "localStorage": {
+    "value": null,
+    "sources": [],
+    "note": "Neither Ring page states a local recording option."
+  },
+  "subscription": {
+    "value": "Smart alerts and video features (Ring Protect plan)",
+    "sources": [
+      "ring-bdp-support",
+      "ring-bdp-product"
+    ],
+    "note": "Ring says features such as Smart Alerts, Extended Live View, Video Search and 180-day video history need a compatible Ring plan; the pages do not say whether any recording works without one."
+  },
+  "summary": "Ring says its Battery Doorbell 2K Plus works with Alexa, over dual-band Wi-Fi with no hub. The pack is rechargeable and removable, or the doorbell can be hardwired to keep it charged. Smart Alerts, Video Search and longer video history need a Ring plan. Apple Home, Google Home and SmartThings aren't confirmed.",
+  "caveats": [
+    "Smart Alerts, Extended Live View, Video Search and video history of up to 180 days need a compatible Ring Protect plan.",
+    "Home Assistant's Ring integration doesn't list this model by name.",
+    "Apple Home, Google Home and SmartThings support is not confirmed."
+  ],
+  "sources": [
+    {
+      "id": "ring-bdp-product",
+      "url": "https://ring.com/products/battery-doorbell-plus",
+      "title": "Battery Doorbell 2K Plus",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ring-bdp-support",
+      "url": "https://ring.com/support/products/doorbells/battery-doorbell-2k-plus?page=1",
+      "title": "Battery Doorbell 2K Plus",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ring-alexa-devices",
+      "url": "https://ring.com/support/articles/fhs6z/Ring-Supported-Alexa-Enabled-Devices",
+      "title": "Ring supported Alexa-enabled devices",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-ring",
+      "url": "https://www.home-assistant.io/integrations/ring",
+      "title": "Ring - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}
