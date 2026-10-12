@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Il Tapo H200 (UK) è l'hub per i sensori, gli interruttori e i pulsanti Sub-1G di TP-Link, e accetta anche fino a 4 telecamere o video citofoni Tapo. Alexa e Google Home sono indicati, Home Assistant ha un'integrazione integrata e un bridge Matter porta alcuni sensori in Apple Home. Si collega via Ethernet o Wi-Fi a 2,4 GHz e ha uno slot microSD (fino a 512 GB) per le registrazioni delle telecamere.",
+  "caveats": [
+    "Il bridge Matter copre solo alcuni tipi di sensore; le FAQ di TP-Link dicono che i pulsanti (S200B, S200D) non passano dal bridge.",
+    "I sensori usano una radio Sub-1G, non Zigbee, quindi i dispositivi Zigbee non si possono abbinare.",
+    "TP-Link indica 64 dispositivi Sub-1G e 4 telecamere come limiti separati, e i dispositivi multicomando contano come più dispositivi."
+  ],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz più un cavo Ethernet in confezione. I sensori e gli interruttori dialogano con l'hub su una radio Sub-1G separata (863-868 MHz per UK/UE), che non è nel nostro elenco di radio.",
+    "matter": "Non è stata trovata nessuna scheda CSA per l'hub stesso. TP-Link dice che l'hub può collegare i dispositivi Sub-1G ai controller Matter con un bridge; vedi matterBridge.",
+    "hubRequired": "È l'hub: i sensori e gli interruttori Tapo e alcune telecamere si collegano tramite lui.",
+    "localControl": "L'integrazione di Home Assistant lo interroga in locale (ogni 5 secondi) senza il cloud TP-Link. L'hub registra anche il video delle telecamere su una scheda microSD fino a 512 GB (venduta a parte).",
+    "deviceProtocols": "Radio Sub-1G (863,35, 864,35 e 868,35 MHz in UK/UE). TP-Link non nomina il protocollo e non dice Zigbee.",
+    "matterBridge": "Le FAQ Matter di TP-Link per gli hub Tapo indicano come collegati T100, T310, T315 e S220; la sua guida della community nomina l'H200 e aggiunge il T110. I pulsanti (S200B, S200D) e il sensore di perdite T300 non passano dal bridge.",
+    "threadBorderRouter": "Nessuna dichiarazione su Thread nelle pagine che abbiamo visto.",
+    "maxDevices": "TP-Link indica fino a 64 dispositivi Sub-1G (interruttori, sensori, pulsanti) più 4 telecamere o video citofoni, due limiti separati, quindi non si registra un numero unico.",
+    "compatibility.apple_home": "Tramite il bridge Matter dell'hub, aggiunto da Apple Home (iOS 18 o successivo) con un hub domestico Apple. La pagina UK di TP-Link nomina Apple Home tra le piattaforme Matter; le sue FAQ Matter UK dicono che i dispositivi Sub-1G collegati includono T100, T310, T315 e S220, ma non i pulsanti.",
+    "compatibility.google_home": "La pagina UK di TP-Link dice che l'hub funziona con Google Home (e Alexa) se collegato a telecamere, sensori o interruttori Sub-1G Tapo. È offerto anche il bridge Matter.",
+    "compatibility.alexa": "La pagina UK di TP-Link dice che l'hub funziona con Alexa se collegato a telecamere, sensori o interruttori Sub-1G Tapo. È offerto anche il bridge Matter.",
+    "compatibility.smartthings": "Le pagine che abbiamo visto non citano SmartThings. Potrebbe funzionare tramite il bridge Matter, ma non è confermato.",
+    "compatibility.home_assistant": "L'integrazione TP-Link Smart Home integrata in Home Assistant elenca l'H200 come hub e i sensori Tapo tra i dispositivi collegati all'hub; lo interroga in locale. La pagina non conferma ogni dispositivo figlio per l'H200 in particolare."
+  }
+}

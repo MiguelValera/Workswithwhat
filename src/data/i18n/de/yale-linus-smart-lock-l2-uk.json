@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Yale verkauft das Linus Smart Lock L2 in Großbritannien als Modell SL 103. Es passt über einen vorhandenen Euro-Zylinder und hat WLAN und Bluetooth eingebaut, sodass die Yale-Home-App ohne Bridge aus der Ferne funktioniert. Matter über WLAN deckt Apple Home, Google Home, Alexa und SmartThings ab, und Home Assistant funktioniert über Matter. Das Schloss hat kein eigenes Tastenfeld.",
+  "caveats": [
+    "Matter braucht ein Firmware-Update am Schloss, und das Schloss muss zuerst in der Yale-Home-App eingerichtet werden.",
+    "Manche Türen brauchen einen neuen Zylinder; prüfe vor dem Kauf Yales Passform-Check.",
+    "Der Zugang per PIN braucht die separate Yale Smart Keypad.",
+    "Die Batterielaufzeit beträgt bis zu etwa 6 Monate, und die UK-Seiten nennen den Batterietyp nicht."
+  ],
+  "notes": {
+    "radios": "Yales UK-Seite führt eingebautes WLAN und Bluetooth auf; die UK-Matter-Seite sagt, das Schloss nutze WLAN für Matter, nicht Thread.",
+    "matter": "Matter kommt per Firmware-Update. Die CSA führt das Linus Smart Lock L2 (WLAN und Bluetooth); der Eintrag nennt nicht den UK-Modellcode (SL 103).",
+    "hubRequired": "Eingebautes WLAN, daher ist für die App-Steuerung keine Yale-Bridge nötig; Yales Matter-Seite sagt, es sei kein zusätzliches Zubehör nötig. In der Box liegt ein Yale Dot, den die Seite nicht als Voraussetzung nennt.",
+    "localControl": "Keine Yale-Quelle nennt rein lokale Steuerung.",
+    "lockFit": "Laut Yale passt es eventuell über einen vorhandenen Euro-/DIN-Zylinder, und die UK-Box enthält einen Drehknauf-Adapter. Manche Türen brauchen einen neuen Zylinder; Yale hat einen Passform-Check.",
+    "keypad": "Kein Tastenfeld am Schloss; laut Yale braucht der Zugang per PIN die separate Yale Smart Keypad.",
+    "power": "Yales globale Broschüre beschreibt einen Li-Ion-Akku, der über USB-C geladen wird; die UK-FAQ nennt bis zu 6 Monate pro Ladung, aber nicht den Batterietyp.",
+    "compatibility.apple_home": "Auf Yale UKs Matter-Seite aufgeführt. Richte das Schloss zuerst in der Yale-Home-App ein und aktiviere dann Matter unter „External Platform“.",
+    "compatibility.home_assistant": "Yales Plattform-FAQ führt Home Assistant nicht auf, aber die Matter-Seite nennt es als den Matter-Hub, der derzeit getrennte Aktionen zum Entriegeln und Türöffnen bietet."
+  },
+  "values": {
+    "power": "Wiederaufladbarer Akku"
+  }
+}

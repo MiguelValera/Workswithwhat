@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La striscia luminosa Tapo L930-5 è lunga 5 m, si divide in 50 segmenti di colore ed entra nella rete via Wi-Fi, quindi non c'è nessun hub da comprare. Tapo la presenta come la sua prima striscia con supporto Apple HomeKit, e funzionano anche Google Assistant e Alexa. Home Assistant la elenca nella sua integrazione TP-Link. Matter e SmartThings non sono citati da Tapo.",
+  "caveats": [
+    "Solo Wi-Fi a 2,4 GHz.",
+    "Secondo la pagina spagnola di Tapo, la regolazione dell'intensità funziona solo tramite app e cloud.",
+    "La striscia si può tagliare, ma il pezzo tagliato non si può riutilizzare.",
+    "Le pagine di Tapo non citano Matter né SmartThings."
+  ],
+  "notes": {
+    "radios": "Solo Wi-Fi a 2,4 GHz (802.11b/g/n).",
+    "matter": "Né la pagina prodotto in spagnolo né la scheda tecnica citano Matter, e non abbiamo trovato nessuna scheda CSA.",
+    "hubRequired": "Striscia Wi-Fi controllata dall'app Tapo; non si cita nessun hub.",
+    "localControl": "Home Assistant dialoga con la striscia sulla rete locale, ma Tapo dice che la regolazione dell'intensità funziona solo tramite app e cloud, quindi il controllo da app senza cloud non è confermato.",
+    "colorType": "RGB più LED bianchi separati.",
+    "lengthM": "Striscia da 5 m; si può tagliare, ma i pezzi tagliati non si possono riutilizzare.",
+    "multiZone": "La pagina spagnola di Tapo descrive 50 segmenti di colore per il controllo a zone.",
+    "power": "Uscita 12 V DC, 1,0 A; ingresso 100–240 V, 13 W.",
+    "compatibility.apple_home": "La pagina spagnola di Tapo la presenta come la sua prima striscia luminosa compatibile con Apple HomeKit (Siri, HomePod mini); la scheda tecnica per l'UE la definisce un accessorio con HomeKit.",
+    "compatibility.google_home": "Funziona con Google Assistant.",
+    "compatibility.alexa": "Controllo vocale di colore e luminosità.",
+    "compatibility.smartthings": "Non citato nella pagina di Tapo né nella scheda tecnica.",
+    "compatibility.home_assistant": "L'integrazione TP-Link Smart Home di Home Assistant elenca la L930-5 e si collega in locale."
+  },
+  "values": {
+    "power": "Alimentatore di rete (12 V DC)"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Laut Ring funktioniert die Battery Doorbell 2K Plus mit Alexa, über Dualband-WLAN und ohne Hub. Der Akku ist wiederaufladbar und herausnehmbar, oder die Türklingel lässt sich fest verkabeln, damit sie geladen bleibt. Smart Alerts, Videosuche und längerer Videoverlauf brauchen einen Ring-Tarif. Apple Home, Google Home und SmartThings sind nicht bestätigt.",
+  "caveats": [
+    "Smart Alerts, Extended Live View, Videosuche und ein Videoverlauf von bis zu 180 Tagen brauchen einen passenden Ring-Protect-Tarif.",
+    "Home Assistants Ring-Integration führt dieses Modell nicht namentlich auf.",
+    "Unterstützung für Apple Home, Google Home und SmartThings ist nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Rings Support-Seite nennt Dualband 2,4 und 5 GHz (802.11 a/b/g/n/ax).",
+    "matter": "Rings Seiten erheben keinen Matter-Anspruch, und ein CSA-Eintrag wurde nicht gefunden.",
+    "hubRequired": "Verbindet sich über WLAN; ein Ring Chime ist optional, ein Hub wird nicht erwähnt.",
+    "localControl": "Ring sagt nicht, ob eine Steuerung ohne die Cloud funktioniert.",
+    "power": "Herausnehmbarer Quick Release Battery Pack. Er lässt sich auch mit einem vorhandenen Klingeldraht und einem 8–24-VAC-Transformator fest verkabeln, damit der Akku geladen bleibt; Ring führt einen Solar Charger für Battery Doorbells als kompatibles Zubehör.",
+    "localStorage": "Keine der beiden Ring-Seiten nennt eine lokale Aufzeichnung.",
+    "subscription": "Laut Ring brauchen Funktionen wie Smart Alerts, Extended Live View, Videosuche und 180 Tage Videoverlauf einen passenden Ring-Tarif; die Seiten sagen nicht, ob Aufzeichnungen ohne ihn funktionieren.",
+    "compatibility.apple_home": "Rings Seiten zu dieser Türklingel erwähnen weder Apple Home noch HomeKit.",
+    "compatibility.google_home": "Es wurde keine Ring-Seite gefunden, die Google Home für diese Türklingel führt.",
+    "compatibility.alexa": "Rings Support-Seite führt „Works with Alexa“ für die Türklingel, und Rings Alexa-Seite sagt, dass alle Ring-Video-Türklingeln mit Alexa funktionieren.",
+    "compatibility.smartthings": "Für dieses Modell wurde keine offizielle Seite von Ring oder SmartThings gefunden.",
+    "compatibility.home_assistant": "Home Assistants Ring-Integration führt „Battery Doorbell“ und „Doorbell 3 Plus“, nicht die Battery Doorbell Plus; die Unterstützung ist daher nicht bestätigt."
+  },
+  "values": {
+    "power": "Wiederaufladbarer Akku",
+    "subscription": "Smart Alerts und Videofunktionen (Ring-Protect-Tarif)"
+  }
+}

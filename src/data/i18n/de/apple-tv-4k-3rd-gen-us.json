@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Die Streaming-Box ist zugleich die Apple-Home-Steuerzentrale: Der Apple TV 4K (3. Generation) verwaltet HomeKit- und Matter-Zubehör und den Fernzugriff, sobald du ihn in der Home-App einem Raum zuweist. Nur das Modell mit WLAN + Ethernet hat Thread und arbeitet als Thread-Border-Router. Apples Seiten verbinden ihn nicht mit Google Home, Alexa oder SmartThings.",
+  "caveats": [
+    "Nur das Modell mit WLAN + Ethernet (128 GB) hat Thread; das WLAN-Modell (64 GB) kann nicht als Thread-Border-Router dienen.",
+    "Ein CSA-Matter-Zertifikat für den Apple TV selbst wurde nicht geprüft; seine Matter-Rolle stützt sich auf Apples Support-Seiten."
+  ],
+  "notes": {
+    "radios": "Thread gibt es nur beim Modell mit WLAN + Ethernet (128 GB); das WLAN-Modell (64 GB) hat weder Thread noch Ethernet.",
+    "matter": "Apple sagt, dass der Apple TV 4K als Steuerzentrale für Matter-Zubehör dienen kann. Ein CSA-Eintrag für dieses Gerät wurde nicht geprüft, daher ist die Zertifizierung nicht bestätigt.",
+    "hubRequired": "Der Apple TV ist selbst die Steuerzentrale.",
+    "localControl": "Apples Seiten sagen nicht, welche Automationen lokal laufen.",
+    "hubType": "Eine Streaming-Box, die Apple als Smart-Home-Hub bezeichnet. Das Schema hat keinen Typ für Set-Top-Boxen; „speaker-display“ (ein Gerät, dessen Hauptaufgabe Medien sind und das einen Hub eingebaut hat, wie der HomePod) passt besser als „hub“ (eine eigenständige Bridge).",
+    "deviceProtocols": "Thread (Modell mit WLAN + Ethernet) für HomeKit- und Matter-Thread-Zubehör.",
+    "matterBridge": "Apple beschreibt den Apple TV nicht als Matter-Bridge.",
+    "threadBorderRouter": "Nur beim Modell mit WLAN + Ethernet; Apple nennt den Apple TV 4K als Thread-fähige Steuerzentrale.",
+    "maxDevices": "In den Quellen wurde kein Limit gefunden.",
+    "compatibility.apple_home": "Wird zur Steuerzentrale, wenn du ihn in der Home-App einem Raum zuweist, für HomeKit- und Matter-Zubehör und den Fernzugriff. Thread-Zubehör braucht das Modell mit WLAN + Ethernet.",
+    "compatibility.google_home": "Keine offizielle Quelle zeigt, dass der Apple TV Geräte für Google Home bereitstellt.",
+    "compatibility.alexa": "Keine offizielle Quelle zeigt, dass der Apple TV Geräte für Alexa bereitstellt.",
+    "compatibility.smartthings": "Keine offizielle Quelle zeigt, dass der Apple TV Geräte für SmartThings bereitstellt.",
+    "compatibility.home_assistant": "Keine offizielle Quelle zeigt, dass mit dem Apple TV gekoppelte Geräte in Home Assistant erscheinen."
+  }
+}

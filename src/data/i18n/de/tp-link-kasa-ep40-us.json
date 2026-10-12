@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Kasa EP40 Outdoor-Steckdose: Alexa und Google Assistant über die Kasa-App, dazu Home Assistants TP-Link-Integration, ohne Hub. Sie verbindet sich nur über 2,4-GHz-WLAN und verträgt 15 A (1875 W), die sich beide Steckplätze teilen. Apple Home ist für dieses Modell nicht aufgeführt.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Das Limit von 15 A (1875 W) gilt für beide Steckplätze zusammen.",
+    "Apple Home und SmartThings sind nur für das separate Modell EP40A aufgeführt."
+  ],
+  "notes": {
+    "radios": "Nur 2,4 GHz (802.11 b/g/n).",
+    "matter": "Weder die Kasa-Seite noch das Datenblatt erwähnt Matter; fehlende Erwähnung heißt nicht „nein“. Das separate Modell EP40M ist die Matter-Version.",
+    "hubRequired": "Kein Hub nötig; du brauchst die kostenlose Kasa-Smart-App und ein Konto.",
+    "localControl": "Home Assistants Integration verbindet sich lokal, ohne die TP-Link-Cloud. Kasas eigene App und die Sprachsteuerung nutzen die Cloud.",
+    "energyMonitoring": "Weder die Kasa-Seite noch das Datenblatt erwähnt eine Verbrauchsmessung.",
+    "maxLoadWatts": "TP-Link nennt 1,875 kW Höchstleistung und insgesamt 15 A, geteilt von beiden Steckplätzen; die Kasa-Seite ergänzt eine Motorleistung von 1/2 HP.",
+    "compatibility.apple_home": "Kasa-Seite und Datenblatt des EP40 führen nur Alexa und Google Assistant. Die Variante EP40A führt Apple Home, ist aber ein anderes Modell.",
+    "compatibility.google_home": "Funktioniert mit Google Assistant über die Verknüpfung in der Kasa-App.",
+    "compatibility.alexa": "Funktioniert mit Alexa über den Kasa-Skill.",
+    "compatibility.smartthings": "Nicht auf der Kasa-Seite oder im Datenblatt des EP40; die Seite des separaten EP40A führt SmartThings.",
+    "compatibility.home_assistant": "In der offiziellen TP-Link-Smart-Home-Integration unter den Steckdosenleisten geführt, die lokal mit Kasa-Geräten spricht."
+  }
+}

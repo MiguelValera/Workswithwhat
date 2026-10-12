@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Dein Riegelschloss ersetzt das Yale Assure Lock 2 Touch mit WLAN; es ergänzt ein Tastenfeld, einen Fingerabdruckleser und ein WLAN-Modul, sodass der Fernzugriff über die Yale-Access-App keine Bridge braucht. Apple Home, Google Home und Alexa werden unterstützt. Vier AA-Batterien sind enthalten. Es wurde kein Matter-Eintrag gefunden, und Home Assistant und SmartThings sind unbestätigt.",
+  "caveats": [
+    "Yale führt Apple Home Key nur für das Assure Lock 2 Plus auf, nicht für das Touch.",
+    "Die Fernsteuerung über Apple Home braucht einen Apple TV, ein iPad oder einen HomePod als Steuerzentrale.",
+    "Ältere Yale-Seiten sagen nur 2,4 GHz; 5 GHz funktioniert mit der WLAN-Modul-Firmware 1.0.32 oder neuer.",
+    "Dieser Eintrag ist die Version mit Schlüssel; Yale verkauft auch ein schlüsselloses Touch mit WLAN.",
+    "Die Seiten von Home Assistant koppeln das Assure Lock 2 meist mit einer Connect Bridge, daher ist unklar, ob dieses Modell ohne sie funktioniert."
+  ],
+  "notes": {
+    "radios": "Yale baut Bluetooth in jedes Assure Lock 2 ein; das WLAN-Modul ergänzt den Fernzugriff. Ältere Yale-Seiten sagen nur 2,4 GHz, aber Yales Blog sagt, die Modelle Assure Lock 2 Touch mit WLAN funktionierten mit der Modul-Firmware 1.0.32 oder neuer auch auf 5 GHz.",
+    "matter": "Für dieses WLAN-Modell wurde kein Matter-Eintrag und keine Yale-Aussage gefunden. Nachrichtenberichte erwähnten ein separates Matter-Modul, aber wir konnten nicht bestätigen, dass es ausgeliefert wird.",
+    "hubRequired": "WLAN ist eingebaut. Die Fernnutzung in Apple Home braucht weiterhin eine Apple-Steuerzentrale.",
+    "localControl": "Die Fernsteuerung läuft über die Yale-Access-App und die Cloud; keine Quelle bestätigt lokale Steuerung.",
+    "lockFit": "Laut Yale ersetzt es dein Riegelschloss an den meisten üblichen US-Eingangstüren; einzeln oder gebündelt mit Norwood-, Valdosta- oder Ridgefield-Griffen verkauft. Dieser Eintrag ist die Version mit Schlüssel; Yale verkauft auch ein schlüsselloses Touch mit WLAN.",
+    "keypad": "Tastenfeld plus Fingerabdruckleser am Schloss.",
+    "power": "Vier AA-Batterien sind laut Yales Shop enthalten.",
+    "compatibility.apple_home": "HomeKit/Siri über Apple Home. Der Fernzugriff über Apple Home braucht einen Apple TV, ein iPad oder einen HomePod als Hub. Yale führt Apple Home Key nur für das Assure Lock 2 Plus auf, nicht für das Touch.",
+    "compatibility.google_home": "Funktioniert über das WLAN-Modul mit der Sprachsteuerung des Google Assistant.",
+    "compatibility.alexa": "Amazon-Alexa-Sprachsteuerung über das WLAN-Modul.",
+    "compatibility.smartthings": "Die gesehenen Yale-Seiten erwähnen SmartThings nicht; ohne Matter-Eintrag markieren wir es nicht mit „nein“.",
+    "compatibility.home_assistant": "Die August-/Yale-Seiten von Home Assistant führen das Assure Lock 2 auf, aber meist mit einer Connect Bridge; es ist unklar, ob dieses WLAN-Modell ohne sie funktioniert."
+  },
+  "values": {
+    "power": "4 × AA"
+  }
+}

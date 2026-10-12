@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Per la Tapo C120 gli ecosistemi indicati sono Alexa e Google Home, e Home Assistant la supporta tramite l'integrazione TP-Link. Apple Home, SmartThings e Matter non sono citati. È una telecamera Wi-Fi 2K da presa, IP66, per interni o esterni. Una microSD fino a 512 GB registra in locale, e il piano opzionale Tapo Care aggiunge 30 giorni di storico nel cloud.",
+  "caveats": [
+    "Solo Wi-Fi a 2,4 GHz.",
+    "Richiede l'alimentazione di rete tramite il cavo dell'adattatore da 3 m, quindi il punto di installazione deve avere una presa.",
+    "La visione dal vivo in Home Assistant richiede un account della telecamera impostato nell'app Tapo.",
+    "Apple Home, SmartThings e Matter non sono citati nella pagina di Tapo."
+  ],
+  "notes": {
+    "radios": "Solo Wi-Fi a 2,4 GHz (802.11b/g/n).",
+    "matter": "La pagina prodotto in spagnolo non cita Matter e non abbiamo trovato nessuna scheda CSA.",
+    "hubRequired": "Una telecamera Wi-Fi con il proprio adattatore di alimentazione; la pagina non cita nessun hub.",
+    "localControl": "Home Assistant si collega sulla rete locale, ma Tapo non dice che il controllo da app funzioni senza il cloud. ONVIF/RTSP non è descritto nella pagina prodotto.",
+    "cameraType": "Tapo la vende per interni ed esterni, con grado IP66; è registrata come da esterno perché è l'uso più impegnativo.",
+    "power": "Adattatore da 5 V DC, 1,0 A con cavo da 3 m.",
+    "localStorage": "Slot microSD fino a 512 GB (scheda venduta a parte).",
+    "subscription": "Tapo Care aggiunge uno storico di clip nel cloud di 30 giorni; il primo mese è una prova gratuita. Prezzi per l'UE non controllati.",
+    "compatibility.apple_home": "La pagina prodotto in spagnolo non cita Apple Home né HomeKit.",
+    "compatibility.google_home": "La pagina elenca Google Home e Google Assistant; non dettaglia cosa funzioni oltre alla visione dal vivo.",
+    "compatibility.alexa": "La pagina elenca Amazon Alexa; non dettaglia cosa funzioni oltre alla visione dal vivo.",
+    "compatibility.smartthings": "Non citato nella pagina di Tapo.",
+    "compatibility.home_assistant": "L'integrazione TP-Link Smart Home di Home Assistant elenca la C120. La visione dal vivo richiede un account della telecamera creato nell'app Tapo."
+  },
+  "values": {
+    "power": "Alimentatore da presa (rete)",
+    "subscription": "Piano opzionale Tapo Care per lo storico video nel cloud"
+  }
+}

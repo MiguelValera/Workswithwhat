@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Die Wyze Bulb Color (WLPA19C) funktioniert ohne Hub über 2,4-GHz-WLAN mit Alexa und Google Home. Sie ist eine A19-Lampe mit E26-Sockel: 16 Millionen Farben, einstellbares Weiß von 1800 K bis 6500 K und bis zu 1100 Lumen. Wyzes Seiten erwähnen weder Matter noch Apple Home, SmartThings oder Home Assistant, daher bleiben diese unbestätigt.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Wyze erwähnt für diese Lampe weder Matter noch Apple Home, daher sind diese unbestätigt und nicht ausgeschlossen."
+  ],
+  "notes": {
+    "radios": "Wyze führt 802.11 b/g/n auf 2,4 GHz plus Bluetooth auf; die Einrichtung braucht ein 2,4-GHz-Netz.",
+    "matter": "Weder Wyzes Produktseite noch seine Spezifikationsseite erwähnen Matter, und wir fanden keinen CSA-Eintrag für diese Lampe.",
+    "hubRequired": "Wyzes Seite sagt, die Lampe verbinde sich direkt mit dem WLAN.",
+    "localControl": "Keine gesehene Wyze-Seite sagt, ob die Lampe ohne die Cloud funktioniert.",
+    "colorType": "16 Millionen Farben plus einstellbares Weiß von 1800 K bis 6500 K.",
+    "lumens": "Wyze nennt einen Bereich von 30 bis 1100 Lumen; 1100 ist das Maximum.",
+    "compatibility.apple_home": "Die gesehenen Wyze-Seiten erwähnen Apple Home oder HomeKit nicht; nicht als „nein“ gewertet, weil das Fehlen kein Beweis ist.",
+    "compatibility.google_home": "Wyze führt den Google Assistant und Google Home auf, verknüpft über die eigene Integration der Wyze-App.",
+    "compatibility.alexa": "Wyze führt Alexa auf und hat einen Support-Artikel zur Einrichtung mit dem Wyze-Skill.",
+    "compatibility.smartthings": "Die gesehenen Wyze-Seiten erwähnen SmartThings nicht.",
+    "compatibility.home_assistant": "Die gesehenen Wyze-Seiten erwähnen Home Assistant nicht."
+  }
+}

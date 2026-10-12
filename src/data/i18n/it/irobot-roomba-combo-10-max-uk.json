@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La pagina UK di iRobot indica Alexa e Google Assistant per il Roomba Combo 10 Max, un aspirapolvere con lavaggio a navigazione tramite telecamera, fornito con l'AutoWash Dock. La base svuota il contenitore, riempie il serbatoio dell'acqua, lava e asciuga il panno. La CSA elenca Matter solo per il modello statunitense, quindi qui Apple Home non è confermato, e iRobot non dà nessun valore di aspirazione in pascal.",
+  "caveats": [
+    "La scheda Matter della CSA riporta lo SKU di famiglia x085020 del modello statunitense, non l'X085840 britannico, quindi Matter e Apple Home non sono confermati per questo modello.",
+    "iRobot non indica nessun valore di aspirazione in pascal.",
+    "Il supporto a SmartThings e Home Assistant non è confermato."
+  ],
+  "notes": {
+    "radios": "La pagina UK di iRobot non indica la radio. La CSA elenca il Wi-Fi per lo SKU di famiglia x085020 del Roomba Combo 10 Max (il modello statunitense), non per l'X085840 britannico.",
+    "matter": "La CSA elenca il Roomba Combo 10 Max (SKU di famiglia x085020, il modello statunitense, Wi-Fi, 2025-01-23); nessuna scheda riporta l'X085840 britannico. Il comunicato di iRobot del luglio 2024, ripreso dal suo sito UK, diceva che Matter era previsto per il Q4 2024. La pagina UK non cita Matter.",
+    "hubRequired": "Si controlla con l'app iRobot Home; l'AutoWash Dock non è un hub.",
+    "localControl": "Non confermato da una fonte ufficiale per questo modello.",
+    "cleaning": "Panno lavapavimenti con movimento avanti e indietro che si solleva sui tappeti; sui pavimenti duri aspira e lava allo stesso tempo.",
+    "navigation": "iRobot descrive una telecamera e sensori di rilevamento con elusione degli ostacoli; non cita nessun LiDAR.",
+    "suctionPa": "iRobot non dà nessun valore in pascal, solo «aspirazione più forte del 100%» rispetto ai robot Roomba Combo i Series.",
+    "selfEmptying": "L'AutoWash Dock svuota lo sporco in un sacchetto chiuso, riempie il serbatoio del panno, lava e asciuga il panno.",
+    "compatibility.apple_home": "Matter non è confermato per il modello UK (vedi Matter). La pagina UK cita Siri, che funziona tramite i Comandi rapidi di Siri, non tramite Apple Home.",
+    "compatibility.google_home": "La pagina UK di iRobot dice che funziona con i dispositivi compatibili con Google Assistant.",
+    "compatibility.alexa": "La pagina UK di iRobot dice che funziona con Alexa.",
+    "compatibility.smartthings": "Nelle pagine di iRobot che abbiamo visto non si cita SmartThings.",
+    "compatibility.home_assistant": "Home Assistant ha un'integrazione locale per Roomba, ma la sua documentazione non nomina questo modello e in alcuni punti esclude i modelli più recenti. Non confermato."
+  },
+  "values": {
+    "navigation": "Telecamera (PrecisionVision Navigation)"
+  }
+}

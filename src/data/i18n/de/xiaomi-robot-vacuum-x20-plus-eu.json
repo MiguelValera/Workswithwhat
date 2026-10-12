@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Xiaomi führt Sprachsteuerung per Alexa und Google Assistant für den Robot Vacuum X20+ auf, und die Steuerung läuft über die Xiaomi-Home-App. Das EU-Modell saugt und wischt, mit LDS-Laser-Navigation, 6000 Pa Saugkraft und einer Station, die den Behälter leert. Matter, Apple Home und SmartThings sind nicht bestätigt.",
+  "caveats": [
+    "Laut Xiaomi ist die Sprachsteuerung nicht in jeder Sprache und jedem Land verfügbar, und der Wortlaut der Seite für Spanien ist nicht bestätigt.",
+    "Der einfache X20 hat keine Station zum Selbstleeren; die Station gehört zum Paket des X20+.",
+    "Die Xiaomi-Miio-Integration von Home Assistant deckt Xiaomi-Saugroboter allgemein ab, aber keine offizielle Seite nennt den X20+."
+  ],
+  "notes": {
+    "radios": "Es wurde keine Xiaomi-Seite gefunden, die den Funkstandard nennt; die Steuerung läuft über die Xiaomi-Home-App.",
+    "matter": "Keine Matter-Angabe auf Xiaomis Seiten, und in der Suche tauchte kein CSA-Eintrag auf.",
+    "hubRequired": "Xiaomis Seiten beschreiben die App-Steuerung und erwähnen keinen Hub; nicht ausdrücklich angegeben.",
+    "localControl": "Xiaomi sagt nicht, ob eine Steuerung ohne die Cloud funktioniert.",
+    "cleaning": "Die Spezifikationsseite für Spanien führt zwei Wischpad-Halter mit zwei Pads im Lieferumfang auf.",
+    "navigation": "Xiaomis AU-Seite führt LDS-Laser-Navigation und Hindernisvermeidung per S-Cross-Strukturlicht auf.",
+    "suctionPa": "Xiaomi nennt 6000 Pa auf seinen Seiten für Spanien und AU.",
+    "selfEmptying": "Die Spezifikationsseite für Spanien führt die Leistungsaufnahme der Station beim Absaugen des Staubs und einen Einwegbeutel im Lieferumfang auf; das ist das Paket des X20+ (der einfache X20 hat keine solche Station).",
+    "compatibility.apple_home": "Es wurde keine Seite von Xiaomi oder Apple gefunden, die Apple Home oder Matter für dieses Modell aufführt.",
+    "compatibility.google_home": "Xiaomis globale und UK-Shopseiten führen Sprachsteuerung mit dem Google Assistant auf (z. B. „OK Google, start cleaning“), nicht in jeder Sprache und jedem Land verfügbar. Wortlaut der Seite für Spanien nicht bestätigt.",
+    "compatibility.alexa": "Xiaomis globale und UK-Shopseiten führen Sprachsteuerung mit Alexa auf (z. B. „Alexa, start cleaning“) und sagen, ein kompatibles Alexa-Gerät sei nötig. Wortlaut der Seite für Spanien nicht bestätigt.",
+    "compatibility.smartthings": "Es wurde keine offizielle Seite gefunden.",
+    "compatibility.home_assistant": "Die Xiaomi-Miio-Integration von Home Assistant deckt Xiaomi-Saugroboter allgemein ab, aber keine gefundene offizielle Seite nennt den X20+. Community-HACS-Integrationen werden nicht gezählt."
+  },
+  "values": {
+    "navigation": "LDS-Laser"
+  }
+}

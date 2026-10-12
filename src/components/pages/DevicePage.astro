@@ -39,6 +39,7 @@ interface Props {
 const { device, devices } = Astro.props;
 const lang = langOf(Astro.url.pathname);
 const T = pick(lang);
+const colon = lang === 'fr' ? '\u00a0:' : ':';
 const t = ui(lang);
 const L = (p: string) => localize(p, lang);
 const translations = await getTranslations(lang);
@@ -250,7 +251,7 @@ const jsonLd = [
         de: (
           <p class="muted small">
             „Über Matter“ heißt: Du fügst das Gerät mit dem Matter-Controller der Plattform hinzu statt mit einem Skill oder
-            einer App der Marke. „Nicht bestätigt“ heißt: Wir haben keine offizielle Quelle gefunden, die es bestätigt oder
+            einer App der Marke. „Unbestätigt“ heißt: Wir haben keine offizielle Quelle gefunden, die es bestätigt oder
             ausschließt.{' '}
             <a href={L('/methodology/')}>So prüfen wir</a>.
           </p>
@@ -258,14 +259,14 @@ const jsonLd = [
         fr: (
           <p class="muted small">
             « Via Matter » signifie que vous l’ajoutez avec le contrôleur Matter de la plateforme plutôt qu’avec une skill ou
-            l’app de la marque. « Non confirmé » signifie que nous n’avons trouvé aucune source officielle qui le confirme ou
+            l’app de la marque. « À confirmer » signifie que nous n’avons trouvé aucune source officielle qui le confirme ou
             l’exclue.{' '}
             <a href={L('/methodology/')}>Notre méthode</a>.
           </p>
         ),
         it: (
           <p class="muted small">
-            «Tramite Matter» significa che lo aggiungi con il controller Matter della piattaforma invece che con una skill o
+            «Via Matter» significa che lo aggiungi con il controller Matter della piattaforma invece che con una skill o
             un’app del marchio. «Non confermato» significa che non abbiamo trovato nessuna fonte ufficiale che lo confermi o lo
             escluda.{' '}
             <a href={L('/methodology/')}>Come verifichiamo</a>.
@@ -298,10 +299,10 @@ const jsonLd = [
     {
       [d.hubRequired, d.localControl, d.radios, ...specs.map((s) => s.fact)].some((f) => f.note) && (
         <ul class="muted small">
-          {d.radios.note && <li>{t.radio}: {words.note('radios', d.radios.note)}</li>}
-          {d.hubRequired.note && <li>Hub: {words.note('hubRequired', d.hubRequired.note)}</li>}
-          {d.localControl.note && <li>{T({ en: 'Local control', es: 'Control local', de: 'Lokale Steuerung', fr: 'Contrôle local', it: 'Controllo locale' })}: {words.note('localControl', d.localControl.note)}</li>}
-          {specs.map((s) => s.fact.note && <li>{s.label}: {words.note(s.key, s.fact.note)}</li>)}
+          {d.radios.note && <li>{t.radio}{colon} {words.note('radios', d.radios.note)}</li>}
+          {d.hubRequired.note && <li>Hub{colon} {words.note('hubRequired', d.hubRequired.note)}</li>}
+          {d.localControl.note && <li>{T({ en: 'Local control', es: 'Control local', de: 'Lokale Steuerung', fr: 'Contrôle local', it: 'Controllo locale' })}{colon} {words.note('localControl', d.localControl.note)}</li>}
+          {specs.map((s) => s.fact.note && <li>{s.label}{colon} {words.note(s.key, s.fact.note)}</li>)}
         </ul>
       )
     }

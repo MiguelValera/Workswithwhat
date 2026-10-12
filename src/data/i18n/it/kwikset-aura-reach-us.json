@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Aura Reach è il chiavistello Matter su Thread di Kwikset e funziona con Apple Home, Google Home, Alexa, SmartThings e Home Assistant. Ha una tastiera touchscreen retroilluminata e va a quattro batterie AA. Il Bluetooth gestisce l'app Kwikset senza hub, ma le piattaforme smart home richiedono un border router Thread.",
+  "caveats": [
+    "Il controllo dalle piattaforme smart home richiede un border router Thread, come un HomePod mini, un'Apple TV o un Nest Hub.",
+    "Kwikset non indica il supporto ad Apple Home Key.",
+    "La scheda CSA riporta lo SKU di famiglia 994000-001, non il codice 9400 BLE DB 15 della pagina."
+  ],
+  "notes": {
+    "radios": "Thread per Matter, Bluetooth per l'app Kwikset. Il Wi-Fi non è indicato.",
+    "matter": "La CSA elenca Aura Reach di ASSA ABLOY (la capogruppo di Kwikset): SKU capogruppo 994000-001, Thread e Bluetooth, certificato il 2025-11-08. La pagina di Kwikset usa il codice modello 9400 BLE DB 15; nome, produttore e radio coincidono.",
+    "hubRequired": "Le specifiche di Kwikset dicono che non serve nessun hub; il Bluetooth copre l'app Kwikset, mentre le piattaforme smart home richiedono un border router Thread.",
+    "localControl": "Kwikset dice che Thread offre il controllo locale, ma non afferma esplicitamente che la serratura funzioni senza internet.",
+    "lockFit": "Chiavistello a cilindro singolo; porte spesse da 1-3/8 in a 2-1/4 in.",
+    "keypad": "Tastiera touchscreen retroilluminata.",
+    "power": "Quattro batterie AA incluse.",
+    "compatibility.apple_home": "Kwikset indica Apple Home; Matter su Thread richiede un border router Thread come un HomePod mini o un'Apple TV. Home Key non è citato.",
+    "compatibility.google_home": "Kwikset indica Google Home; Thread richiede un border router come un Nest Hub.",
+    "compatibility.alexa": "Kwikset indica Alexa; Matter su Thread richiede un Echo che sia anche border router Thread.",
+    "compatibility.smartthings": "Kwikset indica SmartThings come compatibile; Thread richiede un hub SmartThings o un altro border router.",
+    "compatibility.home_assistant": "Tramite l'integrazione Matter ufficiale; i dispositivi Thread richiedono un border router."
+  },
+  "values": {
+    "power": "4 × AA"
+  }
+}

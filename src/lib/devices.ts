@@ -33,9 +33,9 @@ export const STATUS_TEXT = {
 } as const;
 const STATUS_TEXT_IN: Record<Exclude<Lang, 'en'>, Record<keyof typeof STATUS_TEXT, string>> = {
   es: { native: 'Sí', matter: 'Vía Matter', hub: 'Vía hub', no: 'No', unknown: 'Sin confirmar' },
-  de: { native: 'Ja', matter: 'Über Matter', hub: 'Über Hub', no: 'Nein', unknown: 'Nicht bestätigt' },
-  fr: { native: 'Oui', matter: 'Via Matter', hub: 'Via hub', no: 'Non', unknown: 'Non confirmé' },
-  it: { native: 'Sì', matter: 'Tramite Matter', hub: 'Tramite hub', no: 'No', unknown: 'Non confermato' },
+  de: { native: 'Ja', matter: 'Über Matter', hub: 'Über Hub', no: 'Nein', unknown: 'Unbestätigt' },
+  fr: { native: 'Oui', matter: 'Via Matter', hub: 'Via hub', no: 'Non', unknown: 'À confirmer' },
+  it: { native: 'Sì', matter: 'Via Matter', hub: 'Via hub', no: 'No', unknown: 'Non confermato' },
 };
 export const statusText = (s: keyof typeof STATUS_TEXT, lang: Lang) => (lang === 'en' ? STATUS_TEXT[s] : STATUS_TEXT_IN[lang][s]);
 

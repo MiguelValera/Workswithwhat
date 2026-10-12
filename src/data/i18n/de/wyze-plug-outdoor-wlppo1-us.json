@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Nur zwei Assistenten sind für den Wyze Plug Outdoor (WLPPO1) bestätigt: Alexa über den Wyze-Skill und Google Home über eine Verknüpfung mit dem Wyze-Konto, die Wyze nur in den USA unterstützt. Apple Home und SmartThings stehen nicht auf Wyzes Integrationsliste, und Wyze erwähnt Matter nicht. Er verbindet sich direkt mit 2,4-GHz-WLAN, nutzt Bluetooth für die Einrichtung und protokolliert den Energieverbrauch in der Wyze-App mit Warnungen, wenn der Monatsverbrauch dein Limit überschreitet. Nach der Einrichtung schaltet sein Lichtsensor den Zwischenstecker auch bei ausgefallenem WLAN weiter.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Laut Wyze wird seine Google-Assistant-Integration offiziell nur in den USA unterstützt.",
+    "Apple Home und SmartThings stehen nicht auf Wyzes Integrationsliste.",
+    "Ausgelegt für 15 A pro Steckdose; Wyze veröffentlicht keine Watt-Grenze.",
+    "Keine offizielle Home-Assistant-Integration, nur Community-Integrationen, die die Wyze-Cloud nutzen."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN (kein 5 GHz). Bluetooth 4.2 wird bei der Einrichtung genutzt.",
+    "matter": "Wyzes Seiten zu diesem Zwischenstecker nennen nur Alexa und den Google Assistant und erwähnen Matter nicht. Das ist ein Fehlen, kein ausdrückliches „nein“.",
+    "hubRequired": "Wyzes Produktseite führt Hub Required: No auf. Er verbindet sich direkt mit 2,4-GHz-WLAN und wird in der Wyze-App eingerichtet.",
+    "localControl": "Laut Wyze schaltet der Lichtsensor den Zwischenstecker nach der Konfiguration auch ohne WLAN weiter, aber wir fanden keine Aussage zur Steuerung im lokalen Netzwerk ohne die Wyze-Cloud.",
+    "energyMonitoring": "Verbrauchsverlauf in der Wyze-App, mit Warnungen, wenn der Monatsverbrauch einen festgelegten Wert überschreitet.",
+    "maxLoadWatts": "Wyze nennt 15 A maximal pro Steckdose (120 V, 60 Hz) mit Überlastschutz und einer Motorgrenze von 1/2 PS, aber keinen Wattwert.",
+    "compatibility.apple_home": "Wyzes Integrationsliste (Alexa, Google Assistant, IFTTT) lässt HomeKit aus, aber wir fanden keine Wyze-Seite, die sagt, der Outdoor-Zwischenstecker werde nicht unterstützt.",
+    "compatibility.google_home": "Verknüpfe dein Wyze-Konto in der Google-Home-App. Wyzes Geräteliste für den Google Assistant nennt den Plug Outdoor, und Wyze sagt, die Integration werde nur in den USA unterstützt.",
+    "compatibility.alexa": "Über den Wyze-Alexa-Skill.",
+    "compatibility.smartthings": "SmartThings steht nicht auf Wyzes Integrationsliste, aber Wyze sagt nicht, dass es nicht unterstützt wird.",
+    "compatibility.home_assistant": "Keine offizielle Wyze-Integration in Home Assistant; nur benutzerdefinierte Community-Integrationen, die die Wyze-Cloud nutzen."
+  }
+}

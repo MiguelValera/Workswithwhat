@@ -420,13 +420,14 @@ export function compareDescription(c: Comparison, lang: Lang) {
   if (lang === 'de' || lang === 'fr' || lang === 'it') {
     const w = pairWords(lang, c);
     const [A, B] = [c.a.data.name, c.b.data.name];
+    const colon = lang === 'fr' ? '\u00a0:' : ':';
     if (both.length) parts.push(w.bothWork(names(both)));
     if (onlyA.length) parts.push(`${w.worksWith(A, names(onlyA))}, ${w.notOther(B)}`);
     if (onlyB.length) parts.push(`${w.worksWith(B, names(onlyB))}, ${w.notOther(A)}`);
-    if (confirmedA.length) parts.push(`${names(confirmedA)}: ${w.confirmedOnly(A)}`);
-    if (confirmedB.length) parts.push(`${names(confirmedB)}: ${w.confirmedOnly(B)}`);
+    if (confirmedA.length) parts.push(`${names(confirmedA)}${colon} ${w.confirmedOnly(A)}`);
+    if (confirmedB.length) parts.push(`${names(confirmedB)}${colon} ${w.confirmedOnly(B)}`);
     const lead = parts.length ? `${cap(parts.join('; '))}. ` : '';
-    return `${lead}${A} vs ${B}: ${w.tail}`;
+    return `${lead}${A} vs ${B}${colon} ${w.tail}`;
   }
   if (lang === 'es') {
     if (both.length) parts.push(`los dos funcionan con ${names(both)}`);

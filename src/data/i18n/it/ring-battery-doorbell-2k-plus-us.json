@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Ring dice che il suo Battery Doorbell 2K Plus funziona con Alexa, via Wi-Fi dual-band e senza hub. La batteria è ricaricabile e rimovibile, oppure il campanello può essere cablato per tenerla carica. Smart Alerts, Video Search e uno storico video più lungo richiedono un piano Ring. Apple Home, Google Home e SmartThings non sono confermati.",
+  "caveats": [
+    "Smart Alerts, Extended Live View, Video Search e uno storico video fino a 180 giorni richiedono un piano Ring Protect compatibile.",
+    "L'integrazione Ring di Home Assistant non elenca questo modello per nome.",
+    "Il supporto ad Apple Home, Google Home e SmartThings non è confermato."
+  ],
+  "notes": {
+    "radios": "La pagina di supporto di Ring indica dual-band a 2,4 e 5 GHz (802.11 a/b/g/n/ax).",
+    "matter": "Nessuna dichiarazione su Matter nelle pagine di Ring e nessuna scheda CSA trovata.",
+    "hubRequired": "Si collega via Wi-Fi; un Ring Chime è opzionale e non si cita nessun hub.",
+    "localControl": "Ring non dice se qualche controllo funzioni senza il suo cloud.",
+    "power": "Batteria Quick Release rimovibile. Può anche essere cablata al filo del campanello esistente con un trasformatore da 8-24 VAC per tenere carica la batteria; Ring elenca un caricatore solare per Battery Doorbell come accessorio compatibile.",
+    "localStorage": "Nessuna delle due pagine di Ring indica una registrazione in locale.",
+    "subscription": "Ring dice che funzioni come Smart Alerts, Extended Live View, Video Search e storico video di 180 giorni richiedono un piano Ring compatibile; le pagine non dicono se qualche registrazione funzioni senza.",
+    "compatibility.apple_home": "Le pagine di Ring per questo campanello non citano Apple Home né HomeKit.",
+    "compatibility.google_home": "Nessuna pagina di Ring trovata che elenchi Google Home per questo campanello.",
+    "compatibility.alexa": "La pagina di supporto di Ring elenca Works with Alexa per il campanello, e la pagina Alexa di Ring dice che tutti i modelli di video campanello Ring funzionano con Alexa.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale di Ring o SmartThings trovata per questo modello.",
+    "compatibility.home_assistant": "L'integrazione Ring di Home Assistant elenca «Battery Doorbell» e «Doorbell 3 Plus», non il Battery Doorbell Plus, quindi il supporto non è confermato."
+  },
+  "values": {
+    "power": "Batteria ricaricabile",
+    "subscription": "Smart Alerts e funzioni video (piano Ring Protect)"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Wyzes Lock Bolt v2 (WLCKB2) ist ein Riegelschloss mit WLAN, das du per Alexa oder Google Assistant entriegeln kannst, ohne Hub. Es hat ein beleuchtetes Glas-Tastenfeld und nimmt acht AA-Batterien auf, mit einem USB-C-Anschluss für Notstrom. Wyzes Seiten erwähnen weder Matter noch Apple Home oder SmartThings.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN; Bluetooth dient der Einrichtung und einigen App-Funktionen.",
+    "Nicht für Glas-, Schiebe-, Einsteck- oder Mehrfachverriegelungstüren.",
+    "Unterstützung für Matter und Apple Home ist nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN; Bluetooth für die Einrichtung und einige App-Funktionen.",
+    "matter": "Keine der beiden Wyze-Seiten erwähnt Matter; ein CSA-Eintrag wurde nicht geprüft.",
+    "hubRequired": "Eingebautes WLAN; ein Hub oder Gateway wird nicht erwähnt.",
+    "localControl": "Wyze sagt nicht, ob das Schloss ohne die Cloud funktioniert.",
+    "lockFit": "Ersetzt ein Einzelzylinder-Riegelschloss an Holztüren mit 1-3/8 bis 2-11/64 in Dicke.",
+    "keypad": "Beleuchtetes Tastenfeld aus gehärtetem Glas.",
+    "power": "Batterien inklusive; USB-C-Anschluss für Notstrom.",
+    "compatibility.apple_home": "Auf Wyzes Seiten nicht erwähnt.",
+    "compatibility.google_home": "Wyzes Seite sagt, du kannst mit Google Assistant entriegeln.",
+    "compatibility.alexa": "Wyzes Seite sagt, du kannst mit Alexa entriegeln.",
+    "compatibility.smartthings": "Auf Wyzes Seiten nicht erwähnt.",
+    "compatibility.home_assistant": "Für dieses Schloss wurde keine Home-Assistant-Integrationsseite geprüft."
+  },
+  "values": {
+    "power": "8 × AA"
+  }
+}

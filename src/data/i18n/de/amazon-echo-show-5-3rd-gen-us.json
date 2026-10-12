@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Laut Amazons Dokumentation ist der Echo Show 5 (3. Generation) Matter-fähig: Das kleine Alexa-Display dient als Matter-Administrator und steuert Matter-Geräte lokal. In Amazons Listen der Zigbee-Hubs und Thread-Border-Router steht er nicht. Ob er andere Ökosysteme unterstützt, ist nicht bestätigt.",
+  "caveats": [
+    "Er steht nicht in Amazons Listen der Zigbee-Hubs und Thread-Border-Router. Für Zigbee-Geräte und Matter over Thread brauchst du also einen anderen Echo, einen eero oder einen Border-Router.",
+    "Amazons Matter-Dokumentation schreibt „Echo Show 5 (1. Generation und neuer)“, ohne die 3. Generation einzeln zu nennen, und ein CSA-Eintrag wurde nicht gefunden."
+  ],
+  "notes": {
+    "radios": "Keine offizielle Seite, die wir lesen konnten, nennt die Funkstandards dieses Modells (Amazons Produktseiten lassen sich nicht automatisch lesen). Amazons Zigbee- und Thread-Dokumentation führt es nicht auf.",
+    "matter": "Amazons Veröffentlichung vom Mai 2023 sagt, dass der neue Echo Show 5 Matter unterstützt, und Amazons Matter-Dokumentation führt Echo Show 5 (1. Generation und neuer) als Matter-fähig, wobei der Echo als Matter-Administrator dient. Ein CSA-Eintrag mit diesem Modellnamen wurde nicht gefunden, ein Zertifikat ist daher nicht bestätigt.",
+    "hubRequired": "Der Echo Show ist selbst das Alexa-Gerät, das Matter-Zubehör steuert.",
+    "localControl": "Laut Amazon kann Alexa ein Gerät lokal steuern, wenn es direkt über Matter verbunden ist. Das gilt für Matter-Geräte, nicht für jedes Gerät.",
+    "hubType": "Ein kompaktes Alexa-Display, das als Matter-Administrator für Alexa arbeitet. Amazon führt es nicht als Zigbee-Hub.",
+    "deviceProtocols": "Nicht bestätigt. Der Echo Show 5 steht nicht in Amazons Listen der Echo-Geräte mit Zigbee-Hub oder Thread-Border-Router.",
+    "matterBridge": "Amazons Matter-Dokumentation nennt keinen Echo als Matter-Bridge.",
+    "threadBorderRouter": "Nicht in Amazons Liste der Thread-Border-Router. Dass er in einer Liste fehlt, heißt nicht, dass er keinen hat; daher bleibt es unbestätigt.",
+    "maxDevices": "In den Quellen wurde kein Limit gefunden.",
+    "compatibility.apple_home": "Keine offizielle Quelle zeigt über diesen Echo Show gekoppelte Geräte in Apple Home.",
+    "compatibility.google_home": "Keine offizielle Quelle zeigt über diesen Echo Show gekoppelte Geräte in Google Home.",
+    "compatibility.alexa": "Selbst ein Alexa-Gerät: Amazon führt Echo Show 5 (1. Generation und neuer) als Matter-fähig, wobei der Echo als Matter-Administrator Matter-Geräte lokal mit Alexa verbindet. Matter-over-Thread-Geräte brauchen einen Thread-Border-Router, und dieses Modell steht nicht in Amazons Liste dafür.",
+    "compatibility.smartthings": "Keine offizielle Quelle zeigt über diesen Echo Show gekoppelte Geräte in SmartThings.",
+    "compatibility.home_assistant": "Keine offizielle Home-Assistant-Seite zeigt, dass über den Echo gekoppelte Geräte dort erscheinen."
+  }
+}

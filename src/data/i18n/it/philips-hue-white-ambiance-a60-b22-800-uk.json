@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La Hue White Ambiance A60 B22 nella confezione UK da 2 va da 2200 a 6500 K con fino a 806 lumen, con attacco a baionetta. L'app Hue la controlla via Bluetooth senza bridge, e le FAQ di Hue dicono che le luci Bluetooth si abbinano direttamente agli Echo e agli speaker Google Nest recenti. Apple Home e SmartThings richiedono una Hue Bridge, e Home Assistant usa l'integrazione Hue.",
+  "caveats": [
+    "Apple Home e SmartThings richiedono una Hue Bridge. La pagina UK elenca il controllo vocale sotto «Hue Bridge required», mentre le FAQ di Hue descrivono l'abbinamento Bluetooth con gli speaker Echo e Nest recenti.",
+    "Matter funziona tramite la Hue Bridge; non abbiamo trovato nessuna scheda Matter per la lampadina stessa."
+  ],
+  "notes": {
+    "radios": "La pagina UK di Hue elenca Bluetooth e Zigbee. Le FAQ della Hue Bridge dicono che la bridge gestisce una rete Zigbee privata per le luci Hue.",
+    "matter": "La pagina UK di Hue elenca Matter tra i sistemi di terze parti, ma non abbiamo trovato nessuna scheda CSA per questo EAN. La guida di Hue propone Matter tramite la Hue Bridge. Non confermato per la lampadina stessa.",
+    "hubRequired": "Qui significa che serve una bridge per il controllo di base da app. L'app Hue la controlla via Bluetooth (circa 9 m); Apple Home, SmartThings e tutte le funzioni richiedono una Hue Bridge.",
+    "localControl": "Il controllo Bluetooth da telefono funziona senza internet; Home Assistant dialoga con la Hue Bridge tramite la sua API locale.",
+    "colorType": "Bianco regolabile da 2200 a 6500 K; nessun colore.",
+    "lumens": "Venduta come «800 lumen»; la pagina indica fino a 806 lm a 4000 K.",
+    "bulbBase": "Attacco a baionetta.",
+    "compatibility.apple_home": "La pagina di Hue elenca Apple HomeKit e dice che il controllo con assistente vocale richiede la bridge. La guida Matter di Hue dice che la bridge collega ad Apple Home anche le lampadine senza Matter.",
+    "compatibility.google_home": "La pagina di Hue elenca Google Home. Le FAQ (US) di Hue dicono che le luci Hue Bluetooth si abbinano senza Bridge a Nest Mini, Nest Hub e Nest Hub Max (fino a 10 luci); la pagina UK elenca il controllo vocale sotto «Hue Bridge required». Con una Bridge usa l'integrazione propria di Hue.",
+    "compatibility.alexa": "La pagina di Hue elenca Alexa. Le FAQ (US) di Hue dicono che le luci Hue Bluetooth si abbinano senza Bridge a un Echo (4th gen), Echo Show o più recente; la pagina UK elenca il controllo vocale sotto «Hue Bridge required». Con una Bridge usa la skill propria di Hue.",
+    "compatibility.smartthings": "La pagina di Hue elenca Samsung SmartThings; le FAQ di Hue collocano SmartThings dal lato della Bridge, non del Bluetooth.",
+    "compatibility.home_assistant": "Integrazione Hue ufficiale, che si abbina alla Hue Bridge. La documentazione non nomina questa lampadina specifica."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Wyzes Cam Pan v4 funktioniert mit Alexa und Google Assistant über Dualband-WLAN, wird per USB-C versorgt und braucht keinen Hub. Sie nimmt rund um die Uhr (24/7) auf einer microSD-Karte bis 512 GB auf; Cloud-Backup und KI-Suche brauchen einen Cam-Plus-Tarif. Apple Home, SmartThings, Home Assistant und Matter sind auf Wyzes Seiten nicht bestätigt.",
+  "caveats": [
+    "Cloud-Backup, AI Video Search und Descriptive Alerts brauchen einen Cam-Plus-Tarif (laut Wyzes Produktseite US$2.99 pro Monat und Kamera nach 30 Tagen Testphase).",
+    "Für den Außeneinsatz braucht es den separaten Wyze Universal Outdoor Power Adapter; das mitgelieferte Kabel ist nicht für draußen ausgelegt."
+  ],
+  "notes": {
+    "radios": "Dualband 2,4 und 5 GHz, bis zu Wi-Fi 6.",
+    "matter": "Keine der beiden Wyze-Seiten erwähnt Matter, und ein CSA-Eintrag wurde nicht geprüft. Fehlende Erwähnung heißt nicht „nein“.",
+    "hubRequired": "Wyzes Einrichtungsschritte verbinden die Kamera in der Wyze-App direkt mit einem 2,4- oder 5-GHz-WLAN zu Hause; eine Basisstation wird nicht erwähnt.",
+    "localControl": "Wyzes Seiten sagen nicht, ob Live-Ansicht oder Steuerung ohne die Cloud funktionieren, und erwähnen RTSP nicht.",
+    "cameraType": "Wyze bewirbt sie mit Sternchen als „Indoor/Outdoor compatible“ und stuft sie als IP65 ein, aber der Außeneinsatz braucht den separaten Wyze Universal Outdoor Power Adapter, weil das mitgelieferte Kabel nicht für draußen ausgelegt ist. So verkauft ist sie eine Innenkamera und daher als Innenkamera geführt.",
+    "power": "6 ft langes Kabel USB-C auf USB-A mit 5-V/2-A-Adapter.",
+    "localStorage": "microSD-Karte bis 512 GB, separat erhältlich; unterstützt lokale Aufnahme rund um die Uhr (24/7).",
+    "subscription": "Produktseite: Cam Plus ergänzt 60 Tage Cloud-Video-Backup, AI Video Search und Descriptive Alerts; 30 Tage kostenlos testen, danach US$2.99 pro Monat und Kamera.",
+    "compatibility.apple_home": "Wyzes Seiten zu dieser Kamera erwähnen weder Apple Home noch HomeKit.",
+    "compatibility.google_home": "Wyze führt Google Assistant als Integration.",
+    "compatibility.alexa": "Wyze führt Alexa als Integration.",
+    "compatibility.smartthings": "Wyzes Seiten zu dieser Kamera erwähnen SmartThings nicht.",
+    "compatibility.home_assistant": "Es wurde keine offizielle Seite von Home Assistant oder Wyze gefunden, die dieses Modell bestätigt."
+  },
+  "values": {
+    "power": "USB-C (Netzstrom)",
+    "subscription": "Cloud-Backup und KI-Funktionen (Cam Plus)"
+  }
+}
