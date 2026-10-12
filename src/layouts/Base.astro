@@ -119,7 +119,7 @@ if (crumbs.length) {
           <a href={L('/methodology/')} aria-current={current('/methodology/')}>{t.navHowWeVerify}</a>
         </nav>
         {
-          markets.length > 1 && (
+          markets.length > 1 && !noindex && (
             <nav class="region" aria-label={t.region}>
               <span class="muted">{t.region}:</span>
               <a href={L(rest)} aria-current={hereMarket ? undefined : 'true'}>{t.regionAll}</a>
