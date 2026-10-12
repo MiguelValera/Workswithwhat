@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Una bombilla wifi de luz blanca cálida sin más: la Tapo L510E (UE) funciona con Alexa y Google Home mediante la skill de TP-Link y su integración con Google Home, sin hub. Home Assistant la admite con la integración oficial TP-Link Smart Home, que la controla en la red local pero pide las credenciales de tu cuenta de TP-Link. Es una bombilla E27 A60 de 806 lúmenes (equivalente a 60 W), fija en 2700 K. Apple Home, SmartThings y Matter no están confirmados.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "La regulación solo funciona a través de la app Tapo y la nube.",
+    "La integración de TP-Link en Home Assistant necesita las credenciales de tu cuenta de TP-Link, aunque el control sea local.",
+    "Apple Home, SmartThings y Matter no están confirmados; las páginas de especificaciones de TP-Link solo indican Alexa y Google."
+  ],
+  "notes": {
+    "radios": "Solo wifi de 2,4 GHz.",
+    "matter": "Las páginas de especificaciones de TP-Link solo indican Alexa y Google, y no hemos encontrado ningún registro de la CSA para la L510E. Sin confirmar.",
+    "hubRequired": "Aquí significa necesitar un puente o hub para el control básico desde la app. Se une directamente a la wifi de 2,4 GHz y se controla desde la app Tapo; no hace falta hub.",
+    "localControl": "La integración de TP-Link en Home Assistant controla los dispositivos compatibles en la red local, aunque se autentica con las credenciales de tu cuenta de TP-Link.",
+    "colorType": "Blanco cálido fijo, 2700 K; regulable solo a través de la app y la nube.",
+    "lumens": "806 lm, comparable a una incandescente de 60 W.",
+    "bulbBase": "Forma A60 con base E27 para la versión europea.",
+    "compatibility.apple_home": "Las páginas de TP-Link para la UE solo indican Alexa y Google, pero ninguna fuente oficial dice que Apple Home no sea compatible. Sin confirmar.",
+    "compatibility.google_home": "Mediante la integración de Tapo en Google Home, que se vincula desde la app Tapo.",
+    "compatibility.alexa": "Mediante la skill de Tapo para Alexa.",
+    "compatibility.smartthings": "Las páginas de especificaciones de la L510E de TP-Link solo indican Alexa y Google, y no hemos encontrado ninguna fuente oficial que nombre la L510E para SmartThings. Sin confirmar.",
+    "compatibility.home_assistant": "Figura como compatible en la integración oficial TP-Link Smart Home; necesita las credenciales de tu cuenta de TP-Link."
+  }
+}

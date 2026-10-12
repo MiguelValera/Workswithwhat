@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Empareja primero el Aqara Temperature and Humidity Sensor T1 (TH-S02D) con un hub de Aqara; no puede conectarse directamente al móvil. Mide temperatura, humedad y presión atmosférica (30–110 kPa) por Zigbee 3.0. El soporte de Apple Home, Google Home, Alexa, SmartThings y Home Assistant no está confirmado. Funciona con una pila CR2032.",
+  "caveats": [
+    "Necesita un hub de Aqara; las páginas del T1 de Aqara que hemos visto no confirman el soporte de Apple Home, Google Home, Alexa ni SmartThings."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0.",
+    "matter": "No hemos encontrado ningún registro de la CSA. Aqara dice que los hubs compatibles con Matter, como el M3, pueden hacer de puente para los sensores Zigbee de Aqara, pero ninguna página de Aqara que hayamos visto lo confirma para el T1.",
+    "hubRequired": "La FAQ del T1 de Aqara dice que el sensor no puede conectarse directamente al móvil: añade primero un hub de Aqara y luego empareja el sensor con el hub.",
+    "localControl": "Ninguna página que hayamos visto describe el funcionamiento local a través del hub.",
+    "power": "La página de especificaciones del T1 de Aqara indica CR2032. Algunas páginas de Aqara de otros sensores de temperatura indican CR2450.",
+    "senses": "También mide la presión atmosférica (30–110 kPa), que el sitio no recoge como tipo de medición.",
+    "compatibility.apple_home": "El texto de Aqara sobre HomeKit mediante hub que hemos visto está en las páginas del Temperature and Humidity Sensor anterior (WSDCGQ11LM), no en las del T1. Los comercios indican HomeKit para el T1, lo que por sí solo no basta.",
+    "compatibility.google_home": "Solo los anuncios de comercios dicen que funciona con Google Home.",
+    "compatibility.alexa": "Solo los anuncios de comercios dicen que funciona con Alexa.",
+    "compatibility.smartthings": "Solo los anuncios de comercios mencionan SmartThings.",
+    "compatibility.home_assistant": "La documentación de Home Assistant que hemos visto no nombra soporte para el Aqara T1. No hay documentado un coordinador Zigbee genérico para él."
+  }
+}

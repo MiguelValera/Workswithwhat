@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Con 16 A / 3680 W a 220-240 V, el Tapo P115 europeo funciona con Alexa y Google Home mediante tu cuenta de Tapo, y la integración TP-Link Smart Home incorporada en Home Assistant lo nombra expresamente. Mide el consumo de lo que enchufes y puedes introducir tu tarifa eléctrica para estimar el coste. No necesita hub. Las páginas europeas de TP-Link no mencionan Apple Home, SmartThings ni Matter, así que considéralos sin confirmar.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "La configuración en Home Assistant pide tus credenciales de la nube de TP-Link.",
+    "Las páginas europeas de TP-Link no indican compatibilidad con Apple Home, SmartThings ni Matter para este modelo."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz 802.11b/g/n. La hoja de especificaciones que vimos no indica Bluetooth; sin confirmar en ningún sentido.",
+    "matter": "Las páginas del P115 de TP-Link no mencionan Matter y no hemos encontrado ningún registro de la CSA. Tampoco se dice que no sea compatible.",
+    "hubRequired": "Enchufe wifi que se configura en la app Tapo; no figura ningún hub.",
+    "localControl": "Tapo dice que los dispositivos de tu LAN siguen accesibles en la app Tapo cuando no hay internet.",
+    "energyMonitoring": "Mide el consumo de los dispositivos conectados; puedes introducir tu tarifa eléctrica para estimar el coste.",
+    "maxLoadWatts": "16 A / 3680 W a 220-240 V.",
+    "compatibility.apple_home": "Las páginas del P115 de TP-Link indican solo Alexa y Google Assistant; ninguna página dice que Apple Home no sea compatible.",
+    "compatibility.google_home": "La página de producto de Tapo indica control por voz con Google Assistant mediante la vinculación de la cuenta de Tapo.",
+    "compatibility.alexa": "La página de producto de Tapo indica control por voz con Amazon Alexa mediante la skill Tapo.",
+    "compatibility.smartthings": "La página europea del producto indica solo Alexa y Google. Las páginas del P115 estadounidense de TP-Link y su FAQ general de SmartThings mencionan SmartThings, pero no hemos encontrado nada específico para la UE.",
+    "compatibility.home_assistant": "La integración TP-Link Smart Home incorporada en Home Assistant incluye el P115 entre los enchufes Tapo compatibles. Necesita tus credenciales de la nube de TP-Link para la configuración."
+  }
+}

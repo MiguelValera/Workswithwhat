@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "De fábrica, el Philips Hue Smart Plug habla Bluetooth con la app de Hue, lo que cubre el encendido y apagado básico. Apple Home, Google Home, Alexa, SmartThings y Home Assistant necesitan un Hue Bridge; el enchufe se une a él por Zigbee, y el Bridge también lo expone a las plataformas Matter. El modelo estadounidense está indicado para 1800 W en tomas de 100–120 V. Hue describe solo el encendido y apagado y no menciona medición de consumo.",
+  "caveats": [
+    "Los asistentes de voz, los ecosistemas y el acceso remoto necesitan un Hue Bridge; el control por voz por Bluetooth sin puente de Hue cubre bombillas, no este enchufe.",
+    "Las configuraciones solo con Bluetooth no pueden usar Matter; el Bridge es lo que expone el enchufe a Matter.",
+    "Usuarios de Home Assistant cuentan que el enchufe aparece como una luz, así que «apagar todas las luces» también puede apagarlo."
+  ],
+  "notes": {
+    "radios": "Bluetooth para el control directo desde la app; Zigbee hacia el Hue Bridge.",
+    "matter": "No hemos encontrado ninguna certificación Matter para el propio enchufe. Hue dice que el Bridge expone a Matter los productos conectados a él, y que las configuraciones solo con Bluetooth no pueden usar Matter.",
+    "hubRequired": "El control básico funciona por Bluetooth desde la app de Hue; el Hue Bridge hace falta para los asistentes de voz, los ecosistemas y el acceso remoto.",
+    "localControl": "Control por Bluetooth sin puente; el Hue Bridge también ofrece una API local que usa Home Assistant.",
+    "energyMonitoring": "Las páginas de Hue describen solo el encendido y apagado y no indican medición de consumo, pero ninguna dice explícitamente que no la tenga.",
+    "maxLoadWatts": "El soporte de Hue da 1800 W para Norteamérica (100–120 V).",
+    "compatibility.apple_home": "La página de producto incluye Apple Home entre los asistentes que necesitan un Hue Bridge.",
+    "compatibility.google_home": "La página estadounidense de producto incluye Google Assistant entre los asistentes que necesitan un Hue Bridge. La FAQ de Hue sobre voz por Bluetooth sin puente cubre bombillas, no este enchufe.",
+    "compatibility.alexa": "La página estadounidense de producto incluye Alexa entre los asistentes que necesitan un Hue Bridge. La FAQ de Hue sobre voz por Bluetooth sin puente cubre bombillas, no este enchufe.",
+    "compatibility.smartthings": "La página del Hue Bridge indica compatibilidad con Samsung SmartThings.",
+    "compatibility.home_assistant": "La integración oficial de Hue controla los dispositivos conectados a un Hue Bridge. Los usuarios cuentan que los enchufes aparecen como entidades de luz."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "google_home": "Philips Hue Bridge",
+    "alexa": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge",
+    "home_assistant": "Philips Hue Bridge"
+  }
+}

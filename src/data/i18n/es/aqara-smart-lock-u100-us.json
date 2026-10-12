@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "La cerradura inteligente U100 de Aqara habla directamente con Apple Home, con Home Key al acercar un iPhone o un Apple Watch, pero Alexa y Google Home pasan por un hub Zigbee 3.0 de Aqara. De fábrica se empareja por Bluetooth con la app Aqara Home. Es un cerrojo estadounidense con teclado, lector de huellas y cuatro pilas AA. SmartThings y Home Assistant no están confirmados.",
+  "caveats": [
+    "El control remoto, los códigos remotos, Alexa, Google Home y Matter necesitan un hub de Aqara; para Matter, uno compatible con Matter.",
+    "Encaja en distancias al borde de 2 3/8 o 2 3/4 pulgadas y en puertas de 35 a 55 mm de grosor."
+  ],
+  "notes": {
+    "radios": "La ficha técnica de Aqara indica Bluetooth 5.0 y Zigbee 3.0, además de NFC para Home Key y tarjetas. La cerradura en sí no tiene wifi ni Thread.",
+    "matter": "No hemos encontrado ningún registro de la CSA para la cerradura en sí. Aqara dice que el soporte de Matter requiere un hub de Aqara compatible con Matter, que hace de puente de la cerradura.",
+    "hubRequired": "Aqara dice que la cerradura funciona de fábrica por Bluetooth con la app Aqara Home, sin hub. El control remoto, los códigos remotos, Alexa, Google y Matter necesitan un hub de Aqara.",
+    "localControl": "Ninguna fuente de Aqara describe de forma explícita el control solo local.",
+    "power": "Cuatro pilas AA, más de 8 meses con unos 8 desbloqueos al día, según Aqara.",
+    "lockFit": "Cerrojo de estándar estadounidense para una distancia al borde de 60 o 70 mm (2 3/8 o 2 3/4 pulgadas) y puertas de 35 a 55 mm de grosor.",
+    "keypad": "Teclado en la cerradura, además de un lector de huellas y NFC para Home Key y tarjetas.",
+    "compatibility.apple_home": "Aqara indica compatibilidad con Apple Home y con Apple Home Key, que funciona acercando un iPhone o un Apple Watch al lector NFC de la cerradura.",
+    "compatibility.google_home": "La nota de lanzamiento de Aqara dice que hace falta un hub Zigbee 3.0 de Aqara para el soporte de Alexa y Google Assistant.",
+    "compatibility.alexa": "La nota de lanzamiento de Aqara dice que hace falta un hub Zigbee 3.0 de Aqara para el soporte de Alexa y Google Assistant.",
+    "compatibility.smartthings": "Aqara dice que Matter requiere un hub de Aqara compatible con Matter, pero ninguna página oficial nombra SmartThings para la U100.",
+    "compatibility.home_assistant": "No hemos encontrado ninguna página de documentación de Home Assistant sobre la U100. Podría alcanzarse mediante el puente Matter de un hub de Aqara, pero no está confirmado."
+  },
+  "via": {
+    "google_home": "hub Zigbee 3.0 de Aqara",
+    "alexa": "hub Zigbee 3.0 de Aqara"
+  }
+}

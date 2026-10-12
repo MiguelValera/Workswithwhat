@@ -6,7 +6,10 @@ interface Props {
   /** page holding the source list, when it isn't the current page */
   base?: string;
 }
+import { langOf } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 const { ids, all, base = '' } = Astro.props;
+const t = ui(langOf(Astro.url.pathname));
 const n = (id: string) => all.findIndex((s) => s.id === id) + 1;
 const sorted = [...ids].sort((a, b) => n(a) - n(b));
 ---
@@ -17,7 +20,7 @@ const sorted = [...ids].sort((a, b) => n(a) - n(b));
       {sorted.map((id, i) => (
         <>
           {i > 0 && ','}
-          <a href={`${base}#src-${id}`} aria-label={`Source ${n(id)}`}>[{n(id)}]</a>
+          <a href={`${base}#src-${id}`} aria-label={t.source(n(id))}>[{n(id)}]</a>
         </>
       ))}
     </sup>

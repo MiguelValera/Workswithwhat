@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Vinculando tu cuenta de TP-Link, el Tapo P110 británico funciona con Alexa, Google Home y SmartThings, y la integración oficial de TP-Link en Home Assistant también lo admite. Es un enchufe de 13 A con wifi de 2,4 GHz y 2990 W de carga máxima, sin hub, que muestra el consumo en tiempo real y el histórico en la app Tapo. La app también puede controlarlo en local, sin internet. TP-Link no menciona Apple Home; su versión con Matter es el P110M.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "No figuran Apple Home ni Matter; la versión con Matter es el Tapo P110M.",
+    "Las propias FAQ de TP-Link no coinciden en si los datos de consumo llegan a SmartThings, así que cuenta con consultarlos en la app Tapo.",
+    "Tapo indica que no sirve para cargar coches eléctricos."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz (802.11b/g/n). La ficha técnica estadounidense de TP-Link menciona Bluetooth para la configuración, pero no lo hemos confirmado en el modelo británico.",
+    "matter": "Las páginas del P110 británico no mencionan Matter ni lo descartan. La versión con Matter de TP-Link es el Tapo P110M, un producto aparte.",
+    "hubRequired": "Enchufe wifi que se conecta directamente al router y se configura en la app Tapo.",
+    "localControl": "La FAQ de TP-Link sobre los enchufes Tapo (P100/P105/P110/P115) dice que la app Tapo puede controlar el enchufe en local, sin internet; las Smart Actions necesitan entonces un hub Tapo.",
+    "energyMonitoring": "Consumo en tiempo real e histórico en la app Tapo.",
+    "maxLoadWatts": "Ficha técnica británica de TP-Link: 2990 W, 13 A, motor de 1/6 CV, 220-240 V. La web británica de Tapo indica que no admite la carga de coches eléctricos.",
+    "compatibility.apple_home": "TP-Link indica Alexa, Google Assistant y SmartThings para el P110 y no menciona Apple Home, pero ninguna página dice que no sea compatible. El P110M es la versión con Matter.",
+    "compatibility.google_home": "Vincula tu cuenta de TP-Link en Google Home después de configurar el enchufe en la app Tapo. La guía paso a paso es la FAQ general de TP-Link en su web estadounidense; las páginas británicas indican Google Assistant.",
+    "compatibility.alexa": "Mediante la skill Tapo de Alexa, que se vincula desde la app Tapo o desde la app Alexa. Las instrucciones están en la FAQ general de TP-Link en su web estadounidense; las páginas británicas indican Alexa.",
+    "compatibility.smartthings": "Vincula tu ID de TP-Link en la app SmartThings. La FAQ de SmartThings de TP-Link (general, en su web estadounidense) incluye el P110, y la página británica muestra SmartThings. Las FAQ de TP-Link no coinciden en si los datos de consumo llegan a SmartThings.",
+    "compatibility.home_assistant": "La integración TP-Link Smart Home de Home Assistant incluye el P110 entre los enchufes Tapo compatibles. Configúralo primero en la app Tapo."
+  }
+}

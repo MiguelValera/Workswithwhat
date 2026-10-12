@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El HomeKit nativo es el motivo para elegir el Meross MSS110 (vendido como MSS110HK): se empareja directamente con Apple Home por wifi, sin pasar por Matter ni por un puente. Google Home, Alexa y SmartThings también funcionan, cada uno vinculando tu cuenta de Meross. Es un enchufe para EE. UU. y Canadá de 15 A / 1800 W, y no mide el consumo.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz, y Meross dice que las redes wifi empresariales no son compatibles.",
+    "El control remoto en Apple Home necesita un centro de la casa de Apple (HomePod, Apple TV o iPad).",
+    "Sin medición de consumo; Meross vende enchufes con medidor, como el MSS315, para eso.",
+    "Meross no dice si el MSS110 admite Matter; su minienchufe Matter es el MSS115, que es otro modelo.",
+    "Home Assistant no tiene integración oficial de Meross."
+  ],
+  "notes": {
+    "radios": "Solo wifi de 2,4 GHz; Meross dice que el wifi empresarial no es compatible.",
+    "matter": "Las páginas del MSS110 describen HomeKit, no Matter. El minienchufe Matter de Meross es el MSS115, que es otro modelo. No encontramos ninguna declaración explícita en un sentido ni en otro para el MSS110.",
+    "compatibility.apple_home": "HomeKit (HAP) sobre wifi; la unidad con HomeKit se vende como MSS110HK (EE. UU./Canadá). El control remoto necesita un centro de la casa de Apple (HomePod, Apple TV o iPad).",
+    "compatibility.google_home": "Mediante el enlace de cuenta «Works with Google Home» de Meross; añade primero el enchufe en la app Meross.",
+    "compatibility.alexa": "Mediante la skill de Alexa de Meross, vinculada a tu cuenta de Meross.",
+    "compatibility.smartthings": "La página del MSS110US de Meross lista SmartThings. Se conecta vinculando tu cuenta de Meross en la app SmartThings (de nube a nube), según las FAQ genéricas de SmartThings de Meross.",
+    "compatibility.home_assistant": "No hay integración oficial de Meross en Home Assistant. Usuarios del foro cuentan que lo emparejan mediante la integración HomeKit Device o el complemento comunitario Meross LAN, pero ninguna página oficial nombra este modelo.",
+    "hubRequired": "Se une a tu wifi de 2,4 GHz existente directamente; no hace falta puente. Solo se necesita un centro de la casa de Apple para el control remoto con HomeKit.",
+    "localControl": "Los accesorios HomeKit suelen funcionar por la LAN, pero no encontramos ninguna página de Meross que declare el control local para este modelo.",
+    "energyMonitoring": "La página del MSS110 para EE. UU./Japón de Meross indica Energy Monitor: No. Para medir el consumo, Meross vende otros modelos (p. ej., el MSS315).",
+    "maxLoadWatts": "Meross da 15 A / 1800 W para la versión de EE. UU., Canadá y Japón."
+  }
+}

@@ -1,6 +1,8 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, type CategoryKey } from '../schema/device.ts';
 import { CATEGORIES, categoryOf } from './categories';
+import { formatDate as fmtDate, localize, type Lang } from '../i18n/lang';
+import type { TranslationData } from '../schema/translation.ts';
 
 export type Device = CollectionEntry<'devices'>;
 export type Ecosystem = (typeof ECOSYSTEMS)[number];
@@ -27,6 +29,14 @@ export const STATUS_TEXT = {
   no: 'No',
   unknown: 'Unconfirmed',
 } as const;
+export const STATUS_TEXT_ES: Record<keyof typeof STATUS_TEXT, string> = {
+  native: 'Sí',
+  matter: 'Vía Matter',
+  hub: 'Vía hub',
+  no: 'No',
+  unknown: 'Sin confirmar',
+};
+export const statusText = (s: keyof typeof STATUS_TEXT, lang: Lang) => (lang === 'es' ? STATUS_TEXT_ES[s] : STATUS_TEXT[s]);
 
 export const worksWith = (d: Device, e: Ecosystem) => {
   const s = d.data.compatibility[e].status;
@@ -42,38 +52,93 @@ export const RADIO_LABELS: Record<string, string> = {
   ethernet: 'Ethernet',
 };
 
-export const formatDate = (iso: string) =>
-  new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+export const formatDate = fmtDate;
+export const radioList = (radios: string[] | null, lang: Lang, sep = ', ') =>
+  (radios ?? []).map((r) => (r === 'wifi' && lang === 'es' ? 'Wifi' : RADIO_LABELS[r])).join(sep);
 
+/** English path of a device page; localize() it for other languages (see devicePathIn). */
 export const devicePath = (d: Device) => `/${categoryOf(d.data).path}/${d.id}/`;
 
-export const listJoin = (xs: string[]) =>
-  xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} and ${xs.at(-1)}`;
+export const listJoin = (xs: string[], lang: Lang = 'en') =>
+  xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} ${lang === 'es' ? 'y' : 'and'} ${xs.at(-1)}`;
+
+// ---- Spanish prose -------------------------------------------------------------
+
+export type Translation = TranslationData;
+let esCache: Map<string, Translation> | undefined;
+/** Spanish translations by slug (src/data/i18n/es/). */
+export async function getTranslations(): Promise<Map<string, Translation>> {
+  esCache ??= new Map((await getCollection('devicesEs')).map((t) => [t.id, t.data]));
+  return esCache;
+}
+
+/**
+ * A device's words in one language: Spanish where a translation exists, English otherwise
+ * (an untranslated record has no Spanish page, but can still show up in a Spanish list).
+ */
+export function deviceText(d: Device, lang: Lang, t?: Translation) {
+  const es = lang === 'es' ? t : undefined;
+  const note = (key: string, en: string | undefined) => (en ? (es?.notes[key] ?? en) : undefined);
+  return {
+    summary: es?.summary ?? d.data.summary,
+    caveats: es?.caveats ?? d.data.caveats,
+    note,
+    compatNote: (e: Ecosystem) => note(`compatibility.${e}`, d.data.compatibility[e].note),
+    via: (e: Ecosystem) => es?.via?.[e] ?? d.data.compatibility[e].via,
+    values: (es?.values ?? {}) as Partial<Record<string, string>>,
+  };
+}
+export type DeviceText = ReturnType<typeof deviceText>;
+
+/** Path of a device page in a language: the Spanish page exists only for translated records. */
+export function devicePathIn(d: Device, lang: Lang, translations?: Map<string, Translation>) {
+  return lang === 'es' && translations?.has(d.id) ? localize(devicePath(d), 'es') : devicePath(d);
+}
 
 // Category names for titles and descriptions. Past three categories a full list
 // makes titles too long, so titles say "smart home devices" and descriptions
 // name the categories in brackets.
-export const categoryPhrase = (plurals: string[]) => {
-  if (plurals.length <= 3) return { short: listJoin(plurals), long: listJoin(plurals) };
+export const categoryPhrase = (plurals: string[], lang: Lang = 'en') => {
+  if (plurals.length <= 3) return { short: listJoin(plurals, lang), long: listJoin(plurals, lang) };
+  if (lang === 'es') {
+    const bare = listJoin(plurals.map((p) => p.replace(/ inteligentes$/, '')), lang);
+    return { short: 'dispositivos domóticos', long: `dispositivos domóticos (${bare})` };
+  }
   const bare = listJoin(plurals.map((p) => p.replace(/^smart /, '')));
   return { short: 'smart home devices', long: `smart home devices (${bare})` };
 };
 
 const ensureStop = (s: string) => (/[.!?]$/.test(s.trim()) ? s.trim() : `${s.trim()}.`);
 
-// One plain-English answer per device × ecosystem, built only from verified
-// data. Used on device pages, in FAQ structured data, llms.txt and the JSON API.
-export function answerFor(d: Device, e: Ecosystem): string {
+// One plain answer per device × ecosystem, built only from verified data. Used on
+// device pages, in FAQ structured data, llms.txt and the JSON API, so they always agree.
+export function answerFor(d: Device, e: Ecosystem, lang: Lang = 'en', text?: DeviceText): string {
   const c = d.data.compatibility[e];
   const label = ECOSYSTEM_LABELS[e];
-  const note = c.note ? ` ${ensureStop(c.note)}` : '';
+  const words = text ?? deviceText(d, lang);
+  const n = words.compatNote(e);
+  const note = n ? ` ${ensureStop(n)}` : '';
+  const thread = d.data.matter.transport === 'thread';
+  if (lang === 'es') {
+    switch (c.status) {
+      case 'native':
+        return `Sí. ${d.data.name} funciona con ${label} directamente.${note}`;
+      case 'matter':
+        return `Sí, mediante Matter: añádelo con el emparejamiento Matter de ${label}.${thread ? ' Usa Thread, así que también necesitas un router de borde Thread.' : ''}${note}`;
+      case 'hub':
+        return `Sí, pero solo a través de ${words.via(e)}.${note}`;
+      case 'no':
+        return `No.${note}`;
+      default:
+        return `Sin confirmar. No hemos encontrado una fuente oficial en ningún sentido.${note}`;
+    }
+  }
   switch (c.status) {
     case 'native':
       return `Yes. The ${d.data.name} works with ${label} directly.${note}`;
     case 'matter': {
-      const thread = d.data.matter.transport === 'thread' ? ' It uses Thread, so you also need a Thread border router.' : '';
       const possessive = label.endsWith('s') ? `${label}'` : `${label}'s`;
-      return `Yes, through Matter: add it with ${possessive} Matter pairing.${thread}${note}`;
+      return `Yes, through Matter: add it with ${possessive} Matter pairing.${thread ? ' It uses Thread, so you also need a Thread border router.' : ''}${note}`;
     }
     case 'hub':
       const via = /^(the|a|an) /i.test(c.via ?? '') ? c.via : `the ${c.via}`;
@@ -85,7 +150,10 @@ export function answerFor(d: Device, e: Ecosystem): string {
   }
 }
 
-export const deviceTitle = (d: Device) => `Does the ${d.data.name} work with Apple Home, Google Home or Alexa?`;
+export const deviceTitle = (d: Device, lang: Lang = 'en') =>
+  lang === 'es'
+    ? `¿Es compatible ${d.data.name} con Apple Home, Google Home o Alexa?`
+    : `Does the ${d.data.name} work with Apple Home, Google Home or Alexa?`;
 
 /** Categories that have at least one published device (only these get pages). */
 export async function getActiveCategories() {

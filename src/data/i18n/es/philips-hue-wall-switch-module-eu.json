@@ -1,0 +1,32 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Con pilas y sin conexión a la red eléctrica, el Philips Hue Wall Switch Module se conecta a los contactos libres de un interruptor de pared existente (43 x 38 x 10 mm) y lo convierte en un control de Hue. No regula ni conmuta la carga por sí mismo; envía órdenes a las luces Hue. Todo pasa por un Hue Bridge, que da acceso a Apple Home, Google Home, Alexa, SmartThings y Home Assistant, y Matter solo llega a él a través del Bridge. Una pila CR2450 está indicada para cinco años o más.",
+  "caveats": [
+    "Necesita un Hue Bridge; sin él no puede controlar las luces Hue.",
+    "Solo envía órdenes a las luces Hue y no conmuta una carga.",
+    "No funciona con interruptores que tengan reguladores integrados.",
+    "También existe un módulo de pared Hue con cable que necesita cable neutro; este registro trata el de pilas."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0 según la CSA; la página de Hue también incluye Bluetooth.",
+    "matter": "La CSA registra el módulo solo como Zigbee 3.0. Hue dice que Matter solo llega a él a través del Hue Bridge, que tiene su propio certificado Matter.",
+    "hubRequired": "La página de producto de Hue dice que hace falta un Hue Bridge para controlar luces Hue con el módulo; sin él, las luces no se pueden controlar.",
+    "localControl": "No consta en las fuentes que hemos encontrado.",
+    "switchForm": "Módulo de 43 x 38 x 10 mm conectado a los contactos libres de un interruptor de pared existente.",
+    "dimmer": "No conmuta una carga; envía órdenes a las luces Hue, que son las que regulan. No funciona con interruptores que tengan reguladores integrados.",
+    "neutralRequired": "Funciona con pilas (CR2450, al menos 5 años), sin cableado a la red eléctrica. El módulo con cable, que se vende aparte, necesita neutro.",
+    "gangs": "No hemos confirmado cuántas entradas de interruptor tiene cada módulo en las fuentes encontradas.",
+    "compatibility.apple_home": "La página de producto de Hue incluye Apple HomeKit para este módulo, a través del Hue Bridge.",
+    "compatibility.google_home": "Hue incluye Google Home y dice que la compatibilidad con Matter es solo a través del Bridge.",
+    "compatibility.alexa": "Hue incluye Alexa; el Bridge es el enlace.",
+    "compatibility.smartthings": "La página de Hue incluye Samsung SmartThings entre los sistemas de terceros.",
+    "compatibility.home_assistant": "La integración de Hue de Home Assistant, a través del Bridge, expone los mandos e interruptores de Hue como disparadores de dispositivo y sensores de batería; la documentación no nombra este módulo."
+  },
+  "via": {
+    "apple_home": "Hue Bridge",
+    "google_home": "Hue Bridge",
+    "alexa": "Hue Bridge",
+    "smartthings": "Hue Bridge",
+    "home_assistant": "Hue Bridge"
+  }
+}

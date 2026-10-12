@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El vídeo en directo de la Nest Cam (interior, con cable) de 2.ª generación se emite a pantallas Nest y dispositivos Chromecast desde la app Google Home, y a un Echo Show mediante la skill Google Nest. La tienda de Google incluye hasta 3 horas de historial de vídeo de eventos; para más historial y grabación 24/7 hace falta un plan de pago de Google. Se enchufa con un cable de 10 pies y un adaptador USB-A de 7,5 W, y es solo para interior. Home Assistant la admite, mientras que Apple Home y SmartThings no están confirmados.",
+  "caveats": [
+    "La cámara de interior de 3.ª generación usa USB-C en lugar de USB-A; asegúrate de leer las especificaciones de la 2.ª generación.",
+    "Home Assistant no puede grabar el flujo WebRTC de esta cámara con la integración, y la integración de Nest requiere una tarifa única de 5 USD de Google Device Access.",
+    "La visualización en directo en Alexa de las cámaras Nest con cable se corta tras 12 horas hasta que la vuelves a pedir.",
+    "La grabación 24/7 y el historial más largo requieren un plan de pago de Google."
+  ],
+  "notes": {
+    "radios": "Cámara wifi. El Bluetooth Low Energy para la configuración aparece en fichas de minoristas y en la página de especificaciones de la 3.ª generación de Google, pero no lo hemos visto confirmado para la 2.ª generación en ninguna página de Google.",
+    "hubRequired": "Se conecta por wifi a la app Google Home; no se indica ningún puente.",
+    "localControl": "Las emisiones pasan por la nube de Google; en las páginas que vimos no se documenta ningún modo solo local.",
+    "cameraType": "Google la indica solo para uso en interior.",
+    "power": "Adaptador USB-A de 7,5 W incluido. El modelo de 3.ª generación usa USB-C.",
+    "localStorage": "Ninguna página de Google que hayamos visto menciona almacenamiento local; el vídeo de eventos se guarda en la nube de Google.",
+    "subscription": "La tienda de Google incluye hasta 3 horas de historial de vídeo de eventos; el historial más largo y la grabación 24/7 requieren un plan de pago de Google. No hemos confirmado en ninguna página de Google los nombres de los planes de este modelo.",
+    "matter": "Ninguna página de Google que hayamos encontrado indica Matter para esta cámara.",
+    "compatibility.apple_home": "Ninguna página de Google lista Apple Home; las reseñas dicen que no es compatible con HomeKit, pero no es una declaración oficial.",
+    "compatibility.google_home": "Se configura en la app Google Home. El vídeo en directo se emite a pantallas Nest y dispositivos Chromecast.",
+    "compatibility.alexa": "Mediante la skill Google Nest: «Alexa, show [nombre de la cámara]» emite vídeo en directo a un Echo Show. La visualización en directo de las cámaras Nest con cable se corta tras 12 horas hasta que la vuelves a pedir.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página de Google ni de Samsung.",
+    "compatibility.home_assistant": "La integración Google Nest de Home Assistant admite cámaras Nest con emisiones en directo y eventos mediante Google Device Access, que cuesta 5 USD una sola vez. Para cámaras WebRTC como esta, HA indica que no se puede grabar el flujo."
+  },
+  "values": {
+    "power": "Adaptador USB-A (red eléctrica), cable de 10 pies",
+    "subscription": "Opcional: historial de eventos más largo y grabación 24/7"
+  }
+}

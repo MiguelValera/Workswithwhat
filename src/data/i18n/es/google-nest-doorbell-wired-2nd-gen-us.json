@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Configurado en la app Google Home, el Nest Doorbell (con cable, 2.ª generación) anuncia las visitas en los altavoces y pantallas de Google de la misma casa. Alexa funciona mediante la skill Google Nest, con anuncios al pulsar el timbre y visualización en directo en Echo Show, y Home Assistant lo recibe con la integración Google Nest. Necesita el cableado de timbre de 16 a 24 V CA ya instalado y ningún hub. Sin pagar guarda 3 horas de vídeo de eventos; hasta 60 días requiere Google Home Premium.",
+  "caveats": [
+    "Necesita cableado de timbre y un transformador de 16–24 V CA, 10–40 VA; algunas casas necesitan un transformador nuevo.",
+    "El historial de vídeo de más de 3 horas requiere un plan de pago, Google Home Premium.",
+    "El acceso desde Home Assistant pasa por la API Device Access de Google, que cuesta 5 USD.",
+    "La compatibilidad con Apple Home no está confirmada."
+  ],
+  "notes": {
+    "radios": "La página de instalación de Google lo conecta al wifi mediante la app Google Home. Ninguna página de Google que hayamos visto indica las bandas de este modelo; la prensa y los minoristas dicen 2,4 y 5 GHz.",
+    "hubRequired": "Necesita wifi, la app Google Home y una cuenta de Google; no se menciona ningún hub ni puente.",
+    "localControl": "Google no indica si algún control funciona sin su nube.",
+    "power": "Google exige un transformador de 16–24 V CA, 10–40 VA; algunas casas necesitan uno nuevo. Google también lista un adaptador de corriente de interior opcional.",
+    "localStorage": "Google dice que puede guardar hasta una hora de eventos en el timbre si se cae el wifi, pero no indica ninguna opción de almacenamiento local ni microSD.",
+    "subscription": "La página de comparación de Google lista 3 horas de vídeo de eventos sin plan y hasta 60 días de historial de eventos con Google Home Premium.",
+    "matter": "Ninguna página de Google indica Matter para este modelo y en las búsquedas no apareció ningún registro de la CSA. Un medio alemán informa de que cámaras Nest y «el Nest Doorbell» figuran en la CSA para Matter 1.5.1, aún sin firmware, pero no nombra el modelo.",
+    "compatibility.apple_home": "No hemos encontrado ninguna página de Google ni de Apple que liste este timbre en Apple Home.",
+    "compatibility.google_home": "Se configura en la app Google Home. Los anuncios de visitas del timbre suenan en los altavoces y pantallas de Google de la misma casa.",
+    "compatibility.alexa": "Mediante la skill Google Nest en la app Alexa. Google nombra este modelo para los anuncios al pulsar el timbre una vez activados los anuncios de visitas en Google Home, y la visualización en directo funciona en Echo Show cuando la pides.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página oficial de Google ni de SmartThings para este modelo; solo mensajes de foros y un artículo de 2020 sobre dispositivos Nest más antiguos.",
+    "compatibility.home_assistant": "La integración oficial Google Nest usa la API Device Access de Google, que cuesta 5 USD. La lista de Device Access de Google incluye el Nest Doorbell (con cable), añadido en febrero de 2023, con visualización en directo por WebRTC y vista previa de clips."
+  },
+  "values": {
+    "power": "Con cable (timbre de 16–24 V CA)",
+    "subscription": "Historial de vídeo de eventos de más de 3 horas (Google Home Premium)"
+  }
+}

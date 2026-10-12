@@ -1,12 +1,16 @@
 ---
-import { STATUS_TEXT } from '../lib/devices';
+import { statusText, type STATUS_TEXT } from '../lib/devices';
+import { langOf } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 interface Props {
   status: keyof typeof STATUS_TEXT;
   via?: string;
   compact?: boolean;
 }
 const { status, via, compact = false } = Astro.props;
-const text = status === 'hub' && via && !compact ? `Via ${via}` : STATUS_TEXT[status];
+const lang = langOf(Astro.url.pathname);
+const t = ui(lang);
+const text = status === 'hub' && via && !compact ? t.viaX(via) : statusText(status, lang);
 ---
 
-<span class={`badge s-${status}`} title={status === 'hub' && via ? `Needs ${via}` : undefined}>{text}</span>
+<span class={`badge s-${status}`} title={status === 'hub' && via ? t.needsX(via) : undefined}>{text}</span>

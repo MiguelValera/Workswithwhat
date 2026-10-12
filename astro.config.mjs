@@ -2,16 +2,33 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// lastmod per device page, from the record's updatedAt
+// category → [English, Spanish] URL section (mirrors src/lib/categories.ts and src/i18n/lang.ts)
+const SECTIONS = {
+  'smart-plug': ['smart-plugs', 'enchufes-inteligentes'],
+  'smart-bulb': ['smart-bulbs', 'bombillas-inteligentes'],
+  'smart-lock': ['smart-locks', 'cerraduras-inteligentes'],
+  'smart-thermostat': ['smart-thermostats', 'termostatos-inteligentes'],
+  'smart-sensor': ['smart-sensors', 'sensores-inteligentes'],
+  'smart-camera': ['smart-cameras', 'camaras-y-timbres'],
+  'smart-switch': ['smart-switches', 'interruptores-inteligentes'],
+};
+
+// lastmod per device page (both languages), from the record's updatedAt
 const deviceDir = new URL('./src/data/devices/', import.meta.url);
 const lastmod = new Map(
   readdirSync(deviceDir)
     .filter((f) => f.endsWith('.json'))
     .map((f) => {
       const d = JSON.parse(readFileSync(new URL(f, deviceDir), 'utf8'));
-      const section = { 'smart-plug': 'smart-plugs', 'smart-bulb': 'smart-bulbs' }[d.category];
-      return [`/${section}/${f.replace(/\.json$/, '')}/`, d.status === 'verified' ? d.updatedAt : null];
-    }),
+      const slug = f.replace(/\.json$/, '');
+      const date = d.status === 'verified' ? d.updatedAt : null;
+      const [en, es] = SECTIONS[d.category];
+      return [
+        [`/${en}/${slug}/`, date],
+        [`/es/${es}/${slug}/`, date],
+      ];
+    })
+    .flat(),
 );
 const newest = [...lastmod.values()].filter(Boolean).sort().at(-1);
 

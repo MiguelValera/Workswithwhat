@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Eve Motion es un sensor de movimiento a pilas con sensor de luz integrado y un ajuste de crepúsculo de 0 a 15000 lux. Apple Home, Google Home, Alexa, SmartThings y Home Assistant lo añaden por Matter sobre Thread, todos mediante un router de borde Thread y no con un hub de Eve. El control es local y no pasa por la nube de Eve. Funciona con dos pilas AAA.",
+  "caveats": [
+    "Necesita un router de borde Thread, que además sea controlador Matter.",
+    "No está confirmado que todas las plataformas muestren la lectura de luz.",
+    "Las unidades antiguas con HomeKit/Thread necesitan la actualización de firmware gratuita de Eve para tener Matter."
+  ],
+  "notes": {
+    "radios": "La CSA registra Thread y Bluetooth (el Bluetooth se usa para configurar Matter); la página de Eve indica Thread como conexión inalámbrica.",
+    "hubRequired": "No hace falta ningún puente de Eve. Eve dice que la primera plataforma necesita un hub con funciones de controlador Matter y de router de borde Thread (por ejemplo, un HomePod mini o un Apple TV 4K); es un router de borde Thread genérico, no un hub de la marca.",
+    "localControl": "El registro de la CSA describe que no hay nube de Eve, ni registro, y que la conectividad es totalmente local; la página de Eve en Home Assistant dice que los dispositivos Matter de Eve se conectan en local.",
+    "senses": "Eve describe un sensor de movimiento con sensor de luz integrado (ajuste de crepúsculo de 0 a 15000 lux). No está confirmado que todas las plataformas Matter muestren la lectura de luz.",
+    "power": "La ficha de Eve indica dos pilas AAA reemplazables; un artículo de prensa dice AA, algo que la ficha contradice.",
+    "matter": "La CSA registra Eve Motion (proveedor 0x130A, producto 0x0059) con Matter sobre Thread; el registro citado es el del firmware 3.2.1, y los anteriores del 3.1.0 y el 3.2.0 comparten el mismo ID de producto.",
+    "compatibility.apple_home": "Necesita un router de borde Thread (un hub que también sea controlador Matter). En Apple, eso significa un HomePod mini, un HomePod de 2.ª generación o un Apple TV 4K.",
+    "compatibility.google_home": "Necesita un router de borde Thread (un hub que también sea controlador Matter).",
+    "compatibility.alexa": "Necesita un router de borde Thread (un hub que también sea controlador Matter).",
+    "compatibility.smartthings": "Necesita un router de borde Thread (un hub que también sea controlador Matter).",
+    "compatibility.home_assistant": "La página de Eve en Home Assistant incluye Eve Motion como dispositivo Matter, que se añade en local con la integración Matter. Necesita un router de borde Thread."
+  }
+}

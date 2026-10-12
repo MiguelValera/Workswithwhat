@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Alexa, Google Home y Home Assistant funcionan con la Schlage Encode (BE489WB), un cerrojo estadounidense con teclado táctil y wifi integrado, así que no hace falta hub. Apple Home no: Allegion dice que este modelo sin Plus no admite HomeKit y no se puede actualizar, y remite a la Encode Plus (BE499).",
+  "caveats": [
+    "No admite Apple Home; Allegion remite a quienes usan Apple a la Encode Plus (BE499).",
+    "La compatibilidad con Matter y SmartThings no está confirmada.",
+    "La integración con Home Assistant pasa por la nube de Schlage."
+  ],
+  "notes": {
+    "radios": "Allegion dice que la Encode (BE489) tiene Bluetooth y wifi para emparejarse con la app Schlage Home, y no tiene Z-Wave.",
+    "matter": "Ninguna página de Schlage ni de Allegion dice nada, en un sentido ni en otro, sobre la Encode sin Plus. Allegion dice que la Encode Plus no admite Matter; ese artículo no cubre este modelo.",
+    "hubRequired": "Wifi integrado; Schlage dice que las cerraduras Encode no necesitan hub ni adaptador.",
+    "localControl": "El control desde Home Assistant pasa por la nube de Schlage; ninguna fuente indica qué funciona sin internet.",
+    "lockFit": "Schlage la vende como Encode Smart WiFi Deadbolt, un cerrojo completo de sustitución.",
+    "keypad": "Teclado táctil en la cerradura; Allegion tiene un artículo de solución de problemas del teclado del BE489.",
+    "power": "Allegion calcula una duración de batería de la Encode de unos 6 meses con pilas AA alcalinas, pero ninguna página oficial que hayamos encontrado indica cuántas; los comercios indican cuatro AA, incluidas.",
+    "compatibility.apple_home": "Allegion dice que la Encode (BE489) no admite Apple HomeKit y no se puede actualizar para ello; remite a la Encode Plus (BE499).",
+    "compatibility.google_home": "Mediante la app Schlage Home y Google Assistant. Schlage dice que las cerraduras Encode no necesitan hub ni adaptador.",
+    "compatibility.alexa": "Skill Schlage Home para Alexa. El blog para desarrolladores de Amazon trata la certificación Works With Alexa de las cerraduras Encode de Schlage.",
+    "compatibility.smartthings": "Las páginas de Schlage consultadas incluyen Alexa y Google, pero no SmartThings. Que no aparezca en la lista no significa que no vaya a funcionar.",
+    "compatibility.home_assistant": "Integración oficial de Schlage; la documentación incluye el Encode Smart WiFi Deadbolt entre los probados. Usa la API en la nube de Schlage."
+  }
+}

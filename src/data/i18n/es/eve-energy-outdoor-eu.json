@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Eve Energy Outdoor funciona con Matter sobre Thread, y así se integra con Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Cada una de esas plataformas necesita un hub que sea a la vez controlador Matter y router de borde Thread. Al ir conectado a la red eléctrica, también puede hacer de router Thread para otros dispositivos. Su medidor de consumo muestra las lecturas en la app Eve y en SmartThings, no en Alexa ni en Google Home. Admite 10 A / 2300 W de forma continua y 16 A / 3680 W como pico.",
+  "caveats": [
+    "Necesita un hub que sea a la vez controlador Matter y router de borde Thread; para Apple Home, Eve nombra el HomePod (2.ª gen.), el HomePod mini y el Apple TV 4K (2.ª gen., o 3.ª gen. de 128 GB).",
+    "Las lecturas de consumo no se muestran en Alexa ni en Google Home.",
+    "La carga continua es de 10 A / 2300 W; 16 A / 3680 W es solo la potencia de pico.",
+    "Las lámparas incandescentes están limitadas a 1 A / 240 W."
+  ],
+  "notes": {
+    "radios": "Matter sobre Thread. Eve lo clasifica como un Full Thread Device alimentado por la red eléctrica, así que puede hacer de router Thread para otros dispositivos.",
+    "matter": "Eve lo vende como dispositivo Matter sobre Thread. Un registro de la CSA que parece corresponderle (CSA23K53MAT42554-24) solo apareció en una barra lateral de otra página de Eve, así que no lo citamos.",
+    "hubRequired": "Eve dice que necesita un hub que sea a la vez controlador Matter y router de borde Thread. El modo sin hub de Eve con iOS 18 existe para algunos dispositivos, pero no pudimos confirmar que cubra este.",
+    "localControl": "Matter sobre Thread funciona en la red local a través de tu propio hub; en el control no interviene ninguna cuenta en la nube de Eve.",
+    "energyMonitoring": "Medidor de consumo integrado con estimaciones de coste en la app Eve. Las lecturas se muestran en Apple Home (mediante la app Eve) y en SmartThings, pero no en Alexa ni en Google Home.",
+    "maxLoadWatts": "Eve indica 10 A / 2300 W como carga permanente (continua) y 16 A / 3680 W como corriente de pico, así que usamos 2300 W. Lámparas incandescentes de hasta 1 A / 240 W.",
+    "compatibility.apple_home": "Mediante Matter. Necesita un centro de la casa de Apple que sea router de borde Thread; Eve nombra el HomePod (2.ª gen.), el HomePod mini y el Apple TV 4K (2.ª gen., o 3.ª gen. de 128 GB).",
+    "compatibility.google_home": "Mediante Matter. Necesita un hub de Google que sea controlador Matter y router de borde Thread. Eve dice que la medición de consumo no se muestra en Google Home.",
+    "compatibility.alexa": "Mediante Matter. Necesita un Echo que sea controlador Matter y router de borde Thread. Eve dice que la medición de consumo no se muestra en Alexa.",
+    "compatibility.smartthings": "Mediante Matter. Necesita un hub SmartThings con Thread. Eve dice que las lecturas de consumo aparecen en SmartThings Energy.",
+    "compatibility.home_assistant": "El anuncio Works with Home Assistant de Home Assistant nombra el Eve Energy Outdoor, y la página de Eve muestra el logotipo. Se empareja con la integración de Matter; necesita un router de borde Thread."
+  }
+}

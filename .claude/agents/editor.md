@@ -31,4 +31,6 @@ Run `npm run validate` when done.
 
 `npm run validate` rejects banned words, exclamation marks and a summary whose first three words match another verified record's. Rely on it instead of reading every other record: write, validate, and reword only if it complains. Edit JSON in place (don't re-serialise whole files) so diffs stay small.
 
+After you change a verified record's copy, its Spanish translation (`src/data/i18n/es/<slug>.json`) is stale: say so in your report so the translator updates it.
+
 Report in a few lines per record: the new opening, and any claim you dropped because the data didn't support it.

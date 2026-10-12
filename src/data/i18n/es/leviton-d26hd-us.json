@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El D26HD de Leviton es un regulador wifi de estilo Decora que sustituye a un interruptor de pared estadounidense y necesita cable neutro. Leviton lista Apple Home, Alexa, Google Home y SmartThings sin hub. Una actualización de firmware desde la app My Leviton añade Matter, que es como llega Home Assistant. La actualización elimina el emparejamiento con HomeKit, así que hay que volver a añadirlo a Apple Home con el código Matter y un centro de la casa de Apple. Regula 300 W de LED o 600 W de incandescentes.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "Necesita cable neutro en la caja.",
+    "La actualización Matter elimina el enlace con HomeKit; volver a añadirlo a Apple Home requiere un centro de la casa de Apple.",
+    "Home Assistant necesita la actualización Matter; no hay integración oficial de Leviton.",
+    "La página de producto de Leviton marca el D26HD-1BW como descatalogado y sugiere el D36HD-1BW; comprueba la disponibilidad antes de comprar."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz según Leviton; la hoja de especificaciones también lista Bluetooth 5.0. El registro de la CSA muestra wifi y Bluetooth como transportes de Matter.",
+    "matter": "Matter llega con una actualización de firmware desde la app My Leviton. La CSA tiene dos registros del D26HD: el original (d26hd-2, firmware 2.1.0, Matter 1.0, certificado el 2023-03-01) y una recertificación (d26hd, firmware 2.3.10, Matter 1.3, certificado el 2025-02-21).",
+    "compatibility.apple_home": "Leviton dice que el D26HD de 2.ª generación funciona con Apple HomeKit y se configura en la app Casa. La actualización opcional de Matter elimina ese enlace con HomeKit; después hay que volver a añadirlo a Apple Home con el código Matter, lo que requiere un centro de la casa de Apple (HomePod o Apple TV).",
+    "compatibility.google_home": "Mediante el enlace en la nube de My Leviton; Matter también es una opción tras la actualización de firmware.",
+    "compatibility.alexa": "Mediante My Leviton; Matter también es una opción tras la actualización de firmware.",
+    "compatibility.smartthings": "Leviton lista SmartThings y dice que la actualización Matter no toca la integración existente.",
+    "compatibility.home_assistant": "Mediante la integración de Matter de Home Assistant tras la actualización de firmware Matter. No encontramos ninguna integración oficial de Leviton para Home Assistant.",
+    "hubRequired": "Se conecta directamente al wifi de 2,4 GHz y funciona con la app My Leviton; sin hub.",
+    "localControl": "Leviton dice que el firmware Matter permite que el regulador se conecte en local a las plataformas Matter. Leviton no declara el control local para su propia app.",
+    "switchForm": "Regulador de balancín de estilo Decora que sustituye a un interruptor de pared.",
+    "dimmer": "Hasta 300 W regulables en LED/CFL, 600 W incandescentes, 600 VA de bajo voltaje magnético a 120 V.",
+    "gangs": "No figura en las páginas que vimos; es un único regulador para una caja de pared."
+  }
+}

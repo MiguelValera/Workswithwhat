@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El eufy Video Doorbell E340 graba en 8 GB de almacenamiento integrado, que según eufy guardan unos 90 días de clips, y se anuncia sin cuota mensual. Alexa y Google Assistant funcionan mediante la integración de eufy Security, con funciones limitadas. Apple Home es un no rotundo: la propia ficha técnica de eufy dice que HomeKit no es compatible. Funciona con una batería extraíble o con el cableado del timbre, por wifi de 2,4 GHz.",
+  "caveats": [
+    "El wifi es solo de 2,4 GHz.",
+    "La compatibilidad con Alexa y Google Assistant es limitada: sin conversación bidireccional ni avisos de movimiento; Google tampoco avisa de las pulsaciones del timbre.",
+    "Sin compatibilidad con HomeKit, según eufy.",
+    "La página de producto de eufy y la ficha técnica dan tensiones mínimas distintas para el cableado (8 V frente a 16 V)."
+  ],
+  "notes": {
+    "radios": "La página estadounidense de eufy dice que solo admite wifi de 2,4 GHz; la ficha técnica indica 802.11 b/g/n.",
+    "matter": "Las páginas de eufy no mencionan Matter, y en las búsquedas no apareció ningún registro de certificación de la CSA para este timbre.",
+    "hubRequired": "El timbre graba en su propio almacenamiento de 8 GB. eufy dice que también funciona con una HomeBase S280 o S380 (la S380 necesita firmware 3.3.2.6 o posterior), algo opcional.",
+    "localControl": "eufy no indica si el control funciona sin su nube. La grabación es local, pero no se confirmó que el control desde la app y por voz lo sea.",
+    "power": "Batería extraíble o cableado del timbre. La página estadounidense de eufy pide 8–24 V y más de 10 VA; su ficha técnica dice 16–24 V, 10 VA.",
+    "localStorage": "8 GB de almacenamiento eMMC en el timbre. eufy dice que guardan unos 90 días de vídeo con 30 clips de 20 segundos al día.",
+    "subscription": "eufy anuncia el timbre como utilizable sin suscripción; no se comprobó si existen planes de pago opcionales.",
+    "compatibility.apple_home": "La ficha técnica de eufy marca Works with HomeKit como N para el E340, y su FAQ dice que HomeKit no es compatible por ahora.",
+    "compatibility.google_home": "Google Assistant funciona mediante la integración de eufy Security. La ficha técnica de eufy solo indica transmisión por comando de voz; la conversación bidireccional, los avisos de movimiento y los avisos de pulsación del timbre figuran como no compatibles. Los altavoces de Google Home no pueden hacer de campana.",
+    "compatibility.alexa": "Se vincula con la skill eufy Security de Alexa. La ficha técnica indica compatibles la transmisión por comando de voz y los avisos de pulsación del timbre; la conversación bidireccional y los avisos de movimiento figuran como no compatibles. Los dispositivos Echo pueden hacer de campana.",
+    "compatibility.smartthings": "El artículo general de eufy sobre timbres marca SmartThings como no compatible, pero no nombra el E340, así que no se trata como un no firme.",
+    "compatibility.home_assistant": "La lista de plataformas de terceros de eufy marca Home Assistant como no compatible, pero ese artículo no es claramente específico del E340, así que no se trata como un no firme. Existen integraciones de la comunidad, pero no son oficiales."
+  },
+  "values": {
+    "power": "Batería recargable o cableado",
+    "subscription": "No requiere (sin cuota mensual)"
+  }
+}

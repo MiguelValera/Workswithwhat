@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Solo Zigbee, así que cuenta con un hub. El Innr SP 240 (UE) funciona con Alexa a través de un Echo con hub Zigbee integrado (los demás Echo necesitan un puente como el Hue Bridge), con SmartThings mediante un hub Zigbee de SmartThings y con Home Assistant mediante ZHA o Zigbee2MQTT. Mide el consumo y admite 16 A; Innr no da una cifra en vatios. Innr no confirma Apple Home ni Google Home, y no se encontró ningún registro Matter.",
+  "caveats": [
+    "Necesita un hub Zigbee; no tiene wifi.",
+    "Un Hue Bridge puede encenderlo y apagarlo, pero no muestra sus lecturas de consumo; SmartThings, Hubitat, el puente de Innr y Home Assistant sí.",
+    "Innr dice que sus dispositivos en un Hue Bridge no funcionan con Apple HomeKit, así que la vía Hue no lo lleva a Apple Home."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0 en 2,4 GHz; sin wifi. La declaración de la UE de Innr lo llama enchufe inteligente Zigbee 3.0.",
+    "matter": "Enchufe solo Zigbee; las páginas de Innr que se encontraron no mencionan Matter para él y no se halló ningún registro de la CSA.",
+    "compatibility.apple_home": "Innr dice que sus dispositivos en un Hue Bridge no funcionan con Apple HomeKit. Ninguna fuente de Innr descarta otras vías, así que no se marca como «no».",
+    "compatibility.google_home": "No se encontró ninguna fuente de Innr que liste Google Home para este enchufe; solo un registro de una tienda menciona Google Assistant.",
+    "compatibility.alexa": "Innr dice que se empareja directamente con los altavoces Echo que tienen hub Zigbee integrado; los demás dispositivos Alexa necesitan un puente como Philips Hue.",
+    "compatibility.smartthings": "Innr dice que necesita un hub Zigbee de SmartThings y lista SmartThings entre los sistemas que muestran sus lecturas de consumo.",
+    "compatibility.home_assistant": "Innr nombra Home Assistant entre los sistemas que muestran sus lecturas de consumo y dice que sus productos funcionan con ZHA o Zigbee2MQTT. Zigbee2MQTT lista el SP 240 con potencia, tensión, corriente y energía.",
+    "hubRequired": "Enchufe Zigbee: necesita un hub Zigbee, como un Hue Bridge, SmartThings, un Echo con hub Zigbee o el puente de Innr.",
+    "localControl": "No se encontró ninguna declaración de Innr sobre el control sin internet.",
+    "energyMonitoring": "La declaración de la UE de Innr lo llama enchufe inteligente Zigbee 3.0 con medición de potencia. Innr dice que Philips Hue no muestra las lecturas; SmartThings, Hubitat, el puente de Innr y Home Assistant sí.",
+    "maxLoadWatts": "La página de producto de Innr da una corriente máxima de carga de 16 A; no se encontró ninguna cifra en vatios en una página de Innr."
+  },
+  "via": {
+    "alexa": "Echo con hub Zigbee integrado o Hue Bridge",
+    "smartthings": "hub SmartThings (Zigbee)",
+    "home_assistant": "coordinador Zigbee (ZHA o Zigbee2MQTT)"
+  }
+}

@@ -2,14 +2,21 @@
 // Matter-certified devices: every market (/works-with/matter/) or one (/us/works-with/matter/).
 import Base from '../../layouts/Base.astro';
 import Refs from '../Refs.astro';
-import { RADIO_LABELS, devicePath, getPublishedDevices, categoryPhrase, type Device } from '../../lib/devices';
-import { CATEGORIES, specFacts } from '../../lib/categories';
-import { byMarket, marketOf, type Market } from '../../lib/markets';
+import { deviceText, devicePathIn, getPublishedDevices, getTranslations, categoryPhrase, radioList, type Device } from '../../lib/devices';
+import { CATEGORIES, catText, specFacts } from '../../lib/categories';
+import { byMarket, marketOf, marketText, type Market } from '../../lib/markets';
+import { langOf } from '../../i18n/lang';
+import { ui } from '../../i18n/ui';
 
 interface Props {
   market?: Market;
 }
 const { market } = Astro.props;
+const lang = langOf(Astro.url.pathname);
+const es = lang === 'es';
+const t = ui(lang);
+const translations = await getTranslations();
+const mt = market && marketText(market, lang);
 const all = (await getPublishedDevices()).filter((d) => !market || marketOf(d) === market);
 const path = market ? `/${market.key}/works-with/matter/` : '/works-with/matter/';
 const split = (list: Device[]) => (market ? [{ market, devices: list }] : byMarket(list));
@@ -23,10 +30,18 @@ const groups = CATEGORIES.map((cat) => {
     thread: list.filter((d) => d.data.matter.transport === 'thread'),
   };
 }).filter((g) => g.list.length > 0);
-const { short: what, long: whatLong } = categoryPhrase(groups.map((g) => g.cat.plural));
+const { short: what, long: whatLong } = categoryPhrase(groups.map((g) => catText(g.cat, lang).plural), lang);
 
-const title = market ? `Matter ${what} for ${market.phrase}` : `Matter ${what}`;
-const description = `${matter.length} Matter-certified ${whatLong}${market ? ` for ${market.phrase}` : ''}, split by Wi-Fi and Thread, with what each needs to work in Apple Home, Google Home, Alexa, SmartThings and Home Assistant.`;
+const title = es
+  ? `${what.replace(/^./, (c) => c.toUpperCase())} con Matter${mt ? ` para ${mt.phrase}` : ''}`
+  : market
+    ? `Matter ${what} for ${market.phrase}`
+    : `Matter ${what}`;
+const description = es
+  ? `${matter.length} ${whatLong} con certificación Matter${mt ? ` para ${mt.phrase}` : ''}, separados por wifi y Thread, con lo que necesita cada uno para funcionar en Apple Home, Google Home, Alexa, SmartThings y Home Assistant.`
+  : `${matter.length} Matter-certified ${whatLong}${market ? ` for ${market.phrase}` : ''}, split by Wi-Fi and Thread, with what each needs to work in Apple Home, Google Home, Alexa, SmartThings and Home Assistant.`;
+const wifiN = matter.filter((d) => d.data.matter.transport === 'wifi').length;
+const threadN = matter.filter((d) => d.data.matter.transport === 'thread').length;
 ---
 
 <Base
@@ -35,79 +50,111 @@ const description = `${matter.length} Matter-certified ${whatLong}${market ? ` f
   crumbs={
     market
       ? [
-          { name: market.label, path: `/${market.key}/` },
+          { name: mt!.label, path: `/${market.key}/` },
           { name: 'Matter', path },
         ]
       : [
-          { name: 'By ecosystem', path: '/works-with/' },
+          { name: t.navByEcosystem, path: '/works-with/' },
           { name: 'Matter', path },
         ]
   }
 >
   <h1>{title.replace(/^./, (c) => c.toUpperCase())}</h1>
-  <p class="lede">
-    {matter.length} of the {all.length} devices we've checked are Matter-certified:
-    {' '}{matter.filter((d) => d.data.matter.transport === 'wifi').length} over Wi-Fi and
-    {' '}{matter.filter((d) => d.data.matter.transport === 'thread').length} over Thread.
-  </p>
+  {
+    es ? (
+      <p class="lede">
+        {matter.length} de los {all.length} dispositivos que hemos comprobado tienen certificación Matter: {wifiN} por wifi y {threadN} por Thread.
+      </p>
+    ) : (
+      <p class="lede">
+        {matter.length} of the {all.length} devices we've checked are Matter-certified: {wifiN} over Wi-Fi and {threadN} over Thread.
+      </p>
+    )
+  }
 
-  <nav class="toc" aria-label="On this page">
-    <span class="toc-label">Jump to:</span>
+  <nav class="toc" aria-label={es ? 'En esta página' : 'On this page'}>
+    <span class="toc-label">{t.jumpTo}</span>
     {
       groups.flatMap((g) => [
-        g.wifi.length > 0 && <a href={`#${g.cat.path}-wifi`}>{g.cat.label} over Wi-Fi ({g.wifi.length})</a>,
-        g.thread.length > 0 && <a href={`#${g.cat.path}-thread`}>{g.cat.label} over Thread ({g.thread.length})</a>,
+        g.wifi.length > 0 && <a href={`#${g.cat.path}-wifi`}>{catText(g.cat, lang).label} {es ? 'por wifi' : 'over Wi-Fi'} ({g.wifi.length})</a>,
+        g.thread.length > 0 && <a href={`#${g.cat.path}-thread`}>{catText(g.cat, lang).label} {es ? 'por Thread' : 'over Thread'} ({g.thread.length})</a>,
       ])
     }
-    <a href="#what-matter-means">What Matter means</a>
+    <a href="#what-matter-means">{es ? 'Qué significa Matter' : 'What Matter means'}</a>
   </nav>
-  <h2 id="what-matter-means">What Matter means for a device</h2>
-  <p>
-    A Matter-certified device can be added to any platform that acts as a Matter controller, including Apple Home,
-    Google Home, Alexa, SmartThings and Home Assistant, without the brand's own skill or cloud. You can also share
-    it with more than one platform at once.
-  </p>
-  <p>
-    <strong>Wi-Fi devices</strong> join your existing network. <strong>Thread devices</strong> use a low-power mesh and
-    need a Thread border router, which many recent smart speakers and streaming boxes include. Either way, the
-    platform you add it to needs its own Matter hub for automations and remote access.
-  </p>
+  {
+    es ? (
+      <>
+        <h2 id="what-matter-means">Qué significa Matter para un dispositivo</h2>
+        <p>
+          Un dispositivo con certificación Matter se puede añadir a cualquier plataforma que actúe como controlador Matter,
+          como Apple Home, Google Home, Alexa, SmartThings y Home Assistant, sin la skill ni la nube de la marca. También
+          puedes compartirlo con varias plataformas a la vez.
+        </p>
+        <p>
+          <strong>Los dispositivos wifi</strong> se conectan a tu red actual. <strong>Los dispositivos Thread</strong> usan una
+          malla de bajo consumo y necesitan un router de borde Thread, que incluyen muchos altavoces inteligentes y
+          reproductores multimedia recientes. En ambos casos, la plataforma a la que lo añadas necesita su propio hub Matter
+          para las automatizaciones y el acceso remoto.
+        </p>
+      </>
+    ) : (
+      <>
+        <h2 id="what-matter-means">What Matter means for a device</h2>
+        <p>
+          A Matter-certified device can be added to any platform that acts as a Matter controller, including Apple Home,
+          Google Home, Alexa, SmartThings and Home Assistant, without the brand's own skill or cloud. You can also share
+          it with more than one platform at once.
+        </p>
+        <p>
+          <strong>Wi-Fi devices</strong> join your existing network. <strong>Thread devices</strong> use a low-power mesh and
+          need a Thread border router, which many recent smart speakers and streaming boxes include. Either way, the
+          platform you add it to needs its own Matter hub for automations and remote access.
+        </p>
+      </>
+    )
+  }
 
   {
     groups.map((g) =>
       [
-        { label: 'over Wi-Fi', list: g.wifi, id: `${g.cat.path}-wifi` },
-        { label: 'over Thread', list: g.thread, id: `${g.cat.path}-thread` },
+        { label: es ? 'por wifi' : 'over Wi-Fi', list: g.wifi, id: `${g.cat.path}-wifi` },
+        { label: es ? 'por Thread' : 'over Thread', list: g.thread, id: `${g.cat.path}-thread` },
       ].map(
-        (t) =>
-          t.list.length > 0 && (
+        (tr) =>
+          tr.list.length > 0 && (
             <>
-              <h2 id={t.id}>Matter {g.cat.plural} {t.label}</h2>
-              {split(t.list).map((m) => (
+              <h2 id={tr.id}>{es ? `${catText(g.cat, lang).label} con Matter ${tr.label}` : `Matter ${g.cat.plural} ${tr.label}`}</h2>
+              {split(tr.list).map((m) => (
               <>
-              {!market && <h3 id={`${t.id}-${m.market.key}`}>{m.market.label} ({m.devices.length})</h3>}
+              {!market && <h3 id={`${tr.id}-${m.market.key}`}>{marketText(m.market, lang).label} ({m.devices.length})</h3>}
               <div class="table-scroll">
                 <table role="table" class="stack pair">
                   <thead role="rowgroup">
                     <tr role="row">
-                      <th role="columnheader" scope="col">Device</th>
-                      <th role="columnheader" scope="col">Radios</th>
-                      <th role="columnheader" scope="col">{g.cat.specs[0].label}</th>
-                      <th role="columnheader" scope="col">Notes</th>
+                      <th role="columnheader" scope="col">{t.device}</th>
+                      <th role="columnheader" scope="col">{t.radios}</th>
+                      <th role="columnheader" scope="col">{es ? g.cat.specs[0].labelEs : g.cat.specs[0].label}</th>
+                      <th role="columnheader" scope="col">{t.notes}</th>
                     </tr>
                   </thead>
                   <tbody role="rowgroup">
-                    {m.devices.map((d) => (
-                      <tr role="row">
-                        <th role="rowheader" scope="row" class="name">
-                          <a href={devicePath(d)}>{d.data.name}</a>
-                          <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
-                        </th>
-                        <td role="cell" data-label="Radios">{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
-                        <td role="cell" data-label={g.cat.specs[0].label}>{specFacts(d.data)[0].text}</td>
-                        <td role="cell" class="wide">{d.data.matter.note}<Refs ids={d.data.matter.sources} all={d.data.sources} base={devicePath(d)} /></td>
-                      </tr>
-                    ))}
+                    {m.devices.map((d) => {
+                      const words = deviceText(d, lang, translations.get(d.id));
+                      const href = devicePathIn(d, lang, translations);
+                      const spec = specFacts(d.data, lang, words.values)[0];
+                      return (
+                        <tr role="row">
+                          <th role="rowheader" scope="row" class="name">
+                            <a href={href}>{d.data.name}</a>
+                            <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
+                          </th>
+                          <td role="cell" data-label={t.radios}>{radioList(d.data.radios.value, lang) || '—'}</td>
+                          <td role="cell" data-label={spec.label}>{spec.text}</td>
+                          <td role="cell" class="wide">{words.note('matter', d.data.matter.note)}<Refs ids={d.data.matter.sources} all={d.data.sources} base={href} /></td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
@@ -120,7 +167,10 @@ const description = `${matter.length} Matter-certified ${whatLong}${market ? ` f
   }
 
   <p class="muted small">
-    Only devices that are Matter-certified themselves are listed. Devices that reach Matter through a bridge (such as
-    a Zigbee device behind a hub) are on the full charts.
+    {
+      es
+        ? 'Solo aparecen dispositivos con certificación Matter propia. Los que llegan a Matter a través de un puente (como un dispositivo Zigbee detrás de un hub) están en las tablas completas.'
+        : 'Only devices that are Matter-certified themselves are listed. Devices that reach Matter through a bridge (such as a Zigbee device behind a hub) are on the full charts.'
+    }
   </p>
 </Base>

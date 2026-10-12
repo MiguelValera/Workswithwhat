@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "El SONOFF S31 se configura en la app eWeLink, y esa cuenta es el puente hacia todo lo demás: Alexa, Google Home y SmartThings se conectan a través de la nube de eWeLink. Lo que lo hace interesante es la medición: corriente, tensión y potencia en tiempo real, más el histórico de uso, en un enchufe estadounidense de 15 A / 1800 W con wifi de 2,4 GHz. SONOFF no menciona Apple Home, y Home Assistant solo recibe el encendido y apagado mediante el complemento de eWeLink.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "Alexa, Google Home y SmartThings pasan por la nube de eWeLink, y el control local no está confirmado.",
+    "La compatibilidad con Home Assistant es un complemento de eWeLink (solo HA OS o Supervised), no una integración del núcleo, y ofrece solo encendido y apagado, sin lecturas de consumo.",
+    "SONOFF no menciona Apple Home; el puente Matter del CUBE (iHost) de eWeLink puede exponer el S31 a plataformas Matter, pero es un dispositivo adicional.",
+    "No lo confundas con el S31 Lite (sin medición) ni con el S31 Lite zb (Zigbee, necesita un puente)."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz 802.11 b/g/n.",
+    "matter": "No hemos encontrado ninguna certificación Matter para el S31 en sí. La página del puente Matter del CUBE (iHost) de eWeLink incluye el S31 entre los dispositivos que puede exponer a plataformas Matter.",
+    "hubRequired": "Enchufe wifi que se conecta directamente al router; el S31 Lite zb, de tipo Zigbee, es otro producto y necesita un puente.",
+    "localControl": "Sin confirmar: la página de ayuda del S31 de SONOFF describe el control LAN de eWeLink en general sin decir que el S31 lo admita, y una ficha de ITEAD indica control LAN: no.",
+    "energyMonitoring": "Corriente, tensión y potencia en tiempo real, más el histórico de uso guardado. El S31 Lite no mide el consumo.",
+    "maxLoadWatts": "15 A a 120 V CA.",
+    "compatibility.apple_home": "SONOFF indica Alexa, Google e IFTTT para el S31, pero no Apple Home; el estado de Matter no está confirmado, así que no se marca como no.",
+    "compatibility.google_home": "Mediante la vinculación de cuentas de eWeLink (nube).",
+    "compatibility.alexa": "Mediante la skill de eWeLink (nube).",
+    "compatibility.smartthings": "Se añade primero en eWeLink y después se sincroniza con SmartThings mediante la vinculación de cuentas en la nube.",
+    "compatibility.home_assistant": "Mediante el complemento propio de eWeLink para Home Assistant (HA OS/Supervised), no una integración del núcleo de HA. Cubre los interruptores y enchufes de eWeLink como entidades de encendido y apagado; no expone las lecturas de consumo."
+  }
+}

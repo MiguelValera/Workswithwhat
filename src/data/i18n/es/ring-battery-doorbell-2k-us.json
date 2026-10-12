@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Alexa es el único ecosistema que Ring confirma para el Battery Doorbell 2K: con la skill de Ring tienes anuncios, conversación bidireccional y vista en directo en un Echo Show. La vista en directo es gratuita, pero el vídeo guardado y los anuncios de personas y paquetes requieren un plan Ring Protect. El timbre funciona con batería recargable y se conecta por wifi sin hub, y también se puede cablear a un transformador de timbre de 8 a 24 V de CA. Apple Home, Google Home y SmartThings no están confirmados.",
+  "caveats": [
+    "El vídeo guardado, y los anuncios de personas y paquetes con vista en directo automática en Echo Show, requieren un plan Ring Protect.",
+    "Las páginas de Ring no coinciden en si el wifi es solo de 2,4 GHz o de doble banda.",
+    "La compatibilidad con Apple Home, Google Home y Home Assistant no está confirmada para este modelo."
+  ],
+  "notes": {
+    "radios": "La página de producto estadounidense de Ring indica wifi 4 solo en 2,4 GHz. Una página de soporte de Ring para el Battery Doorbell (2.ª generación) indica doble banda, así que la banda no está clara.",
+    "matter": "Las páginas de Ring no dicen nada sobre Matter, y en las búsquedas no apareció ningún registro de certificación de la CSA para un timbre de Ring.",
+    "hubRequired": "Se conecta por wifi a la app Ring. El Ring Chime es opcional.",
+    "localControl": "Ring no indica si algún control funciona sin su nube.",
+    "power": "Batería integrada; el timbre se retira de la pared para recargarlo. Ring dice que también se puede cablear a un transformador de timbre de 8–24 V de CA, o alimentar con un cargador solar de Ring, para cargarlo poco a poco.",
+    "localStorage": "En las páginas de Ring no aparece ninguna opción de grabación local.",
+    "subscription": "Ring dice que las grabaciones se almacenan mediante un plan Ring Protect; la vista en directo funciona sin él. No se consultaron la retención ni los precios en la página estadounidense.",
+    "compatibility.apple_home": "Ni la página de producto de Ring ni sus páginas de ayuda de Alexa mencionan Apple Home ni HomeKit. Sin confirmar en ningún sentido.",
+    "compatibility.google_home": "No se encontró ninguna página de Ring que incluya Google Home o Google Assistant para este timbre. Solo se vieron respuestas en foros, que no se citan.",
+    "compatibility.alexa": "Mediante la skill de Ring. Ring dice que todos sus modelos de videotimbre funcionan con Alexa, con anuncios, conversación bidireccional y vista en directo en Echo Show. Los anuncios de personas y paquetes, con vista en directo automática en Echo Show, requieren un plan Ring Protect.",
+    "compatibility.smartthings": "No se encontró ninguna página oficial de Ring ni de SmartThings para este modelo; solo mensajes de foros, que no se citan.",
+    "compatibility.home_assistant": "Home Assistant tiene una integración oficial de Ring, pero su lista de dispositivos nombra «Battery Doorbell» y «Doorbell (2nd Gen)», no el Battery Doorbell 2K, así que la compatibilidad con este modelo no está confirmada."
+  },
+  "values": {
+    "power": "Batería recargable",
+    "subscription": "Historial de vídeo guardado (plan Ring Protect)"
+  }
+}

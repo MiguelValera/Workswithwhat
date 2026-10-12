@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Govee lista solo Alexa y Google Assistant para el H5086, y ambos pasan por la nube de Govee. Apple Home, SmartThings y Matter no figuran para este modelo. Es un enchufe con wifi de 2,4 GHz y Bluetooth, de 15 A / 1800 W a 120 V, que se controla desde la app Govee Home sin hub y registra el consumo de energía en ella. El enchufe Matter de Govee es el Smart Plug Pro B5085, un producto aparte.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "No hay compatibilidad confirmada con Apple Home ni con Matter; Govee solo da Matter al Smart Plug Pro (B5085), que es otro modelo.",
+    "No hay integración oficial con Home Assistant; las integraciones personalizadas de la comunidad dan resultados desiguales.",
+    "Las integraciones documentadas de Govee dependen de la nube, y la marca no dice nada sobre el control local.",
+    "Govee dice que se puede enchufar una regleta con protección contra sobretensiones solo si la carga total no supera los 1800 W."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz y Bluetooth.",
+    "hubRequired": "Govee indica como conexión wifi de 2,4 GHz y Bluetooth, y la app Govee Home para el control; no se lista ningún hub.",
+    "localControl": "No hemos encontrado ninguna declaración oficial sobre el control local; las integraciones documentadas de Govee dependen de la nube.",
+    "energyMonitoring": "Registra el consumo de energía en la app Govee Home.",
+    "maxLoadWatts": "15 A a 120 V, 1800 W como máximo. Govee dice que se puede enchufar una regleta con protección contra sobretensiones si el total no supera esa potencia.",
+    "matter": "La página y las FAQ del H5086 en Govee no mencionan Matter; la tabla comparativa de Govee da Matter solo al Smart Plug Pro (B5085), un producto aparte. Ninguna fuente dice de forma explícita que el H5086 no tenga Matter.",
+    "compatibility.apple_home": "Govee lista solo Alexa y Google Assistant para el H5086, pero Matter no se descarta de forma explícita, así que no podemos marcarlo como no compatible.",
+    "compatibility.google_home": "Govee lista Google Assistant; pasa por la nube de Govee.",
+    "compatibility.alexa": "Govee lista Alexa; pasa por la nube de Govee.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página de Govee ni de SmartThings que cubra este enchufe.",
+    "compatibility.home_assistant": "Que sepamos, ninguna integración oficial de Home Assistant cubre este enchufe; existen integraciones personalizadas de la comunidad con resultados desiguales."
+  }
+}

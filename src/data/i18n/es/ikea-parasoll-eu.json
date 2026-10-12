@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El IKEA PARASOLL es un sensor Zigbee de contacto para puertas y ventanas que necesita un hub DIRIGERA de IKEA para llegar a Apple Home, Google Home y Alexa. Sin el hub, solo puede activar una bombilla TRÅDFRI emparejada. La compatibilidad con SmartThings y Home Assistant no está confirmada. Usa una pila AAA, y IKEA recomienda su recargable LADDA.",
+  "caveats": [
+    "Necesita un hub DIRIGERA, que se vende aparte, para recibir notificaciones en el móvil y para Apple Home, Google Home y Alexa.",
+    "La página de ayuda de IKEA Austria dice que el PARASOLL ha salido del catálogo y que MYGGBETT lo sustituye."
+  ],
+  "notes": {
+    "radios": "El comunicado de lanzamiento de IKEA describe los tres sensores como basados en Zigbee.",
+    "matter": "IKEA dice que los dispositivos Zigbee conectados a DIRIGERA pueden ofrecerse a través de su puente Matter. Ninguna página consultada dice que el PARASOLL se exponga así, y no se encontró ningún registro de la CSA.",
+    "compatibility.apple_home": "IKEA dice que el sensor funciona con Apple HomeKit a través de DIRIGERA.",
+    "compatibility.alexa": "El ejemplo de IKEA es preguntar a Alexa si la puerta está abierta.",
+    "compatibility.smartthings": "Ninguna página de IKEA ni de SmartThings consultada menciona el PARASOLL.",
+    "compatibility.home_assistant": "Las docs de Home Assistant consultadas no mencionan compatibilidad con el PARASOLL. Solo según mensajes de foros se empareja con ZHA o Zigbee2MQTT, y por el puente Matter de DIRIGERA, al parecer, no aparece.",
+    "hubRequired": "Las notificaciones en el móvil y los enlaces con la casa inteligente necesitan un hub DIRIGERA (se vende aparte). Sin él, solo puede activar directamente una bombilla TRÅDFRI emparejada.",
+    "localControl": "Ninguna página consultada dice si funciona sin internet a través de DIRIGERA.",
+    "power": "IKEA recomienda una pila recargable LADDA AAA (HR03, 1,2 V)."
+  },
+  "via": {
+    "apple_home": "hub DIRIGERA de IKEA",
+    "google_home": "hub DIRIGERA de IKEA",
+    "alexa": "hub DIRIGERA de IKEA"
+  }
+}

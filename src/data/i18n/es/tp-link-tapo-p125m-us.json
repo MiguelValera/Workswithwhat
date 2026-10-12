@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Matter hace casi todo el trabajo en el Tapo P125M: es lo que le permite llegar a Apple Home, Google Home, Alexa y SmartThings. No hay modo HomeKit, y TP-Link dice que los dispositivos Tapo con Matter se conectan a Alexa directamente en lugar de mediante la skill Tapo. Home Assistant puede usar su integración de TP-Link o Matter. Este enchufe estadounidense funciona con wifi de 2,4 GHz (el Bluetooth es solo para la configuración), es de 15 A / 1800 W y sigue funcionando en tu red doméstica sin internet. Las especificaciones estadounidenses de TP-Link no indican medición de consumo.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "Apple Home solo funciona mediante Matter, así que necesitas un centro de la casa de Apple (HomePod o Apple TV).",
+    "Alexa necesita un Echo que funcione como controlador Matter; la skill Tapo no lo cubre.",
+    "No cuentes con la medición de consumo: la página de producto y la ficha técnica estadounidenses no la indican, aunque algunas versiones regionales pueden diferir."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz (IEEE 802.11b/g/n). TP-Link indica Bluetooth solo para la configuración.",
+    "matter": "TP-Link lo describe como certificado Matter y la ficha técnica estadounidense incluye Matter entre sus certificaciones. No hemos encontrado ningún registro de la CSA que nombre el número de modelo P125M.",
+    "hubRequired": "No hace falta hub con la app Tapo. Los ecosistemas de terceros necesitan su propio controlador Matter.",
+    "localControl": "TP-Link dice que los dispositivos Matter de tu red doméstica se pueden seguir controlando desde la app Tapo o desde otra app Matter sin internet.",
+    "energyMonitoring": "La página de producto y la ficha técnica estadounidenses no indican medición de consumo, y el personal del foro de TP-Link dice que el P125M no la tiene. La ficha técnica italiana sí la indica, así que las versiones regionales pueden diferir. Ninguna declaración oficial estadounidense en un sentido ni en otro.",
+    "maxLoadWatts": "15 A / 1800 W como máximo para cargas resistivas a 100–125 V.",
+    "compatibility.apple_home": "TP-Link indica Apple Home. El enchufe no tiene modo HomeKit (HAP), así que funciona mediante Matter y necesita un centro de la casa de Apple.",
+    "compatibility.google_home": "Se añade en la app Google Home escaneando el código Matter. También puede funcionar vinculándolo con Tapo Actions, pero no hemos encontrado ninguna fuente que lo confirme para este modelo.",
+    "compatibility.alexa": "La guía de Alexa de TP-Link dice que los dispositivos Tapo con Matter se conectan a Alexa directamente, no mediante la skill Tapo. Necesita un Echo que funcione como controlador Matter.",
+    "compatibility.smartthings": "TP-Link indica Samsung SmartThings. No hemos podido confirmar una integración directa en la nube de Tapo, así que lo registramos como Matter.",
+    "compatibility.home_assistant": "La integración TP-Link Smart Home de Home Assistant incluye el P125M entre los enchufes Tapo compatibles. También se puede añadir mediante la integración de Matter."
+  }
+}

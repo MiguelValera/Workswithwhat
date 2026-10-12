@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Solo Alexa, y Amazon lo dice sin rodeos: el Amazon Smart Plug no admite otros asistentes de voz ni hubs domóticos, así que Apple Home, Google Home y SmartThings quedan fuera. Se configura y se controla desde la app Alexa; no necesitas hub y el Echo es opcional. Es un enchufe estadounidense con wifi de 2,4 GHz, de 120 V / 15 A, aunque Amazon no da la potencia en vatios. Tampoco menciona la medición de consumo ni si funciona sin internet.",
+  "caveats": [
+    "Solo Alexa: Amazon dice que no funciona con otros asistentes de voz ni hubs domóticos, así que no aparecerá en Apple Home, Google Home ni SmartThings.",
+    "Solo wifi de 2,4 GHz.",
+    "Home Assistant no tiene integración oficial que hayamos encontrado; los usuarios solo llegan a él de forma indirecta, con rutinas de Alexa.",
+    "Amazon no dice si el enchufe sigue funcionando sin conexión a internet."
+  ],
+  "notes": {
+    "radios": "Solo wifi de 2,4 GHz (802.11 b/g/n). Los anuncios de tiendas y los registros de la FCC sugieren que también lleva Bluetooth, pero la página de Amazon no lo menciona, así que no lo incluimos.",
+    "matter": "El anuncio de Amazon no menciona Matter y dice que el enchufe está hecho para usarse exclusivamente con Alexa. No hemos encontrado ningún registro de la CSA, pero tampoco una declaración explícita.",
+    "hubRequired": "No necesita hub domótico, pero la configuración requiere la app Alexa (un Echo es opcional).",
+    "localControl": "Amazon no dice si el enchufe funciona sin internet.",
+    "energyMonitoring": "El anuncio de Amazon no menciona la medición de consumo.",
+    "maxLoadWatts": "Amazon indica 120 VAC, 60 Hz y 15 A como máximo, pero no da la potencia en vatios.",
+    "compatibility.apple_home": "Amazon dice que el enchufe no admite otros asistentes de voz ni hubs domóticos.",
+    "compatibility.google_home": "Amazon dice que el enchufe no admite otros asistentes de voz ni hubs domóticos.",
+    "compatibility.alexa": "Se configura y se controla desde la app Alexa.",
+    "compatibility.smartthings": "Amazon dice que el enchufe no admite otros asistentes de voz ni hubs domóticos.",
+    "compatibility.home_assistant": "La frase general de Amazon sobre «ningún otro hub domótico» no nombra Home Assistant. No hemos encontrado integración oficial; en los foros, los usuarios solo lo controlan de forma indirecta con rutinas de Alexa."
+  }
+}

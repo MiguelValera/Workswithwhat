@@ -1,8 +1,11 @@
 ---
 import '../styles/global.css';
 import { getActiveCategories } from '../lib/devices';
-import { getActiveMarkets, getRegionPages } from '../lib/markets';
+import { getActiveMarkets, getRegionPages, marketText } from '../lib/markets';
+import { catText } from '../lib/categories';
 import { OPERATOR } from '../site.config';
+import { ACTIVE_LANGS, HTML_LANG, LANG_NAMES, OG_LOCALE, langOf, localize, toEnglish } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 
 interface Crumb {
   name: string;
@@ -14,14 +17,22 @@ interface Props {
   crumbs?: Crumb[];
   jsonLd?: object[];
   ogType?: 'website' | 'article';
+  /** false for pages that exist in one language only (the 404 page) */
+  alternates?: boolean;
 }
 
-const { title, description, crumbs = [], jsonLd = [], ogType = 'website' } = Astro.props;
+const { title, description, crumbs = [], jsonLd = [], ogType = 'website', alternates = true } = Astro.props;
+// Pages pass English paths in crumbs; this layout localizes every link it builds.
+const lang = langOf(Astro.url.pathname);
+const t = ui(lang);
+const L = (p: string) => localize(p, lang);
 const site = Astro.site!;
 const navCategories = await getActiveCategories();
 const canonical = new URL(Astro.url.pathname, site).href;
-// marks the main-nav link for the current section (aria-current is also the styling hook)
-const here = Astro.url.pathname;
+// everything below works on the English path; links are localized when rendered
+const here = toEnglish(Astro.url.pathname);
+// the same page in each built language (hreflang + language switch)
+const langLinks = alternates && ACTIVE_LANGS.length > 1 ? ACTIVE_LANGS.map((l) => ({ l, href: localize(here, l) })) : [];
 
 
 // Region switch: the same page for another market when it exists, else that market's
@@ -38,25 +49,25 @@ const regionLinks = markets.map((m) => {
   return { m, href: candidates.find((c) => regionPaths.has(c)) ?? `/${m.key}/` };
 });
 // keep titles short enough for search results; long question titles drop the brand suffix
-const fullTitle = Astro.url.pathname === '/' || title.length > 50 ? title : `${title} | Workswithwhat`;
+const fullTitle = here === '/' || title.length > 50 ? title : `${title} | Workswithwhat`;
 
 const structured = [...jsonLd];
 if (crumbs.length) {
   structured.push({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: [{ name: 'Home', path: '/' }, ...crumbs].map((c, i) => ({
+    itemListElement: [{ name: t.home, path: '/' }, ...crumbs].map((c, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name: c.name,
-      item: new URL(c.path, site).href,
+      item: new URL(L(c.path), site).href,
     })),
   });
 }
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={HTML_LANG[lang]}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -75,43 +86,55 @@ if (crumbs.length) {
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {langLinks.map(({ l, href }) => <link rel="alternate" hreflang={HTML_LANG[l]} href={new URL(href, site).href} />)}
+    {langLinks.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(here, site).href} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="theme-color" content="#0f766e" />
     <meta property="og:site_name" content="Workswithwhat" />
     <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content={OG_LOCALE[lang]} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={new URL('/og.png', site).href} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Workswithwhat: smart home compatibility, checked against official sources" />
+    <meta property="og:image:alt" content={t.ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Site summary for AI assistants" />
     <link rel="alternate" type="application/json" href="/api/devices.json" title="Device data (JSON)" />
     {structured.map((obj) => <script type="application/ld+json" set:html={JSON.stringify(obj).replace(/</g, '\\u003c')} />)}
   </head>
   <body>
-    <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">{t.skip}</a>
     <header class="site-header">
       <div class="wrap">
-        <a class="logo" href="/">works<span>with</span>what</a>
-        <nav aria-label="Main">
-          {navCategories.map((c) => <a href={`/${c.path}/`} aria-current={current(`/${c.path}/`)}>{c.navLabel}</a>)}
-          <a href="/works-with/" aria-current={current('/works-with/')}>By ecosystem</a>
-          <a href="/methodology/" aria-current={current('/methodology/')}>How we verify</a>
+        <a class="logo" href={L('/')}>works<span>with</span>what</a>
+        <nav aria-label={t.mainNav}>
+          {navCategories.map((c) => <a href={L(`/${c.path}/`)} aria-current={current(`/${c.path}/`)}>{catText(c, lang).navLabel}</a>)}
+          <a href={L('/works-with/')} aria-current={current('/works-with/')}>{t.navByEcosystem}</a>
+          <a href={L('/methodology/')} aria-current={current('/methodology/')}>{t.navHowWeVerify}</a>
         </nav>
         {
           markets.length > 1 && (
-            <nav class="region" aria-label="Region">
-              <span class="muted">Region:</span>
-              <a href={rest} aria-current={hereMarket ? undefined : 'true'}>All</a>
+            <nav class="region" aria-label={t.region}>
+              <span class="muted">{t.region}:</span>
+              <a href={L(rest)} aria-current={hereMarket ? undefined : 'true'}>{t.regionAll}</a>
               {regionLinks.map(({ m, href }) => (
-                <a href={href} aria-current={hereMarket === m ? 'true' : undefined} title={m.label}>
-                  {m.short.length <= 3 ? m.short : m.label}
+                <a href={L(href)} aria-current={hereMarket === m ? 'true' : undefined} title={marketText(m, lang).label}>
+                  {lang === 'es' ? marketText(m, lang).short : m.short.length <= 3 ? m.short : m.label}
                 </a>
               ))}
+              {langLinks.length > 0 && (
+                <span class="langs" role="group" aria-label={t.language}>
+                  {langLinks.map(({ l, href }) => (
+                    <a href={href} hreflang={HTML_LANG[l]} lang={HTML_LANG[l]} aria-current={l === lang ? 'true' : undefined} title={LANG_NAMES[l]}>
+                      {l.toUpperCase()}
+                    </a>
+                  ))}
+                </span>
+              )}
             </nav>
           )
         }
@@ -120,13 +143,13 @@ if (crumbs.length) {
     <main class="wrap" id="main" tabindex="-1">
       {
         crumbs.length > 0 && (
-          <nav class="crumbs" aria-label="Breadcrumb">
-            <a href="/">Home</a>
+          <nav class="crumbs" aria-label={t.breadcrumb}>
+            <a href={L('/')}>{t.home}</a>
             {crumbs.map((c, i) =>
               i === crumbs.length - 1 ? (
                 <span aria-current="page">{c.name}</span>
               ) : (
-                <a href={c.path}>{c.name}</a>
+                <a href={L(c.path)}>{c.name}</a>
               ),
             )}
           </nav>
@@ -137,14 +160,14 @@ if (crumbs.length) {
     <footer class="site-footer">
       <div class="wrap">
         <p>
-          Every claim links to its source. Spotted something wrong or out of date?{' '}
-          <a href={`mailto:${OPERATOR.email}?subject=${encodeURIComponent('Correction for workswithwhat.com')}`}>Tell us</a>.
+          {t.footerCorrection}{' '}
+          <a href={`mailto:${OPERATOR.email}?subject=${encodeURIComponent(t.footerMailSubject)}`}>{t.footerTellUs}</a>.
         </p>
         <p class="muted">
-          Not affiliated with any brand mentioned. Trademarks belong to their owners. No cookies, no trackers.
+          {t.footerNotAffiliated}
         </p>
         <p class="muted small">
-          <a href="/legal/">Legal notice</a> · <a href="/privacy/">Privacy and cookies</a> · <a href="/methodology/">How we verify</a>
+          <a href={L('/legal/')}>{t.legalNotice}</a> · <a href={L('/privacy/')}>{t.privacy}</a> · <a href={L('/methodology/')}>{t.navHowWeVerify}</a>
         </p>
       </div>
     </footer>

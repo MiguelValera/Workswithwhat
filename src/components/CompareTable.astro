@@ -1,6 +1,8 @@
 ---
 import Status from './Status.astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, RADIO_LABELS, devicePath, type Device } from '../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, getTranslations, radioList, type Device } from '../lib/devices';
+import { langOf } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 interface Props {
   devices: Device[];
   /** show "jump to brand" links above the table (long charts only) */
@@ -9,6 +11,9 @@ interface Props {
   anchorPrefix?: string;
 }
 const { devices, brandJump = false, anchorPrefix = '' } = Astro.props;
+const lang = langOf(Astro.url.pathname);
+const t = ui(lang);
+const translations = await getTranslations();
 // anchor on the first row of each brand, for the brand jump links (rows are sorted by brand)
 const brandAnchor = (brand: string) => `${anchorPrefix}brand-${brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
 const firstOfBrand = new Set(devices.filter((d, i) => i === 0 || devices[i - 1].data.brand !== d.data.brand).map((d) => d.id));
@@ -17,8 +22,8 @@ const brands = [...new Set(devices.map((d) => d.data.brand))];
 
 {
   brandJump && brands.length > 4 && (
-    <nav class="toc" aria-label="Jump to brand">
-      <span class="toc-label">Jump to brand:</span>
+    <nav class="toc" aria-label={t.jumpToBrand.replace(/:$/, '')}>
+      <span class="toc-label">{t.jumpToBrand}</span>
       {brands.map((b) => <a href={`#${brandAnchor(b)}`}>{b}</a>)}
     </nav>
   )
@@ -27,8 +32,8 @@ const brands = [...new Set(devices.map((d) => d.data.brand))];
   <table role="table" class="stack">
     <thead role="rowgroup">
       <tr role="row">
-        <th role="columnheader" scope="col">Device</th>
-        <th role="columnheader" scope="col">Radio</th>
+        <th role="columnheader" scope="col">{t.device}</th>
+        <th role="columnheader" scope="col">{t.radio}</th>
         <th role="columnheader" scope="col">Matter</th>
         {ECOSYSTEMS.map((e) => <th role="columnheader" scope="col">{ECOSYSTEM_LABELS[e]}</th>)}
       </tr>
@@ -40,13 +45,13 @@ const brands = [...new Set(devices.map((d) => d.data.brand))];
           return (
             <tr role="row" id={firstOfBrand.has(dev.id) ? brandAnchor(d.brand) : undefined}>
               <th role="rowheader" scope="row" class="name">
-                <a href={devicePath(dev)}>{d.name}</a>
+                <a href={devicePathIn(dev, lang, translations)}>{d.name}</a>
                 <span class="note">{d.model} · {d.regions.join('/')}</span>
               </th>
-              <td role="cell" data-label="Radio">{(d.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
+              <td role="cell" data-label={t.radio}>{radioList(d.radios.value, lang) || '—'}</td>
               <td role="cell" data-label="Matter">
                 <span class={`badge s-${d.matter.certified}`}>
-                  {d.matter.certified === null ? 'Unconfirmed' : d.matter.certified ? 'Yes' : 'No'}
+                  {d.matter.certified === null ? t.unconfirmed : d.matter.certified ? t.yes : t.no}
                 </span>
               </td>
               {ECOSYSTEMS.map((e) => (

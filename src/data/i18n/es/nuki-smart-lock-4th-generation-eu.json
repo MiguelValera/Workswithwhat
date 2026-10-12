@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "La Nuki Smart Lock 4th Gen se monta en el interior de la puerta sobre tu cilindro actual y habla Matter sobre Thread, sin necesidad de puente para Matter. Apple Home, SmartThings y Home Assistant se conectan mediante Matter; Google Home y Alexa también funcionan a través de la integración en la nube de Nuki. No tiene teclado propio y funciona con cuatro pilas AA o con el Nuki Power Pack recargable.",
+  "caveats": [
+    "Matter necesita un router de borde Thread, como un HomePod mini o un Apple TV 4K; la tabla de hubs de Nuki indica qué dispositivos Echo sirven.",
+    "El acceso remoto necesita un Nuki Bridge o la opción de pago de acceso remoto por Thread, y las vías en la nube de Google y Alexa lo necesitan además de una cuenta de Nuki Web.",
+    "Nuki dice que ahora mismo el desbloqueo por voz está desactivado en Google Home; los controles de la app funcionan.",
+    "Tu llave solo funciona desde fuera si el cilindro tiene función de emergencia; si no, Nuki vende un Universal Cylinder.",
+    "El Keypad 2 NFC es un accesorio aparte."
+  ],
+  "notes": {
+    "radios": "La tabla de generaciones de Nuki indica Thread pero no wifi integrado para la 4th generation estándar; solo la Pro (4th generation) tiene wifi. El texto del registro de la CSA de 2025 menciona wifi, pero aquí seguimos la tabla de Nuki.",
+    "matter": "Hay varios registros de la CSA para la cerradura 4th generation estándar (ID de producto 0x00B0, Thread y Bluetooth); las variantes Pro tienen sus propios ID de producto.",
+    "hubRequired": "Nuki dice que la cerradura Matter no necesita puente ni módulo. El acceso remoto necesita un Nuki Bridge (se vende aparte) o la opción de pago de acceso remoto por Thread. El control con Matter necesita un router de borde Thread.",
+    "localControl": "Ninguna fuente de Nuki describe explícitamente un control sin conexión o solo local.",
+    "lockFit": "Se monta en el interior de la puerta sobre el cilindro existente. Nuki dice que la llave sigue funcionando desde fuera si el cilindro tiene función de emergencia; si no, usa el Universal Cylinder, que se vende aparte.",
+    "keypad": "La cerradura no tiene teclado. Nuki vende el Keypad 2 NFC como accesorio aparte.",
+    "power": "Pilas extraíbles: cuatro pilas AA o el Nuki Power Pack recargable (se vende aparte, hasta 6 meses por carga, según Nuki).",
+    "compatibility.apple_home": "Nuki incluye Apple Home mediante Matter sobre Thread. Hace falta un router de borde Thread (HomePod mini, Apple TV 4K).",
+    "compatibility.google_home": "Integración en la nube de Nuki Web; necesita una cuenta de Nuki Web y acceso remoto (Nuki Bridge o acceso remoto de pago por Thread). Nuki dice que ahora mismo el desbloqueo por voz está desactivado en Google Home; los controles de la app funcionan. Matter sobre Thread también funciona con un router de borde Thread.",
+    "compatibility.alexa": "Integración en la nube de Nuki Web (skill Nuki Smart Home), que necesita acceso remoto (Nuki Bridge o la opción de pago de acceso remoto por Thread) y una cuenta de Nuki Web. Matter sobre Thread también es compatible; la tabla de hubs de Nuki indica qué dispositivos Echo sirven para ello.",
+    "compatibility.smartthings": "Nuki incluye Samsung SmartThings como hub Matter. Hace falta un router de borde Thread.",
+    "compatibility.home_assistant": "La página de Nuki en Home Assistant dice que las Smart Lock de 4th generation admiten Matter sobre Thread y se integran mediante la integración de Matter. Necesita un router de borde Thread. Home Assistant también documenta MQTT para las cerraduras de 4th generation."
+  },
+  "values": {
+    "power": "4 × AA o Nuki Power Pack"
+  }
+}

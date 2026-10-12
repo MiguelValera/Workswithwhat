@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Con un router de borde Thread, la bombilla de color IKEA KAJPLATS E27 funciona con Apple Home, Google Home, Alexa, SmartThings y Home Assistant mediante Matter. Sin uno, ni siquiera el móvil puede controlarla. Sirve el hub DIRIGERA de IKEA, y también un HomePod, un Nest Hub o un Echo con Thread. La bombilla (706.085.75) da 1055 lúmenes con color completo y blanco ajustable, y está certificada Matter (Matter 1.4). IKEA dice que KAJPLATS sustituyó a TRÅDFRI en enero de 2026.",
+  "caveats": [
+    "Necesita un router de borde Thread (hub DIRIGERA de IKEA, HomePod, Nest Hub o un Echo con Thread) incluso para controlarla desde el móvil."
+  ],
+  "notes": {
+    "radios": "IKEA la describe como Matter sobre Thread. El Bluetooth solo figura en el registro de certificación de la CSA (transportes Thread y Bluetooth); la página de IKEA no lo menciona y es probable que sirva para el emparejamiento con Matter.",
+    "matter": "Certificado de la CSA CSA25G1ZMAT49049-24 (certificado el 2025-12-16, Matter 1.4, Thread y Bluetooth). IKEA dice que KAJPLATS sustituyó a TRÅDFRI en enero de 2026, sobre todo por seguridad y compatibilidad con Matter.",
+    "compatibility.apple_home": "IKEA nombra a Apple entre los sistemas compatibles; funciona con Matter sobre Thread y necesita un router de borde Thread.",
+    "compatibility.google_home": "IKEA nombra a Google entre los sistemas compatibles; funciona con Matter sobre Thread y necesita un router de borde Thread.",
+    "compatibility.alexa": "IKEA nombra a Amazon entre los sistemas compatibles; funciona con Matter sobre Thread y necesita un Echo que sea router de borde Thread.",
+    "compatibility.smartthings": "IKEA nombra a Samsung entre los sistemas compatibles; funciona con Matter sobre Thread y necesita un hub SmartThings que sea router de borde Thread.",
+    "compatibility.home_assistant": "Mediante la integración oficial de Matter, con un router de borde Thread.",
+    "hubRequired": "IKEA dice que controlarla desde el móvil requiere un router de borde Thread, por ejemplo su hub DIRIGERA. Un HomePod, un Nest Hub o un Echo con Thread también sirven como router de borde.",
+    "localControl": "Matter sobre Thread funciona en la red local, sin servicio en la nube.",
+    "colorType": "Espectro de color y blanco: color completo más blanco ajustable."
+  }
+}

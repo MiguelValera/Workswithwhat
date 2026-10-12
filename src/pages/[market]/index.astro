@@ -1,10 +1,7 @@
 ---
-// Region home (/us/, /eu/, /uk/): what we've checked for one market, with links to its pages.
-import Base from '../../layouts/Base.astro';
-import DeviceCard from '../../components/DeviceCard.astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, type Device } from '../../lib/devices';
-import { CATEGORIES } from '../../lib/categories';
-import { getActiveMarkets, getMarketDevices, getRegionPages, type Market } from '../../lib/markets';
+import MarketHome from '../../components/pages/MarketHome.astro';
+import { getActiveMarkets, getMarketDevices, type Market } from '../../lib/markets';
+import type { Device } from '../../lib/devices';
 
 export async function getStaticPaths() {
   const markets = await getActiveMarkets();
@@ -14,53 +11,6 @@ export async function getStaticPaths() {
 }
 
 const { market, devices } = Astro.props as { market: Market; devices: Device[] };
-const paths = new Set((await getRegionPages()).map((p) => p.path));
-// a category with too few devices for its own region page links to its section on the full chart
-const cats = CATEGORIES.map((c) => {
-  const n = devices.filter((d) => d.data.category === c.key).length;
-  const own = `/${market.key}/${c.path}/`;
-  return { c, n, href: paths.has(own) ? own : `/${c.path}/#${market.key}` };
-}).filter((x) => x.n > 0);
-const platforms = [
-  ...ECOSYSTEMS.map((e) => ({ name: ECOSYSTEM_LABELS[e], href: `/${market.key}/works-with/${ecosystemSlug(e)}/` })),
-  { name: 'Matter', href: `/${market.key}/works-with/matter/` },
-].filter((p) => paths.has(p.href));
-const recent = [...devices].sort((a, b) => (b.data.verifiedAt ?? '').localeCompare(a.data.verifiedAt ?? '')).slice(0, 6);
-const title = `Smart home compatibility for ${market.phrase}`;
-const description = `${devices.length} smart home devices sold in ${market.phrase}, checked for Apple Home, Google Home, Alexa, SmartThings and Home Assistant. Every answer links to its source.`;
 ---
 
-<Base title={title} description={description} crumbs={[{ name: market.label, path: `/${market.key}/` }]}>
-  <h1>{title.replace(/^./, (c) => c.toUpperCase())}</h1>
-  <p class="lede">
-    {devices.length} devices sold in {market.phrase}, each checked against manufacturer and certification sources.
-    Models for other regions are left out, because plugs, radios and certifications often differ between them.
-  </p>
-  <ul class="cards">
-    {
-      cats.map(({ c, n, href }) => (
-        <li class="card">
-          <h3><a href={href}>{c.label}</a></h3>
-          <div class="muted">{n} for {market.phrase}</div>
-        </li>
-      ))
-    }
-  </ul>
-  {
-    platforms.length > 0 && (
-      <p class="callout">
-        By platform, {market.label} only:{' '}
-        {platforms.map((p, i) => (
-          <>
-            {i > 0 && ' · '}
-            <a href={p.href}>{p.name}</a>
-          </>
-        ))}
-      </p>
-    )
-  }
-  <h2>Recently checked for {market.phrase}</h2>
-  <ul class="cards">
-    {recent.map((d) => <DeviceCard device={d} />)}
-  </ul>
-</Base>
+<MarketHome market={market} devices={devices} />

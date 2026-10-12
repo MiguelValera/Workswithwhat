@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "El problema del Aqara Smart Plug (ZNCZ12LM) es Zigbee: solo llega a Apple Home, Alexa y Google Home a través de un hub Zigbee 3.0 de Aqara, que se vende aparte. Una vez conectado al hub, la app de Aqara registra el consumo del aparato por día y por mes. Esta versión estadounidense admite 15 A / 1875 W a 100-125 V.",
+  "caveats": [
+    "Necesita un hub Zigbee 3.0 de Aqara, que se vende aparte.",
+    "La compatibilidad con SmartThings no está clara porque las propias páginas de Aqara no coinciden.",
+    "No hemos encontrado certificación Matter para el enchufe; el Hub M3 de Aqara puede puentear dispositivos Zigbee de Aqara a Matter, pero ninguna página de Aqara nombra este enchufe.",
+    "Ninguna página oficial de Home Assistant nombra este modelo."
+  ],
+  "notes": {
+    "radios": "Zigbee; se comunica con un hub Zigbee 3.0 de Aqara, no por wifi.",
+    "matter": "No hemos encontrado ningún registro de la CSA para el ZNCZ12LM; el enchufe en sí es Zigbee. El Hub M3 de Aqara puede exponer dispositivos Zigbee de Aqara a Matter como puente, pero ninguna página nombra este enchufe.",
+    "hubRequired": "Ficha técnica: hub obligatorio (hub Zigbee 3.0 de Aqara). Se vende sin hub.",
+    "localControl": "No hemos encontrado ninguna página de Aqara EE. UU. que indique si sigue funcionando a través del hub sin internet.",
+    "energyMonitoring": "Aqara dice que la app registra el consumo del aparato enchufado por día y por mes.",
+    "maxLoadWatts": "1875 W, 15 A, 100-125 V CA, 60 Hz. Una página de alianzas de Aqara muestra 10 A / 2300 W, que corresponde al modelo europeo, no a este.",
+    "compatibility.apple_home": "Aqara indica Apple HomeKit; llega a Apple Home a través de un hub de Aqara.",
+    "compatibility.google_home": "Aqara indica Google Assistant; funciona mediante un hub de Aqara y la vinculación de la cuenta de Aqara.",
+    "compatibility.alexa": "Aqara indica Amazon Alexa; funciona mediante un hub de Aqara y la skill de Aqara.",
+    "compatibility.smartthings": "La página de alianzas de Aqara incluye SmartThings, pero la ficha técnica y la página de tienda estadounidenses no, y esa página de alianzas muestra además valores europeos (10 A / 2300 W). Las fuentes oficiales no coinciden.",
+    "compatibility.home_assistant": "Ninguna página oficial de Aqara ni de Home Assistant nombra este modelo. Hay usuarios que usan enchufes Zigbee de Aqara con coordinadores Zigbee, pero aquí no está documentado."
+  },
+  "via": {
+    "apple_home": "hub Zigbee de Aqara",
+    "google_home": "hub Zigbee de Aqara",
+    "alexa": "hub Zigbee de Aqara"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Mediante Matter, el Meross MSS315 funciona con Apple Home, Google Home, Alexa y SmartThings; Home Assistant no está confirmado para este modelo estadounidense. Cada plataforma necesita su propio controlador Matter, y el enchufe necesita una red wifi de 2,4 GHz con IPv6. Meross describe su control por Matter como totalmente local. El medidor de energía muestra el consumo en tiempo real y el histórico en la app Meross, pero Meross no dice si esas lecturas llegan a las plataformas Matter. No encontramos ninguna potencia máxima oficial, así que mira la etiqueta.",
+  "caveats": [
+    "Necesita wifi de 2,4 GHz con IPv6 activado en el router.",
+    "Cada plataforma necesita su propio controlador Matter, como un Echo para Alexa o un hub SmartThings compatible con Matter.",
+    "Home Assistant no está confirmado para el modelo estadounidense; solo análisis de la versión europea muestran que se empareja con la integración de Matter de HA.",
+    "Los datos de energía solo están confirmados en la app Meross.",
+    "No hay potencia máxima oficial para el MSS315 estadounidense; comprueba la etiqueta antes de conectar un aparato de mucho consumo."
+  ],
+  "notes": {
+    "radios": "Necesita una red wifi de 2,4 GHz existente con IPv6. No encontramos ninguna mención oficial del Bluetooth.",
+    "matter": "Meross lo vende como enchufe Matter. No encontramos ningún registro de la CSA que nombre el número de modelo MSS315. La página de producto en-gc de Meross no es específica de una región; la ficha de la tienda de EE. UU. es la fuente para EE. UU.",
+    "compatibility.apple_home": "Mediante Matter; Meross dice que se requiere un hub compatible con Matter para la plataforma elegida.",
+    "compatibility.google_home": "Mediante Matter; necesita un controlador Matter de Google.",
+    "compatibility.alexa": "Mediante Matter; necesita un Echo que funcione como controlador Matter. No confirmamos si la skill de Alexa de Meross también cubre este modelo.",
+    "compatibility.smartthings": "Mediante Matter; necesita un hub SmartThings compatible con Matter.",
+    "compatibility.home_assistant": "Meross no lista Home Assistant, y HA no tiene integración oficial de Meross. Análisis de usuarios muestran la versión europea emparejándose con la integración de Matter de HA, pero nada oficial cubre el modelo estadounidense.",
+    "hubRequired": "La ficha de EE. UU. solo dice que hace falta un hub Matter para la plataforma elegida. La fórmula «no requiere hub» de Meross aparece en la ficha europea, no en la estadounidense.",
+    "localControl": "La ficha de EE. UU. describe una arquitectura completamente local para Matter. El funcionamiento sin nube de la propia app Meross no está documentado.",
+    "energyMonitoring": "Consumo en tiempo real e histórico en la app Meross. Meross no confirma si las lecturas llegan a las plataformas Matter en el modelo estadounidense.",
+    "maxLoadWatts": "No encontramos ninguna potencia eléctrica oficial para el MSS315 estadounidense en las páginas de Meross. Comprueba la etiqueta del enchufe."
+  }
+}

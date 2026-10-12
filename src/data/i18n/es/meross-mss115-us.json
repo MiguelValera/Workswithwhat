@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Todo en el Meross MSS115 pasa por Matter sobre wifi. Meross lista Apple Home, Google Home, Alexa y SmartThings, y cada uno necesita su propio controlador Matter, como un centro de la casa de Apple o un hub SmartThings. Es un enchufe compacto para EE. UU. y Canadá con wifi de 2,4 GHz, y Meross dice que sigue funcionando en tu LAN durante las caídas de internet. Meross no publica la potencia máxima ni menciona un medidor de consumo para este modelo; su enchufe Matter con medidor es el MSS315.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "Cada ecosistema necesita su propio controlador Matter, como un centro de la casa de Apple, un controlador Matter de Google, un Echo o un hub SmartThings.",
+    "Home Assistant no está confirmado: ni Meross ni Home Assistant nombran este modelo, y usuarios del foro cuentan que falla el emparejamiento por Matter.",
+    "Meross no publica la potencia máxima del MSS115, así que compruébala antes de conectar un aparato de mucho consumo.",
+    "No se menciona la medición de consumo; si quieres datos de consumo, el enchufe Matter con medidor de Meross es el MSS315."
+  ],
+  "notes": {
+    "radios": "Necesita una red wifi de 2,4 GHz existente.",
+    "matter": "Meross lo vende como enchufe Matter. La CSA lista varios certificados Matter de «Smart Plug Mini» de Meross, pero no pudimos asociar ninguno al número de modelo MSS115.",
+    "compatibility.apple_home": "Mediante Matter; necesita un centro de la casa de Apple.",
+    "compatibility.google_home": "Mediante Matter; necesita un controlador Matter de Google.",
+    "compatibility.alexa": "Mediante Matter. No pudimos confirmar si la skill de Alexa de Meross también admite este modelo.",
+    "compatibility.smartthings": "Mediante Matter; necesita un hub SmartThings.",
+    "compatibility.home_assistant": "Debería emparejarse mediante la integración de Matter de Home Assistant, pero ni Meross ni Home Assistant nombran este modelo, y usuarios del foro cuentan que falla el emparejamiento por Matter.",
+    "hubRequired": "Meross no dice si la app Meross por sí sola puede manejarlo sin un controlador Matter.",
+    "localControl": "Meross lo describe como totalmente local por Matter y dice que sigue funcionando en la LAN durante las caídas de internet.",
+    "energyMonitoring": "Las páginas del MSS115 no mencionan un medidor de consumo. El enchufe Matter con medidor de Meross es el MSS315, pero no encontramos ninguna declaración explícita de «sin medición» para el MSS115.",
+    "maxLoadWatts": "No encontramos ninguna potencia máxima oficial del MSS115. Los 15 A / 1800 W que da Meross son de otros modelos de enchufe."
+  }
+}

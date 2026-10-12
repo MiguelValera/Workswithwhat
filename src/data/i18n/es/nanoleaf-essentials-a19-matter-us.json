@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Apple Home, Google Home, Alexa, SmartThings y Home Assistant controlan la Nanoleaf Essentials A19 (NF080B03-1A19E) como una luz Matter, siempre que haya en tu red un router de borde Thread, como un HomePod mini o un Nest Hub (2.ª gen.). Sin él, la app de Nanoleaf la controla directamente por Bluetooth. Es una bombilla E26 de color con blanco regulable de 2700 a 6500 K. Nanoleaf indica 806 lúmenes de media, equivalente a 60 W, y 1100 lúmenes como máximo.",
+  "caveats": [
+    "El control desde los ecosistemas necesita un router de borde Thread, como un HomePod mini, un Nest Hub (2.ª gen.) o un Echo o eero compatible con Thread.",
+    "Las cifras de brillo de Nanoleaf varían: 806 lm de media y 1100 lm como máximo en la página del SKU, y 900 lm de media y 1000 lm como máximo en la página estadounidense del pack de 3.",
+    "La FAQ más antigua de Nanoleaf aún dice que Alexa llegará «próximamente», aunque la página actual del producto la incluye."
+  ],
+  "notes": {
+    "radios": "Thread para el control con Matter; Bluetooth para la configuración y el control directo desde la app de Nanoleaf.",
+    "matter": "Certificado de la CSA CSA22099MAT40099-24 (Nanoleaf Essentials A19/A60), certificado el 2022-11-14, con transporte Thread y Bluetooth.",
+    "hubRequired": "Nanoleaf dice que la bombilla se puede configurar y controlar por Bluetooth en la app de Nanoleaf sin hub. Matter y el control desde los ecosistemas necesitan un router de borde Thread.",
+    "localControl": "Matter funciona por la red local (Thread/IPv6) y el control por Bluetooth desde la app es directo.",
+    "colorType": "Más de 16 millones de colores y blanco regulable (2700–6500 K).",
+    "lumens": "La página del SKU de Nanoleaf da 806 lm de media y 1100 lm como máximo, y presenta la bombilla como equivalente a 60 W, lo que cuadra con 806 lm, así que usamos 806. Su página estadounidense del pack de 3 dice 900 lm de media y 1000 lm como máximo.",
+    "compatibility.apple_home": "Mediante Matter sobre Thread; necesita un router de borde Thread, como un HomePod mini, un HomePod (2.ª gen.) o un Apple TV 4K.",
+    "compatibility.google_home": "Mediante Matter sobre Thread; necesita un router de borde Thread, como un Nest Hub (2.ª gen.), un Nest Hub Max o un Nest Wifi Pro.",
+    "compatibility.alexa": "La página del SKU de Nanoleaf incluye Alexa; Amazon admite luces Matter sobre Thread en los dispositivos Echo. Necesita un Echo o eero que sea router de borde Thread. La FAQ más antigua de Nanoleaf aún dice que Alexa llegará «próximamente».",
+    "compatibility.smartthings": "Nanoleaf incluye SmartThings; funciona mediante Matter sobre Thread con un hub SmartThings que sea router de borde Thread.",
+    "compatibility.home_assistant": "Mediante la integración oficial de Matter; los dispositivos Thread necesitan un router de borde Thread."
+  }
+}

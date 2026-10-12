@@ -7,23 +7,33 @@ import Status from '../Status.astro';
 import {
   ECOSYSTEMS,
   ECOSYSTEM_LABELS,
-  RADIO_LABELS,
-  devicePath,
+  deviceText,
+  devicePathIn,
   ecosystemSlug,
+  getTranslations,
+  radioList,
   getPublishedDevices,
   categoryPhrase,
   type Device,
   worksWith,
   type Ecosystem,
 } from '../../lib/devices';
-import { CATEGORIES } from '../../lib/categories';
-import { byMarket, marketOf, regionPath, type Market } from '../../lib/markets';
+import { CATEGORIES, catText } from '../../lib/categories';
+import { byMarket, marketOf, marketText, regionPath, type Market } from '../../lib/markets';
+import { langOf, localize } from '../../i18n/lang';
+import { ui } from '../../i18n/ui';
 
 interface Props {
   eco: Ecosystem;
   market?: Market;
 }
 const { eco, market } = Astro.props;
+const lang = langOf(Astro.url.pathname);
+const es = lang === 'es';
+const t = ui(lang);
+const L = (p: string) => localize(p, lang);
+const translations = await getTranslations();
+const mt = market && marketText(market, lang);
 const label = ECOSYSTEM_LABELS[eco];
 const all = (await getPublishedDevices()).filter((d) => !market || marketOf(d) === market);
 const path = market ? `/${market.key}/works-with/${ecosystemSlug(eco)}/` : `/works-with/${ecosystemSlug(eco)}/`;
@@ -32,7 +42,7 @@ const split = (list: Device[]) => (market ? [{ market, devices: list }] : byMark
 const otherLinks = await Promise.all(
   ECOSYSTEMS.filter((e) => e !== eco).map(async (e) => {
     const global = `/works-with/${ecosystemSlug(e)}/`;
-    return { e, href: (market && (await regionPath(market, global))) || global };
+    return { e, href: L((market && (await regionPath(market, global))) || global) };
   }),
 );
 const yes = all.filter((d) => worksWith(d, eco));
@@ -43,7 +53,7 @@ const groups = CATEGORIES.map((cat) => ({
   unsure: all.filter((d) => d.data.category === cat.key && d.data.compatibility[eco].status === 'unknown'),
   total: all.filter((d) => d.data.category === cat.key).length,
 })).filter((g) => g.total > 0);
-const { short: what, long: whatLong } = categoryPhrase(groups.map((g) => g.cat.plural));
+const { short: what, long: whatLong } = categoryPhrase(groups.map((g) => catText(g.cat, lang).plural), lang);
 const What = what.replace(/^./, (c) => c.toUpperCase());
 
 // General, stable facts about how devices reach each platform. Device-specific
@@ -71,8 +81,37 @@ const HOW: Record<Ecosystem, string[]> = {
   ],
 };
 
-const title = market ? `${What} that work with ${label} in ${market.phrase}` : `${What} that work with ${label}`;
-const description = `${yes.length} ${whatLong} ${market ? `for ${market.phrase} ` : ''}confirmed to work with ${label}${viaMatter ? `, ${viaMatter} of them via Matter` : ''}. See which need a hub, and check the source for each one.`;
+const HOW_ES: Record<Ecosystem, string[]> = {
+  apple_home: [
+    'Un dispositivo llega a Apple Home (la app Casa) de dos formas: es compatible con HomeKit directamente, o tiene certificación Matter y lo añades con el emparejamiento Matter de la app Casa.',
+    'Las automatizaciones y el control a distancia necesitan un centro de la casa de Apple (un Apple TV o un HomePod). Los dispositivos Thread también necesitan un router de borde Thread, que incluyen los HomePod y Apple TV recientes.',
+  ],
+  google_home: [
+    'Los dispositivos se conectan a Google Home vinculando la cuenta de la marca (de nube a nube) o mediante Matter.',
+    'Matter necesita un dispositivo de Google que haga de hub Matter, como un altavoz o una pantalla Nest. Los dispositivos Thread necesitan además un dispositivo de Google que funcione como router de borde Thread.',
+  ],
+  alexa: [
+    'Los dispositivos se conectan a Alexa mediante la skill de la marca (de nube a nube) o mediante Matter.',
+    'Matter necesita un Echo que funcione como controlador Matter, y los dispositivos Thread necesitan un Echo que además sea router de borde Thread.',
+  ],
+  smartthings: [
+    'Los dispositivos llegan a SmartThings mediante una integración de nube a nube, mediante Matter o como dispositivos Zigbee emparejados con un hub SmartThings.',
+    'Los dispositivos Matter y Zigbee necesitan un hub SmartThings. Algunos televisores y electrodomésticos Samsung pueden hacer de hub.',
+  ],
+  home_assistant: [
+    'Home Assistant se conecta a los dispositivos mediante integraciones de cada marca (muchas de ellas locales), su integración Matter o un coordinador Zigbee.',
+    'Las integraciones locales siguen funcionando sin internet; por eso indicamos el control local en cada dispositivo.',
+  ],
+};
+
+const title = es
+  ? `${What} compatibles con ${label}${mt ? ` en ${mt.phrase}` : ''}`
+  : market
+    ? `${What} that work with ${label} in ${market.phrase}`
+    : `${What} that work with ${label}`;
+const description = es
+  ? `${yes.length} ${whatLong}${mt ? ` para ${mt.phrase}` : ''} con compatibilidad confirmada con ${label}${viaMatter ? `, ${viaMatter} de ellos mediante Matter` : ''}. Consulta cuáles necesitan hub y la fuente de cada uno.`
+  : `${yes.length} ${whatLong} ${market ? `for ${market.phrase} ` : ''}confirmed to work with ${label}${viaMatter ? `, ${viaMatter} of them via Matter` : ''}. See which need a hub, and check the source for each one.`;
 ---
 
 <Base
@@ -81,53 +120,64 @@ const description = `${yes.length} ${whatLong} ${market ? `for ${market.phrase} 
   crumbs={
     market
       ? [
-          { name: market.label, path: `/${market.key}/` },
+          { name: mt!.label, path: `/${market.key}/` },
           { name: label, path },
         ]
       : [
-          { name: 'By ecosystem', path: '/works-with/' },
+          { name: t.navByEcosystem, path: '/works-with/' },
           { name: label, path },
         ]
   }
 >
   <h1>{title}</h1>
-  <p class="lede">
-    {yes.length} of the {all.length} devices we've checked{market && ` for ${market.phrase}`} work with {label}.
-    {viaMatter > 0 && ` ${viaMatter} connect through Matter rather than a brand integration.`}
-  </p>
-  <nav class="toc" aria-label="On this page">
-    <span class="toc-label">Jump to:</span>
-    {groups.map((g) => <a href={`#${g.cat.path}`}>{g.cat.label} ({g.yes.length})</a>)}
-    <a href="#how">How devices connect</a>
+  {
+    es ? (
+      <p class="lede">
+        {yes.length} de los {all.length} dispositivos que hemos comprobado{mt && ` para ${mt.phrase}`} funcionan con {label}.
+        {viaMatter > 0 && ` ${viaMatter} se conectan mediante Matter en lugar de una integración de la marca.`}
+      </p>
+    ) : (
+      <p class="lede">
+        {yes.length} of the {all.length} devices we've checked{market && ` for ${market.phrase}`} work with {label}.
+        {viaMatter > 0 && ` ${viaMatter} connect through Matter rather than a brand integration.`}
+      </p>
+    )
+  }
+  <nav class="toc" aria-label={es ? 'En esta página' : 'On this page'}>
+    <span class="toc-label">{t.jumpTo}</span>
+    {groups.map((g) => <a href={`#${g.cat.path}`}>{catText(g.cat, lang).label} ({g.yes.length})</a>)}
+    <a href="#how">{es ? 'Cómo se conectan' : 'How devices connect'}</a>
   </nav>
-  <h2 id="how">How devices connect to {label}</h2>
-  {HOW[eco].map((p) => <p>{p}</p>)}
+  <h2 id="how">{es ? `Cómo se conectan los dispositivos a ${label}` : `How devices connect to ${label}`}</h2>
+  {(es ? HOW_ES : HOW)[eco].map((p) => <p>{p}</p>)}
 
   {
     groups.map((g) => (
       <section aria-labelledby={g.cat.path}>
-        <h2 id={g.cat.path}>{g.cat.label} that work with {label}</h2>
+        <h2 id={g.cat.path}>{es ? `${catText(g.cat, lang).label} compatibles con ${label}` : `${g.cat.label} that work with ${label}`}</h2>
         {g.yes.length > 0 ? (
           split(g.yes).map((m) => (
           <>
-          {!market && <h3 id={`${g.cat.path}-${m.market.key}`}>{m.market.label} ({m.devices.length})</h3>}
+          {!market && <h3 id={`${g.cat.path}-${m.market.key}`}>{marketText(m.market, lang).label} ({m.devices.length})</h3>}
           <div class="table-scroll">
             <table role="table" class="stack pair">
               <thead role="rowgroup">
-                <tr role="row"><th role="columnheader" scope="col">Device</th><th role="columnheader" scope="col">How</th><th role="columnheader" scope="col">Radio</th><th role="columnheader" scope="col">Notes</th></tr>
+                <tr role="row"><th role="columnheader" scope="col">{t.device}</th><th role="columnheader" scope="col">{t.how}</th><th role="columnheader" scope="col">{t.radio}</th><th role="columnheader" scope="col">{t.notes}</th></tr>
               </thead>
               <tbody role="rowgroup">
                 {m.devices.map((d) => {
                   const c = d.data.compatibility[eco];
+                  const words = deviceText(d, lang, translations.get(d.id));
+                  const href = devicePathIn(d, lang, translations);
                   return (
                     <tr role="row">
                       <th role="rowheader" scope="row" class="name">
-                        <a href={devicePath(d)}>{d.data.name}</a>
+                        <a href={href}>{d.data.name}</a>
                         <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
                       </th>
-                      <td role="cell" data-label="How"><Status status={c.status} via={c.via} /></td>
-                      <td role="cell" data-label="Radio">{(d.data.radios.value ?? []).map((r) => RADIO_LABELS[r]).join(', ') || '—'}</td>
-                      <td role="cell" class="wide">{c.note}<Refs ids={c.sources} all={d.data.sources} base={devicePath(d)} /></td>
+                      <td role="cell" data-label={t.how}><Status status={c.status} via={words.via(eco)} /></td>
+                      <td role="cell" data-label={t.radio}>{radioList(d.data.radios.value, lang) || '—'}</td>
+                      <td role="cell" class="wide">{words.compatNote(eco)}<Refs ids={c.sources} all={d.data.sources} base={href} /></td>
                     </tr>
                   );
                 })}
@@ -137,15 +187,15 @@ const description = `${yes.length} ${whatLong} ${market ? `for ${market.phrase} 
           </>
           ))
         ) : (
-          <p>None of the {g.cat.plural} we've checked so far are confirmed for {label}.</p>
+          <p>{es ? `Por ahora no hay ${catText(g.cat, lang).plural} comprobados con compatibilidad confirmada con ${label}.` : `None of the ${g.cat.plural} we've checked so far are confirmed for ${label}.`}</p>
         )}
         {g.unsure.length > 0 && (
           <p class="muted small">
-            Not confirmed either way:{' '}
+            {es ? 'Sin confirmar en ningún sentido:' : 'Not confirmed either way:'}{' '}
             {g.unsure.map((d, i) => (
               <>
                 {i > 0 && ', '}
-                <a href={devicePath(d)}>{d.data.name}</a>
+                <a href={devicePathIn(d, lang, translations)}>{d.data.name}</a>
               </>
             ))}.
           </p>
@@ -155,7 +205,7 @@ const description = `${yes.length} ${whatLong} ${market ? `for ${market.phrase} 
   }
 
   <p class="muted">
-    Other platforms:{' '}
+    {es ? 'Otras plataformas:' : 'Other platforms:'}{' '}
     {
       otherLinks.map(({ e, href }, i) => (
         <>

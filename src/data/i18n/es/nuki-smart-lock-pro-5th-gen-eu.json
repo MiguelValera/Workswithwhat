@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Sobre tu cilindro europerfil actual encaja la Nuki Smart Lock Pro (5th Gen), así que no hay que cambiar el cilindro. Matter sobre Thread la enlaza con Apple Home, Google Home, Alexa y SmartThings, y el wifi integrado se ocupa del acceso remoto sin Bridge. La batería es integrada y se recarga en unas dos horas; la cerradura no tiene teclado. Home Assistant no está confirmado.",
+  "caveats": [
+    "Matter necesita un router de borde Thread; un hub Matter solo wifi no sirve.",
+    "No todos los hubs Matter admiten el acceso remoto por Thread, según la guía de resolución de problemas de Nuki.",
+    "No es compatible con el Universal Cylinder de Nuki.",
+    "El Keypad 2 NFC es un accesorio aparte."
+  ],
+  "notes": {
+    "radios": "La tabla de generaciones de Nuki marca con «sí» el wifi integrado y Matter sobre Thread para la Pro (5th Gen). Cuando el acceso remoto por Thread está disponible, Nuki dice que el wifi se apaga.",
+    "matter": "La CSA registra «Nuki Smart Lock Pro» (hardware 10.00, firmware 1.4.1, certificado el 2025-11-18) sin indicar la generación, aparte de los registros de la Pro 4th Gen (hardware 7.x). La tabla de generaciones de Nuki marca Matter sobre Thread para la Pro (5th Gen).",
+    "hubRequired": "El wifi integrado y el acceso remoto vienen incluidos, así que no hace falta Bridge. El control con Matter necesita un router de borde Thread.",
+    "localControl": "Ninguna fuente de Nuki describe explícitamente un control sin conexión o solo local.",
+    "lockFit": "Se coloca sobre el cilindro interior existente sin cambiarlo; Nuki dice que sirve para cilindros europerfil y algunos cilindros redondos suizos. No es compatible con el Universal Cylinder de Nuki.",
+    "keypad": "La cerradura no tiene teclado. El Keypad 2 NFC de Nuki es un accesorio aparte.",
+    "power": "Batería de iones de litio integrada que se recarga en unas 2 horas, puesta o fuera de la puerta.",
+    "compatibility.apple_home": "Matter sobre Thread. Nuki dice que necesitas un hub compatible con Matter mediante Thread; un hub Matter solo wifi no sirve.",
+    "compatibility.google_home": "Matter sobre Thread, que necesita un router de borde Thread. Nuki también documenta un enlace en la nube de Nuki Web con Google Home para sus cerraduras; no lo hemos comprobado para esta generación.",
+    "compatibility.alexa": "Matter sobre Thread, que necesita un router de borde Thread. Nuki también documenta una skill de Nuki Web para Alexa; no la hemos comprobado para esta generación.",
+    "compatibility.smartthings": "Nuki nombra Samsung SmartThings como plataforma de Matter sobre Thread; hace falta un router de borde Thread.",
+    "compatibility.home_assistant": "La página de Nuki en Home Assistant que hemos visto trata las cerraduras de 4th generation; ninguna fuente oficial nombra la Pro de 5th gen. Un hilo de un foro informa de problemas al poner en servicio Matter, y eso no es una fuente oficial."
+  },
+  "values": {
+    "power": "Batería recargable integrada"
+  }
+}

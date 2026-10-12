@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Para Alexa, Google Home o SmartThings, el Tapo P100 europeo es un enchufe básico de encendido y apagado que se vincula con tu cuenta de TP-Link en la app Tapo. La integración de TP-Link de Home Assistant también lo admite en local. Es un enchufe wifi de 2,4 GHz de 10 A / 2300 W, sin hub y sin medición de consumo. TP-Link no menciona Apple Home ni Matter; la versión con Matter es el Tapo P100M, un producto aparte.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "TP-Link no menciona Apple Home ni Matter; la versión con Matter es el Tapo P100M.",
+    "Sin medición de consumo; TP-Link dice que los Tapo P110 y P115 son los enchufes Tapo que miden la potencia.",
+    "Las potencias cambian según la región: esta versión europea es de 10 A / 2300 W, la británica de 13 A y la estadounidense de 10 A / 1200 W.",
+    "La integración de TP-Link de Home Assistant pide una vez tus credenciales de la cuenta de TP-Link con el firmware más reciente.",
+    "Las cargas con motor están limitadas a 1/6 CV."
+  ],
+  "notes": {
+    "radios": "Solo wifi de 2,4 GHz (IEEE 802.11b/g/n). TP-Link indica Bluetooth solo para la configuración.",
+    "matter": "Ninguna fuente oficial confirma que el P100 sea compatible con Matter ni lo descarta; las páginas del producto simplemente no lo mencionan. La versión con Matter de TP-Link es el Tapo P100M, un producto aparte.",
+    "hubRequired": "Enchufe wifi que se conecta directamente a tu router de 2,4 GHz y se configura en la app Tapo; no figura ningún puente.",
+    "localControl": "La integración de TP-Link de Home Assistant lo controla por la red local, aunque el firmware más reciente exige las credenciales de la cuenta de TP-Link para autenticarse. No hemos encontrado ninguna página de TP-Link sobre el control desde la app Tapo sin internet.",
+    "energyMonitoring": "Las FAQ de TP-Link sobre enchufes dicen que el P110 y el P115 miden el consumo y que el P100 no.",
+    "maxLoadWatts": "10 A / 2300 W en la versión europea, motor de 1/6 CV. La versión británica es de 13 A y la estadounidense de 10 A / 1200 W; no las confundas.",
+    "compatibility.apple_home": "Las páginas del P100 de TP-Link indican Alexa, Google Assistant y SmartThings y no mencionan Apple Home, pero ninguna página oficial dice que no sea compatible. El Tapo P100M es la versión con Matter.",
+    "compatibility.google_home": "Mediante el enlace en la nube de Tapo (Works with Google Home). Configura antes el enchufe en la app Tapo.",
+    "compatibility.alexa": "Mediante la skill Tapo de Alexa, vinculada a tu cuenta de TP-Link.",
+    "compatibility.smartthings": "Mediante la integración de socios de Tapo en la app SmartThings, con tu ID de TP-Link.",
+    "compatibility.home_assistant": "La integración TP-Link Smart Home de Home Assistant incluye el P100 entre los enchufes Tapo compatibles. Los dispositivos más recientes piden tus credenciales de la cuenta de TP-Link una vez."
+  }
+}
