@@ -24,20 +24,14 @@
       "note": "No Ecovacs page found for Apple Home or Siri."
     },
     "google_home": {
-      "status": "native",
-      "sources": [
-        "ecovacs-uk",
-        "ecovacs-connection"
-      ],
-      "note": "Ecovacs states its Deebots work with Google Assistant; sibling T30 pages list it. Not seen on the T30 Omni page itself."
+      "status": "unknown",
+      "sources": [],
+      "note": "Ecovacs lists Google Assistant on the T30 Pro Omni and T30S pages, but no Ecovacs page seen for the UK T30 Omni names it. Not confirmed for this model."
     },
     "alexa": {
-      "status": "native",
-      "sources": [
-        "ecovacs-uk",
-        "ecovacs-connection"
-      ],
-      "note": "Ecovacs states its Deebots work with Alexa; sibling T30 pages list it. Not seen on the T30 Omni page itself."
+      "status": "unknown",
+      "sources": [],
+      "note": "Ecovacs lists Alexa on the T30 Pro Omni and T30S pages, but no Ecovacs page seen for the UK T30 Omni names it. Not confirmed for this model."
     },
     "smartthings": {
       "status": "unknown",
@@ -45,11 +39,11 @@
       "note": "No Ecovacs or Samsung page found for SmartThings."
     },
     "home_assistant": {
-      "status": "native",
+      "status": "unknown",
       "sources": [
         "ecovacs-ha"
       ],
-      "note": "Home Assistant has an official Ecovacs integration for Deebot vacuums using the Ecovacs account; the T30 Omni is not named. Ecovacs's own blog says it does not officially support Home Assistant."
+      "note": "Home Assistant's official Ecovacs integration covers Deebot vacuums through the Ecovacs account, but its page names no models and says device support depends on community contributions. T30 Omni support not confirmed."
     }
   },
   "hubRequired": {
@@ -67,30 +61,29 @@
   "cleaning": {
     "value": "vacuum-mop",
     "sources": [
-      "ecovacs-uk"
+      "ecovacs-uk-shop"
     ],
-    "note": "Vacuums and mops with automatic mop lifting."
+    "note": "Ecovacs UK calls it an auto-empty robot vacuum and mop."
   },
   "navigation": {
-    "value": "LDS",
-    "sources": [
-      "ecovacs-uk"
-    ],
-    "note": "Ecovacs lists LDS (laser distance sensor) navigation."
+    "value": null,
+    "sources": [],
+    "note": "Ecovacs's sibling T30C page lists LDS navigation and retailers describe TrueMapping 2.0 laser mapping, but no Ecovacs page seen for the T30 Omni states its navigation type."
   },
   "suctionPa": {
-    "value": 11000,
+    "value": null,
     "sources": [
+      "ecovacs-uk-shop",
       "ecovacs-uk"
     ],
-    "note": "Maximum suction as listed by Ecovacs."
+    "note": "Ecovacs UK pages disagree: the shop page and a bundle page say 11,000 Pa, while the product page also says 10,000 Pa in one passage."
   },
   "selfEmptying": {
     "value": true,
     "sources": [
-      "ecovacs-uk"
+      "ecovacs-uk-shop"
     ],
-    "note": "Titled an auto-empty vacuum and mop; the Omni station collects dust."
+    "note": "Ecovacs UK calls it an auto-empty robot vacuum with a self-empty station."
   },
   "summary": "Ecovacs sells the Deebot T30 Omni as a vacuum and mop with 11,000 Pa suction, laser navigation and an Omni station that empties the bin. Ecovacs lists Alexa and Google Assistant for the T30 family.",
   "caveats": [
@@ -100,15 +93,15 @@
     {
       "id": "ecovacs-uk",
       "url": "https://ecovacs.com/uk/deebot-robotic-vacuum-cleaner/deebot-t30-omni",
-      "title": "DEEBOT T30 OMNI Auto-Empty Robot Vacuum & Mop (Edge Cleaning, Mini, AI)",
+      "title": "DEEBOT T30 OMNI Black Robot Vacuum",
       "publisher": "Ecovacs",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
     },
     {
-      "id": "ecovacs-connection",
-      "url": "https://www.ecovacs.com/us/innovation/smart-connection",
-      "title": "Connection",
+      "id": "ecovacs-uk-shop",
+      "url": "https://www.ecovacs.com/uk/shop/deebot-robotic-vacuum-cleaner/deebot-t30-omni",
+      "title": "DEEBOT T30 OMNI Auto-Empty Robot Vacuum & Mop (Edge Cleaning, Mini, AI) - ECOVACS UK",
       "publisher": "Ecovacs",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
@@ -122,6 +115,7 @@
       "accessed": "2026-10-12"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-12"
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
 }

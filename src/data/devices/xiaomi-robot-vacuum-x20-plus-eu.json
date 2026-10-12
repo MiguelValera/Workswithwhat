@@ -26,18 +26,18 @@
     "google_home": {
       "status": "native",
       "sources": [
-        "xiaomi-vn-overview",
+        "xiaomi-global-overview",
         "xiaomi-uk-store"
       ],
-      "note": "Xiaomi's pages list voice control with Google Assistant, with a note that it is not available in every language and country. Spain-page wording not confirmed."
+      "note": "Xiaomi's global and UK store pages list voice control with Google Assistant (e.g. \"OK Google, start cleaning\"), not available in every language and country. Spain-page wording not confirmed."
     },
     "alexa": {
       "status": "native",
       "sources": [
-        "xiaomi-vn-overview",
+        "xiaomi-global-overview",
         "xiaomi-uk-store"
       ],
-      "note": "Xiaomi's pages list voice control with Alexa (e.g. start cleaning) and say a compatible Alexa device is needed. Spain-page wording not confirmed."
+      "note": "Xiaomi's global and UK store pages list voice control with Alexa (e.g. \"Alexa, start cleaning\") and say a compatible Alexa device is needed. Spain-page wording not confirmed."
     },
     "smartthings": {
       "status": "unknown",
@@ -46,10 +46,8 @@
     },
     "home_assistant": {
       "status": "unknown",
-      "sources": [
-        "ha-xiaomi-miio"
-      ],
-      "note": "Home Assistant's official Xiaomi Miio page lists a generic Xiaomi Mi Robot Vacuum but no model list, so the X20+ is not confirmed. Community HACS integrations are not counted."
+      "sources": [],
+      "note": "Home Assistant's Xiaomi Miio integration covers Xiaomi robot vacuums in general, but no official page found names the X20+. Community HACS integrations are not counted."
     }
   },
   "hubRequired": {
@@ -74,14 +72,15 @@
     "sources": [
       "xiaomi-au-overview"
     ],
-    "note": "Xiaomi's AU page also lists structured-light obstacle avoidance."
+    "note": "Xiaomi's AU page lists LDS laser navigation and S-Cross structured-light obstacle avoidance."
   },
   "suctionPa": {
     "value": 6000,
     "sources": [
+      "xiaomi-es-overview",
       "xiaomi-au-overview"
     ],
-    "note": "Figure from Xiaomi's AU overview page; Spain page not checked."
+    "note": "Xiaomi states 6000 Pa on its Spain and AU pages."
   },
   "selfEmptying": {
     "value": true,
@@ -89,7 +88,7 @@
       "xiaomi-es-specs",
       "xiaomi-au-overview"
     ],
-    "note": "The all-in-one station empties the dust bin; this is the X20+ bundle (the plain X20 has no such base)."
+    "note": "The Spain spec page lists the station's power draw while emptying dust and a disposable bag in the box; this is the X20+ bundle (the plain X20 has no such base)."
   },
   "summary": "The Xiaomi Robot Vacuum X20+ is a vacuum-and-mop robot with LDS laser navigation, 6000 Pa suction and an all-in-one station that empties the dust bin by itself. Xiaomi lists voice control with Alexa and Google Assistant.",
   "caveats": [
@@ -106,6 +105,14 @@
       "accessed": "2026-10-12"
     },
     {
+      "id": "xiaomi-es-overview",
+      "url": "https://www.mi.com/es/product/xiaomi-robot-vacuum-x20-plus/",
+      "title": "Xiaomi Robot Vacuum X20+ General",
+      "publisher": "Xiaomi",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
       "id": "xiaomi-au-overview",
       "url": "https://www.mi.com/au/product/xiaomi-robot-vacuum-x20-plus/",
       "title": "Xiaomi Robot Vacuum X20+ Overview",
@@ -114,9 +121,9 @@
       "accessed": "2026-10-12"
     },
     {
-      "id": "xiaomi-vn-overview",
-      "url": "https://www.mi.com/vn/product/xiaomi-robot-vacuum-x20-plus/",
-      "title": "Xiaomi Robot Vacuum X20+ Tổng quan",
+      "id": "xiaomi-global-overview",
+      "url": "https://www.mi.com/global/product/xiaomi-robot-vacuum-x20-plus/",
+      "title": "Xiaomi Robot Vacuum X20+ Overview",
       "publisher": "Xiaomi",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
@@ -128,16 +135,9 @@
       "publisher": "Xiaomi",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
-    },
-    {
-      "id": "ha-xiaomi-miio",
-      "url": "https://www.home-assistant.io/components/xiaomi_miio/",
-      "title": "Xiaomi Miio",
-      "publisher": "Home Assistant",
-      "kind": "ecosystem",
-      "accessed": "2026-10-12"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-12"
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
 }

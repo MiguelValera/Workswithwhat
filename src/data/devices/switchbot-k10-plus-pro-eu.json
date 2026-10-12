@@ -13,14 +13,15 @@
       "bluetooth"
     ],
     "sources": [
-      "switchbot-eu-product"
+      "switchbot-us-product",
+      "switchbot-24ghz-support"
     ],
-    "note": "Wi-Fi is 2.4 GHz and Bluetooth 5.0 per search snippets of SwitchBot's page; not re-opened."
+    "note": "SwitchBot lists 2.4 GHz Wi-Fi (no 5 GHz) and Bluetooth 5.0."
   },
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "SwitchBot's support article on direct Matter covers the K10+ Pro Combo, and the product page says Matter needs a Hub 2. No CSA listing seen; certification of the plain K10+ Pro is unconfirmed."
+    "note": "CSA lists the K10+ Pro Combo, not the plain K10+ Pro. SwitchBot's EU page says Matter needs a SwitchBot Hub 2, so the plain model reaches Matter only through the hub's bridge."
   },
   "compatibility": {
     "apple_home": {
@@ -60,9 +61,10 @@
   "hubRequired": {
     "value": false,
     "sources": [
-      "switchbot-eu-product"
+      "switchbot-eu-product",
+      "switchbot-24ghz-support"
     ],
-    "note": "Hub 2 is only needed for Matter, per the product page."
+    "note": "Connects to the SwitchBot app over 2.4 GHz Wi-Fi; Hub 2 is only needed for Matter, per the product page."
   },
   "localControl": {
     "value": null,
@@ -70,30 +72,34 @@
     "note": "Not stated by SwitchBot in pages found."
   },
   "cleaning": {
-    "value": null,
-    "sources": [],
-    "note": "Reviews say it mops, but no SwitchBot page seen confirms it."
+    "value": "vacuum-mop",
+    "sources": [
+      "switchbot-eu-product",
+      "switchbot-mop-support"
+    ],
+    "note": "A mopping pad plate and cloth are in the box. SwitchBot says it cannot vacuum and mop at the same time."
   },
   "navigation": {
     "value": "LiDAR",
     "sources": [
       "switchbot-eu-product"
     ],
-    "note": "Search snippets also mention a PSD distance sensor."
+    "note": "SwitchBot lists LDS laser navigation (LiDAR SLAM) and PSD sensors."
   },
   "suctionPa": {
     "value": 3000,
     "sources": [
-      "switchbot-eu-product"
+      "switchbot-us-product"
     ],
-    "note": "From search snippets of the product page; verify."
+    "note": "From the spec table on SwitchBot's US page (600/1100/1600/3000 Pa across four modes); the EU page snippets did not show the figure."
   },
   "selfEmptying": {
     "value": true,
     "sources": [
-      "switchbot-eu-product"
+      "switchbot-eu-product",
+      "switchbot-us-product"
     ],
-    "note": "The page describes a 4 L dust collection base; not confirmed to be in the plain K10+ Pro box."
+    "note": "SwitchBot's pages describe a 4 L auto-empty dust collection base with the K10+ Pro."
   },
   "summary": "The SwitchBot K10+ Pro is a compact robot vacuum with LiDAR, 3,000 Pa suction and a dust-collection base. SwitchBot's EU page lists Alexa, Google Home and Siri, with Matter available through a SwitchBot Hub 2.",
   "caveats": [
@@ -116,8 +122,33 @@
       "publisher": "SwitchBot",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-us-product",
+      "url": "https://us.switch-bot.com/products/switchbot-mini-robot-vacuum-k10-pro",
+      "title": "SwitchBot K10+ Pro World's 1st Mini Robot Vacuum",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-24ghz-support",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/14546624360983-Why-Does-SwitchBot-Mini-Robot-Vacuum-K10-K10-Pro-Only-Support-2-4GHz-Wi-Fi-and-Not-5GHz-Wi-Fi",
+      "title": "Why Does SwitchBot Mini Robot Vacuum K10+ / K10+ Pro Only Support 2.4GHz Wi-Fi and Not 5GHz Wi-Fi?",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-mop-support",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/14215810297879-Can-SwitchBot-Mini-Robot-Vacuum-K10-K10-Pro-K11-K11-Pro-Simultaneously-Vacuum-and-Mop",
+      "title": "Can SwitchBot Mini Robot Vacuum K10+/K10+ Pro/K11+/K11+ Pro Simultaneously Vacuum and Mop?",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-12"
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
 }

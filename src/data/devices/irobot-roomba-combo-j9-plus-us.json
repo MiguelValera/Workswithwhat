@@ -12,14 +12,14 @@
       "wifi"
     ],
     "sources": [
-      "irobot-wifi"
+      "irobot-j9"
     ],
-    "note": "iRobot's Wi-Fi table lists the Combo j7+/j9+ on both 2.4 and 5 GHz."
+    "note": "iRobot's page says the robot needs a Wi-Fi connection and a software update before first use. The Wi-Fi band was not confirmed on an iRobot page."
   },
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "No Matter statement found on iRobot pages or a CSA listing."
+    "note": "No Matter statement found on iRobot pages or a CSA listing. iRobot's later Matter rollouts named other models (Combo 10 Max, Roomba Plus 500 Combo, Max 700), not the Combo j9+."
   },
   "compatibility": {
     "apple_home": {
@@ -108,14 +108,6 @@
       "accessed": "2026-10-12"
     },
     {
-      "id": "irobot-wifi",
-      "url": "https://homesupport.irobot.com/s/article/163",
-      "title": "All Roomba Features and Compatible Parts",
-      "publisher": "iRobot",
-      "kind": "manufacturer",
-      "accessed": "2026-10-12"
-    },
-    {
       "id": "irobot-ha",
       "url": "https://www.home-assistant.io/integrations/roomba/",
       "title": "iRobot Roomba and Braava - Home Assistant",
@@ -124,6 +116,7 @@
       "accessed": "2026-10-12"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-12"
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
 }

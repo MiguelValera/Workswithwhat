@@ -9,12 +9,14 @@
   "officialUrl": "https://global.roborock.com/pages/roborock-saros-10",
   "radios": {
     "value": [
-      "wifi"
+      "wifi",
+      "bluetooth"
     ],
     "sources": [
-      "roborock-matter-update"
+      "roborock-us-product",
+      "roborock-support-features"
     ],
-    "note": "Matter runs over Wi-Fi per Roborock's update notice. A manual (not cited) says 2.4 GHz only."
+    "note": "Wi-Fi is 2.4 GHz only (5 GHz not supported) per Roborock's product page; Bluetooth is used for quick app setup per Roborock's support article."
   },
   "matter": {
     "certified": true,
@@ -22,7 +24,7 @@
     "sources": [
       "roborock-matter-update"
     ],
-    "note": "Roborock's own notice lists the Saros 10 for the Matter firmware 02.32.44 (April 2025). No CSA listing was found, so check one."
+    "note": "Roborock's newsroom lists the Saros 10 for Matter firmware 02.32.44 (April 2025). CSA lists several Roborock robot vacuums, but the listings found don't name the model."
   },
   "compatibility": {
     "apple_home": {
@@ -30,7 +32,7 @@
       "sources": [
         "roborock-matter-update"
       ],
-      "note": "Via Matter; Roborock says features vary by ecosystem. Coverage says it needs iOS 18.4 or later and a home hub."
+      "note": "Via Matter after firmware 02.32.44; Roborock says Matter features vary by ecosystem."
     },
     "google_home": {
       "status": "matter",
@@ -45,7 +47,7 @@
         "roborock-alexa-skill",
         "roborock-matter-update"
       ],
-      "note": "Through the Roborock Plus skill, whose support article lists the Saros 10. Matter is also available."
+      "note": "Through the Roborock Plus skill for robots on the Roborock app. Matter is also available after firmware 02.32.44."
     },
     "smartthings": {
       "status": "unknown",
@@ -63,9 +65,10 @@
   "hubRequired": {
     "value": false,
     "sources": [
+      "roborock-us-product",
       "roborock-alexa-skill"
     ],
-    "note": "The skill links the Roborock account; no hub is mentioned."
+    "note": "Connects to the Roborock app over home Wi-Fi; no hub is mentioned."
   },
   "localControl": {
     "value": null,
@@ -75,16 +78,18 @@
   "cleaning": {
     "value": "vacuum-mop",
     "sources": [
-      "roborock-global-page"
+      "roborock-global-page",
+      "roborock-support-features"
     ],
-    "note": "Roborock's page lists VibraRise 4.0 mopping."
+    "note": "Roborock lists VibraRise 4.0 vibrating mops and hot-water mopping."
   },
   "navigation": {
     "value": "Retractable LiDAR, RGB camera",
     "sources": [
-      "roborock-global-page"
+      "roborock-global-page",
+      "roborock-support-features"
     ],
-    "note": "RetractSense lowers the LiDAR; structured light and an RGB camera are also listed."
+    "note": "RetractSense lowers the LDS; Roborock also lists tri-laser structured light and an RGB camera."
   },
   "suctionPa": {
     "value": 22000,
@@ -94,9 +99,11 @@
     ]
   },
   "selfEmptying": {
-    "value": null,
-    "sources": [],
-    "note": "Roborock's pages seen mention hot-water mop washing in the dock but not bin emptying; EU retailers sell it with a RockDock Ultra. Not confirmed."
+    "value": true,
+    "sources": [
+      "roborock-dock-support"
+    ],
+    "note": "Roborock's support article on the Saros 10 dock lists auto-emptying of the onboard dustbin."
   },
   "summary": "The Roborock Saros 10 is a vacuum-and-mop robot with retractable LiDAR and 22,000 Pa suction. Roborock lists it for the Matter firmware 02.32.44, so it can be added to Apple Home, Google Home and Alexa.",
   "caveats": [
@@ -130,7 +137,7 @@
     },
     {
       "id": "roborock-alexa-skill",
-      "url": "https://support.roborock.com/hc/en-us/articles/360035929051-How-do-I-connect-robot-vacuum-to-alexa-via-skill-Roborock-Plus",
+      "url": "https://support.roborock.com/hc/en-us/articles/360035929051",
       "title": "How do I connect robot vacuum to alexa via skill Roborock Plus?",
       "publisher": "Roborock",
       "kind": "manufacturer",
@@ -143,8 +150,25 @@
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-12"
+    },
+    {
+      "id": "roborock-dock-support",
+      "url": "https://support.roborock.com/hc/en-us/articles/43397345939609-What-can-the-Saros-10-Multifunctional-dock-do",
+      "title": "What can the Saros 10 Multifunctional dock do?",
+      "publisher": "Roborock",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "roborock-us-product",
+      "url": "https://us.roborock.com/products/roborock-saros-10",
+      "title": "Roborock Saros 10 Robot Vacuum with Dual Anti-tangle System",
+      "publisher": "Roborock",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-12"
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
 }

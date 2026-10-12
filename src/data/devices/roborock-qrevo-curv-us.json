@@ -12,9 +12,9 @@
       "wifi"
     ],
     "sources": [
-      "roborock-us"
+      "roborock-curv-support"
     ],
-    "note": "Roborock's US page says the robot supports 2.4 GHz Wi-Fi only."
+    "note": "Roborock's Qrevo Curv support FAQ says its robots connect on 2.4 GHz Wi-Fi only, not 5 GHz."
   },
   "matter": {
     "certified": true,
@@ -22,7 +22,7 @@
     "sources": [
       "roborock-matter-news"
     ],
-    "note": "Roborock's April 2025 announcement lists the Qrevo Curv among models getting Matter by firmware update. No CSA listing was found; the claim rests on the maker's statement."
+    "note": "Roborock's April 2025 announcement lists the Qrevo Curv (firmware 02.26.02) among models getting Matter by firmware update. CSA lists several Roborock 'Robotic Vacuum Cleaner' certificates, but none seen names the Qrevo Curv; the claim rests on the maker's statement."
   },
   "compatibility": {
     "apple_home": {
@@ -85,7 +85,7 @@
     "sources": [
       "roborock-global"
     ],
-    "note": "Navigation name from Roborock's global Qrevo Curv page."
+    "note": "Roborock's Qrevo Curv pages name PreciSense LiDAR navigation."
   },
   "suctionPa": {
     "value": 18500,
@@ -137,8 +137,17 @@
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-12"
+    },
+    {
+      "id": "roborock-curv-support",
+      "url": "https://forum.roborock.com/en-US/product/roborock-qrevo-curv-message?category=faqs",
+      "title": "Support for your Roborock Qrevo Curv",
+      "publisher": "Roborock",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-12"
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
 }

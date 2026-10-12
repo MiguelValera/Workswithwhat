@@ -6,16 +6,20 @@
   "regions": [
     "US"
   ],
-  "officialUrl": "https://www.eufy.com/appliance-x10-omni",
+  "officialUrl": "https://www.eufy.com/products/t2351111",
   "radios": {
-    "value": null,
-    "sources": [],
-    "note": "Wi-Fi band not confirmed from a maker page we saw."
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "eufy-manual"
+    ],
+    "note": "The manual asks for the 2.4 GHz band on your router; disable 5 GHz on dual-band routers during setup."
   },
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "Matter Alpha (community directory, matteralpha.com/eufy/eufy-clean-x10-pro-omni-p2405) lists the X10 Pro Omni as Matter 1.4 over Wi-Fi, firmware 3.0. No eufy page or CSA listing seen, so not claimed."
+    "note": "Matter Alpha, a third-party directory, lists the X10 Pro Omni as Matter 1.4 over Wi-Fi with firmware 3.0. No eufy page or CSA listing seen, so not claimed."
   },
   "compatibility": {
     "apple_home": {
@@ -28,15 +32,14 @@
       "sources": [
         "eufy-us"
       ],
-      "note": "eufy's US spec sheet lists compatibility with Google Home."
+      "note": "eufy's US page lists Google Home as a compatible device and Google Assistant voice control."
     },
     "alexa": {
       "status": "native",
       "sources": [
-        "eufy-us",
-        "eufy-eu"
+        "eufy-us"
       ],
-      "note": "eufy lists Amazon Echo (US) and Alexa voice control (EU)."
+      "note": "eufy's US page lists Amazon Echo as a compatible device and Alexa voice control."
     },
     "smartthings": {
       "status": "unknown",
@@ -71,9 +74,10 @@
   "navigation": {
     "value": "LiDAR (iPath Laser Navigation)",
     "sources": [
-      "eufy-manual"
+      "eufy-manual",
+      "eufy-us"
     ],
-    "note": "The manual lists a navigation lidar sensor; obstacle avoidance uses an RGB camera and LED."
+    "note": "The manual lists a navigation lidar; eufy calls it iPath Laser Navigation. Obstacle avoidance uses a camera (AI.See)."
   },
   "suctionPa": {
     "value": 8000,
@@ -95,16 +99,8 @@
   "sources": [
     {
       "id": "eufy-us",
-      "url": "https://www.eufy.com/appliance-x10-omni",
-      "title": "eufy X10 Pro Omni - MopMaster, AI.See, and 8,000 Pa Suction",
-      "publisher": "eufy",
-      "kind": "manufacturer",
-      "accessed": "2026-10-12"
-    },
-    {
-      "id": "eufy-eu",
-      "url": "https://www.eufy.com/eu-en/appliance-x10-omni",
-      "title": "eufy X10 Pro Omni - Robot Vacuum for Pet Hair and Dust",
+      "url": "https://www.eufy.com/products/t2351111",
+      "title": "eufy X10 Pro Omni｜MopMaster, AI.See, and 8,000 Pa Suction - eufy US",
       "publisher": "eufy",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
@@ -112,12 +108,13 @@
     {
       "id": "eufy-manual",
       "url": "https://service.eufy.com/article-description/X10-Pro-Omni-T2351-EN-Manual",
-      "title": "About Your X10 Pro Omni",
+      "title": "X10 Pro Omni_T2351_EN_Manual",
       "publisher": "eufy",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-12"
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
 }

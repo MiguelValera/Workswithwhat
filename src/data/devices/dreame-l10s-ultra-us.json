@@ -75,7 +75,7 @@
       "dreame-us",
       "dreame-global"
     ],
-    "note": "Dreame describes dual lasers, an RGB camera and AI for navigation."
+    "note": "Dreame's wording: dual lasers, an RGB camera and AI for mapping, navigation and obstacle avoidance. Its comparison table calls it 'Double laser+AI'."
   },
   "suctionPa": {
     "value": 5300,
@@ -113,6 +113,7 @@
       "accessed": "2026-10-12"
     }
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-12"
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
 }
