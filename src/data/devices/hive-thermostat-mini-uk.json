@@ -88,7 +88,7 @@
     ],
     "note": "Batteries are in the box."
   },
-  "summary": "The Hive Thermostat Mini is a battery-powered UK heating thermostat that switches your boiler through a mains receiver. Hive's Mini page lists Alexa, Google Assistant and Apple HomeKit, with Apple Home pairing through a Hive Hub. It covers most gas, LPG, oil and electric boilers, and OpenTherm on compatible combis. Hive doesn't state whether the Mini needs a hub, and Matter isn't claimed.",
+  "summary": "Hive lists Alexa, Google Home and Apple HomeKit for the Thermostat Mini, a battery-powered UK thermostat that switches your boiler through a mains receiver. Alexa and Google Home link through your Hive account, while Apple Home goes through a Hive Hub. It suits most gas, LPG, oil and electric boilers, plus OpenTherm on some combis, but not heat pumps. Whether the Mini needs a hub isn't stated, and Matter isn't claimed.",
   "caveats": [
     "Hive doesn't state whether the Mini needs a Hive Hub; check the bundle you buy.",
     "Not for heat pumps, solid fuel boilers or storage heaters, and several Worcester Bosch models are listed as incompatible.",

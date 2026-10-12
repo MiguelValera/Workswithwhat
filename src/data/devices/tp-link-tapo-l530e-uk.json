@@ -98,13 +98,12 @@
     ],
     "note": "The UK spec page lists E27 (A60)."
   },
-  "summary": "The UK Tapo L530E works with Alexa and Google Home through TP-Link's cloud skill and integration, and with SmartThings once you link your TP-Link account. No hub: it joins 2.4 GHz Wi-Fi directly, and Home Assistant's official TP-Link Smart Home integration controls it on the local network. Expect 806 lumens, 16 million colours and tunable white from 2500 to 6500 K, on an E27 screw base. Apple Home and Matter are both unconfirmed.",
+  "summary": "Tapo L530E (UK) is a colour Wi-Fi bulb with an E27 screw base, 806 lumens and tunable white from 2500 to 6500 K. It works with Alexa and Google Home through TP-Link's cloud links, and with SmartThings after you link your TP-Link account. There's no hub: it joins 2.4 GHz Wi-Fi directly, and Home Assistant's TP-Link Smart Home integration controls it locally. Apple Home and Matter are both unconfirmed.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
     "Apple Home and Matter support aren't confirmed; TP-Link's Matter colour bulb is the Tapo L535E, not this one.",
     "SmartThings gets basic controls only.",
-    "Home Assistant needs your TP-Link account credentials, and you may have to turn on Third-Party Compatibility in the Tapo app.",
-    "This is the E27 screw-base version."
+    "Home Assistant needs your TP-Link account credentials, and you may have to turn on Third-Party Compatibility in the Tapo app."
   ],
   "sources": [
     {

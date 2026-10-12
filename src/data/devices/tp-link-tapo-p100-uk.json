@@ -88,7 +88,7 @@
     ],
     "note": "13 A / 2990 W, 1/6 HP motor, 220-240 V. The EU version is 10 A / 2300 W."
   },
-  "summary": "Tapo's UK P100 gives plain on/off control from Alexa and Google Home, linked through your TP-Link account in the Tapo app. Home Assistant's TP-Link integration also supports it on the local network; SmartThings isn't confirmed for this UK model. It takes 13 A (2990 W) on 2.4 GHz Wi-Fi with no hub and no energy monitoring. TP-Link doesn't list Apple Home or Matter for it; the separate Tapo P100M is the Matter version.",
+  "summary": "Plain on/off control from Alexa and Google Home is what the Tapo P100 (UK) offers, linked through your TP-Link account after setup in the Tapo app. Home Assistant's TP-Link integration also supports it over the local network. It takes 13 A (2990 W) on 2.4 GHz Wi-Fi, needs no hub and has no energy monitoring. SmartThings, Apple Home and Matter aren't confirmed for this model; the separate Tapo P100M is the Matter version.",
   "caveats": [
     "2.4 GHz Wi-Fi only.",
     "TP-Link doesn't list Apple Home or Matter; the Tapo P100M is the Matter version.",

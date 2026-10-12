@@ -102,7 +102,7 @@
     ],
     "note": "Tapo says live view, instant notifications, two-way audio and local storage are free. Basic and Premium plans add 7-day or 30-day clip history. Plans vary by country; EU prices not checked."
   },
-  "summary": "The Tapo C200 is a plug-in pan/tilt indoor camera with a microSD slot (up to 512 GB), which Tapo lists as free recording. Tapo says it works with Alexa and Google Home, and both links run through the Tapo app with no hub. Cloud clip history needs the optional Tapo Care plan. Apple Home, SmartThings and Home Assistant support are not confirmed.",
+  "summary": "Tapo names Alexa and Google Home for the C200, a mains-powered indoor pan/tilt camera that connects straight to Wi-Fi with no hub. Recording to a microSD card (up to 512 GB, sold separately) is free; cloud clip history needs a Tapo Care plan. Apple Home, SmartThings and Home Assistant aren't confirmed for this model, and no Matter listing turned up.",
   "caveats": [
     "Alexa and Google streams are cloud-to-cloud and stop after 10 minutes; you ask again to keep watching.",
     "2.4 GHz Wi-Fi only.",

@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Con casquillo E27, 806 lúmenes y blanco regulable de 2500 a 6500 K, la versión británica de la Tapo L530E es una bombilla de color con wifi. Funciona con Alexa y Google Home mediante los enlaces en la nube de TP-Link, y con SmartThings tras vincular tu cuenta de TP-Link. No necesita hub: se conecta directamente al wifi de 2,4 GHz, y la integración TP-Link Smart Home de Home Assistant la controla en local. Apple Home y Matter están sin confirmar.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "La compatibilidad con Apple Home y Matter no está confirmada; la bombilla de color con Matter de TP-Link es la Tapo L535E, no esta.",
+    "SmartThings solo recibe los controles básicos.",
+    "Home Assistant necesita las credenciales de tu cuenta de TP-Link, y puede que tengas que activar Third-Party Compatibility en la app Tapo."
+  ],
+  "notes": {
+    "radios": "IEEE 802.11b/g/n, solo 2,4 GHz.",
+    "matter": "Ninguna fuente oficial lo confirma o lo descarta: la página de especificaciones británica indica solo Alexa y Google, y no hemos encontrado ningún registro de la CSA para la L530E. La bombilla de color con Matter de TP-Link es la L535E. Sin confirmar.",
+    "hubRequired": "Se conecta directamente al wifi de 2,4 GHz y se controla desde la app Tapo; no hace falta puente.",
+    "localControl": "La integración de TP-Link en Home Assistant se comunica con la bombilla por la red local sin la nube de TP-Link, aunque usa las credenciales de tu cuenta de TP-Link para autenticarse.",
+    "colorType": "16 millones de colores más blanco regulable, 2500–6500 K.",
+    "lumens": "806 lm, comparable a una bombilla incandescente de 60 W.",
+    "bulbBase": "La página de especificaciones británica indica E27 (A60).",
+    "compatibility.apple_home": "La página de especificaciones británica indica solo Alexa y Google, pero ninguna fuente oficial dice que Apple Home no sea compatible. Sin confirmar.",
+    "compatibility.google_home": "Mediante la integración en la nube de Tapo para Google Home.",
+    "compatibility.alexa": "Mediante la skill Tapo de Alexa.",
+    "compatibility.smartthings": "Vinculando tu cuenta de TP-Link en la app SmartThings (Partner devices > Tapo). El manual de la L530E nombra SmartThings; la FAQ de SmartThings de TP-Link (edición estadounidense) trata las bombillas Tapo en general y dice que solo funcionan los controles básicos.",
+    "compatibility.home_assistant": "Figura como compatible en la integración oficial TP-Link Smart Home; necesita las credenciales de la nube de TP-Link y puede que haya que activar Third-Party Compatibility en la app Tapo."
+  }
+}

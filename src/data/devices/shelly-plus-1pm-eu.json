@@ -102,7 +102,7 @@
     ],
     "note": "One relay output and one switch input; 16 A AC at up to 240 V."
   },
-  "summary": "The Shelly Plus 1PM is a small relay with power metering (no dimming) that sits behind an existing switch or socket and switches up to 16 A at 240 V AC. Shelly lists Google, Alexa and SmartThings integrations, and Home Assistant has an official local integration. It has no Matter statement and no HomeKit listing. Shelly's page marks it discontinued in favour of the 1PM Gen3.",
+  "summary": "Behind an existing switch or socket, the Shelly Plus 1PM switches one 16 A circuit at up to 240 V AC and measures its power; it doesn't dim. Shelly lists Google, Alexa and SmartThings integrations, and Home Assistant's official Shelly integration runs locally over Wi-Fi with no hub. Matter and Apple Home aren't listed. Shelly's page marks it discontinued in favour of the 1PM Gen3.",
   "caveats": [
     "Shelly's product page marks the Plus 1PM discontinued and points to the Shelly 1PM Gen3 as its successor.",
     "No Matter and no Apple Home listing for this model.",

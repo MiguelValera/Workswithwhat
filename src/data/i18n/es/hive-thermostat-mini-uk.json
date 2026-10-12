@@ -1,0 +1,32 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Hive indica Alexa, Google Home y Apple HomeKit para el Thermostat Mini, un termostato británico que funciona con pilas y enciende la caldera mediante un receptor conectado a la red eléctrica. Alexa y Google Home se vinculan con tu cuenta de Hive, mientras que Apple Home pasa por un Hive Hub. Sirve para la mayoría de calderas de gas, GLP, gasóleo y eléctricas, y para OpenTherm en algunas calderas combi, pero no para bombas de calor. No se indica si el Mini necesita un hub, y Matter no figura.",
+  "caveats": [
+    "Hive no indica si el Mini necesita un Hive Hub; comprueba el pack que compras.",
+    "No sirve para bombas de calor, calderas de combustible sólido ni acumuladores de calor, y varios modelos de Worcester Bosch figuran como incompatibles.",
+    "El agua caliente solo se puede encender, apagar, programar o forzar de 1 a 6 horas, no ajustar a una temperatura.",
+    "OpenTherm funciona solo en calderas combi compatibles y en sistemas de una sola zona.",
+    "En Apple Home, el agua caliente, el refuerzo y los horarios siguen necesitando la app Hive."
+  ],
+  "notes": {
+    "radios": "Hive dice que sus dispositivos de calefacción usan Zigbee para la comunicación local. La página no indica una radio wifi en el termostato, así que no se incluye ninguna.",
+    "matter": "No hemos encontrado ninguna mención a Matter en la página del Mini de Hive.",
+    "hubRequired": "La página del Mini de Hive no lo aclara. El contenido de la caja no incluye ningún hub, y una pregunta frecuente de la página dice que el primer termostato incluye un Hive Hub. Las tiendas británicas venden packs con hub y sin él. Comprueba el pack que compras.",
+    "localControl": "Hive dice que el termostato sigue funcionando y ajustando la temperatura sin internet, pero el control desde la app solo vuelve cuando hay conexión. Eso no es control local, así que lo dejamos sin confirmar.",
+    "thermostatType": "Termostato a pilas que enciende tu caldera mediante un receptor conectado a la red eléctrica.",
+    "systems": "No sirve para bombas de calor, combustible sólido ni acumuladores de calor. El agua caliente solo se enciende, se apaga o se refuerza. Varios modelos de Worcester Bosch figuran como incompatibles.",
+    "power": "Las pilas vienen en la caja.",
+    "compatibility.apple_home": "La página del Mini de Hive incluye Apple HomeKit. La guía de HomeKit de Hive empareja a través de un Hive Hub y no nombra el Mini; el agua caliente, el refuerzo y los horarios no se pueden controlar desde Apple Home.",
+    "compatibility.google_home": "Figura en la página del Mini. Vincula tu cuenta de Hive en Google Home, en Control del hogar; la guía no nombra el Mini.",
+    "compatibility.alexa": "La página del Mini incluye Amazon Alexa; la página de soporte de Alexa de Hive no nombra el Mini.",
+    "compatibility.smartthings": "Ninguna página de Hive que hayamos encontrado incluye SmartThings.",
+    "compatibility.home_assistant": "La integración de Hive de Home Assistant incluye Hive Active Heating, Multi-zone y Radiator Valve, pero no el Thermostat Mini; funciona consultando la nube con tu cuenta de Hive."
+  },
+  "via": {
+    "apple_home": "Hive Hub"
+  },
+  "values": {
+    "systems": "Calderas británicas de gas, GLP, gasóleo y eléctricas; OpenTherm en algunas combi",
+    "power": "4 × AAA; receptor a 230 V de la red eléctrica"
+  }
+}
