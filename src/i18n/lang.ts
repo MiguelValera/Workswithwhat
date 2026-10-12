@@ -24,6 +24,7 @@ const SEGMENTS_ES: Record<string, string> = {
   'robot-vacuums': 'robots-aspiradores',
   'smart-hubs': 'hubs-y-pasarelas',
   'works-with': 'compatible-con',
+  compare: 'comparar',
   methodology: 'metodologia',
   legal: 'aviso-legal',
   privacy: 'privacidad',

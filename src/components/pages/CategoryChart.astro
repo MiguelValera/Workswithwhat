@@ -7,6 +7,7 @@ import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemSlug, formatDate, 
 import { catText, type Category } from '../../lib/categories';
 import { byMarket, marketText, regionPath, type Market } from '../../lib/markets';
 import { langOf, localize } from '../../i18n/lang';
+import { getComparisons } from '../../lib/compare';
 
 interface Props {
   cat: Category;
@@ -44,6 +45,9 @@ const ecoLinks = await Promise.all(
     return { e, href: L((market && (await regionPath(market, global))) || global) };
   }),
 );
+
+const pairCount = (await getComparisons()).filter((x) => x.a.data.category === cat.key && (!market || x.market === market)).length;
+const compareLink = L(`/compare/#${market ? `${cat.path}-${market.key}` : cat.path}`);
 
 const newest = devices.map((d) => d.data.updatedAt).sort().at(-1);
 const jsonLd = [
@@ -128,6 +132,16 @@ const crumbs = market
         <time datetime={newest}>{formatDate(newest, lang)}</time>.
         {es ? ' Los mismos datos están disponibles en ' : ' The same data is available as '}
         <a href={api}>JSON</a>{es ? ' (en inglés).' : '.'}
+      </p>
+    )
+  }
+  {
+    pairCount > 0 && (
+      <p class="muted">
+        <a href={compareLink}>
+          {es ? `${pairCount} ${pairCount === 1 ? 'comparativa' : 'comparativas'} de ${c.plural}${m ? ` para ${m.phrase}` : ''}` : `${pairCount} head-to-head ${cat.singular} ${pairCount === 1 ? 'comparison' : 'comparisons'}${market ? ` for ${market.phrase}` : ''}`}
+        </a>
+        {es ? ': dos modelos lado a lado.' : ': two models side by side.'}
       </p>
     )
   }

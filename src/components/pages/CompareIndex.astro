@@ -1,0 +1,52 @@
+---
+// Every "X vs Y" page, by category and market (/compare/, /es/comparar/).
+import Base from '../../layouts/Base.astro';
+import { CATEGORIES, catText } from '../../lib/categories';
+import { getComparisons, compareName, comparePath } from '../../lib/compare';
+import { MARKETS, marketText } from '../../lib/markets';
+import { langOf, localize } from '../../i18n/lang';
+
+const lang = langOf(Astro.url.pathname);
+const es = lang === 'es';
+const L = (p: string) => localize(p, lang);
+const all = await getComparisons();
+const groups = CATEGORIES.map((cat) => ({
+  cat,
+  c: catText(cat, lang),
+  markets: MARKETS.map((m) => ({ m, items: all.filter((x) => x.a.data.category === cat.key && x.market === m) })).filter((g) => g.items.length),
+})).filter((g) => g.markets.length);
+const title = es ? 'Comparativas de dispositivos domóticos' : 'Smart home device comparisons';
+const description = es
+  ? `${all.length} comparativas cara a cara: dos dispositivos de la misma categoría y región, con Matter, Apple Home, Google Home, Alexa, SmartThings y Home Assistant lado a lado.`
+  : `${all.length} head-to-head comparisons: two devices of the same category and region, with Matter, Apple Home, Google Home, Alexa, SmartThings and Home Assistant side by side.`;
+---
+
+<Base title={title} description={description} crumbs={[{ name: es ? 'Comparativas' : 'Comparisons', path: '/compare/' }]}>
+  <h1>{title}</h1>
+  <p class="lede">
+    {
+      es
+        ? 'Cada comparativa enfrenta dos dispositivos que se venden en la misma región y muestra dónde difieren: con qué ecosistemas funcionan, cómo se conectan y sus especificaciones. Cada dato enlaza a su fuente.'
+        : 'Each comparison puts two devices sold in the same region next to each other and shows where they differ: which ecosystems they work with, how they connect, and their specs. Every value links to its source.'
+    }
+  </p>
+  <nav class="toc" aria-label={es ? 'Ir a la categoría' : 'Jump to category'}>
+    <span class="toc-label">{es ? 'Categoría:' : 'Category:'}</span>
+    {groups.map((g) => <a href={`#${g.cat.path}`}>{g.c.label}</a>)}
+  </nav>
+  {
+    groups.map((g) => (
+      <section aria-labelledby={g.cat.path}>
+        <h2 id={g.cat.path}>{g.c.label}</h2>
+        {g.markets.map(({ m, items }) => (
+          <>
+            <h3 id={`${g.cat.path}-${m.key}`}>{es ? `Para ${marketText(m, lang).phrase}` : `For ${m.phrase}`}</h3>
+            <ul class="link-list">
+              {items.map((x) => <li><a href={L(comparePath(x))}>{compareName(x)}</a></li>)}
+            </ul>
+          </>
+        ))}
+      </section>
+    ))
+  }
+</Base>

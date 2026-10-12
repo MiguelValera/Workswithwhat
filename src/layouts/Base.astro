@@ -195,7 +195,10 @@ if (crumbs.length) {
         <nav class="directory" aria-label={t.footerDirectory}>
           <div>
             <p class="dir-title">{t.navDevices}</p>
-            <ul>{navCategories.map((c) => <li><a href={L(`/${c.path}/`)}>{catText(c, lang).label}</a></li>)}</ul>
+            <ul>
+              {navCategories.map((c) => <li><a href={L(`/${c.path}/`)}>{catText(c, lang).label}</a></li>)}
+              <li><a href={L('/compare/')}>{t.navCompare}</a></li>
+            </ul>
           </div>
           <div>
             <p class="dir-title">{t.navByEcosystem}</p>

@@ -22,6 +22,7 @@ import {
 } from '../../lib/devices';
 import { marketOf, marketText, regionPath } from '../../lib/markets';
 import { hubFor, devicesViaHub } from '../../lib/hubs';
+import { comparePath, comparisonsFor } from '../../lib/compare';
 import { CATEGORIES } from '../../lib/categories';
 import { langOf, localize } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
@@ -73,6 +74,8 @@ const variants = (d.variants ?? [])
 const related = devices
   .filter((o) => o.id !== device.id && o.data.category === d.category && marketOf(o) === market)
   .slice(0, 3);
+
+const comparisons = await comparisonsFor(device);
 
 // a hub page lists what connects through it, grouped by category
 const viaHub = d.category === 'smart-hub' ? devicesViaHub(device, devices) : [];
@@ -181,6 +184,7 @@ const jsonLd = [
       <a href="#quick-answers">{es ? 'Respuestas rápidas' : 'Quick answers'}</a>
       <a href="#sources">{es ? 'Fuentes' : 'Sources'}</a>
       {viaHub.length > 0 && <a href="#works-through">{es ? 'Qué se conecta a través de él' : 'What connects through it'}</a>}
+      {comparisons.length > 0 && <a href="#compare">{es ? 'Comparar' : 'Compare'}</a>}
       {related.length > 0 && <a href="#related">{es ? `${c.plural.replace(/^./, (x) => x.toUpperCase())} ${similar}` : `Similar ${cat.plural}`}</a>}
     </nav>
 
@@ -315,6 +319,17 @@ const jsonLd = [
             </ul>
           </>
         ))}
+      </section>
+    )
+  }
+
+  {
+    comparisons.length > 0 && (
+      <section aria-labelledby="compare">
+        <h2 id="compare">{es ? `Compara ${d.name}` : `Compare the ${d.name}`}</h2>
+        <ul class="link-list">
+          {comparisons.map((x) => <li><a href={L(comparePath(x))}>{es ? `frente a ${x.other.data.name}` : `vs ${x.other.data.name}`}</a></li>)}
+        </ul>
       </section>
     )
   }
