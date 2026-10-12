@@ -65,6 +65,7 @@ After any agent run: `npm run validate` must pass.
 - `/<category>/<slug>/`: device page with a compatibility table, specs, sources, last-verified date, and Product JSON-LD.
 - `/works-with/<ecosystem>/`: e.g. "Smart home devices that work with Apple Home", one section per category. Titles name the categories only up to three; past that they say "smart home devices" and the description names them in brackets (`categoryPhrase()` in `src/lib/devices.ts`). `/works-with/matter/` lists Matter-certified devices.
 - Categories are registered in `src/lib/categories.ts` (routes, labels, a short `navLabel` for the site header, which facts to show) and `src/schema/device.ts` (fields).
+- `/compare/<a>-vs-<b>/` (Spanish `/es/comparar/…`): "X vs Y" pages, two devices of the same category and market side by side (Matter, every ecosystem, radio, hub, local control, category facts), each cell linking to the source on the device's page, plus generated quick answers mirrored in FAQPage JSON-LD. Pairs come from the data in `src/lib/compare.ts`, never by hand: every pair of the same category and market that differs somewhere gets a page, so any two devices of one type can be compared without client JS. Only each device's `RIVALS_PER_DEVICE` (3) closest rivals (same kind first, e.g. two GU10 bulbs or two doorbells) are indexed; the other pairs are `noindex`, and `astro.config.mjs` keeps every noindex page out of the sitemap. `/compare/`, charts and llms.txt list only indexed pairs; device pages list every rival under "Compare the X", closest first. Adding a device adds its comparisons automatically.
 - `/methodology/`: how we verify (trust signal).
 - Every page needs a unique `<title>` and meta description, a canonical URL, OG tags and breadcrumbs (with BreadcrumbList JSON-LD). Sitemap via `@astrojs/sitemap`.
 - Keep pages light: no client JS (the CSP allows none), system fonts, no trackers.
@@ -91,7 +92,7 @@ After any agent run: `npm run validate` must pass.
 ## Roadmap
 
 - **Phase 1 (done):** Astro setup, schema and validation, agents, first smart plugs, GitHub Pages + Cloudflare deploy, security hardening, legal pages, SEO/GEO.
-- **Phase 2 (in progress):** more devices and categories. Plugs, bulbs, locks, thermostats, sensors, cameras and doorbells, switches and dimmers, robot vacuums, and hubs and bridges are live. Each new category needs code: schema in `src/schema/device.ts`, plus registry and labels in `src/lib/categories.ts`. Then filters, comparison pages ("X vs Y") and per-ecosystem buying guides.
+- **Phase 2 (in progress):** more devices and categories. Plugs, bulbs, locks, thermostats, sensors, cameras and doorbells, switches and dimmers, robot vacuums, and hubs and bridges are live. Each new category needs code: schema in `src/schema/device.ts`, plus registry and labels in `src/lib/categories.ts`. Comparison pages ("X vs Y") are live. Then filters and per-ecosystem buying guides.
 - **Phase 3:** data freshness (re-verify records older than 6 months), contribution and corrections form, monetisation (see below).
 
 ## Current state (handoff, updated 2026-10-12)

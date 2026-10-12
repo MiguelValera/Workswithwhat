@@ -19,7 +19,7 @@ interface Props {
   ogType?: 'website' | 'article';
   /** false for pages that exist in one language only (the 404 page) */
   alternates?: boolean;
-  /** pages that must stay out of search results (404): noindex and no canonical */
+  /** pages that must stay out of search results (404, extra comparisons): noindex, no canonical, not in the sitemap */
   noindex?: boolean;
 }
 
@@ -89,8 +89,8 @@ if (crumbs.length) {
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
-    {langLinks.map(({ l, href }) => <link rel="alternate" hreflang={HTML_LANG[l]} href={new URL(href, site).href} />)}
-    {langLinks.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(here, site).href} />}
+    {!noindex && langLinks.map(({ l, href }) => <link rel="alternate" hreflang={HTML_LANG[l]} href={new URL(href, site).href} />)}
+    {!noindex && langLinks.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(here, site).href} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="theme-color" content="#0f766e" />
@@ -134,7 +134,7 @@ if (crumbs.length) {
           <a class="only-wide" href={L('/methodology/')} aria-current={current('/methodology/')}>{t.navHowWeVerify}</a>
         </nav>
         {
-          markets.length > 1 && !noindex && (
+          markets.length > 1 && (!noindex || alternates) && (
             <details class="locale">
               <summary>
                 <span>{lang.toUpperCase()}</span><span class="sep" aria-hidden="true">·</span><span class="only-wide">{hereMarket ? marketText(hereMarket, lang).label : t.regionAllLong}</span>
@@ -195,7 +195,10 @@ if (crumbs.length) {
         <nav class="directory" aria-label={t.footerDirectory}>
           <div>
             <p class="dir-title">{t.navDevices}</p>
-            <ul>{navCategories.map((c) => <li><a href={L(`/${c.path}/`)}>{catText(c, lang).label}</a></li>)}</ul>
+            <ul>
+              {navCategories.map((c) => <li><a href={L(`/${c.path}/`)}>{catText(c, lang).label}</a></li>)}
+              <li><a href={L('/compare/')}>{t.navCompare}</a></li>
+            </ul>
           </div>
           <div>
             <p class="dir-title">{t.navByEcosystem}</p>

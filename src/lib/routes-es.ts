@@ -3,6 +3,7 @@
 import { CATEGORIES } from './categories';
 import { ECOSYSTEMS, ecosystemSlug, getPublishedDevices, getTranslations, type Ecosystem, type Device } from './devices';
 import { getRegionPages, marketOf, type Market } from './markets';
+import { comparePath, getComparisons, type Comparison } from './compare';
 import { localize } from '../i18n/lang';
 import { ES_ENABLED } from '../site.config';
 import type { Category } from './categories';
@@ -14,7 +15,9 @@ export type EsPage =
   | { kind: 'market'; market: Market; devices: Device[] }
   | { kind: 'ecosystem'; eco: Ecosystem; market?: Market }
   | { kind: 'regionMatter'; market: Market }
-  | { kind: 'device'; device: Device; devices: Device[] };
+  | { kind: 'device'; device: Device; devices: Device[] }
+  | { kind: 'compareIndex' }
+  | { kind: 'compare'; comparison: Comparison };
 
 /** Spanish pages keyed by their path segments after /es/. */
 export async function getEsPages(): Promise<{ segments: string[]; page: EsPage }[]> {
@@ -37,6 +40,10 @@ export async function getEsPages(): Promise<{ segments: string[]; page: EsPage }
     for (const device of devices)
       if (translations.has(device.id)) pages.push({ en: `/${cat.path}/${device.id}/`, page: { kind: 'device', device, devices: all } });
   }
+  pages.push({ en: '/compare/', page: { kind: 'compareIndex' } });
+  for (const comparison of await getComparisons())
+    if (translations.has(comparison.a.id) && translations.has(comparison.b.id))
+      pages.push({ en: comparePath(comparison), page: { kind: 'compare', comparison } });
   for (const { market, path } of await getRegionPages()) {
     const mine = all.filter((d) => marketOf(d) === market);
     const rest = path.slice(market.key.length + 1);

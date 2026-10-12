@@ -185,6 +185,11 @@ ul.caveats li { margin-bottom: 6px; }
 .faq dt { font-weight: 600; }
 .faq dd { margin: 4px 0 0; }
 
+/* X vs Y pages */
+ul.verdict { padding-left: 1.2em; max-width: 62ch; }
+ul.verdict li { margin-bottom: 4px; }
+table.pair-compare tr.differs th[scope='row'] { box-shadow: inset 3px 0 0 var(--accent); }
+
 /* Wide screens: the chart fits, so let its header row stay in view while scrolling long lists */
 @media (min-width: 980px) {
   .table-scroll:has(> table.stack) { overflow: visible; }
@@ -215,6 +220,9 @@ ul.caveats li { margin-bottom: 6px; }
   table.stack.kv tr { grid-template-columns: 1fr auto; align-items: center; gap: 6px 12px; }
   table.stack.kv th[scope='row'] { grid-column: auto; }
   table.stack.kv td.wide { grid-column: 1 / -1; }
+  table.stack.pair-compare tr { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  table.stack.pair-compare td[data-label]::before { white-space: normal; }
+  table.stack.pair-compare td { overflow-wrap: anywhere; }
 }
 
 /* region badge on device pages links to that market's chart */

@@ -1,6 +1,8 @@
 ---
 // Every Spanish page. The route list comes from getEsPages(), which mirrors the
 // English site; each kind renders the same component the English page uses.
+import CompareIndex from '../../components/pages/CompareIndex.astro';
+import ComparePage from '../../components/pages/ComparePage.astro';
 import CategoryChart from '../../components/pages/CategoryChart.astro';
 import DevicePage from '../../components/pages/DevicePage.astro';
 import EcosystemIndex from '../../components/pages/EcosystemIndex.astro';
@@ -34,3 +36,5 @@ const { page } = Astro.props as { page: EsPage };
 {page.kind === 'chart' && <CategoryChart cat={page.cat} devices={page.devices} market={page.market} />}
 {page.kind === 'market' && <MarketHome market={page.market} devices={page.devices} />}
 {page.kind === 'device' && <DevicePage device={page.device} devices={page.devices} />}
+{page.kind === 'compareIndex' && <CompareIndex />}
+{page.kind === 'compare' && <ComparePage comparison={page.comparison} />}

@@ -3,6 +3,7 @@ import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemSlug, getPublishedDe
 import { CATEGORIES } from '../lib/categories';
 import { ES_ENABLED } from '../site.config';
 import { byMarket, getActiveMarkets, getRegionPages } from '../lib/markets';
+import { compareName, comparePath, getComparisons } from '../lib/compare';
 
 // llms.txt (https://llmstxt.org): a plain map of the site for AI assistants.
 export const GET: APIRoute = async ({ site }) => {
@@ -55,6 +56,15 @@ export const GET: APIRoute = async ({ site }) => {
     '',
     ...ECOSYSTEMS.map((e) => `- [Devices that work with ${ECOSYSTEM_LABELS[e]}](${url(`/works-with/${ecosystemSlug(e)}/`)})`),
     `- [Matter devices](${url('/works-with/matter/')}): Matter-certified devices split by Wi-Fi and Thread`,
+    '',
+  );
+  const comparisons = (await getComparisons()).filter((c) => c.indexed);
+  lines.push(
+    '## Comparisons',
+    '',
+    `Head-to-head pages for two devices of the same category and market, with every ecosystem, Matter and spec side by side. [All comparisons](${url('/compare/')})`,
+    '',
+    ...comparisons.map((c) => `- [${compareName(c)}](${url(comparePath(c))})`),
     '',
   );
   return new Response(lines.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

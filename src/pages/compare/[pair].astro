@@ -1,0 +1,12 @@
+---
+import ComparePage from '../../components/pages/ComparePage.astro';
+import { getComparisons, type Comparison } from '../../lib/compare';
+
+export async function getStaticPaths() {
+  return (await getComparisons()).map((comparison) => ({ params: { pair: comparison.slug }, props: { comparison } }));
+}
+
+const { comparison } = Astro.props as { comparison: Comparison };
+---
+
+<ComparePage comparison={comparison} />
