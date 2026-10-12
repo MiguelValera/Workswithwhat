@@ -1,0 +1,123 @@
+{
+  "category": "robot-vacuum",
+  "brand": "eufy",
+  "model": "X10 Pro Omni",
+  "name": "eufy X10 Pro Omni (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.eufy.com/appliance-x10-omni",
+  "radios": {
+    "value": null,
+    "sources": [],
+    "note": "Wi-Fi band not confirmed from a maker page we saw."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Matter Alpha (community directory, matteralpha.com/eufy/eufy-clean-x10-pro-omni-p2405) lists the X10 Pro Omni as Matter 1.4 over Wi-Fi, firmware 3.0. No eufy page or CSA listing seen, so not claimed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No eufy page found for Apple Home."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "eufy-us"
+      ],
+      "note": "eufy's US spec sheet lists compatibility with Google Home."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "eufy-us",
+        "eufy-eu"
+      ],
+      "note": "eufy lists Amazon Echo (US) and Alexa voice control (EU)."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No eufy or Samsung page found for SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant integration page found; only community integrations."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "eufy-us"
+    ],
+    "note": "The Omni station is not a hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "eufy says obstacle recognition runs offline; local-only control is not stated."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "eufy-us"
+    ],
+    "note": "Vacuums and mops with spinning pads (MopMaster)."
+  },
+  "navigation": {
+    "value": "LiDAR (iPath Laser Navigation)",
+    "sources": [
+      "eufy-manual"
+    ],
+    "note": "The manual lists a navigation lidar sensor; obstacle avoidance uses an RGB camera and LED."
+  },
+  "suctionPa": {
+    "value": 8000,
+    "sources": [
+      "eufy-us"
+    ]
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": [
+      "eufy-manual"
+    ],
+    "note": "The Omni station empties the bin into a 2.5 L dust bag."
+  },
+  "summary": "The eufy X10 Pro Omni is a vacuum and mop with 8,000 Pa suction, laser navigation and an Omni station that empties the bin. eufy lists Alexa and Google Home voice control. The US page marks it as no longer available.",
+  "caveats": [
+    "Placeholder caveat: the editor will rewrite this."
+  ],
+  "sources": [
+    {
+      "id": "eufy-us",
+      "url": "https://www.eufy.com/appliance-x10-omni",
+      "title": "eufy X10 Pro Omni - MopMaster, AI.See, and 8,000 Pa Suction",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "eufy-eu",
+      "url": "https://www.eufy.com/eu-en/appliance-x10-omni",
+      "title": "eufy X10 Pro Omni - Robot Vacuum for Pet Hair and Dust",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "eufy-manual",
+      "url": "https://service.eufy.com/article-description/X10-Pro-Omni-T2351-EN-Manual",
+      "title": "About Your X10 Pro Omni",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-12"
+}

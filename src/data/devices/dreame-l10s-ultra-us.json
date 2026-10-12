@@ -1,0 +1,118 @@
+{
+  "category": "robot-vacuum",
+  "brand": "Dreame",
+  "model": "L10s Ultra",
+  "name": "Dreame L10s Ultra (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.dreametech.com/products/dreamebot-l10s-ultra",
+  "radios": {
+    "value": null,
+    "sources": [],
+    "note": "No Wi-Fi band statement found in the pages we saw."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter statement found on Dreame pages or a CSA listing."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [
+        "dreame-us"
+      ],
+      "note": "One Dreame page lists Siri via the Dreamehome app; that is voice control, not confirmed Home app support."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "dreame-us"
+      ],
+      "note": "Dreame lists Google Assistant voice control."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "dreame-us"
+      ],
+      "note": "Dreame lists Alexa voice control."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Dreame or Samsung page found for SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant page; only a community HACS integration lists the L10s Ultra."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "dreame-us"
+    ],
+    "note": "The self-empty base is not a hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No maker statement on local-only control found."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "dreame-us"
+    ],
+    "note": "Vacuums and mops with two spinning mops."
+  },
+  "navigation": {
+    "value": "Dual lasers and RGB camera",
+    "sources": [
+      "dreame-us",
+      "dreame-global"
+    ],
+    "note": "Dreame describes dual lasers, an RGB camera and AI for navigation."
+  },
+  "suctionPa": {
+    "value": 5300,
+    "sources": [
+      "dreame-us"
+    ],
+    "note": "Dreame says the figure is from its lab tests."
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": [
+      "dreame-us"
+    ],
+    "note": "The base empties the bin into a 3 L dust bag, up to 60 days."
+  },
+  "summary": "Dreame lists the L10s Ultra as a vacuum and mop with 5,300 Pa suction and a base that empties the bin into a dust bag. It supports Alexa and Google Assistant voice control. No Matter support was found.",
+  "caveats": [
+    "Placeholder caveat: the editor will rewrite this."
+  ],
+  "sources": [
+    {
+      "id": "dreame-us",
+      "url": "https://www.dreametech.com/products/dreamebot-l10s-ultra",
+      "title": "Dreame L10s Ultra Robot Vacuum Cleaner and Mop",
+      "publisher": "Dreame",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "dreame-global",
+      "url": "https://global.dreametech.com/products/dreamebot-l10s-ultra",
+      "title": "DreameBot L10s Ultra",
+      "publisher": "Dreame",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-12"
+}

@@ -1,0 +1,127 @@
+{
+  "category": "robot-vacuum",
+  "brand": "Ecovacs",
+  "model": "DEEBOT T30 OMNI",
+  "name": "Ecovacs Deebot T30 Omni (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://ecovacs.com/uk/deebot-robotic-vacuum-cleaner/deebot-t30-omni",
+  "radios": {
+    "value": null,
+    "sources": [],
+    "note": "No Wi-Fi or other radio statement seen in the search snippets."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter statement found for the T30 Omni on Ecovacs pages or a CSA listing."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Ecovacs page found for Apple Home or Siri."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "ecovacs-uk",
+        "ecovacs-connection"
+      ],
+      "note": "Ecovacs states its Deebots work with Google Assistant; sibling T30 pages list it. Not seen on the T30 Omni page itself."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "ecovacs-uk",
+        "ecovacs-connection"
+      ],
+      "note": "Ecovacs states its Deebots work with Alexa; sibling T30 pages list it. Not seen on the T30 Omni page itself."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Ecovacs or Samsung page found for SmartThings."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ecovacs-ha"
+      ],
+      "note": "Home Assistant has an official Ecovacs integration for Deebot vacuums using the Ecovacs account; the T30 Omni is not named. Ecovacs's own blog says it does not officially support Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "ecovacs-uk"
+    ],
+    "note": "The Omni station is not a hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No maker statement on local-only control found."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "ecovacs-uk"
+    ],
+    "note": "Vacuums and mops with automatic mop lifting."
+  },
+  "navigation": {
+    "value": "LDS",
+    "sources": [
+      "ecovacs-uk"
+    ],
+    "note": "Ecovacs lists LDS (laser distance sensor) navigation."
+  },
+  "suctionPa": {
+    "value": 11000,
+    "sources": [
+      "ecovacs-uk"
+    ],
+    "note": "Maximum suction as listed by Ecovacs."
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": [
+      "ecovacs-uk"
+    ],
+    "note": "Titled an auto-empty vacuum and mop; the Omni station collects dust."
+  },
+  "summary": "Ecovacs sells the Deebot T30 Omni as a vacuum and mop with 11,000 Pa suction, laser navigation and an Omni station that empties the bin. Ecovacs lists Alexa and Google Assistant for the T30 family.",
+  "caveats": [
+    "Placeholder caveat: the editor will rewrite this."
+  ],
+  "sources": [
+    {
+      "id": "ecovacs-uk",
+      "url": "https://ecovacs.com/uk/deebot-robotic-vacuum-cleaner/deebot-t30-omni",
+      "title": "DEEBOT T30 OMNI Auto-Empty Robot Vacuum & Mop (Edge Cleaning, Mini, AI)",
+      "publisher": "Ecovacs",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ecovacs-connection",
+      "url": "https://www.ecovacs.com/us/innovation/smart-connection",
+      "title": "Connection",
+      "publisher": "Ecovacs",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ecovacs-ha",
+      "url": "https://home-assistant.io/integrations/ecovacs",
+      "title": "Ecovacs - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-12"
+}
