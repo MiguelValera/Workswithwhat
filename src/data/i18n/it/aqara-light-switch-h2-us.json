@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "L'Aqara Light Switch H2 (US, WS-K02E) è un interruttore da parete on/off con due pulsanti e un canale a relè, e funziona con o senza filo neutro. Di default usa Matter su Thread, quindi Apple Home, Google Home, Alexa, SmartThings e Home Assistant possono aggiungerlo senza un hub Aqara, con un controller Matter compatibile con Thread. In modalità Zigbee serve invece un hub Aqara. Il monitoraggio dei consumi richiede il neutro.",
+  "caveats": ["La modalità Thread richiede un controller Matter che sia anche un border router Thread.", "Solo on/off; Aqara vende a parte il Dimmer Switch H2 US.", "Senza filo neutro il carico minimo è di 5 W e non ci sono monitoraggio dei consumi né protezione da sovraccarico.", "Le versioni con altro numero di pulsanti e canali hanno numeri di modello diversi; controlla la confezione."],
+  "notes": {
+    "radios": "Usa Matter su Thread di default o Zigbee con un hub Aqara; il Bluetooth serve per la configurazione.",
+    "matter": "La pagina di Aqara dichiara Matter su Thread. La CSA elenca il Light Switch H2 US (2 Button, 1 Channel) di Lumi United (il produttore di Aqara): Matter 1.3, certificato il 2024-09-09, certificato CSA244D0MAT43907-24. La ricerca ha trovato solo la copia in portoghese della scheda CSA.",
+    "hubRequired": "La modalità Thread non richiede nessun hub Aqara, solo un border router Thread per il controller Matter. La modalità Zigbee richiede invece un hub Zigbee di Aqara.",
+    "localControl": "I controller Matter lo raggiungono in locale tramite Thread. Aqara non dichiara il controllo locale per la propria app.",
+    "switchForm": "Sostituisce un interruttore da parete statunitense; configurazioni a singolo polo e a 3 vie.",
+    "dimmer": "Solo on/off. Aqara vende a parte il Dimmer Switch H2 US.",
+    "neutralRequired": "Funziona con o senza neutro. Monitoraggio dei consumi e protezione da sovraccarico lo richiedono; senza, il carico minimo è di 5 W.",
+    "gangs": "La scheda tecnica di Aqara lo indica come modello WS-K02E. Le versioni a 2 pulsanti e 2 canali (WS-K03E) e a 4 pulsanti e 3 canali (WS-K04E) sono modelli distinti.",
+    "compatibility.apple_home": "La modalità Thread richiede un controller Matter con Thread, come un Apple TV o un HomePod che sia border router Thread.",
+    "compatibility.google_home": "Serve un hub o uno speaker Google compatibile con Thread come controller Matter.",
+    "compatibility.alexa": "Serve un Echo compatibile con Thread come controller Matter.",
+    "compatibility.smartthings": "L'elenco di compatibilità di Aqara nomina SmartThings. In modalità Thread Aqara dice che l'ecosistema richiede un controller Matter con Thread, qui un hub SmartThings compatibile con Thread.",
+    "compatibility.home_assistant": "Tramite l'integrazione Matter di Home Assistant, che richiede un border router Thread. L'alternativa è la modalità Zigbee tramite un hub Aqara."
+  },
+  "values": {
+    "gangs": "2 pulsanti, 1 canale"
+  }
+}

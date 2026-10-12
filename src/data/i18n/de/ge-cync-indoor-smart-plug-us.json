@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Vier Plattformen deckt die Matter-Version der GE Cync Indoor Smart Plug ab: Alexa und Google Home über die eigenen Verknüpfungen der Cync-App sowie Apple Home und SmartThings über Matter. Laut GE können Alexa und Google auch Matter nutzen. Es ist eine US-Steckdose für 2,4-GHz-WLAN mit Bluetooth LE, und laut GE ist kein Hub nötig. Home Assistant ist nicht bestätigt, und zur Verbrauchsmessung sagt GE nichts.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Ältere Cync Indoor Plugs ohne Matter wurden unter demselben Namen verkauft, achte also darauf, die Matter-Version zu kaufen.",
+    "Apple Home braucht eine Apple-Steuerzentrale, und SmartThings braucht einen Matter-Controller von SmartThings.",
+    "In Home Assistant gibt es keine offizielle Cync-Integration."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN plus Bluetooth LE. Der CSA-Eintrag nennt WLAN und Bluetooth; GEs Datenblatt (Modell CPLGSTDBLW1, Matter nicht erwähnt, möglicherweise also die ältere Version) sagt dasselbe.",
+    "matter": "Die CSA führt „Cync Indoor Plug“ von Savant (Zertifikat CSA257FBMAT46925-24, Matter 1.3); es gibt auch weitere Zertifikate für die Cync Indoor Plug. Ältere Geräte ohne Matter wurden unter demselben Namen verkauft.",
+    "hubRequired": "GE sagt, es sei kein Hub nötig; sie verbindet sich mit dem WLAN und wird in der Cync-App oder einer Matter-App eingerichtet.",
+    "localControl": "GEs Datenblatt führt „Local Control via BLE“, erwähnt aber Matter nicht und beschreibt möglicherweise die ältere Version. Die lokale Steuerung der Matter-Version ist nicht bestätigt.",
+    "energyMonitoring": "GEs Seiten und Datenblatt erwähnen keine Leistungsmessung, doch wir fanden auch keine ausdrückliche Aussage dazu.",
+    "maxLoadWatts": "GEs Shop nennt 1800 W / 15 A, und das Datenblatt sagt 15 A Allgemeinnutzung, 1/3 HP, doch wir konnten keinen Wattwert der eigenen Seite der Matter-Version zuordnen.",
+    "compatibility.apple_home": "Über Matter; braucht eine Apple-Steuerzentrale.",
+    "compatibility.google_home": "Nativ über die Google-Home-Verknüpfung der Cync-App; laut GE kann sie auch über Matter hinzugefügt werden.",
+    "compatibility.alexa": "Nativ über den Cync-Skill für Alexa; laut GE kann sie auch über Matter hinzugefügt werden.",
+    "compatibility.smartthings": "GE führt SmartThings für die Matter-Version auf; braucht einen Matter-Controller von SmartThings.",
+    "compatibility.home_assistant": "In Home Assistant gibt es keine offizielle Cync-Integration, und weder GE noch Home Assistant nennen diese Steckdose für die Matter-Integration von HA."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Configurato nell'app Google Home, il Nest Doorbell (wired, 2nd gen) annuncia i visitatori sugli speaker e sui display Google della stessa casa. Alexa funziona tramite la skill Google Nest, con annunci alla pressione del campanello e visione in diretta su Echo Show, e Home Assistant lo ottiene tramite l'integrazione Google Nest. Richiede il cablaggio del campanello esistente a 16-24 V AC e nessun hub. L'uso gratuito conserva 3 ore di video di evento; fino a 60 giorni richiede Google Home Premium.",
+  "caveats": ["Richiede il cablaggio del campanello e un trasformatore da 16–24 V AC, 10–40 VA; alcune case hanno bisogno di un nuovo trasformatore.", "Una cronologia video oltre le 3 ore richiede un piano a pagamento Google Home Premium.", "L'accesso da Home Assistant passa dall'API Device Access di Google, che costa 5 USD.", "Il supporto a Apple Home non è confermato."],
+  "notes": {
+    "radios": "La pagina di installazione di Google lo collega al Wi-Fi tramite l'app Google Home. Nessuna pagina Google vista indica le bande per questo modello; stampa e schede dei rivenditori dicono 2,4 e 5 GHz.",
+    "matter": "Nessuna pagina Google dichiara Matter per questo modello, e nessuna scheda CSA è emersa nelle ricerche. Un sito di notizie tedesco riferisce che le telecamere Nest e 'il Nest Doorbell' sono elencati dalla CSA per Matter 1.5.1 senza ancora un firmware, ma non nomina il modello.",
+    "hubRequired": "Richiede Wi-Fi, l'app Google Home e un account Google; non è citato nessun hub né bridge.",
+    "localControl": "Google non dichiara se qualche controllo funzioni senza il suo cloud.",
+    "power": "Google richiede un trasformatore da 16–24 V AC, 10–40 VA; alcune case ne hanno bisogno di uno nuovo. Google indica anche un adattatore di alimentazione da interno facoltativo.",
+    "localStorage": "Google dice che può conservare fino a un'ora di eventi nel campanello se il Wi-Fi cade, ma non è dichiarata nessuna opzione di archiviazione locale o microSD.",
+    "subscription": "La pagina di confronto di Google indica 3 ore di video di evento senza piano e fino a 60 giorni di cronologia degli eventi con Google Home Premium.",
+    "compatibility.apple_home": "Nessuna pagina Google o Apple trovata che elenchi questo campanello in Apple Home.",
+    "compatibility.google_home": "Si configura nell'app Google Home. Gli annunci dei visitatori al campanello vengono riprodotti sugli speaker e sui display Google della stessa casa.",
+    "compatibility.alexa": "Tramite la skill Google Nest nell'app Alexa. Google nomina questo modello per gli annunci alla pressione del campanello una volta attivati gli annunci dei visitatori in Google Home, e la visione in diretta funziona su Echo Show quando la chiedi.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale di Google o SmartThings trovata per questo modello; solo post di forum e un articolo del 2020 su vecchi dispositivi Nest.",
+    "compatibility.home_assistant": "L'integrazione ufficiale Google Nest usa l'API Device Access di Google, che costa 5 USD. L'elenco Device Access di Google include il Nest Doorbell (wired), aggiunto a febbraio 2023, con visione in diretta WebRTC e anteprima dei clip."
+  },
+  "values": {
+    "power": "Cablato (campanello 16–24 V AC)",
+    "subscription": "Cronologia dei video di evento oltre le 3 ore (Google Home Premium)"
+  }
+}

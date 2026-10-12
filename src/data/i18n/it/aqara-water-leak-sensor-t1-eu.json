@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Il Water Leak Sensor T1 (WL-S02D) di Aqara rileva l'acqua tra due sonde a partire da circa 0,5 mm di profondità, usando Zigbee 3.0. Va abbinato a un hub Aqara, che è anche il modo in cui arriva a Apple Home. Google Home, Alexa, SmartThings e Home Assistant non sono confermati. Una pila CR2032 dura circa due anni.",
+  "caveats": ["Richiede un hub Aqara; non è un dispositivo Zigbee autonomo.", "Il supporto a Google Home, Alexa e SmartThings non è confermato nelle pagine Aqara che abbiamo visto."],
+  "notes": {
+    "radios": "Zigbee 3.0.",
+    "matter": "Nessuna scheda CSA trovata. L'hub M3 di Aqara fa da bridge Matter per i dispositivi Zigbee di Aqara; nessuna pagina che abbiamo visto dice che questo sensore sia esposto.",
+    "hubRequired": "Le FAQ di Aqara dicono che il sensore non può funzionare da solo e va usato con un hub Aqara.",
+    "localControl": "Nessuna pagina che abbiamo visto descrive il funzionamento locale tramite hub.",
+    "senses": "Rileva l'acqua tra due sonde, a partire da circa 0,5 mm di acqua.",
+    "power": "Aqara dice che l'autonomia tipica della batteria è di circa due anni.",
+    "compatibility.apple_home": "Le FAQ di Aqara sul T1 dicono che serve un hub Aqara perché il sensore funzioni con HomeKit.",
+    "compatibility.google_home": "Solo le schede dei rivenditori dicono che Google funziona; nessuna pagina Aqara che abbiamo visto per il T1 lo conferma.",
+    "compatibility.alexa": "Solo le schede dei rivenditori dicono che Alexa funziona; la pagina statunitense del vecchio Water Leak Sensor lo elenca, la pagina del T1 non l'abbiamo vista.",
+    "compatibility.smartthings": "Solo le schede dei rivenditori citano SmartThings.",
+    "compatibility.home_assistant": "La documentazione di Home Assistant che abbiamo visto non nomina alcun supporto per l'Aqara T1. Un coordinatore Zigbee generico non è documentato per esso."
+  },
+  "via": {
+    "apple_home": "hub Aqara"
+  },
+  "values": {
+    "power": "CR2032"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Hive indica Alexa, Google Home e Apple HomeKit per il Thermostat Mini, un termostato britannico a batteria che comanda la caldaia tramite un ricevitore a rete. Alexa e Google Home si collegano con il tuo account Hive, mentre Apple Home passa da un Hive Hub. Va bene per la maggior parte delle caldaie a gas, GPL, gasolio ed elettriche, più OpenTherm su alcune caldaie combinate, ma non per le pompe di calore. Non si dice se il Mini richieda un hub, e Matter non è dichiarato.",
+  "caveats": ["Hive non dice se il Mini richieda un Hive Hub; controlla il kit che acquisti.", "Non adatto a pompe di calore, caldaie a combustibile solido o accumulatori elettrici, e diversi modelli Worcester Bosch sono elencati come incompatibili.", "L'acqua calda si può solo accendere o spegnere, programmare o potenziare per 1-6 ore, non impostare su una temperatura.", "OpenTherm funziona solo su caldaie combinate compatibili e impianti a zona singola.", "In Apple Home acqua calda, potenziamento e programmi richiedono ancora l'app Hive."],
+  "notes": {
+    "radios": "Hive dice che i suoi dispositivi di riscaldamento usano Zigbee per la comunicazione locale. La pagina non indica una radio Wi-Fi sul termostato, quindi non ne è inclusa nessuna.",
+    "matter": "Nessuna dichiarazione su Matter trovata nella pagina del Mini di Hive.",
+    "hubRequired": "La pagina del Mini di Hive non lo dice. Il contenuto della confezione non include nessun hub, e una FAQ della pagina dice che il primo termostato viene fornito con un Hive Hub. I rivenditori britannici vendono sia kit con hub sia kit senza. Controlla il kit che acquisti.",
+    "localControl": "Hive dice che il termostato continua a funzionare e a regolare la temperatura senza internet, ma il controllo da app torna solo quando la connessione è ripristinata. Non è controllo locale, quindi resta non confermato.",
+    "thermostatType": "Termostato a batteria che comanda la caldaia tramite un ricevitore a rete.",
+    "systems": "Niente pompe di calore, combustibile solido o accumulatori elettrici. L'acqua calda ha solo on/off e potenziamento. Diversi modelli Worcester Bosch sono elencati come incompatibili.",
+    "power": "Le batterie sono incluse nella confezione.",
+    "compatibility.apple_home": "La pagina del Mini di Hive elenca Apple HomeKit. La guida HomeKit di Hive abbina tramite un Hive Hub e non nomina il Mini; acqua calda, potenziamento e programmi non si possono controllare in Apple Home.",
+    "compatibility.google_home": "Elencato nella pagina del Mini. Collega il tuo account Hive in Google Home sotto Controllo della casa; la guida non nomina il Mini.",
+    "compatibility.alexa": "La pagina del Mini elenca Amazon Alexa; la pagina di assistenza Alexa di Hive non nomina il Mini.",
+    "compatibility.smartthings": "Nessuna pagina Hive trovata elenca SmartThings.",
+    "compatibility.home_assistant": "L'integrazione Hive di Home Assistant elenca Hive Active Heating, Multi-zone e la valvola per radiatore ma non il Thermostat Mini; funziona con polling via cloud tramite il tuo account Hive."
+  },
+  "via": {"apple_home": "Hive Hub"},
+  "values": {"power": "4 × AAA; ricevitore a rete a 230 V", "systems": "Caldaie britanniche a gas, GPL, gasolio ed elettriche; OpenTherm su alcune caldaie combinate"}
+}

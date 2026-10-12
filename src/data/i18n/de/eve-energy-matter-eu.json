@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Alle fünf großen Plattformen (Apple Home, Google Home, Alexa, SmartThings und Home Assistant) können die europäische Eve Energy steuern, und jede tut es über Matter auf Thread. Plane einen Thread-Border-Router ein: eine Apple-Steuerzentrale, einen Google- oder SmartThings-Hub mit Thread oder einen Echo, der zugleich Matter-Controller ist. Unter iOS 18 kann ein iPhone 15 Pro oder neuer sie lokal ohne Hub schalten, nur ohne Fernzugriff und Automationen. Das Modell 20EBO8301 (Produktnr. 10EBO8351) hat einen eingebauten Leistungsmesser, ist für 11 A / 2500 W ausgelegt und braucht weder Eve-Konto noch Cloud.",
+  "caveats": [
+    "Google Home, Alexa, SmartThings und Home Assistant brauchen alle einen Thread-Border-Router; bei Alexa muss der Echo sowohl Matter-Controller als auch Border-Router sein.",
+    "Die hubfreie Steuerung von einem iPhone 15 Pro oder neuer unter iOS 18 ist nur lokal; Fernzugriff und Automationen brauchen weiterhin eine Apple-Steuerzentrale.",
+    "Ausgelegt für 11 A / 2500 W, und das Relais schaltet oberhalb von 11 A ab; Eves Wert von 16 A / 3680 W gehört zur Eve Energy Outdoor.",
+    "Standardisierte Matter-Energiewerte (Leistung, Spannung, Strom, Gesamtverbrauch) brauchen Eves Firmware vom April 2025 oder neuer."
+  ],
+  "notes": {
+    "radios": "Eve führt Thread. Der CSA-Eintrag für 20EBO8301 zeigt außerdem Bluetooth als Transport, wahrscheinlich für die Einrichtung, doch Eve bestätigt es nicht.",
+    "matter": "Die CSA führt die Variante SKU 20EBO8301 unter den Zertifikaten der Eve Energy (z. B. CSA22065MAT40065-24, Firmware 3.1.0). Eves Identifikationsseite nennt für das europäische Matter-Modell die Produktnr. 10EBO8351.",
+    "hubRequired": "Eves europäische Produktseite sagt, sie brauche einen Matter-+-Thread-Hub, doch Eves Beitrag zu iOS 18 führt Europe 4th gen für die hubfreie lokale Steuerung von einem iPhone 15 Pro+. Jede Nicht-Apple-Plattform braucht einen Hub, behandle ihn also als nötig.",
+    "localControl": "Matter über Thread läuft im lokalen Netzwerk. Eve sagt, es brauche kein Eve-Konto und es gebe keine Eve-Cloud.",
+    "energyMonitoring": "Eingebauter Leistungsmesser. Eves Firmware vom April 2025 stellte ihn auf standardisierte Matter-Energiewerte um (Leistung, Spannung, Strom, Gesamtverbrauch), installierbar über Apple Home, Google Home, Home Assistant oder SmartThings.",
+    "maxLoadWatts": "Eves technische Daten nennen für das europäische Modell max. 11 A / 2500 W; das Relais schaltet oberhalb von 11 A ab. Der Wert 16 A / 3680 W gehört zur Eve Energy Outdoor.",
+    "compatibility.apple_home": "Über Matter, normalerweise mit einer Apple-Steuerzentrale, die ein Thread-Border-Router ist. Mit iOS 18 und einem iPhone 15 Pro oder neuer kann sie laut Eve lokal ohne Hub gesteuert werden, nur ohne Fernzugriff und Automationen.",
+    "compatibility.google_home": "Über Matter. Braucht einen Google-Hub, der Matter-Controller und Thread-Border-Router ist.",
+    "compatibility.alexa": "Über Matter. Braucht einen Echo, der Matter-Controller und Thread-Border-Router ist.",
+    "compatibility.smartthings": "Über Matter. Braucht einen SmartThings-Hub mit Thread.",
+    "compatibility.home_assistant": "Über die Matter-Integration von Home Assistant. Braucht einen Thread-Border-Router im Netzwerk."
+  }
+}

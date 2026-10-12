@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Con un Hue Bridge, la Philips Hue Smart Plug europea funziona con Apple Home, Google Home, Alexa, SmartThings e Home Assistant. Senza, sei limitato all'accensione e allo spegnimento via Bluetooth dall'app Hue. La presa si collega al Bridge via Zigbee, e il Bridge la espone anche alle piattaforme Matter; la presa non ha Wi-Fi né una certificazione Matter propria. È data per 2300 W per l'Europa continentale, e Hue non indica la misura dei consumi.",
+  "caveats": ["Assistenti vocali, ecosistemi e accesso da remoto richiedono tutti un Hue Bridge.", "Le configurazioni solo Bluetooth non possono usare Matter; è il Bridge a esporre la presa a Matter.", "Data per 2300 W nell'Europa continentale; Gran Bretagna e Irlanda hanno un modello diverso da 3250 W.", "Hue non indica la misura dei consumi, quindi non contare sulle letture di potenza."],
+  "notes": {
+    "radios": "Bluetooth per il controllo diretto da app; Zigbee (2,4 GHz) verso l'Hue Bridge. Niente Wi-Fi.",
+    "matter": "Nessuna certificazione Matter trovata per la presa in sé. Hue dice che i prodotti su un Hue Bridge funzionano con Matter tramite il Bridge; i prodotti collegati via Bluetooth non possono usare Matter.",
+    "hubRequired": "Il controllo di base funziona via Bluetooth dall'app Hue; l'Hue Bridge serve per gli assistenti vocali, gli ecosistemi e l'accesso da remoto.",
+    "localControl": "Controllo Bluetooth senza bridge né Wi-Fi; l'Hue Bridge offre anche una API locale usata da Home Assistant.",
+    "energyMonitoring": "Le pagine di Hue descrivono solo l'accensione e lo spegnimento e non indicano nessuna misura, ma nessuna dice espressamente che sia assente.",
+    "maxLoadWatts": "L'assistenza Hue indica 2300 W per l'Europa continentale; Gran Bretagna e Irlanda hanno 3250 W, un modello diverso.",
+    "compatibility.apple_home": "La pagina tedesca del prodotto elenca Apple Home tra i sistemi di terze parti; la guida tedesca di Hue lo collega dall'app Hue con un Hue Bridge.",
+    "compatibility.google_home": "La pagina tedesca del prodotto dice che il controllo vocale con Google Assistant richiede un Hue Bridge.",
+    "compatibility.alexa": "La pagina tedesca del prodotto dice che il controllo vocale con Alexa richiede un Hue Bridge.",
+    "compatibility.smartthings": "La pagina tedesca del prodotto elenca Samsung SmartThings tra i sistemi di terze parti, e la guida tedesca di Hue al Bridge elenca SmartThings come integrazione del Bridge.",
+    "compatibility.home_assistant": "L'integrazione Hue ufficiale controlla in locale i dispositivi collegati a un Hue Bridge."
+  },
+  "via": {"apple_home": "Philips Hue Bridge", "google_home": "Philips Hue Bridge", "alexa": "Philips Hue Bridge", "smartthings": "Philips Hue Bridge", "home_assistant": "Philips Hue Bridge"}
+}

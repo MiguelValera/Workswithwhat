@@ -1,7 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, type CategoryKey } from '../schema/device.ts';
 import { CATEGORIES, categoryOf } from './categories';
-import { ACTIVE_LANGS, formatDate as fmtDate, localize, type Lang } from '../i18n/lang';
+import { ACTIVE_LANGS, formatDate as fmtDate, localize, pick, type Lang } from '../i18n/lang';
 import { ui } from '../i18n/ui';
 import type { TranslationData } from '../schema/translation.ts';
 
@@ -33,6 +33,9 @@ export const STATUS_TEXT = {
 } as const;
 const STATUS_TEXT_IN: Record<Exclude<Lang, 'en'>, Record<keyof typeof STATUS_TEXT, string>> = {
   es: { native: 'Sí', matter: 'Vía Matter', hub: 'Vía hub', no: 'No', unknown: 'Sin confirmar' },
+  de: { native: 'Ja', matter: 'Über Matter', hub: 'Über Hub', no: 'Nein', unknown: 'Nicht bestätigt' },
+  fr: { native: 'Oui', matter: 'Via Matter', hub: 'Via hub', no: 'Non', unknown: 'Non confirmé' },
+  it: { native: 'Sì', matter: 'Tramite Matter', hub: 'Tramite hub', no: 'No', unknown: 'Non confermato' },
 };
 export const statusText = (s: keyof typeof STATUS_TEXT, lang: Lang) => (lang === 'en' ? STATUS_TEXT[s] : STATUS_TEXT_IN[lang][s]);
 
@@ -47,7 +50,13 @@ export function matterText(d: Device, lang: Lang) {
   const m = d.data.matter;
   if (!m.certified) return yesNoText(m.certified, lang);
   const transport = m.transport === 'wifi' ? WIFI[lang].word : m.transport === 'thread' ? 'Thread' : 'Ethernet';
-  return lang === 'es' ? `Sí, por ${transport}` : `Yes, over ${transport}`;
+  return pick(lang)({
+    en: `Yes, over ${transport}`,
+    es: `Sí, por ${transport}`,
+    de: `Ja, über ${transport}`,
+    fr: `Oui, en ${transport}`,
+    it: `Sì, via ${transport}`,
+  });
 }
 
 /** "Hue Bridge" → "the Hue Bridge"; names that already start with an article stay as they are. */
@@ -72,6 +81,9 @@ export const formatDate = fmtDate;
 export const WIFI: Record<Lang, { label: string; word: string }> = {
   en: { label: 'Wi-Fi', word: 'Wi-Fi' },
   es: { label: 'Wifi', word: 'wifi' },
+  de: { label: 'WLAN', word: 'WLAN' },
+  fr: { label: 'Wi-Fi', word: 'Wi-Fi' },
+  it: { label: 'Wi-Fi', word: 'Wi-Fi' },
 };
 export const radioList = (radios: string[] | null, lang: Lang, sep = ', ') =>
   (radios ?? []).map((r) => (r === 'wifi' ? WIFI[lang].label : RADIO_LABELS[r])).join(sep);
@@ -79,7 +91,7 @@ export const radioList = (radios: string[] | null, lang: Lang, sep = ', ') =>
 /** English path of a device page; localize() it for other languages (see devicePathIn). */
 export const devicePath = (d: Device) => `/${categoryOf(d.data).path}/${d.id}/`;
 
-const AND: Record<Lang, string> = { en: 'and', es: 'y' };
+const AND: Record<Lang, string> = { en: 'and', es: 'y', de: 'und', fr: 'et', it: 'e' };
 export const listJoin = (xs: string[], lang: Lang = 'en') =>
   xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} ${AND[lang]} ${xs.at(-1)}`;
 
@@ -135,12 +147,16 @@ export function devicePathIn(d: Device, lang: Lang, translations?: Map<string, T
 // name the categories in brackets.
 export const categoryPhrase = (plurals: string[], lang: Lang = 'en') => {
   if (plurals.length <= 3) return { short: listJoin(plurals, lang), long: listJoin(plurals, lang) };
-  if (lang === 'es') {
-    const bare = listJoin(plurals.map((p) => p.replace(/ inteligentes$/, '')), lang);
-    return { short: 'dispositivos domóticos', long: `dispositivos domóticos (${bare})` };
-  }
-  const bare = listJoin(plurals.map((p) => p.replace(/^smart /, '')));
-  return { short: 'smart home devices', long: `smart home devices (${bare})` };
+  // the generic name, and what to strip from each category to list it in brackets
+  const [short, strip] = pick(lang)<[string, RegExp]>({
+    en: ['smart home devices', /^smart /],
+    es: ['dispositivos domóticos', / inteligentes$/],
+    de: ['Smart-Home-Geräte', /^smarte /],
+    fr: ['appareils connectés', / connecté(e)?s$/],
+    it: ['dispositivi smart home', / smart$/],
+  });
+  const bare = listJoin(plurals.map((p) => p.replace(strip, '')), lang);
+  return { short, long: `${short} (${bare})` };
 };
 
 const ensureStop = (s: string) => (/[.!?]$/.test(s.trim()) ? s.trim() : `${s.trim()}.`);
@@ -154,6 +170,49 @@ export function answerFor(d: Device, e: Ecosystem, lang: Lang = 'en', text?: Dev
   const n = words.compatNote(e);
   const note = n ? ` ${ensureStop(n)}` : '';
   const thread = d.data.matter.transport === 'thread';
+  const name = d.data.name;
+  if (lang === 'de') {
+    switch (c.status) {
+      case 'native':
+        return `Ja. ${name} funktioniert direkt mit ${label}.${note}`;
+      case 'matter':
+        return `Ja, über Matter: Füge es per Matter-Kopplung in ${label} hinzu.${thread ? ' Es nutzt Thread, du brauchst also auch einen Thread-Border-Router.' : ''}${note}`;
+      case 'hub':
+        return `Ja, aber nur über ${words.via(e)}.${note}`;
+      case 'no':
+        return `Nein.${note}`;
+      default:
+        return `Nicht bestätigt: Wir haben keine offizielle Quelle gefunden, die es bestätigt oder ausschließt.${note}`;
+    }
+  }
+  if (lang === 'fr') {
+    switch (c.status) {
+      case 'native':
+        return `Oui. ${name} fonctionne directement avec ${label}.${note}`;
+      case 'matter':
+        return `Oui, via Matter : ajoutez-le avec l’appairage Matter de ${label}.${thread ? ' Il utilise Thread, il vous faut donc aussi un routeur de bordure Thread.' : ''}${note}`;
+      case 'hub':
+        return `Oui, mais uniquement via ${words.via(e)}.${note}`;
+      case 'no':
+        return `Non.${note}`;
+      default:
+        return `Non confirmé : nous n’avons trouvé aucune source officielle qui le confirme ou l’exclue.${note}`;
+    }
+  }
+  if (lang === 'it') {
+    switch (c.status) {
+      case 'native':
+        return `Sì. ${name} funziona direttamente con ${label}.${note}`;
+      case 'matter':
+        return `Sì, tramite Matter: aggiungilo con l’abbinamento Matter di ${label}.${thread ? ' Usa Thread, quindi ti serve anche un border router Thread.' : ''}${note}`;
+      case 'hub':
+        return `Sì, ma solo tramite ${words.via(e)}.${note}`;
+      case 'no':
+        return `No.${note}`;
+      default:
+        return `Non confermato: non abbiamo trovato nessuna fonte ufficiale che lo confermi o lo escluda.${note}`;
+    }
+  }
   if (lang === 'es') {
     switch (c.status) {
       case 'native':
@@ -185,9 +244,13 @@ export function answerFor(d: Device, e: Ecosystem, lang: Lang = 'en', text?: Dev
 }
 
 export const deviceTitle = (d: Device, lang: Lang = 'en') =>
-  lang === 'es'
-    ? `¿Es compatible ${d.data.name} con Apple Home, Google Home o Alexa?`
-    : `Does the ${d.data.name} work with Apple Home, Google Home or Alexa?`;
+  pick(lang)({
+    en: `Does the ${d.data.name} work with Apple Home, Google Home or Alexa?`,
+    es: `¿Es compatible ${d.data.name} con Apple Home, Google Home o Alexa?`,
+    de: `Funktioniert ${d.data.name} mit Apple Home, Google Home oder Alexa?`,
+    fr: `${d.data.name} est-il compatible avec Apple Home, Google Home ou Alexa ?`,
+    it: `${d.data.name} è compatibile con Apple Home, Google Home o Alexa?`,
+  });
 
 // "Name (model)", leaving the model out when the name already says it ("Tapo P110 (EU)", not "Tapo P110 (EU) (Tapo P110)")
 export const nameWithModel = (d: Device) => {

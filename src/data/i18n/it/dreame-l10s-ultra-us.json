@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Il Dreame L10s Ultra è un robot aspirapolvere e lavapavimenti con aspirazione da 5300 Pa, due mop rotanti e una base che svuota il contenitore in un sacchetto da 3 L per fino a 60 giorni. Dreame indica il controllo vocale con Alexa e Google Assistant. Naviga con doppio laser più una fotocamera RGB, e non è stato trovato nessun supporto Matter.",
+  "caveats": ["Dreame dice che il valore di 5300 Pa deriva dai suoi test di laboratorio.", "Una pagina di Dreame cita Siri tramite l'app Dreamehome; è controllo vocale, non supporto confermato a Apple Home.", "Home Assistant non ha una pagina ufficiale per questo modello; solo un'integrazione HACS della community lo elenca."],
+  "notes": {
+    "radios": "Nessuna dichiarazione sulla banda Wi-Fi trovata nelle pagine che abbiamo visto.",
+    "matter": "Nessuna dichiarazione su Matter trovata nelle pagine di Dreame né una scheda CSA.",
+    "hubRequired": "La base di svuotamento non è un hub.",
+    "localControl": "Nessuna dichiarazione del produttore sul solo controllo locale trovata.",
+    "cleaning": "Aspira e lava con due mop rotanti.",
+    "navigation": "Formulazione di Dreame: doppio laser, una fotocamera RGB e IA per mappatura, navigazione ed evitamento degli ostacoli. La sua tabella di confronto lo chiama 'Double laser+AI'.",
+    "suctionPa": "Dreame dice che il valore deriva dai suoi test di laboratorio.",
+    "selfEmptying": "La base svuota il contenitore in un sacchetto da 3 L, fino a 60 giorni.",
+    "compatibility.apple_home": "Una pagina di Dreame elenca Siri tramite l'app Dreamehome; è controllo vocale, non supporto confermato all'app Home.",
+    "compatibility.google_home": "Dreame indica il controllo vocale con Google Assistant.",
+    "compatibility.alexa": "Dreame indica il controllo vocale con Alexa.",
+    "compatibility.smartthings": "Nessuna pagina di Dreame o Samsung trovata per SmartThings.",
+    "compatibility.home_assistant": "Nessuna pagina ufficiale di Home Assistant; solo un'integrazione HACS della community elenca il L10s Ultra."
+  },
+  "values": {
+    "navigation": "Doppio laser e fotocamera RGB"
+  }
+}

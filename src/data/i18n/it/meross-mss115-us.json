@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Tutto sulla Meross MSS115 passa da Matter su Wi-Fi. Meross elenca Apple Home, Google Home, Alexa e SmartThings, e ognuno richiede il proprio controller Matter, come un hub domestico Apple o un hub SmartThings. È una presa compatta per Stati Uniti e Canada su Wi-Fi a 2,4 GHz, e Meross dice che continua a funzionare sulla tua LAN durante le interruzioni di internet. Meross non pubblica un carico massimo né cita un misuratore per questo modello; la sua presa Matter con misuratore è la MSS315.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Ogni ecosistema richiede il proprio controller Matter, come un hub domestico Apple, un controller Matter Google, un Echo o un hub SmartThings.", "Home Assistant non è confermato: né Meross né Home Assistant citano questo modello, e gli utenti del forum segnalano abbinamenti Matter falliti.", "Meross non pubblica un carico massimo per la MSS115, quindi controlla prima di collegare un apparecchio ad alto assorbimento.", "Non si cita nessun monitoraggio dei consumi; se vuoi i dati di potenza, la presa Matter con misuratore di Meross è la MSS315."],
+  "notes": {
+    "radios": "Richiede una rete Wi-Fi a 2,4 GHz esistente.",
+    "matter": "Meross la vende come presa Matter. La CSA elenca diversi certificati Matter Meross 'Smart Plug Mini', ma non siamo riusciti ad abbinarne uno al numero di modello MSS115.",
+    "hubRequired": "Meross non dice se la sola app Meross possa farla funzionare senza un controller Matter.",
+    "localControl": "Meross la descrive come completamente locale via Matter e dice che continua a funzionare sulla LAN durante le interruzioni di internet.",
+    "energyMonitoring": "Le pagine della MSS115 non citano un misuratore di potenza. La presa Matter con misuratore di Meross è la MSS315, ma non abbiamo trovato nessuna dichiarazione esplicita di 'nessuna misura' per la MSS115.",
+    "maxLoadWatts": "Non abbiamo trovato un carico massimo ufficiale per la MSS115. Il valore di 15 A / 1800 W che dà Meross riguarda altri modelli di presa.",
+    "compatibility.apple_home": "Tramite Matter; serve un hub domestico Apple.",
+    "compatibility.google_home": "Tramite Matter; serve un controller Matter Google.",
+    "compatibility.alexa": "Tramite Matter. Non siamo riusciti a confermare se la skill Meross per Alexa supporti anche questo modello.",
+    "compatibility.smartthings": "Tramite Matter; serve un hub SmartThings.",
+    "compatibility.home_assistant": "Dovrebbe abbinarsi tramite l'integrazione Matter di Home Assistant, ma né Meross né Home Assistant citano questo modello, e gli utenti del forum segnalano abbinamenti Matter falliti."
+  }
+}

@@ -1,5 +1,5 @@
 ---
-// A device page, in English (/smart-plugs/<slug>/) or Spanish (/es/enchufes-inteligentes/<slug>/).
+// A device page, in English (/smart-plugs/<slug>/) or another language (/es/enchufes-inteligentes/<slug>/, …).
 import Base from '../../layouts/Base.astro';
 import Refs from '../Refs.astro';
 import Status from '../Status.astro';
@@ -38,7 +38,6 @@ interface Props {
 }
 const { device, devices } = Astro.props;
 const lang = langOf(Astro.url.pathname);
-const es = lang === 'es';
 const T = pick(lang);
 const t = ui(lang);
 const L = (p: string) => localize(p, lang);
@@ -56,13 +55,22 @@ const works = ECOSYSTEMS.filter((e) => worksWith(device, e)).map((e) => ECOSYSTE
 
 const title = deviceTitle(device, lang);
 const named = nameWithModel(device);
-const description = es
-  ? works.length
-    ? `${named} funciona con ${listJoin(works, lang)}. Tipo de conexión, necesidad de hub y especificaciones, cada dato con su fuente.`
-    : `Compatibilidad de ${named} con Apple Home, Google Home, Alexa, SmartThings y Home Assistant, con fuentes.`
-  : works.length
-    ? `${named} works with ${listJoin(works)}. Connection type, hub needs and specs, each linked to its source.`
-    : `${named} compatibility with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, with sources.`;
+const worksList = listJoin(works, lang);
+const description = works.length
+  ? T({
+      en: `${named} works with ${worksList}. Connection type, hub needs and specs, each linked to its source.`,
+      es: `${named} funciona con ${worksList}. Tipo de conexión, necesidad de hub y especificaciones, cada dato con su fuente.`,
+      de: `${named} funktioniert mit ${worksList}. Verbindungsart, Hub-Bedarf und technische Daten, jeweils mit Quelle.`,
+      fr: `${named} fonctionne avec ${worksList}. Type de connexion, besoin d’un hub et caractéristiques, chacun avec sa source.`,
+      it: `${named} funziona con ${worksList}. Tipo di connessione, necessità di hub e specifiche, ognuno con la sua fonte.`,
+    })
+  : T({
+      en: `${named} compatibility with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, with sources.`,
+      es: `Compatibilidad de ${named} con Apple Home, Google Home, Alexa, SmartThings y Home Assistant, con fuentes.`,
+      de: `Kompatibilität von ${named} mit Apple Home, Google Home, Alexa, SmartThings und Home Assistant, mit Quellen.`,
+      fr: `Compatibilité de ${named} avec Apple Home, Google Home, Alexa, SmartThings et Home Assistant, avec les sources.`,
+      it: `Compatibilità di ${named} con Apple Home, Google Home, Alexa, SmartThings e Home Assistant, con le fonti.`,
+    });
 
 const yesNo = (v: boolean | null) => yesNoText(v, lang);
 const radios = radioList(d.radios.value, lang) || t.unconfirmed;
@@ -89,12 +97,18 @@ const viaHubGroups = CATEGORIES.map((k) => ({ cat: k, items: viaHub.filter((o) =
 
 const faq = ECOSYSTEMS.map((e) => ({
   eco: e,
-  q: T({ en: `Does the ${d.name} work with ${ECOSYSTEM_LABELS[e]}?`, es: `¿Funciona ${d.name} con ${ECOSYSTEM_LABELS[e]}?` }),
+  q: T({ en: `Does the ${d.name} work with ${ECOSYSTEM_LABELS[e]}?`, es: `¿Funciona ${d.name} con ${ECOSYSTEM_LABELS[e]}?`, de: `Funktioniert ${d.name} mit ${ECOSYSTEM_LABELS[e]}?`, fr: `${d.name} fonctionne-t-il avec ${ECOSYSTEM_LABELS[e]} ?`, it: `${d.name} funziona con ${ECOSYSTEM_LABELS[e]}?` }),
   a: answerFor(device, e, lang, words),
 }));
-const KIND_ES: Record<string, string> = { manufacturer: 'fabricante', certification: 'certificación', ecosystem: 'ecosistema', retailer: 'tienda', review: 'análisis' };
-const other = es ? (c.gender === 'f' ? 'Otras' : 'Otros') : 'Other';
-const similar = es ? (c.gender === 'f' ? 'similares' : 'similares') : '';
+const KIND = T<Record<string, string>>({
+  en: { manufacturer: 'manufacturer', certification: 'certification', ecosystem: 'ecosystem', retailer: 'retailer', review: 'review' },
+  es: { manufacturer: 'fabricante', certification: 'certificación', ecosystem: 'ecosistema', retailer: 'tienda', review: 'análisis' },
+  de: { manufacturer: 'Hersteller', certification: 'Zertifizierung', ecosystem: 'Ökosystem', retailer: 'Händler', review: 'Test' },
+  fr: { manufacturer: 'fabricant', certification: 'certification', ecosystem: 'écosystème', retailer: 'revendeur', review: 'test' },
+  it: { manufacturer: 'produttore', certification: 'certificazione', ecosystem: 'ecosistema', retailer: 'rivenditore', review: 'recensione' },
+});
+const other = c.gender === 'f' ? 'Otras' : 'Otros';
+const similar = 'similares';
 
 const jsonLd = [
   {
@@ -141,15 +155,15 @@ const jsonLd = [
 >
   <article>
     {d.status === 'draft' && <p class="badge s-hub">Draft, not published (visible in dev only)</p>}
-    <h1>{T({ en: `${d.name}: what it works with`, es: `${d.name}: con qué funciona` })}</h1>
+    <h1>{T({ en: `${d.name}: what it works with`, es: `${d.name}: con qué funciona`, de: `${d.name}: Womit es funktioniert`, fr: `${d.name} : avec quoi il fonctionne`, it: `${d.name}: con cosa funziona` })}</h1>
     <p class="muted">
-      {d.brand} · {T({ en: 'model', es: 'modelo' })} {d.model} · <a class="badge region" href={marketChart}>{T({ en: `For ${market.phrase}`, es: `Para ${mt.phrase}` })}</a>
+      {d.brand} · {T({ en: 'model', es: 'modelo', de: 'Modell', fr: 'modèle', it: 'modello' })} {d.model} · <a class="badge region" href={marketChart}>{T({ en: `For ${market.phrase}`, es: `Para ${mt.phrase}`, de: `Für ${mt.phrase}`, fr: `Pour ${mt.phrase}`, it: `Per ${mt.phrase}` })}</a>
       {d.regions.length > 1 && <> ({d.regions.join(', ')})</>}
     </p>
     {
       variants.length > 0 && (
         <p class="variants">
-          {T({ en: 'Other regions:', es: 'Otras regiones:' })}{' '}
+          {T({ en: 'Other regions:', es: 'Otras regiones:', de: 'Andere Regionen:', fr: 'Autres régions :', it: 'Altre regioni:' })}{' '}
           {variants.map((v, i) => (
             <>
               {i > 0 && ' · '}
@@ -159,7 +173,7 @@ const jsonLd = [
         </p>
       )
     }
-    <ul class="glance" aria-label={T({ en: 'Compatibility at a glance', es: 'Compatibilidad de un vistazo' })}>
+    <ul class="glance" aria-label={T({ en: 'Compatibility at a glance', es: 'Compatibilidad de un vistazo', de: 'Kompatibilität auf einen Blick', fr: 'Compatibilité en un coup d’œil', it: 'Compatibilità a colpo d’occhio' })}>
       <li>
         <a href="#compat-matter"><span class="glance-eco">Matter</span> <span class={`badge s-${d.matter.certified}`}>{matterText}</span></a>
       </li>
@@ -177,29 +191,29 @@ const jsonLd = [
     {
       d.verifiedAt && (
         <p class="verified">
-          {T({ en: `Checked against ${src.length} sources on `, es: `Comprobado con ${src.length} fuentes el ` })}
+          {T({ en: `Checked against ${src.length} sources on `, es: `Comprobado con ${src.length} fuentes el `, de: `Geprüft anhand von ${src.length} Quellen am `, fr: `Vérifié avec ${src.length} sources le `, it: `Verificato con ${src.length} fonti il ` })}
           <time datetime={d.verifiedAt}>{formatDate(d.verifiedAt, lang)}</time>
         </p>
       )
     }
 
-    <nav class="toc" aria-label={T({ en: 'On this page', es: 'En esta página' })}>
-      <span class="toc-label">{T({ en: 'On this page:', es: 'En esta página:' })}</span>
-      <a href="#compat">{T({ en: 'Compatibility', es: 'Compatibilidad' })}</a>
-      <a href="#specs">{T({ en: 'Specs', es: 'Especificaciones' })}</a>
-      {words.caveats.length > 0 && <a href="#before-you-buy">{T({ en: 'Before you buy', es: 'Antes de comprar' })}</a>}
-      <a href="#quick-answers">{T({ en: 'Quick answers', es: 'Respuestas rápidas' })}</a>
-      <a href="#sources">{T({ en: 'Sources', es: 'Fuentes' })}</a>
-      {viaHub.length > 0 && <a href="#works-through">{T({ en: 'What connects through it', es: 'Qué se conecta a través de él' })}</a>}
-      {comparisons.length > 0 && <a href="#compare">{T({ en: 'Compare', es: 'Comparar' })}</a>}
-      {related.length > 0 && <a href="#related">{T({ en: `Similar ${cat.plural}`, es: `${capitalize(c.plural)} ${similar}` })}</a>}
+    <nav class="toc" aria-label={T({ en: 'On this page', es: 'En esta página', de: 'Auf dieser Seite', fr: 'Sur cette page', it: 'In questa pagina' })}>
+      <span class="toc-label">{T({ en: 'On this page:', es: 'En esta página:', de: 'Auf dieser Seite:', fr: 'Sur cette page :', it: 'In questa pagina:' })}</span>
+      <a href="#compat">{T({ en: 'Compatibility', es: 'Compatibilidad', de: 'Kompatibilität', fr: 'Compatibilité', it: 'Compatibilità' })}</a>
+      <a href="#specs">{T({ en: 'Specs', es: 'Especificaciones', de: 'Technische Daten', fr: 'Caractéristiques', it: 'Specifiche' })}</a>
+      {words.caveats.length > 0 && <a href="#before-you-buy">{T({ en: 'Before you buy', es: 'Antes de comprar', de: 'Vor dem Kauf', fr: 'Avant d’acheter', it: 'Prima di comprare' })}</a>}
+      <a href="#quick-answers">{T({ en: 'Quick answers', es: 'Respuestas rápidas', de: 'Kurze Antworten', fr: 'Réponses rapides', it: 'Risposte rapide' })}</a>
+      <a href="#sources">{T({ en: 'Sources', es: 'Fuentes', de: 'Quellen', fr: 'Sources', it: 'Fonti' })}</a>
+      {viaHub.length > 0 && <a href="#works-through">{T({ en: 'What connects through it', es: 'Qué se conecta a través de él', de: 'Was sich darüber verbindet', fr: 'Ce qui s’y connecte', it: 'Cosa si collega tramite questo' })}</a>}
+      {comparisons.length > 0 && <a href="#compare">{T({ en: 'Compare', es: 'Comparar', de: 'Vergleichen', fr: 'Comparer', it: 'Confronta' })}</a>}
+      {related.length > 0 && <a href="#related">{T({ en: `Similar ${cat.plural}`, es: `${capitalize(c.plural)} ${similar}`, de: `Ähnliche ${c.plural}`, fr: `${capitalize(c.plural)} similaires`, it: `${capitalize(c.plural)} simili` })}</a>}
     </nav>
 
-    <h2 id="compat">{T({ en: 'Ecosystem compatibility', es: 'Compatibilidad con cada ecosistema' })}</h2>
+    <h2 id="compat">{T({ en: 'Ecosystem compatibility', es: 'Compatibilidad con cada ecosistema', de: 'Kompatibilität mit jedem Ökosystem', fr: 'Compatibilité avec chaque écosystème', it: 'Compatibilità con ogni ecosistema' })}</h2>
     <div class="table-scroll">
       <table role="table" class="stack kv">
         <thead role="rowgroup">
-          <tr role="row"><th role="columnheader" scope="col">{T({ en: 'Platform', es: 'Plataforma' })}</th><th role="columnheader" scope="col">{T({ en: 'Works?', es: '¿Funciona?' })}</th><th role="columnheader" scope="col">{T({ en: 'Details', es: 'Detalles' })}</th></tr>
+          <tr role="row"><th role="columnheader" scope="col">{T({ en: 'Platform', es: 'Plataforma', de: 'Plattform', fr: 'Plateforme', it: 'Piattaforma' })}</th><th role="columnheader" scope="col">{T({ en: 'Works?', es: '¿Funciona?', de: 'Funktioniert?', fr: 'Compatible ?', it: 'Funziona?' })}</th><th role="columnheader" scope="col">{T({ en: 'Details', es: 'Detalles', de: 'Details', fr: 'Détails', it: 'Dettagli' })}</th></tr>
         </thead>
         <tbody role="rowgroup">
           <tr role="row" id="compat-matter">
@@ -207,7 +221,7 @@ const jsonLd = [
             <td role="cell"><span class={`badge s-${d.matter.certified}`}>{matterText}</span></td>
             <td role="cell" class="wide">
               {words.note('matter', d.matter.note)}<Refs ids={d.matter.sources} all={src} />
-              {d.matter.certified && <> <a href={L('/works-with/matter/')}>{T({ en: `Other Matter ${cat.plural}`, es: `${other} ${c.plural} con Matter` })}</a></>}
+              {d.matter.certified && <> <a href={L('/works-with/matter/')}>{T({ en: `Other Matter ${cat.plural}`, es: `${other} ${c.plural} con Matter`, de: `Weitere ${c.plural} mit Matter`, fr: `Autres ${c.plural} Matter`, it: `${c.gender === 'f' ? 'Altre' : 'Altri'} ${c.plural} con Matter` })}</a></>}
             </td>
           </tr>
           {
@@ -221,7 +235,7 @@ const jsonLd = [
                     {words.compatNote(e)}<Refs ids={cp.sources} all={src} />
                     {(() => {
                       const hub = cp.status === 'hub' ? hubFor(cp.via, device, devices) : undefined;
-                      return hub && <> <a href={devicePathIn(hub, lang, translations)}>{T({ en: `About the ${hub.data.name}`, es: `Más sobre el ${hub.data.name}` })}</a></>;
+                      return hub && <> <a href={devicePathIn(hub, lang, translations)}>{T({ en: `About the ${hub.data.name}`, es: `Más sobre el ${hub.data.name}`, de: `Mehr zu ${hub.data.name}`, fr: `En savoir plus sur ${hub.data.name}`, it: `Di più su ${hub.data.name}` })}</a></>;
                     })()}
                   </td>
                 </tr>
@@ -232,26 +246,53 @@ const jsonLd = [
       </table>
     </div>
     {
-      es ? (
+      T({
+        de: (
+          <p class="muted small">
+            „Über Matter“ heißt: Du fügst das Gerät mit dem Matter-Controller der Plattform hinzu statt mit einem Skill oder
+            einer App der Marke. „Nicht bestätigt“ heißt: Wir haben keine offizielle Quelle gefunden, die es bestätigt oder
+            ausschließt.{' '}
+            <a href={L('/methodology/')}>So prüfen wir</a>.
+          </p>
+        ),
+        fr: (
+          <p class="muted small">
+            « Via Matter » signifie que vous l’ajoutez avec le contrôleur Matter de la plateforme plutôt qu’avec une skill ou
+            l’app de la marque. « Non confirmé » signifie que nous n’avons trouvé aucune source officielle qui le confirme ou
+            l’exclue.{' '}
+            <a href={L('/methodology/')}>Notre méthode</a>.
+          </p>
+        ),
+        it: (
+          <p class="muted small">
+            «Tramite Matter» significa che lo aggiungi con il controller Matter della piattaforma invece che con una skill o
+            un’app del marchio. «Non confermato» significa che non abbiamo trovato nessuna fonte ufficiale che lo confermi o lo
+            escluda.{' '}
+            <a href={L('/methodology/')}>Come verifichiamo</a>.
+          </p>
+        ),
+        es: (
         <p class="muted small">
           «Vía Matter» significa que lo añades con el controlador Matter de esa plataforma en lugar de una skill o app de la marca.
           «Sin confirmar» significa que no hemos encontrado ninguna fuente oficial que lo confirme o lo descarte.{' '}
           <a href={L('/methodology/')}>Cómo verificamos</a>.
         </p>
-      ) : (
+        ),
+        en: (
         <p class="muted small">
           “Via Matter” means you add it with that platform's Matter controller instead of a brand skill or app.
           “Unconfirmed” means we couldn't find an official source either way.{' '}
           <a href="/methodology/">How we verify</a>.
         </p>
-      )
+        ),
+      })
     }
 
-    <h2 id="specs">{T({ en: 'Specs that matter for setup', es: 'Especificaciones clave para la instalación' })}</h2>
+    <h2 id="specs">{T({ en: 'Specs that matter for setup', es: 'Especificaciones clave para la instalación', de: 'Wichtige Daten für die Einrichtung', fr: 'Caractéristiques utiles pour l’installation', it: 'Specifiche utili per l’installazione' })}</h2>
     <dl class="facts">
       <div><dt>{t.radio}</dt><dd>{radios}<Refs ids={d.radios.sources} all={src} /></dd></div>
-      <div><dt>{T({ en: 'Hub required', es: 'Necesita hub' })}</dt><dd>{yesNo(d.hubRequired.value)}<Refs ids={d.hubRequired.sources} all={src} /></dd></div>
-      <div><dt>{T({ en: 'Local control', es: 'Control local' })}</dt><dd>{yesNo(d.localControl.value)}<Refs ids={d.localControl.sources} all={src} /></dd></div>
+      <div><dt>{T({ en: 'Hub required', es: 'Necesita hub', de: 'Hub nötig', fr: 'Hub nécessaire', it: 'Hub necessario' })}</dt><dd>{yesNo(d.hubRequired.value)}<Refs ids={d.hubRequired.sources} all={src} /></dd></div>
+      <div><dt>{T({ en: 'Local control', es: 'Control local', de: 'Lokale Steuerung', fr: 'Contrôle local', it: 'Controllo locale' })}</dt><dd>{yesNo(d.localControl.value)}<Refs ids={d.localControl.sources} all={src} /></dd></div>
       {specs.map((s) => <div><dt>{s.label}</dt><dd>{s.text}<Refs ids={s.fact.sources} all={src} /></dd></div>)}
     </dl>
     {
@@ -259,7 +300,7 @@ const jsonLd = [
         <ul class="muted small">
           {d.radios.note && <li>{t.radio}: {words.note('radios', d.radios.note)}</li>}
           {d.hubRequired.note && <li>Hub: {words.note('hubRequired', d.hubRequired.note)}</li>}
-          {d.localControl.note && <li>{T({ en: 'Local control', es: 'Control local' })}: {words.note('localControl', d.localControl.note)}</li>}
+          {d.localControl.note && <li>{T({ en: 'Local control', es: 'Control local', de: 'Lokale Steuerung', fr: 'Contrôle local', it: 'Controllo locale' })}: {words.note('localControl', d.localControl.note)}</li>}
           {specs.map((s) => s.fact.note && <li>{s.label}: {words.note(s.key, s.fact.note)}</li>)}
         </ul>
       )
@@ -268,7 +309,7 @@ const jsonLd = [
     {
       words.caveats.length > 0 && (
         <>
-          <h2 id="before-you-buy">{T({ en: 'Before you buy', es: 'Antes de comprar' })}</h2>
+          <h2 id="before-you-buy">{T({ en: 'Before you buy', es: 'Antes de comprar', de: 'Vor dem Kauf', fr: 'Avant d’acheter', it: 'Prima di comprare' })}</h2>
           <ul class="caveats">
             {words.caveats.map((cv) => <li>{cv}</li>)}
           </ul>
@@ -276,7 +317,7 @@ const jsonLd = [
       )
     }
 
-    <h2 id="quick-answers">{T({ en: 'Quick answers', es: 'Respuestas rápidas' })}</h2>
+    <h2 id="quick-answers">{T({ en: 'Quick answers', es: 'Respuestas rápidas', de: 'Kurze Antworten', fr: 'Réponses rapides', it: 'Risposte rapide' })}</h2>
     <dl class="faq">
       {
         faq.map((f) => (
@@ -285,7 +326,7 @@ const jsonLd = [
             <dd>
               {f.a}{' '}
               {worksWith(device, f.eco) && (
-                <a href={L(ecosystemPath(f.eco))}>{T({ en: `More ${cat.plural} for ${ECOSYSTEM_LABELS[f.eco]}`, es: `Más ${c.plural} para ${ECOSYSTEM_LABELS[f.eco]}` })}</a>
+                <a href={L(ecosystemPath(f.eco))}>{T({ en: `More ${cat.plural} for ${ECOSYSTEM_LABELS[f.eco]}`, es: `Más ${c.plural} para ${ECOSYSTEM_LABELS[f.eco]}`, de: `Weitere ${c.plural} für ${ECOSYSTEM_LABELS[f.eco]}`, fr: `Plus de ${c.plural} pour ${ECOSYSTEM_LABELS[f.eco]}`, it: `${c.gender === 'f' ? 'Altre' : 'Altri'} ${c.plural} per ${ECOSYSTEM_LABELS[f.eco]}` })}</a>
               )}
             </dd>
           </div>
@@ -293,30 +334,34 @@ const jsonLd = [
       }
     </dl>
 
-    <h2 id="sources">{T({ en: 'Sources', es: 'Fuentes' })}</h2>
+    <h2 id="sources">{T({ en: 'Sources', es: 'Fuentes', de: 'Quellen', fr: 'Sources', it: 'Fonti' })}</h2>
     <ol class="sources">
       {
         src.map((s) => (
           <li id={`src-${s.id}`}>
             <a href={s.url} rel="nofollow noopener" target="_blank">{s.title}</a> — {s.publisher}{' '}
-            <span class="kind">{es ? KIND_ES[s.kind] : s.kind}</span> <span class="muted">· {T({ en: 'accessed', es: 'consultada el' })} {formatDate(s.accessed, lang)}</span>
+            <span class="kind">{KIND[s.kind] ?? s.kind}</span> <span class="muted">· {T({ en: 'accessed', es: 'consultada el', de: 'abgerufen am', fr: 'consultée le', it: 'consultata il' })} {formatDate(s.accessed, lang)}</span>
           </li>
         ))
       }
     </ol>
     <p class="muted">
-      {T({ en: 'Official product page:', es: 'Página oficial del producto:' })} <a href={d.officialUrl} rel="nofollow noopener">{new URL(d.officialUrl).hostname}</a>
+      {T({ en: 'Official product page:', es: 'Página oficial del producto:', de: 'Offizielle Produktseite:', fr: 'Page officielle du produit :', it: 'Pagina ufficiale del prodotto:' })} <a href={d.officialUrl} rel="nofollow noopener">{new URL(d.officialUrl).hostname}</a>
     </p>
   </article>
 
   {
     viaHub.length > 0 && (
       <section aria-labelledby="works-through">
-        <h2 id="works-through">{T({ en: `Devices that work through the ${d.name}`, es: `Dispositivos que funcionan a través del ${d.name}` })}</h2>
+        <h2 id="works-through">{T({ en: `Devices that work through the ${d.name}`, es: `Dispositivos que funcionan a través del ${d.name}`, de: `Geräte, die über ${d.name} funktionieren`, fr: `Appareils qui fonctionnent via ${d.name}`, it: `Dispositivi che funzionano tramite ${d.name}` })}</h2>
         <p class="muted small">
-          {es
-            ? 'Fichas verificadas que necesitan este hub para llegar al menos a un ecosistema. Cada ficha dice para cuáles.'
-            : 'Verified records that need this hub to reach at least one ecosystem. Each page says which ones.'}
+          {T({
+            en: 'Verified records that need this hub to reach at least one ecosystem. Each page says which ones.',
+            es: 'Fichas verificadas que necesitan este hub para llegar al menos a un ecosistema. Cada ficha dice para cuáles.',
+            de: 'Geprüfte Geräte, die diesen Hub brauchen, um mindestens ein Ökosystem zu erreichen. Auf jeder Seite steht, welche.',
+            fr: 'Fiches vérifiées qui ont besoin de ce hub pour rejoindre au moins un écosystème. Chaque fiche précise lesquels.',
+            it: 'Schede verificate che richiedono questo hub per arrivare ad almeno un ecosistema. Ogni scheda dice quali.',
+          })}
         </p>
         {viaHubGroups.map((g) => (
           <>
@@ -333,9 +378,9 @@ const jsonLd = [
   {
     comparisons.length > 0 && (
       <section aria-labelledby="compare">
-        <h2 id="compare">{T({ en: `Compare the ${d.name}`, es: `Compara ${d.name}` })}</h2>
+        <h2 id="compare">{T({ en: `Compare the ${d.name}`, es: `Compara ${d.name}`, de: `${d.name} vergleichen`, fr: `Comparer ${d.name}`, it: `Confronta ${d.name}` })}</h2>
         <ul class="link-list">
-          {comparisons.map((x) => <li><a href={L(comparePath(x))}>{T({ en: `vs ${x.other.data.name}`, es: `frente a ${x.other.data.name}` })}</a></li>)}
+          {comparisons.map((x) => <li><a href={L(comparePath(x))}>{T({ en: `vs ${x.other.data.name}`, es: `frente a ${x.other.data.name}`, de: `vs ${x.other.data.name}`, fr: `face à ${x.other.data.name}`, it: `contro ${x.other.data.name}` })}</a></li>)}
         </ul>
       </section>
     )
@@ -344,7 +389,7 @@ const jsonLd = [
   {
     related.length > 0 && (
       <section aria-labelledby="related">
-        <h2 id="related">{T({ en: `Other ${cat.plural} for ${market.phrase}`, es: `${other} ${c.plural} para ${mt.phrase}` })}</h2>
+        <h2 id="related">{T({ en: `Other ${cat.plural} for ${market.phrase}`, es: `${other} ${c.plural} para ${mt.phrase}`, de: `Weitere ${c.plural} für ${mt.phrase}`, fr: `Autres ${c.plural} pour ${mt.phrase}`, it: `${c.gender === 'f' ? 'Altre' : 'Altri'} ${c.plural} per ${mt.phrase}` })}</h2>
         <ul class="cards">
           {related.map((r) => <DeviceCard device={r} />)}
         </ul>

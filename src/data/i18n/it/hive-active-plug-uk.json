@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Se sei nuovo in Hive, metti in conto un Hive Hub: la Hive Active Plug è una presa Zigbee britannica che arriva su Apple Home, Google Home, Alexa e Home Assistant solo tramite quell'hub. Chi usa già Hive può aggiungerla all'hub che ha. L'app Hive mostra in watt il consumo dell'apparecchio collegato. Né Hive né SmartThings documentano il supporto a SmartThings.",
+  "caveats": ["Serve un Hive Hub; la presa non si collega al Wi-Fi da sola.", "Programmi e Azioni non si possono controllare dall'app Casa di Apple.", "Il collegamento di Hive con Alexa non supporta configurazioni con più utenti o più case.", "Home Assistant richiede il login del proprietario dell'account Hive con l'autenticazione a due fattori attiva.", "Solo spina britannica/irlandese di tipo G, e Hive non pubblica un carico massimo."],
+  "notes": {
+    "radios": "Zigbee verso l'Hive Hub; non si collega da sola al Wi-Fi. Spina britannica/irlandese di tipo G.",
+    "matter": "Le pagine di Hive sulla presa non citano Matter e non abbiamo trovato nessuna scheda CSA.",
+    "hubRequired": "Serve un Hive Hub; Hive dice che chi compra Hive per la prima volta deve acquistarne uno. Chi usa già Hive può aggiungerla all'hub che ha.",
+    "localControl": "Non abbiamo trovato nessuna dichiarazione di Hive sul controllo senza internet.",
+    "energyMonitoring": "L'app Hive mostra in watt il consumo dell'apparecchio collegato. 'Hive Plug' è il nome attuale che Hive dà alla Active Plug (stessa pagina del negozio e stesso URL delle specifiche).",
+    "maxLoadWatts": "Le pagine di Hive non indicano un carico massimo. I rivenditori britannici lo indicano come 13 A, ma non è stato trovato nessun valore ufficiale in watt.",
+    "compatibility.apple_home": "Il sito di assistenza di Hive elenca le Hive Plug per Apple Home, attivate dall'app Hive tramite l'Hive Hub. Programmi e Azioni non si possono controllare dall'app Casa. L'annuncio di un rivenditore dice niente HomeKit; le pagine di Hive dicono di sì.",
+    "compatibility.google_home": "Hive elenca Google Assistant; la presa lo raggiunge tramite l'Hive Hub e l'account Hive.",
+    "compatibility.alexa": "Tramite la skill Hive per Alexa e l'Hive Hub. Hive dice che il collegamento con Alexa non supporta configurazioni con più utenti o più case.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale di Hive o SmartThings la riguarda. Gli utenti del forum SmartThings segnalano risultati alterni nell'abbinarla direttamente via Zigbee.",
+    "compatibility.home_assistant": "L'integrazione ufficiale Hive di Home Assistant elenca la Active Plug come interruttore. Usa il tuo account Hive (login del proprietario, 2FA attiva) e l'Hive Hub."
+  },
+  "via": {"apple_home": "Hive Hub", "google_home": "Hive Hub", "alexa": "Hive Hub", "home_assistant": "Hive Hub"}
+}

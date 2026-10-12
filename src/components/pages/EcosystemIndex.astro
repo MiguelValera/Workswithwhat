@@ -5,7 +5,6 @@ import { pick, langOf, localize } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
 
 const lang = langOf(Astro.url.pathname);
-const es = lang === 'es';
 const T = pick(lang);
 const t = ui(lang);
 const L = (p: string) => localize(p, lang);
@@ -13,26 +12,30 @@ const all = await getPublishedDevices();
 ---
 
 <Base
-  title={T({ en: 'Smart home devices by ecosystem', es: 'Dispositivos domóticos por ecosistema' })}
-  description={es
-    ? 'Encuentra dispositivos domóticos compatibles con Apple Home, Google Home, Amazon Alexa, SmartThings o Home Assistant, con una fuente para cada respuesta.'
-    : 'Find smart home devices that work with Apple Home, Google Home, Amazon Alexa, SmartThings or Home Assistant, with a source for every answer.'}
+  title={T({ en: 'Smart home devices by ecosystem', es: 'Dispositivos domóticos por ecosistema', de: 'Smart-Home-Geräte nach Ökosystem', fr: 'Appareils connectés par écosystème', it: 'Dispositivi smart home per ecosistema' })}
+  description={T({
+    en: 'Find smart home devices that work with Apple Home, Google Home, Amazon Alexa, SmartThings or Home Assistant, with a source for every answer.',
+    es: 'Encuentra dispositivos domóticos compatibles con Apple Home, Google Home, Amazon Alexa, SmartThings o Home Assistant, con una fuente para cada respuesta.',
+    de: 'Finde Smart-Home-Geräte, die mit Apple Home, Google Home, Amazon Alexa, SmartThings oder Home Assistant funktionieren, mit einer Quelle für jede Antwort.',
+    fr: 'Trouvez des appareils connectés compatibles avec Apple Home, Google Home, Amazon Alexa, SmartThings ou Home Assistant, avec une source pour chaque réponse.',
+    it: 'Trova dispositivi smart home compatibili con Apple Home, Google Home, Amazon Alexa, SmartThings o Home Assistant, con una fonte per ogni risposta.',
+  })}
   crumbs={[{ name: t.navByEcosystem, path: '/works-with/' }]}
 >
-  <h1>{T({ en: 'Browse by ecosystem', es: 'Buscar por ecosistema' })}</h1>
-  <p class="lede">{T({ en: 'Pick the platform you already use.', es: 'Elige la plataforma que ya usas.' })}</p>
+  <h1>{T({ en: 'Browse by ecosystem', es: 'Buscar por ecosistema', de: 'Nach Ökosystem suchen', fr: 'Parcourir par écosystème', it: 'Cerca per ecosistema' })}</h1>
+  <p class="lede">{T({ en: 'Pick the platform you already use.', es: 'Elige la plataforma que ya usas.', de: 'Wähle die Plattform, die du schon nutzt.', fr: 'Choisissez la plateforme que vous utilisez déjà.', it: 'Scegli la piattaforma che usi già.' })}</p>
   <ul class="cards">
     {
       ECOSYSTEMS.map((e) => (
         <li class="card">
           <h2><a href={L(ecosystemPath(e))}>{ECOSYSTEM_LABELS[e]}</a></h2>
-          <div class="muted">{all.filter((d) => worksWith(d, e)).length} {T({ en: 'compatible devices', es: 'dispositivos compatibles' })}</div>
+          <div class="muted">{all.filter((d) => worksWith(d, e)).length} {T({ en: 'compatible devices', es: 'dispositivos compatibles', de: 'kompatible Geräte', fr: 'appareils compatibles', it: 'dispositivi compatibili' })}</div>
         </li>
       ))
     }
     <li class="card">
       <h2><a href={L('/works-with/matter/')}>Matter</a></h2>
-      <div class="muted">{all.filter((d) => d.data.matter.certified).length} {T({ en: 'Matter-certified devices', es: 'dispositivos con certificación Matter' })}</div>
+      <div class="muted">{all.filter((d) => d.data.matter.certified).length} {T({ en: 'Matter-certified devices', es: 'dispositivos con certificación Matter', de: 'Matter-zertifizierte Geräte', fr: 'appareils certifiés Matter', it: 'dispositivi certificati Matter' })}</div>
     </li>
   </ul>
 </Base>

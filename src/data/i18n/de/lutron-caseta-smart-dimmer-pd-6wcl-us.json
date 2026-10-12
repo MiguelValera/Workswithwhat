@@ -1,0 +1,33 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Der Lutron Caséta PD-6WCL ersetzt einen normalen einpoligen Dimmer in einer 1-fach-US-Dose, und seine Zweileiter-Bauweise braucht keinen Neutralleiter. Apple Home, Google Home, Alexa und SmartThings erreichen ihn alle über die Caséta Smart Bridge (jetzt Smart Hub genannt); auch Home Assistant verbindet sich mit der Bridge, über das lokale Netzwerk. Für sich allein koppelt er nur mit Pico-Fernbedienungen und Sensoren. Er dimmt 150 W LED oder 600 W Glüh- und Halogenlampen.",
+  "caveats": [
+    "Für App-, Sprach- und Ökosystem-Steuerung braucht er die Caséta Smart Bridge (jetzt Smart Hub genannt); die Bridge hängt per Ethernet am Router.",
+    "LED-Lasten sind auf 150 W begrenzt, und die Lampen müssen dimmbar sein."
+  ],
+  "notes": {
+    "radios": "Der Dimmer nutzt Lutrons eigenes Funkmodul Clear Connect RF, das weder WLAN, Thread, Zigbee, Z-Wave noch Bluetooth ist, deshalb passt keiner unserer Funkwerte. Die Smart Bridge (Smart Hub) spricht mit ihm über Clear Connect und hängt per Ethernet am Router.",
+    "matter": "Auf den gesehenen Lutron-Seiten wurde kein Matter-Hinweis gefunden; nicht bestätigt.",
+    "hubRequired": "Laut Lutron brauchen Fernzugriff, Szenen, Zeitpläne und Sprachassistenten die Smart Bridge (jetzt Smart Hub genannt). Ohne sie koppelt der Dimmer nur mit Pico-Fernbedienungen und Sensoren.",
+    "localControl": "Die Lutron-Caséta-Integration von Home Assistant spricht die Smart Bridge über das lokale Netzwerk an (lokales Push). Die Verknüpfungen von Lutrons App, Alexa, Google Home und SmartThings laufen über Lutrons Cloud.",
+    "switchForm": "Ersetzt einen normalen einpoligen Wanddimmer in einer 1-fach-US-Dose.",
+    "dimmer": "Ausgelegt auf 150 W für dimmbare LED und 600 W für Glüh- oder Halogenlampen.",
+    "neutralRequired": "Zweileiter-Bauweise, die sich wie ein normaler Schalter einbauen lässt. Ein Schutzleiter ist optional, sofern die örtlichen Vorschriften ihn nicht verlangen.",
+    "gangs": "Lutrons Spezifikation verlangt eine 1-fach-US-Dose.",
+    "compatibility.apple_home": "Lutron führt Apple HomeKit (einschließlich Siri) unter den Funktionen, die der Smart Hub ergänzt, der Dimmer erscheint also über die Bridge in Apple Home.",
+    "compatibility.google_home": "Lutron führt Google Home unter den Funktionen, die der Smart Hub ergänzt; es erreicht den Dimmer über die Bridge.",
+    "compatibility.alexa": "Lutron führt Amazon Alexa unter den Funktionen, die der Smart Hub ergänzt; es braucht die Bridge.",
+    "compatibility.smartthings": "Lutrons Support-Artikel fügt Lutron in der SmartThings-App als Partner hinzu; der Caséta-Hub muss verbunden und in der Lutron-App erreichbar sein. Es ist eine Cloud-zu-Cloud-Verknüpfung, und Pico-Fernbedienungen erscheinen nicht in SmartThings.",
+    "compatibility.home_assistant": "Die Lutron-Caséta-Integration von Home Assistant verbindet sich über das lokale Netzwerk mit der Smart Bridge (lokales Push)."
+  },
+  "via": {
+    "apple_home": "Lutron Caséta Smart Bridge",
+    "google_home": "Lutron Caséta Smart Bridge",
+    "alexa": "Lutron Caséta Smart Bridge",
+    "smartthings": "Lutron Caséta Smart Bridge",
+    "home_assistant": "Lutron Caséta Smart Bridge"
+  },
+  "values": {
+    "gangs": "1-fach"
+  }
+}

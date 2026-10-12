@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "In Großbritannien verkauft Ring diese Akku-Türklingel als Battery Video Doorbell 2K. Sie nimmt 2K-Video auf, verbindet sich ohne Hub über 2,4-GHz-WLAN und läuft mit einem wiederaufladbaren Akku; laut Ring lässt sie sich auch fest verdrahten. Alexa ist das eine Ökosystem, das Ring dokumentiert, mit Ansagen, Gegensprechen und Live-Ansicht auf dem Echo Show. Gespeichertes Video braucht einen Ring-Protect-Tarif.",
+  "caveats": [
+    "Der gespeicherte Videoverlauf braucht einen Ring-Protect-Tarif, ab 4.99 GBP im Monat pro Gerät.",
+    "Das WLAN ist nur 2,4 GHz.",
+    "Die Unterstützung für Apple Home, Google Home, SmartThings und Home Assistant ist für dieses Modell nicht bestätigt.",
+    "Rings britische Seite führt sowohl einen eingebauten Akku als auch eine verdrahtete Option; prüfe, was zu deiner vorhandenen Klingelverdrahtung passt."
+  ],
+  "notes": {
+    "radios": "Rings britische Seite führt 802.11 b/g/n nur auf 2,4 GHz.",
+    "matter": "Auf Rings britischen Seiten gibt es keinen Matter-Hinweis, und in der Suche tauchte kein CSA-Eintrag für eine Ring-Türklingel auf.",
+    "hubRequired": "Verbindet sich per WLAN mit der Ring-App. Ein Ring Chime ist optional.",
+    "localControl": "Ring sagt nicht, ob eine Steuerung ohne seine Cloud funktioniert.",
+    "power": "Rings britische Seite führt einen eingebauten Akku, der per USB-C geladen wird, und sagt, die Türklingel kann fest verdrahtet werden; für dieses Modell nennt sie keine Trafoangabe. Die Packungsliste derselben Seite erwähnt einen Akkupack zum schnellen Lösen, die Akku-Angaben sind also widersprüchlich.",
+    "localStorage": "Auf Rings britischer Seite gibt es keine lokale Aufnahmeoption; Video wird über einen Ring-Tarif in der Cloud gespeichert.",
+    "subscription": "Ring Protect beginnt bei 4.99 GBP im Monat pro Gerät mit einer 30-tägigen Testphase. Live-Ansicht, sofortige Benachrichtigungen und Gegensprechen sind kostenlos.",
+    "compatibility.apple_home": "Rings britische Seiten und Alexa-Hilfeseiten erwähnen Apple Home oder HomeKit nicht. In keiner Richtung bestätigt.",
+    "compatibility.google_home": "Keine gefundene Ring-Seite führt Google Home oder Google Assistant für diese Türklingel.",
+    "compatibility.alexa": "Über den Ring-Skill. Laut Ring funktionieren alle seine Video-Türklingeln mit Alexa: Ansagen, Gegensprechen, Live-Ansicht auf dem Echo Show. Warnungen zu Personen und Paketen brauchen Ring Protect. Quelle sind Rings allgemeine Hilfeseiten, nicht die britische Produktseite.",
+    "compatibility.smartthings": "Keine offizielle Ring- oder SmartThings-Seite für dieses Modell gefunden.",
+    "compatibility.home_assistant": "Home Assistant hat eine offizielle Ring-Integration, aber ihre Geräteliste nennt „Battery Doorbell“ und „Doorbell (2nd Gen)“, nicht die Battery Video Doorbell 2K, deshalb ist die Unterstützung für dieses Modell nicht bestätigt."
+  },
+  "values": {
+    "power": "Wiederaufladbarer Akku",
+    "subscription": "Gespeicherter Videoverlauf (Ring-Protect-Tarif)"
+  }
+}

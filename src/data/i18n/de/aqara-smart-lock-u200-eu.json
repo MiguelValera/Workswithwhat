@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Das Aqara Smart Lock U200 ist ein Nachrüstschloss, das innen über dem vorhandenen Schließzylinder montiert wird und über Matter auf Thread Apple Home, Google Home, Alexa, SmartThings und Home Assistant beitritt. Jede Plattform braucht einen Thread-Border-Router; bei Apple ist das ein HomePod mini, HomePod (2. Generation) oder Apple TV 4K. Im Set steckt ein kabelloses Außen-Tastenfeld mit Fingerabdruckleser, und das Schloss läuft mit einem wiederaufladbaren 7,4-V-Li-Ion-Akku, der etwa 6 Monate pro Ladung hält.",
+  "caveats": [
+    "Matter braucht einen Thread-Border-Router; in Apple Home muss es ein HomePod mini, HomePod (2. Generation) oder Apple TV 4K sein.",
+    "Aqaras Handbuch sagt, Plattformen von Drittanbietern erhalten nur Grundfunktionen.",
+    "Aqara widerspricht sich, ob ein Hub (Aqara M3) nötig ist; die FAQ sagt, der M3 werde nur für Fernsteuerung und Automationen gebraucht.",
+    "Euro-Profilzylinder brauchen eine Notfunktion, damit du deinen Schlüssel von außen weiter nutzen kannst.",
+    "Das US-Modell (AD075) ist ein eigenes Produkt mit eigenem Matter-Zertifikat."
+  ],
+  "notes": {
+    "radios": "Die CSA nennt Thread und Bluetooth. Aqaras Datenblatt nennt außerdem NFC für Karten und Smartphones.",
+    "matter": "Die CSA führt das Smart Lock U200 von Lumi United (Aqara), Produkt-ID 0x2802, mit Thread und Bluetooth. Der Eintrag nennt keine Region; ein separates US-Modell (AD075) hat ein eigenes Zertifikat.",
+    "hubRequired": "Aqara widerspricht sich: Die US-Datentabelle sagt, ein Hub sei nötig (Aqara M3), während die FAQ zum U200 sagt, Nutzer von Aqara Home bräuchten keinen Hub und der M3 werde nur für Fernsteuerung und Automationen gebraucht.",
+    "localControl": "Keine Aqara-Quelle nennt reine lokale Steuerung.",
+    "lockFit": "Aqara nennt es ein Nachrüstschloss: Es wird innen über dem vorhandenen Schließzylinder montiert. Euro-Profilzylinder brauchen eine Notfunktion; Aqaras Installationsseite behandelt die unterstützten Zylindertypen.",
+    "keypad": "Das Schloss wird mit einem vorgekoppelten kabellosen Außen-Tastenfeld mit Fingerabdruckleser geliefert (4 × AAA oder 12-24 V verkabelt); die EU-Packung führt die vier AAA-Batterien dafür auf.",
+    "power": "7,4-V-Li-Ion-Akku, in der EU-Packung enthalten; bis zu etwa 6 Monate pro Ladung bei 8 Entriegelungen pro Tag. Aqaras Datenblatt erlaubt außerdem 4 AA-Zellen über einen AA-Batterieadapter, den die Inhaltsliste der EU-Packung nicht enthält.",
+    "compatibility.apple_home": "Braucht eine Apple-Steuerzentrale, die ein Thread-Border-Router ist (HomePod mini, HomePod (2. Generation), Apple TV 4K).",
+    "compatibility.google_home": "Braucht einen Thread-Border-Router, der Matter unterstützt.",
+    "compatibility.alexa": "Braucht einen Thread-Border-Router, der Matter unterstützt.",
+    "compatibility.smartthings": "Braucht einen Thread-Border-Router, der Matter unterstützt.",
+    "compatibility.home_assistant": "Aqaras Pressemitteilung zur Markteinführung führt Home Assistant auf; erreichbar über Matter, das einen Thread-Border-Router braucht. Aqaras Handbuch sagt, Plattformen von Drittanbietern erhalten nur Grundfunktionen."
+  },
+  "values": {
+    "power": "Wiederaufladbarer Li-Ion-Akku"
+  }
+}

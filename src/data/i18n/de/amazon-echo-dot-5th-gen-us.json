@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Der Echo Dot (5. Generation) funktioniert mit Alexa, und laut Amazons Dokumentation ist er Matter-fähig: Er kann als Matter-Administrator Matter-Geräte mit Alexa verbinden. Amazon zufolge lassen sich direkt über Matter verbundene Geräte lokal steuern, auch bei Internetausfall. Für Zigbee oder Thread solltest du dich nicht auf ihn verlassen: Er steht nicht auf Amazons Listen der Echo-Geräte mit Zigbee-Hub oder Thread-Border-Router.",
+  "caveats": [
+    "Kein eingebauter Zigbee-Hub: Amazons Zigbee-Supportseite führt den Echo Dot (5. Generation) nicht auf.",
+    "Nicht auf Amazons Liste der Thread-Border-Router, Matter-over-Thread-Geräte brauchen also einen anderen Border-Router.",
+    "Die Matter-Unterstützung stützt sich auf Amazons Entwicklerdokumentation; ein CSA-Eintrag mit diesem Modell wurde nicht gefunden."
+  ],
+  "notes": {
+    "radios": "Amazons Pressemitteilung vom September 2022 zum neuen Echo Dot (der 5. Generation, mit Temperatursensor) sagt, er könne als eero-Mesh-WLAN-Verstärker arbeiten. Bluetooth, Zigbee und Thread werden nicht genannt; Amazons Zigbee- und Thread-Dokumentation führt ihn nicht auf.",
+    "matter": "Amazons Matter-Dokumentation führt Echo Dot (2. Generation und neuer) als Matter-fähig, wobei der Echo der Matter-Administrator ist, der Geräte lokal mit Alexa verbindet. Ein CSA-Eintrag mit dem Echo Dot (5. Generation) wurde nicht gefunden, ein Zertifikat ist also nicht bestätigt.",
+    "hubRequired": "Der Echo dient als Matter-Administrator für Alexa; ein separater Hub wird nicht genannt.",
+    "localControl": "Amazon sagt, dass Alexa ein direkt über Matter verbundenes Gerät lokal steuern kann und es auch bei Internetausfall weiter steuern kann. Das gilt für Matter-Geräte, nicht für jedes Gerät.",
+    "hubType": "Ein smarter Lautsprecher, der als Matter-Administrator für Alexa dient. Er hat keinen Zigbee-Hub.",
+    "deviceProtocols": "Nicht bestätigt. Der Echo Dot (5. Generation) steht nicht auf Amazons Listen der Echo-Geräte mit Zigbee-Hub oder Thread-Border-Router.",
+    "matterBridge": "Amazons Matter-Dokumentation beschreibt den Echo als Matter-Administrator für Alexa, nicht als Bridge.",
+    "threadBorderRouter": "Nicht auf Amazons Liste der Thread-Border-Router, die unter den Echo Dots nur den Echo Dot Max (Modell 2025) nennt. Eine Liste, die ihn auslässt, sagt nicht, dass er keinen hat, daher bleibt es unbestätigt.",
+    "maxDevices": "In den Quellen wurde kein Limit gefunden.",
+    "compatibility.apple_home": "Keine offizielle Quelle zeigt über den Echo Dot gekoppelte Geräte in Apple Home.",
+    "compatibility.google_home": "Keine offizielle Quelle zeigt über den Echo Dot gekoppelte Geräte in Google Home.",
+    "compatibility.alexa": "Amazon führt Echo Dot (2. Generation und neuer) als Matter-fähig, wobei der Echo der Matter-Administrator ist, der Matter-Geräte lokal mit Alexa verbindet. Matter-over-Thread-Geräte brauchen einen Thread-Border-Router, und der Echo Dot (5. Generation) steht nicht auf Amazons Liste dafür.",
+    "compatibility.smartthings": "Keine offizielle Quelle zeigt über den Echo Dot gekoppelte Geräte in SmartThings.",
+    "compatibility.home_assistant": "Keine offizielle Home-Assistant-Seite zeigt, dass über den Echo Dot gekoppelte Geräte dort erscheinen."
+  }
+}

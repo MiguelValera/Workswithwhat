@@ -14,19 +14,60 @@ export interface Market {
   /** "the US and Canada": "Smart plugs for the US and Canada" */
   phrase: string;
   regions: string[];
-  i18n: Record<LocaleLang, { label: string; short: string; phrase: string }>;
+  /** other languages; `phrase` follows "for" ("für", "pour", "per"), `inPhrase` says where it's sold ("in den USA und Kanada") */
+  i18n: Record<LocaleLang, { label: string; short: string; phrase: string; inPhrase: string }>;
 }
 
 export const MARKETS: Market[] = [
-  { key: 'us', label: 'US & Canada', short: 'US', phrase: 'the US and Canada', regions: ['US', 'CA'], i18n: { es: { label: 'EE. UU. y Canadá', short: 'EE. UU.', phrase: 'Estados Unidos y Canadá' } } },
-  { key: 'eu', label: 'Europe', short: 'EU', phrase: 'Europe', regions: ['EU'], i18n: { es: { label: 'Europa', short: 'UE', phrase: 'Europa' } } },
-  { key: 'uk', label: 'UK', short: 'UK', phrase: 'the UK', regions: ['UK'], i18n: { es: { label: 'Reino Unido', short: 'Reino Unido', phrase: 'Reino Unido' } } },
-  { key: 'au', label: 'Australia', short: 'Australian', phrase: 'Australia', regions: ['AU'], i18n: { es: { label: 'Australia', short: 'Australia', phrase: 'Australia' } } },
-  { key: 'jp', label: 'Japan', short: 'Japanese', phrase: 'Japan', regions: ['JP'], i18n: { es: { label: 'Japón', short: 'Japón', phrase: 'Japón' } } },
+  {
+    key: 'us', label: 'US & Canada', short: 'US', phrase: 'the US and Canada', regions: ['US', 'CA'],
+    i18n: {
+      es: { label: 'EE. UU. y Canadá', short: 'EE. UU.', phrase: 'Estados Unidos y Canadá', inPhrase: 'en Estados Unidos y Canadá' },
+      de: { label: 'USA und Kanada', short: 'US', phrase: 'die USA und Kanada', inPhrase: 'in den USA und Kanada' },
+      fr: { label: 'États-Unis et Canada', short: 'US', phrase: 'les États-Unis et le Canada', inPhrase: 'aux États-Unis et au Canada' },
+      it: { label: 'USA e Canada', short: 'USA', phrase: 'gli Stati Uniti e il Canada', inPhrase: 'negli Stati Uniti e in Canada' },
+    },
+  },
+  {
+    key: 'eu', label: 'Europe', short: 'EU', phrase: 'Europe', regions: ['EU'],
+    i18n: {
+      es: { label: 'Europa', short: 'UE', phrase: 'Europa', inPhrase: 'en Europa' },
+      de: { label: 'Europa', short: 'EU', phrase: 'Europa', inPhrase: 'in Europa' },
+      fr: { label: 'Europe', short: 'UE', phrase: 'l’Europe', inPhrase: 'en Europe' },
+      it: { label: 'Europa', short: 'UE', phrase: 'l’Europa', inPhrase: 'in Europa' },
+    },
+  },
+  {
+    key: 'uk', label: 'UK', short: 'UK', phrase: 'the UK', regions: ['UK'],
+    i18n: {
+      es: { label: 'Reino Unido', short: 'Reino Unido', phrase: 'Reino Unido', inPhrase: 'en Reino Unido' },
+      de: { label: 'Großbritannien', short: 'UK', phrase: 'Großbritannien', inPhrase: 'in Großbritannien' },
+      fr: { label: 'Royaume-Uni', short: 'UK', phrase: 'le Royaume-Uni', inPhrase: 'au Royaume-Uni' },
+      it: { label: 'Regno Unito', short: 'UK', phrase: 'il Regno Unito', inPhrase: 'nel Regno Unito' },
+    },
+  },
+  {
+    key: 'au', label: 'Australia', short: 'Australian', phrase: 'Australia', regions: ['AU'],
+    i18n: {
+      es: { label: 'Australia', short: 'Australia', phrase: 'Australia', inPhrase: 'en Australia' },
+      de: { label: 'Australien', short: 'Australien', phrase: 'Australien', inPhrase: 'in Australien' },
+      fr: { label: 'Australie', short: 'Australie', phrase: 'l’Australie', inPhrase: 'en Australie' },
+      it: { label: 'Australia', short: 'Australia', phrase: 'l’Australia', inPhrase: 'in Australia' },
+    },
+  },
+  {
+    key: 'jp', label: 'Japan', short: 'Japanese', phrase: 'Japan', regions: ['JP'],
+    i18n: {
+      es: { label: 'Japón', short: 'Japón', phrase: 'Japón', inPhrase: 'en Japón' },
+      de: { label: 'Japan', short: 'Japan', phrase: 'Japan', inPhrase: 'in Japan' },
+      fr: { label: 'Japon', short: 'Japon', phrase: 'le Japon', inPhrase: 'au Japon' },
+      it: { label: 'Giappone', short: 'Giappone', phrase: 'il Giappone', inPhrase: 'in Giappone' },
+    },
+  },
 ];
 
 /** A market's names in one language. */
-export const marketText = (m: Market, lang: Lang) => (lang === 'en' ? { label: m.label, short: m.short, phrase: m.phrase } : m.i18n[lang]);
+export const marketText = (m: Market, lang: Lang) => (lang === 'en' ? { label: m.label, short: m.short, phrase: m.phrase, inPhrase: `in ${m.phrase}` } : m.i18n[lang]);
 
 export const marketOf = (d: Device) =>
   MARKETS.find((m) => d.data.regions.some((r) => m.regions.includes(r))) ?? MARKETS[0];

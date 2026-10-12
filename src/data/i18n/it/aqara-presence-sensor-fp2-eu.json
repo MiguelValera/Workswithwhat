@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Aqara Presence Sensor FP2 rileva la presenza con mmWave, seguendo fino a 5 persone in un massimo di 30 zone, e ha un sensore di luce integrato. Si collega via Wi-Fi a 2,4 GHz senza hub e si alimenta via USB-C a 5 V, senza batteria. Apple Home, Google Home e Alexa lo supportano in modo nativo, mentre Home Assistant usa l'integrazione HomeKit Device. SmartThings non è confermato, e nemmeno Matter.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz; le reti WPA/WPA2 enterprise non sono supportate.", "Compare come più sensori separati e le piattaforme di terze parti ricevono solo i dati base del sensore.", "Il rilevamento delle cadute funziona solo in modalità soffitto.", "L'automazione locale completa richiede un hub Aqara con Wi-Fi, secondo il manuale."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz 802.11 b/g/n e Bluetooth 4.2. Le reti WPA/WPA2 enterprise non sono supportate.",
+    "matter": "Le pagine Aqara dell'FP2 che abbiamo visto non citano Matter, e un moderatore del forum di Aqara dice che non lo supporta. Non confermato nemmeno da una scheda CSA, in un senso o nell'altro.",
+    "hubRequired": "La tabella delle specifiche di Aqara dice che non serve un hub. L'automazione locale completa richiede un hub Aqara con Wi-Fi, secondo il manuale.",
+    "localControl": "Il controllo da HomeKit/Home Assistant può restare sulla rete locale, ma Aqara non dichiara il solo controllo locale.",
+    "senses": "Presenza mmWave con tracciamento multizona (fino a 5 persone, fino a 30 zone) e rilevamento delle cadute in modalità soffitto; è indicato anche un sensore di luce integrato.",
+    "power": "5 V / 1 A via USB-C; nessuna batteria.",
+    "compatibility.apple_home": "Si collega tramite HomeKit senza hub. Il manuale di Aqara dice che compare come più sensori separati; le piattaforme di terze parti ricevono solo i dati base del sensore.",
+    "compatibility.google_home": "Aqara elenca Google Home senza bisogno di hub. Il manuale di Aqara dice che compare come più sensori separati; le piattaforme di terze parti ricevono solo i dati base del sensore.",
+    "compatibility.alexa": "Aqara elenca Alexa senza bisogno di hub. Il manuale di Aqara dice che compare come più sensori separati; le piattaforme di terze parti ricevono solo i dati base del sensore.",
+    "compatibility.smartthings": "Samsung ha una pagina di catalogo SmartThings per l'FP2, ma l'elenco delle piattaforme di Aqara omette SmartThings e non siamo riusciti ad aprire la pagina di Samsung per vedere come si collega.",
+    "compatibility.home_assistant": "Aqara dice di aggiungerlo con l'integrazione HomeKit Device di Home Assistant, senza hub Aqara. Un dispositivo abbinato ad Apple Home va prima rimosso da lì."
+  },
+  "values": {
+    "power": "USB-C 5 V (rete elettrica)"
+  }
+}

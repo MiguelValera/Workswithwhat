@@ -7,13 +7,12 @@ import { getActiveMarkets, marketText } from '../../lib/markets';
 import { HTML_LANG, pick, langOf, localize } from '../../i18n/lang';
 
 const lang = langOf(Astro.url.pathname);
-const es = lang === 'es';
 const T = pick(lang);
 const L = (p: string) => localize(p, lang);
 const devices = await getPublishedDevices();
 const cats = await getActiveCategories();
 const markets = await getActiveMarkets();
-const what = categoryPhrase(cats.map((c) => catText(c, lang).plural), lang).long || (T({ en: 'smart home devices', es: 'dispositivos domóticos' }));
+const what = categoryPhrase(cats.map((c) => catText(c, lang).plural), lang).long || T({ en: 'smart home devices', es: 'dispositivos domóticos', de: 'Smart-Home-Geräte', fr: 'appareils connectés', it: 'dispositivi smart home' });
 const recent = [...devices].sort((a, b) => (b.data.verifiedAt ?? '').localeCompare(a.data.verifiedAt ?? '')).slice(0, 6);
 
 const jsonLd = [
@@ -23,7 +22,13 @@ const jsonLd = [
     name: 'Workswithwhat',
     url: new URL(L('/'), Astro.site).href,
     inLanguage: HTML_LANG[lang],
-    description: T({ en: 'Smart home compatibility, checked against official sources.', es: 'Compatibilidad domótica, comprobada con fuentes oficiales.' }),
+    description: T({
+      en: 'Smart home compatibility, checked against official sources.',
+      es: 'Compatibilidad domótica, comprobada con fuentes oficiales.',
+      de: 'Smart-Home-Kompatibilität, geprüft anhand offizieller Quellen.',
+      fr: 'La compatibilité maison connectée, vérifiée auprès de sources officielles.',
+      it: 'Compatibilità smart home, verificata su fonti ufficiali.',
+    }),
     publisher: { '@id': `${Astro.site!.href}#org` },
   },
   {
@@ -36,17 +41,56 @@ const jsonLd = [
     sameAs: ['https://github.com/MiguelValera/Workswithwhat'],
   },
 ];
-const title = es
-  ? 'Workswithwhat: ¿es compatible este dispositivo con tu casa inteligente?'
-  : 'Workswithwhat: does this smart home device work with my system?';
-const description = es
-  ? `Comprueba si ${what} funcionan con Apple Home, Google Home, Alexa, SmartThings o Home Assistant. Cada respuesta enlaza a la fuente del fabricante o de la certificación.`
-  : `Check if ${what} work with Apple Home, Google Home, Alexa, SmartThings or Home Assistant. Every answer links to the manufacturer or certification source.`;
+const title = T({
+  en: 'Workswithwhat: does this smart home device work with my system?',
+  es: 'Workswithwhat: ¿es compatible este dispositivo con tu casa inteligente?',
+  de: 'Workswithwhat: Funktioniert dieses Gerät mit deinem Smart Home?',
+  fr: 'Workswithwhat : cet appareil est-il compatible avec votre maison connectée ?',
+  it: 'Workswithwhat: questo dispositivo è compatibile con la tua smart home?',
+});
+const description = T({
+  en: `Check if ${what} work with Apple Home, Google Home, Alexa, SmartThings or Home Assistant. Every answer links to the manufacturer or certification source.`,
+  es: `Comprueba si ${what} funcionan con Apple Home, Google Home, Alexa, SmartThings o Home Assistant. Cada respuesta enlaza a la fuente del fabricante o de la certificación.`,
+  de: `Prüfe, ob ${what} mit Apple Home, Google Home, Alexa, SmartThings oder Home Assistant funktionieren. Jede Antwort verlinkt auf die Quelle des Herstellers oder der Zertifizierung.`,
+  fr: `Vérifiez si des ${what} fonctionnent avec Apple Home, Google Home, Alexa, SmartThings ou Home Assistant. Chaque réponse renvoie à la source du fabricant ou de la certification.`,
+  it: `Verifica se ${what} funzionano con Apple Home, Google Home, Alexa, SmartThings o Home Assistant. Ogni risposta rimanda alla fonte del produttore o della certificazione.`,
+});
 ---
 
 <Base title={title} description={description} jsonLd={jsonLd}>
   {
-    es ? (
+    T({
+      de: (
+        <>
+          <h1>Funktioniert es mit deinem Smart Home?</h1>
+          <p class="lede">
+            Auf der Verpackung steht „funktioniert mit“, die Details fehlen: ob ein Hub nötig ist, ob es über Matter läuft
+            oder ob die Version für deine Region anders ist. Wir schlagen das in Herstellerangaben und
+            Zertifizierungsdatenbanken nach und verlinken jede Antwort auf die Stelle, an der wir sie gefunden haben.
+          </p>
+        </>
+      ),
+      fr: (
+        <>
+          <h1>Est-ce compatible avec votre maison connectée ?</h1>
+          <p class="lede">
+            La boîte indique « compatible avec » sans les détails : faut-il un hub, passe-t-il par Matter, la version de
+            votre région est-elle différente ? Nous allons chercher ces réponses dans les fiches des fabricants et les
+            bases de certification, et chaque réponse renvoie à l’endroit où nous l’avons trouvée.
+          </p>
+        </>
+      ),
+      it: (
+        <>
+          <h1>Funzionerà con la tua smart home?</h1>
+          <p class="lede">
+            La confezione dice «compatibile con» e tace i dettagli: se serve un hub, se passa da Matter o se la versione
+            della tua regione è diversa. Li cerchiamo nelle specifiche dei produttori e nei database di certificazione, e
+            ogni risposta rimanda al punto in cui l’abbiamo trovata.
+          </p>
+        </>
+      ),
+      es: (
       <>
         <h1>¿Funcionará con tu casa inteligente?</h1>
         <p class="lede">
@@ -55,7 +99,8 @@ const description = es
           certificación, y enlazamos cada respuesta a donde lo encontramos.
         </p>
       </>
-    ) : (
+      ),
+      en: (
       <>
         <h1>Will it work with your smart home?</h1>
         <p class="lede">
@@ -64,7 +109,8 @@ const description = es
           databases, and link every answer to where we found it.
         </p>
       </>
-    )
+      ),
+    })
   }
 
   <ul class="cards cats">
@@ -73,7 +119,7 @@ const description = es
         <li class="card">
           <h2><a href={L(`/${c.path}/`)}>{catText(c, lang).label}</a></h2>
           <div class="muted">
-            {devices.filter((d) => d.data.category === c.key).length} {T({ en: 'checked, with sources', es: 'comprobados, con fuentes' })}
+            {devices.filter((d) => d.data.category === c.key).length} {T({ en: 'checked, with sources', es: 'comprobados, con fuentes', de: 'geprüft, mit Quellen', fr: 'vérifiés, avec sources', it: 'verificati, con fonti' })}
           </div>
         </li>
       ))
@@ -82,23 +128,23 @@ const description = es
 
   <div class="callout jump">
     <p class="toc">
-      <span class="toc-label">{T({ en: 'Or jump to a platform:', es: 'O ve directamente a una plataforma:' })}</span>
+      <span class="toc-label">{T({ en: 'Or jump to a platform:', es: 'O ve directamente a una plataforma:', de: 'Oder direkt zu einer Plattform:', fr: 'Ou allez directement à une plateforme :', it: 'Oppure vai a una piattaforma:' })}</span>
       {ECOSYSTEMS.map((e) => <a href={L(ecosystemPath(e))}>{ECOSYSTEM_LABELS[e]}</a>)}
     </p>
     <p class="toc">
-      <span class="toc-label">{T({ en: 'Only your region:', es: 'Solo tu región:' })}</span>
+      <span class="toc-label">{T({ en: 'Only your region:', es: 'Solo tu región:', de: 'Nur deine Region:', fr: 'Seulement votre région :', it: 'Solo la tua regione:' })}</span>
       {markets.map((m) => <a href={L(`/${m.key}/`)}>{marketText(m, lang).label}</a>)}
     </p>
   </div>
 
-  <h2>{T({ en: 'Recently checked', es: 'Comprobados recientemente' })}</h2>
+  <h2>{T({ en: 'Recently checked', es: 'Comprobados recientemente', de: 'Zuletzt geprüft', fr: 'Vérifiés récemment', it: 'Verificati di recente' })}</h2>
   {
     recent.length ? (
       <ul class="cards">
         {recent.map((d) => <DeviceCard device={d} />)}
       </ul>
     ) : (
-      <p class="muted">{T({ en: 'The first devices are being checked. Come back soon.', es: 'Estamos comprobando los primeros dispositivos. Vuelve pronto.' })}</p>
+      <p class="muted">{T({ en: 'The first devices are being checked. Come back soon.', es: 'Estamos comprobando los primeros dispositivos. Vuelve pronto.', de: 'Wir prüfen gerade die ersten Geräte. Schau bald wieder vorbei.', fr: 'Nous vérifions les premiers appareils. Revenez bientôt.', it: 'Stiamo verificando i primi dispositivi. Torna presto.' })}</p>
     )
   }
 </Base>

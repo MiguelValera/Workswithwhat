@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Per il Video Doorbell (2nd Gen, BDM01300U) di Blink nel Regno Unito è confermato solo Alexa: collega gli account e l'audio bidirezionale funziona su dispositivi come l'Echo Show. Il campanello va con tre pile AA al litio, con cablaggio opzionale al suono, e richiede un Sync Module; il kit britannico include un Sync Module Core. I clip nel cloud si conservano per 30 giorni con un piano Blink. Apple Home, Google Home e Home Assistant non sono confermati.",
+  "caveats": ["L'archiviazione locale richiede un Sync Module 2 o XR, venduto a parte; il Sync Module Core incluso salva solo nel cloud.", "Archiviazione cloud e rilevamento delle persone richiedono un abbonamento Blink; la conservazione nel Regno Unito è di 30 giorni.", "Solo Wi-Fi a 2,4 GHz.", "Il supporto a Apple Home, Google Home e Home Assistant non è confermato."],
+  "notes": {
+    "radios": "La pagina delle specifiche e le FAQ di Blink indicano solo 802.11b/g/n a 2,4 GHz. Blink indica il modello BDM01300U per il Regno Unito e diversi paesi dell'UE.",
+    "matter": "Nessuna dichiarazione su Matter nelle pagine britanniche di Blink, e nessuna scheda CSA per questo campanello è emersa nelle ricerche.",
+    "hubRequired": "Le FAQ della 2nd Gen di Blink, la guida all'installazione, la pagina delle specifiche e la tabella dei Sync Module dicono che richiede un Sync Module. Le FAQ del Sync Module Core elencano come facoltativo un Video Doorbell di generazione non indicata; Amazon UK definisce il Core un kit facoltativo.",
+    "localControl": "Blink non dichiara se qualche controllo funzioni senza il suo cloud.",
+    "cameraType": "Campanello a batteria, resistente alle intemperie IP65, con cablaggio opzionale a un campanello esistente.",
+    "power": "Le pile servono anche quando è collegato al suono. Blink indica fino a due anni di autonomia con le impostazioni predefinite.",
+    "localStorage": "Solo con un Sync Module 2 (chiavetta USB) o un Sync Module XR (microSD), entrambi venduti a parte. Il Sync Module Core del kit supporta solo l'archiviazione cloud.",
+    "subscription": "La conservazione cloud nel Regno Unito è di 30 giorni (60 altrove). È inclusa una prova Plus di 30 giorni; Amazon UK dice che il Person Detection richiede un piano.",
+    "compatibility.apple_home": "Le FAQ britanniche di Blink citano Siri Shortcuts ma non HomeKit né Apple Home, quindi il supporto a Apple Home non è confermato.",
+    "compatibility.google_home": "Le pagine britanniche di Blink per questo modello non citano Google Home.",
+    "compatibility.alexa": "Le FAQ britanniche di Blink dicono che puoi collegare gli account Blink e Alexa e che l'audio bidirezionale funziona sui dispositivi Alexa come l'Echo Show. I dispositivi Alexa compatibili possono anche fare da suoneria.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale di Blink o SmartThings trovata.",
+    "compatibility.home_assistant": "Nessuna pagina ufficiale di Home Assistant nomina questo campanello."
+  },
+  "values": {
+    "power": "3 × AA al litio, cablaggio opzionale al suono",
+    "subscription": "Archiviazione cloud dei clip e rilevamento delle persone (piano Blink)"
+  }
+}

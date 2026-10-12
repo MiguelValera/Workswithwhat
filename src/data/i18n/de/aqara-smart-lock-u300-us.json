@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Das Smart Lock U300 ist Aqaras erstes Hebelschloss: Es ersetzt eine Klinke oder einen Knauf mit einfacher Falle und hat ein Tastenfeld an der Außenblende. Matter über Thread verbindet es über einen Thread-Border-Router mit Apple Home, Google Home, Alexa und SmartThings. Aqara sagt nicht klar, ob auch der eigene Hub nötig ist.",
+  "caveats": [
+    "Matter braucht einen Thread-Border-Router; bei Apple ist das ein HomePod mini, HomePod (2. Generation) oder Apple TV 4K.",
+    "Aqaras FAQ sagt, die Außenblende sei nach IPX4 geschützt und werde für ungeschützte Stellen im Freien nicht empfohlen.",
+    "Ob ein Aqara-Hub nötig ist, bestätigt keine offizielle Quelle."
+  ],
+  "notes": {
+    "radios": "Aqaras FAQ sagt, das U300 unterstütze Matter über Thread und Bluetooth 5.0; die CSA nennt Thread und Bluetooth.",
+    "matter": "Die CSA führt das Smart Lock U300 von Lumi United (Aqara): Matter 1.2, zertifiziert am 2024-06-04, Produkt-ID 0x2801, Matter über Thread. Der Eintrag nennt keine Region.",
+    "hubRequired": "Von keiner offiziellen Quelle, die wir sehen konnten, geklärt. Datentabellen von Händlern sagen, ein Hub sei nötig; Pressemeldungen sagen, die Aqara-App funktioniere ohne, und andere Matter-Plattformen brauchten einen Thread-Border-Router.",
+    "localControl": "Keine Aqara-Quelle nennt reine lokale Steuerung.",
+    "lockFit": "Aqaras erstes Hebelschloss; die FAQ sagt, es ersetze gängige Klinken- oder Knaufschlösser mit einfacher Falle.",
+    "keypad": "Tastenfeld an der Außenblende, die Aqara mit IPX4 einstuft.",
+    "power": "Händler und Tests nennen vier AA-Batterien (bis zu 10 Monate) plus einen USB-C-Notfallanschluss; eine offizielle Aqara-Seite, die das nennt, fanden wir nicht.",
+    "compatibility.apple_home": "Matter über Thread. Braucht eine Apple-Steuerzentrale mit Thread (HomePod mini, HomePod (2. Generation) oder Apple TV 4K).",
+    "compatibility.google_home": "Braucht einen Thread-Border-Router, der Matter unterstützt.",
+    "compatibility.alexa": "Braucht einen Thread-Border-Router, der Matter unterstützt.",
+    "compatibility.smartthings": "Braucht einen Thread-Border-Router, der Matter unterstützt.",
+    "compatibility.home_assistant": "Keine Aqara- oder Home-Assistant-Dokumentationsseite, die wir fanden, nennt dieses Schloss. Die Matter-Integration funktioniert möglicherweise, unbestätigt."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Koppel den Aqara Temperature and Humidity Sensor T1 (TH-S02D) zuerst mit einem Aqara-Hub; direkt mit einem Smartphone verbindet er sich nicht. Er misst Temperatur, Luftfeuchtigkeit und Luftdruck (30–110 kPa) über Zigbee 3.0. Die Unterstützung für Apple Home, Google Home, Alexa, SmartThings und Home Assistant ist nicht bestätigt. Die Stromversorgung übernimmt eine CR2032-Zelle.",
+  "caveats": [
+    "Braucht einen Aqara-Hub; die gesehenen T1-Seiten von Aqara bestätigen die Unterstützung von Apple Home, Google Home, Alexa oder SmartThings nicht."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0.",
+    "matter": "Es wurde kein CSA-Eintrag gefunden. Aqara sagt, Matter-fähige Hubs wie der M3 könnten Aqara-Zigbee-Sensoren per Bridge anbinden, doch keine gesehene Aqara-Seite bestätigt das für den T1.",
+    "hubRequired": "Aqaras T1-FAQ sagt, der Sensor könne sich nicht direkt mit einem Smartphone verbinden: Füge zuerst einen Aqara-Hub hinzu und koppel den Sensor dann mit dem Hub.",
+    "localControl": "Keine gesehene Seite beschreibt einen lokalen Betrieb über den Hub.",
+    "senses": "Er misst auch den Luftdruck (30–110 kPa), den die Website nicht als Messart führt.",
+    "power": "Aqaras T1-Datenblatt nennt CR2032. Einige Aqara-Seiten zu anderen Temperatursensoren nennen CR2450.",
+    "compatibility.apple_home": "Aqaras Formulierung zu HomeKit über den Hub steht auf den Seiten zum älteren Temperature and Humidity Sensor (WSDCGQ11LM), nicht auf denen des T1. Händler führen HomeKit für den T1 auf, was allein nicht reicht.",
+    "compatibility.google_home": "Nur Händlerangebote sagen, dass Google Home funktioniert.",
+    "compatibility.alexa": "Nur Händlerangebote sagen, dass Alexa funktioniert.",
+    "compatibility.smartthings": "Nur Händlerangebote erwähnen SmartThings.",
+    "compatibility.home_assistant": "Die gesehene Home-Assistant-Dokumentation nennt keine Unterstützung für den Aqara T1. Ein allgemeiner Zigbee-Koordinator ist dafür nicht dokumentiert."
+  },
+  "values": {
+    "power": "CR2032"
+  }
+}

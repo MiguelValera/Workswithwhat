@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Eve Thermo (5th generation) è una testina per valvola di radiatore che, secondo Eve, funziona in locale, senza cloud, abbonamento né registrazione. Usa Matter su Thread ed è elencata per Apple Home, Google Home, Alexa, SmartThings e Home Assistant. La tua piattaforma richiede un hub che sia sia controller Matter sia border router Thread. Si adatta alle valvole M30 × 1,5 e gli adattatori Danfoss RA, RAV e RAVL sono inclusi.",
+  "caveats": ["Richiede un hub della tua piattaforma con funzioni di controller Matter e border router Thread; non serve nessun bridge Eve.", "Eve dice che le programmazioni sul dispositivo non sono supportate su Alexa o SmartThings e richiedono l'app Eve."],
+  "notes": {
+    "radios": "La CSA indica Thread e Bluetooth per Eve Thermo.",
+    "matter": "Eve ha lanciato la 5th generation a dicembre 2025 con Matter su Thread. La scheda CSA citata (firmware 3.6.5, certificata il 21 nov 2025, Matter 1.4.1) corrisponde a quel lancio; una scheda affine con un altro product ID ha lo stesso firmware.",
+    "hubRequired": "Non serve nessun bridge Eve, ma Eve dice che serve un hub della tua piattaforma con funzioni di controller Matter e border router Thread.",
+    "localControl": "Eve dice che funziona in locale senza cloud, abbonamento né registrazione, e che le programmazioni sono salvate sulla valvola stessa.",
+    "systems": "Eve dice che oltre il 90 percento dei radiatori si adatta senza adattatore. Eve fornisce solo gli adattatori Danfoss RA, RAV e RAVL; le altre valvole richiedono un adattatore di terze parti.",
+    "power": "Recensioni e rivenditori dicono 2 × AA, ma nessuna pagina Eve vista nella ricerca lo ha confermato.",
+    "compatibility.apple_home": "Eve dice che la prima piattaforma richiede un hub con funzioni sia di controller Matter sia di border router Thread.",
+    "compatibility.google_home": "Eve elenca Google Home. Eve dice che le sue programmazioni sul dispositivo richiedono l'app Eve, che per gli utenti di Google Home è su Android.",
+    "compatibility.alexa": "Eve elenca Alexa tramite Matter, con i dispositivi Echo come hub. Eve dice che le programmazioni sul dispositivo non sono supportate su Alexa.",
+    "compatibility.smartthings": "Eve elenca Samsung SmartThings tramite Matter. Eve dice che le programmazioni sul dispositivo non sono supportate su SmartThings.",
+    "compatibility.home_assistant": "La pagina di Home Assistant su Eve elenca Eve Thermo come dispositivo Matter, gestito in locale tramite l'integrazione Matter. Serve un border router Thread."
+  },
+  "values": {
+    "systems": "Valvole M30 × 1,5; adattatori Danfoss RA, RAV, RAVL inclusi"
+  }
+}

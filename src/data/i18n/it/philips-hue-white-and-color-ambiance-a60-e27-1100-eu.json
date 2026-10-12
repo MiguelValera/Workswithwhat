@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Abbina la Philips Hue White and Colour Ambiance A60 europea a un Hue Bridge e funziona con Apple Home, Google Home, Alexa, SmartThings e Home Assistant. Alexa, Google e Home Assistant passano dalle integrazioni di Hue; Apple Home e SmartThings richiedono il Bridge. Da sola, la lampadina funziona via Bluetooth dall'app Hue. È l'EAN 8720169364066, una lampadina E27 a colori data per 1100 lumen a 4000 K. Matter non è confermato per questo EAN.",
+  "caveats": ["Apple Home e SmartThings richiedono un Hue Bridge; l'abbinamento Matter diretto non è confermato per questo EAN.", "La pagina europea del prodotto Hue elenca Alexa e Google Home sotto 'Hue Bridge required'; il controllo vocale senza bridge è descritto solo nelle FAQ statunitensi di Hue.", "La modalità Bluetooth arriva al massimo a circa 10 luci in una stanza e non ha accesso da remoto.", "Una vecchia lampadina Hue E27 a colori venduta anch'essa come '1100' (EAN 8719514291171) è data fino a 1055 lm, quindi controlla l'EAN sulla confezione."],
+  "notes": {
+    "radios": "Hue elenca Bluetooth e Zigbee per questo EAN. La scheda Matter CSA 1100lm A19/A60 indica anche un trasporto Thread, ma non possiamo legarla a questo EAN, quindi qui Thread non è elencato.",
+    "matter": "Le fonti ufficiali non concordano. La scheda CSA 'White and Color Ambiance 1100lm A19/A60' indica trasporto Thread e Bluetooth (Matter 1.3), ma la pagina di Hue per questo EAN elenca solo Bluetooth e Zigbee. La guida di Hue offre Matter anche tramite l'Hue Bridge.",
+    "hubRequired": "Il controllo di base funziona via Bluetooth dall'app Hue (fino a 10 luci, una stanza). Serve un Hue Bridge per Apple Home, SmartThings, l'accesso da remoto e le installazioni più grandi.",
+    "localControl": "Il controllo Bluetooth da telefono non richiede internet; l'Hue Bridge offre anche una API locale che usa Home Assistant.",
+    "colorType": "Colori pieni più bianco regolabile; Hue indica un intervallo di 1000–20000 K.",
+    "lumens": "1100 lm a 4000 K per l'EAN 8720169364066. La vecchia lampadina E27 a colori di Hue venduta come '1100' (EAN 8719514291171) è data fino a 1055 lm; controlla l'EAN sulla confezione.",
+    "compatibility.apple_home": "La pagina del prodotto Hue elenca Apple Home sotto 'Hue Bridge required'; il Bridge si collega via HomeKit o Matter. Se questa lampadina è il modello Thread elencato dalla CSA, potrebbe abbinarsi direttamente anche via Matter; non confermato.",
+    "compatibility.google_home": "Funziona tramite l'integrazione Google Home di Hue. Le FAQ (statunitensi) di Hue dicono che le lampadine Bluetooth funzionano senza bridge solo con speaker e display Google Nest; la pagina europea elenca Google sotto 'Hue Bridge required'.",
+    "compatibility.alexa": "Funziona tramite l'integrazione Alexa di Hue. Le FAQ (statunitensi) di Hue dicono che le lampadine Bluetooth si possono abbinare ai dispositivi Echo compatibili senza Bridge; la pagina europea elenca Alexa sotto 'Hue Bridge required'.",
+    "compatibility.smartthings": "La pagina del prodotto Hue elenca SmartThings sotto 'Hue Bridge required'. L'abbinamento Matter diretto non è confermato per questo EAN (vedi Matter).",
+    "compatibility.home_assistant": "Integrazione Hue ufficiale (tramite Hue Bridge) e integrazione Hue BLE ufficiale (2025.12, Bluetooth senza bridge). La documentazione BLE cita modelli Hue specifici e dice che gli altri dovrebbero funzionare; questo EAN non è citato."
+  },
+  "via": {"apple_home": "Philips Hue Bridge", "smartthings": "Philips Hue Bridge"}
+}

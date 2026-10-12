@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Google Home ist die Haupt-App des Nest Learning Thermostat (4. Generation), eines US-Wandthermostats mit WLAN und Matter-Zertifizierung. Dieser Matter-Eintrag ist sein Weg zu Apple Home, und Home Assistant hat ebenfalls eine offizielle Nest-Integration. Alexa funktioniert über Googles Skill Nest, SmartThings ist nicht bestätigt. In den meisten Haushalten läuft er ohne C-Draht und deckt die meisten 24-V-Anlagen ab.",
+  "caveats": [
+    "Die Einrichtung erfordert die Google-Home-App.",
+    "Google sagt, Anlagen nur zum Heizen, nur zum Kühlen, mit Zonen und mit Wärmepumpe brauchten einen C-Draht oder Nest Power Connector; sein Prüftool ist g.co/nest/works.",
+    "Google begrenzt einen Thermostat auf 5 Matter-Apps, und Apple Home braucht außerdem eine Apple-Steuerzentrale.",
+    "Die Unterstützung von SmartThings ist nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Googles Daten zur 4. Generation führen WLAN 802.11n (2,4/5 GHz). Keine gesehene Google-Seite führt ein Thread-Funkmodul für dieses Modell, daher bleibt es draußen.",
+    "matter": "Die CSA führt die 4. Generation als Matter-zertifiziert über WLAN (Firmware 2.3, Matter 1.4, Oktober 2025; ein früherer Eintrag von 2024 deckt Firmware 2.1 ab). Google sagt, sie funktioniere mit Google Home und anderen Matter-fähigen Apps.",
+    "hubRequired": "Verbindet sich über WLAN und wird in der Google-Home-App eingerichtet; keine Bridge nötig.",
+    "localControl": "Keine Herstellerquelle sagt, was ohne Internet funktioniert. Die Nest-Integration von Home Assistant ist cloudbasiert.",
+    "thermostatType": "Wandthermostat.",
+    "systems": "Google führt die meisten 24-V-Anlagen auf (Gas, Strom, Öl, Umluft, Wärmepumpe, Flächenheizung). Prüfe deine mit g.co/nest/works.",
+    "power": "Googles Datenblattseite sagt, er laufe in den meisten Haushalten ohne C-Draht und in Ausnahmefällen (unter 1%) werde ein C-Draht oder Nest Power Connector gebraucht. Googles Produktseite ergänzt, dass Anlagen nur zum Heizen, nur zum Kühlen, mit Zonen und mit Wärmepumpe einen brauchen.",
+    "compatibility.apple_home": "Über Matter: Füge ihn zuerst zu Google Home hinzu und verknüpfe ihn dann mit Apple Home. Google begrenzt einen Thermostat auf 5 Matter-Apps. Braucht eine Apple-Steuerzentrale.",
+    "compatibility.google_home": "Wird in der Google-Home-App eingerichtet und gesteuert.",
+    "compatibility.alexa": "Über Googles Skill Nest für Alexa, aktiviert aus der Google-Home-App. Googles Thermostat-Vergleich führt Works with Amazon Alexa für die 4. Generation.",
+    "compatibility.smartthings": "Keine Seite von Google oder Samsung führt dieses Modell. Nur ein Forenbeitrag bei SmartThings erwähnt einen Nest-Thermostat über Matter.",
+    "compatibility.home_assistant": "Offizielle Nest-Integration über die Smart Device Management API, die laut Google alle Nest-Thermostatmodelle unterstützt; Google verlangt einmalig 5 US-Dollar Gebühr für Device Access. Matter ist ein zweiter Weg."
+  },
+  "values": {
+    "power": "Kein C-Draht nötig in den meisten Haushalten",
+    "systems": "Die meisten 24-V-Anlagen, auch Wärmepumpen"
+  }
+}

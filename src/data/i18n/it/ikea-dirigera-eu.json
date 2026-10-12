@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "DIRIGERA è l'hub di IKEA per i prodotti Zigbee e Thread, e fa anche da controller Matter e border router Thread. I dispositivi IKEA arrivano su Apple Home, Google Home e Alexa tramite un'integrazione nell'app IKEA Home smart, e Home Assistant lo riconosce come bridge Matter. SmartThings non è confermato.",
+  "caveats": ["IKEA non cita nessuna integrazione con SmartThings e nessuna fonte ufficiale conferma che funzioni.", "IKEA non dice con precisione quali tipi di dispositivo passano dal bridge Matter dell'hub.", "L'hub si collega al router con il cavo di rete in dotazione."],
+  "notes": {
+    "radios": "Certificato Zigbee 3.0; IKEA dice che è un Thread Border Router; si collega al router con il cavo di rete in dotazione. Il Wi-Fi per i dispositivi non è confermato da una fonte ufficiale.",
+    "matter": "La CSA elenca il DIRIGERA Matter Controller (Matter 1.4, 2025). La CSA non indica un trasporto; l'hub si collega al router via cavo, quindi Matter passa su Ethernet.",
+    "hubRequired": "È l'hub: IKEA lo chiama il cuore del sistema IKEA Home smart.",
+    "localControl": "Una FAQ di IKEA dice che l'hub ha bisogno del router ma non di una connessione a internet, ma quella FAQ è comparsa solo su un host IKEA non pubblico, quindi non è citata.",
+    "hubType": "App propria: IKEA Home smart.",
+    "matterBridge": "IKEA dice che i prodotti del sistema IKEA Home smart possono usare l'hub come bridge verso un sistema Matter. Non è indicato del tutto quali tipi di dispositivo passino.",
+    "threadBorderRouter": "La pagina del prodotto IKEA chiama l'hub controller Matter e Thread Border Router (aggiunto con un aggiornamento del firmware).",
+    "maxDevices": "Non indicato nelle pagine ufficiali citate qui.",
+    "compatibility.apple_home": "IKEA dice che Apple Home si collega tramite un'integrazione nell'app IKEA Home smart. L'hub è anche un bridge Matter.",
+    "compatibility.google_home": "Si configura tramite un'integrazione nell'app IKEA Home smart. L'hub è anche un bridge Matter.",
+    "compatibility.alexa": "Si configura tramite un'integrazione nell'app IKEA Home smart. L'hub è anche un bridge Matter.",
+    "compatibility.smartthings": "IKEA non cita nessuna integrazione con SmartThings. L'hub è un bridge Matter certificato, ma nessuna fonte ufficiale conferma SmartThings.",
+    "compatibility.home_assistant": "Funziona come bridge Matter: la CSA certifica DIRIGERA per Matter e IKEA dice che collega i suoi dispositivi ai controller Matter."
+  }
+}

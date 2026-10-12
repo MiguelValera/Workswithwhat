@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Govee nennt für die H5086 nur Alexa und Google Assistant, beide laufen über Govees Cloud. Apple Home, SmartThings und Matter sind für dieses Modell nicht aufgeführt. Es ist eine Steckdose mit 2,4-GHz-WLAN und Bluetooth, ausgelegt auf 15 A / 1800 W bei 120 V, ohne Hub über die Govee-Home-App steuerbar, und sie misst dort den Verbrauch. Govees Matter-Steckdose ist die separate Smart Plug Pro B5085.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Keine bestätigte Unterstützung für Apple Home oder Matter; Govee gibt Matter nur der separaten Smart Plug Pro (B5085).",
+    "Keine offizielle Home-Assistant-Integration; benutzerdefinierte Community-Integrationen funktionieren unterschiedlich gut.",
+    "Govees dokumentierte Integrationen laufen über die Cloud, und zur lokalen Steuerung macht Govee keine Aussage.",
+    "Laut Govee darf eine Steckdosenleiste nur angeschlossen werden, wenn die Gesamtlast innerhalb von 1800 W bleibt."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN plus Bluetooth.",
+    "matter": "Govees H5086-Seite und FAQ erwähnen Matter nicht; Govees Vergleichstabelle gibt Matter nur der separaten Smart Plug Pro (B5085). Keine Quelle sagt ausdrücklich, dass die H5086 kein Matter hat.",
+    "hubRequired": "Govee nennt 2,4-GHz-WLAN plus Bluetooth als Verbindung und die Govee-Home-App zur Steuerung; ein Hub wird nicht aufgeführt.",
+    "localControl": "Keine offizielle Aussage zur lokalen Steuerung gefunden; Govees dokumentierte Integrationen laufen über die Cloud.",
+    "energyMonitoring": "Zeigt den Energieverbrauch in der Govee-Home-App.",
+    "maxLoadWatts": "15 A bei 120 V, maximal 1800 W. Laut Govee darf eine Steckdosenleiste angeschlossen werden, wenn die Gesamtlast innerhalb dieser Angabe bleibt.",
+    "compatibility.apple_home": "Govee nennt für die H5086 nur Alexa und Google Assistant, schließt Matter aber nicht ausdrücklich aus, deshalb können wir sie nicht als nicht unterstützt einstufen.",
+    "compatibility.google_home": "Govee nennt Google Assistant; das läuft über Govees Cloud.",
+    "compatibility.alexa": "Govee nennt Alexa; das läuft über Govees Cloud.",
+    "compatibility.smartthings": "Keine gefundene Govee- oder SmartThings-Seite behandelt diese Steckdose.",
+    "compatibility.home_assistant": "Nach unseren Funden deckt keine offizielle Home-Assistant-Integration diese Steckdose ab; es gibt benutzerdefinierte Community-Integrationen mit gemischten Ergebnissen."
+  }
+}

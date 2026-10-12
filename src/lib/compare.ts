@@ -24,6 +24,7 @@ import {
 } from './devices';
 import { marketOf, type Market } from './markets';
 import { capitalize as cap, pick, type Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 
 /** Indexed comparisons started from each device (it also appears in its rivals' picks). */
 export const RIVALS_PER_DEVICE = 3;
@@ -75,7 +76,7 @@ export function compareRows(a: Device, b: Device, lang: Lang, ta?: DeviceText, t
     { key: 'matter', label: 'Matter', a: matter(a), b: matter(b), sa: a.data.matter.sources, sb: b.data.matter.sources },
     {
       key: 'radios',
-      label: 'Radio',
+      label: ui(lang).radio,
       a: radioList(a.data.radios.value, lang) || yesNo(null),
       b: radioList(b.data.radios.value, lang) || yesNo(null),
       sa: a.data.radios.sources,
@@ -83,7 +84,7 @@ export function compareRows(a: Device, b: Device, lang: Lang, ta?: DeviceText, t
     },
     {
       key: 'hubRequired',
-      label: T({ en: 'Hub required', es: 'Necesita hub' }),
+      label: T({ en: 'Hub required', es: 'Necesita hub', de: 'Hub nötig', fr: 'Hub nécessaire', it: 'Hub necessario' }),
       a: yesNo(a.data.hubRequired.value),
       b: yesNo(b.data.hubRequired.value),
       sa: a.data.hubRequired.sources,
@@ -91,7 +92,7 @@ export function compareRows(a: Device, b: Device, lang: Lang, ta?: DeviceText, t
     },
     {
       key: 'localControl',
-      label: T({ en: 'Local control', es: 'Control local' }),
+      label: T({ en: 'Local control', es: 'Control local', de: 'Lokale Steuerung', fr: 'Contrôle local', it: 'Controllo locale' }),
       a: yesNo(a.data.localControl.value),
       b: yesNo(b.data.localControl.value),
       sa: a.data.localControl.sources,
@@ -163,9 +164,56 @@ export const compareName = (c: Comparison) => `${c.a.data.name} vs ${c.b.data.na
 // Built only from the verified statuses, like answerFor(), so the page, its FAQ data and
 // llms.txt say the same thing.
 
+// How one device reaches an ecosystem, as a verb phrase; `works` is the verb it starts
+// with, so "both work with X directly" can reuse the rest.
+const HOW: Record<'de' | 'fr' | 'it', { works: string; direct: string; matter: string; thread: string; via: (v: string) => string; no: string; unknown: string }> = {
+  de: {
+    works: 'funktioniert',
+    direct: 'direkt',
+    matter: 'über Matter',
+    thread: 'über Matter per Thread (braucht einen Thread-Border-Router)',
+    via: (v) => `über ${v}`,
+    no: 'ist nicht kompatibel',
+    unknown: 'ist nicht bestätigt',
+  },
+  fr: {
+    works: 'fonctionne',
+    direct: 'directement',
+    matter: 'via Matter',
+    thread: 'via Matter en Thread (nécessite un routeur de bordure Thread)',
+    via: (v) => `via ${v}`,
+    no: 'n’est pas compatible',
+    unknown: 'n’est pas confirmé',
+  },
+  it: {
+    works: 'funziona',
+    direct: 'direttamente',
+    matter: 'tramite Matter',
+    thread: 'tramite Matter su Thread (serve un border router Thread)',
+    via: (v) => `tramite ${v}`,
+    no: 'non è compatibile',
+    unknown: 'non è confermato',
+  },
+};
+
 const how = (d: Device, e: Ecosystem, lang: Lang, words: DeviceText) => {
   const c = d.data.compatibility[e];
   const thread = c.status === 'matter' && d.data.matter.transport === 'thread';
+  if (lang === 'de' || lang === 'fr' || lang === 'it') {
+    const h = HOW[lang];
+    switch (c.status) {
+      case 'native':
+        return `${h.works} ${h.direct}`;
+      case 'matter':
+        return `${h.works} ${thread ? h.thread : h.matter}`;
+      case 'hub':
+        return `${h.works} ${h.via(words.via(e) ?? '')}`;
+      case 'no':
+        return h.no;
+      default:
+        return h.unknown;
+    }
+  }
   if (lang === 'es') {
     switch (c.status) {
       case 'native':
@@ -196,6 +244,54 @@ const how = (d: Device, e: Ecosystem, lang: Lang, words: DeviceText) => {
 
 const the = (d: Device) => `the ${d.data.name}`;
 
+// Pair wording for German, French and Italian; `f` is true when the category's noun is
+// feminine (French and Italian agree "aucune", "entrambe"; German needs no agreement).
+const PAIR = {
+  de: (f: boolean) => ({
+    both: 'Beide',
+    bothWork: (x: string) => `Beide funktionieren mit ${x}`,
+    neitherWorks: (x: string) => `Keines der beiden funktioniert mit ${x}`,
+    neitherConfirmed: (x: string) => `Für keines der beiden ist ${x} bestätigt`,
+    only: (n: string) => `Nur ${n}`,
+    confirmedOnly: (n: string) => `Nur für ${n} bestätigt`,
+    worksWith: (n: string, x: string) => `${n} funktioniert mit ${x}`,
+    notOther: (n: string) => `${n} nicht`,
+    unconfirmedFor: (n: string) => `bei ${n} nicht bestätigt`,
+    unknownBoth: 'Bei beiden nicht bestätigt: Wir haben keine offizielle Quelle gefunden, die es bestätigt oder ausschließt.',
+    tail: 'Matter, Ökosysteme, Hub und technische Daten im direkten Vergleich, mit Quellen.',
+    f,
+  }),
+  fr: (f: boolean) => ({
+    both: 'Les deux',
+    bothWork: (x: string) => `Les deux fonctionnent avec ${x}`,
+    neitherWorks: (x: string) => `${f ? 'Aucune' : 'Aucun'} des deux ne fonctionne avec ${x}`,
+    neitherConfirmed: (x: string) => `${f ? 'Aucune' : 'Aucun'} des deux n’a de compatibilité confirmée avec ${x}`,
+    only: (n: string) => `Uniquement ${n}`,
+    confirmedOnly: (n: string) => `Confirmé uniquement pour ${n}`,
+    worksWith: (n: string, x: string) => `${n} fonctionne avec ${x}`,
+    notOther: (n: string) => `${n} non`,
+    unconfirmedFor: (n: string) => `pour ${n}, ce n’est pas confirmé`,
+    unknownBoth: 'Non confirmé pour les deux : nous n’avons trouvé aucune source officielle qui le confirme ou l’exclue.',
+    tail: 'Matter, écosystèmes, hub et caractéristiques côte à côte, avec les sources.',
+    f,
+  }),
+  it: (f: boolean) => ({
+    both: f ? 'Entrambe' : 'Entrambi',
+    bothWork: (x: string) => `${f ? 'Entrambe' : 'Entrambi'} funzionano con ${x}`,
+    neitherWorks: (x: string) => `${f ? 'Nessuna delle due' : 'Nessuno dei due'} funziona con ${x}`,
+    neitherConfirmed: (x: string) => `${f ? 'Nessuna delle due' : 'Nessuno dei due'} ha compatibilità confermata con ${x}`,
+    only: (n: string) => `Solo ${n}`,
+    confirmedOnly: (n: string) => `Confermato solo per ${n}`,
+    worksWith: (n: string, x: string) => `${n} funziona con ${x}`,
+    notOther: (n: string) => `${n} no`,
+    unconfirmedFor: (n: string) => `per ${n} non è confermato`,
+    unknownBoth: 'Non confermato per nessuno dei due: non abbiamo trovato nessuna fonte ufficiale che lo confermi o lo escluda.',
+    tail: 'Matter, ecosistemi, hub e specifiche a confronto, con le fonti.',
+    f,
+  }),
+};
+const pairWords = (lang: 'de' | 'fr' | 'it', c: { a: Device }) => PAIR[lang](catText(categoryOf(c.a.data), lang).gender === 'f');
+
 /** "Which works with Apple Home?" answered for a pair. */
 export function compareAnswer(c: Comparison, e: Ecosystem, lang: Lang, wa: DeviceText, wb: DeviceText): string {
   const { a, b } = c;
@@ -205,6 +301,24 @@ export function compareAnswer(c: Comparison, e: Ecosystem, lang: Lang, wa: Devic
   const [wA, wB] = [worksWith(a, e), worksWith(b, e)];
   const f = lang === 'es' && catText(categoryOf(a.data), 'es').gender === 'f';
   // "only X" needs the other side to be a sourced "no"; an unconfirmed one isn't a no
+  if (lang === 'de' || lang === 'fr' || lang === 'it') {
+    const w = pairWords(lang, c);
+    const verb = `${HOW[lang].works} `;
+    if (x === y && ha === hb) {
+      if (x === 'no') return `${w.neitherWorks(label)}.`;
+      if (x === 'unknown') return w.unknownBoth;
+      return `${w.bothWork(label)} ${ha.slice(verb.length)}.`;
+    }
+    const lead =
+      wA && wB
+        ? w.both
+        : wA || wB
+          ? (wA ? y : x) === 'no'
+            ? w.only((wA ? a : b).data.name)
+            : w.confirmedOnly((wA ? a : b).data.name)
+          : w.neitherConfirmed(label);
+    return `${lead}. ${a.data.name}: ${ha}; ${b.data.name}: ${hb}.`;
+  }
   if (lang === 'es') {
     if (x === y && ha === hb) {
       if (x === 'no') return `${f ? 'Ninguna' : 'Ninguno'} funciona con ${label}.`;
@@ -263,7 +377,20 @@ export function summaryLines(c: Comparison, lang: Lang) {
   const [A, B] = [c.a.data.name, c.b.data.name];
   const f = lang === 'es' && catText(categoryOf(c.a.data), 'es').gender === 'f';
   const lines: [Ecosystem[], string][] =
-    lang === 'es'
+    lang === 'de' || lang === 'fr' || lang === 'it'
+      ? (() => {
+          const w = pairWords(lang, c);
+          return [
+            [s.both, `${w.bothWork(n(s.both))}.`],
+            [s.onlyA, `${w.worksWith(A, n(s.onlyA))}; ${w.notOther(B)}.`],
+            [s.onlyB, `${w.worksWith(B, n(s.onlyB))}; ${w.notOther(A)}.`],
+            [s.confirmedA, `${w.worksWith(A, n(s.confirmedA))}; ${w.unconfirmedFor(B)}.`],
+            [s.confirmedB, `${w.worksWith(B, n(s.confirmedB))}; ${w.unconfirmedFor(A)}.`],
+            [s.neither, `${w.neitherWorks(n(s.neither))}.`],
+            [s.unconfirmed, `${w.neitherConfirmed(n(s.unconfirmed))}.`],
+          ] as [Ecosystem[], string][];
+        })()
+      : lang === 'es'
       ? [
           [s.both, `${f ? 'Las dos' : 'Los dos'} funcionan con ${n(s.both)}.`],
           [s.onlyA, `Solo ${A} funciona con ${n(s.onlyA)}; ${B} no.`],
@@ -290,6 +417,17 @@ export function compareDescription(c: Comparison, lang: Lang) {
   const { both, onlyA, onlyB, confirmedA, confirmedB } = compareSummary(c);
   const names = (es: Ecosystem[]) => listJoin(es.map((e) => ECOSYSTEM_LABELS[e]), lang);
   const parts: string[] = [];
+  if (lang === 'de' || lang === 'fr' || lang === 'it') {
+    const w = pairWords(lang, c);
+    const [A, B] = [c.a.data.name, c.b.data.name];
+    if (both.length) parts.push(w.bothWork(names(both)));
+    if (onlyA.length) parts.push(`${w.worksWith(A, names(onlyA))}, ${w.notOther(B)}`);
+    if (onlyB.length) parts.push(`${w.worksWith(B, names(onlyB))}, ${w.notOther(A)}`);
+    if (confirmedA.length) parts.push(`${names(confirmedA)}: ${w.confirmedOnly(A)}`);
+    if (confirmedB.length) parts.push(`${names(confirmedB)}: ${w.confirmedOnly(B)}`);
+    const lead = parts.length ? `${cap(parts.join('; '))}. ` : '';
+    return `${lead}${A} vs ${B}: ${w.tail}`;
+  }
   if (lang === 'es') {
     if (both.length) parts.push(`los dos funcionan con ${names(both)}`);
     if (onlyA.length) parts.push(`solo ${c.a.data.name} con ${names(onlyA)}`);

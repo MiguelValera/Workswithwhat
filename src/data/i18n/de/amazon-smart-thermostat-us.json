@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Für Alexa gebaut: Der Amazon Smart Thermostat (S6ED3R) wird in der Alexa-App über 2,4-GHz-WLAN eingerichtet und funktioniert auch mit der Ring-App. Das US-Wandthermostat deckt die meisten 24-V-Anlagen ab, auch Wärmepumpen, braucht aber unter Umständen einen C-Draht oder ein Adapter-Set. Unterstützung für Matter, Apple Home oder Google Home wird nicht genannt.",
+  "caveats": [
+    "Braucht unter Umständen einen C-Draht oder ein separat erhältliches Netzadapter-Set.",
+    "Nicht kompatibel mit 110-240-V-Anlagen wie elektrischer Konvektorheizung.",
+    "Nur 2,4-GHz-WLAN.",
+    "Unterstützung für Apple Home, Google Home und Matter wird nicht genannt."
+  ],
+  "notes": {
+    "radios": "Nur 2,4 GHz, 802.11 b/g/n; kein 5 GHz.",
+    "matter": "Keine Seite von Amazon oder Ring nennt Matter, und die gefundenen CSA-Einträge für „Smart Thermostat“ gehören zu Tuya und Meross. Fehlende Erwähnung ist kein Nein.",
+    "hubRequired": "Er verbindet sich mit 2,4-GHz-WLAN und wird in der Alexa-App eingerichtet, doch weder Amazon noch Ring sagen ausdrücklich, dass kein Hub oder Echo nötig ist. Für Sprachsteuerung braucht es ein Alexa-fähiges Gerät.",
+    "localControl": "Amazon sagt nicht, was ohne Internet funktioniert.",
+    "thermostatType": "Wandthermostat.",
+    "systems": "Deckt Umluft-, Wärmepumpen- und Flächenheizungs-Kesselanlagen mit 24 V ab. Nicht kompatibel mit 110-240-V-Anlagen wie elektrischer Konvektorheizung.",
+    "power": "Laut Ring braucht er unter Umständen einen C-Draht oder ein separat verkauftes Netzadapter-Set, und die meisten Haushalte haben einen C-Draht. Die Standby-Leistungsaufnahme beträgt 0,89 W.",
+    "compatibility.apple_home": "Keine Seite von Amazon oder Ring erwähnt Apple Home, und eine Matter-Zertifizierung wurde nicht gefunden.",
+    "compatibility.google_home": "Keine Seite von Amazon oder Ring erwähnt Google Home, und eine Matter-Zertifizierung wurde nicht gefunden.",
+    "compatibility.alexa": "Wird in der Alexa-App eingerichtet; Sprachsteuerung braucht ein Alexa-fähiges Gerät. Funktioniert auch mit der Ring-App.",
+    "compatibility.smartthings": "Keine offizielle Seite erwähnt SmartThings.",
+    "compatibility.home_assistant": "Für diesen Thermostat wurde keine offizielle Home-Assistant-Integration gefunden."
+  },
+  "values": {
+    "power": "C-Draht (24 V) oder Adapter-Set",
+    "systems": "Die meisten 24-V-HLK-Anlagen, auch Wärmepumpen"
+  }
+}

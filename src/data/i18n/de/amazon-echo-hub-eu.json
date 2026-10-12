@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Mit dem Echo Hub gekoppelte Geräte erscheinen in Alexa, ganz ohne zusätzlichen Hub: Das 8-Zoll-Touch-Bedienfeld hat einen Zigbee-Hub und einen Thread-1.3-Border-Router eingebaut. Auch Matter-Geräte funktionieren über Alexa. Laut Amazon UK arbeiten ausgewählte Lampen, Schalter und Steckdosen auch bei Internetausfall weiter. Für Apple Home, Google Home, SmartThings und Home Assistant bestätigt keine offizielle Quelle, dass gekoppelte Geräte dort erscheinen.",
+  "caveats": [
+    "Die Matter-Unterstützung stützt sich auf Amazons Entwicklerdokumentation; ein CSA-Eintrag für den Echo Hub wurde nicht gefunden.",
+    "Der Echo Hub verbindet sich per WLAN mit dem Internet; Ethernet braucht einen kompatiblen PoE-Adapter.",
+    "Keine offizielle Seite zeigt, dass damit gekoppelte Geräte in Apple Home, Google Home, SmartThings oder Home Assistant erscheinen."
+  ],
+  "notes": {
+    "radios": "Amazons deutsche Ankündigung nennt einen eingebauten Hub mit Zigbee, Thread, Bluetooth und Matter sowie Internet per Funk oder Ethernet über einen optionalen PoE-Adapter; Amazon UK nennt die Funkverbindung WLAN. Ethernet wird nicht erfasst, weil es den Adapter braucht.",
+    "matter": "Amazons Matter-Dokumentation führt den Echo Hub als Matter-fähig. Ein CSA-Produkteintrag für den Echo Hub wurde nicht gefunden, ein Zertifikat ist also nicht bestätigt.",
+    "hubRequired": "Der Echo Hub ist der Hub. Amazons deutsche Ankündigung beschreibt einen eingebauten Smart-Home-Hub, und laut Amazon UK ist keine separate Bridge nötig.",
+    "localControl": "Laut Amazon UK funktionieren ausgewählte Geräte wie Lampen, Schalter und Steckdosen auch bei Internetausfall weiter. Amazons deutsche Ankündigung behandelt das nicht.",
+    "hubType": "Ein 8-Zoll-Touch-Bedienfeld für das Smart Home, für die Wand oder mit optionalem Ständer für die Arbeitsfläche.",
+    "compatibility.alexa": "Der Echo Hub steht auf Amazons Liste der Echo-Geräte mit eingebautem Zigbee-Hub, Zigbee-Geräte koppeln also direkt damit und erscheinen in Alexa. Auch Matter-Geräte zeigt er über Alexa an.",
+    "deviceProtocols": "Zigbee-Geräte koppeln mit dem eingebauten Hub; Thread versorgt Matter-over-Thread-Geräte.",
+    "matterBridge": "Amazons Matter-Dokumentation beschreibt den Echo als Matter-Administrator für Alexa, nicht als Bridge, die seine Geräte anderen Matter-Controllern zur Verfügung stellt.",
+    "threadBorderRouter": "Aufgeführt unter den Echo- und eero-Geräten mit eingebautem Thread-Border-Router, Thread-Version 1.3.",
+    "maxDevices": "In Amazons Quellen wurde kein Gerätelimit gefunden.",
+    "compatibility.apple_home": "Keine offizielle Quelle zeigt mit dem Echo Hub gekoppelte Geräte in Apple Home.",
+    "compatibility.google_home": "Keine offizielle Quelle zeigt mit dem Echo Hub gekoppelte Geräte in Google Home.",
+    "compatibility.smartthings": "Keine offizielle Quelle zeigt mit dem Echo Hub gekoppelte Geräte in SmartThings.",
+    "compatibility.home_assistant": "Keine offizielle Home-Assistant-Seite zeigt, dass mit dem Echo Hub gekoppelte Geräte dort erscheinen."
+  }
+}

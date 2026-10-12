@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Vier der fünf großen Plattformen erreichen die LIFX SuperColor A19 1100 lm (US) über LIFX' eigene Integrationen: Alexa, Google Home, SmartThings und Home Assistant, ohne Hub. Apple Home ist die Ausnahme. Es koppelt über Matter, und nur die Ausführung LCM4 dieser Lampe (Teil A19L4AE26) hat Matter. Die Lampe selbst ist eine Vollfarblampe mit E26-Sockel und 1100 Lumen, mit Weißtönen von 1500 bis 9000 K, über 2,4-GHz-WLAN. Home Assistant steuert sie lokal über das LIFX-LAN-Protokoll.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Apple Home braucht die Ausführung LCM4 (Teil A19L4AE26); zeigt die LIFX-App eine Firmware, die mit v3 beginnt, hat die Lampe kein Matter."
+  ],
+  "notes": {
+    "radios": "Nur 2,4-GHz-WLAN.",
+    "matter": "Dieser Datensatz ist die Ausführung LCM4, die LIFX' Matter-Liste als LHLA19E26US, Teil A19L4AE26, nennt. Ältere Geräte, deren Firmware mit v3 beginnt, haben kein Matter. Die CSA führt „LIFX SuperColor A19 (1100 lumens)“ unter Feit-SKUs, nicht unter dieser Modellnummer.",
+    "hubRequired": "Hier heißt das: Man braucht für die grundlegende App-Steuerung eine Bridge oder einen Hub. Sie verbindet sich direkt mit 2,4-GHz-WLAN und wird über die LIFX-App gesteuert.",
+    "localControl": "Die LIFX-Integration von Home Assistant spricht die Lampe im lokalen Netzwerk ohne die LIFX-Cloud an.",
+    "colorType": "Vollfarbe plus Weiß von 1500 bis 9000 K.",
+    "lumens": "1100 lm, als 75-W-Äquivalent verkauft; 11,5 W bei voller Helligkeit.",
+    "compatibility.apple_home": "Koppelt bei der Ausführung LCM4 über Matter mit Apple Home. Prüfe die Firmware-Version in der LIFX-App: Firmware v3 heißt kein Matter.",
+    "compatibility.google_home": "LIFX führt Google Home auf der Produktseite und hat eine Google-Home-Einrichtungsanleitung; sie kann auch über Matter koppeln.",
+    "compatibility.alexa": "LIFX führt Alexa auf der Produktseite und hat eine Alexa-Einrichtungsanleitung; sie kann auch über Matter koppeln.",
+    "compatibility.smartthings": "LIFX' Support-Anleitung verknüpft dein LIFX-Konto in der SmartThings-App. Die Ausführung LCM4 kann auch über Matter mit einem SmartThings-Hub koppeln.",
+    "compatibility.home_assistant": "Die offizielle LIFX-Integration steuert Lampen im lokalen Netzwerk (LIFX-LAN-Protokoll). Die Matter-Integration ist eine Alternative."
+  }
+}

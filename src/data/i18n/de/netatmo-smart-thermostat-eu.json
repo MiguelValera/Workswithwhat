@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Netatmos eigene Integrationen verbinden sein Smart Thermostat (EU) mit Apple Home, Google Home und Alexa, und Home Assistant hat eine offizielle Netatmo-Integration. Matter ist nicht bestätigt. Ein Netzrelais im Karton verbindet sich mit dem WLAN und schaltet einen Ein/Aus-Heizkessel, eine Wärmepumpe oder einen Ofen. Das Thermostat selbst läuft mit 3 × AAA und spricht per Funk mit dem Relais.",
+  "caveats": [
+    "Funktioniert nur mit Ein/Aus-Anlagen (potentialfreier Kontakt); OpenTherm-Kessel brauchen Netatmos separates modulierendes Thermostat.",
+    "Prüfe deinen Heizkessel vor dem Kauf auf check.netatmo.com.",
+    "Die Home-Assistant-Steuerung läuft über Netatmos Cloud.",
+    "Die Apple-Home-Steuerung von unterwegs braucht eine Steuerzentrale wie ein Apple TV."
+  ],
+  "notes": {
+    "radios": "Das Netzrelais verbindet sich mit dem WLAN; das Thermostat spricht über eine Langstrecken-Funkverbindung mit dem Relais, die nicht in unserer Funkliste steht.",
+    "matter": "Keine Quelle gefunden, die sagt, dass dieses Thermostat Matter hat. Netatmos neuere Reihe ORIGINAL ist ein anderes Produkt.",
+    "hubRequired": "Das Relais, das das Thermostat mit dem WLAN verbindet, liegt dem Thermostat bei. Nichts weiter wird separat verkauft.",
+    "localControl": "Die gesehenen Netatmo-Seiten beschreiben keine rein lokale Steuerung. Dass HomeKit lokal läuft, berichten nur Community-Beiträge.",
+    "systems": "Laut Netatmo ist eine Anlage kompatibel, wenn sie sich von einem Raumthermostat mit Ein/Aus-Kontakt (potentialfrei) steuern lässt, und verweist Käufer auf seinen Online-Checker. Das OpenTherm-Modell ist ein anderes Produkt.",
+    "power": "Das Thermostat läuft mit drei AAA-Alkalizellen; das Relais läuft mit Netzstrom.",
+    "compatibility.apple_home": "Wird mit dem HomeKit-Code am Relais oder auf dem Thermostat-Display gekoppelt. Laut Netatmo ist es kompatibel, wenn in der App Netatmo Energy das Menü Setup HomeKit für dein Relais erscheint. Die Fernsteuerung braucht eine Steuerzentrale wie ein Apple TV.",
+    "compatibility.google_home": "Netatmos Hilfecenter führt das Smart Thermostat als kompatibel mit Google Assistant.",
+    "compatibility.alexa": "Netatmos Hilfecenter führt das Smart Thermostat als kompatibel mit Alexa über den Skill Legrand-Netatmo-BTicino.",
+    "compatibility.smartthings": "Keine Netatmo- oder SmartThings-Quelle gefunden.",
+    "compatibility.home_assistant": "Offizielle Netatmo-Integration, die Netatmos Cloud nutzt und ein Netatmo-Konto braucht."
+  },
+  "values": {
+    "power": "3 × AAA",
+    "systems": "Ein/Aus-Kessel (potentialfreier Kontakt), Luft-Wasser-Wärmepumpen, Holz- oder Pelletöfen"
+  }
+}

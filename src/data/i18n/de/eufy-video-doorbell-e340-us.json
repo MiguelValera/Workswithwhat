@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Auf 8 GB eingebauten Speicher nimmt die eufy Video Doorbell E340 auf, der laut eufy etwa 90 Tage an Clips fasst, und wirbt damit, keine monatliche Gebühr zu brauchen. Alexa und Google Assistant funktionieren über die Integration eufy Security, mit eingeschränkten Funktionen. Apple Home ist ein klares Nein: Laut eufys eigenem Datenblatt wird HomeKit nicht unterstützt. Sie läuft mit einem wechselbaren Akku oder über die Klingelleitung, per 2,4-GHz-WLAN.",
+  "caveats": [
+    "WLAN nur mit 2,4 GHz.",
+    "Die Unterstützung von Alexa und Google Assistant ist eingeschränkt: kein Zwei-Wege-Gespräch und keine Bewegungsansagen; bei Google fehlen außerdem Ansagen bei Klingeldruck.",
+    "Laut eufy keine HomeKit-Unterstützung.",
+    "eufys Produktseite und das Datenblatt nennen unterschiedliche Mindestspannungen für den Kabelanschluss (8 V gegenüber 16 V)."
+  ],
+  "notes": {
+    "radios": "eufys US-Seite sagt, sie unterstütze nur 2,4-GHz-WLAN; das Datenblatt nennt 802.11 b/g/n.",
+    "matter": "Keine Matter-Angabe auf eufys Seiten, und in der Suche tauchte kein CSA-Zertifizierungseintrag für diese Türklingel auf.",
+    "hubRequired": "Die Türklingel zeichnet auf ihren eigenen 8-GB-Speicher auf. eufy sagt, sie funktioniere auch mit einer HomeBase S280 oder S380 (die S380 braucht Firmware 3.3.2.6 oder neuer), was optional ist.",
+    "localControl": "eufy sagt nicht, ob die Steuerung ohne die Cloud funktioniert. Die Aufzeichnung ist lokal, doch ob App- und Sprachsteuerung lokal sind, wurde nicht bestätigt.",
+    "power": "Wechselbarer Akku oder Klingelleitung. eufys US-Seite verlangt 8–24 V und über 10 VA; das Datenblatt nennt 16–24 V, 10 VA.",
+    "localStorage": "8 GB eMMC-Speicher in der Türklingel. eufy sagt, das reiche für etwa 90 Tage Video bei 30 Clips zu je 20 Sekunden am Tag.",
+    "subscription": "eufy bewirbt die Türklingel als ohne Abo nutzbar; ob optionale kostenpflichtige Tarife existieren, wurde nicht geprüft.",
+    "compatibility.apple_home": "eufys Datenblatt führt Works with HomeKit für die E340 mit N, und die FAQ sagt, HomeKit werde derzeit nicht unterstützt.",
+    "compatibility.google_home": "Google Assistant funktioniert über die Integration eufy Security. eufys Datenblatt führt nur das Streaming per Sprachbefehl auf; Zwei-Wege-Gespräch, Bewegungsansagen und Ansagen bei Klingeldruck sind als nicht unterstützt aufgeführt. Google-Home-Lautsprecher können nicht als Klingel dienen.",
+    "compatibility.alexa": "Verknüpft über den eufy-Security-Skill für Alexa. Das Datenblatt führt Streaming per Sprachbefehl und Ansagen bei Klingeldruck als unterstützt auf; Zwei-Wege-Gespräch und Bewegungsansagen sind als nicht unterstützt aufgeführt. Echo-Geräte können als Klingel dienen.",
+    "compatibility.smartthings": "eufys allgemeiner Artikel zu Türklingeln markiert SmartThings als nicht unterstützt, nennt die E340 aber nicht, daher wird es nicht als festes Nein gewertet.",
+    "compatibility.home_assistant": "eufys Liste der Plattformen von Drittanbietern markiert Home Assistant als nicht unterstützt, doch dieser Artikel bezieht sich nicht eindeutig auf die E340, daher wird es nicht als festes Nein gewertet. Community-Integrationen existieren, sind aber inoffiziell."
+  },
+  "values": {
+    "power": "Wiederaufladbarer Akku oder kabelgebunden",
+    "subscription": "Keines nötig (keine monatliche Gebühr)"
+  }
+}

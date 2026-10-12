@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Aqara-Zigbee-Geräte bindet der Hub M3 über Matter in Apple Home, Google Home, Alexa, SmartThings und Home Assistant ein. Er ist außerdem ein Thread-Border-Router mit eingebautem IR-Sender, und laut Aqara laufen Automationen lokal auf dem Hub. Ob der M3 selbst ein Matter-Zertifikat trägt, ist unbestätigt; sein CSA-Eintrag gilt für Zigbee 3.0.",
+  "caveats": [
+    "Einige Aqara-Zigbee-Geräte haben keinen Matter-Gerätetyp und werden nicht per Bridge angebunden.",
+    "Der CSA-Eintrag des M3 ist ein Zigbee-3.0-Zertifikat, und keine Quelle bestätigte ein Matter-Zertifikat, das ihn nennt.",
+    "Push-Benachrichtigungen, Wetter und Geofencing brauchen weiterhin die Cloud, auch wenn Automationen lokal laufen.",
+    "Aqara nennt kein offizielles Gerätelimit; Händler nennen 127 oder 128."
+  ],
+  "notes": {
+    "radios": "Aqaras Pressemitteilung zur Markteinführung nennt Thread, Zigbee, WLAN, Bluetooth und IR, mit Dualband-WLAN und einem PoE-Ethernet-Anschluss. Die Modellnummer HM-G01D stammt nur von Händlern.",
+    "matter": "Der CSA-Eintrag des M3 ist ein Zigbee-3.0-Zertifikat. Das Software-Zertifikat Aqara Hub Platform der CSA deckt Aqara-Hubs ab, doch kein Ergebnis bestätigte, dass es den M3 nennt.",
+    "hubRequired": "Er ist der Hub; laut Aqaras FAQ kann er andere Aqara-Zigbee-Hubs anführen.",
+    "localControl": "Aqara sagt, Automationen laufen lokal auf dem Hub. Push-Benachrichtigungen, Wetter und Geofencing brauchen weiterhin die Cloud.",
+    "deviceProtocols": "Eingebauter IR-Sender; die CSA beschreibt untergeordnete Geräte mit Zigbee 3.0 und Bluetooth.",
+    "matterBridge": "Aqara sagt, Advanced Matter Bridging habe mit dem Hub M3 begonnen. Einige Aqara-Zigbee-Geräte haben keinen Matter-Gerätetyp und werden nicht per Bridge angebunden.",
+    "threadBorderRouter": "Aqaras FAQ und der CSA-Eintrag sagen beide, der Hub sei ein Thread-Border-Router.",
+    "maxDevices": "Keine Zahl auf einer offiziellen Seite bestätigt; Händler nennen 127 oder 128 Geräte.",
+    "compatibility.apple_home": "Über die Matter-Bridge des Hubs; Aqara nennt dieses Ökosystem für seine Advanced Matter Bridging. Nicht jedes Aqara-Zigbee-Gerät wird per Bridge angebunden.",
+    "compatibility.google_home": "Über die Matter-Bridge des Hubs; Aqara nennt dieses Ökosystem für seine Advanced Matter Bridging. Nicht jedes Aqara-Zigbee-Gerät wird per Bridge angebunden.",
+    "compatibility.alexa": "Über die Matter-Bridge des Hubs; Aqara nennt dieses Ökosystem für seine Advanced Matter Bridging. Nicht jedes Aqara-Zigbee-Gerät wird per Bridge angebunden.",
+    "compatibility.smartthings": "Über die Matter-Bridge des Hubs; Aqara nennt dieses Ökosystem für seine Advanced Matter Bridging. Nicht jedes Aqara-Zigbee-Gerät wird per Bridge angebunden.",
+    "compatibility.home_assistant": "Über die Matter-Bridge; Aqara ist Works-with-Home-Assistant-Partner für seine Matter-Produkte. Nicht jedes Aqara-Zigbee-Gerät wird per Bridge angebunden."
+  }
+}

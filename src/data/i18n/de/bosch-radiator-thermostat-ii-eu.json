@@ -1,0 +1,33 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Mit 2 × AA-Batterien läuft der Bosch Radiator Thermostat II, ein Zigbee-Heizkörperthermostat für Ventile mit M30 × 1,5 mm. Apple Home, Google Home und Alexa funktionieren alle über den Bosch Smart Home Controller II und die Bosch-App, und Bosch rät davon ab, ihn dauerhaft ohne diesen Controller zu betreiben. SmartThings und Home Assistant sind nicht bestätigt. Die Version [+M] mit Matter über Thread ist ein anderes Modell.",
+  "caveats": [
+    "Bosch rät davon ab, ihn dauerhaft ohne Smart Home Controller zu betreiben; ohne einen gibt es keine Firmware-Updates.",
+    "Die Version [+M] mit Matter über Thread ist ein anderes Modell; dieser Eintrag betrifft die reine Zigbee-Version.",
+    "Boschs Hilfeseite sagt, der Controller II unterstütze weder Matter noch Thread, während eine Produkt-FAQ sagt, er arbeite als Matter-Bridge; die beiden Seiten widersprechen sich.",
+    "Manche Ventile brauchen einen Adapter."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0 im 2,4-GHz-Band laut Kurzanleitung. Die neuere Variante [+M] ergänzt Thread; dieser Eintrag betrifft die reine Zigbee-Version.",
+    "matter": "Die reine Zigbee-Version ist selbst kein Matter-Gerät. Boschs Produkt-FAQ sagt, sie trete Matter-Systemen über den Controller II als Matter-Bridge bei, doch für dieses Modell fanden wir keinen CSA-Eintrag.",
+    "hubRequired": "Bosch rät davon ab, ihn dauerhaft ohne Smart Home Controller zu betreiben (keine Firmware-Updates), und laut FAQ können nur [+M]-Geräte auf den Controller verzichten.",
+    "localControl": "Bosch sagt, der Controller II speichere Daten lokal und lasse Automationen weiterlaufen, wenn das Internet ausfällt, macht aber keine eigene Aussage zu diesem Thermostat.",
+    "thermostatType": "Wird auf das Heizkörperventil gesetzt und steuert es.",
+    "systems": "Anschlussring M30 × 1,5 mm laut Kurzanleitung, die sagt, manche Ventile brauchten einen mitgelieferten oder separat gekauften Adapter.",
+    "power": "Die typische Batterielaufzeit liegt unter zwei Jahren.",
+    "compatibility.apple_home": "Boschs Hilfeseite sagt, Apple HomeKit funktioniere über den Smart Home Controller II und die Bosch-Smart-Home-App.",
+    "compatibility.google_home": "Google Assistant funktioniert über den Smart Home Controller und die Bosch-App.",
+    "compatibility.alexa": "Alexa funktioniert über den Smart Home Controller und die Bosch-App.",
+    "compatibility.smartthings": "Bosch führt Samsung SmartThings nur auf der Produktseite zur [+M]-Version; nichts sagt, wie oder ob sich das reine Zigbee-Modell verbindet.",
+    "compatibility.home_assistant": "Home Assistants Integration Bosch SHC führt ein Thermostat Gen2 und eine lokale Push-Verbindung zum Controller auf, nennt aber weder den Radiator Thermostat II noch den Controller II."
+  },
+  "via": {
+    "apple_home": "Bosch Smart Home Controller II",
+    "google_home": "Bosch Smart Home Controller II",
+    "alexa": "Bosch Smart Home Controller II"
+  },
+  "values": {
+    "power": "2 × AA (LR6 Alkaline)",
+    "systems": "Heizkörper mit Ventilgewinde M30 × 1,5 mm (Adapter für manche Ventile)"
+  }
+}

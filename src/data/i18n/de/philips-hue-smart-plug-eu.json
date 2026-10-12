@@ -1,0 +1,30 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Mit einer Hue Bridge funktioniert der EU-Philips-Hue-Smart-Plug mit Apple Home, Google Home, Alexa, SmartThings und Home Assistant. Ohne eine bleibt es beim Ein/Aus per Bluetooth aus der Hue-App. Der Zwischenstecker verbindet sich per Zigbee mit der Bridge, und die Bridge stellt ihn auch Matter-Plattformen bereit; er hat weder WLAN noch eine eigene Matter-Zertifizierung. Er ist für das europäische Festland mit 2300 W ausgelegt, und Hue führt keine Verbrauchsmessung.",
+  "caveats": [
+    "Sprachassistenten, Ökosysteme und Fernzugriff brauchen alle eine Hue Bridge.",
+    "Reine Bluetooth-Setups können Matter nicht nutzen; die Bridge stellt den Zwischenstecker Matter bereit.",
+    "Auf dem europäischen Festland mit 2300 W ausgelegt; Großbritannien und Irland bekommen ein anderes Modell mit 3250 W.",
+    "Hue führt keine Verbrauchsmessung, rechne also nicht mit Leistungswerten."
+  ],
+  "notes": {
+    "radios": "Bluetooth für die direkte App-Steuerung; Zigbee (2,4 GHz) zur Hue Bridge. Kein WLAN.",
+    "matter": "Für den Zwischenstecker selbst wurde keine Matter-Zertifizierung gefunden. Laut Hue funktionieren Produkte an einer Hue Bridge über die Bridge mit Matter; per Bluetooth verbundene Produkte können Matter nicht nutzen.",
+    "hubRequired": "Die grundlegende Steuerung funktioniert per Bluetooth aus der Hue-App; die Hue Bridge ist für Sprachassistenten, Ökosysteme und Fernzugriff nötig.",
+    "localControl": "Bluetooth-Steuerung ohne Bridge oder WLAN; die Hue Bridge bietet auch eine lokale API, die Home Assistant nutzt.",
+    "energyMonitoring": "Hues Seiten beschreiben nur das Ein- und Ausschalten und führen keine Messung, aber keine sagt ausdrücklich, dass sie fehlt.",
+    "maxLoadWatts": "Hue-Support nennt 2300 W für das europäische Festland; Großbritannien und Irland bekommen 3250 W, ein anderes Modell.",
+    "compatibility.apple_home": "Die deutsche Produktseite führt Apple Home unter den Fremdsystemen; Hues deutsche Anleitung verknüpft ihn aus der Hue-App mit einer Hue Bridge.",
+    "compatibility.google_home": "Die deutsche Produktseite sagt, die Sprachsteuerung mit Google Assistant braucht eine Hue Bridge.",
+    "compatibility.alexa": "Die deutsche Produktseite sagt, die Sprachsteuerung mit Alexa braucht eine Hue Bridge.",
+    "compatibility.smartthings": "Die deutsche Produktseite führt Samsung SmartThings unter den Fremdsystemen, und Hues deutsche Bridge-Anleitung führt SmartThings als Bridge-Integration.",
+    "compatibility.home_assistant": "Die offizielle Hue-Integration steuert an eine Hue Bridge angeschlossene Geräte lokal."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "google_home": "Philips Hue Bridge",
+    "alexa": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge",
+    "home_assistant": "Philips Hue Bridge"
+  }
+}

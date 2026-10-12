@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Der Aqara Hub M2 (EU) verbindet Aqara-Zigbee-3.0-Geräte mit Apple Home, Google Home und Alexa, mit WLAN, Ethernet-Anschluss und eingebautem IR-Sender. Laut Aqara verwaltet er bis zu 128 untergeordnete Geräte, und lokale Automationen laufen weiter, wenn das Internet ausfällt. Matter erwähnen die Seiten nicht, und SmartThings sowie Home Assistant sind unbestätigt.",
+  "caveats": [
+    "Er koppelt nur Aqara-Zigbee-Geräte, keine anderer Marken.",
+    "Google Home und Alexa steuern nur einige IR-Gerätetypen, etwa Fernseher und Klimaanlagen.",
+    "Der IR-Sender wird Apple Home nicht zur Verfügung gestellt.",
+    "Laut Aqara braucht es Repeater-Geräte wie eine smarte Steckdose, um 128 Geräte zu erreichen."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0, Bluetooth LE 5.0, 2,4-GHz-WLAN, ein RJ-45-Ethernet-Anschluss und ein IR-Sender. Auf der Seite steht keine Modellnummer.",
+    "matter": "Die Produktseite erwähnt Matter nicht; ein CSA-Eintrag wurde nicht gefunden.",
+    "hubRequired": "Er ist der Hub.",
+    "localControl": "Aqara sagt, dass lokale Automationen weiterlaufen, wenn das Internet ausfällt.",
+    "deviceProtocols": "Funktioniert nur mit untergeordneten Aqara-Zigbee-Geräten, nicht mit anderen Marken oder Aqara-Thread-Geräten. Eingebauter IR-Sender für Fernseher, Ventilatoren und Klimaanlagen. Er hat ein BLE-5.0-Funkmodul, doch die Seite sagt nicht, dass er Bluetooth-Geräte koppelt.",
+    "matterBridge": "Die M2-Seiten erwähnen Matter nicht; Aqaras US-Seite zum M2 verweist für Matter auf den Hub M3.",
+    "threadBorderRouter": "Aqara sagt, er unterstütze keine Aqara-Thread-Geräte, und nennt kein Thread-Funkmodul, doch keine Seite sagt, ob er ein Border-Router ist.",
+    "maxDevices": "Untergeordnete Aqara-Zigbee-Geräte; Repeater wie eine Steckdose oder ein Wandschalter sind nötig.",
+    "compatibility.apple_home": "Über HomeKit. Aqara-Zigbee-Geräte erscheinen in Apple Home; der IR-Sender wird dort nicht angezeigt.",
+    "compatibility.google_home": "Aqara führt Apple HomeKit, Google Assistant, Alexa und IFTTT auf. Bei IR-Geräten funktionieren mit Google Assistant und Alexa nur einige Typen wie Fernseher und Klimaanlagen.",
+    "compatibility.alexa": "Aqara führt Apple HomeKit, Google Assistant, Alexa und IFTTT auf. Bei IR-Geräten funktionieren mit Google Assistant und Alexa nur einige Typen wie Fernseher und Klimaanlagen.",
+    "compatibility.smartthings": "Auf den Seiten des Herstellers nicht erwähnt.",
+    "compatibility.home_assistant": "Von keiner offiziellen Quelle bestätigt."
+  }
+}

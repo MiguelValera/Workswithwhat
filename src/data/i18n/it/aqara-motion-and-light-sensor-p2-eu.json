@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Aqara Motion and Light Sensor P2 unisce un rilevatore di movimento PIR a un sensore di luce ambientale che funziona indipendentemente dal movimento. Matter su Thread lo collega a Apple Home, Google Home, Alexa, SmartThings e Home Assistant, usando un qualsiasi border router Thread compatibile con Matter al posto di un hub Aqara. Sono incluse due pile CR2450 e Aqara dichiara fino a 2 anni.",
+  "caveats": ["Serve un border router Thread compatibile con Matter.", "Aqara dice che Alexa non supporta il sensore di luce.", "L'app Aqara Home e le sue impostazioni richiedono l'Hub M3 di Aqara."],
+  "notes": {
+    "radios": "Aqara indica Thread e Bluetooth 5.0; la CSA indica Thread e Bluetooth.",
+    "matter": "La CSA elenca Motion and Light Sensor P2 di Lumi United (vendor 0x115F, product 0x2003). I modelli sono ML-S03E e ML-S03D.",
+    "hubRequired": "Per il controllo Matter non serve nessun hub Aqara; serve un controller Matter con un border router Thread, che non è un hub di marca. L'app Aqara Home e le sue impostazioni richiedono l'Hub M3 di Aqara.",
+    "localControl": "Nessuna fonte Aqara che abbiamo visto dichiara il solo controllo locale.",
+    "senses": "Sensore di movimento PIR più un sensore di luce ambientale che funziona indipendentemente dal movimento.",
+    "power": "Due pile CR2450 incluse; Aqara dichiara fino a 2 anni.",
+    "compatibility.apple_home": "Aqara lo elenca come compatibile; l'uso con Matter richiede un border router Thread compatibile con Matter. Su Apple significa un HomePod mini, un HomePod 2nd gen o un Apple TV 4K.",
+    "compatibility.google_home": "Aqara lo elenca come compatibile; l'uso con Matter richiede un border router Thread compatibile con Matter.",
+    "compatibility.alexa": "Aqara elenca Alexa; l'uso con Matter richiede un border router Thread compatibile con Matter. Aqara dice che Alexa non supporta il sensore di luce.",
+    "compatibility.smartthings": "Aqara lo elenca come compatibile; l'uso con Matter richiede un border router Thread compatibile con Matter.",
+    "compatibility.home_assistant": "Le pagine di Aqara che abbiamo visto non elencano Home Assistant; funziona perché il sensore è certificato Matter. Si usa tramite l'integrazione Matter di Home Assistant, che per i dispositivi Thread richiede un border router Thread."
+  },
+  "values": {
+    "power": "2 × CR2450"
+  }
+}

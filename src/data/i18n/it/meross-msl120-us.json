@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Siri e l'app Casa controllano direttamente la Meross MSL120: Meross elenca Apple HomeKit per questa lampadina a colori, che si collega al Wi-Fi a 2,4 GHz senza hub. Meross elenca anche Alexa, Google Assistant e SmartThings. Questa versione statunitense è una lampadina E26 da 810 lumen (equivalente a 60 W, 9 W), con colore RGB e bianco regolabile da 2700 a 6500 K. Home Assistant non ha un'integrazione ufficiale Meross, e Matter non è confermato.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Questo record segue la pagina del prodotto MSL120 di Meross; controlla sulla confezione il logo HomeKit.", "Questo record è la versione statunitense E26 (90–125 V); Meross vende versioni E27 e B22 per altri mercati.", "Home Assistant non ha un'integrazione ufficiale Meross; l'abbinamento con l'integrazione HomeKit Device di HA può funzionare ma non è documentato per questo modello.", "La dicitura 'works with Matter' su alcune pagine del negozio Meross vale per tutto il marchio, e nulla conferma Matter per questa lampadina."],
+  "notes": {
+    "radios": "IEEE 802.11 b/g/n, solo 2,4 GHz.",
+    "matter": "Alcune pagine del negozio Meross riportano una dicitura 'works with Matter' valida per tutto il marchio, ma non abbiamo trovato nessuna scheda CSA né specifica del prodotto che confermi Matter per la MSL120. Non confermato.",
+    "hubRequired": "Qui significa avere bisogno di un bridge o di un hub per il controllo di base da app. Si collega direttamente al Wi-Fi a 2,4 GHz; Meross dice che non serve nessun hub.",
+    "localControl": "Il controllo HomeKit di solito passa dalla rete locale, ma nessuna fonte ufficiale che abbiamo trovato dichiara il controllo locale per questa lampadina.",
+    "colorType": "Colore RGB più bianco regolabile da 2700 a 6500 K.",
+    "lumens": "810 lm, venduta come equivalente a 60 W; 9 W, secondo la pagina MSL120 di Meross.",
+    "bulbBase": "La versione statunitense è E26 per 90–125 V; Meross vende anche versioni E27 e B22 per altri mercati.",
+    "compatibility.apple_home": "La pagina del prodotto MSL120 di Meross elenca Apple HomeKit e Siri.",
+    "compatibility.google_home": "Meross elenca Google Assistant, tramite la sua integrazione cloud.",
+    "compatibility.alexa": "Meross elenca Amazon Alexa, tramite la sua skill.",
+    "compatibility.smartthings": "Meross elenca SmartThings per la MSL120.",
+    "compatibility.home_assistant": "Home Assistant non ha un'integrazione ufficiale Meross. L'edizione HomeKit può abbinarsi tramite l'integrazione HomeKit Device di HA, ma nessuna pagina ufficiale riguarda questo modello."
+  }
+}

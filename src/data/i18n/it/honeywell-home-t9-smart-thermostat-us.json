@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Honeywell Home vende il T9 come termostato Wi-Fi da parete statunitense con sensori ambiente wireless opzionali, e richiede 24 V su un filo C (un adattatore è incluso). Alexa e Google Assistant possono leggere termostato e sensori, mentre HomeKit e SmartThings possono solo cambiare i setpoint, secondo Honeywell. Va bene per la maggior parte degli impianti a 24 V di riscaldamento, raffrescamento e pompa di calore. Il supporto a Home Assistant e a Matter non è confermato.",
+  "caveats": ["HomeKit e SmartThings non possono leggere i valori dei sensori ambiente, secondo l'articolo di assistenza di Honeywell.", "Il filo C è obbligatorio; l'adattatore fornito copre le case che non ce l'hanno, ma Honeywell dice che montarlo su impianti a zone è più complicato e consiglia un professionista.", "Non adatto a impianti con zoccoli elettrici o a millivolt."],
+  "notes": {
+    "radios": "Honeywell indica Wi-Fi (2,4 e 5 GHz). I sensori ambiente si collegano direttamente al termostato; le pagine che abbiamo visto non nominano la loro radio.",
+    "matter": "Nessuna pagina Honeywell o CSA trovata cita Matter per il T9. L'assenza non è una dichiarazione che non lo abbia.",
+    "hubRequired": "Wi-Fi integrato; i sensori ambiente si abbinano direttamente al termostato.",
+    "localControl": "Nessuna fonte del produttore dice cosa funziona senza internet.",
+    "thermostatType": "Termostato da parete.",
+    "systems": "La guida di Honeywell dice che non funziona con impianti a zoccoli elettrici (120-240 V) o a millivolt. Contatta un professionista per configurazioni a tensione di linea, dual fuel o con ventilconvettori. Un solo record copre l'RCHT9510WFW (senza sensore) e l'RCHT9610WFSW (con sensore), che condividono la stessa guida di installazione.",
+    "power": "Honeywell dice che il T9 richiede 24 V tramite un filo C e viene fornito con un adattatore per filo C per le case che non ce l'hanno. La guida di installazione dice che montare l'adattatore su impianti a zone è più complicato.",
+    "compatibility.apple_home": "La guida utente del T9 di Honeywell ha una procedura di abbinamento HomeKit (Connect HomeKit sul termostato, poi scansiona il codice nell'app Casa). Il suo articolo di assistenza dice che HomeKit può cambiare i setpoint ma non leggere i sensori ambiente.",
+    "compatibility.google_home": "Honeywell dice che Google Assistant può vedere e controllare sia il termostato sia i suoi sensori.",
+    "compatibility.alexa": "Honeywell dice che Alexa può vedere e controllare sia il termostato sia i suoi sensori.",
+    "compatibility.smartthings": "Honeywell elenca SmartThings. Il suo articolo di assistenza dice che SmartThings può cambiare i setpoint ma non leggere i sensori.",
+    "compatibility.home_assistant": "L'integrazione Honeywell di Home Assistant è per Total Connect Comfort ed elenca altri modelli; la documentazione vista non nomina il T9. Un utente del forum usa un T9 tramite HomeKit, che non è una fonte del produttore."
+  },
+  "values": {"power": "Filo C (24 V); adattatore incluso", "systems": "La maggior parte degli impianti a 24 V di riscaldamento, raffrescamento e pompa di calore"}
+}

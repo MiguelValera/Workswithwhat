@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Wasserlecks erkennt IKEAs BADRING, per Zigbee über einen DIRIGERA-Hub. Für sich allein ertönt trotzdem sein eingebauter Alarm; mit dem Hub schickt er zusätzlich eine Benachrichtigung aufs Handy. Apple Home, Google Home, Alexa, SmartThings und Home Assistant sind alle unbestätigt. Er braucht eine AAA-Zelle, die nicht beiliegt.",
+  "caveats": [
+    "Für Handy-Benachrichtigungen braucht er einen DIRIGERA-Hub; ohne Hub ertönt nur sein eigener Alarm.",
+    "IKEA hat auf keiner gesehenen Seite bestätigt, dass BADRING in Apple Home, Google Home oder Alexa erscheint."
+  ],
+  "notes": {
+    "radios": "IKEAs Einführungsmitteilung beschreibt die drei Sensoren als auf Zigbee aufgebaut.",
+    "matter": "Laut IKEA können Zigbee-Geräte am DIRIGERA über dessen Matter-Bridge verfügbar gemacht werden. Keine gesehene Seite sagt, dass BADRING bereitgestellt wird, und Forenbeiträge sagen, dass er es nicht wird. Es wurde kein CSA-Eintrag gefunden.",
+    "hubRequired": "Laut IKEA braucht man einen DIRIGERA-Hub (separat erhältlich), um ihn als smartes Produkt zu nutzen. Ohne Hub ertönt trotzdem sein eingebauter Alarm.",
+    "localControl": "Keine gesehene Seite sagt, ob er über den DIRIGERA ohne Internet funktioniert.",
+    "power": "IKEA empfiehlt eine wiederaufladbare AAA-Zelle LADDA (HR03, 1,2 V), separat erhältlich.",
+    "compatibility.apple_home": "IKEA sagt, der DIRIGERA kann IKEA-Smart-Produkte mit Apple Home, Google Home und Alexa verknüpfen, aber keine gesehene IKEA-Seite bestätigt, dass BADRING selbst dort erscheint (IKEA hat so eine Seite für PARASOLL, nicht für BADRING).",
+    "compatibility.google_home": "IKEA sagt, der DIRIGERA kann IKEA-Smart-Produkte mit Apple Home, Google Home und Alexa verknüpfen, aber keine gesehene IKEA-Seite bestätigt, dass BADRING selbst dort erscheint (IKEA hat so eine Seite für PARASOLL, nicht für BADRING).",
+    "compatibility.alexa": "IKEA sagt, der DIRIGERA kann IKEA-Smart-Produkte mit Apple Home, Google Home und Alexa verknüpfen, aber keine gesehene IKEA-Seite bestätigt, dass BADRING selbst dort erscheint (IKEA hat so eine Seite für PARASOLL, nicht für BADRING).",
+    "compatibility.smartthings": "Keine gesehene IKEA- oder SmartThings-Seite behandelt BADRING.",
+    "compatibility.home_assistant": "Die gesehene Home-Assistant-Dokumentation nennt keine BADRING-Unterstützung. Forenbeiträge beschreiben, dass er sich nur mit Tricks mit ZHA koppeln lässt und in der Matter-Bridge fehlt."
+  },
+  "values": {
+    "power": "1 × AAA (nicht im Lieferumfang)"
+  }
+}

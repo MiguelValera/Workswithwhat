@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Im britischen Hue-Shop nicht mehr erhältlich: Die EU-Version Philips Hue White Ambiance GU10 (EAN 8719514339903) funktioniert über eine Hue Bridge mit Apple Home, und Hues Produktseite führt unter „Hue Bridge required“ auch Alexa und Google Assistant. Ohne Bridge steuert die Hue-App sie über Bluetooth. Es ist ein Spot mit einstellbarem Weiß von 2200 bis 6500 K und 350 Lumen. Home Assistant unterstützt ihn über die offiziellen Integrationen Hue und Hue BLE; SmartThings ist nicht bestätigt.",
+  "caveats": [
+    "Hues britischer Shop führt diese EAN als nicht mehr erhältlich; der Nachfolger (EAN 8720169229976) ist mit 400 lm angegeben, prüfe also die EAN auf der Packung.",
+    "Apple Home braucht eine Hue Bridge, und Hues Produktseite führt auch Alexa und Google Assistant unter „Hue Bridge required“.",
+    "Die SmartThings-Unterstützung ist für diese EAN nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Hues Seiten zu dieser EAN führen Bluetooth und die Steuerung über die Hue Bridge. Laut Hues Bridge-FAQ betreibt die Bridge ein privates Zigbee-Netzwerk für alle Hue-Lampen. Conrad führt ebenfalls Zigbee.",
+    "matter": "Die gesehenen Produktseiten erwähnen Matter für diese EAN nicht, und wir haben keinen CSA-Eintrag dafür gefunden. Hues Anleitung bietet Matter über die Hue Bridge. Für die Lampe selbst nicht bestätigt.",
+    "hubRequired": "Hier heißt das: Man braucht für die grundlegende App-Steuerung eine Bridge. Die Hue-App steuert sie über Bluetooth; Sprachassistenten, Apple Home und der volle Funktionsumfang brauchen eine Hue Bridge.",
+    "localControl": "Die Bluetooth-Steuerung vom Handy funktioniert ohne Internet; Home Assistant spricht die Hue Bridge über deren lokale API an.",
+    "colorType": "Einstellbares Weiß von 2200 bis 6500 K; keine Farbe.",
+    "lumens": "350 lm bei 4000 K für EAN 8719514339903.",
+    "compatibility.apple_home": "Über die Hue Bridge. Laut Hues Matter-Anleitung verbindet die Bridge alle Hue-Lampen, auch Lampen ohne Matter, mit Apple Home, Google Home und Alexa.",
+    "compatibility.google_home": "Hues Seite zu dieser EAN führt Google Assistant unter „Hue Bridge required“. Hues US-FAQ beschreibt die Bluetooth-Kopplung ohne Bridge mit Nest-Geräten, aber für diese EU-Lampe ist das nicht bestätigt.",
+    "compatibility.alexa": "Hues Seite zu dieser EAN führt Alexa unter „Hue Bridge required“. Hues US-FAQ beschreibt die Bluetooth-Kopplung ohne Bridge mit Echo-Geräten, aber für diese EU-Lampe ist das nicht bestätigt.",
+    "compatibility.smartthings": "Die gesehenen Seiten zu dieser EAN erwähnen SmartThings nicht. Andere Hue-Lampen führen es unter „Hue Bridge required“, aber für diese konnten wir es nicht bestätigen.",
+    "compatibility.home_assistant": "Offizielle Hue-Integration (über die Hue Bridge) und offizielle Hue-BLE-Integration (seit 2025.12, Bluetooth ohne Bridge). Die BLE-Dokumentation nennt diese Lampe nicht ausdrücklich."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "google_home": "Philips Hue Bridge",
+    "alexa": "Philips Hue Bridge"
+  }
+}

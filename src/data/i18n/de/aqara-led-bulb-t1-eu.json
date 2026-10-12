@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Über einen Aqara-Zigbee-3.0-Hub funktioniert die Aqara LED Bulb T1 (LEDLBT1-L01) mit Apple Home, Alexa und Google Home, und Aqara nennt Adaptive Lighting in Apple Home. Am Hub führt kein Weg vorbei: Die Lampe selbst kann kein Matter, Matter erreichst du also nur über einen Matter-fähigen Aqara-Hub als Bridge. Es ist eine reine Weißlicht-Lampe mit E27-Sockel für die EU, 806 Lumen, von 2700 bis 6500 K einstellbar, mit CRI 90. SmartThings und Home Assistant sind unbestätigt.",
+  "caveats": [
+    "Braucht einen Aqara-Zigbee-3.0-Hub, selbst für die einfache App-Steuerung.",
+    "Nur einstellbares Weiß: kein RGB-Farblicht.",
+    "Matter funktioniert nur über einen Matter-fähigen Aqara-Hub, nicht direkt von der Lampe.",
+    "Keine offizielle Quelle bestätigt die Unterstützung von SmartThings oder Home Assistant."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0 für den Aqara-Hub; Bluetooth ist ebenfalls aufgeführt.",
+    "matter": "Aqara sagt nicht ausdrücklich, dass der Lampe Matter fehlt. Es sagt, Matter komme per OTA-Update der Aqara-Hubs, Matter ist also nur über die Matter-Bridge eines Aqara-Hubs erreichbar, nicht über die Zigbee-Lampe selbst.",
+    "hubRequired": "Bei Lampen heißt das, dass für die einfache App-Steuerung eine Bridge oder ein Hub nötig ist. Laut Handbuch ist ein Aqara-Zigbee-3.0-Hub erforderlich.",
+    "localControl": "Keine offizielle Quelle beschreibt lokale (Offline-)Steuerung für diese Lampe oder ihren Hub-Weg.",
+    "colorType": "Nur Weiß, 2700–6500 K, CRI Ra90. Kein RGB-Farblicht.",
+    "lumens": "806 lm; Aqaras Datentabelle nennt 8,5 W Nennleistung, einige Unterlagen sagen 9 W.",
+    "compatibility.apple_home": "Aqara führt HomeKit (mit Adaptive Lighting) auf; ein Aqara-Hub ist nötig. Ein Matter-fähiger Aqara-Hub kann sie auch per Bridge anbinden.",
+    "compatibility.google_home": "Aqara führt Google Assistant auf; funktioniert über einen Aqara-Hub.",
+    "compatibility.alexa": "Aqara führt Alexa auf; funktioniert über einen Aqara-Hub.",
+    "compatibility.smartthings": "Aqaras Lampenseite erwähnt SmartThings nicht; wir fanden keine offizielle Quelle, die es bestätigt oder widerlegt.",
+    "compatibility.home_assistant": "Keine offizielle Quelle von Home Assistant oder Aqara nennt diese Lampe. Wege wie ein Aqara-Hub über HomeKit Controller/Matter oder ein Zigbee-Koordinator sind plausibel, aber unbestätigt."
+  },
+  "via": {
+    "apple_home": "Aqara-Zigbee-3.0-Hub",
+    "google_home": "Aqara-Zigbee-3.0-Hub",
+    "alexa": "Aqara-Zigbee-3.0-Hub"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Aqara Hub M2 (EU) collega i dispositivi Aqara Zigbee 3.0 a Apple Home, Google Home e Alexa, con Wi-Fi, una porta Ethernet e un controller IR integrato. Aqara dice che gestisce fino a 128 dispositivi figli e che le automazioni locali continuano a funzionare se internet cade. Le pagine non citano Matter, e SmartThings e Home Assistant non sono confermati.",
+  "caveats": ["Si abbina solo ai dispositivi Zigbee di Aqara, non a quelli di altre marche.", "Google Home e Alexa controllano solo alcuni tipi di dispositivi IR, come TV e condizionatori.", "Il controller IR non è esposto ad Apple Home.", "Aqara dice che servono dispositivi ripetitori, come una presa smart, per arrivare a 128 dispositivi."],
+  "notes": {
+    "radios": "Zigbee 3.0, Bluetooth LE 5.0, Wi-Fi a 2,4 GHz, una porta Ethernet RJ-45 e un trasmettitore IR. Nessun numero di modello sulla pagina.",
+    "matter": "La pagina prodotto non cita Matter; nessuna scheda CSA trovata.",
+    "hubRequired": "È l'hub.",
+    "localControl": "Aqara dice che le automazioni locali continuano a funzionare se internet non c'è.",
+    "deviceProtocols": "Funziona solo con i dispositivi figli Zigbee di Aqara, non con altre marche né con i dispositivi Thread di Aqara. Controller IR integrato per TV, ventilatori e condizionatori. Ha una radio BLE 5.0, ma la pagina non dice che abbini dispositivi Bluetooth.",
+    "matterBridge": "Le pagine dell'M2 non citano Matter; la pagina statunitense dell'M2 di Aqara rimanda all'Hub M3 per Matter.",
+    "threadBorderRouter": "Aqara dice che non supporta i dispositivi Thread di Aqara e non indica nessuna radio Thread, ma nessuna pagina dice se sia un border router.",
+    "maxDevices": "Dispositivi figli Zigbee di Aqara; servono ripetitori come una presa o un interruttore da parete.",
+    "compatibility.apple_home": "Tramite HomeKit. I dispositivi Zigbee di Aqara compaiono in Apple Home; il controller IR non vi è esposto.",
+    "compatibility.google_home": "Aqara elenca Apple HomeKit, Google Assistant, Alexa e IFTTT. Per i dispositivi IR, solo alcuni tipi, come TV e condizionatori, funzionano con Google Assistant e Alexa.",
+    "compatibility.alexa": "Aqara elenca Apple HomeKit, Google Assistant, Alexa e IFTTT. Per i dispositivi IR, solo alcuni tipi, come TV e condizionatori, funzionano con Google Assistant e Alexa.",
+    "compatibility.smartthings": "Non citato nelle pagine del produttore.",
+    "compatibility.home_assistant": "Non confermato da una fonte ufficiale."
+  }
+}

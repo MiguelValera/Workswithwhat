@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Prima di fare qualcosa di utile, questa presa ha bisogno di un hub Aqara. L'Aqara SP-EUC01 è una presa Zigbee 3.0 che non può collegarsi da sola al Wi-Fi; una volta abbinata a un hub Aqara, Aqara la elenca come compatibile con Apple Home (HomeKit), Google Home e Alexa. È da 10 A / 2300 W e riporta potenza e kWh nell'app Aqara Home. Se internet cade, Aqara dice che il controllo locale e i collegamenti con gli altri dispositivi dell'hub continuano a funzionare. Il supporto agli aggiornamenti di sicurezza di Aqara per questo modello è terminato il 30 giugno 2026.",
+  "caveats": ["Richiede un hub Zigbee di Aqara; non può collegarsi direttamente al Wi-Fi.", "Nominale 10 A / 2300 W, quindi non è pensata per elettrodomestici da 16 A.", "La Product Security Support Policy di Aqara indica la fine degli aggiornamenti di sicurezza per SP-EUC01 al 2026-06-30, una data già passata.", "Home Assistant e SmartThings non sono documentati ufficialmente per questo modello; Zigbee2MQTT lo supporta, ma né Aqara né Home Assistant lo elencano."],
+  "notes": {
+    "radios": "Zigbee 3.0.",
+    "matter": "Nessuna scheda CSA trovata che nomini SP-EUC01. La presa è Zigbee; gli hub Aqara con bridge Matter (ad es. M3) possono esporre i dispositivi Zigbee di Aqara a Matter.",
+    "hubRequired": "Scheda tecnica: Hub Required: Yes. FAQ: serve un hub e non può collegarsi direttamente al Wi-Fi.",
+    "localControl": "FAQ di Aqara: se internet non c'è, il controllo dall'app si ferma ma il controllo locale e i collegamenti con gli altri dispositivi dell'hub continuano a funzionare.",
+    "energyMonitoring": "Riporta statistiche di potenza e consumo in kWh in Aqara Home.",
+    "maxLoadWatts": "250 V AC, 10 A, max 2300 W. Gli elettrodomestici da 16 A non sono supportati.",
+    "compatibility.apple_home": "Aqara indica la compatibilità con Apple HomeKit e dichiara che serve un hub.",
+    "compatibility.google_home": "Aqara indica la compatibilità con Google Assistant e dichiara che serve un hub.",
+    "compatibility.alexa": "Aqara indica la compatibilità con Amazon Alexa e dichiara che serve un hub.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale di Aqara o SmartThings trovata che riguardi questa presa.",
+    "compatibility.home_assistant": "Zigbee2MQTT la supporta come SP-EUC01 e gli utenti di HA la usano via Zigbee, ma non è stata trovata nessuna pagina ufficiale di HA o Aqara per questo modello."
+  },
+  "via": {
+    "apple_home": "hub Aqara (compatibile con HomeKit)",
+    "google_home": "hub Aqara",
+    "alexa": "hub Aqara"
+  }
+}

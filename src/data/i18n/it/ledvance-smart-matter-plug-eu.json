@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Certificata Matter 1.3 via Wi-Fi, la LEDVANCE SMART+ Matter Plug (EU) funziona con Apple Home, Google Home, Alexa e SmartThings, e Home Assistant la aggiunge con la sua integrazione Matter. LEDVANCE dice che il misuratore di energia è esposto anche via Matter, non solo nella sua app SMART+, che mostra i consumi orari, giornalieri e mensili. Il controllo funziona in locale con il cloud facoltativo, secondo LEDVANCE. Il limite di carico è 2300 W / 10 A a 230 V.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Ogni ecosistema richiede il proprio controller Matter; Apple Home richiede un hub domestico Apple.", "Limitata a 10 A / 2300 W, quindi controlla i valori degli apparecchi ad alto assorbimento."],
+  "notes": {
+    "radios": "Matter su Wi-Fi a 2,4 GHz secondo la pagina e la scheda tecnica di LEDVANCE per l'EAN 4099854295195. Bluetooth non confermato.",
+    "matter": "La pagina di LEDVANCE per questa presa europea bianca (EAN 4099854295195) dice certificata Matter 1.3, con misura dei consumi via Matter. Matter Alpha elenca il certificato CSA24264MAT43287-24 (maggio 2024); la pagina della CSA non è stata trovata.",
+    "hubRequired": "L'app SMART+ aggiunge i dispositivi Matter su Wi-Fi senza gateway. Gli altri ecosistemi richiedono il proprio controller Matter (speaker o hub).",
+    "localControl": "Le FAQ di LEDVANCE dicono che i dispositivi Matter comunicano in locale e il cloud è facoltativo; HA dice che i dispositivi Matter si controllano in locale. Nessun test di LEDVANCE sul controllo da app offline trovato.",
+    "energyMonitoring": "Misuratore di energia integrato; l'app SMART+ mostra i consumi orari (7 giorni), giornalieri (365 giorni) e mensili. LEDVANCE dice che la misura è esposta anche via Matter.",
+    "maxLoadWatts": "2300 W / 10 A a 230 V, 50 Hz.",
+    "compatibility.apple_home": "LEDVANCE elenca Apple Home via Matter. Serve un hub domestico Apple come controller Matter.",
+    "compatibility.google_home": "LEDVANCE elenca Google Home via Matter. Serve un controller Matter Google.",
+    "compatibility.alexa": "LEDVANCE elenca Alexa via Matter. Serve un Echo che funzioni da controller Matter.",
+    "compatibility.smartthings": "LEDVANCE elenca SmartThings via Matter. Serve un controller Matter SmartThings.",
+    "compatibility.home_assistant": "Tramite l'integrazione Matter di HA, come dispositivo Matter certificato; la documentazione di HA non cita questa presa."
+  }
+}

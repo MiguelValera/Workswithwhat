@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Hive-Heizung, -Lampen und -Steckdosen erscheinen in Apple Home, Google Home und Alexa, sobald sie mit dem Hive Hub gekoppelt sind, dem Zigbee-Hub, der sich auch per Ethernet mit deinem Router verbindet. Apple Home läuft nativ über Hives HomeKit-Integration, lässt aber Warmwasser, das kabelgebundene Thermostat SLT5 und das Heizkörperventil aus. Home Assistant funktioniert über dein Hive-Konto. Ein Matter-Hinweis wurde nicht gefunden.",
+  "caveats": [
+    "Apple Home braucht den neuesten Hive Hub oder den Hub 360 und unterstützt weder Warmwasser noch das ältere kabelgebundene Thermostat SLT5 oder das Heizkörperventil.",
+    "Home Assistant nutzt die offizielle Hive-Integration mit deinem Hive-Konto (Cloud-Abfrage); der Hub selbst wird nicht mit Home Assistant gekoppelt.",
+    "Hives eigene Seiten widersprechen sich, ob der Hub WLAN hat: Eine nennt Ethernet, WLAN und Zigbee, eine andere nur Ethernet und Zigbee.",
+    "Die SmartThings-Unterstützung wird von keiner offiziellen Quelle bestätigt."
+  ],
+  "notes": {
+    "radios": "Beide Hive-Seiten nennen Ethernet zum Router und Zigbee. WLAN bleibt draußen, weil Hives Seiten sich widersprechen: Die Hub-Seite führt es, eine andere Shop-Seite nicht. Bluetooth wird nicht genannt.",
+    "matter": "Für den Hive Hub wurde kein Matter-Hinweis gefunden.",
+    "hubRequired": "Er ist der Hub, über den Hive-Heizung und Hive-Geräte verbunden werden.",
+    "localControl": "Aus keiner offiziellen Quelle bestätigt.",
+    "deviceProtocols": "Zigbee zu Hive-Thermostaten, Heizkörperventilen, Steckdosen und Sensoren.",
+    "matterBridge": "Kein Hinweis auf eine Matter-Bridge gefunden.",
+    "threadBorderRouter": "Kein Thread-Hinweis gefunden.",
+    "maxDevices": "Keine Obergrenze gefunden.",
+    "compatibility.apple_home": "Hives HomeKit-Seite deckt Heizung, Lampen und Steckdosen in der Apple-Home-App ab, eingerichtet über die Hive-App; sie braucht den neuesten Hive Hub oder den Hub 360. Warmwasser, das ältere kabelgebundene Thermostat SLT5 und das Heizkörperventil werden nicht unterstützt.",
+    "compatibility.google_home": "Verknüpfe das Hive-Konto in der Google-Home-App unter „Works with Google“; Hive nennt Heizung, Lampen und Steckdosen.",
+    "compatibility.alexa": "Aktiviere den Hive-Skill und verknüpfe dein Hive-Konto; Hive nennt Heizung, Lampen und Steckdosen.",
+    "compatibility.smartthings": "Keine offizielle Quelle gefunden, nur Community-Beiträge.",
+    "compatibility.home_assistant": "Offizielle Hive-Integration über dein Hive-Konto (Cloud-Abfrage); der Hub selbst wird nicht mit Home Assistant gekoppelt."
+  }
+}

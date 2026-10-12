@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Solo Alexa, e Amazon lo dice apertamente: l'Amazon Smart Plug non supporta altri assistenti vocali né altri hub smart, quindi Apple Home, Google Home e SmartThings restano fuori. Configurazione e controllo avvengono nell'app Alexa; non serve un hub e un Echo è facoltativo. È una presa statunitense con Wi-Fi a 2,4 GHz, da 120 V / 15 A, anche se Amazon non indica la potenza in watt. Amazon non cita nemmeno il monitoraggio dei consumi né dice se funziona senza internet.",
+  "caveats": ["Solo Alexa: Amazon dice che non funziona con altri assistenti vocali né altri hub smart, quindi non comparirà in Apple Home, Google Home o SmartThings.", "Solo Wi-Fi a 2,4 GHz.", "Per Home Assistant non abbiamo trovato un'integrazione ufficiale; i proprietari lo raggiungono solo indirettamente tramite le routine di Alexa.", "Amazon non dice se la presa continua a funzionare senza connessione a internet."],
+  "notes": {
+    "radios": "Solo Wi-Fi a 2,4 GHz (802.11 b/g/n). Le schede dei rivenditori e i documenti FCC fanno pensare anche al Bluetooth, ma la pagina di Amazon non lo cita, quindi è escluso.",
+    "matter": "La scheda di Amazon non cita Matter e dice che la presa è fatta per l'uso esclusivo con Alexa. Non abbiamo trovato una scheda CSA, ma nemmeno una dichiarazione esplicita.",
+    "hubRequired": "Non serve nessun hub per la smart home, ma la configurazione richiede l'app Alexa (un Echo è facoltativo).",
+    "localControl": "Amazon non dice se la presa funziona senza internet.",
+    "energyMonitoring": "La scheda di Amazon non cita il monitoraggio dei consumi.",
+    "maxLoadWatts": "Amazon indica 120 VAC, 60 Hz, 15 A max ma non dà la potenza in watt.",
+    "compatibility.apple_home": "Amazon dice che la presa non supporta altri assistenti vocali né altri hub smart.",
+    "compatibility.google_home": "Amazon dice che la presa non supporta altri assistenti vocali né altri hub smart.",
+    "compatibility.alexa": "Si configura e si controlla nell'app Alexa.",
+    "compatibility.smartthings": "Amazon dice che la presa non supporta altri assistenti vocali né altri hub smart.",
+    "compatibility.home_assistant": "La frase generica di Amazon sugli \"altri hub smart\" non nomina Home Assistant. Non abbiamo trovato un'integrazione ufficiale; gli utenti dei forum la controllano solo indirettamente tramite le routine di Alexa."
+  }
+}

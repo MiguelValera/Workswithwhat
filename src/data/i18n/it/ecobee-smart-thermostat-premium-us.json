@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "L'ecobee Smart Thermostat Premium si collega via Wi-Fi senza hub ed ecobee lo elenca per Apple HomeKit, Alexa, Google Assistant e SmartThings. Home Assistant ha un'integrazione ufficiale ecobee, e Alexa integrato è un'opzione sul termostato stesso. Controlla la maggior parte degli impianti a 24 V, pompe di calore incluse, e il Power Extender Kit è nella confezione per le case senza filo C. Matter non è confermato.",
+  "caveats": ["Senza filo C il Power Extender Kit richiede un filo libero; non funziona con impianti a doppio trasformatore, a millivolt o ad alta tensione."],
+  "notes": {
+    "radios": "ecobee descrive i suoi termostati smart come dotati di Wi-Fi. I rivenditori indicano anche Bluetooth e una radio a 915 MHz per i sensori; nessuna pagina del produttore che abbiamo visto lo conferma.",
+    "matter": "Nessuna pagina ecobee né scheda CSA trovata per questo modello cita Matter. L'assenza non equivale a dire che non lo abbia.",
+    "hubRequired": "Si collega via Wi-Fi; non serve un bridge.",
+    "localControl": "Nessuna fonte del produttore dichiara cosa funzioni senza internet. L'integrazione ecobee di Home Assistant usa il cloud di ecobee.",
+    "thermostatType": "Termostato da parete.",
+    "systems": "ecobee dice che supporta la maggior parte degli impianti residenziali a 24 V in Nord America; gli impianti ad alta tensione e a millivolt non sono compatibili.",
+    "power": "ecobee lo alimenta da un'alimentazione a 24 V sul filo C. ecobee dice che il Power Extender Kit è incluso con ogni modello tranne Essential e Lite, per le case senza filo C; il kit ha dei limiti (vedi le avvertenze).",
+    "compatibility.apple_home": "ecobee elenca Apple HomeKit tra le piattaforme supportate. HomeKit è un abbinamento locale diretto, distinto da Matter.",
+    "compatibility.google_home": "ecobee elenca Google Assistant tra le piattaforme supportate.",
+    "compatibility.alexa": "ecobee elenca Amazon Alexa tra le piattaforme supportate. Sul Premium è disponibile anche Alexa integrato.",
+    "compatibility.smartthings": "ecobee elenca SmartThings tra le piattaforme supportate.",
+    "compatibility.home_assistant": "Integrazione ufficiale ecobee (entità climate con le impostazioni di comfort Home, Away e Sleep). L'abbinamento HomeKit è un percorso locale distinto."
+  },
+  "values": {
+    "power": "Filo C 24 V; Power Extender Kit incluso",
+    "systems": "La maggior parte degli impianti HVAC a 24 V, pompe di calore incluse"
+  }
+}

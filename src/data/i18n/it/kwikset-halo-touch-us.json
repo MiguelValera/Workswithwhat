@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Chiavistello con impronta digitale e Wi-Fi integrato, il Kwikset Halo Touch funziona con Alexa e Google Home e non richiede un hub. Memorizza fino a 100 impronte per 50 utenti, ha una chiave di riserva e va a quattro pile AA. Le pagine di Kwikset non confermano Apple Home, SmartThings né Matter per questo modello.",
+  "caveats": ["Il supporto a Apple Home, SmartThings e Matter non è confermato per questo modello.", "Kwikset non dice se abbia un tastierino né quale banda Wi-Fi usi."],
+  "notes": {
+    "radios": "Si collega direttamente al Wi-Fi di casa. La banda Wi-Fi non è indicata nelle pagine che abbiamo visto.",
+    "matter": "Nessuna delle due pagine dell'Halo Touch cita Matter; Kwikset vende Matter con la linea Halo Select. Nessuna scheda CSA è stata controllata. L'assenza non è un no.",
+    "hubRequired": "Il Wi-Fi è integrato; l'app Kwikset gestisce la serratura.",
+    "localControl": "Kwikset dice che le immagini delle impronte sono memorizzate in locale sulla serratura, ma non dice se il controllo da app o vocale funzioni senza cloud.",
+    "lockFit": "Venduto come chiavistello in stile Contemporary o Traditional. Una chiave fa da riserva.",
+    "keypad": "Kwikset elenca l'impronta digitale (fino a 100 impronte, 50 utenti) e una chiave come modi di accesso. Nessuna delle due pagine dice se ci sia un tastierino, quindi resta non confermato.",
+    "power": "Quattro pile AA incluse.",
+    "compatibility.apple_home": "Nessuna delle due pagine dell'Halo Touch cita Apple Home o HomeKit; la pagina del prodotto elenca solo Alexa, Google Home e Brilliant.",
+    "compatibility.google_home": "Kwikset elenca Google Assistant e Google Home come compatibili.",
+    "compatibility.alexa": "Kwikset elenca Amazon Alexa come compatibile.",
+    "compatibility.smartthings": "Nessuna delle due pagine dell'Halo Touch cita SmartThings.",
+    "compatibility.home_assistant": "Nessuna pagina ufficiale di Home Assistant o Kwikset per questo modello è stata trovata."
+  },
+  "values": {"power": "4 × AA"}
+}

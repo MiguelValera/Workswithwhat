@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Koppelst du die EU-Version Philips Hue White and Colour Ambiance A60 mit einer Hue Bridge, funktioniert sie mit Apple Home, Google Home, Alexa, SmartThings und Home Assistant. Alexa, Google und Home Assistant laufen über Hues eigene Integrationen; Apple Home und SmartThings brauchen die Bridge. Allein läuft die Lampe per Bluetooth aus der Hue-App. Es ist die EAN 8720169364066, eine Farblampe mit E27-Sockel und 1100 Lumen bei 4000 K. Matter ist für diese EAN unbestätigt.",
+  "caveats": [
+    "Apple Home und SmartThings brauchen eine Hue Bridge; die direkte Matter-Kopplung ist für diese EAN nicht bestätigt.",
+    "Hues EU-Produktseite führt Alexa und Google Home unter „Hue Bridge required“; Sprachsteuerung ohne Bridge wird nur in Hues US-FAQ beschrieben.",
+    "Der Bluetooth-Modus schafft höchstens etwa 10 Lampen in einem Raum und hat keinen Fernzugriff.",
+    "Eine ältere Hue-E27-Farblampe, die ebenfalls als „1100“ verkauft wird (EAN 8719514291171), ist mit bis zu 1055 lm angegeben, prüfe also die EAN auf der Packung."
+  ],
+  "notes": {
+    "radios": "Hue führt Bluetooth und Zigbee für diese EAN. Der CSA-Matter-Eintrag zur 1100lm A19/A60 nennt auch einen Thread-Transport, aber wir können ihn nicht dieser EAN zuordnen, deshalb ist Thread hier nicht aufgeführt.",
+    "matter": "Offizielle Quellen widersprechen sich. Der CSA-Eintrag „White and Color Ambiance 1100lm A19/A60“ nennt Thread- und Bluetooth-Transport (Matter 1.3), aber Hues Seite zu dieser EAN führt nur Bluetooth und Zigbee. Hues Anleitung bietet Matter auch über die Hue Bridge.",
+    "hubRequired": "Die grundlegende Steuerung funktioniert per Bluetooth aus der Hue-App (bis zu 10 Lampen, ein Raum). Für Apple Home, SmartThings, Fernzugriff und größere Setups wird eine Hue Bridge gebraucht.",
+    "localControl": "Die Bluetooth-Steuerung vom Handy braucht kein Internet; die Hue Bridge bietet auch eine lokale API, die Home Assistant nutzt.",
+    "colorType": "Vollfarbe plus einstellbares Weiß; Hue nennt einen Bereich von 1000–20000 K.",
+    "lumens": "1100 lm bei 4000 K für EAN 8720169364066. Hues ältere E27-Farblampe, die als „1100“ verkauft wird (EAN 8719514291171), ist mit bis zu 1055 lm angegeben; prüfe die EAN auf der Packung.",
+    "compatibility.apple_home": "Hues Produktseite führt Apple Home unter „Hue Bridge required“; die Bridge verbindet über HomeKit oder Matter. Ist diese Lampe das im CSA-Eintrag geführte Thread-Modell, kann sie sich eventuell auch direkt über Matter koppeln; nicht bestätigt.",
+    "compatibility.google_home": "Funktioniert über Hues eigene Google-Home-Integration. Laut Hues (US-)FAQ funktionieren Bluetooth-Lampen ohne Bridge nur mit Google-Nest-Lautsprechern und -Displays; die EU-Seite führt Google unter „Hue Bridge required“.",
+    "compatibility.alexa": "Funktioniert über Hues eigene Alexa-Integration. Laut Hues (US-)FAQ können Bluetooth-Lampen ohne Bridge mit unterstützten Echo-Geräten koppeln; die EU-Seite führt Alexa unter „Hue Bridge required“.",
+    "compatibility.smartthings": "Hues Produktseite führt SmartThings unter „Hue Bridge required“. Die direkte Matter-Kopplung ist für diese EAN unbestätigt (siehe Matter).",
+    "compatibility.home_assistant": "Offizielle Hue-Integration (über die Hue Bridge) und offizielle Hue-BLE-Integration (2025.12, Bluetooth ohne Bridge). Die BLE-Dokumentation nennt bestimmte Hue-Modelle und sagt, andere sollten funktionieren; diese EAN wird nicht genannt."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Natives HomeKit ist der Grund, die Meross MSS110 zu wählen (verkauft als MSS110HK): Sie koppelt sich über WLAN direkt in Apple Home, ohne Umweg über Matter oder eine Bridge. Google Home, Alexa und SmartThings funktionieren auch, jeweils durch Verknüpfen deines Meross-Kontos. Es ist eine Steckdose für die USA und Kanada, ausgelegt auf 15 A / 1800 W, und sie misst den Verbrauch nicht.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN, und laut Meross werden Enterprise-WLAN-Netze nicht unterstützt.",
+    "Fernsteuerung in Apple Home braucht eine Apple-Steuerzentrale (HomePod, Apple TV oder iPad).",
+    "Keine Verbrauchsmessung; Meross verkauft dafür Steckdosen mit Messung wie die MSS315.",
+    "Meross sagt nicht, ob die MSS110 Matter unterstützt; die Matter-Mini-Steckdose ist die separate MSS115.",
+    "Home Assistant hat keine offizielle Meross-Integration."
+  ],
+  "notes": {
+    "radios": "Nur 2,4-GHz-WLAN; laut Meross wird Enterprise-WLAN nicht unterstützt.",
+    "matter": "Die MSS110-Seiten beschreiben HomeKit, nicht Matter. Meross' Matter-Mini-Steckdose ist die separate MSS115. Für die MSS110 haben wir in keiner Richtung eine ausdrückliche Aussage gefunden.",
+    "hubRequired": "Verbindet sich direkt mit deinem vorhandenen 2,4-GHz-WLAN; keine Bridge nötig. Eine Apple-Steuerzentrale braucht man nur für die HomeKit-Fernsteuerung.",
+    "localControl": "HomeKit-Zubehör arbeitet normalerweise über das LAN, aber wir haben keine Meross-Seite gefunden, die lokale Steuerung für dieses Modell nennt.",
+    "energyMonitoring": "Meross' US/JP-Seite zur MSS110 führt Energy Monitor: No. Für Verbrauchsmessung verkauft Meross andere Modelle (z. B. die MSS315).",
+    "maxLoadWatts": "Meross gibt die Version für USA/Kanada/Japan mit 15 A / 1800 W an.",
+    "compatibility.apple_home": "HomeKit (HAP) über WLAN; die HomeKit-Ausführung wird als MSS110HK verkauft (USA/Kanada). Fernsteuerung braucht eine Apple-Steuerzentrale (HomePod, Apple TV oder iPad).",
+    "compatibility.google_home": "Über die Kontoverknüpfung „Works with Google Home“ von Meross; füge die Steckdose zuerst in der Meross-App hinzu.",
+    "compatibility.alexa": "Über den Meross-Alexa-Skill, verknüpft mit deinem Meross-Konto.",
+    "compatibility.smartthings": "Meross' MSS110US-Seite führt SmartThings. Laut Meross' allgemeiner SmartThings-FAQ verbindet sie sich durch Verknüpfen deines Meross-Kontos in der SmartThings-App (Cloud zu Cloud).",
+    "compatibility.home_assistant": "Keine offizielle Meross-Integration in Home Assistant. Forumsnutzer berichten von der Kopplung über die HomeKit-Device-Integration oder das Community-Add-on Meross LAN, aber keine offizielle Seite nennt dieses Modell."
+  }
+}

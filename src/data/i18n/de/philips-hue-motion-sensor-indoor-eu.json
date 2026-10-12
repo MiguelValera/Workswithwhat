@@ -1,0 +1,31 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Bewegung, Temperatur und Helligkeit meldet der Hue Motion Sensor (Innenbereich), alles per Zigbee an eine Hue Bridge. Die Bridge verbindet ihn mit Apple Home, Google Home, Alexa, SmartThings und Home Assistant. Zwei AAA-Batterien liegen bei, und Hue nennt mindestens zwei Jahre Laufzeit.",
+  "caveats": [
+    "Braucht eine Hue Bridge, separat erhältlich; laut Hue funktionieren per Bluetooth verbundene Produkte nicht mit Matter.",
+    "Hue nennt eine Grenze von 12 Zubehörteilen an einer Hue Bridge."
+  ],
+  "notes": {
+    "radios": "Hues deutsche (EAN 8719514342125) und US-Produktseiten führen Bluetooth und Zigbee als Kommunikationsprotokolle.",
+    "matter": "Soweit gesehen hat der Sensor keinen eigenen CSA-Eintrag. Laut Hue funktionieren an eine Hue Bridge angeschlossene Produkte mit Matter (per Bluetooth verbundene nicht), und die Produktseiten führen Matter unter den Fremdsystemen. Keine gesehene Hue-Seite nennt den Matter-Gerätetyp des Sensors.",
+    "hubRequired": "Laut Hue braucht der Sensor ein von einer Hue Bridge gesteuertes Setup; die Bridge ist separat erhältlich. Bis zu 12 Zubehörteile an einer Hue Bridge.",
+    "localControl": "Keine gesehene Seite sagt, ob der Sensor ohne Internet funktioniert.",
+    "senses": "Temperatur und Helligkeit werden in der Hue-Dokumentation von Home Assistant genannt.",
+    "power": "2 × AAA liegen bei. Hues US-Seite nennt mindestens zwei Jahre Batterielaufzeit.",
+    "compatibility.apple_home": "Hues EU- und US-Seiten führen Apple Home unter den Fremdsystemen; es funktioniert über die Bridge.",
+    "compatibility.google_home": "Hues EU- und US-Seiten führen Google Home unter den Fremdsystemen; es funktioniert über die Bridge.",
+    "compatibility.alexa": "Hues EU- und US-Seiten führen Alexa unter den Fremdsystemen; es funktioniert über die Bridge.",
+    "compatibility.smartthings": "Hues EU- und US-Seiten führen Samsung SmartThings unter den Fremdsystemen; es funktioniert über die Bridge.",
+    "compatibility.home_assistant": "Die Hue-Integration von Home Assistant deckt Bewegungssensoren (mit Temperatur und Helligkeit) über die Bridge ab. Den Sensor direkt mit einem Zigbee-Koordinator zu koppeln, wird nur in Forenbeiträgen beschrieben und zählt deshalb nicht."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "google_home": "Philips Hue Bridge",
+    "alexa": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge",
+    "home_assistant": "Philips Hue Bridge"
+  },
+  "values": {
+    "power": "2 × AAA (im Lieferumfang)"
+  }
+}

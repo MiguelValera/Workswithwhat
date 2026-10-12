@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Eve Energy funziona con Apple Home, Google Home, Alexa, SmartThings e Home Assistant, tutti tramite Matter su Thread. Il punto è la parte Thread: ti serve un border router Thread che sia anche controller Matter, come un HomePod mini, un Apple TV 4K con Thread, un hub Nest o un Echo compatibile con Thread. Questa versione per Stati Uniti e Canada (codice prodotto 10EBU4151) è da 15 A / 1800 W e ha un misuratore di consumo integrato. Il controllo resta sulla tua rete locale, senza account Eve né cloud.",
+  "caveats": ["Richiede un border router Thread che sia anche controller Matter, come un HomePod mini, un Apple TV 4K con Thread, un hub Nest o un Echo compatibile con Thread.", "L'elenco di Eve per il controllo senza hub con iOS 18 non include il modello statunitense, quindi Apple Home richiede comunque un hub domestico.", "Le letture energetiche Matter arrivano con un aggiornamento del firmware, ed Eve non elenca Alexa tra i controller che le mostrano."],
+  "notes": {
+    "radios": "Eve indica solo Thread per questo modello; il Bluetooth è indicato per le vecchie generazioni statunitensi. Le schede CSA di questa famiglia mostrano il Bluetooth come trasporto, probabilmente per la configurazione Matter, ma Eve non lo conferma.",
+    "matter": "Eve definisce questo modello statunitense compatibile con Matter. La CSA elenca i certificati di Eve Energy sotto lo SKU di famiglia 20EBU4101, ma gli SKU variante mostrati non sono quello statunitense, quindi la scheda esatta è incerta.",
+    "hubRequired": "Richiede un controller Matter che sia anche border router Thread. Eve non vende un bridge proprio; l'hub viene dal tuo ecosistema.",
+    "localControl": "Matter su Thread funziona sulla rete locale, senza cloud né account Eve. L'elenco di Eve per il controllo senza hub con iOS 18 non include il modello statunitense, quindi serve comunque un hub.",
+    "energyMonitoring": "Misuratore di consumo integrato. Un aggiornamento del firmware aggiunge la segnalazione energetica Matter per Apple Home, Google Home, Home Assistant e SmartThings; Eve non nomina Alexa in questo caso.",
+    "maxLoadWatts": "120 V, 60 Hz, max. 15 A / 1800 W (Stati Uniti e Canada).",
+    "compatibility.apple_home": "Tramite Matter. Serve un hub domestico Apple che sia anche border router Thread (HomePod mini, HomePod 2nd gen o Apple TV 4K con Thread).",
+    "compatibility.google_home": "Tramite Matter. Serve un hub Google Nest che faccia da border router Thread.",
+    "compatibility.alexa": "Tramite Matter. Serve un dispositivo Echo che funzioni da controller Matter e border router Thread.",
+    "compatibility.smartthings": "Tramite Matter. Serve un hub SmartThings con Thread.",
+    "compatibility.home_assistant": "Tramite l'integrazione Matter di Home Assistant. Serve un border router Thread sulla rete."
+  }
+}
