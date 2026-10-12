@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { getActiveCategories } from '../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getActiveCategories } from '../lib/devices';
 import { getActiveMarkets, getRegionPages, marketText } from '../lib/markets';
 import { catText } from '../lib/categories';
 import { OPERATOR } from '../site.config';
@@ -50,6 +50,7 @@ const regionLinks = markets.map((m) => {
   const candidates = [`/${m.key}${rest}`, firstSegment ? `/${m.key}/${firstSegment}/` : '', `/${m.key}/`];
   return { m, href: candidates.find((c) => regionPaths.has(c)) ?? `/${m.key}/` };
 });
+const inCategory = navCategories.find((c) => rest.startsWith(`/${c.path}/`));
 // keep titles short enough for search results; long question titles drop the brand suffix
 const fullTitle = here === '/' || title.length > 50 ? title : `${title} | Workswithwhat`;
 
@@ -113,31 +114,61 @@ if (crumbs.length) {
     <header class="site-header">
       <div class="wrap">
         <a class="logo" href={L('/')}>works<span>with</span>what</a>
-        <nav aria-label={t.mainNav}>
-          {navCategories.map((c) => <a href={L(`/${c.path}/`)} aria-current={current(`/${c.path}/`)}>{catText(c, lang).navLabel}</a>)}
-          <a href={L('/works-with/')} aria-current={current('/works-with/')}>{t.navByEcosystem}</a>
-          <a href={L('/methodology/')} aria-current={current('/methodology/')}>{t.navHowWeVerify}</a>
+        <nav class="primary" aria-label={t.mainNav}>
+          <details class={`menu${inCategory ? ' is-current' : ''}`}>
+            <summary>
+              <span class="only-wide">{t.navDevices}</span><span class="only-narrow">{t.navMenu}</span>
+              {inCategory && <span class="sr-only"> ({catText(inCategory, lang).label})</span>}
+            </summary>
+            <div class="panel">
+              <ul class="cat-grid">
+                {navCategories.map((c) => <li><a href={L(`/${c.path}/`)} aria-current={current(`/${c.path}/`)}>{catText(c, lang).label}</a></li>)}
+              </ul>
+              <ul class="only-narrow extra">
+                <li><a href={L('/works-with/')} aria-current={current('/works-with/')}>{t.navByEcosystem}</a></li>
+                <li><a href={L('/methodology/')} aria-current={current('/methodology/')}>{t.navHowWeVerify}</a></li>
+              </ul>
+            </div>
+          </details>
+          <a class="only-wide" href={L('/works-with/')} aria-current={current('/works-with/')}>{t.navByEcosystem}</a>
+          <a class="only-wide" href={L('/methodology/')} aria-current={current('/methodology/')}>{t.navHowWeVerify}</a>
         </nav>
         {
           markets.length > 1 && !noindex && (
-            <nav class="region" aria-label={t.region}>
-              <span class="muted">{t.region}:</span>
-              <a href={L(rest)} aria-current={hereMarket ? undefined : 'true'}>{t.regionAll}</a>
-              {regionLinks.map(({ m, href }) => (
-                <a href={L(href)} aria-current={hereMarket === m ? 'true' : undefined} title={marketText(m, lang).label}>
-                  {lang === 'es' ? marketText(m, lang).short : m.short.length <= 3 ? m.short : m.label}
-                </a>
-              ))}
-              {langLinks.length > 0 && (
-                <span class="langs" role="group" aria-label={t.language}>
-                  {langLinks.map(({ l, href }) => (
-                    <a href={href} hreflang={HTML_LANG[l]} lang={HTML_LANG[l]} aria-current={l === lang ? 'true' : undefined} title={LANG_NAMES[l]}>
-                      {l.toUpperCase()}
-                    </a>
-                  ))}
-                </span>
-              )}
-            </nav>
+            <details class="locale">
+              <summary>
+                <span>{lang.toUpperCase()}</span><span class="sep" aria-hidden="true">·</span><span class="only-wide">{hereMarket ? marketText(hereMarket, lang).label : t.regionAllLong}</span>
+                <span class="only-narrow">{hereMarket ? marketText(hereMarket, lang).short : t.regionAll}</span>
+                <span class="sr-only"> ({t.language} / {t.region})</span>
+              </summary>
+              <div class="panel">
+                <nav aria-label={t.region}>
+                  <span class="muted">{t.region}</span>
+                  <ul>
+                    <li><a href={L(rest)} aria-current={hereMarket ? undefined : 'true'}>{t.regionAllLong}</a></li>
+                    {regionLinks.map(({ m, href }) => (
+                      <li>
+                        <a href={L(href)} aria-current={hereMarket === m ? 'true' : undefined}>{marketText(m, lang).label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+                {langLinks.length > 0 && (
+                  <div class="langs" role="group" aria-label={t.language}>
+                    <span class="muted">{t.language}</span>
+                    <ul>
+                      {langLinks.map(({ l, href }) => (
+                        <li>
+                          <a href={href} hreflang={HTML_LANG[l]} lang={HTML_LANG[l]} aria-current={l === lang ? 'true' : undefined} title={LANG_NAMES[l]}>
+                            {LANG_NAMES[l]}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </details>
           )
         }
       </div>
@@ -161,6 +192,31 @@ if (crumbs.length) {
     </main>
     <footer class="site-footer">
       <div class="wrap">
+        <nav class="directory" aria-label={t.footerDirectory}>
+          <div>
+            <p class="dir-title">{t.navDevices}</p>
+            <ul>{navCategories.map((c) => <li><a href={L(`/${c.path}/`)}>{catText(c, lang).label}</a></li>)}</ul>
+          </div>
+          <div>
+            <p class="dir-title">{t.navByEcosystem}</p>
+            <ul>
+              {ECOSYSTEMS.map((e) => <li><a href={L(`/works-with/${ecosystemSlug(e)}/`)}>{ECOSYSTEM_LABELS[e]}</a></li>)}
+              <li><a href={L('/works-with/matter/')}>Matter</a></li>
+            </ul>
+          </div>
+          {markets.length > 1 && (
+            <div>
+              <p class="dir-title">{t.region}</p>
+              <ul>{markets.map((m) => <li><a href={L(`/${m.key}/`)}>{marketText(m, lang).label}</a></li>)}</ul>
+            </div>
+          )}
+          {langLinks.length > 0 && (
+            <div>
+              <p class="dir-title">{t.language}</p>
+              <ul>{langLinks.map(({ l, href }) => <li><a href={href} hreflang={HTML_LANG[l]} lang={HTML_LANG[l]}>{LANG_NAMES[l]}</a></li>)}</ul>
+            </div>
+          )}
+        </nav>
         <p>
           {t.footerCorrection}{' '}
           <a href={`mailto:${OPERATOR.email}?subject=${encodeURIComponent(t.footerMailSubject)}`}>{t.footerTellUs}</a>.
