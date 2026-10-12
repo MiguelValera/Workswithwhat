@@ -114,7 +114,7 @@
     "sources": [],
     "note": "Not stated on the official pages cited here."
   },
-  "summary": "Placeholder summary pending the editor: this record lists what the hub connects to and which ecosystems see those devices. IKEA hub for Zigbee and Thread smart products, sold in Europe.",
+  "summary": "DIRIGERA is IKEA's hub for Zigbee and Thread products, and it doubles as a Matter controller and Thread border router. IKEA devices reach Apple Home, Google Home and Alexa through an integration in the IKEA Home smart app, and Home Assistant picks it up as a Matter bridge. SmartThings is not confirmed.",
   "sources": [
     {
       "id": "ikea-dirigera-eu",
@@ -151,6 +151,10 @@
   ],
   "status": "verified",
   "updatedAt": "2026-10-12",
-  "caveats": [],
+  "caveats": [
+    "IKEA names no SmartThings integration, and no official source confirms it works.",
+    "IKEA doesn't fully say which device types pass through the hub's Matter bridge.",
+    "The hub connects to your router with the supplied network cable."
+  ],
   "verifiedAt": "2026-10-12"
 }

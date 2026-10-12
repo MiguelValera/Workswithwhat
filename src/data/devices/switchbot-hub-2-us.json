@@ -114,7 +114,7 @@
     ],
     "note": "SwitchBot gives 8 as the number of sub-devices Hub 2 can sync to Apple or Google over Matter, a bridge limit rather than a total."
   },
-  "summary": "Placeholder summary pending the editor: this record lists what the hub connects to and which ecosystems see those devices. SwitchBot Hub 2 with IR blaster and Matter bridge for SwitchBot devices.",
+  "summary": "SwitchBot Hub 2 connects SwitchBot devices and IR appliances over 2.4 GHz Wi-Fi and Bluetooth. Google Home and Alexa work through SwitchBot's own integrations, while Apple Home, SmartThings and Home Assistant get them through the hub's Matter bridge, which syncs up to 8 sub-devices to Apple or Google.",
   "sources": [
     {
       "id": "sb-hub2",
@@ -191,6 +191,10 @@
   ],
   "status": "verified",
   "updatedAt": "2026-10-12",
-  "caveats": [],
+  "caveats": [
+    "Hub 2 joins 2.4 GHz Wi-Fi, and Matter runs over Wi-Fi.",
+    "The Matter bridge syncs up to 8 sub-devices to Apple or Google, and only some SwitchBot device types are bridged; check SwitchBot's compatibility list.",
+    "Apple Home needs a HomePod or Apple TV as the Matter controller."
+  ],
   "verifiedAt": "2026-10-12"
 }

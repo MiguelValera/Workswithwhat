@@ -101,7 +101,7 @@
     "sources": [],
     "note": "Not stated by the maker."
   },
-  "summary": "Placeholder summary pending the editor: this record lists what the hub connects to and which ecosystems see those devices. USB radio stick for Home Assistant, Zigbee or Thread, one at a time.",
+  "summary": "Home Assistant Connect ZBT-1 is a USB radio stick for people who already run Home Assistant: it adds Zigbee through ZHA, or Thread with the OpenThread Border Router app. Pick one per stick. Home Assistant is the only ecosystem confirmed, and it was formerly sold as SkyConnect.",
   "sources": [
     {
       "id": "zbt1-site",
@@ -147,6 +147,10 @@
   ],
   "status": "verified",
   "updatedAt": "2026-10-12",
-  "caveats": [],
+  "caveats": [
+    "It runs Zigbee or Thread firmware, never both; on Thread firmware, Zigbee devices stop working.",
+    "It isn't standalone and needs Home Assistant running on a host such as Home Assistant Green.",
+    "Home Assistant announced the newer Connect ZBT-2 in November 2025, so check the ZBT-1 is still on sale before you buy."
+  ],
   "verifiedAt": "2026-10-12"
 }

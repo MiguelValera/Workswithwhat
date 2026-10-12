@@ -115,7 +115,7 @@
     ],
     "note": "Philips states 50 lights and 12 accessories, two separate limits, so no single number is recorded. The Bridge Pro supports more."
   },
-  "summary": "Placeholder summary pending the editor: this record lists what the hub connects to and which ecosystems see those devices. Philips Hue bridge V2, a Zigbee bridge for Hue lights and accessories.",
+  "summary": "The Hue Bridge (V2) is the Zigbee hub behind Philips Hue lights and accessories, and your Hue lights appear in Apple Home, Google Home, Alexa, SmartThings and Home Assistant through it. It is Matter-certified, so Matter works too, and it plugs into your router by Ethernet. Philips caps it at 50 lights and 12 accessories.",
   "sources": [
     {
       "id": "hue-us-bridge",
@@ -168,6 +168,10 @@
   ],
   "status": "verified",
   "updatedAt": "2026-10-12",
-  "caveats": [],
+  "caveats": [
+    "Philips states 50 lights and 12 accessories as two separate limits; the Hue Bridge Pro supports more.",
+    "Over Matter, the Play HDMI Sync Box and the dial on the Tap dial switch don't come through.",
+    "The bridge connects to the router by Ethernet cable only, not Wi-Fi."
+  ],
   "verifiedAt": "2026-10-12"
 }

@@ -119,7 +119,7 @@
     "sources": [],
     "note": "No figure confirmed on an official page; retailers quote 127 or 128 devices."
   },
-  "summary": "Placeholder summary pending the editor: this record lists what the hub connects to and which ecosystems see those devices. Aqara Zigbee, Thread and Matter hub with an IR blaster, EU version.",
+  "summary": "Aqara Hub M3 bridges Aqara Zigbee devices into Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter. It is also a Thread border router with a built-in IR blaster, and Aqara says automations run locally on the hub. Whether the M3 itself carries a Matter certificate is unconfirmed; its CSA listing is Zigbee 3.0.",
   "sources": [
     {
       "id": "aqara-m3-faq",
@@ -164,6 +164,11 @@
   ],
   "status": "verified",
   "updatedAt": "2026-10-12",
-  "caveats": [],
+  "caveats": [
+    "Some Aqara Zigbee devices have no Matter device type and are not bridged.",
+    "The M3's own CSA listing is a Zigbee 3.0 certificate, and no source confirmed a Matter certificate naming it.",
+    "Push notifications, weather and geofencing still need the cloud, even though automations run locally.",
+    "Aqara gives no official device limit; retailers quote 127 or 128."
+  ],
   "verifiedAt": "2026-10-12"
 }
