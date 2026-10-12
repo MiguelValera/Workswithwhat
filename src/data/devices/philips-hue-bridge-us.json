@@ -13,62 +13,65 @@
       "ethernet"
     ],
     "sources": [
-      "hue-bridge-faq",
-      "hue-buying-guide"
+      "hue-bridge-faq"
     ],
-    "note": "Zigbee for lights and accessories; the buying guide table lists Ethernet for the V2 bridge."
+    "note": "Zigbee for lights and accessories; Philips says the bridge connects to the router with an Ethernet cable."
   },
   "matter": {
     "certified": true,
     "transport": "ethernet",
     "sources": [
-      "csa-hue-platform",
-      "hue-matter"
+      "csa-hue-bridge",
+      "hue-bridge-faq"
     ],
-    "note": "Philips says the square bridge gained Matter by software update; CSA lists a 'Hue Bridge Matter Platform' software certificate (firmware 1.4.2). Transport is Ethernet because the V2 bridge connects by cable. The Hue Bridge Pro is the newer model."
+    "note": "CSA lists the Philips Hue Bridge (Signify, certified 2022, later firmware recertified). The bridge reaches the network only by Ethernet cable, so Matter runs over Ethernet. The Hue Bridge Pro is a separate, newer model."
   },
   "compatibility": {
     "apple_home": {
       "status": "native",
       "sources": [
         "hue-us-bridge",
-        "hue-matter"
+        "hue-pss-us"
       ],
-      "note": "Product page lists Apple Home; Matter also works. Philips excludes the Play HDMI Sync Box and the Tap dial's dial from Matter."
+      "note": "Philips lists Apple Home and Apple HomeKit through the bridge. Matter also works, except for the Play HDMI Sync Box and the Tap dial's dial."
     },
     "google_home": {
       "status": "native",
       "sources": [
         "hue-us-bridge",
-        "hue-matter"
-      ]
+        "hue-pss-us"
+      ],
+      "note": "Matter also works through the bridge."
     },
     "alexa": {
       "status": "native",
       "sources": [
         "hue-us-bridge",
-        "hue-matter"
-      ]
+        "hue-pss-us"
+      ],
+      "note": "Matter also works through the bridge."
     },
     "smartthings": {
       "status": "native",
       "sources": [
         "hue-us-bridge"
       ],
-      "note": "Listed on the Hue Bridge product page as working with Samsung SmartThings."
+      "note": "Listed on the US Hue Bridge page as working with Samsung SmartThings."
     },
     "home_assistant": {
       "status": "native",
       "sources": [
-        "ha-matter"
+        "ha-hue"
       ],
-      "note": "Home Assistant has its own Philips Hue integration; its Matter docs say bridging Hue through Matter gains nothing."
+      "note": "Home Assistant has an official Philips Hue integration that pairs with the bridge and controls its lights, sensors and remotes."
     }
   },
   "hubRequired": {
-    "value": null,
-    "sources": [],
-    "note": "Not applicable to the hub itself; not assessed."
+    "value": false,
+    "sources": [
+      "hue-bridge-faq"
+    ],
+    "note": "It is the hub: Philips calls it the central controller of the Hue system."
   },
   "localControl": {
     "value": null,
@@ -89,15 +92,15 @@
     "sources": [
       "hue-bridge-faq"
     ],
-    "note": "Zigbee network private to Hue lights and accessories, separate from Wi-Fi."
+    "note": "A private Zigbee network for Hue lights and accessories, separate from Wi-Fi."
   },
   "matterBridge": {
     "value": true,
     "sources": [
       "hue-matter",
-      "csa-hue-platform"
+      "csa-hue-bridge"
     ],
-    "note": "Hue products on the bridge work with Matter, except the Play HDMI Sync Box and the Tap dial's dial; Bluetooth-connected products can't. Philips' buying-guide table lists Matter only for the Bridge Pro: verifier to reconcile."
+    "note": "Philips says Hue products on the bridge work with Matter, except the Play HDMI Sync Box and the Tap dial's dial; Bluetooth-only use can't reach Matter."
   },
   "threadBorderRouter": {
     "value": null,
@@ -107,17 +110,26 @@
   "maxDevices": {
     "value": null,
     "sources": [
-      "hue-us-bridge"
+      "hue-us-bridge",
+      "hue-pss-us"
     ],
-    "note": "Maker states 50 lights and 12 accessories, two separate limits, so no single number is recorded. The Bridge Pro supports more."
+    "note": "Philips states 50 lights and 12 accessories, two separate limits, so no single number is recorded. The Bridge Pro supports more."
   },
   "summary": "Placeholder summary pending the editor: this record lists what the hub connects to and which ecosystems see those devices. Philips Hue bridge V2, a Zigbee bridge for Hue lights and accessories.",
   "sources": [
     {
       "id": "hue-us-bridge",
-      "url": "https://www.philips-hue.com/en-us/p/hue-bridge/046677458478",
-      "title": "Bridge - Smart hub",
+      "url": "https://www.philips-hue.com/en-us/p/hue-bridge/046677458478/support",
+      "title": "Hue Bridge",
       "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-pss-us",
+      "url": "https://www.assets.lighting.philips.com/is/content/PhilipsLighting/046677458478-pss-en_us",
+      "title": "Hue Bridge 046677458478 product sheet (US)",
+      "publisher": "Signify",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
     },
@@ -130,39 +142,32 @@
       "accessed": "2026-10-12"
     },
     {
-      "id": "hue-buying-guide",
-      "url": "https://www.philips-hue.com/en-us/products/smart-light-accessories/hue-bridge-buying-guide",
-      "title": "Hue Bridge buying guide",
-      "publisher": "Philips Hue",
-      "kind": "manufacturer",
-      "accessed": "2026-10-12"
-    },
-    {
       "id": "hue-matter",
-      "url": "https://www.philips-hue.com/en-us/explore-hue/works-with/matter",
+      "url": "https://www.philips-hue.com/en-ca/explore-hue/works-with/matter",
       "title": "Philips Hue and Matter",
       "publisher": "Philips Hue",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
     },
     {
-      "id": "csa-hue-platform",
-      "url": "https://csa-iot.org/csa_product/hue-bridge-matter-platform/",
-      "title": "Hue Bridge Matter Platform",
+      "id": "csa-hue-bridge",
+      "url": "https://csa-iot.org/csa_product/philips-hue-bridge/",
+      "title": "Philips Hue Bridge",
       "publisher": "Connectivity Standards Alliance",
       "kind": "certification",
       "accessed": "2026-10-12"
     },
     {
-      "id": "ha-matter",
-      "url": "https://www.home-assistant.io/integrations/matter/",
-      "title": "Matter - Home Assistant",
+      "id": "ha-hue",
+      "url": "https://home-assistant.io/integrations/hue",
+      "title": "Philips Hue - Home Assistant",
       "publisher": "Home Assistant",
       "kind": "ecosystem",
       "accessed": "2026-10-12"
     }
   ],
-  "status": "draft",
+  "status": "verified",
   "updatedAt": "2026-10-12",
-  "caveats": []
+  "caveats": [],
+  "verifiedAt": "2026-10-12"
 }
