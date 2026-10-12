@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "En exteriores, la Tapo C520WS europea gira e inclina, graba vídeo 2K QHD y tiene certificación IP66. Funciona con un adaptador de corriente de 9 V y guarda los clips en una tarjeta microSD de hasta 512 GB; la página indica ONVIF y RTSP. Figuran Alexa y Google Assistant, y Home Assistant tiene una integración propia. La página de TP-Link no menciona Apple Home ni Matter.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz; usa el puerto Ethernet para una conexión por cable.",
+    "Necesita un adaptador de corriente de 9 V junto a la cámara; no admite energía solar.",
+    "El historial de clips y las capturas en la nube necesitan Tapo Care después del mes gratuito; la grabación en microSD, no.",
+    "La vista en directo en Home Assistant necesita una cuenta de cámara creada en la app Tapo."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz (802.11b/g/n) y un puerto Ethernet 10/100 Mbps.",
+    "matter": "La página alemana de TP-Link no menciona Matter y no hemos encontrado ningún registro de la CSA. Sin confirmar.",
+    "hubRequired": "Se conecta por wifi o Ethernet; la página no indica ningún hub ni estación base.",
+    "localControl": "La página indica compatibilidad con ONVIF y RTSP y grabación en microSD; la integración de Home Assistant la consulta en local.",
+    "cameraType": "Cámara motorizada (giro e inclinación) con certificación IP66, 2K QHD (2560 x 1440).",
+    "power": "La página dice que la cámara no admite paneles solares.",
+    "localStorage": "Tarjeta microSD de hasta 512 GB, se vende aparte.",
+    "subscription": "Tapo Care añade almacenamiento en la nube (30 días de clips) con un mes de prueba gratis; la grabación local no necesita ningún plan.",
+    "compatibility.apple_home": "La página de TP-Link no menciona Apple Home ni HomeKit.",
+    "compatibility.google_home": "La página de TP-Link indica Google Assistant. No detalla qué funciones van en Google Home (por ejemplo, la vista en directo en una pantalla).",
+    "compatibility.alexa": "La página de TP-Link indica Amazon Alexa. No detalla qué funciones van (por ejemplo, la vista en directo en un Echo Show).",
+    "compatibility.smartthings": "Ninguna de las páginas que vimos menciona SmartThings.",
+    "compatibility.home_assistant": "La integración TP-Link Smart Home incluida en Home Assistant lista la C520WS entre las cámaras Tapo. La vista en directo necesita una cuenta de cámara configurada en la app Tapo; con algunos firmwares también hay que activar el acceso de terceros en Tapo Lab."
+  },
+  "values": {
+    "power": "Red eléctrica (adaptador de 9 V CC)",
+    "subscription": "Historial de clips y capturas en la nube (Tapo Care)"
+  }
+}
