@@ -5,7 +5,7 @@ import { langOf } from '../i18n/lang';
 import { ui } from '../i18n/ui';
 interface Props {
   devices: Device[];
-  /** show "jump to brand" links above the table (long charts only) */
+  /** show brand filter chips above the table (long charts only) */
   brandJump?: boolean;
   /** prefix for brand anchors, so several tables on one page don't share ids (e.g. "us-") */
   anchorPrefix?: string;
@@ -20,14 +20,26 @@ const translations = await getTranslations();
 const brandAnchor = (brand: string) => `${anchorPrefix}brand-${brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
 const firstOfBrand = new Set(devices.filter((d, i) => i === 0 || devices[i - 1].data.brand !== d.data.brand).map((d) => d.id));
 const brands = [...new Set(devices.map((d) => d.data.brand))];
+// Brand filter: CSS-only (the CSP allows no scripts). Ticking brand n shows only rows
+// with class fb-n; the rules for n = 1..MAX_FILTERS live in global.css.
+const MAX_FILTERS = 40;
+const filter = brandJump && brands.length > 4 && brands.length <= MAX_FILTERS;
+const brandIndex = (brand: string) => brands.indexOf(brand) + 1;
 ---
 
+<div class="filterable">
 {
-  brandJump && brands.length > 4 && (
-    <nav class="toc" aria-label={`${t.jumpToBrand.replace(/:$/, '')}${region ? ` (${region})` : ''}`}>
-      <span class="toc-label">{t.jumpToBrand}</span>
-      {brands.map((b) => <a href={`#${brandAnchor(b)}`}>{b}</a>)}
-    </nav>
+  filter && (
+    <form class="toc filters f-brand" aria-label={`${t.filterByBrand.replace(/:$/, '')}${region ? ` (${region})` : ''}`}>
+      <span class="toc-label">{t.filterByBrand}</span>
+      {brands.map((b, i) => (
+        <label>
+          <input type="checkbox" class={`fb-${i + 1}`} />
+          {b}
+        </label>
+      ))}
+      <button type="reset">{t.showAll}</button>
+    </form>
   )
 }
 <div class="table-scroll">
@@ -45,7 +57,7 @@ const brands = [...new Set(devices.map((d) => d.data.brand))];
         devices.map((dev) => {
           const d = dev.data;
           return (
-            <tr role="row" id={firstOfBrand.has(dev.id) ? brandAnchor(d.brand) : undefined}>
+            <tr role="row" class={filter ? `fb-${brandIndex(d.brand)}` : undefined} id={firstOfBrand.has(dev.id) ? brandAnchor(d.brand) : undefined}>
               <th role="rowheader" scope="row" class="name">
                 <a href={devicePathIn(dev, lang, translations)}>{d.name}</a>
                 <span class="note">{d.model} · {d.regions.join('/')}</span>
@@ -67,4 +79,5 @@ const brands = [...new Set(devices.map((d) => d.data.brand))];
       }
     </tbody>
   </table>
+</div>
 </div>
