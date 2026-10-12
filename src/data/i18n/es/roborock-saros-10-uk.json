@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Roborock vende el Saros 10 en el Reino Unido con 22 000 Pa de succión, un LiDAR retráctil con cámara RGB y mopas vibratorias que la base lava con agua caliente. La base vacía el depósito de polvo en una bolsa. Alexa funciona mediante la skill Roborock Plus, y la sala de prensa de Roborock incluye el modelo en el firmware Matter 02.32.44, que trae Apple Home y Google Home. SmartThings sin confirmar.",
+  "caveats": [
+    "La página británica sigue diciendo que Matter, incluido Apple Home, llegará en una actualización OTA; la sala de prensa de Roborock indica el firmware 02.32.44 como esa versión.",
+    "Roborock dice que las funciones de Matter varían según el ecosistema.",
+    "Ningún registro de la CSA nombra el Saros 10, así que Matter se apoya solo en la declaración de Roborock.",
+    "La página estadounidense de Roborock dice que el wifi es solo de 2,4 GHz; la británica no indica la banda.",
+    "La página de la integración oficial de Roborock en Home Assistant no nombra el Saros 10."
+  ],
+  "notes": {
+    "radios": "La página británica dice que hace falta wifi para controlarlo desde la app y que el Bluetooth se usa solo para configurar la red. La página estadounidense de Roborock dice que el wifi es solo de 2,4 GHz; la británica no indica la banda.",
+    "matter": "La sala de prensa de Roborock incluye el Saros 10 en el firmware Matter 02.32.44 (abril de 2025). La página británica aún dice que Matter llegará en una próxima OTA, así que su texto es más antiguo. No se ha encontrado ningún registro de la CSA que nombre el modelo.",
+    "hubRequired": "Se conecta a la app Roborock por el wifi de casa; la base es la estación del robot, no un hub.",
+    "localControl": "La página británica dice que los comandos de voz funcionan sin conexión, que es el control por voz integrado en el robot. Roborock no dice si el control desde la app o desde la casa inteligente funciona sin su nube.",
+    "cleaning": "Mopa vibratoria VibraRise 4.0, con una base que lava la mopa con agua de hasta 80 °C.",
+    "navigation": "RetractSense baja el LDS bajo los muebles bajos; ReactiveAI 3.0 usa luz estructurada y una cámara RGB para detectar obstáculos.",
+    "suctionPa": "Cifra de Roborock, obtenida en sus propias pruebas.",
+    "selfEmptying": "La RockDock Ultra 2.0 vacía el depósito de polvo en una bolsa desechable.",
+    "compatibility.apple_home": "Mediante Matter. La página británica dice que la compatibilidad con Matter, incluido Apple Home, llega con una OTA; la sala de prensa dice que el firmware 02.32.44 la incorpora. Roborock dice que las funciones de Matter varían según el ecosistema.",
+    "compatibility.google_home": "Mediante Matter tras el firmware 02.32.44, con funciones que varían según el ecosistema. Las páginas británicas de Roborock también dicen que el Saros 10 es compatible con Google Home, pero no describen ninguna integración de Roborock, así que solo se registra la vía Matter.",
+    "compatibility.alexa": "Mediante la skill Roborock Plus para robots que usan la app Roborock; la página británica también incluye Amazon Alexa.",
+    "compatibility.smartthings": "Ni las páginas británicas ni la declaración de la sala de prensa nombran SmartThings.",
+    "compatibility.home_assistant": "Home Assistant tiene una integración oficial de Roborock, pero la página encontrada no nombra el Saros 10."
+  }
+}

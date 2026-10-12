@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La bombilla de color GE Cync Direct Connect A19 funciona con Apple Home y SmartThings por Matter, y con Alexa y Google Home a través de Cync, todo por wifi de 2,4 GHz y sin hub. Es una bombilla de 800 lúmenes con casquillo medio. La CSA registra un certificado Matter por wifi para la Cync Full Color Direct Connect A19. Home Assistant sigue sin confirmar.",
+  "caveats": [
+    "GE vende varias bombillas de color Cync parecidas; comprueba el SKU (93132325 o 93132326) antes de comprar.",
+    "Solo wifi de 2,4 GHz.",
+    "Apple Home necesita un centro de la casa (HomePod o Apple TV) para el uso remoto.",
+    "La tienda de GE mostraba \"Sold out\" (agotado) el 2026-10-12."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz configurado en la app Cync. La CSA registra wifi y Bluetooth; la página de GE menciona Bluetooth solo en una FAQ.",
+    "matter": "La página de GE para los SKU 93132325 (1 unidad) y 93132326 (2 unidades) dice que es compatible con Matter. La CSA registra \"Cync Full Color Direct Connect LED A19\" de Savant (wifi y Bluetooth); ningún registro de la CSA nombra un SKU.",
+    "hubRequired": "GE dice que no hace falta ningún hub ni puente.",
+    "localControl": "La página de producto de GE no indica control local. La FAQ general de bombillas de Cync dice que las bombillas Direct Connect pueden controlarse sin internet, pero no nombra este modelo.",
+    "colorType": "Se vende como Full Color; GE también menciona un rango de blanco regulable.",
+    "bulbBase": "GE dice \"medium base\" (casquillo medio); en EE. UU. es E26.",
+    "compatibility.apple_home": "GE dice que Apple Home funciona por Matter; para el uso remoto hace falta un centro de la casa (HomePod o Apple TV).",
+    "compatibility.google_home": "La FAQ de bombillas de Cync dice que las bombillas Direct Connect funcionan con Google Assistant sin hub adicional; GE también indica Google por Matter.",
+    "compatibility.alexa": "La FAQ de bombillas de Cync dice que las bombillas Direct Connect se vinculan a Alexa mediante la skill de Cync o Frustration Free Setup; GE también indica Alexa por Matter.",
+    "compatibility.smartthings": "GE indica Samsung SmartThings por Matter.",
+    "compatibility.home_assistant": "Home Assistant tiene una integración oficial en la nube para Cync (2025.10), pero su documentación no lista modelos, y nada nombra esta bombilla para la integración Matter de HA."
+  }
+}

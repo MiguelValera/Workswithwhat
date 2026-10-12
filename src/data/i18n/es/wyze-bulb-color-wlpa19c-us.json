@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La Wyze Bulb Color (WLPA19C) funciona con Alexa y Google Home por wifi de 2,4 GHz, sin hub. Es una bombilla A19 con casquillo E26: 16 millones de colores, blanco regulable de 1800K a 6500K y hasta 1100 lúmenes. Las páginas de Wyze no mencionan Matter, Apple Home, SmartThings ni Home Assistant, así que siguen sin confirmar.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "Wyze no menciona Matter ni Apple Home para esta bombilla, así que están sin confirmar, no descartados."
+  ],
+  "notes": {
+    "radios": "Wyze indica 802.11 b/g/n en 2,4 GHz más Bluetooth; la configuración necesita una red de 2,4 GHz.",
+    "matter": "Ni la página de producto de Wyze ni su página de especificaciones mencionan Matter, y no hemos encontrado ningún registro de la CSA para esta bombilla.",
+    "hubRequired": "La página de Wyze dice que la bombilla se conecta directamente al wifi.",
+    "localControl": "Ninguna página de Wyze que hayamos visto indica si la bombilla funciona sin la nube.",
+    "colorType": "16 millones de colores más blanco regulable de 1800K a 6500K.",
+    "lumens": "Wyze da un rango de 30 a 1100 lúmenes; 1100 es el máximo.",
+    "compatibility.apple_home": "Las páginas de Wyze que hemos visto no mencionan Apple Home ni HomeKit; no lo tratamos como un \"no\" porque la ausencia no es una prueba.",
+    "compatibility.google_home": "Wyze indica Google Assistant y Google Home, vinculados mediante la integración propia de la app Wyze.",
+    "compatibility.alexa": "Wyze indica Alexa y tiene un artículo de soporte sobre cómo configurarla con la skill de Wyze.",
+    "compatibility.smartthings": "Las páginas de Wyze que hemos visto no mencionan SmartThings.",
+    "compatibility.home_assistant": "Las páginas de Wyze que hemos visto no mencionan Home Assistant."
+  }
+}

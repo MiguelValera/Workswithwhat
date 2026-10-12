@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Yale vende en el Reino Unido la Linus Smart Lock L2 como modelo SL 103. Se monta sobre el cilindro Euro actual y lleva wifi y Bluetooth integrados, así que la app Yale Home funciona de forma remota sin puente. Matter por wifi cubre Apple Home, Google Home, Alexa y SmartThings, y Home Assistant funciona mediante Matter. La cerradura no tiene teclado propio.",
+  "caveats": [
+    "Matter necesita una actualización de firmware en la cerradura, y antes hay que configurarla en la app Yale Home.",
+    "Algunas puertas necesitan un cilindro nuevo; consulta el comprobador de compatibilidad de Yale antes de comprar.",
+    "Para acceder con PIN hace falta el teclado Yale Smart Keypad, que se vende aparte.",
+    "La batería dura hasta unos 6 meses, y las páginas británicas no indican el tipo de batería."
+  ],
+  "notes": {
+    "radios": "La página británica de Yale indica wifi y Bluetooth integrados; su página británica de Matter dice que la cerradura usa wifi para Matter, no Thread.",
+    "matter": "Matter llega con una actualización de firmware. La CSA registra la Linus Smart Lock L2 (wifi y Bluetooth); el registro no nombra el código del modelo británico (SL 103).",
+    "hubRequired": "Con wifi integrado, no hace falta ningún puente de Yale para controlarla desde la app; la página de Matter de Yale dice que no se necesita ningún accesorio extra. La caja incluye un Yale Dot, que la página no presenta como requisito.",
+    "localControl": "Ninguna fuente de Yale indica que haya control solo local.",
+    "lockFit": "Yale dice que puede encajar sobre un cilindro Euro/DIN existente, y la caja británica incluye un adaptador para el pomo interior. Algunas puertas necesitan un cilindro nuevo; Yale tiene un comprobador de compatibilidad.",
+    "keypad": "La cerradura no tiene teclado; Yale dice que el acceso con PIN requiere el teclado Yale Smart Keypad, que se vende aparte.",
+    "power": "El folleto global de Yale describe una batería de iones de litio que se carga por USB-C; la FAQ británica da hasta 6 meses por carga, pero no indica el tipo de batería.",
+    "compatibility.apple_home": "Figura en la página de Matter de Yale Reino Unido. Configura primero la cerradura en la app Yale Home y después activa Matter en Plataforma externa.",
+    "compatibility.home_assistant": "La FAQ de plataformas de Yale no menciona Home Assistant, pero su página de Matter lo nombra como el hub Matter que ofrece por ahora las acciones separadas Desbloquear y Abrir puerta."
+  },
+  "values": {
+    "power": "Batería recargable"
+  }
+}

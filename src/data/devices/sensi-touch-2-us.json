@@ -1,0 +1,137 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Sensi",
+  "model": "Touch 2",
+  "name": "Sensi Touch 2 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://sensi.copeland.com/en-us/products/touch2-smart-thermostat",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "sensi-touch2-spec-sheet"
+    ],
+    "note": "Spec sheet lists 802.11 a/b/g/n on 2.4 and 5 GHz plus Bluetooth LE."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Matter is not mentioned on Sensi's pages or spec sheet; no CSA listing was checked."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "no",
+      "sources": [
+        "sensi-homekit-support"
+      ],
+      "note": "Sensi's HomeKit support page lists Touch 2 under 'Not Apple HomeKit compatible'; only the original Sensi Touch is listed as compatible."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "sensi-touch2-product",
+        "sensi-platforms-support"
+      ],
+      "note": "Works with Google Assistant and Google Home through the Sensi app link."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "sensi-touch2-product",
+        "sensi-platforms-support"
+      ],
+      "note": "Voice commands, routines and the Alexa Energy Dashboard via the Sensi skill."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "sensi-touch2-product",
+        "sensi-platforms-support"
+      ],
+      "note": "Sensi lists Samsung SmartThings; its page says it can turn heating on or off."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Sensi's pages do not mention Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Sensi's pages describe Wi-Fi control through the Sensi app but do not say whether a bridge is or isn't needed."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Sensi's pages stress remote control through its app; local control is not stated."
+  },
+  "thermostatType": {
+    "value": "wall",
+    "sources": [
+      "sensi-touch2-product"
+    ]
+  },
+  "systems": {
+    "value": "Universal: single-stage, multi-stage and heat pump",
+    "sources": [
+      "sensi-touch2-product",
+      "sensi-touch2-spec-sheet"
+    ],
+    "note": "Spec sheet lists gas or electric furnace, AC, boiler and heat pump (4H/2C), plus dual fuel without an outdoor sensor. Models 1F96U-42WF (white) and 1F96U-42WFB (black)."
+  },
+  "power": {
+    "value": "C-wire required (20-30 V AC)",
+    "sources": [
+      "sensi-touch2-spec-sheet"
+    ],
+    "note": "The spec sheet says all systems require a common wire; Sensi sells a Common Wire Kit (SA11) for homes without one."
+  },
+  "summary": "Sensi Touch 2 works with Alexa, Google Home and SmartThings, but not Apple Home: Sensi's own HomeKit page lists it as not compatible. It's a wall thermostat for single-stage, multi-stage and heat pump systems, with Wi-Fi and Bluetooth built in. Every install needs a C-wire (20-30 V AC), or Sensi's Common Wire Kit.",
+  "caveats": [
+    "Not compatible with Apple HomeKit, according to Sensi's support page.",
+    "Needs a C-wire; the Common Wire Kit (SA11) is the option when there is none.",
+    "Sensi does not mention Matter or Home Assistant."
+  ],
+  "sources": [
+    {
+      "id": "sensi-touch2-product",
+      "url": "https://sensi.copeland.com/en-us/products/touch2-smart-thermostat",
+      "title": "Sensi Touch 2 Smart is the Best Wi-Fi Thermostat",
+      "publisher": "Sensi (Copeland)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sensi-touch2-spec-sheet",
+      "url": "https://climate.emerson.com/documents/sensi-touch-2-smart-thermostat-spec-sheet-en-8725756.pdf",
+      "title": "Sensi Touch 2 Smart Thermostat Spec Sheet",
+      "publisher": "Copeland (Emerson)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sensi-platforms-support",
+      "url": "https://sensi.copeland.com/en-us/support/what-smart-home-platforms-do-sensi-thermostats-work-with",
+      "title": "Best Smart Home Platforms to Connect with Sensi Thermostats",
+      "publisher": "Sensi (Copeland)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sensi-homekit-support",
+      "url": "https://sensi.copeland.com/en-us/support/sensi-thermostat-compatible-to-apple-homekit",
+      "title": "How can I tell if my Sensi thermostat is Apple HomeKit compatible?",
+      "publisher": "Sensi (Copeland)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

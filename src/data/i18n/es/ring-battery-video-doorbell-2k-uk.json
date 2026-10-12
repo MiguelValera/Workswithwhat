@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "En el Reino Unido, Ring vende este timbre con batería como Battery Video Doorbell 2K. Graba vídeo en 2K, se conecta por wifi de 2,4 GHz sin hub y funciona con una batería recargable; Ring dice que también se puede conectar a la instalación eléctrica. Alexa es el único ecosistema que documenta Ring, con anuncios, conversación bidireccional y vista en directo en Echo Show. Para guardar vídeo hace falta un plan Ring Protect.",
+  "caveats": [
+    "El historial de vídeo guardado necesita un plan Ring Protect, desde 4,99 GBP al mes por dispositivo.",
+    "El wifi es solo de 2,4 GHz.",
+    "La compatibilidad con Apple Home, Google Home, SmartThings y Home Assistant está sin confirmar para este modelo.",
+    "La página británica de Ring indica tanto batería integrada como conexión a la instalación eléctrica; comprueba cuál encaja con el cableado de tu timbre actual."
+  ],
+  "notes": {
+    "radios": "La página británica de Ring indica 802.11 b/g/n solo en 2,4 GHz.",
+    "matter": "Las páginas británicas de Ring no mencionan Matter, y no ha aparecido en las búsquedas ningún registro de la CSA para un timbre de Ring.",
+    "hubRequired": "Se conecta por wifi a la app Ring. Un Ring Chime es opcional.",
+    "localControl": "Ring no indica si algún control funciona sin su nube.",
+    "power": "La página británica de Ring indica una batería integrada que se recarga por USB-C y dice que el timbre se puede conectar a la instalación eléctrica; no da ninguna potencia de transformador para este modelo. La lista de la caja de esa misma página menciona una batería de extracción rápida, así que lo que dice de la batería no es coherente.",
+    "localStorage": "La página británica de Ring no ofrece grabación local; el vídeo se guarda en la nube mediante un plan de Ring.",
+    "subscription": "Ring Protect cuesta desde 4,99 GBP al mes por dispositivo, con 30 días de prueba. La vista en directo, las notificaciones instantáneas y la conversación bidireccional son gratuitas.",
+    "compatibility.apple_home": "Las páginas británicas de Ring y las páginas de ayuda de Alexa no mencionan Apple Home ni HomeKit. Sin confirmar.",
+    "compatibility.google_home": "No se ha encontrado ninguna página de Ring que indique Google Home o Google Assistant para este timbre.",
+    "compatibility.alexa": "Mediante la skill de Ring. Ring dice que todos sus timbres con vídeo funcionan con Alexa: anuncios, conversación bidireccional y vista en directo en Echo Show. Las alertas de personas y paquetes necesitan Ring Protect. La fuente son las páginas de ayuda generales de Ring, no la página británica del producto.",
+    "compatibility.smartthings": "No se ha encontrado ninguna página oficial de Ring ni de SmartThings para este modelo.",
+    "compatibility.home_assistant": "Home Assistant tiene una integración oficial de Ring, pero su lista de dispositivos nombra 'Battery Doorbell' y 'Doorbell (2nd Gen)', no el Battery Video Doorbell 2K, así que la compatibilidad con este modelo está sin confirmar."
+  },
+  "values": {
+    "power": "Batería recargable",
+    "subscription": "Historial de vídeo guardado (plan Ring Protect)"
+  }
+}

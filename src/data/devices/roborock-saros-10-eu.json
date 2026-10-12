@@ -172,5 +172,8 @@
   ],
   "status": "verified",
   "updatedAt": "2026-10-12",
-  "verifiedAt": "2026-10-12"
+  "verifiedAt": "2026-10-12",
+  "variants": [
+    "roborock-saros-10-uk"
+  ]
 }
