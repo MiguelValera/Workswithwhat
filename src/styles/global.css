@@ -243,7 +243,9 @@ a.badge.region:hover { border-color: var(--accent); }
    Each chip is a checkbox with class f?-n; ticking any chip hides every item whose
    own chip (same class) is unticked. "Show all" is a form reset. */
 .filters label { position: relative; display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 2px 10px; border: 1px solid var(--line); border-radius: 99px; background: var(--surface); color: var(--accent); cursor: pointer; }
-.filters label:hover { border-color: var(--accent); }
+/* hover only for real pointers: on touch screens :hover sticks after a tap, so an unticked chip kept the accent border */
+@media (hover: hover) { .filters label:not(:has(input:checked)):hover { border-color: var(--accent); } }
+.filters label { -webkit-tap-highlight-color: transparent; }
 .filters input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
 .filters label:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
 .filters label:has(input:checked) { background: var(--accent); border-color: var(--accent); color: var(--surface); font-weight: 600; }
