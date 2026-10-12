@@ -1,0 +1,148 @@
+{
+  "category": "smart-lock",
+  "brand": "SwitchBot",
+  "model": "Lock Pro",
+  "name": "SwitchBot Lock Pro (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://us.switch-bot.com/products/switchbot-lock-pro",
+  "radios": {
+    "value": [
+      "bluetooth"
+    ],
+    "sources": [
+      "switchbot-hub-remote-support",
+      "switchbot-lock-pro-page"
+    ],
+    "note": "Bluetooth Low Energy to the phone, keypad and SwitchBot Hub. No Wi-Fi in the lock; remote control goes through a hub."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "SwitchBot says Matter comes from a Hub 2 or Hub Mini Matter Enabled, not the lock itself. We did not tie a CSA listing to this US model."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "SwitchBot Hub 2 / Hub Mini Matter Enabled",
+      "sources": [
+        "switchbot-us-lock-pro"
+      ],
+      "note": "SwitchBot's page says Hub 2 adds iPhone and Siri integration and Hub Mini Matter Enabled adds Apple Home."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "SwitchBot Hub 2 / Hub Mini Matter Enabled",
+      "sources": [
+        "switchbot-us-lock-pro"
+      ],
+      "note": "Listed through either hub."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "SwitchBot Hub 2 / Hub Mini Matter Enabled",
+      "sources": [
+        "switchbot-us-lock-pro"
+      ],
+      "note": "Listed through either hub."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "SwitchBot Hub Mini Matter Enabled",
+      "sources": [
+        "switchbot-us-lock-pro"
+      ],
+      "note": "The page lists SmartThings through Hub Mini Matter Enabled."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "SwitchBot Hub Mini Matter Enabled",
+      "sources": [
+        "switchbot-us-lock-pro"
+      ],
+      "note": "The page lists Home Assistant through Hub Mini Matter Enabled."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [
+      "switchbot-us-lock-pro",
+      "switchbot-hub-remote-support"
+    ],
+    "note": "A SwitchBot Hub is needed for remote control, Matter and smart-home platforms. Whether the lock works from the app over Bluetooth without a hub is not stated on the pages we saw."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No SwitchBot source states local-only control."
+  },
+  "lockFit": {
+    "value": "retrofit",
+    "sources": [
+      "switchbot-us-lock-pro",
+      "switchbot-lock-pro-page",
+      "switchbot-lock-pro-compat-us"
+    ],
+    "note": "Fits over the existing lock and keeps it. SwitchBot's North America compatibility page covers single deadbolts; rim and mortise locks need a support check."
+  },
+  "keypad": {
+    "value": false,
+    "sources": [
+      "switchbot-us-lock-pro"
+    ],
+    "note": "Keypad Touch and Keypad Vision are separate accessories."
+  },
+  "power": {
+    "value": "4 × AA",
+    "sources": [
+      "switchbot-lock-pro-page",
+      "switchbot-us-lock-pro"
+    ],
+    "note": "4 × AA included, up to 9 months. One spec line on the US store page says 3 × 18350; SwitchBot's main Lock Pro page lists only AA. A Dual Power Pack is sold separately."
+  },
+  "summary": "The SwitchBot Lock Pro reaches Apple Home, Google Home, Alexa, SmartThings and Home Assistant only through a SwitchBot hub: Hub 2 or Hub Mini Matter Enabled, with SmartThings and Home Assistant listed for the Mini only. The lock itself is a Bluetooth retrofit that runs on 4 × AA batteries, up to 9 months, and has no keypad unless you add a Keypad Touch or Keypad Vision. This is the non-Matter US model, not the EU Matter Enabled one.",
+  "caveats": [
+    "Remote control, Matter and platform links need a SwitchBot Hub, sold separately.",
+    "SmartThings and Home Assistant are listed only through the Hub Mini Matter Enabled.",
+    "Rim and mortise locks need a fit check with SwitchBot support; some US installs need a 3D-printed adaptor.",
+    "Not the same product as the Lock Pro Matter Enabled sold in the EU."
+  ],
+  "sources": [
+    {
+      "id": "switchbot-us-lock-pro",
+      "url": "https://us.switch-bot.com/products/switchbot-lock-pro",
+      "title": "SwitchBot Lock Pro",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-hub-remote-support",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/20695154903575-How-to-Lock-and-Unlock-SwitchBot-Lock-Pro-Remotely-Connect-to-SwitchBot-Hub",
+      "title": "How to Lock and Unlock SwitchBot Lock Pro Remotely (Connect to SwitchBot Hub)",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-lock-pro-page",
+      "url": "https://www.switch-bot.com/pages/switchbot-lock-pro",
+      "title": "SwitchBot Lock Pro",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-lock-pro-compat-us",
+      "url": "https://us.switch-bot.com/pages/switchbot-lock-pro-compatibility",
+      "title": "SwitchBot Lock Pro Compatibility & Installation",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

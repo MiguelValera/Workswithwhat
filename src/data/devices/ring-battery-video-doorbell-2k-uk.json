@@ -1,0 +1,150 @@
+{
+  "category": "smart-camera",
+  "brand": "Ring",
+  "model": "Battery Video Doorbell 2K",
+  "name": "Ring Battery Video Doorbell 2K (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://en-uk.ring.com/products/battery-doorbell-2nd-gen",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "ring-uk-bd2k-page"
+    ],
+    "note": "Ring's UK page lists 802.11 b/g/n on 2.4 GHz only."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim on Ring's UK pages, and no CSA listing for a Ring doorbell surfaced in search."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Ring's UK pages and Alexa help pages don't mention Apple Home or HomeKit. Not confirmed either way."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Ring page found that lists Google Home or Google Assistant for this doorbell."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "ring-alexa-devices",
+        "ring-alexa-control",
+        "ring-alexa-announcements"
+      ],
+      "note": "Through the Ring skill. Ring says all its video doorbells work with Alexa: announcements, two-way talk, live view on Echo Show. Person and package alerts need Ring Protect. Source is Ring's general help pages, not the UK product page."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Ring or SmartThings page found for this model."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [
+        "ha-ring"
+      ],
+      "note": "Home Assistant has an official Ring integration, but its device list names 'Battery Doorbell' and 'Doorbell (2nd Gen)', not the Battery Video Doorbell 2K, so support for this model is not confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "ring-uk-bd2k-page"
+    ],
+    "note": "Connects over Wi-Fi to the Ring app. A Ring Chime is optional."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Ring does not state whether any control works without its cloud."
+  },
+  "cameraType": {
+    "value": "doorbell",
+    "sources": [
+      "ring-uk-bd2k-page"
+    ]
+  },
+  "power": {
+    "value": "Rechargeable battery",
+    "sources": [
+      "ring-uk-bd2k-page"
+    ],
+    "note": "Ring's UK page lists a built-in battery recharged over USB-C and says the doorbell can be hardwired; it gives no transformer rating for this model. The same page's box list mentions a quick-release battery pack, so its battery wording is inconsistent."
+  },
+  "localStorage": {
+    "value": null,
+    "sources": [],
+    "note": "No local recording option on Ring's UK page; video is stored in the cloud through a Ring plan."
+  },
+  "subscription": {
+    "value": "Saved video history (Ring Protect plan)",
+    "sources": [
+      "ring-uk-bd2k-page",
+      "ring-alexa-announcements"
+    ],
+    "note": "Ring Protect starts at 4.99 GBP a month per device with a 30-day trial. Live view, instant notifications and two-way talk are free."
+  },
+  "summary": "In the UK, Ring sells this battery doorbell as the Battery Video Doorbell 2K. It records 2K video, connects over 2.4 GHz Wi-Fi with no hub, and runs on a rechargeable battery, and Ring says it can also be hardwired. Alexa is the one ecosystem Ring documents, with announcements, two-way talk and live view on Echo Show. Saved video needs a Ring Protect plan.",
+  "caveats": [
+    "Saved video history needs a Ring Protect plan, from 4.99 GBP a month per device.",
+    "Wi-Fi is 2.4 GHz only.",
+    "Apple Home, Google Home, SmartThings and Home Assistant support is not confirmed for this model.",
+    "Ring's UK page lists both a built-in battery and a hardwired option; check which suits your existing doorbell wiring."
+  ],
+  "sources": [
+    {
+      "id": "ring-uk-bd2k-page",
+      "url": "https://en-uk.ring.com/products/battery-doorbell-2nd-gen",
+      "title": "Ring Battery Video Doorbell 2K",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ring-alexa-devices",
+      "url": "https://ring.com/support/articles/fhs6z/Ring-Supported-Alexa-Enabled-Devices",
+      "title": "Ring supported Alexa-enabled devices",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ring-alexa-control",
+      "url": "https://ring.com/support/articles/4j9pd/Control-Ring-Doorbell-Security-Camera-Alexa",
+      "title": "Control Your Ring Doorbell or Security Camera with Alexa",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ring-alexa-announcements",
+      "url": "https://ring.com/support/articles/2mgbt/managing-alexa-announcements-for-ring-devices",
+      "title": "Managing Alexa Announcements for Ring devices",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-ring",
+      "url": "https://www.home-assistant.io/integrations/ring",
+      "title": "Ring - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "variants": [
+    "ring-battery-doorbell-2k-us"
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-12",
+  "updatedAt": "2026-10-12"
+}

@@ -1,0 +1,144 @@
+{
+  "category": "smart-sensor",
+  "brand": "Aqara",
+  "model": "Door and Window Sensor P2 (US)",
+  "name": "Aqara Door and Window Sensor P2 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.aqara.com/us/product/door-and-window-sensor-p2/",
+  "radios": {
+    "value": [
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "aqara-dw-us-specs",
+      "csa-aqara-dw"
+    ],
+    "note": "Aqara's US specs list Thread and BLE; CSA lists Thread and Bluetooth. US models DW-S02E and DW-S02D."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "csa-aqara-dw",
+      "aqara-dw-us"
+    ],
+    "note": "CSA lists Door and Window Sensor P2 from Lumi United (vendor 0x115F, product 0x2002), a global listing with no model or region. The US product page says native Matter support."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "aqara-dw-us"
+      ],
+      "note": "Needs a Matter-compatible Thread border router: Apple TV 4K (2nd/3rd gen), HomePod (2nd gen) or HomePod mini."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "aqara-dw-us"
+      ],
+      "note": "Needs a Thread border router such as Nest Hub (2nd gen), Nest Hub Max or Nest Wifi Pro."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "aqara-dw-us"
+      ],
+      "note": "Needs a Thread border router such as Echo (4th gen)."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "aqara-dw-us"
+      ],
+      "note": "Needs a Thread border router such as SmartThings Hub v3, Aeotec Hub v3 or SmartThings Station."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "aqara-dw-us",
+        "ha-matter"
+      ],
+      "note": "Aqara lists Home Assistant Yellow as a tested border router; used through Home Assistant's Matter integration."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "aqara-dw-us"
+    ],
+    "note": "No Aqara hub for Matter use, but a Matter-compatible Thread border router is required (not a brand hub). Aqara Home support, the tamper alarm and adjustable sensitivity are tied to Aqara's Hub M3."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "aqara-dw-us"
+    ],
+    "note": "Aqara's US page says it can work entirely on your local network without cloud services."
+  },
+  "senses": {
+    "value": [
+      "contact"
+    ],
+    "sources": [
+      "aqara-dw-us",
+      "csa-aqara-dw"
+    ],
+    "note": "Aqara's US page lists always-on open/close detection; CSA lists it as a contact sensor (device type 0x0015)."
+  },
+  "power": {
+    "value": "CR123A",
+    "sources": [
+      "aqara-dw-us-specs",
+      "aqara-dw-us"
+    ]
+  },
+  "summary": "The US version of the Door and Window Sensor P2 connects over Matter on Thread, so Apple Home, Google Home, Alexa, SmartThings and Home Assistant all work with it, no Aqara hub needed. It reports open or closed and runs on one CR123A battery. A Matter-compatible Thread border router is required, and the tamper alarm and sensitivity settings need Aqara's Hub M3.",
+  "caveats": [
+    "Needs a Matter-compatible Thread border router, for example a HomePod mini, Nest Hub (2nd gen) or Echo (4th gen).",
+    "Full Aqara Home support, the tamper alarm and adjustable sensitivity depend on Aqara's Hub M3."
+  ],
+  "sources": [
+    {
+      "id": "aqara-dw-us",
+      "url": "https://www.aqara.com/us/product/door-and-window-sensor-p2/",
+      "title": "Door and Window Sensor P2 - Aqara",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "aqara-dw-us-specs",
+      "url": "https://www.aqara.com/us/product/door-and-window-sensor-p2/specs/",
+      "title": "Door and Window Sensor P2 Specs",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-aqara-dw",
+      "url": "https://csa-iot.org/csa_product/door-and-window-sensor-p2/",
+      "title": "Door and Window Sensor P2",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "variants": [
+    "aqara-door-and-window-sensor-p2-eu"
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}
