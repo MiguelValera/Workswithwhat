@@ -155,6 +155,14 @@ export const deviceTitle = (d: Device, lang: Lang = 'en') =>
     ? `¿Es compatible ${d.data.name} con Apple Home, Google Home o Alexa?`
     : `Does the ${d.data.name} work with Apple Home, Google Home or Alexa?`;
 
+// "Name (model)", leaving the model out when the name already says it ("Tapo P110 (EU)", not "Tapo P110 (EU) (Tapo P110)")
+export const nameWithModel = (d: Device) => {
+  const flat = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const name = flat(d.data.name.replace(/\s*\([^)]*\)$/, ''));
+  const model = flat(d.data.model);
+  return name.includes(model) || model.includes(name) ? d.data.name : `${d.data.name} (${d.data.model})`;
+};
+
 /** Categories that have at least one published device (only these get pages). */
 export async function getActiveCategories() {
   const devices = await getPublishedDevices();

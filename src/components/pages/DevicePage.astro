@@ -16,6 +16,7 @@ import {
   formatDate,
   getTranslations,
   listJoin,
+  nameWithModel,
   radioList,
   worksWith,
   type Device,
@@ -48,13 +49,14 @@ const pagePath = `/${cat.path}/${device.id}/`;
 const works = ECOSYSTEMS.filter((e) => worksWith(device, e)).map((e) => ECOSYSTEM_LABELS[e]);
 
 const title = deviceTitle(device, lang);
+const named = nameWithModel(device);
 const description = es
   ? works.length
-    ? `${d.name} (${d.model}) funciona con ${listJoin(works, lang)}. Tipo de conexión, necesidad de hub y especificaciones, cada dato con su fuente.`
-    : `Compatibilidad de ${d.name} (${d.model}) con Apple Home, Google Home, Alexa, SmartThings y Home Assistant, con fuentes.`
+    ? `${named} funciona con ${listJoin(works, lang)}. Tipo de conexión, necesidad de hub y especificaciones, cada dato con su fuente.`
+    : `Compatibilidad de ${named} con Apple Home, Google Home, Alexa, SmartThings y Home Assistant, con fuentes.`
   : works.length
-    ? `${d.name} (${d.model}) works with ${listJoin(works)}. Connection type, hub needs and specs, each linked to its source.`
-    : `${d.name} (${d.model}) compatibility with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, with sources.`;
+    ? `${named} works with ${listJoin(works)}. Connection type, hub needs and specs, each linked to its source.`
+    : `${named} compatibility with Apple Home, Google Home, Alexa, SmartThings and Home Assistant, with sources.`;
 
 const yesNo = (v: boolean | null) => (v === null ? t.unconfirmed : v ? t.yes : t.no);
 const radios = radioList(d.radios.value, lang) || t.unconfirmed;
