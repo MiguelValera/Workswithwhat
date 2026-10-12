@@ -81,9 +81,9 @@ main p, main li:not(.card) { max-width: 72ch; }
 .site-header .panel { position: absolute; top: 100%; right: 0; z-index: 20; min-width: 220px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14); }
 .site-header .menu .panel { left: 0; right: auto; width: max-content; max-width: min(560px, 92vw); }
 .site-header ul { list-style: none; margin: 0; padding: 0; }
-.site-header .panel a { display: flex; align-items: center; min-height: 44px; padding: 0 8px; color: var(--text); text-decoration: none; border-radius: 6px; }
+.site-header .panel a { display: flex; align-items: center; min-height: 44px; padding: 6px 8px; line-height: 1.3; color: var(--text); text-decoration: none; border-radius: 6px; }
 .site-header .panel a:hover { background: var(--accent-soft); }
-.site-header .cat-grid { display: grid; grid-template-columns: repeat(3, minmax(160px, 1fr)); gap: 0 12px; }
+.site-header .cat-grid { display: grid; grid-template-columns: repeat(3, minmax(160px, 1fr)); gap: 2px 12px; }
 .site-header .locale .panel nav, .site-header .locale .langs { display: block; }
 .site-header .locale .panel .muted { display: block; font-size: 0.8rem; padding: 4px 8px 0; }
 .site-header .locale .langs { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
@@ -108,7 +108,7 @@ main p, main li:not(.card) { max-width: 72ch; }
 main { padding-bottom: 48px; }
 .crumbs { font-size: 0.85rem; color: var(--muted); margin-top: 20px; display: flex; flex-wrap: wrap; gap: 6px; }
 .crumbs a { color: var(--muted); display: inline-block; padding-block: 2px; }
-.crumbs > * + *::before { content: '/'; margin-right: 6px; color: var(--line); }
+.crumbs > * + *::before { content: '/'; display: inline-block; margin-right: 6px; color: var(--muted); opacity: 0.6; text-decoration: none; }
 
 .site-footer { border-top: 1px solid var(--line); padding: 24px 0; font-size: 0.9rem; }
 .site-footer a { display: inline-block; padding-block: 4px; }
@@ -151,11 +151,25 @@ thead th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em;
 .card h2 a, .card h3 a { color: var(--text); text-decoration: none; }
 .card h2 a:hover, .card h3 a:hover { color: var(--accent); }
 .card .eco { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+/* the whole card is the link target, not just its title */
+.card:has(> h2 > a, > h3 > a) { position: relative; }
+.card:has(> h2 > a, > h3 > a):hover { border-color: var(--accent); }
+.card > h2 > a::after, .card > h3 > a::after { content: ''; position: absolute; inset: 0; border-radius: var(--radius); }
+/* home: categories as compact two-column tiles on phones, so the rest of the page isn't pushed far down */
+@media (max-width: 600px) {
+  .cards.cats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .cards.cats .card { padding: 12px; }
+  .cards.cats .card h2 { font-size: 0.98rem; hyphens: auto; overflow-wrap: break-word; }
+  .cards.cats .muted { font-size: 0.85rem; line-height: 1.4; }
+}
+.callout.jump { margin: 16px 0; padding-block: 6px; }
+.callout.jump .toc { margin: 8px 0; }
+.callout.jump .toc a { border-color: transparent; }
 
 .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 0; }
 .facts div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
 .facts dt { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
-.facts dd { margin: 2px 0 0; font-weight: 600; }
+.facts dd { margin: 2px 0 0; font-weight: 600; overflow-wrap: anywhere; }
 
 sup.ref a { text-decoration: none; font-size: 0.75rem; }
 ol.sources { font-size: 0.9rem; padding-left: 1.4em; }
@@ -193,6 +207,9 @@ ul.caveats li { margin-bottom: 6px; }
   table.stack th[scope='row'], table.stack td.wide { grid-column: 1 / -1; }
   table.stack td[data-label]::before { content: attr(data-label); display: block; font-size: 0.78rem; color: var(--muted); line-height: 1.3; margin-bottom: 3px; white-space: nowrap; }
   table.stack .badge { white-space: normal; border-radius: 8px; }
+  /* chart rows: the radio sits on one line under the name, so the six verdicts fill whole rows (3 on phones, 6 on tablets) */
+  table.stack td.radio { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 6px; font-size: 0.9rem; }
+  table.stack td.radio[data-label]::before { display: inline; margin: 0; font-size: 0.78rem; }
   table.stack.pair tr { grid-template-columns: minmax(0, 1fr) auto; }
   table.stack td.wide { color: var(--muted); font-size: 0.88rem; }
   table.stack.kv tr { grid-template-columns: 1fr auto; align-items: center; gap: 6px 12px; }
@@ -213,3 +230,63 @@ a.badge.region:hover { border-color: var(--accent); }
 /* plain link lists, e.g. the devices that work through a hub */
 .link-list { columns: 3 14rem; column-gap: 2rem; padding-left: 1.1rem; margin: 0 0 1.25rem; }
 .link-list li { break-inside: avoid; padding: 0.3rem 0; }
+
+/* In-page filters (chart brands and regions), CSS only: the CSP allows no scripts.
+   Each chip is a checkbox with class f?-n; ticking any chip hides every item whose
+   own chip (same class) is unticked. "Show all" is a form reset. */
+.filters label { position: relative; display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 2px 10px; border: 1px solid var(--line); border-radius: 99px; background: var(--surface); color: var(--accent); cursor: pointer; }
+.filters label:hover { border-color: var(--accent); }
+.filters input { position: absolute; inset: 0; margin: 0; opacity: 0; cursor: pointer; }
+.filters label:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
+.filters label:has(input:checked) { background: var(--accent); border-color: var(--accent); color: var(--surface); font-weight: 600; }
+.filters label:has(input:checked)::before { content: '✓'; }
+.filters button { min-height: 32px; padding: 2px 10px; border: 0; background: none; color: var(--muted); font: inherit; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; display: none; }
+.filters:has(input:checked) button { display: inline-flex; align-items: center; }
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-1:checked)) tr.fb-1,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-2:checked)) tr.fb-2,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-3:checked)) tr.fb-3,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-4:checked)) tr.fb-4,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-5:checked)) tr.fb-5,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-6:checked)) tr.fb-6,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-7:checked)) tr.fb-7,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-8:checked)) tr.fb-8,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-9:checked)) tr.fb-9,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-10:checked)) tr.fb-10,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-11:checked)) tr.fb-11,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-12:checked)) tr.fb-12,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-13:checked)) tr.fb-13,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-14:checked)) tr.fb-14,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-15:checked)) tr.fb-15,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-16:checked)) tr.fb-16,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-17:checked)) tr.fb-17,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-18:checked)) tr.fb-18,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-19:checked)) tr.fb-19,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-20:checked)) tr.fb-20,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-21:checked)) tr.fb-21,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-22:checked)) tr.fb-22,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-23:checked)) tr.fb-23,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-24:checked)) tr.fb-24,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-25:checked)) tr.fb-25,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-26:checked)) tr.fb-26,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-27:checked)) tr.fb-27,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-28:checked)) tr.fb-28,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-29:checked)) tr.fb-29,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-30:checked)) tr.fb-30,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-31:checked)) tr.fb-31,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-32:checked)) tr.fb-32,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-33:checked)) tr.fb-33,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-34:checked)) tr.fb-34,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-35:checked)) tr.fb-35,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-36:checked)) tr.fb-36,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-37:checked)) tr.fb-37,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-38:checked)) tr.fb-38,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-39:checked)) tr.fb-39,
+.filterable:has(> .f-brand input:checked):not(:has(> .f-brand .fb-40:checked)) tr.fb-40,
+.filterable:has(> .f-region input:checked):not(:has(> .f-region .fr-1:checked)) > section.fr-1,
+.filterable:has(> .f-region input:checked):not(:has(> .f-region .fr-2:checked)) > section.fr-2,
+.filterable:has(> .f-region input:checked):not(:has(> .f-region .fr-3:checked)) > section.fr-3,
+.filterable:has(> .f-region input:checked):not(:has(> .f-region .fr-4:checked)) > section.fr-4,
+.filterable:has(> .f-region input:checked):not(:has(> .f-region .fr-5:checked)) > section.fr-5,
+.filterable:has(> .f-region input:checked):not(:has(> .f-region .fr-6:checked)) > section.fr-6,
+.filterable:has(> .f-region input:checked):not(:has(> .f-region .fr-7:checked)) > section.fr-7,
+.filterable:has(> .f-region input:checked):not(:has(> .f-region .fr-8:checked)) > section.fr-8 { display: none; }

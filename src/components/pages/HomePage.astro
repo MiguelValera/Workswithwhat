@@ -66,7 +66,7 @@ const description = es
     )
   }
 
-  <ul class="cards">
+  <ul class="cards cats">
     {
       cats.map((c) => (
         <li class="card">
@@ -79,27 +79,16 @@ const description = es
     }
   </ul>
 
-  <p class="callout">
-    {es ? 'O ve directamente a una plataforma:' : 'Or jump to a platform:'}{' '}
-    {
-      ECOSYSTEMS.map((e, i) => (
-        <>
-          {i > 0 && ' · '}
-          <a href={L(`/works-with/${ecosystemSlug(e)}/`)}>{ECOSYSTEM_LABELS[e]}</a>
-        </>
-      ))
-    }
-    <br />
-    {es ? 'Solo tu región:' : 'Only your region:'}{' '}
-    {
-      markets.map((m, i) => (
-        <>
-          {i > 0 && ' · '}
-          <a href={L(`/${m.key}/`)}>{marketText(m, lang).label}</a>
-        </>
-      ))
-    }
-  </p>
+  <div class="callout jump">
+    <p class="toc">
+      <span class="toc-label">{es ? 'O ve directamente a una plataforma:' : 'Or jump to a platform:'}</span>
+      {ECOSYSTEMS.map((e) => <a href={L(`/works-with/${ecosystemSlug(e)}/`)}>{ECOSYSTEM_LABELS[e]}</a>)}
+    </p>
+    <p class="toc">
+      <span class="toc-label">{es ? 'Solo tu región:' : 'Only your region:'}</span>
+      {markets.map((m) => <a href={L(`/${m.key}/`)}>{marketText(m, lang).label}</a>)}
+    </p>
+  </div>
 
   <h2>{es ? 'Comprobados recientemente' : 'Recently checked'}</h2>
   {

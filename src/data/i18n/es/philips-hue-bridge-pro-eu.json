@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Según Philips, el Hue Bridge Pro (europeo, EAN 8720169155114) admite más de 150 luces y más de 50 accesorios. Los dispositivos Hue le hablan por Zigbee, y él se conecta a tu router por Ethernet (recomendado) o wifi. Apple Home, Google Home, Alexa y SmartThings figuran en la página europea de Philips, y Matter funciona a través del puente, que es como lo ve Home Assistant.",
+  "caveats": [
+    "Philips indica los límites como más de 150 luces y más de 50 accesorios, no como un total único.",
+    "La compatibilidad con Home Assistant es a través de Matter; la página de su integración Hue nombra solo los puentes V1 y V2, no el Pro.",
+    "Philips no menciona Thread para el Bridge Pro, así que no cuentes con él como router de borde Thread."
+  ],
+  "notes": {
+    "radios": "Philips indica Zigbee y Bluetooth, y dice que el Pro se une al router por wifi o con el cable Ethernet incluido (Ethernet recomendado). La indicación \"funciona sin wifi\" significa que no hace falta un enlace wifi.",
+    "matter": "La CSA registra la \"Hue Bridge Matter Platform\" (Signify, Matter 1.4.2, enero de 2026), un componente de software de \"Hue Bridge version 3\" que muestra el Bridge Pro, se enlaza con él y hace de puente entre Ethernet y Zigbee. El Pro también puede unirse por wifi.",
+    "hubRequired": "Es el propio hub.",
+    "localControl": "Sin confirmar. Philips dice que algunas funciones basadas en IA pueden ejecutarse en el hub sin depender únicamente de la nube.",
+    "compatibility.apple_home": "Apple Home figura en la página europea; Matter también funciona a través del puente.",
+    "compatibility.google_home": "Google Home figura en la página europea; Matter también funciona a través del puente.",
+    "compatibility.alexa": "Amazon Alexa figura en la página europea; Matter también funciona a través del puente.",
+    "compatibility.smartthings": "Samsung SmartThings figura en la página europea.",
+    "compatibility.home_assistant": "A través de la integración Matter de Home Assistant, que nombra el Philips Hue Bridge como puente Matter. La página de la integración Hue de Home Assistant nombra solo los puentes V1 y V2, no el Pro, así que la compatibilidad nativa no está confirmada.",
+    "deviceProtocols": "Luces y accesorios Hue por Zigbee.",
+    "matterBridge": "Philips dice que Matter funciona a través del puente; consulta a Philips qué productos Hue pasan por él.",
+    "threadBorderRouter": "Las páginas de Philips no mencionan Thread para el Bridge Pro. Una página de Matter Alpha lo llama router de borde Matter, lo cual no es una afirmación sobre Thread.",
+    "maxDevices": "Philips da dos límites distintos: más de 150 luces y más de 50 accesorios, así que no se registra una cifra única."
+  },
+  "via": {}
+}

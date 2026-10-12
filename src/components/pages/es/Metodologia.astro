@@ -1,6 +1,7 @@
 ---
+import MailLink from '../../MailLink.astro';
 import Base from '../../../layouts/Base.astro';
-import { CONTACT_URL, OPERATOR } from '../../../site.config';
+import { CONTACT_URL } from '../../../site.config';
 ---
 
 <Base
@@ -53,7 +54,7 @@ import { CONTACT_URL, OPERATOR } from '../../../site.config';
   <h2>Correcciones</h2>
   <p>
     Las actualizaciones de firmware cambian la compatibilidad continuamente. Si algo está mal o desactualizado, escribe
-    a <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a> o <a href={CONTACT_URL}>abre una incidencia</a> con un
+    a <MailLink /> o <a href={CONTACT_URL}>abre una incidencia</a> con un
     enlace y lo volveremos a comprobar. Ninguna marca paga por aparecer y no hay enlaces de afiliado.
   </p>
 </Base>

@@ -50,7 +50,7 @@ const description = es
       </p>
     )
   }
-  <ul class="cards">
+  <ul class="cards cats">
     {
       cats.map(({ c, n, href }) => (
         <li class="card">
@@ -62,15 +62,12 @@ const description = es
   </ul>
   {
     platforms.length > 0 && (
-      <p class="callout">
-        {es ? `Por plataforma, solo ${mt.label}:` : `By platform, ${market.label} only:`}{' '}
-        {platforms.map((p, i) => (
-          <>
-            {i > 0 && ' · '}
-            <a href={L(p.href)}>{p.name}</a>
-          </>
-        ))}
-      </p>
+      <div class="callout jump">
+        <p class="toc">
+          <span class="toc-label">{es ? `Por plataforma, solo ${mt.label}:` : `By platform, ${market.label} only:`}</span>
+          {platforms.map((p) => <a href={L(p.href)}>{p.name}</a>)}
+        </p>
+      </div>
     )
   }
   <h2>{es ? `Comprobados recientemente para ${mt.phrase}` : `Recently checked for ${market.phrase}`}</h2>
