@@ -1,0 +1,112 @@
+{
+  "category": "smart-switch",
+  "brand": "Shelly",
+  "model": "2PM Gen3 (S3SW-002P16EU)",
+  "name": "Shelly 2PM Gen3 (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.shelly.com/de/products/shelly-2pm-gen3-1",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["shelly-2pm-gen3-de"],
+    "note": "2.4 GHz Wi-Fi; Bluetooth is for setup and as a gateway for Shelly BLU devices."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["csa-shelly-2pm-gen3", "shelly-2pm-gen3-de"],
+    "note": "CSA lists Shelly 2PM Gen3 (certified 2025-05-21, Matter 1.3, Wi-Fi). Shelly's FAQ says Matter needs firmware 1.6.0 or later, so update before pairing."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["csa-shelly-2pm-gen3", "shelly-2pm-gen3-de"],
+      "note": "Through Matter once on firmware 1.6.0 or later. Shelly's page doesn't list Apple Home by name. Needs an Apple home hub for remote use."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["csa-shelly-2pm-gen3", "shelly-2pm-gen3-de"],
+      "note": "Through Matter. Shelly's page also lists Google Smart Home without saying how, so only Matter is claimed."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["shelly-2pm-gen3-de"],
+      "note": "Shelly's page lists Amazon Alexa. It can also be added through Matter."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["csa-shelly-2pm-gen3", "shelly-2pm-gen3-de"],
+      "note": "Through Matter. Shelly's page also lists SmartThings; the route is not stated."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-shelly"],
+      "note": "Official Shelly integration with local push, covering Shelly generations. It can also be added through Matter."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["shelly-2pm-gen3-de"],
+    "note": "Wi-Fi device with a built-in web interface; no hub needed."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["shelly-2pm-gen3-de", "ha-shelly"],
+    "note": "Shelly lists a web interface, HTTP API, MQTT, scripting and webhooks; Home Assistant's integration uses local push."
+  },
+  "switchForm": {
+    "value": "module",
+    "sources": ["shelly-2pm-gen3-de"],
+    "note": "37 x 42 x 16 mm relay for a wall box, behind a switch or socket."
+  },
+  "dimmer": {
+    "value": false,
+    "sources": ["shelly-2pm-gen3-de"],
+    "note": "Shelly calls it a Wi-Fi relay ('WLAN Relais') with power metering and describes no dimming. It also has a cover (roller shutter, blind) mode."
+  },
+  "neutralRequired": {
+    "value": true,
+    "sources": ["shelly-2pm-gen3-de"],
+    "note": "The supply terminals are N and L, and Shelly's wiring diagrams include a neutral. It can also run on 24 V DC."
+  },
+  "gangs": {
+    "value": "2 channels",
+    "sources": ["shelly-2pm-gen3-de"],
+    "note": "Two relay outputs with power measurement per channel and two switch inputs. 10 A per channel, 16 A total, at up to 240 V AC."
+  },
+  "summary": "Two relay channels with power metering per channel, or one cover channel for a shutter or blind motor: that is the Shelly 2PM Gen3, fitted behind an existing switch. It needs a neutral wire and has no dimming. Matter over Wi-Fi covers Apple Home, Google Home and SmartThings once it's on firmware 1.6.0 or later, Alexa is listed on Shelly's page, and Home Assistant has a local integration.",
+  "caveats": [
+    "Needs a neutral wire at the box.",
+    "Matter needs firmware 1.6.0 or later; the CSA entry itself shows firmware 1.3.0-s2.",
+    "Rated 10 A per channel and 16 A total, so two heavy loads can exceed the total.",
+    "Shelly's page doesn't list Apple Home by name; it works only through Matter."
+  ],
+  "sources": [
+    {
+      "id": "shelly-2pm-gen3-de",
+      "url": "https://www.shelly.com/de/products/shelly-2pm-gen3-1",
+      "title": "Shelly 2PM Gen3",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-shelly-2pm-gen3",
+      "url": "https://csa-iot.org/csa_product/shelly-2pm-gen3/",
+      "title": "Shelly 2PM Gen3",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-shelly",
+      "url": "https://www.home-assistant.io/integrations/shelly/",
+      "title": "Shelly - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El Tapo S210 británico no necesita cable neutro: es un interruptor inteligente de 1 tecla y 1 vía que sustituye al de la pared. El control por voz con Alexa y con Google Assistant pasa por un hub Tapo, que Tapo identifica como H100 o H200 y vende por separado. No se mencionan Apple Home, SmartThings ni Matter, y las páginas británicas no dicen si regula la intensidad.",
+  "caveats": [
+    "Necesita un hub Tapo H100 o H200, que se vende por separado.",
+    "Las páginas británicas de TP-Link describen solo el control de encendido y apagado, así que no des por hecho que regula la intensidad."
+  ],
+  "notes": {
+    "radios": "Solo figura un enlace sub-1 GHz de 868 MHz con el hub Tapo, que no está en nuestra lista de radios.",
+    "matter": "La página británica no menciona Matter.",
+    "hubRequired": "La página dice que hace falta un hub Tapo (H100 o H200, se vende por separado) para todas las funciones inteligentes.",
+    "localControl": "Sin confirmar en ninguna fuente oficial.",
+    "switchForm": "Sustituye al interruptor de la pared.",
+    "dimmer": "Ninguna de las dos páginas británicas dice si regula la intensidad; describen solo el control de encendido y apagado, sin decir que no sea regulable.",
+    "neutralRequired": "La página dice que no hace falta cable neutro.",
+    "compatibility.apple_home": "La página británica no menciona Apple Home.",
+    "compatibility.google_home": "La página británica indica el control por voz con Google Assistant; el interruptor necesita un hub Tapo.",
+    "compatibility.alexa": "La página británica indica el control por voz con Amazon Alexa; el interruptor necesita un hub Tapo.",
+    "compatibility.smartthings": "La página británica no menciona SmartThings.",
+    "compatibility.home_assistant": "No hemos encontrado ninguna fuente oficial para este interruptor."
+  },
+  "via": {
+    "google_home": "Tapo Hub (H100/H200)",
+    "alexa": "Tapo Hub (H100/H200)"
+  },
+  "values": {
+    "gangs": "1 tecla, 1 vía"
+  }
+}

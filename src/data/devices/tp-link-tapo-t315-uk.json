@@ -1,0 +1,114 @@
+{
+  "category": "smart-sensor",
+  "brand": "TP-Link",
+  "model": "Tapo T315",
+  "name": "Tapo T315 (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.tapo.com/uk/product/smart-sensor/tapo-t315/",
+  "radios": {
+    "value": null,
+    "sources": [
+      "t315-uk"
+    ],
+    "note": "The UK page says it works only in a sub-1 GHz band to the Tapo Hub, which is not in our radio list."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "The sensor itself isn't Matter-certified in any source we found; Tapo Hubs can bridge it to Matter."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Tapo Hub (Matter Bridge)",
+      "sources": [
+        "tp-link-matter-faq"
+      ],
+      "note": "TP-Link's UK Matter FAQ names the T315 among sub-1 GHz devices a Tapo Hub can add to another ecosystem through its Matter Bridge, and names Apple TV and the Home app as Matter controllers."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Tapo Hub (Matter Bridge)",
+      "sources": [
+        "tp-link-matter-faq"
+      ],
+      "note": "Through the Tapo Hub's Matter Bridge; the same FAQ names Google Nest Hub as a Matter controller."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Tapo Hub (Matter Bridge)",
+      "sources": [
+        "tp-link-matter-faq"
+      ],
+      "note": "Through the Tapo Hub's Matter Bridge; the same FAQ names an Echo as a Matter controller."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "TP-Link's Matter FAQ doesn't name SmartThings as a controller for bridged devices."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source confirms it; Home Assistant could use the hub's Matter bridge but we couldn't cite it."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "t315-uk"
+    ],
+    "note": "The UK page says the Tapo Hub is required for smart features and for third-party platforms."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from an official source."
+  },
+  "senses": {
+    "value": [
+      "temperature",
+      "humidity"
+    ],
+    "sources": [
+      "t315-uk"
+    ],
+    "note": "2.7-inch e-ink display."
+  },
+  "power": {
+    "value": "2 × AAA",
+    "sources": [
+      "t315-uk"
+    ],
+    "note": "Up to 2 years in lab conditions per Tapo."
+  },
+  "summary": "Temperature and humidity readings on a 2.7-inch e-ink screen: that is the Tapo T315 (UK). It reaches Apple Home, Google Home and Alexa only through a Tapo Hub's Matter Bridge, and the hub is required for its smart features. The sensor links to the hub over a sub-1 GHz band, not Wi-Fi, and runs on 2 AAA batteries that Tapo rates at up to 2 years.",
+  "caveats": [
+    "Needs a Tapo Hub; the sensor doesn't join Wi-Fi or Matter itself.",
+    "SmartThings and Home Assistant support isn't confirmed by TP-Link.",
+    "Matter bridging needs a Tapo Hub on current firmware; TP-Link's FAQ doesn't list which hub models qualify for this sensor."
+  ],
+  "sources": [
+    {
+      "id": "t315-uk",
+      "url": "https://www.tapo.com/uk/product/smart-sensor/tapo-t315/",
+      "title": "Smart Temperature & Humidity Monitor",
+      "publisher": "Tapo (TP-Link)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tp-link-matter-faq",
+      "url": "https://www.tp-link.com/uk/support/faq/3754/",
+      "title": "Generally Asked Questions about Matter for Tapo/Kasa Hubs",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}
