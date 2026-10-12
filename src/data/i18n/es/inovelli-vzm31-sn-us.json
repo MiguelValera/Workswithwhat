@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Solo Zigbee, el Inovelli Blue Series 2-1 (VZM31-SN) es un interruptor de pared que funciona como regulador o como interruptor normal de encendido y apagado. Funciona con o sin neutro, pero sin él necesitas un bypass en el punto de luz que no viene en la caja. Requiere un hub Zigbee: Inovelli lista SmartThings, Hubitat, Home Assistant (ZHA o Zigbee2MQTT) y los Echo con hub Zigbee integrado. Apple Home y Google Home no están confirmados.",
+  "summary": "Solo Zigbee, el Inovelli Blue Series 2-1 (VZM31-SN) es un interruptor de pared que funciona como regulador o como interruptor normal de encendido y apagado. Funciona con o sin neutro, pero sin él necesitas un bypass en el punto de luz que no viene en la caja. Requiere un hub Zigbee: Inovelli incluye SmartThings, Hubitat, Home Assistant (ZHA o Zigbee2MQTT) y los Echo con hub Zigbee integrado. Apple Home y Google Home no están confirmados.",
   "caveats": [
     "Solo Zigbee, así que necesita un hub o coordinador; Matter no está confirmado para este modelo.",
     "Sin cable neutro hace falta un bypass, y no está incluido.",
@@ -12,11 +12,11 @@
     "matter": "Esta es la versión Zigbee. La página de Inovelli también cubre una versión Matter, que es otro modelo; no encontramos ninguna afirmación de Matter para el VZM31-SN.",
     "compatibility.apple_home": "Las páginas de Inovelli que vimos no mencionan Apple Home para la versión Zigbee.",
     "compatibility.google_home": "Las páginas de Inovelli que vimos no mencionan Google Home para la versión Zigbee.",
-    "compatibility.alexa": "Inovelli lista Amazon Echo como hub compatible, pero solo las versiones de Echo con hub Zigbee integrado (Inovelli mantiene una tabla de compatibilidad). Funciones del firmware como las escenas con varias pulsaciones solo funcionan donde el hub las admite.",
-    "compatibility.smartthings": "Inovelli lista SmartThings entre los hubs que admiten las funciones avanzadas del interruptor y publica una guía de configuración para SmartThings.",
-    "compatibility.home_assistant": "Inovelli lista Home Assistant mediante ZHA y Zigbee2MQTT. Ambas son integraciones Zigbee genéricas, no una integración de Inovelli, y necesitan un coordinador Zigbee, como un adaptador USB.",
+    "compatibility.alexa": "Inovelli incluye Amazon Echo como hub compatible, pero solo las versiones de Echo con hub Zigbee integrado (Inovelli mantiene una tabla de compatibilidad). Funciones del firmware como las escenas con varias pulsaciones solo funcionan donde el hub las admite.",
+    "compatibility.smartthings": "Inovelli incluye SmartThings entre los hubs que admiten las funciones avanzadas del interruptor y publica una guía de configuración para SmartThings.",
+    "compatibility.home_assistant": "Inovelli incluye Home Assistant mediante ZHA y Zigbee2MQTT. Ambas son integraciones Zigbee genéricas, no una integración de Inovelli, y necesitan un coordinador Zigbee, como un adaptador USB.",
     "hubRequired": "Necesita un hub o coordinador Zigbee (SmartThings, Hubitat, un Echo con Zigbee o un adaptador USB con Home Assistant).",
-    "localControl": "El control Zigbee mediante un coordinador local (ZHA o Zigbee2MQTT) no necesita la nube de Inovelli, pero ninguna página de Inovelli ni de Home Assistant afirma con palabras el control local de este interruptor.",
+    "localControl": "El control Zigbee mediante un coordinador local (ZHA o Zigbee2MQTT) no necesita la nube de Inovelli, pero ninguna página de Inovelli ni de Home Assistant afirma de forma explícita el control local de este interruptor.",
     "switchForm": "Sustituye a un interruptor de pared; puede funcionar como regulador o como interruptor de encendido y apagado.",
     "dimmer": "Un solo interruptor con modo regulador o de encendido y apagado.",
     "neutralRequired": "Funciona sin neutro, pero Inovelli dice que entonces hay que instalar un bypass en el punto de luz, y no está incluido. Sin neutro no hay medición de consumo, y las instalaciones con varios puntos de control necesitan un interruptor auxiliar de Inovelli.",

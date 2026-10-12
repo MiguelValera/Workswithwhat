@@ -11,13 +11,13 @@
     "radios": "Wifi de 2,4 GHz y Bluetooth LE. El registro de la CSA indica wifi y Bluetooth; la ficha técnica de GE (modelo CPLGSTDBLW1, sin mención a Matter, así que posiblemente sea la versión antigua) dice lo mismo.",
     "hubRequired": "GE dice que no hace falta hub; se conecta al wifi y se configura en la app Cync o en una app Matter.",
     "localControl": "La ficha técnica de GE indica «Local Control via BLE», pero no menciona Matter y puede describir la versión antigua. El control local de la versión con Matter no está confirmado.",
-    "energyMonitoring": "Las páginas y la ficha técnica de GE no mencionan la medición de consumo, pero tampoco encontramos ninguna afirmación explícita en un sentido ni en otro.",
+    "energyMonitoring": "Las páginas y la ficha técnica de GE no mencionan la medición de consumo, pero tampoco hay ninguna afirmación explícita que lo confirme o lo descarte.",
     "maxLoadWatts": "La tienda de GE indica 1800 W / 15 A y la ficha técnica dice 15 A de uso general, 1/3 CV, pero no pudimos asociar una cifra en vatios a la página propia de la versión con Matter.",
     "matter": "La CSA registra «Cync Indoor Plug» de Savant (certificado CSA257FBMAT46925-24, Matter 1.3); también existen otros certificados del Cync Indoor Plug. Las unidades antiguas sin Matter se vendieron con el mismo nombre.",
     "compatibility.apple_home": "Mediante Matter; necesita un centro de la casa de Apple.",
     "compatibility.google_home": "Nativo mediante el enlace de la app Cync con Google Home; GE dice que también se puede añadir por Matter.",
     "compatibility.alexa": "Nativo mediante la skill Cync de Alexa; GE dice que también se puede añadir por Matter.",
-    "compatibility.smartthings": "GE lista SmartThings para la versión con Matter; necesita un controlador Matter de SmartThings.",
-    "compatibility.home_assistant": "No hay una integración oficial de Cync en Home Assistant, y ni GE ni Home Assistant nombran este enchufe para la integración Matter de HA."
+    "compatibility.smartthings": "GE incluye SmartThings para la versión con Matter; necesita un controlador Matter de SmartThings.",
+    "compatibility.home_assistant": "No hay una integración oficial de Cync en Home Assistant, y ni GE ni Home Assistant nombran este enchufe para la integración Matter de Home Assistant."
   }
 }

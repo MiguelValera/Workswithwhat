@@ -18,7 +18,7 @@
     "compatibility.google_home": "Funciona con la integración propia de Hue para Google Home. Las preguntas frecuentes de Hue (EE. UU.) dicen que las bombillas Bluetooth funcionan sin puente solo con altavoces y pantallas Google Nest; la página europea incluye Google en «Hue Bridge necesario».",
     "compatibility.alexa": "Funciona con la integración propia de Hue para Alexa. Las preguntas frecuentes de Hue (EE. UU.) dicen que las bombillas Bluetooth se pueden emparejar con dispositivos Echo compatibles sin Bridge; la página europea incluye Alexa en «Hue Bridge necesario».",
     "compatibility.smartthings": "La página de producto de Hue incluye SmartThings en «Hue Bridge necesario». El emparejamiento directo con Matter no está confirmado para este EAN (ver Matter).",
-    "compatibility.home_assistant": "Integración oficial de Hue (con Hue Bridge) e integración oficial Hue BLE (2025.12, Bluetooth sin puente). La documentación de BLE nombra modelos concretos de Hue y dice que los demás deberían funcionar; este EAN no aparece."
+    "compatibility.home_assistant": "Integración oficial de Hue (con Hue Bridge) e integración oficial Hue BLE (2025.12, Bluetooth sin puente). La documentación de BLE menciona modelos concretos de Hue y dice que los demás deberían funcionar; este EAN no aparece."
   },
   "via": {
     "apple_home": "Philips Hue Bridge",

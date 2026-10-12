@@ -6,16 +6,16 @@
     "Las cargas con motor se limitan a 300 W, muy por debajo de los 3680 W de las cargas resistivas.",
     "No es un dispositivo Matter; las plataformas Matter lo ven solo a través del puente Matter de DIRIGERA.",
     "El TRETAKT estadounidense es otra versión, con 1800 W.",
-    "IKEA lo indica como en retirada en algunos mercados."
+    "IKEA lo da como producto en retirada en algunos mercados."
   ],
   "notes": {
-    "radios": "La página de producto de IKEA no nombra la radio. La CSA registra el TRETAKT Smart Plug como certificado Zigbee 3.0 (el registro no nombra la variante regional); Zigbee2MQTT lo lista como E22x4 (E2204 para la UE).",
+    "radios": "La página de producto de IKEA no nombra la radio. La CSA registra el TRETAKT Smart Plug como certificado Zigbee 3.0 (el registro no nombra la variante regional); Zigbee2MQTT lo recoge como E22x4 (E2204 para la UE).",
     "matter": "No se encontró ninguna certificación Matter del propio TRETAKT. Solo llega a las plataformas Matter a través del puente Matter del hub DIRIGERA.",
     "compatibility.apple_home": "El hub se añade a Apple Home desde la app IKEA Home smart; también existe la opción del puente Matter.",
     "compatibility.google_home": "Se vincula con el servicio Works with Google y una cuenta de IKEA, o mediante el puente Matter.",
     "compatibility.alexa": "Mediante la skill IKEA Home Smart de Alexa, o mediante el puente Matter.",
     "compatibility.smartthings": "No se encontró ninguna página oficial de IKEA ni de SmartThings sobre este enchufe.",
-    "compatibility.home_assistant": "Las docs de Matter de HA nombran DIRIGERA como puente y listan los enchufes entre los tipos que se pueden exponer. Los usuarios cuentan que se empareja directamente con un coordinador Zigbee (ZHA, Zigbee2MQTT), pero no está documentado oficialmente.",
+    "compatibility.home_assistant": "La documentación de Matter de Home Assistant nombra DIRIGERA como puente e incluye los enchufes entre los tipos que se pueden exponer. Los usuarios cuentan que se empareja directamente con un coordinador Zigbee (ZHA, Zigbee2MQTT), pero no está documentado oficialmente.",
     "hubRequired": "Hace falta DIRIGERA (o el antiguo gateway TRÅDFRI) para controlarlo desde la app, por voz y con los ecosistemas. Sin hub, aún puede emparejarse directamente con un mando o un sensor de movimiento de IKEA.",
     "localControl": "No se encontró ninguna declaración oficial sobre el control local.",
     "energyMonitoring": "Los registros y el manual de IKEA que se encontraron no mencionan la medición de consumo, pero ninguna fuente dice de forma explícita que no la tenga.",

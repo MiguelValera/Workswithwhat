@@ -54,7 +54,7 @@ const description = es
     {
       cats.map(({ c, n, href }) => (
         <li class="card">
-          <h3><a href={L(href)}>{catText(c, lang).label}</a></h3>
+          <h2><a href={L(href)}>{catText(c, lang).label}</a></h2>
           <div class="muted">{n} {es ? `para ${mt.phrase}` : `for ${market.phrase}`}</div>
         </li>
       ))

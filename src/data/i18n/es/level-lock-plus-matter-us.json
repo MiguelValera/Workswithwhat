@@ -4,12 +4,12 @@
   "caveats": [
     "El control por Matter necesita un router de borde Thread, como un HomePod mini, un Apple TV 4K con Thread, un Nest Hub (2.ª gen.) o un Echo con Thread.",
     "Sustituye a tu cerradura y trae llaves nuevas; la Level Bolt es el modelo que se monta sobre la cerradura existente y conserva las actuales.",
-    "Comprueba antes la puerta: Level indica un grosor de puerta de 1 3/4 in, un taladro de 2 1/8 in y una distancia al borde de 2 3/8 in.",
+    "Comprueba antes la puerta: Level indica un grosor de puerta de 1 3/4 pulgadas, un taladro de 2 1/8 pulgadas y una distancia al borde de 2 3/8 pulgadas.",
     "Usuarios del foro de Home Assistant cuentan problemas de puesta en servicio con la Level Bolt."
   ],
   "notes": {
-    "radios": "Level lista Bluetooth 4.0/5.0 y Matter sobre Thread, funcionando a la vez.",
-    "matter": "La CSA lista «Level Lock+ (Matter)» de Assa Abloy con transportes Thread y Bluetooth. Hay varios registros, uno por versión de firmware (de 2024 a enero de 2026).",
+    "radios": "Level incluye Bluetooth 4.0/5.0 y Matter sobre Thread, funcionando a la vez.",
+    "matter": "La CSA registra «Level Lock+ (Matter)» de Assa Abloy con transportes Thread y Bluetooth. Hay varios registros, uno por versión de firmware (de 2024 a enero de 2026).",
     "compatibility.apple_home": "Matter sobre Thread, con la llave digital de Apple Home. Necesita un router de borde Thread que actúe como centro de la casa, como un HomePod mini o un Apple TV 4K con Thread.",
     "compatibility.google_home": "Matter sobre Thread; necesita un router de borde Thread, como un Nest Hub (2.ª gen.).",
     "compatibility.alexa": "Matter sobre Thread; necesita un Echo u otro dispositivo Alexa que sea router de borde Thread.",
@@ -17,7 +17,7 @@
     "compatibility.home_assistant": "La página de Level en Home Assistant dice que los dispositivos Matter de Level funcionan en local mediante la integración de Matter. Necesita un router de borde Thread. Usuarios del foro cuentan problemas de puesta en servicio con la Level Bolt.",
     "hubRequired": "La app Level controla la cerradura directamente por Bluetooth. Las plataformas Matter y el control fuera de casa necesitan un router de borde Thread.",
     "localControl": "Matter sobre Thread se queda en la red local.",
-    "lockFit": "Level dice que la Lock+ sustituye a tu cerradura actual y trae sus propias llaves de casa; la página de especificaciones indica un grosor de puerta de 1 3/4 in, un taladro de 2 1/8 in y una distancia al borde de 2 3/8 in. No la confundas con la Level Bolt, el modelo que se monta sobre la cerradura existente y conserva tus llaves actuales.",
+    "lockFit": "Level dice que la Lock+ sustituye a tu cerradura actual y trae llaves propias; las especificaciones indican una puerta de 1 3/4 pulgadas de grosor, un taladro de 2 1/8 pulgadas y una distancia al borde de 2 3/8 pulgadas. No la confundas con la Level Bolt, el modelo que se monta sobre la cerradura existente y conserva tus llaves actuales.",
     "keypad": "El teclado Level Keypad es un accesorio aparte, que se vende por separado.",
     "power": "Una pila de litio CR2 (no recargable) oculta dentro del pestillo; Level da hasta un año de duración con un uso normal."
   }

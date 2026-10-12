@@ -70,7 +70,7 @@ const description = es
     {
       cats.map((c) => (
         <li class="card">
-          <h3><a href={L(`/${c.path}/`)}>{catText(c, lang).label}</a></h3>
+          <h2><a href={L(`/${c.path}/`)}>{catText(c, lang).label}</a></h2>
           <div class="muted">
             {devices.filter((d) => d.data.category === c.key).length} {es ? 'comprobados, con fuentes' : 'checked, with sources'}
           </div>

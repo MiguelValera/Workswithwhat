@@ -117,9 +117,9 @@ thead th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em;
 
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; padding: 0; list-style: none; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
-.card h3 { margin: 0 0 4px; font-size: 1.05rem; }
-.card h3 a { color: var(--text); text-decoration: none; }
-.card h3 a:hover { color: var(--accent); }
+.card h2, .card h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.card h2 a, .card h3 a { color: var(--text); text-decoration: none; }
+.card h2 a:hover, .card h3 a:hover { color: var(--accent); }
 .card .eco { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 
 .facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin: 0; }

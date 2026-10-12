@@ -15,8 +15,8 @@
     "power": "tado° dice que la batería se carga por USB-C en unas 2 horas y dura cerca de un año. No indica la capacidad; la tienda de la UE no incluye cable USB-C.",
     "compatibility.apple_home": "Se vincula con un código Matter desde la app tado° o con el código QR del dispositivo. Necesita un router de borde Thread: el Bridge X, otro router de borde tado° X o uno de otra marca.",
     "compatibility.google_home": "tado° tiene una guía de configuración para Google Home con Matter. Necesita un router de borde Thread.",
-    "compatibility.alexa": "Necesita un Echo o eero compatible con Matter y un router de borde Thread (tado° nombra el Bridge X, el Heat Pump Optimizer X o el Wireless Receiver X). tado° aconseja añadir primero el dispositivo en su propia app para conservar las actualizaciones de firmware.",
-    "compatibility.smartthings": "tado° nombra SmartThings entre las plataformas Matter solo en el fragmento de una búsqueda. No hemos encontrado ninguna guía de configuración de SmartThings de tado°.",
+    "compatibility.alexa": "Necesita un Echo o eero compatible con Matter y un router de borde Thread (tado° menciona el Bridge X, el Heat Pump Optimizer X o el Wireless Receiver X). tado° aconseja añadir primero el dispositivo en su propia app para conservar las actualizaciones de firmware.",
+    "compatibility.smartthings": "tado° menciona SmartThings entre las plataformas Matter solo en el fragmento de una búsqueda. No hemos encontrado ninguna guía de configuración de SmartThings de tado°.",
     "compatibility.home_assistant": "Mediante la integración Matter de Home Assistant, que necesita un router de borde Thread. tado° dice que no ofrece soporte oficial para Home Assistant."
   },
   "values": {

@@ -20,7 +20,7 @@
     "compatibility.google_home": "Hue incluye Google Home y dice que la compatibilidad con Matter es solo a través del Bridge.",
     "compatibility.alexa": "Hue incluye Alexa; el Bridge es el enlace.",
     "compatibility.smartthings": "La página de Hue incluye Samsung SmartThings entre los sistemas de terceros.",
-    "compatibility.home_assistant": "La integración de Hue de Home Assistant, a través del Bridge, expone los mandos e interruptores de Hue como disparadores de dispositivo y sensores de batería; la documentación no nombra este módulo."
+    "compatibility.home_assistant": "La integración de Hue de Home Assistant, a través del Bridge, expone los mandos e interruptores de Hue como disparadores de dispositivo y sensores de batería; la documentación no menciona este módulo."
   },
   "via": {
     "apple_home": "Hue Bridge",

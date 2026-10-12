@@ -12,7 +12,7 @@
   ],
   "notes": {
     "radios": "Bluetooth LE 5.0 y Thread (802.15.4), según el artículo de especificaciones de Belkin.",
-    "matter": "Belkin lo describe como un dispositivo solo HomeKit y nunca menciona Matter para él. No hemos encontrado ningún registro de la CSA. Sin confirmar en ningún sentido.",
+    "matter": "Belkin lo describe como un dispositivo solo HomeKit y nunca menciona Matter para él. No hemos encontrado ningún registro de la CSA. No hay nada que lo confirme ni lo descarte.",
     "hubRequired": "Las fuentes de Belkin no coinciden: la FAQ dice que solo hace falta un hub para Thread y para el control fuera de casa, mientras que la lista de especificaciones dice que necesitas un centro de la casa de Apple o un hub Thread.",
     "localControl": "Funciona con HomeKit sin la app Wemo ni la nube; Belkin dice que los dispositivos Wemo con Thread siguen funcionando con HomeKit tras el cierre de la nube de Wemo.",
     "energyMonitoring": "La FAQ de Belkin dice que el WSP100 no informa del consumo.",
@@ -20,7 +20,7 @@
     "compatibility.apple_home": "HomeKit (HAP) por Bluetooth y Thread, configurado con NFC o con el código HomeKit. Thread y el control remoto necesitan un centro de la casa de Apple con Thread (Apple TV 4K de 2021 o HomePod mini).",
     "compatibility.google_home": "La FAQ de Belkin responde «No» para Google Home y dice que el enchufe está diseñado para usarse solo con Apple HomeKit.",
     "compatibility.alexa": "La FAQ de Belkin responde «No» para Amazon Alexa y dice que el enchufe está diseñado para usarse solo con Apple HomeKit.",
-    "compatibility.smartthings": "Belkin dice que el enchufe está diseñado solo para Apple HomeKit y no indica compatibilidad con Matter, pero ninguna página de Belkin ni de Samsung nombra SmartThings en un sentido ni en otro.",
-    "compatibility.home_assistant": "La integración oficial HomeKit Device de Home Assistant empareja accesorios HomeKit por Bluetooth y Thread (Thread necesita un router de borde). HA no nombra el WSP100, y un accesorio HomeKit solo se empareja con un controlador a la vez."
+    "compatibility.smartthings": "Belkin dice que el enchufe está diseñado solo para Apple HomeKit y no indica compatibilidad con Matter, pero ninguna página de Belkin ni de Samsung menciona SmartThings, ni para confirmarlo ni para descartarlo.",
+    "compatibility.home_assistant": "La integración oficial HomeKit Device de Home Assistant empareja accesorios HomeKit por Bluetooth y Thread (Thread necesita un router de borde). HA no menciona el WSP100, y un accesorio HomeKit solo se empareja con un controlador a la vez."
   }
 }

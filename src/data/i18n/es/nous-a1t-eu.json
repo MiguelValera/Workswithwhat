@@ -19,6 +19,6 @@
     "compatibility.google_home": "Nous dice que Google Assistant solo funciona después de conectar el enchufe a Home Assistant o a un software similar. No hay enlace con la nube de Nous ni puente, así que depende de la integración de Google de Home Assistant, no del enchufe.",
     "compatibility.alexa": "Nous dice que Alexa solo funciona después de conectar el enchufe a Home Assistant o a un software similar. No hay enlace con la nube de Nous ni puente, así que depende de la integración de Alexa de Home Assistant, no del enchufe.",
     "compatibility.smartthings": "La página del A1T de Nous no menciona SmartThings.",
-    "compatibility.home_assistant": "Mediante la integración oficial de Tasmota de HA sobre MQTT (necesita un broker MQTT y Tasmota 9.2 o posterior). Nous nombra Home Assistant como la plataforma prevista."
+    "compatibility.home_assistant": "Mediante la integración oficial de Tasmota de HA sobre MQTT (necesita un broker MQTT y Tasmota 9.2 o posterior). Nous menciona Home Assistant como la plataforma prevista."
   }
 }

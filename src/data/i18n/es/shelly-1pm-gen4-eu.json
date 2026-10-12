@@ -17,8 +17,8 @@
     "gangs": "Una sola salida de relé con una entrada de interruptor.",
     "compatibility.apple_home": "Mediante Matter en el firmware por defecto. Necesita un centro de la casa de Apple para el uso remoto y las automatizaciones.",
     "compatibility.google_home": "Mediante Matter. La página de Shelly también dice que se integra con Google, sin explicar cómo, así que solo afirmamos Matter.",
-    "compatibility.alexa": "La guía de Alexa de Shelly usa la skill de Shelly Cloud y nombra el 1PM Gen4 para controlar luces. También se puede añadir mediante Matter.",
-    "compatibility.smartthings": "Mediante Matter. La página de Shelly también nombra SmartThings; no indica la vía.",
+    "compatibility.alexa": "La guía de Alexa de Shelly usa la skill de Shelly Cloud y menciona el 1PM Gen4 para controlar luces. También se puede añadir mediante Matter.",
+    "compatibility.smartthings": "Mediante Matter. La página de Shelly también menciona SmartThings; no indica la vía.",
     "compatibility.home_assistant": "Integración oficial de Shelly con push local, que cubre todas las generaciones de Shelly. También se puede añadir mediante Matter."
   },
   "values": {

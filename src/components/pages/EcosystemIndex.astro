@@ -24,13 +24,13 @@ const all = await getPublishedDevices();
     {
       ECOSYSTEMS.map((e) => (
         <li class="card">
-          <h3><a href={L(`/works-with/${ecosystemSlug(e)}/`)}>{ECOSYSTEM_LABELS[e]}</a></h3>
+          <h2><a href={L(`/works-with/${ecosystemSlug(e)}/`)}>{ECOSYSTEM_LABELS[e]}</a></h2>
           <div class="muted">{all.filter((d) => worksWith(d, e)).length} {es ? 'dispositivos compatibles' : 'compatible devices'}</div>
         </li>
       ))
     }
     <li class="card">
-      <h3><a href={L('/works-with/matter/')}>Matter</a></h3>
+      <h2><a href={L('/works-with/matter/')}>Matter</a></h2>
       <div class="muted">{all.filter((d) => d.data.matter.certified).length} {es ? 'dispositivos con certificación Matter' : 'Matter-certified devices'}</div>
     </li>
   </ul>

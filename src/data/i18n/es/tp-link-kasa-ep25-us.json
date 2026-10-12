@@ -10,7 +10,7 @@
   "notes": {
     "radios": "Wifi de 2,4 GHz (IEEE 802.11b/g/n). TP-Link dice que los productos Kasa no admiten 5 GHz, Zigbee, Z-Wave ni Ethernet.",
     "matter": "Ninguna fuente oficial menciona Matter para el EP25. Un mensaje de un usuario en un foro llama dispositivo Matter al hardware V2.6; TP-Link no lo dice. El enchufe Kasa con Matter de TP-Link es el KP125M.",
-    "hubRequired": "Se conecta directamente a la wifi de 2,4 GHz; TP-Link dice que los dispositivos Kasa no necesitan hub.",
+    "hubRequired": "Se conecta directamente al wifi de 2,4 GHz; TP-Link dice que los dispositivos Kasa no necesitan hub.",
     "localControl": "La integración de Home Assistant controla los dispositivos Kasa en la red local sin la nube de TP-Link. La propia app Kasa usa la nube cuando el enchufe está conectado.",
     "energyMonitoring": "Consumo en tiempo real e histórico en la app Kasa. No disponible en Apple Home.",
     "maxLoadWatts": "15 A, 1,8 kW a 120 V; motor de 1/6 CV.",

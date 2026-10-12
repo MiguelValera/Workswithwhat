@@ -15,7 +15,7 @@
     "localControl": "La integración de Home Assistant se comunica con el enchufe en la red local. La app Tapo en sí funciona a través de la nube.",
     "energyMonitoring": "TP-Link dice que el P110 y el P115 miden el consumo; el P100 y el P105 no.",
     "maxLoadWatts": "15 A, 1800 W a 120 V para uso general y carga resistiva; motor de 1/6 CV. La web estadounidense indica una entrada de 100–125 V; la ficha técnica de 2020 y algunas cajas dicen 100–240 V.",
-    "compatibility.apple_home": "La lista de plataformas del P105 de TP-Link nombra Alexa, Google Assistant y SmartThings, no HomeKit, pero tampoco lo descarta.",
+    "compatibility.apple_home": "La lista de plataformas del P105 de TP-Link incluye Alexa, Google Assistant y SmartThings, no HomeKit, pero tampoco lo descarta.",
     "compatibility.google_home": "Vincula la cuenta de Tapo en la app Google Home o desde la app Tapo.",
     "compatibility.alexa": "Vincula la cuenta de Tapo mediante la skill Tapo.",
     "compatibility.smartthings": "TP-Link incluye Samsung SmartThings entre las plataformas del P105.",

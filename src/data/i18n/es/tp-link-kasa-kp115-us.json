@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Elige el Kasa KP115 si vives en Alexa, Google Home o SmartThings y quieres ver cuánto consume un aparato. Los tres se conectan mediante tu cuenta de Kasa, y la integración oficial de TP-Link en Home Assistant lo controla por tu red local. El consumo, en directo e histórico, aparece en la app Kasa. Es un enchufe estadounidense delgado con wifi de 2,4 GHz, de 15 A / 1800 W, sin hub. Apple Home y Matter no figuran en la lista de TP-Link; el KP125M es la versión con Matter.",
+  "summary": "Elige el Kasa KP115 si usas Alexa, Google Home o SmartThings y quieres ver cuánto consume un aparato. Los tres se conectan mediante tu cuenta de Kasa, y la integración oficial de TP-Link en Home Assistant lo controla por tu red local. El consumo, en directo e histórico, aparece en la app Kasa. Es un enchufe estadounidense delgado con wifi de 2,4 GHz, de 15 A / 1800 W, sin hub. Apple Home y Matter no figuran en la lista de TP-Link; el KP125M es la versión con Matter.",
   "caveats": [
     "Solo wifi de 2,4 GHz.",
     "TP-Link no menciona Apple Home ni Matter; los enchufes HomeKit de Kasa son el KP125 y el EP25, y su versión con Matter es el KP125M.",
@@ -9,11 +9,11 @@
   "notes": {
     "radios": "Wifi de 2,4 GHz (IEEE 802.11b/g/n).",
     "matter": "TP-Link indica Alexa, Google Assistant y SmartThings para el KP115 y no menciona Matter, pero nunca dice que no lo tenga. La versión con Matter de este enchufe de TP-Link es el KP125M.",
-    "hubRequired": "Se conecta directamente a la wifi de 2,4 GHz; TP-Link dice que no hace falta hub.",
+    "hubRequired": "Se conecta directamente al wifi de 2,4 GHz; TP-Link dice que no hace falta hub.",
     "localControl": "La integración de Home Assistant controla los enchufes Kasa a través de la red local. La propia app Kasa funciona a través de la nube.",
     "energyMonitoring": "Consumo en tiempo real e histórico en la app Kasa.",
     "maxLoadWatts": "15 A, 1,8 kW a 120 V.",
-    "compatibility.apple_home": "La lista de plataformas del KP115 de TP-Link nombra Alexa, Google Assistant y SmartThings, no HomeKit, pero no lo descarta. Los enchufes HomeKit de Kasa son el KP125 y el EP25.",
+    "compatibility.apple_home": "La lista de plataformas del KP115 de TP-Link incluye Alexa, Google Assistant y SmartThings, no HomeKit, pero no lo descarta. Los enchufes HomeKit de Kasa son el KP125 y el EP25.",
     "compatibility.google_home": "Vinculación de nube a nube entre las cuentas de Kasa y de Google.",
     "compatibility.alexa": "Vinculación de nube a nube mediante la skill de Kasa.",
     "compatibility.smartthings": "TP-Link incluye Samsung SmartThings entre las plataformas del KP115.",

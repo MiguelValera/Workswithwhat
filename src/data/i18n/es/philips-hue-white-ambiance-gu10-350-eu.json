@@ -17,7 +17,7 @@
     "compatibility.google_home": "La página de Hue para este EAN incluye Google Assistant en «Hue Bridge necesario». La FAQ estadounidense de Hue describe el emparejamiento Bluetooth sin puente con dispositivos Nest, pero no está confirmado para esta bombilla europea.",
     "compatibility.alexa": "La página de Hue para este EAN incluye Alexa en «Hue Bridge necesario». La FAQ estadounidense de Hue describe el emparejamiento Bluetooth sin puente con dispositivos Echo, pero no está confirmado para esta bombilla europea.",
     "compatibility.smartthings": "Las páginas que hemos visto para este EAN no mencionan SmartThings. Otras bombillas Hue lo incluyen en «Hue Bridge necesario», pero no hemos podido confirmarlo para esta.",
-    "compatibility.home_assistant": "Integración oficial de Hue (mediante Hue Bridge) e integración oficial de Hue BLE (desde la 2025.12, Bluetooth sin puente). La documentación de BLE no nombra esta bombilla concreta."
+    "compatibility.home_assistant": "Integración oficial de Hue (mediante Hue Bridge) e integración oficial de Hue BLE (desde la 2025.12, Bluetooth sin puente). La documentación de BLE no menciona esta bombilla concreta."
   },
   "via": {
     "apple_home": "Philips Hue Bridge",

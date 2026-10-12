@@ -7,7 +7,7 @@
   ],
   "notes": {
     "radios": "Las páginas de producto alemana (EAN 8719514342125) y estadounidense de Hue indican Bluetooth y Zigbee como protocolos de comunicación.",
-    "matter": "Que hayamos visto, el sensor no tiene registro propio en la CSA. Hue dice que los productos conectados a un Hue Bridge funcionan con Matter (los conectados por Bluetooth no), y las páginas de producto incluyen Matter entre los sistemas de terceros. Ninguna página de Hue consultada nombra el tipo de dispositivo Matter del sensor.",
+    "matter": "Que hayamos visto, el sensor no tiene registro propio en la CSA. Hue dice que los productos conectados a un Hue Bridge funcionan con Matter (los conectados por Bluetooth no), y las páginas de producto incluyen Matter entre los sistemas de terceros. Ninguna página de Hue consultada menciona el tipo de dispositivo Matter del sensor.",
     "hubRequired": "Hue dice que el sensor necesita una configuración controlada por un Hue Bridge; el Bridge se vende aparte. Hasta 12 accesorios con un Hue Bridge.",
     "localControl": "Ninguna página consultada dice si el sensor funciona sin internet.",
     "senses": "La temperatura y el nivel de luz aparecen en la documentación de Hue de Home Assistant.",

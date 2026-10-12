@@ -10,13 +10,13 @@
   ],
   "notes": {
     "radios": "Wifi de 2,4 GHz (sin 5 GHz). El Bluetooth 4.2 se usa durante la configuración.",
-    "matter": "Las páginas de Wyze para este enchufe nombran solo Alexa y Google Assistant y no mencionan Matter. Es una ausencia, no un no explícito.",
+    "matter": "Las páginas de Wyze para este enchufe mencionan solo Alexa y Google Assistant y no mencionan Matter. Es una ausencia, no un no explícito.",
     "hubRequired": "La página de producto de Wyze indica Hub Required: No. Se conecta directamente al wifi de 2,4 GHz y se configura en la app Wyze.",
     "localControl": "Wyze dice que el sensor de luz sigue accionando el enchufe sin wifi una vez configurado, pero no hemos encontrado ninguna declaración sobre el control por la red local sin la nube de Wyze.",
     "energyMonitoring": "Histórico de uso en la app Wyze, con alertas cuando el consumo mensual supera un nivel establecido.",
     "maxLoadWatts": "Wyze indica 15 A como máximo por toma (120 V, 60 Hz) con protección contra sobrecarga y un límite de motor de 1/2 CV, pero no da ninguna cifra en vatios.",
     "compatibility.apple_home": "La lista de integraciones de Wyze (Alexa, Google Assistant, IFTTT) no incluye HomeKit, pero no hemos encontrado ninguna página de Wyze que diga que el enchufe exterior no sea compatible.",
-    "compatibility.google_home": "Vincula tu cuenta de Wyze en la app Google Home. La lista de dispositivos de Google Assistant de Wyze nombra el Plug Outdoor, y Wyze dice que la integración solo está disponible en EE. UU.",
+    "compatibility.google_home": "Vincula tu cuenta de Wyze en la app Google Home. La lista de dispositivos de Google Assistant de Wyze incluye el Plug Outdoor, y Wyze dice que la integración solo está disponible en EE. UU.",
     "compatibility.alexa": "Mediante la skill de Wyze para Alexa.",
     "compatibility.smartthings": "SmartThings no figura en la lista de integraciones de Wyze, pero Wyze no dice que no sea compatible.",
     "compatibility.home_assistant": "Sin integración oficial de Wyze en Home Assistant; solo integraciones personalizadas de la comunidad que usan la nube de Wyze."

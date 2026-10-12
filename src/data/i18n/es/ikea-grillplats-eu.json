@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-10",
-  "summary": "Todas las vías hacia el IKEA GRILLPLATS pasan por Matter sobre Thread. Eso cubre Apple Home, Google Home, Alexa y SmartThings, que IKEA lista, además de la integración Matter de Home Assistant, pero cada una necesita un router de borde Thread, como el hub DIRIGERA de IKEA o un hub de Apple, Google, Amazon o SmartThings con Thread. Sin él, solo se empareja directamente con un mando o un sensor de movimiento de IKEA. Mide el consumo y soporta 3680 W / 16 A en cargas resistivas. Este registro corresponde al tipo E2491-EU.",
+  "summary": "Todas las vías hacia el IKEA GRILLPLATS pasan por Matter sobre Thread. Eso cubre Apple Home, Google Home, Alexa y SmartThings, que IKEA incluye, además de la integración Matter de Home Assistant, pero cada una necesita un router de borde Thread, como el hub DIRIGERA de IKEA o un hub de Apple, Google, Amazon o SmartThings con Thread. Sin él, solo se empareja directamente con un mando o un sensor de movimiento de IKEA. Mide el consumo y soporta 3680 W / 16 A en cargas resistivas. Este registro corresponde al tipo E2491-EU.",
   "caveats": [
     "Necesita un router de borde Thread (DIRIGERA o el de otro ecosistema) para controlarlo desde el móvil, por voz o con un ecosistema.",
     "Soporta 3680 W / 16 A en cargas resistivas, pero solo 300 W en cargas de motor.",
@@ -13,7 +13,7 @@
     "localControl": "Certificado Matter (CSA), y Home Assistant documenta Matter como control local sin nube. IKEA no indica por sí misma el control local.",
     "energyMonitoring": "IKEA dice que mide el consumo de energía. Lo que veas depende de la app del controlador.",
     "maxLoadWatts": "Manual alemán de IKEA para el tipo E2491-EU: 220-240 V, carga resistiva máxima de 3680 W / 16 A, carga de motor máxima de 300 W.",
-    "matter": "IKEA lo marca como compatible con Matter. El certificado de la CSA CSA255B7MAT46345-24 (Matter 1.4, certificado el 2025-08-20) lista el SKU de familia E2491-EU, el tipo que nombra el manual alemán de IKEA. La CSA también tiene otros certificados del GRILLPLATS.",
+    "matter": "IKEA lo marca como compatible con Matter. El certificado de la CSA CSA255B7MAT46345-24 (Matter 1.4, certificado el 2025-08-20) recoge el SKU de familia E2491-EU, el tipo que nombra el manual alemán de IKEA. La CSA también tiene otros certificados del GRILLPLATS.",
     "compatibility.apple_home": "IKEA nombra a Apple entre los sistemas compatibles. Mediante Matter; necesita un centro de la casa de Apple que sea router de borde Thread.",
     "compatibility.google_home": "IKEA nombra a Google entre los sistemas compatibles. Mediante Matter; necesita un hub de Google que sea router de borde Thread.",
     "compatibility.alexa": "IKEA nombra a Amazon entre los sistemas compatibles. Mediante Matter; necesita un Echo que sea controlador Matter y router de borde Thread. Algunas reseñas de compradores cuentan que falla el emparejamiento con Alexa.",

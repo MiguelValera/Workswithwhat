@@ -15,10 +15,10 @@
     "switchForm": "Relé de 39,5 x 32 x 18,4 mm para la caja de mecanismo de un interruptor existente, con entradas S1/S2 para el interruptor de pared.",
     "dimmer": "Relé de encendido y apagado, 6 A.",
     "neutralRequired": "Se vende como sin neutro; usa el neutro de la propia lámpara. La carga mínima es de unos 3 W y los módulos supresores de destellos no son compatibles.",
-    "gangs": "Las páginas de Sonoff describen una salida de relé con entradas de interruptor S1/S2, pero no indican el número de canales o teclas; solo los comercios dicen que es de un canal.",
+    "gangs": "Las páginas de Sonoff describen una salida de relé con entradas de interruptor S1/S2, pero no indican el número de canales o teclas; solo las tiendas dicen que es de un canal.",
     "compatibility.apple_home": "El centro de ayuda de Sonoff no menciona Apple Home.",
     "compatibility.google_home": "Sonoff dice que el control por voz con Google Assistant funciona una vez que el interruptor está en una pasarela Zigbee en eWeLink; la ruta de la pasarela a Google no se detalla para cada pasarela.",
-    "compatibility.alexa": "La lista de Sonoff nombra el Echo Plus de 2.ª gen., el Echo de 4.ª gen. y el Echo Show de 2.ª gen. como pasarelas Zigbee compatibles.",
+    "compatibility.alexa": "La lista de Sonoff incluye el Echo Plus de 2.ª gen., el Echo de 4.ª gen. y el Echo Show de 2.ª gen. como pasarelas Zigbee compatibles.",
     "compatibility.smartthings": "Sonoff lo incluye como pasarela compatible.",
     "compatibility.home_assistant": "Sonoff menciona los ZBDongle-P y ZBDongle-E con ZHA o Zigbee2MQTT. Necesita un coordinador; las pasarelas de Philips, IKEA y Fritzbox no son compatibles."
   },
