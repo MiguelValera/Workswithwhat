@@ -1,0 +1,121 @@
+{
+  "category": "smart-switch",
+  "brand": "TP-Link",
+  "model": "Tapo S210",
+  "name": "Tapo S210 (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://tapo.com/uk/product/smart-switch/tapo-s210",
+  "radios": {
+    "value": null,
+    "sources": [
+      "s210-uk"
+    ],
+    "note": "Only an 868 MHz sub-1 GHz link to the Tapo Hub is listed, which is not in our radio list."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "The UK page doesn't mention Matter."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The UK page doesn't mention Apple Home."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Tapo Hub (H100/H200)",
+      "sources": [
+        "s210-uk",
+        "s210-uk-tplink"
+      ],
+      "note": "The UK page names voice control through the Google Assistant; the switch needs a Tapo Hub."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Tapo Hub (H100/H200)",
+      "sources": [
+        "s210-uk",
+        "s210-uk-tplink"
+      ],
+      "note": "The UK page names voice control through Amazon Alexa; the switch needs a Tapo Hub."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The UK page doesn't mention SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source found for this switch."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "s210-uk"
+    ],
+    "note": "The page says a Tapo Hub (H100 or H200, sold separately) is needed for all smart features."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from an official source."
+  },
+  "switchForm": {
+    "value": "wall-switch",
+    "sources": [
+      "s210-uk"
+    ],
+    "note": "Replaces the wall switch."
+  },
+  "dimmer": {
+    "value": null,
+    "sources": [],
+    "note": "Neither UK page says whether it dims; they describe on/off control only, without saying it isn't dimmable."
+  },
+  "neutralRequired": {
+    "value": false,
+    "sources": [
+      "s210-uk"
+    ],
+    "note": "The page says no neutral wire is needed."
+  },
+  "gangs": {
+    "value": "1 gang, 1 way",
+    "sources": [
+      "s210-uk",
+      "s210-uk-tplink"
+    ]
+  },
+  "summary": "No neutral wire is needed for the Tapo S210 (UK), a 1-gang, 1-way smart switch that replaces your wall switch. Alexa and Google Assistant voice control both go through a Tapo Hub, which Tapo names as the H100 or H200 and sells separately. Apple Home, SmartThings and Matter aren't mentioned, and the UK pages don't say whether it dims.",
+  "caveats": [
+    "Needs a Tapo H100 or H200 hub, sold separately.",
+    "TP-Link's UK pages describe on/off control only, so don't assume it dims."
+  ],
+  "sources": [
+    {
+      "id": "s210-uk",
+      "url": "https://tapo.com/uk/product/smart-switch/tapo-s210",
+      "title": "Smart Light Switch, 1-Gang 1-Way",
+      "publisher": "Tapo (TP-Link)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "s210-uk-tplink",
+      "url": "https://www.tp-link.com/uk/home-networking/smart-switch/tapo-s210/",
+      "title": "Tapo S210 Smart Light Switch, 1-Gang 1-Way",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

@@ -1,0 +1,127 @@
+{
+  "category": "smart-camera",
+  "brand": "TP-Link",
+  "model": "Tapo C120",
+  "name": "Tapo C120 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.tapo.com/es/product/smart-camera/tapo-c120/",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "tapo-c120-es"
+    ],
+    "note": "2.4 GHz Wi-Fi only (802.11b/g/n)."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "The Spanish product page doesn't mention Matter and we found no CSA listing."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The Spanish product page doesn't mention Apple Home or HomeKit."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "tapo-c120-es"
+      ],
+      "note": "The page lists Google Home and Google Assistant; what works beyond live view is not detailed."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "tapo-c120-es"
+      ],
+      "note": "The page lists Amazon Alexa; what works beyond live view is not detailed."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not mentioned on Tapo's page."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-tplink"
+      ],
+      "note": "Home Assistant's TP-Link Smart Home integration lists the C120. Live view needs a camera account created in the Tapo app."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "tapo-c120-es"
+    ],
+    "note": "A Wi-Fi camera with its own power adapter; the page mentions no hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [
+      "ha-tplink"
+    ],
+    "note": "Home Assistant connects over the local network, but Tapo doesn't state that app control works without the cloud. ONVIF/RTSP isn't described on the product page."
+  },
+  "cameraType": {
+    "value": "outdoor",
+    "sources": [
+      "tapo-c120-es"
+    ],
+    "note": "Tapo sells it for indoor and outdoor use, rated IP66; recorded as outdoor because that is its more capable fit."
+  },
+  "power": {
+    "value": "Plug-in power adapter (mains)",
+    "sources": [
+      "tapo-c120-es"
+    ],
+    "note": "5 V DC, 1.0 A adapter with a 3 m cable."
+  },
+  "localStorage": {
+    "value": true,
+    "sources": [
+      "tapo-c120-es"
+    ],
+    "note": "microSD slot, up to 512 GB (card sold separately)."
+  },
+  "subscription": {
+    "value": "Optional Tapo Care plan for cloud video history",
+    "sources": [
+      "tapo-c120-es"
+    ],
+    "note": "Tapo Care adds a 30-day cloud clip history; the first month is a free trial. EU prices not checked."
+  },
+  "summary": "On a Tapo C120, Alexa and Google Home are the listed ecosystems, and Home Assistant supports it through the TP-Link integration. Apple Home, SmartThings and Matter aren't mentioned. It's a plug-in 2K Wi-Fi camera rated IP66 for indoor or outdoor use. A microSD card up to 512 GB records locally, and the optional Tapo Care plan adds 30-day cloud history.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "It needs mains power through the 3 m adapter cable, so the spot must have an outlet.",
+    "Home Assistant live view needs a camera account set in the Tapo app.",
+    "Apple Home, SmartThings and Matter aren't mentioned on Tapo's page."
+  ],
+  "sources": [
+    {
+      "id": "tapo-c120-es",
+      "url": "https://www.tapo.com/es/product/smart-camera/tapo-c120/",
+      "title": "Tapo C120 - Cámara de Vigilancia Wi-Fi",
+      "publisher": "TP-Link Tapo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}
