@@ -9,14 +9,13 @@
   "officialUrl": "https://www.hivehome.com/shop/smart-home/hive-hub",
   "radios": {
     "value": [
-      "wifi",
       "zigbee",
       "ethernet"
     ],
     "sources": [
       "hive-hub"
     ],
-    "note": "Hive's Hub page lists Ethernet to the router, Wi-Fi and Zigbee, and says the hub works with Ethernet or Wi-Fi. Another Hive shop page lists only Ethernet and Zigbee. Bluetooth is not listed."
+    "note": "Both Hive pages list Ethernet to the router and Zigbee. Wi-Fi is left out because Hive's pages disagree: the Hub page lists it, another shop page doesn't. Bluetooth is not listed."
   },
   "matter": {
     "certified": null,
@@ -102,7 +101,7 @@
     "sources": [],
     "note": "No maximum found."
   },
-  "summary": "Hive heating, lights and plugs show up in Apple Home, Google Home and Alexa once they're paired to the Hive Hub, the Zigbee hub that also links to your router by Ethernet or Wi-Fi. Apple Home is native through Hive's HomeKit integration but leaves out hot water, the SLT5 wired thermostat and the radiator valve. Home Assistant works through your Hive account. No Matter claim found.",
+  "summary": "Hive heating, lights and plugs show up in Apple Home, Google Home and Alexa once they're paired to the Hive Hub, the Zigbee hub that also links to your router by Ethernet. Apple Home is native through Hive's HomeKit integration but leaves out hot water, the SLT5 wired thermostat and the radiator valve. Home Assistant works through your Hive account. No Matter claim found.",
   "sources": [
     {
       "id": "hive-hub",

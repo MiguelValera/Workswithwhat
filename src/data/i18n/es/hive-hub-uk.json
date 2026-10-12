@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-12",
-  "summary": "La calefacción, las luces y los enchufes de Hive aparecen en Apple Home, Google Home y Alexa una vez emparejados con el Hive Hub, el hub Zigbee que además se conecta a tu router por Ethernet o wifi. Apple Home es nativo gracias a la integración HomeKit de Hive, pero deja fuera el agua caliente, el termostato cableado SLT5 y la válvula de radiador. Home Assistant funciona mediante tu cuenta de Hive. No hemos encontrado ninguna indicación de Matter.",
+  "summary": "La calefacción, las luces y los enchufes de Hive aparecen en Apple Home, Google Home y Alexa una vez emparejados con el Hive Hub, el hub Zigbee que además se conecta a tu router por Ethernet. Apple Home es nativo gracias a la integración HomeKit de Hive, pero deja fuera el agua caliente, el termostato cableado SLT5 y la válvula de radiador. Home Assistant funciona mediante tu cuenta de Hive. No hemos encontrado ninguna indicación de Matter.",
   "caveats": [
     "Apple Home necesita el Hive Hub más reciente o el Hub 360, y no admite el agua caliente, el termostato cableado SLT5 más antiguo ni la válvula de radiador.",
     "Home Assistant usa la integración oficial de Hive con tu cuenta de Hive (consulta en la nube); el hub en sí no se empareja con Home Assistant.",
@@ -8,7 +8,7 @@
     "Ninguna fuente oficial confirma la compatibilidad con SmartThings."
   ],
   "notes": {
-    "radios": "La página del Hub de Hive indica Ethernet al router, wifi y Zigbee, y dice que el hub funciona con Ethernet o wifi. Otra página de la tienda de Hive indica solo Ethernet y Zigbee. Bluetooth no figura.",
+    "radios": "Las dos páginas de Hive indican Ethernet al router y Zigbee. Dejamos fuera el wifi porque las páginas de Hive no coinciden: la del Hub lo incluye y otra de la tienda no. Bluetooth no figura.",
     "matter": "No hemos encontrado ninguna indicación de Matter para el Hive Hub.",
     "hubRequired": "Es el hub a través del cual se conectan la calefacción y los dispositivos del hogar de Hive.",
     "localControl": "Sin confirmar por ninguna fuente oficial.",
