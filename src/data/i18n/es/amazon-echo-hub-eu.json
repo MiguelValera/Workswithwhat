@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-12",
-  "summary": "Los dispositivos emparejados con el Echo Hub aparecen en Alexa sin ningún hub adicional: su panel táctil de 8 pulgadas lleva integrados un hub Zigbee y un router de borde Thread 1,3. Los dispositivos Matter también funcionan a través de Alexa. Amazon Reino Unido dice que algunas luces, interruptores y enchufes siguen funcionando sin internet. Para Apple Home, Google Home, SmartThings y Home Assistant, ninguna fuente oficial confirma que los dispositivos emparejados aparezcan allí.",
+  "summary": "Los dispositivos emparejados con el Echo Hub aparecen en Alexa sin ningún hub adicional: su panel táctil de 8 pulgadas lleva integrados un hub Zigbee y un router de borde Thread 1.3. Los dispositivos Matter también funcionan a través de Alexa. Amazon Reino Unido dice que algunas luces, interruptores y enchufes siguen funcionando sin internet. Para Apple Home, Google Home, SmartThings y Home Assistant, ninguna fuente oficial confirma que los dispositivos emparejados aparezcan allí.",
   "caveats": [
     "La compatibilidad con Matter se basa en la documentación para desarrolladores de Amazon; no hemos encontrado ningún registro de la CSA para el Echo Hub.",
     "El Echo Hub se conecta a internet por wifi; para Ethernet hace falta un adaptador PoE compatible.",

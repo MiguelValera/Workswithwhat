@@ -102,7 +102,7 @@ Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
 - **Two languages:** English at the root and Spanish (Spain) under `/es/`, page for page, with hreflang and an EN · ES switch.
-- **150 verified devices:** 42 smart plugs (US, EU, UK), 16 smart bulbs (US, EU, UK), 19 smart locks, 13 smart thermostats (US, EU, UK), 10 smart sensors (EU), 12 smart cameras and doorbells (US, EU), 12 smart switches and dimmers (US, EU), 8 robot vacuums (US, EU, UK) and 18 hubs and bridges (US, EU, UK), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
+- **173 verified devices:** 43 smart plugs (US, EU, UK), 18 smart bulbs (US, EU, UK), 22 smart locks (US, EU, UK), 14 smart thermostats (US, EU, UK), 11 smart sensors (US, EU), 15 smart cameras and doorbells (US, EU, UK), 12 smart switches and dimmers (US, EU), 11 robot vacuums (US, EU, UK), 24 hubs and bridges (US, EU, UK) and 3 LED light strips (US, EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
   - `/smart-plugs/`, `/smart-bulbs/`, `/smart-locks/`, `/smart-thermostats/`, `/smart-sensors/`, `/smart-cameras/`, `/smart-switches/`, `/robot-vacuums/`, `/smart-hubs/` and `/light-strips/`: comparison charts.
   - A page per device.

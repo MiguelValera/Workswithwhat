@@ -1,0 +1,134 @@
+{
+  "category": "robot-vacuum",
+  "brand": "eufy",
+  "model": "X10 Pro Omni (T2351)",
+  "name": "eufy X10 Pro Omni (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.eufy.com/uk/products/t2351v12",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "eufy-manual"
+    ],
+    "note": "The global manual asks for the 2.4 GHz band on your router; the UK pages don't state a band."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim on eufy's UK pages and no CSA listing seen."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No eufy page found for Apple Home."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "eufy-uk-appliance",
+        "eufy-manual"
+      ],
+      "note": "eufy's UK page says you can use Google Assistant for voice-controlled cleaning; the manual links it under Smart Integrations in the eufy Clean app."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "eufy-uk-appliance",
+        "eufy-manual"
+      ],
+      "note": "eufy's UK page says you can use Amazon Alexa for voice-controlled cleaning; the manual links it under Smart Integrations in the eufy Clean app."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No eufy or Samsung page found for SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant integration page found."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "eufy-manual"
+    ],
+    "note": "The manual sets it up on your home 2.4 GHz Wi-Fi through the eufy Clean app; the All-in-One Station is not a hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Local-only control is not stated."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "eufy-uk-product"
+    ],
+    "note": "Vacuums and mops with dual rotating pads."
+  },
+  "navigation": {
+    "value": "LiDAR (iPath Laser Navigation)",
+    "sources": [
+      "eufy-uk-product"
+    ],
+    "note": "eufy calls it iPath Laser Navigation. Obstacle avoidance uses AI.See."
+  },
+  "suctionPa": {
+    "value": 8000,
+    "sources": [
+      "eufy-uk-product"
+    ]
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": [
+      "eufy-uk-product"
+    ],
+    "note": "The All-in-One Station empties the bin into a 2.5 L dust bag. Bundles with extra dust bags and floor cleaner are also sold."
+  },
+  "summary": "Voice control through Alexa and Google Assistant is what eufy's UK page lists for the X10 Pro Omni (T2351), set up under Smart Integrations in the eufy Clean app. It vacuums and mops with 8,000 Pa suction and laser navigation, and the All-in-One Station empties the bin into a 2.5 L dust bag. Apple Home, SmartThings and Home Assistant are not confirmed.",
+  "caveats": [
+    "eufy's UK pages state no Wi-Fi band; the global manual asks for 2.4 GHz.",
+    "No Matter support is documented, so Apple Home isn't confirmed.",
+    "Home Assistant has no official integration page for this model."
+  ],
+  "sources": [
+    {
+      "id": "eufy-uk-product",
+      "url": "https://www.eufy.com/uk/products/t2351v12",
+      "title": "eufy X10 Pro Omni Robot Vacuum & Mop with All-in-One Station",
+      "publisher": "eufy UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "eufy-uk-appliance",
+      "url": "https://www.eufy.com/uk/appliance-x10-omni",
+      "title": "eufy Clean X10 Pro Omni｜Robot Vacuum for Pet Hair & Dust - eufy UK",
+      "publisher": "eufy UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "eufy-manual",
+      "url": "https://service.eufy.com/article-description/X10-Pro-Omni-T2351-EN-Manual",
+      "title": "X10 Pro Omni_T2351_EN_Manual",
+      "publisher": "eufy",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "variants": [
+    "eufy-x10-pro-omni-us"
+  ],
+  "verifiedAt": "2026-10-12"
+}
