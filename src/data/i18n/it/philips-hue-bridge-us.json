@@ -1,10 +1,10 @@
 {
   "basedOn": "2026-10-12",
-  "summary": "L'Hue Bridge (V2) è l'hub Zigbee dietro le luci e gli accessori Philips Hue, e tramite lui le tue luci Hue compaiono in Apple Home, Google Home, Alexa, SmartThings e Home Assistant. È certificato Matter, quindi funziona anche Matter, e si collega al router via Ethernet. Philips lo limita a 50 luci e 12 accessori.",
-  "caveats": ["Philips indica 50 luci e 12 accessori come due limiti separati; l'Hue Bridge Pro ne supporta di più.", "Via Matter non passano il Play HDMI Sync Box e la rotella dell'interruttore Tap dial.", "Il bridge si collega al router solo con un cavo Ethernet, non via Wi-Fi."],
+  "summary":"Hub Zigbee di luci e accessori Philips Hue, il Hue Bridge (V2) fa sì che le tue luci Hue compaiano in Apple Home, Google Home, Alexa, SmartThings e Home Assistant. È certificato Matter, quindi funziona anche Matter, e si collega al router via Ethernet. Philips lo limita a 50 luci e 12 accessori.",
+  "caveats": ["Philips indica 50 luci e 12 accessori come due limiti separati; il Hue Bridge Pro ne supporta di più.", "Via Matter non passano il Play HDMI Sync Box e la rotella dell'interruttore Tap dial.", "Il bridge si collega al router solo con un cavo Ethernet, non via Wi-Fi."],
   "notes": {
     "radios": "Zigbee per luci e accessori; Philips dice che il bridge si collega al router con un cavo Ethernet.",
-    "matter": "La CSA elenca il Philips Hue Bridge (Signify, certificato nel 2022, poi ricertificato con firmware successivi). Il bridge raggiunge la rete solo con un cavo Ethernet, quindi Matter passa su Ethernet. L'Hue Bridge Pro è un modello a parte, più recente.",
+    "matter": "La CSA elenca il Philips Hue Bridge (Signify, certificato nel 2022, poi ricertificato con firmware successivi). Il bridge raggiunge la rete solo con un cavo Ethernet, quindi Matter passa su Ethernet. Il Hue Bridge Pro è un modello a parte, più recente.",
     "hubRequired": "È l'hub: Philips lo chiama il controller centrale del sistema Hue.",
     "localControl": "Non confermato da una fonte ufficiale.",
     "deviceProtocols": "Una rete Zigbee privata per luci e accessori Hue, separata dal Wi-Fi.",
@@ -14,7 +14,7 @@
     "compatibility.apple_home": "Philips elenca Apple Home e Apple HomeKit tramite il bridge. Funziona anche Matter, tranne per il Play HDMI Sync Box e la rotella del Tap dial.",
     "compatibility.google_home": "Matter funziona anche tramite il bridge.",
     "compatibility.alexa": "Matter funziona anche tramite il bridge.",
-    "compatibility.smartthings": "Elencato nella pagina statunitense dell'Hue Bridge come compatibile con Samsung SmartThings.",
+    "compatibility.smartthings": "Elencato nella pagina statunitense del Hue Bridge come compatibile con Samsung SmartThings.",
     "compatibility.home_assistant": "Home Assistant ha un'integrazione Philips Hue ufficiale che si abbina al bridge e ne controlla luci, sensori e telecomandi."
   }
 }

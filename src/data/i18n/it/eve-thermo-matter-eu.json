@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Eve Thermo (5th generation) è una testina per valvola di radiatore che, secondo Eve, funziona in locale, senza cloud, abbonamento né registrazione. Usa Matter su Thread ed è elencata per Apple Home, Google Home, Alexa, SmartThings e Home Assistant. La tua piattaforma richiede un hub che sia sia controller Matter sia border router Thread. Si adatta alle valvole M30 × 1,5 e gli adattatori Danfoss RA, RAV e RAVL sono inclusi.",
+  "summary": "Eve Thermo (5th generation) è una testina per valvola di radiatore che, secondo Eve, funziona in locale, senza cloud, abbonamento né registrazione. Usa Matter su Thread ed è elencata per Apple Home, Google Home, Alexa, SmartThings e Home Assistant. La tua piattaforma richiede un hub che faccia sia da controller Matter sia da border router Thread. Si adatta alle valvole M30 × 1,5 e gli adattatori Danfoss RA, RAV e RAVL sono inclusi.",
   "caveats": ["Richiede un hub della tua piattaforma con funzioni di controller Matter e border router Thread; non serve nessun bridge Eve.", "Eve dice che le programmazioni sul dispositivo non sono supportate su Alexa o SmartThings e richiedono l'app Eve."],
   "notes": {
     "radios": "La CSA indica Thread e Bluetooth per Eve Thermo.",

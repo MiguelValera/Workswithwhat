@@ -3,16 +3,16 @@
   "summary": "Appena tirata fuori dalla scatola, la Philips Hue Smart Plug parla Bluetooth con l'app Hue, il che copre l'accensione e lo spegnimento di base. Apple Home, Google Home, Alexa, SmartThings e Home Assistant richiedono tutti un Hue Bridge; la presa si collega al Bridge via Zigbee, e il Bridge la espone anche alle piattaforme Matter. Il modello statunitense è dato per 1800 W per prese da 100–120 V. Hue descrive solo l'accensione e lo spegnimento e non indica la misura dei consumi.",
   "caveats": ["Assistenti vocali, ecosistemi e accesso da remoto richiedono tutti un Hue Bridge; il controllo vocale Bluetooth di Hue senza bridge riguarda le lampadine, non questa presa.", "Le configurazioni solo Bluetooth non possono usare Matter; è il Bridge a esporre la presa a Matter.", "Gli utenti di Home Assistant segnalano che la presa compare come luce, quindi 'spegni tutte le luci' può spegnere anche lei."],
   "notes": {
-    "radios": "Bluetooth per il controllo diretto da app; Zigbee verso l'Hue Bridge.",
+    "radios": "Bluetooth per il controllo diretto da app; Zigbee verso il Hue Bridge.",
     "matter": "Nessuna certificazione Matter trovata per la presa in sé. Hue dice che i prodotti collegati al Bridge sono esposti a Matter dal Bridge, e le configurazioni solo Bluetooth non possono usare Matter.",
-    "hubRequired": "Il controllo di base funziona via Bluetooth dall'app Hue; l'Hue Bridge serve per gli assistenti vocali, gli ecosistemi e l'accesso da remoto.",
-    "localControl": "Controllo Bluetooth senza bridge; l'Hue Bridge offre anche una API locale usata da Home Assistant.",
+    "hubRequired": "Il controllo di base funziona via Bluetooth dall'app Hue; il Hue Bridge serve per gli assistenti vocali, gli ecosistemi e l'accesso da remoto.",
+    "localControl": "Controllo Bluetooth senza bridge; il Hue Bridge offre anche una API locale usata da Home Assistant.",
     "energyMonitoring": "Le pagine di Hue descrivono solo l'accensione e lo spegnimento e non indicano nessuna misura, ma nessuna dice espressamente che sia assente.",
     "maxLoadWatts": "L'assistenza Hue indica 1800 W per il Nord America (100–120 V).",
     "compatibility.apple_home": "La pagina del prodotto elenca Apple Home tra gli assistenti che richiedono un Hue Bridge.",
     "compatibility.google_home": "La pagina statunitense del prodotto elenca Google Assistant tra gli assistenti che richiedono un Hue Bridge. Le FAQ di Hue sul controllo vocale Bluetooth senza bridge riguardano le lampadine, non questa presa.",
     "compatibility.alexa": "La pagina statunitense del prodotto elenca Alexa tra gli assistenti che richiedono un Hue Bridge. Le FAQ di Hue sul controllo vocale Bluetooth senza bridge riguardano le lampadine, non questa presa.",
-    "compatibility.smartthings": "La pagina dell'Hue Bridge elenca la compatibilità con Samsung SmartThings.",
+    "compatibility.smartthings": "La pagina del Hue Bridge elenca la compatibilità con Samsung SmartThings.",
     "compatibility.home_assistant": "L'integrazione Hue ufficiale controlla i dispositivi collegati a un Hue Bridge. Gli utenti segnalano che le prese compaiono come entità luce."
   },
   "via": {"apple_home": "Philips Hue Bridge", "google_home": "Philips Hue Bridge", "alexa": "Philips Hue Bridge", "smartthings": "Philips Hue Bridge", "home_assistant": "Philips Hue Bridge"}

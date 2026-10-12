@@ -6,7 +6,7 @@
     "radios": "Hue elenca Bluetooth e Zigbee come protocolli di comunicazione per questa lampadina.",
     "matter": "La pagina di Hue elenca Matter tra i sistemi di terze parti, ma sotto 'Hue Bridge required' e con solo radio Bluetooth e Zigbee, quindi sembra Matter tramite il Bridge. Non abbiamo trovato nessuna scheda CSA per la lampadina in sé.",
     "hubRequired": "Qui significa avere bisogno di un bridge per il controllo di base da app. L'app Hue la controlla via Bluetooth (circa 10 luci, breve distanza); serve un Hue Bridge per Apple Home, SmartThings e l'accesso da remoto.",
-    "localControl": "Il controllo Bluetooth da telefono funziona senza internet; Home Assistant comunica con l'Hue Bridge tramite la sua API locale.",
+    "localControl": "Il controllo Bluetooth da telefono funziona senza internet; Home Assistant comunica con il Hue Bridge tramite la sua API locale.",
     "colorType": "Bianco caldo fisso, 2700 K.",
     "lumens": "Hue indica 810 lm come luminosità massima; non è stato mostrato un valore nominale separato.",
     "compatibility.apple_home": "La pagina del prodotto Hue elenca Apple Home sotto 'Hue Bridge required'; il Bridge si collega via HomeKit o Matter.",
