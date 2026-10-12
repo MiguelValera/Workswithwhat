@@ -11,6 +11,8 @@ const SECTIONS = {
   'smart-sensor': ['smart-sensors', 'sensores-inteligentes'],
   'smart-camera': ['smart-cameras', 'camaras-y-timbres'],
   'smart-switch': ['smart-switches', 'interruptores-inteligentes'],
+  'robot-vacuum': ['robot-vacuums', 'robots-aspiradores'],
+  'smart-hub': ['smart-hubs', 'hubs-y-pasarelas'],
 };
 
 // lastmod per device page (both languages), from the record's updatedAt

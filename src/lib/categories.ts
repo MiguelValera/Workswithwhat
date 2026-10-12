@@ -80,6 +80,21 @@ const CLEANING_LABELS = labels({
   'vacuum-mop': ['Vacuum and mop', 'Aspira y friega'],
 });
 
+const HUB_LABELS = labels({
+  hub: ['Hub or bridge', 'Hub o pasarela'],
+  'usb-dongle': ['USB dongle', 'Dongle USB'],
+  'speaker-display': ['Speaker or display', 'Altavoz o pantalla'],
+});
+
+const PROTOCOL_LABELS = labels({
+  zigbee: ['Zigbee', 'Zigbee'],
+  thread: ['Thread', 'Thread'],
+  'z-wave': ['Z-Wave', 'Z-Wave'],
+  bluetooth: ['Bluetooth', 'Bluetooth'],
+  infrared: ['Infrared', 'Infrarrojos'],
+  proprietary: ['Proprietary radio', 'Radio propia'],
+});
+
 export const CATEGORIES: Category[] = [
   {
     key: 'smart-plug',
@@ -197,6 +212,27 @@ export const CATEGORIES: Category[] = [
       { key: 'navigation', label: 'Navigation', labelEs: 'Navegación', format: String },
       { key: 'suctionPa', label: 'Suction', labelEs: 'Succión', format: (v, lang) => `${formatNumber(Number(v), lang)} Pa` },
       { key: 'selfEmptying', label: 'Self-emptying dock', labelEs: 'Base de autovaciado', format: yesNo },
+    ],
+  },
+  {
+    key: 'smart-hub',
+    es: { label: 'Hubs y pasarelas', navLabel: 'Hubs', singular: 'hub', plural: 'hubs', gender: 'm' },
+    path: 'smart-hubs',
+    label: 'Smart home hubs and bridges',
+    navLabel: 'Hubs',
+    singular: 'smart home hub',
+    plural: 'smart home hubs',
+    specs: [
+      { key: 'hubType', label: 'Type', labelEs: 'Tipo', format: HUB_LABELS },
+      {
+        key: 'deviceProtocols',
+        label: 'Connects devices over',
+        labelEs: 'Conecta dispositivos por',
+        format: (v, lang) => (v as string[]).map((x) => PROTOCOL_LABELS(x, lang)).join(', '),
+      },
+      { key: 'matterBridge', label: 'Matter bridge', labelEs: 'Puente Matter', format: yesNo },
+      { key: 'threadBorderRouter', label: 'Thread border router', labelEs: 'Router de borde Thread', format: yesNo },
+      { key: 'maxDevices', label: 'Max devices', labelEs: 'Máx. dispositivos', format: (v, lang) => formatNumber(Number(v), lang) },
     ],
   },
 ];
