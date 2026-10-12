@@ -1,0 +1,116 @@
+{
+  "category": "smart-lock",
+  "brand": "Kwikset",
+  "model": "Halo Touch",
+  "name": "Kwikset Halo Touch (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.kwikset.com/products/detail/halo-touch-contemporary-fingerprint-wi-fi-enabled-smart-lock",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "kwikset-halo-touch-page",
+      "kwikset-halo-touch-product"
+    ],
+    "note": "Connects directly to your home Wi-Fi. The Wi-Fi band is not stated on the pages we saw."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Neither Halo Touch page mentions Matter; Kwikset sells Matter under its Halo Select line. No CSA listing was checked. Absence is not a no."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Neither Halo Touch page mentions Apple Home or HomeKit; the product page lists only Alexa, Google Home and Brilliant."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "kwikset-halo-touch-page",
+        "kwikset-halo-touch-product"
+      ],
+      "note": "Kwikset lists Google Assistant and Google Home as compatible."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "kwikset-halo-touch-page",
+        "kwikset-halo-touch-product"
+      ],
+      "note": "Kwikset lists Amazon Alexa as compatible."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Neither Halo Touch page mentions SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant or Kwikset page for this model was found."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "kwikset-halo-touch-page",
+      "kwikset-halo-touch-product"
+    ],
+    "note": "Wi-Fi is built in; the Kwikset app manages the lock."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Kwikset says fingerprint images are stored locally on the lock, but does not state whether app or voice control works without the cloud."
+  },
+  "lockFit": {
+    "value": "deadbolt",
+    "sources": [
+      "kwikset-halo-touch-page"
+    ],
+    "note": "Sold as a deadbolt with a Contemporary or Traditional style. A key works as backup."
+  },
+  "keypad": {
+    "value": null,
+    "sources": [],
+    "note": "Kwikset lists fingerprint (up to 100 prints, 50 users) and a key as the ways in. Neither page says whether there is a keypad, so this stays unconfirmed."
+  },
+  "power": {
+    "value": "4 × AA",
+    "sources": [
+      "kwikset-halo-touch-page"
+    ],
+    "note": "Four AA batteries are included."
+  },
+  "summary": "A fingerprint deadbolt with Wi-Fi built in, the Kwikset Halo Touch works with Alexa and Google Home and needs no hub. It holds up to 100 prints for 50 users, has a key as backup, and runs on four AA batteries. Kwikset's pages don't confirm Apple Home, SmartThings or Matter for it.",
+  "caveats": [
+    "Apple Home, SmartThings and Matter support is not confirmed for this model.",
+    "Kwikset doesn't say whether it has a keypad, or which Wi-Fi band it uses."
+  ],
+  "sources": [
+    {
+      "id": "kwikset-halo-touch-page",
+      "url": "https://www.kwikset.com/products/detail/halo-touch-contemporary-fingerprint-wi-fi-enabled-smart-lock",
+      "title": "Halo Touch Contemporary Fingerprint Wi-Fi Enabled Smart Lock",
+      "publisher": "Kwikset",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "kwikset-halo-touch-product",
+      "url": "https://www.kwikset.com/halo-touch",
+      "title": "Halo Touch Fingerprint Door Lock",
+      "publisher": "Kwikset",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

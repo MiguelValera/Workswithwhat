@@ -1,0 +1,165 @@
+{
+  "category": "smart-camera",
+  "brand": "TP-Link",
+  "model": "Tapo C200",
+  "name": "Tapo C200 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.tapo.com/de/product/smart-camera/tapo-c200/",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "tapo-c200-page",
+      "tapo-c200-datasheet"
+    ],
+    "note": "2.4 GHz Wi-Fi only (802.11b/g/n); the datasheet lists no Ethernet port."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "The Tapo C200 pages we saw mention neither Matter nor HomeKit, and we found no CSA listing."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Tapo page we found lists Apple Home or HomeKit for the C200."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "tapo-c200-page",
+        "tapo-google-stream-faq"
+      ],
+      "note": "Tapo's C200 page says it works with Google Home. Tapo's FAQ describes streaming to a Chromecast or Google display, cloud-to-cloud, stopping after 10 minutes; the FAQ does not name the C200."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "tapo-c200-page",
+        "tapo-alexa-faq"
+      ],
+      "note": "Tapo's C200 page says it works with Alexa. Tapo's Alexa FAQ says most Tapo cameras show live view only on Echo or Fire TV displays, for 10 minutes at a time, and cannot be switched on or off by voice. The FAQ lists only the C200 (V1) by name."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Tapo or Samsung page we found lists SmartThings for the C200."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's TP-Link integration page lists other Tapo cameras (C100, C120, C210 and more) but not the C200. It says unlisted devices may work."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "tapo-c200-de",
+      "tapo-alexa-faq"
+    ],
+    "note": "Connects straight to home Wi-Fi; the spec sheet lists no hub compatibility, and Alexa links through the Tapo account with no hub or bridge."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [
+      "tapo-c200-de"
+    ],
+    "note": "RTSP and ONVIF are listed as supported, but Tapo does not say that app control works without the cloud."
+  },
+  "cameraType": {
+    "value": "indoor",
+    "sources": [
+      "tapo-care-page",
+      "tapo-c200-de"
+    ],
+    "note": "Tapo's Tapo Care page labels the C200 an indoor pan/tilt security camera. The German product page lists tabletop or ceiling mounting and no weather rating."
+  },
+  "power": {
+    "value": "9 V DC adapter (mains)",
+    "sources": [
+      "tapo-c200-page",
+      "tapo-c200-datasheet"
+    ],
+    "note": "9 V DC, 0.6 A adapter on 100-240 V mains; the datasheet gives a 3 m cord."
+  },
+  "localStorage": {
+    "value": true,
+    "sources": [
+      "tapo-c200-page",
+      "tapo-care-page"
+    ],
+    "note": "microSD slot up to 512 GB, card sold separately. Tapo lists local storage among the features that work without Tapo Care."
+  },
+  "subscription": {
+    "value": "Cloud clip history and rich notifications (Tapo Care)",
+    "sources": [
+      "tapo-care-page",
+      "tapo-c200-page"
+    ],
+    "note": "Tapo says live view, instant notifications, two-way audio and local storage are free. Basic and Premium plans add 7-day or 30-day clip history. Plans vary by country; EU prices not checked."
+  },
+  "summary": "Tapo names Alexa and Google Home for the C200, a mains-powered indoor pan/tilt camera that connects straight to Wi-Fi with no hub. Recording to a microSD card (up to 512 GB, sold separately) is free; cloud clip history needs a Tapo Care plan. Apple Home, SmartThings and Home Assistant aren't confirmed for this model, and no Matter listing turned up.",
+  "caveats": [
+    "Alexa and Google streams are cloud-to-cloud and stop after 10 minutes; you ask again to keep watching.",
+    "2.4 GHz Wi-Fi only.",
+    "C200 and C200C are separate Tapo products with their own pages; this record covers the C200, which Tapo sells in several hardware versions from V1 to V5.",
+    "Tapo's Alexa FAQ names only the C200 (V1), so Alexa support on newer hardware versions rests on the product page."
+  ],
+  "sources": [
+    {
+      "id": "tapo-c200-page",
+      "url": "https://www.tapo.com/en/product/smart-camera/tapo-c200/",
+      "title": "Tapo C200",
+      "publisher": "TP-Link Tapo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tapo-c200-de",
+      "url": "https://www.tapo.com/de/product/smart-camera/tapo-c200/",
+      "title": "Tapo C200 | Pan/Tilt Home Security Wi-Fi Camera | Tapo",
+      "publisher": "TP-Link Tapo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tapo-c200-datasheet",
+      "url": "https://static.tp-link.com/upload/product-overview/2024/202407/20240715/Tapo%20C200%205.0&5.6&5.8_Datasheet.pdf",
+      "title": "Tapo C200 Pan/Tilt Home Security Wi-Fi Camera 128GB Datasheet Night Vision",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tapo-alexa-faq",
+      "url": "https://www.tp-link.com/support/faq/2738",
+      "title": "How to control Tapo camera by Amazon Alexa with voice commands",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tapo-google-stream-faq",
+      "url": "https://www.tapo.com/en/faq/776/",
+      "title": "How to stream Tapo / Kasa Camera on Google device",
+      "publisher": "TP-Link Tapo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tapo-care-page",
+      "url": "https://tapo.com/tapocare",
+      "title": "Tapo Care: Get a 30-day Free Trial",
+      "publisher": "TP-Link Tapo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Pensado para Alexa, el Amazon Smart Thermostat (S6ED3R) se configura en la app Alexa con wifi de 2,4 GHz y también funciona con la app Ring. Este termostato de pared estadounidense cubre la mayoría de sistemas de 24 V, incluidas las bombas de calor, pero puede necesitar un cable C o un kit adaptador. No se indica compatibilidad con Matter, Apple Home ni Google Home.",
+  "caveats": [
+    "Puede necesitar un cable C o un kit adaptador de corriente que se vende aparte.",
+    "No es compatible con sistemas de 110-240 V, como la calefacción eléctrica de zócalo.",
+    "Solo wifi de 2,4 GHz.",
+    "No se indica la compatibilidad con Apple Home, Google Home ni Matter."
+  ],
+  "notes": {
+    "radios": "Solo 2,4 GHz, 802.11 b/g/n; no admite 5 GHz.",
+    "matter": "Ninguna página de Amazon ni de Ring afirma que sea compatible con Matter, y los registros de la CSA que hemos encontrado para \"Smart Thermostat\" son de Tuya y Meross. Que no se mencione no significa que no sea compatible.",
+    "hubRequired": "Se conecta al wifi de 2,4 GHz y se configura en la app Alexa, pero ni Amazon ni Ring dicen expresamente que no haga falta un hub o un Echo. El control por voz necesita un dispositivo con Alexa.",
+    "localControl": "Amazon no indica qué funciona sin internet.",
+    "thermostatType": "Termostato de pared.",
+    "systems": "Cubre instalaciones de aire forzado, bomba de calor y caldera radiante a 24 V. No es compatible con sistemas de 110-240 V, como la calefacción eléctrica de zócalo.",
+    "power": "Ring dice que puede necesitar un cable C o un kit adaptador de corriente, que se vende aparte, y que la mayoría de las casas tienen cable C. El consumo en espera es de 0,89 W.",
+    "compatibility.apple_home": "Ninguna página de Amazon ni de Ring menciona Apple Home y no se ha encontrado ninguna certificación Matter.",
+    "compatibility.google_home": "Ninguna página de Amazon ni de Ring menciona Google Home y no se ha encontrado ninguna certificación Matter.",
+    "compatibility.alexa": "Se configura en la app Alexa; el control por voz necesita un dispositivo con Alexa. También funciona con la app Ring.",
+    "compatibility.smartthings": "Ninguna página oficial menciona SmartThings.",
+    "compatibility.home_assistant": "No se ha encontrado ninguna integración oficial de Home Assistant para este termostato."
+  },
+  "values": {
+    "systems": "La mayoría de sistemas HVAC de 24 V, incluidas bombas de calor",
+    "power": "Cable C (24 V) o kit adaptador"
+  }
+}

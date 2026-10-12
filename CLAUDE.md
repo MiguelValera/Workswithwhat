@@ -44,10 +44,11 @@ The site is in **English** at the root and **Spanish (Spain)** under `/es/`; it 
 
 ## Agents (`.claude/agents/`)
 
-Pipeline: **collector → verifier → editor → translator**, then **reviewer** on the PR.
+Pipeline: **bestsellers** (what to add) → **collector → verifier → editor → translator**, then **reviewer** on the PR.
 
 | Agent | Job | Writes |
 |---|---|---|
+| `bestsellers` | Finds the 5 best-selling devices per category and market (Amazon best-seller lists first, review roundups only as tie-breakers), marks each as have / variant / missing, and ranks high-volume categories the site lacks. | `docs/bestsellers/<market>.md`, ending in a queue of batches of 5 for the collector. |
 | `collector` | Researches a device and drafts its JSON with sources. | New `src/data/devices/*.json` with `status: "draft"`. |
 | `verifier` | Re-checks every claim against its cited source, independently. Downgrades anything unsupported to `unknown`. | Edits the record and sets `status: "verified"` + `verifiedAt` only if everything holds. |
 | `editor` | Writes `summary` and `caveats` from the verified data, plus SEO copy. Never changes facts. | `summary`, `caveats`. |
@@ -101,7 +102,7 @@ Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
 - **Two languages:** English at the root and Spanish (Spain) under `/es/`, page for page, with hreflang and an EN · ES switch.
-- **139 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs, 18 smart locks, 10 smart thermostats (US, EU), 10 smart sensors (EU), 9 smart cameras and doorbells (US, EU) 10 smart switches and dimmers (US, EU) 8 robot vacuums (US, EU, UK) and 18 hubs and bridges (US, EU, UK), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
+- **150 verified devices:** 42 smart plugs (US, EU, UK), 16 smart bulbs (US, EU, UK), 19 smart locks, 13 smart thermostats (US, EU, UK), 10 smart sensors (EU), 12 smart cameras and doorbells (US, EU), 12 smart switches and dimmers (US, EU), 8 robot vacuums (US, EU, UK) and 18 hubs and bridges (US, EU, UK), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
   - `/smart-plugs/`, `/smart-bulbs/`, `/smart-locks/`, `/smart-thermostats/`, `/smart-sensors/`, `/smart-cameras/`, `/smart-switches/`, `/robot-vacuums/` and `/smart-hubs/`: comparison charts.
   - A page per device.
@@ -113,12 +114,14 @@ Read this first if you are picking the project up.
 ### Unfinished work
 - **Hub links:** `src/lib/hubs.ts` maps a `via` name (Hue Bridge, DIRIGERA, SwitchBot Hub 2) to the hub record **in the same market**; device pages link to it next to the compatibility note, and hub pages list "Devices that work through the …" by category. Most Hue-via records are EU, Hue Bridge EU/UK, SwitchBot Hub 2 EU, Hive Hub and Lutron Caséta Smart Bridge are mapped too; append a slug to `HUB_NAMES` when you add a regional sibling. Generic names ("Aqara hub") stay unlinked on purpose.
 - **Next:** more hubs: Aeotec Hub, Echo Show / Echo Hub, Apple TV 4K, Google Nest Hub, Hue Bridge Pro (US, UK). SmartThings Station has no Z-Wave or Ethernet (an earlier draft wrongly said so). Echo 4th gen, HomePod mini and the Station stay `matter.certified: null`: their CSA listings are software components or Zigbee-only. A one-model, multi-region product (e.g. ZBT-1) stays one record; it is listed under the first market in `MARKETS` order. LED strips are a cheap add on the bulb schema. Each new category needs schema and registry work first, as thermostats did. More thermostats (Honeywell T6 Pro, Bosch, Danfoss Ally) and sensors (US versions, IKEA MYGGBETT and KLIPPBOK, SwitchBot, Shelly) are also open. More cameras are open too (Arlo, Reolink, Wyze, Ring outdoor, eufy indoor). Arlo Essential Indoor (2nd gen) was dropped: its only Alexa source was on Arlo's staging host. Switches: a radio outside the enum (e.g. Lutron Clear Connect) means `radios: null` with a note, and a generic Zigbee coordinator (ZHA, Zigbee2MQTT) is `hub`, not `native`. For cameras, ecosystem notes say what works (live view, announcements, HomeKit Secure Video); Matter camera support is new, so never assume it. Lockly Secure Pro was dropped: no lockly.com page surfaced in search. Robot vacuums: Matter often arrives by firmware (Roborock); a maker's newsroom statement is accepted, but say in the note when no CSA listing names the model. Dropped: Shark EU (no official EU page), Cecotec Conga 11090 (no ecosystem confirmed). Open: more vacuums (Roborock Qrevo S, Ecovacs X-series, iRobot Combo 10 Max, Dreame X-series).
+- **Bestsellers queue:** `docs/bestsellers/<market>.md` (snapshot 2026-10-12) lists the remaining best sellers to add. Dropped from it: Nest Learning Thermostat 4th gen (UK) (Google's UK store sells only the 3rd gen), Hue White and Colour Ambiance E27 (UK) (same SKU as the EU record), Roborock Qrevo S and Dreame L10s Ultra (EU) (no EU maker page surfaced). All three scouts recommend LED light strips as the next category.
 - There is no EU Schuko Shelly Gen4 adapter yet; the Plug C Gen4 had no official page as of 2026-10-11.
 - **Who decides content:** the owner doesn't pick devices or review content. Claude chooses what to add next and writes it, following the principles above.
 
 ### How content gets added (lessons learned)
+- **What to add:** run `bestsellers` (one run per market, `us`, `eu`, `uk`, in parallel) about once a month, then feed its queue to the collector in batches. It only writes `docs/bestsellers/`; adding a new category it recommends needs schema and registry work first.
 - **Batch size:** 5 devices per agent. Run collector, then verifier, then editor, then open a PR, then run the reviewer on it. Once CI is green and the reviewer says **Ready to merge**, Claude squash-merges (the owner asked for this on 2026-10-12); the `main` ruleset requires a PR and a green `build`. Run at most ~3 agents at once; more hits the account's usage limit.
-- **Network:** the cloud container cannot open external sites. WebFetch and curl fail, and only WebSearch works. Agents must cite only URLs that appeared in search results.
+- **Network:** curl can't open external sites. Since 2026-10-12 WebFetch works for most maker pages (amazon.com and eu.roborock.com refuse it), but its page summaries are sometimes wrong, so verifiers cross-check them. Agents must cite only URLs that appeared in search results or that they fetched.
 - **Verifier rules that keep coming up:**
   - **Absence is not "no":** if a maker's platform list just doesn't mention Matter or Apple Home, use `null` / `unknown` with a note, not `false` / `no`.
   - **Never derive watts from amps:** if only amps are given, set `value: null` and put the amps in the note.

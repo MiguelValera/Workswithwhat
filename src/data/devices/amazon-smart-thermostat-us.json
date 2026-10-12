@@ -1,0 +1,113 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Amazon",
+  "model": "Smart Thermostat (S6ED3R)",
+  "name": "Amazon Smart Thermostat (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://ring.com/products/amazon-smart-thermostat",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "ring-amazon-smart-thermostat"
+    ],
+    "note": "2.4 GHz only, 802.11 b/g/n; no 5 GHz."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Amazon or Ring page claims Matter, and the CSA listings found for 'Smart Thermostat' belong to Tuya and Meross. Absence is not a no."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Amazon or Ring page mentions Apple Home, and no Matter certification was found."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Amazon or Ring page mentions Google Home, and no Matter certification was found."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "ring-amazon-smart-thermostat"
+      ],
+      "note": "Set up in the Alexa app; voice control needs an Alexa-enabled device. It also works with the Ring app."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official page mentions SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant integration for this thermostat was found."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "It joins 2.4 GHz Wi-Fi and is set up in the Alexa app, but neither Amazon nor Ring says outright that no hub or Echo is needed. Voice control needs an Alexa-enabled device."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Amazon does not state what works without internet."
+  },
+  "thermostatType": {
+    "value": "wall",
+    "sources": [
+      "ring-amazon-smart-thermostat"
+    ],
+    "note": "Wall-mounted thermostat."
+  },
+  "systems": {
+    "value": "Most 24 V HVAC, incl. heat pumps",
+    "sources": [
+      "ring-amazon-smart-thermostat",
+      "amazon-thermostat-system-help"
+    ],
+    "note": "Covers forced air, heat pump and radiant boiler setups on 24 V. Not compatible with 110-240 V systems such as electric baseboard heat."
+  },
+  "power": {
+    "value": "C-wire (24 V) or adapter kit",
+    "sources": [
+      "ring-amazon-smart-thermostat"
+    ],
+    "note": "Ring says it may need a C-wire or a power adapter kit, sold separately, and that most homes have a C-wire. Standby draw is 0.89 W."
+  },
+  "summary": "Built for Alexa, the Amazon Smart Thermostat (S6ED3R) is set up in the Alexa app over 2.4 GHz Wi-Fi and also works with the Ring app. This US wall thermostat covers most 24 V systems, including heat pumps, but may need a C-wire or an adapter kit. No Matter, Apple Home or Google Home support is stated.",
+  "caveats": [
+    "May need a C-wire or a separately sold power adapter kit.",
+    "Not compatible with 110-240 V systems such as electric baseboard heat.",
+    "2.4 GHz Wi-Fi only.",
+    "Apple Home, Google Home and Matter support are not stated."
+  ],
+  "sources": [
+    {
+      "id": "ring-amazon-smart-thermostat",
+      "url": "https://ring.com/products/amazon-smart-thermostat",
+      "title": "Amazon Smart Thermostat - White",
+      "publisher": "Ring (Amazon)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "amazon-thermostat-system-help",
+      "url": "https://www.amazon.com/gp/help/customer/display.html?nodeId=TMzH6K26laTAcjwey7",
+      "title": "Does Amazon Smart Thermostat Work with My System? - Amazon Customer Service",
+      "publisher": "Amazon",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}
