@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El Aura Reach es el cerrojo de Kwikset con Matter sobre Thread y funciona con Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Tiene teclado táctil retroiluminado y usa cuatro pilas AA. Con Bluetooth se maneja desde la app de Kwikset sin hub, pero las plataformas de casa inteligente necesitan un router de borde Thread.",
+  "caveats": [
+    "Para controlarlo desde la casa inteligente necesitas un router de borde Thread, como un HomePod mini, un Apple TV o un Nest Hub.",
+    "Kwikset no indica si admite Apple Home Key.",
+    "El registro de la CSA cita el SKU de familia 994000-001, no el código 9400 BLE DB 15 de la página del fabricante."
+  ],
+  "notes": {
+    "radios": "Thread para Matter y Bluetooth para la app de Kwikset. No figura wifi.",
+    "matter": "La CSA registra el Aura Reach a nombre de ASSA ABLOY (matriz de Kwikset): SKU principal 994000-001, Thread y Bluetooth, certificado el 2025-11-08. La página de Kwikset usa el código de modelo 9400 BLE DB 15; el nombre, el fabricante y las radios coinciden.",
+    "hubRequired": "Las especificaciones de Kwikset indican que no hace falta hub; Bluetooth cubre la app de Kwikset, mientras que las plataformas de casa inteligente necesitan un router de borde Thread.",
+    "localControl": "Kwikset dice que Thread ofrece control local, pero no afirma de forma expresa que la cerradura funcione sin internet.",
+    "lockFit": "Cerrojo de cilindro simple; puertas de 1-3/8 in a 2-1/4 in de grosor.",
+    "keypad": "Teclado táctil retroiluminado.",
+    "power": "Incluye cuatro pilas AA.",
+    "compatibility.apple_home": "Kwikset indica Apple Home; Matter sobre Thread necesita un router de borde Thread, como un HomePod mini o un Apple TV. No menciona Home Key.",
+    "compatibility.google_home": "Kwikset indica Google Home; Thread necesita un router de borde, como un Nest Hub.",
+    "compatibility.alexa": "Kwikset indica Alexa; Matter sobre Thread necesita un Echo que sea router de borde Thread.",
+    "compatibility.smartthings": "Kwikset indica que es compatible con SmartThings; Thread necesita un hub SmartThings u otro router de borde.",
+    "compatibility.home_assistant": "Mediante la integración oficial de Matter; los dispositivos Thread necesitan un router de borde."
+  }
+}

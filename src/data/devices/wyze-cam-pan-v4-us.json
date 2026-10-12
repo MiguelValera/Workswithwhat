@@ -1,0 +1,127 @@
+{
+  "category": "smart-camera",
+  "brand": "Wyze",
+  "model": "Cam Pan v4",
+  "name": "Wyze Cam Pan v4 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://wyze.com/products/wyze-cam-pan-v4",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "wyze-pan-v4-specs",
+      "wyze-pan-v4-product"
+    ],
+    "note": "Dual-band 2.4 and 5 GHz, up to Wi-Fi 6."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Neither Wyze page mentions Matter and no CSA listing was checked. Absence is not a no."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Wyze's pages for this camera don't mention Apple Home or HomeKit."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "wyze-pan-v4-specs",
+        "wyze-pan-v4-product"
+      ],
+      "note": "Wyze lists Google Assistant as an integration."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "wyze-pan-v4-specs",
+        "wyze-pan-v4-product"
+      ],
+      "note": "Wyze lists Alexa as an integration."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Wyze's pages for this camera don't mention SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant or Wyze page confirming this model was found."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "wyze-pan-v4-product"
+    ],
+    "note": "Wyze's setup steps connect the camera straight to a 2.4 or 5 GHz home Wi-Fi network in the Wyze app; no base station is mentioned."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Wyze's pages don't say whether live view or control works without its cloud, and don't mention RTSP."
+  },
+  "cameraType": {
+    "value": "indoor",
+    "sources": [
+      "wyze-pan-v4-product",
+      "wyze-pan-v4-specs"
+    ],
+    "note": "Wyze markets it as 'Indoor/Outdoor compatible' with an asterisk and rates it IP65, but outdoor use needs the separate Wyze Universal Outdoor Power Adapter because the included cable is not outdoor-rated. As sold it is an indoor camera, so it is listed as indoor."
+  },
+  "power": {
+    "value": "USB-C (mains)",
+    "sources": [
+      "wyze-pan-v4-specs",
+      "wyze-pan-v4-product"
+    ],
+    "note": "6 ft USB-C to USB-A cable with a 5 V/2 A adapter."
+  },
+  "localStorage": {
+    "value": true,
+    "sources": [
+      "wyze-pan-v4-product",
+      "wyze-pan-v4-specs"
+    ],
+    "note": "microSD card up to 512 GB, sold separately; supports 24/7 local recording."
+  },
+  "subscription": {
+    "value": "Cloud backup and AI features (Cam Plus)",
+    "sources": [
+      "wyze-pan-v4-product"
+    ],
+    "note": "Product page: Cam Plus adds 60-day cloud video backup, AI Video Search and Descriptive Alerts; 30-day free trial, then $2.99 per month per camera."
+  },
+  "summary": "Wyze's Cam Pan v4 works with Alexa and Google Assistant over dual-band Wi-Fi, powered by USB-C, and needs no hub. It records 24/7 to a microSD card of up to 512 GB; cloud backup and AI search need a Cam Plus plan. Apple Home, SmartThings, Home Assistant and Matter aren't confirmed in Wyze's pages.",
+  "caveats": [
+    "Cloud backup, AI Video Search and Descriptive Alerts need a Cam Plus plan ($2.99 per month per camera after a 30-day trial, per Wyze's product page).",
+    "Outdoor use needs the separate Wyze Universal Outdoor Power Adapter; the included cable is not outdoor-rated."
+  ],
+  "sources": [
+    {
+      "id": "wyze-pan-v4-product",
+      "url": "https://wyze.com/products/wyze-cam-pan-v4",
+      "title": "Wyze Cam Pan v4",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "wyze-pan-v4-specs",
+      "url": "https://support.wyze.com/hc/en-us/articles/40185224761627-Wyze-Cam-Pan-v4-Tech-Specs",
+      "title": "Wyze Cam Pan v4 Tech Specs",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

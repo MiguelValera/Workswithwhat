@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Según la documentación de Amazon, el Echo Show 5 (3.ª generación) tiene Matter, así que esta pantalla Alexa compacta actúa como administrador Matter y controla en local los dispositivos Matter. No figura en las listas de Amazon de hubs Zigbee ni de routers de borde Thread. La compatibilidad con otros ecosistemas está sin confirmar.",
+  "caveats": [
+    "No figura en las listas de Amazon de hubs Zigbee ni de routers de borde Thread, así que cuenta con otro Echo, un eero o un router de borde para los dispositivos Zigbee y Matter sobre Thread.",
+    "La documentación de Matter de Amazon dice «Echo Show 5 (1st Gen and newer)» en lugar de nombrar la 3.ª generación, y no se ha encontrado ningún registro de la CSA."
+  ],
+  "notes": {
+    "radios": "Ninguna página oficial que hayamos podido leer indica las radios de este modelo (las páginas de producto de Amazon no permiten la lectura automática). Las guías de Amazon sobre Zigbee y Thread no lo incluyen.",
+    "matter": "La nota de prensa de Amazon de mayo de 2023 dice que el nuevo Echo Show 5 admite Matter, y su documentación lo incluye (1st Gen and newer) como compatible con Matter, con el Echo como administrador Matter. Ningún registro de la CSA nombra este modelo, así que el certificado está sin confirmar.",
+    "hubRequired": "El Echo Show es en sí mismo el dispositivo Alexa que controla los accesorios Matter.",
+    "localControl": "Amazon dice que conectar un dispositivo directamente por Matter permite a Alexa controlarlo en local. Esto vale para los dispositivos Matter, no para todos.",
+    "hubType": "Una pantalla Alexa compacta que actúa como administrador Matter de Alexa. Amazon no lo incluye entre los hubs Zigbee.",
+    "deviceProtocols": "Sin confirmar. El Echo Show 5 no figura en las listas de Amazon de dispositivos Echo con hub Zigbee ni con router de borde Thread.",
+    "matterBridge": "La documentación de Matter de Amazon no nombra ningún Echo como puente Matter.",
+    "threadBorderRouter": "No figura en la lista de routers de borde Thread de Amazon. Que una lista no lo incluya no significa que no lo tenga, así que sigue sin confirmar.",
+    "maxDevices": "No se ha encontrado ningún límite en las fuentes.",
+    "compatibility.apple_home": "Ninguna fuente oficial muestra que los dispositivos emparejados a través de este Echo Show aparezcan en Apple Home.",
+    "compatibility.google_home": "Ninguna fuente oficial muestra que los dispositivos emparejados a través de este Echo Show aparezcan en Google Home.",
+    "compatibility.alexa": "Es un dispositivo Alexa: Amazon incluye el Echo Show 5 (1st Gen and newer) como compatible con Matter, con el Echo como administrador Matter que conecta en local los dispositivos Matter a Alexa. Los dispositivos Matter sobre Thread necesitan un router de borde Thread, y este modelo no está en la lista de Amazon.",
+    "compatibility.smartthings": "Ninguna fuente oficial muestra que los dispositivos emparejados a través de este Echo Show aparezcan en SmartThings.",
+    "compatibility.home_assistant": "Ninguna página oficial de Home Assistant muestra que los dispositivos emparejados con un Echo aparezcan allí."
+  }
+}

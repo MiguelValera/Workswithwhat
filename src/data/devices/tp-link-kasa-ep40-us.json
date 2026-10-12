@@ -1,0 +1,123 @@
+{
+  "category": "smart-plug",
+  "brand": "TP-Link",
+  "model": "Kasa EP40",
+  "name": "Kasa EP40 Outdoor Plug (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-wi-fi-outdoor-plug",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "kasa-ep40-product",
+      "tplink-ep40-datasheet"
+    ],
+    "note": "2.4 GHz only (802.11 b/g/n)."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Neither the Kasa page nor the datasheet mentions Matter; absence is not a no. The separate EP40M is the Matter model."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The EP40's Kasa page and datasheet list Alexa and Google Assistant only. The EP40A variant lists Apple Home, but that is a different model."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "kasa-ep40-product",
+        "tplink-ep40-datasheet"
+      ],
+      "note": "Works with Google Assistant through the Kasa app link."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "kasa-ep40-product",
+        "tplink-ep40-datasheet"
+      ],
+      "note": "Works with Alexa through the Kasa skill."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not on the EP40 Kasa page or datasheet; the separate EP40A page lists SmartThings."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-tplink"
+      ],
+      "note": "Listed under power strips in the official TP-Link Smart Home integration, which talks to Kasa devices locally."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "kasa-ep40-product",
+      "tplink-ep40-datasheet"
+    ],
+    "note": "No hub required; needs the free Kasa Smart app and an account."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "ha-tplink"
+    ],
+    "note": "Home Assistant's integration connects locally without the TP-Link cloud. Kasa's own app and voice control use the cloud."
+  },
+  "energyMonitoring": {
+    "value": null,
+    "sources": [],
+    "note": "Neither the Kasa page nor the datasheet mentions energy monitoring."
+  },
+  "maxLoadWatts": {
+    "value": 1875,
+    "sources": [
+      "kasa-ep40-product",
+      "tplink-ep40-datasheet"
+    ],
+    "note": "TP-Link states 1.875 kW maximum power and 15 A total, shared across both outlets; the Kasa page adds a 1/2 HP motor rating."
+  },
+  "summary": "Kasa EP40 outdoor plug: Alexa and Google Assistant through the Kasa app, plus Home Assistant's TP-Link integration, with no hub. It connects over 2.4 GHz Wi-Fi only and supports 15 A (1,875 W) shared across both outlets. Apple Home isn't listed for this model.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "The 15 A (1,875 W) limit is shared by both outlets.",
+    "Apple Home and SmartThings are listed only for the separate EP40A model."
+  ],
+  "sources": [
+    {
+      "id": "kasa-ep40-product",
+      "url": "https://www.kasasmart.com/us/products/smart-plugs/kasa-smart-wi-fi-outdoor-plug",
+      "title": "Kasa Smart Wi-Fi Outdoor Plug | EP40",
+      "publisher": "Kasa Smart (TP-Link)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tplink-ep40-datasheet",
+      "url": "https://static.tp-link.com/2021/202104/20210407/EP40(US)1.0_Datasheet.pdf",
+      "title": "EP40(US)1.0 Datasheet",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}
