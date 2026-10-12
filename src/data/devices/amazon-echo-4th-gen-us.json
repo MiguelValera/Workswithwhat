@@ -1,0 +1,146 @@
+{
+  "category": "smart-hub",
+  "brand": "Amazon",
+  "model": "Echo (4th Gen)",
+  "name": "Echo 4th Gen (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.amazon.com/echo-4th-gen/dp/b07xkf5rm3",
+  "radios": {
+    "value": [
+      "zigbee",
+      "thread"
+    ],
+    "sources": [
+      "alexa-zigbee",
+      "alexa-thread",
+      "csa-echo-4"
+    ],
+    "note": "Zigbee hub (CSA Zigbee 3.0 certified) and Thread border router per Amazon's developer docs. Wi-Fi and Bluetooth are not listed because no official page we could read states them."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "alexa-matter"
+    ],
+    "note": "Amazon's Matter docs list Echo (2nd Gen and newer) as Matter-enabled, with Echo acting as the Matter administrator. The CSA listing for Echo (4th Gen) is Zigbee 3.0 only, so no Matter certificate for this model is confirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Echo-paired Zigbee devices in Apple Home."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Echo-paired Zigbee devices in Google Home."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "alexa-zigbee"
+      ],
+      "note": "Zigbee lights, plugs, in-wall switches and locks pair straight to the Echo's built-in hub and appear in Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Echo-paired Zigbee devices in SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant page shows Echo-paired devices appearing there."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "alexa-zigbee"
+    ],
+    "note": "The Echo itself is the hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed for this model. Amazon's Matter docs say some connection types let Alexa control devices locally, without naming Echo models."
+  },
+  "hubType": {
+    "value": "speaker-display",
+    "sources": [
+      "alexa-zigbee",
+      "csa-echo-4"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee",
+      "thread"
+    ],
+    "sources": [
+      "alexa-zigbee",
+      "alexa-thread"
+    ],
+    "note": "Zigbee devices pair to the built-in hub; the Thread border router (Thread 1.1) serves Matter-over-Thread devices."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Amazon's Matter docs don't name any Echo as a Matter bridge."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "alexa-thread"
+    ],
+    "note": "Listed with Thread 1.1."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "No limit found in the sources."
+  },
+  "summary": "The Echo (4th Gen) has a Zigbee hub built in, so Zigbee lights, plugs, in-wall switches and locks pair straight to it and appear in Alexa with no separate hub. It also acts as a Thread 1.1 border router for Matter-over-Thread devices. Google Home, Apple Home, SmartThings and Home Assistant aren't confirmed for devices paired through it.",
+  "sources": [
+    {
+      "id": "alexa-zigbee",
+      "url": "https://developer.amazon.com/en-US/docs/alexa/smarthome/zigbee-support.html",
+      "title": "Understand Smart Home Zigbee Support",
+      "publisher": "Amazon Alexa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "alexa-thread",
+      "url": "https://www.developer.amazon.com/en-US/docs/alexa/smarthome/thread-support.html",
+      "title": "Understand Smart Home Thread Support",
+      "publisher": "Amazon Alexa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "alexa-matter",
+      "url": "https://developer.amazon.com/en-US/docs/alexa/smarthome/matter-support.html",
+      "title": "Connect Your Device to Alexa with Matter",
+      "publisher": "Amazon Alexa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-echo-4",
+      "url": "https://csa-iot.org/csa_product/echo-4th-gen/",
+      "title": "Zigbee 3.0 Echo (4th Gen)",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "caveats": [
+    "The CSA listing for this model covers Zigbee 3.0 only; Matter support rests on Amazon's developer docs."
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

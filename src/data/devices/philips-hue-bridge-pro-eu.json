@@ -1,0 +1,163 @@
+{
+  "category": "smart-hub",
+  "brand": "Philips Hue",
+  "model": "Hue Bridge Pro (EAN 8720169155114)",
+  "name": "Hue Bridge Pro (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.philips-hue.com/fr-fr/p/hue-bridge-pro/8720169155114",
+  "radios": {
+    "value": [
+      "zigbee",
+      "bluetooth",
+      "ethernet",
+      "wifi"
+    ],
+    "sources": [
+      "hue-pro-eu",
+      "hue-bridge-guide"
+    ],
+    "note": "Philips lists Zigbee and Bluetooth, and says the Pro joins the router by Wi-Fi or the included Ethernet cable (Ethernet recommended). The spec line 'works without Wi-Fi' means a Wi-Fi link isn't required."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "ethernet",
+    "sources": [
+      "csa-hue-bridge-matter",
+      "hue-pro-eu"
+    ],
+    "note": "CSA lists the 'Hue Bridge Matter Platform' (Signify, Matter 1.4.2, January 2026), a software component on 'Hue Bridge version 3' that shows and links to the Bridge Pro and bridges Ethernet and Zigbee. The Pro can also join by Wi-Fi."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "hue-pro-eu"
+      ],
+      "note": "Apple Home is listed on the EU page; Matter also works through the bridge."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "hue-pro-eu"
+      ],
+      "note": "Google Home is listed on the EU page; Matter also works through the bridge."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "hue-pro-eu"
+      ],
+      "note": "Amazon Alexa is listed on the EU page; Matter also works through the bridge."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "hue-pro-eu"
+      ],
+      "note": "Samsung SmartThings is listed on the EU page."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "csa-hue-bridge-matter",
+        "ha-matter"
+      ],
+      "note": "Through Home Assistant's Matter integration, which names the Philips Hue Bridge as a Matter bridge. Home Assistant's Hue integration page names only V1 and V2 bridges, not the Pro, so native support isn't confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "hue-bridge-guide"
+    ],
+    "note": "It is the hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed. Philips says some AI-based features can run on the hub without relying solely on the cloud."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "hue-pro-eu",
+      "hue-bridge-guide"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "hue-pro-eu"
+    ],
+    "note": "Hue lights and accessories over Zigbee."
+  },
+  "matterBridge": {
+    "value": true,
+    "sources": [
+      "hue-pro-eu",
+      "hue-bridge-guide",
+      "csa-hue-bridge-matter"
+    ],
+    "note": "Philips says Matter works through the bridge; check Philips for which Hue products pass through."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "Philips's pages don't mention Thread for the Bridge Pro. A Matter Alpha page calls it a Matter border router, which is not a Thread claim."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [
+      "hue-pro-eu",
+      "hue-bridge-guide"
+    ],
+    "note": "Philips gives two separate limits: 150+ lights and 50+ accessories, so no single number is recorded."
+  },
+  "summary": "Hue Bridge Pro (EU, EAN 8720169155114) takes 150+ lights and 50+ accessories, by Philips' count. Hue devices talk Zigbee to it, and it connects to your router by Ethernet (recommended) or Wi-Fi. Apple Home, Google Home, Alexa and SmartThings are listed on Philips' EU page, and Matter works through the bridge, which is how Home Assistant gets it.",
+  "sources": [
+    {
+      "id": "hue-pro-eu",
+      "url": "https://www.philips-hue.com/fr-fr/p/hue-bridge-pro/8720169155114",
+      "title": "Hue Bridge Pro - Pont connecte (France)",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-bridge-guide",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/blog/hue-bridge-buying-guide",
+      "title": "Hue Bridge buying guide",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-hue-bridge-matter",
+      "url": "https://csa-iot.org/csa_product/hue-bridge-matter-platform/",
+      "title": "Hue Bridge Matter Platform",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "caveats": [
+    "Philips lists the limits as 150+ lights and 50+ accessories, not one total.",
+    "Home Assistant support is through Matter; its Hue integration page names only V1 and V2 bridges, not the Pro.",
+    "Philips doesn't mention Thread for the Bridge Pro, so don't count on it as a Thread border router."
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}
