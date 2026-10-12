@@ -1,0 +1,154 @@
+{
+  "category": "smart-hub",
+  "brand": "Hive",
+  "model": "Hive Hub",
+  "name": "Hive Hub (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.hivehome.com/shop/smart-home/hive-hub",
+  "radios": {
+    "value": [
+      "wifi",
+      "zigbee",
+      "ethernet"
+    ],
+    "sources": [
+      "hive-hub"
+    ],
+    "note": "Hive's Hub page lists Ethernet to the router, Wi-Fi and Zigbee. Bluetooth is not listed for this model (the older Hub 360 had it)."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim found for the Hive Hub."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "hive-hub"
+      ],
+      "note": "Hive's Hub page says the product can be used with Apple HomeKit and Siri Shortcuts. Which Hive devices appear in Apple Home was not checked."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "hive-google"
+      ],
+      "note": "Hive devices are added in the Google Home app by linking the Hive account."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "hive-alexa"
+      ],
+      "note": "Enable the Hive skill; Hive lists its thermostats, sensors and Hive 2 devices as supported."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source found; only community posts."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-hive"
+      ],
+      "note": "Official Hive integration using your Hive account (cloud polling); the hub itself is not paired to Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "hive-hub"
+    ],
+    "note": "It is the hub that Hive heating and home devices connect through."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from an official source."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "hive-hub",
+      "hive-models"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "hive-hub"
+    ],
+    "note": "Zigbee to Hive thermostats, radiator valves, plugs and sensors."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "No Matter bridge claim found."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "No Thread claim found."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "No maximum found."
+  },
+  "summary": "The Hive Hub is the Zigbee hub that Hive heating and home devices connect through, linked to your router by Ethernet or Wi-Fi. Hive devices are controlled by Alexa and Google Home through Hive's own integrations.",
+  "sources": [
+    {
+      "id": "hive-hub",
+      "url": "https://www.hivehome.com/shop/smart-home/hive-hub",
+      "title": "Hive Hub",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hive-models",
+      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=022433716131644",
+      "title": "Different Hive Hub Models",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hive-alexa",
+      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=240318152810310",
+      "title": "Amazon Alexa Integration with Hive",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hive-google",
+      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=250130091614183",
+      "title": "Connecting Hive with Google Home",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-hive",
+      "url": "https://www.home-assistant.io/integrations/hive/",
+      "title": "Hive - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "caveats": [
+    "Hive sells a Hub (Nano3-style, Ethernet or Wi-Fi) now; the older Hub 360 and original hub are different models.",
+    "Hive says Alexa and Google Home need the Hive account linked and the devices on the same Wi-Fi.",
+    "The hub is not a general Zigbee hub for third-party devices."
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-12"
+}

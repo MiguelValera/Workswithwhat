@@ -173,5 +173,9 @@
     "Over Matter, the Play HDMI Sync Box and the dial on the Tap dial switch don't come through.",
     "The bridge connects to the router by Ethernet cable only, not Wi-Fi."
   ],
-  "verifiedAt": "2026-10-12"
+  "verifiedAt": "2026-10-12",
+  "variants": [
+    "philips-hue-bridge-eu",
+    "philips-hue-bridge-uk"
+  ]
 }
