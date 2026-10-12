@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Pensata per Apple HomeKit e nient'altro, la Wemo WSP100 si collega direttamente ad Apple Home via Bluetooth o Thread; Belkin dice che non funziona con Google Home né con Alexa. Home Assistant può abbinarla tramite la sua integrazione ufficiale HomeKit Device. Dato che non ha mai usato l'app Wemo né il cloud, Belkin dice che continua a funzionare tramite HomeKit dopo la chiusura del cloud Wemo. La presa statunitense ha un valore nominale di 120 V / 15 A / 1800 W e non segnala i consumi.",
+  "caveats": ["Nessun supporto per Google Home né Alexa, secondo le FAQ di Belkin.", "Thread e il controllo remoto richiedono un hub domestico Apple con Thread (Apple TV 4K 2021 o HomePod mini).", "Le pagine di Belkin non concordano sul fatto che serva un hub domestico Apple già solo per configurarla.", "Un accessorio HomeKit si abbina a un solo controller alla volta, quindi Apple Home e Home Assistant non possono averla entrambi.", "Belkin ha terminato il supporto per la maggior parte dei dispositivi Wemo e per l'app Wemo.", "Belkin non menziona mai Matter per questa presa.", "Nessun monitoraggio dei consumi."],
+  "notes": {
+    "radios": "Bluetooth LE 5.0 e Thread (802.15.4), secondo l'articolo sulle specifiche di Belkin.",
+    "matter": "Belkin la descrive come un dispositivo solo HomeKit e non menziona mai Matter. Nessuna scheda CSA trovata. Non confermato.",
+    "hubRequired": "Le fonti di Belkin non concordano: le FAQ dicono che serve un hub solo per Thread e per il controllo fuori casa, mentre l'elenco delle specifiche dice che serve un hub domestico Apple o un hub Thread.",
+    "localControl": "Funziona su HomeKit senza app Wemo né cloud; Belkin dice che i dispositivi Wemo Thread continuano a funzionare tramite HomeKit dopo la chiusura del cloud Wemo.",
+    "energyMonitoring": "Le FAQ di Belkin dicono che la WSP100 non segnala i consumi.",
+    "maxLoadWatts": "120 V, 15 A, 1800 W. La versione thailandese (WSP100-TH) ha un valore nominale diverso.",
+    "compatibility.apple_home": "HomeKit (HAP) via Bluetooth e Thread, configurata con NFC o con il codice HomeKit. Thread e il controllo remoto richiedono un hub domestico Apple con Thread (Apple TV 4K 2021 o HomePod mini).",
+    "compatibility.google_home": "Le FAQ di Belkin rispondono «No» per Google Home e dicono che la presa è progettata per essere usata solo con Apple HomeKit.",
+    "compatibility.alexa": "Le FAQ di Belkin rispondono «No» per Amazon Alexa e dicono che la presa è progettata per essere usata solo con Apple HomeKit.",
+    "compatibility.smartthings": "Belkin dice che la presa è progettata solo per Apple HomeKit e non indica il supporto Matter, ma nessuna pagina Belkin o Samsung nomina SmartThings in un senso o nell'altro.",
+    "compatibility.home_assistant": "L'integrazione ufficiale HomeKit Device di Home Assistant abbina gli accessori HomeKit via Bluetooth e Thread (Thread richiede un border router). HA non nomina la WSP100, e un accessorio HomeKit si abbina a un solo controller alla volta."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Chiedi ad Alexa di mostrare la Tapo C210 su un Echo Show, un Echo Spot o un Fire TV, oppure chiedi a Google di trasmetterla a un Nest Hub o a un Chromecast. Entrambi i collegamenti passano dall'app Tapo senza hub. È una telecamera da interno da collegare alla presa, con slot microSD, che Tapo indica come registrazione gratuita; la cronologia cloud di 30 giorni è il piano facoltativo Tapo Care. Home Assistant la supporta tramite la sua integrazione TP-Link. Apple Home e SmartThings non sono confermati.",
+  "caveats": ["Gli stream di Alexa e Google sono cloud-to-cloud e si interrompono dopo 10 minuti; devi chiedere di nuovo per continuare a guardare.", "Solo Wi-Fi a 2,4 GHz.", "La dimensione massima della microSD cambia con la versione hardware: 512 GB sulla pagina V2 di Tapo, 256 GB sulle vecchie pagine V1.", "La live view in Home Assistant richiede un account della telecamera impostato nell'app Tapo, e con alcuni firmware serve anche attivare l'accesso di terzi in Tapo Lab."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz (802.11b/g/n) secondo la scheda tecnica della C210 V2; nessuna porta Ethernet.",
+    "matter": "Nessuna delle pagine Tapo trovate menziona Matter per questa telecamera, e non abbiamo trovato nessuna scheda CSA.",
+    "hubRequired": "La configurazione con Alexa passa dall'app e dalla skill Tapo, senza hub né bridge.",
+    "localControl": "Gli stream RTSP e ONVIF sono disponibili sulla rete locale, ma Tapo non dichiara che il controllo da app funzioni senza il cloud.",
+    "cameraType": "La pagina inglese di Tapo la definisce una telecamera da interno orientabile; la pagina tedesca s'intitola «Indoor WLAN-Sicherheitskamera».",
+    "power": "La scheda tecnica indica un alimentatore nella confezione. I rivenditori indicano 9 V CC; nessuna pagina del produttore che abbiamo visto dichiara il valore.",
+    "localStorage": "Slot microSD. La pagina inglese V2 di Tapo dice fino a 512 GB; le pagine tedesca e italiana V1 dicono fino a 256 GB, quindi il limite dipende dalla versione hardware. Tapo indica l'archiviazione locale tra le funzioni che funzionano senza Tapo Care.",
+    "subscription": "Tapo indica l'archiviazione locale come gratuita e la cronologia cloud dei clip di 30 giorni come funzione di Tapo Care. Tapo dice che tipi di piano e funzioni variano per regione; prezzi UE non controllati.",
+    "compatibility.apple_home": "Nessuna pagina Tapo trovata indica Apple Home o HomeKit per la C210. Lo menzionano solo una recensione e annunci di rivenditori.",
+    "compatibility.google_home": "Collega Tapo in Google Home; di' «show me [camera]» per trasmettere a un Nest Hub o a un Chromecast. Cloud-to-cloud, si interrompe dopo 10 minuti. Le FAQ inglesi di Tapo dicono che la live view si apre anche dall'app Google Home; alcune versioni regionali dicono di no.",
+    "compatibility.alexa": "Attiva la skill Tapo; «Alexa, show me [camera]» funziona su Echo Show, Echo Spot e Fire TV. Cloud-to-cloud, si interrompe dopo 10 minuti. I comandi di accensione/spegnimento della telecamera non sono supportati.",
+    "compatibility.smartthings": "Solo gli annunci dei marketplace dichiarano SmartThings; nessuna pagina Tapo o Samsung lo conferma.",
+    "compatibility.home_assistant": "L'integrazione TP-Link Smart Home integrata di Home Assistant elenca la C210 tra le telecamere supportate. La live view richiede un account della telecamera impostato nell'app Tapo; con alcuni firmware serve anche attivare l'accesso di terzi in Tapo Lab."
+  },
+  "values": {"power": "Alimentatore da presa (rete elettrica)", "subscription": "Piano facoltativo Tapo Care per la cronologia video nel cloud"}
+}

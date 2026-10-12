@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Sì ad Apple Home, Google Home, Alexa e SmartThings: la Kasa KP125M si collega a tutti e quattro tramite Matter, e Home Assistant può aggiungerla con la sua integrazione TP-Link o con Matter. È una presa sottile con Wi-Fi a 2,4 GHz per prese statunitensi, con valore nominale di 15 A / 1800 W a 100–120 V, configurata nell'app Kasa senza hub, e mantiene il controllo LAN se cade internet. L'app Kasa o Tapo mostra il consumo energetico. Il firmware 1.4.1 invia queste letture via Matter a SmartThings e Home Assistant, ma Apple Home non le mostra.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Non abbiamo trovato nessuna modalità HomeKit (HAP), quindi Apple Home funziona solo tramite Matter.", "Apple Home non mostra i dati di consumo; le letture energetiche via Matter richiedono il firmware 1.4.1 o successivo e sono verificate solo in SmartThings e Home Assistant.", "Alexa richiede un Echo che funzioni come controller Matter; i dispositivi Kasa Matter non usano la skill Kasa.", "L'integrazione TP-Link di Home Assistant richiede le credenziali del tuo account TP-Link per i dispositivi più recenti.", "I carichi a motore sono limitati a 1/6 HP."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz (IEEE 802.11b/g/n). La scheda tecnica indica il Bluetooth solo per la configurazione.",
+    "matter": "TP-Link la definisce la prima presa Kasa certificata Matter. Non abbiamo trovato una scheda CSA che nomini il numero di modello KP125M.",
+    "hubRequired": "Si collega direttamente al Wi-Fi a 2,4 GHz e si configura nell'app Kasa, senza hub. Le piattaforme di terzi richiedono il proprio controller Matter.",
+    "localControl": "TP-Link dice che mantiene il controllo LAN tra i dispositivi anche se internet di casa va offline.",
+    "energyMonitoring": "Consumo in tempo reale e storico nell'app Kasa (o Tapo). Il firmware 1.4.1 (ago 2026) aggiunge la segnalazione dei consumi via Matter; TP-Link la verifica in SmartThings e Home Assistant, e dice che Apple Home non mostra i consumi.",
+    "maxLoadWatts": "15 A / 1800 W per uso generale e carichi resistivi a 100–120 V; motore da 1/6 HP.",
+    "compatibility.apple_home": "Si configura in Apple Home scansionando il codice Matter. Non abbiamo trovato un supporto HomeKit (HAP) separato per questo modello.",
+    "compatibility.google_home": "Si configura nell'app Google Home tramite Matter; richiede un controller Matter di Google.",
+    "compatibility.alexa": "TP-Link dice che i dispositivi Kasa Matter si collegano direttamente ad Alexa e non richiedono la skill Kasa. Richiede un Echo che funzioni come controller Matter.",
+    "compatibility.smartthings": "TP-Link indica Samsung SmartThings; la configurazione avviene tramite Matter.",
+    "compatibility.home_assistant": "L'integrazione TP-Link Smart Home di Home Assistant elenca la KP125M con una nota a piè di pagina che non siamo riusciti a leggere; richiede le credenziali dell'account TP-Link per i dispositivi più recenti. Può essere aggiunta anche tramite l'integrazione Matter."
+  }
+}

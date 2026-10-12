@@ -2,7 +2,7 @@
 
 **workswithwhat.com** — a compatibility reference for smart-home devices. It answers one question per device: *which ecosystem does it work with, how does it connect, and how do we know?* Every claim on the site links to a source.
 
-The site is in **English** at the root and **Spanish (Spain)** under `/es/`; it targets the global search market plus Spain. Internal docs and agent prompts may be in Spanish or English.
+The site is in **English** at the root, plus **Spanish (Spain)** under `/es/`, **German** under `/de/`, **French** under `/fr/` and **Italian** under `/it/`; it targets the global search market plus the largest EU markets. Internal docs and agent prompts may be in Spanish or English.
 
 ## Principles
 
@@ -53,7 +53,7 @@ Pipeline: **bestsellers** (what to add) → **collector → verifier → editor 
 | `verifier` | Re-checks every claim against its cited source, independently. Downgrades anything unsupported to `unknown`. | Edits the record and sets `status: "verified"` + `verifiedAt` only if everything holds. |
 | `editor` | Writes `summary` and `caveats` from the verified data, plus SEO copy. Never changes facts. | `summary`, `caveats`. |
 | `ux` | HTML/CSS-only UX work on pages and components. Proves SEO is unchanged with a before/after snapshot diff of `dist/`. | Layouts, components, pages, `global.css`. |
-| `translator` | Translates a verified record's prose (summary, caveats, notes, `via`, text values) into Spanish (Spain). Never changes facts. | `src/data/i18n/es/<slug>.json` |
+| `translator` | Translates a verified record's prose (summary, caveats, notes, `via`, text values) into Spanish (Spain), German, French and Italian. Never changes facts. `node scripts/translation-source.mjs <lang>` lists what is missing. | `src/data/i18n/<lang>/<slug>.json` (es, de, fr, it) |
 | `reviewer` | Reviews an open PR against these rules (validate, build, CI, data, CSP, secrets, copy). Never merges. | One PR comment: **Ready to merge** or **Not ready**, with blockers. |
 | `monetization` | Researches the most viable and simple revenue options and proposes them, ranked, with sources. **Never implements anything:** the owner confirms each proposal explicitly first. Runs outside the content pipeline. | Nothing; returns a report. |
 
@@ -76,12 +76,12 @@ After any agent run: `npm run validate` must pass.
 
 ### Languages (i18n)
 
-- English at the root, Spanish under `/es/` with Spanish path segments: `/es/enchufes-inteligentes/<slug>/`, `/es/compatible-con/apple-home/`, `/es/eu/enchufes-inteligentes/`, `/es/metodologia/`, `/es/aviso-legal/`, `/es/privacidad/`. The segment map is in `src/i18n/lang.ts` (`localize()`, `toEnglish()`); market codes, ecosystem slugs and device slugs stay the same.
-- Pages are written against English paths; components read the language from the URL (`langOf()`) and localize every link. Interface strings live in `src/i18n/ui.ts` or inline as `es ? … : …` in the page components (`src/components/pages/`). Category, market, spec and status names have Spanish versions in `categories.ts`, `markets.ts` and `devices.ts`.
-- Device prose in Spanish lives in `src/data/i18n/es/<slug>.json` (schema `src/schema/translation.ts`): summary, caveats, one entry per note, `via` and text `values`. Facts and sources exist only in the English record, so they can't diverge. `basedOn` must equal the record's `updatedAt`: **any edit to a record makes its translation stale and the validator fails until the translator updates it.**
+- English at the root; every other language under its prefix with translated path segments, e.g. `/es/enchufes-inteligentes/<slug>/`, `/de/smarte-steckdosen/`, `/fr/prises-connectees/`, `/it/prese-smart/`, `/es/compatible-con/apple-home/`, `/de/kompatibel-mit/`, `/fr/compatible-avec/`, `/it/compatibile-con/`, `/es/eu/enchufes-inteligentes/`, `/es/metodologia/`, `/de/impressum/`, `/fr/mentions-legales/`, `/it/note-legali/`. The segment map is in `src/i18n/lang.ts` (`localize()`, `toEnglish()`); market codes, ecosystem slugs and device slugs stay the same.
+- Pages are written against English paths; components read the language from the URL (`langOf()`) and localize every link. Interface strings live in `src/i18n/ui.ts` or inline as `T({ en, es, de, fr, it })` (`const T = pick(lang)`) in the page components (`src/components/pages/`); the types force every language to be filled. Category, market, spec and status names have per-language versions in `categories.ts` (with grammatical gender), `markets.ts` (`phrase` after "for", `inPhrase` for "sold in") and `devices.ts`.
+- Translated device prose lives in `src/data/i18n/<lang>/<slug>.json` (schema `src/schema/translation.ts`): summary, caveats, one entry per note, `via` and text `values`. Facts and sources exist only in the English record, so they can't diverge. `basedOn` must equal the record's `updatedAt`: **any edit to a record makes its translation stale and the validator fails until the translator updates it.**
 - `ENABLED_LANGS` in `src/site.config.ts` lists the languages built besides English. While a language is on, every verified record needs a translation in `src/data/i18n/<lang>/`. Languages, prefixes and path segments are in `src/i18n/lang.ts` (`LANGS`, `localize()`, `pick()` for inline per-language strings). Every translated route comes from `getLocalePages(lang)` (`src/lib/routes-i18n.ts`) and renders through `src/pages/<lang>/[...path].astro` and `src/components/pages/LocalePage.astro`.
-- Every page has hreflang `en`, `es-ES` and `x-default` (English) alternates, plus language links in the header's locale menu and the footer. Fixed pages (methodology, legal, privacy) have hand-written Spanish versions in `src/components/pages/es/`. The JSON API and `llms*.txt` stay in English.
-- Spanish copy rules: Spain Spanish ("enchufe", "bombilla", "wifi", tú), same facts and numbers as the English (the validator rejects any number not in the English text), decimal comma, banned phrases listed in `scripts/validate-data.mjs`.
+- Every page has hreflang `en`, `es-ES`, `de`, `fr`, `it` and `x-default` (English) alternates, plus language links in the header's locale menu and the footer. Fixed pages (methodology, legal, privacy) are hand-written per language in `src/components/pages/<lang>/` and registered in `FIXED` in `LocalePage.astro`; a new language needs entries in `LANGS`, `ui.ts`, every `Record<Lang…>` (`astro check` lists them), `FIXED`, a `src/pages/<lang>/[...path].astro` file and `BANNED_IN` in the validator. The JSON API and `llms*.txt` stay in English.
+- Copy rules: Spain Spanish ("enchufe", "bombilla", "wifi", tú), German with "du" and "WLAN", French with "vous", Italian with "tu". Same facts and numbers as the English (the validator rejects any number not in the English text), decimal comma for measures but dots in version numbers ("Matter 1.4"), banned phrases per language listed in `scripts/validate-data.mjs`. Glossaries are in `.claude/agents/translator.md`.
 
 ### AI search and agents (GEO)
 
@@ -101,7 +101,7 @@ After any agent run: `npm run validate` must pass.
 Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
-- **Two languages:** English at the root and Spanish (Spain) under `/es/`, page for page, with hreflang and an EN · ES switch.
+- **Five languages:** English at the root, Spanish (Spain) under `/es/`, German under `/de/`, French under `/fr/` and Italian under `/it/`, page for page, with hreflang and a language switch.
 - **185 verified devices:** 43 smart plugs (US, EU, UK), 19 smart bulbs (US, EU, UK), 22 smart locks (US, EU, UK), 14 smart thermostats (US, EU, UK), 13 smart sensors (US, EU, UK), 17 smart cameras and doorbells (US, EU, UK), 14 smart switches and dimmers (US, EU, UK), 12 robot vacuums (US, EU, UK), 25 hubs and bridges (US, EU, UK) and 6 LED light strips (US, EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
   - `/smart-plugs/`, `/smart-bulbs/`, `/smart-locks/`, `/smart-thermostats/`, `/smart-sensors/`, `/smart-cameras/`, `/smart-switches/`, `/robot-vacuums/`, `/smart-hubs/` and `/light-strips/`: comparison charts.

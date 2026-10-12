@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Apple Home funziona con lo SwitchBot K10+ Pro solo tramite uno SwitchBot Hub 2, che fornisce il bridge Matter. Google Home e Alexa sono indicati direttamente sulla pagina europea di SwitchBot. Il robot è compatto, con LiDAR, aspirazione da 3000 Pa e una base con svuotamento automatico da 4 L, e aspira e lava, anche se non contemporaneamente.",
+  "caveats": ["Matter sul K10+ Pro semplice richiede uno SwitchBot Hub 2; la via senza hub (iOS 18.4.1) è documentata solo per il K10+ Pro Combo.", "Il Wi-Fi è solo a 2,4 GHz; SwitchBot non indica il supporto del 5 GHz.", "SwitchBot dice che non può aspirare e lavare contemporaneamente.", "Il valore di 3000 Pa è il massimo di quattro modalità (600, 1100, 1600, 3000) dalla pagina statunitense di SwitchBot."],
+  "notes": {
+    "radios": "SwitchBot indica Wi-Fi a 2,4 GHz (niente 5 GHz) e Bluetooth 5.0.",
+    "matter": "La CSA elenca il K10+ Pro Combo, non il K10+ Pro semplice. La pagina europea di SwitchBot dice che Matter richiede uno SwitchBot Hub 2, quindi il modello semplice raggiunge Matter solo tramite il bridge dell'hub.",
+    "hubRequired": "Si collega all'app SwitchBot via Wi-Fi a 2,4 GHz; l'Hub 2 serve solo per Matter, secondo la pagina prodotto.",
+    "localControl": "Non indicato da SwitchBot nelle pagine trovate.",
+    "cleaning": "Nella confezione ci sono una piastra con panno per il lavaggio e il panno. SwitchBot dice che non può aspirare e lavare contemporaneamente.",
+    "navigation": "SwitchBot indica la navigazione laser LDS (LiDAR SLAM) e sensori PSD.",
+    "suctionPa": "Dalla tabella delle specifiche sulla pagina statunitense di SwitchBot (600/1100/1600/3000 Pa su quattro modalità); gli estratti della pagina europea non mostravano il valore.",
+    "selfEmptying": "Le pagine di SwitchBot descrivono una base di raccolta della polvere con svuotamento automatico da 4 L con il K10+ Pro.",
+    "compatibility.apple_home": "La pagina europea indica Siri e dice che Matter richiede lo SwitchBot Hub 2. La via Matter diretta, senza hub (iOS 18.4.1), è documentata solo per il Combo.",
+    "compatibility.google_home": "Indicato come funzionante con Google Home; è possibile anche Matter con un SwitchBot Hub.",
+    "compatibility.alexa": "Indicato come funzionante con Alexa sulla pagina europea di SwitchBot.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale trovata.",
+    "compatibility.home_assistant": "Nessuna pagina ufficiale di Home Assistant trovata per questo modello."
+  },
+  "via": {"apple_home": "SwitchBot Hub 2 (Matter)"}
+}

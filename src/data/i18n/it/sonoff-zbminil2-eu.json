@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Per una scatola dell'interruttore senza neutro, il Sonoff ZBMINI-L2 (venduto anche come ZBMINI Extreme) è un piccolo relè Zigbee da 6 A che mantiene funzionante il tuo interruttore a muro tramite gli ingressi S1/S2. Non è dimmerabile e richiede un gateway Zigbee 3.0: un gateway Sonoff per Google Home, un Echo con Zigbee integrato per Alexa, uno SmartThings Hub V3, oppure un coordinatore Zigbee con ZHA o Zigbee2MQTT per Home Assistant. Apple Home non è confermato.",
+  "caveats": ["Richiede un gateway Zigbee 3.0; i gateway Philips Hue, IKEA e Fritzbox non sono supportati.", "È un dispositivo terminale e non estende la tua rete mesh Zigbee.", "Senza neutro richiede un carico minimo di circa 3 W, e i moduli di soppressione dei lampeggi non sono supportati.", "Il supporto di Apple Home e Matter non è confermato."],
+  "notes": {
+    "radios": "Dispositivo terminale Zigbee 3.0; non ritrasmette il traffico Zigbee per altri dispositivi.",
+    "matter": "Nessuna dichiarazione su Matter trovata nelle pagine di Sonoff e nessuna scheda CSA Matter trovata. Non trattato come «no».",
+    "hubRequired": "Richiede un gateway Zigbee 3.0 come SONOFF ZBBridge, NSPanel Pro, iHost o un Echo o un hub SmartThings supportato.",
+    "localControl": "Le pagine di Sonoff dicono che funziona con gateway compatibili con il locale, ma nessuna pagina dichiara esplicitamente il controllo locale.",
+    "switchForm": "Relè da 39,5 x 32 x 18,4 mm per la scatola di un interruttore esistente, con ingressi S1/S2 per l'interruttore a muro.",
+    "dimmer": "Relè on/off, 6 A.",
+    "neutralRequired": "Venduto come senza neutro; si usa il neutro della lampada stessa. Il carico minimo è di circa 3 W e i moduli di soppressione dei lampeggi non sono supportati.",
+    "gangs": "Le pagine di Sonoff descrivono un'uscita relè con ingressi interruttore S1/S2 ma non indicano il numero di canali o moduli; solo i rivenditori parlano di un singolo canale.",
+    "compatibility.apple_home": "Il centro assistenza di Sonoff non elenca Apple Home.",
+    "compatibility.google_home": "Sonoff dice che il controllo vocale funziona con Google Assistant una volta che l'interruttore è su un gateway Zigbee in eWeLink; il percorso dal gateway a Google non è spiegato per ogni gateway.",
+    "compatibility.alexa": "L'elenco di Sonoff nomina Echo Plus di 2ª generazione, Echo di 4ª generazione ed Echo Show di 2ª generazione come gateway Zigbee supportati.",
+    "compatibility.smartthings": "Indicato da Sonoff come gateway supportato.",
+    "compatibility.home_assistant": "Sonoff elenca ZBDongle-P e ZBDongle-E con ZHA o Zigbee2MQTT. Richiede un coordinatore; i gateway Philips, IKEA e Fritzbox non sono supportati."
+  },
+  "via": {"google_home": "gateway Zigbee SONOFF (ad es. ZBBridge-P, NSPanel Pro, iHost)", "alexa": "Echo con hub Zigbee integrato", "smartthings": "SmartThings Hub V3 / Aeotec Hub V3", "home_assistant": "coordinatore Zigbee (ad es. SONOFF ZBDongle-P/E)"}
+}

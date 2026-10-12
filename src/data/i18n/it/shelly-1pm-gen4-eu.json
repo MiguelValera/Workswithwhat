@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Dietro il tuo interruttore o la tua presa, lo Shelly 1PM Gen4 aggiunge un relè da 16 A con misurazione della potenza (senza regolazione dell'intensità) e richiede un filo neutro. Il firmware predefinito è Matter su Wi-Fi certificato CSA, quindi Apple Home, Google Home e SmartThings possono aggiungerlo senza hub, e Alexa funziona con la skill Shelly Cloud o con Matter. Home Assistant ha un'integrazione locale ufficiale.",
+  "caveats": ["Richiede un filo neutro nella scatola; la specifica di Shelly indica il neutro come obbligatorio.", "Zigbee è una modalità firmware alternativa a cui passi tu e richiede un coordinatore Zigbee; Matter su Wi-Fi è quella predefinita.", "Apple Home richiede un hub domestico per il controllo remoto e le automazioni."],
+  "notes": {
+    "radios": "Wi-Fi, Bluetooth e Zigbee. Matter su Wi-Fi è il firmware predefinito; Zigbee è una modalità alternativa a cui passi tu.",
+    "matter": "La CSA elenca lo Shelly 1PM Gen4 (CSA250D4MAT45094-24, Matter 1.3, firmware 1.3.0-s2, Wi-Fi). Una scheda CSA separata copre Zigbee 3.0.",
+    "hubRequired": "Dispositivo Wi-Fi che si abbina tramite Matter o l'app Shelly. La modalità Zigbee richiede un coordinatore Zigbee, quella predefinita no.",
+    "localControl": "L'integrazione Shelly di Home Assistant usa il push locale; la pagina di Shelly indica scripting, MQTT e webhook.",
+    "switchForm": "Relè da 37 x 42 x 16 mm che sta dietro un interruttore o una presa esistente.",
+    "dimmer": "Relè on/off con misurazione della potenza, 16 A a 240 V CA.",
+    "neutralRequired": "La specifica di Shelly indica «Neutral not needed: No»; il cablaggio CA usa i morsetti L e N.",
+    "gangs": "Una sola uscita relè con un ingresso per interruttore.",
+    "compatibility.apple_home": "Tramite Matter nel firmware predefinito. Richiede un hub domestico Apple per l'uso remoto e le automazioni.",
+    "compatibility.google_home": "Tramite Matter. La pagina di Shelly dice anche che si integra con Google, senza dire come, quindi si indica solo Matter.",
+    "compatibility.alexa": "La guida Alexa di Shelly usa la skill Shelly Cloud e nomina l'1PM Gen4 per il controllo delle luci. Può essere aggiunto anche tramite Matter.",
+    "compatibility.smartthings": "Tramite Matter. La pagina di Shelly nomina anche SmartThings; la via non è indicata.",
+    "compatibility.home_assistant": "Integrazione ufficiale Shelly con push locale, che copre tutte le generazioni Shelly. Può essere aggiunto anche tramite Matter."
+  },
+  "values": {"gangs": "1 canale"}
+}

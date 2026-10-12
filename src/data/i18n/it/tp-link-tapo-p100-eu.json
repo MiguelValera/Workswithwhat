@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Per Alexa, Google Home o SmartThings, la Tapo P100 europea è una semplice presa on/off, collegata tramite il tuo account TP-Link nell'app Tapo. Anche l'integrazione TP-Link di Home Assistant la supporta in locale. È una presa Wi-Fi a 2,4 GHz con valore nominale di 10 A / 2300 W, senza hub e senza monitoraggio dei consumi. TP-Link non indica Apple Home né Matter; la Tapo P100M, un prodotto separato, è la versione Matter.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "TP-Link non indica Apple Home né Matter; la Tapo P100M è la versione Matter.", "Nessun monitoraggio dei consumi; TP-Link dice che le P110 e P115 sono le prese Tapo che misurano la potenza.", "I valori nominali cambiano per regione: questa versione europea è da 10 A / 2300 W, quella britannica da 13 A e quella statunitense da 10 A / 1200 W.", "L'integrazione TP-Link di Home Assistant chiede una volta le credenziali del tuo account TP-Link con il firmware più recente.", "I carichi a motore sono limitati a 1/6 HP."],
+  "notes": {
+    "radios": "Solo Wi-Fi a 2,4 GHz (IEEE 802.11b/g/n). TP-Link indica il Bluetooth solo per la configurazione.",
+    "matter": "Nessuna fonte ufficiale dichiara il supporto Matter né lo esclude esplicitamente per la P100; le pagine prodotto semplicemente non lo indicano. La versione Matter di TP-Link è la Tapo P100M, un prodotto separato.",
+    "hubRequired": "Presa Wi-Fi che si collega direttamente al tuo router a 2,4 GHz e si configura nell'app Tapo; non è indicato nessun bridge.",
+    "localControl": "L'integrazione TP-Link di Home Assistant la controlla sulla rete locale, anche se con il firmware più recente servono le credenziali dell'account TP-Link per autenticarsi. Non abbiamo trovato nessuna pagina TP-Link sul controllo dall'app Tapo senza internet.",
+    "energyMonitoring": "Le FAQ sulle prese di TP-Link dicono che le P110 e P115 misurano l'energia e la P100 no.",
+    "maxLoadWatts": "10 A / 2300 W per la versione europea, motore da 1/6 HP. La versione britannica ha un valore nominale di 13 A e quella statunitense di 10 A / 1200 W; non confonderle.",
+    "compatibility.apple_home": "Le pagine della P100 di TP-Link indicano Alexa, Google Assistant e SmartThings e non menzionano Apple Home, ma nessuna pagina ufficiale dice che non sia supportato. La Tapo P100M è la versione Matter.",
+    "compatibility.google_home": "Tramite il collegamento cloud Tapo (Works with Google Home). Configura prima la presa nell'app Tapo.",
+    "compatibility.alexa": "Tramite la skill Alexa di Tapo, collegata al tuo account TP-Link.",
+    "compatibility.smartthings": "Tramite l'integrazione partner Tapo nell'app SmartThings, con l'accesso con il tuo ID TP-Link.",
+    "compatibility.home_assistant": "L'integrazione TP-Link Smart Home di Home Assistant elenca la P100 tra le prese Tapo supportate. I dispositivi più recenti richiedono una volta le credenziali del tuo account TP-Link."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "TP-Link indica la Kasa KS200M per Alexa, Google Assistant e SmartThings, senza bisogno di hub. È un interruttore a muro unipolare statunitense con sensore di movimento integrato (fino a 25 ft) che si collega direttamente al Wi-Fi a 2,4 GHz. Richiede un filo neutro e non funziona negli impianti a 3 vie. Apple Home e Matter non sono menzionati per questo modello.",
+  "caveats": ["Richiede un filo neutro nella scatola a muro.", "Solo unipolare; niente cablaggio a 3 vie o multivia.", "Solo Wi-Fi a 2,4 GHz.", "Il supporto di Apple Home e Matter non è dichiarato."],
+  "notes": {
+    "radios": "Solo 2,4 GHz (802.11b/g/n).",
+    "matter": "Né la pagina prodotto né la scheda tecnica menzionano Matter; nessuna scheda CSA è stata controllata.",
+    "hubRequired": "La scheda tecnica dice che non serve nessun hub; si collega direttamente al Wi-Fi di casa.",
+    "localControl": "TP-Link non dichiara cosa funzioni senza internet.",
+    "switchForm": "Sostituisce un normale interruttore luce unipolare e ha un sensore di movimento integrato (fino a 25 ft).",
+    "dimmer": "TP-Link parla di impostare «livelli di luminosità» ma non lo chiama mai dimmer; la scheda tecnica dà solo valori nominali on/off del carico (600 W a incandescenza, motore da 1/6 HP). Lasciato non confermato.",
+    "neutralRequired": "La scheda tecnica dice che nella scatola a muro è richiesto un filo neutro, in una scatola standard profonda almeno 2 in.",
+    "gangs": "Solo unipolare; non compatibile con cablaggio a 3 vie o multivia. Valore nominale 120 V, 600 W a incandescenza o motore da 1/6 HP.",
+    "compatibility.apple_home": "La pagina e la scheda tecnica della KS200M non menzionano Apple Home. (La pagina della KS200 senza movimento lo menziona.)",
+    "compatibility.google_home": "Indicata come funzionante con Google Assistant.",
+    "compatibility.alexa": "Indicata come funzionante con Amazon Alexa.",
+    "compatibility.smartthings": "Indicata come funzionante con SmartThings.",
+    "compatibility.home_assistant": "Non è stata controllata nessuna pagina ufficiale di Home Assistant che nomini la KS200M."
+  },
+  "values": {"gangs": "1 modulo"}
+}

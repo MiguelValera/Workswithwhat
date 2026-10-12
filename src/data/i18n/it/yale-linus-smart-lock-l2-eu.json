@@ -1,0 +1,17 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Yale Linus Smart Lock L2 si monta sopra un cilindro con profilo europeo esistente e ha Wi-Fi e Bluetooth 5.3 integrati. Un aggiornamento del firmware ha aggiunto Matter su Wi-Fi, quindi Apple Home, Google Home, Alexa e SmartThings si abbinano senza bridge Yale, e anche Home Assistant funziona tramite Matter. Funziona con un pacco batteria ricaricabile che si carica via USB-C, circa 6 mesi per carica, e non ha un tastierino proprio.",
+  "caveats": ["Matter richiede il firmware della serratura 2.0.20 o successivo e l'app Yale Home 2024.11.0 o successiva.", "Il cilindro deve sporgere di almeno 3 mm, e Yale dice che un cilindro incompatibile potrebbe dover essere sostituito.", "L'accesso con PIN richiede lo Yale Smart Keypad separato.", "Le pagine di risoluzione dei problemi di Yale menzionano occasionali problemi «No response» in Apple Home.", "L'integrazione Yale (cloud) di Home Assistant non supporta la L2, quindi usa Matter."],
+  "notes": {
+    "radios": "L'opuscolo indica Bluetooth 5.3 e Wi-Fi 2,4-5 GHz. La scheda CSA mostra Wi-Fi e Bluetooth.",
+    "matter": "Matter è arrivato con un aggiornamento del firmware (firmware della serratura 2.0.20+, app Yale Home 2024.11.0+). La CSA elenca la L2 (ID prodotto 0x4002) con Wi-Fi e Bluetooth; la L2 Lite è un modello Thread separato.",
+    "hubRequired": "Wi-Fi integrato, quindi non serve nessun bridge Yale; Yale dice che serve solo l'hub della piattaforma partner per Matter.",
+    "localControl": "Nessuna fonte Yale dichiara un controllo solo locale.",
+    "lockFit": "Si monta sopra un cilindro con profilo europeo esistente che sporge di almeno 3 mm, secondo l'opuscolo; Yale dice che un cilindro incompatibile potrebbe dover essere sostituito.",
+    "keypad": "Nessun tastierino sulla serratura; Yale dice che l'accesso con PIN richiede lo Yale Smart Keypad separato. Lo Yale Dot è un altro accessorio facoltativo.",
+    "power": "Pacco Li-ion ricaricabile che si carica via USB-C dopo averlo rimosso dalla serratura; fino a 6 mesi per carica, secondo l'opuscolo.",
+    "compatibility.apple_home": "Indicato da Yale. Le pagine di risoluzione dei problemi di Yale menzionano occasionali problemi «No response» in Apple Home.",
+    "compatibility.home_assistant": "L'elenco principale delle piattaforme di Yale non include Home Assistant, ma la pagina Matter di Yale UK lo nomina come hub Matter che attualmente offre azioni separate Unlock e Open Door. L'integrazione Yale (cloud) di Home Assistant segna la L2 come non supportata, quindi la via è Matter."
+  },
+  "values": {"power": "Batteria ricaricabile"}
+}

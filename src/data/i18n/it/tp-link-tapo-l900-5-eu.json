@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La Tapo L900-5 (EU) si abbina ad Alexa e Google Assistant una volta collegati nell'app Tapo, e a Home Assistant tramite l'integrazione TP-Link. Questa striscia da 5 m funziona con Wi-Fi a 2,4 GHz senza hub e mostra 16 milioni di colori più bianco caldo e freddo. TP-Link non menziona Apple Home, SmartThings né Matter.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "La striscia si può tagliare, ma i pezzi tagliati non si possono riutilizzare.", "TP-Link non indica Apple Home, SmartThings né Matter per questa striscia."],
+  "notes": {
+    "radios": "Solo 2,4 GHz (IEEE 802.11 b/g/n).",
+    "matter": "Né la pagina prodotto né la guida utente europea menzionano Matter; l'assenza non è una prova, quindi resta non confermato.",
+    "hubRequired": "TP-Link dice che non serve nessun hub; si collega al Wi-Fi di casa.",
+    "localControl": "L'integrazione TP-Link di Home Assistant si collega in locale senza il cloud TP-Link; il controllo dall'app di TP-Link stessa passa dal cloud.",
+    "colorType": "Oltre 16 milioni di colori più bianco caldo e bianco freddo luce diurna.",
+    "lengthM": "Striscia da 5 m (5000 mm); si può tagliare, ma i pezzi tagliati non si possono riutilizzare.",
+    "multiZone": "TP-Link non descrive colori separati lungo la stessa striscia, quindi non è confermato.",
+    "power": "Ingresso 220–240 V, uscita 12 VDC 1,0 A, max 13,5 W.",
+    "compatibility.apple_home": "La pagina menziona solo Siri Shortcuts, non Apple Home né HomeKit.",
+    "compatibility.google_home": "Controllo vocale tramite Google Assistant, configurato con i servizi di terzi dell'app Tapo.",
+    "compatibility.alexa": "Controllo vocale tramite Amazon Alexa, configurato con i servizi di terzi dell'app Tapo.",
+    "compatibility.smartthings": "Non menzionato sulla pagina di TP-Link.",
+    "compatibility.home_assistant": "Elencata tra le strisce luminose Tapo nell'integrazione ufficiale TP-Link di Home Assistant, che si collega in locale e richiede le credenziali dell'account TP-Link."
+  },
+  "values": {"power": "Alimentatore di rete (12 V CC)"}
+}

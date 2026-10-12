@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Niente hub, niente bridge: la Kasa KL125 si collega direttamente al tuo Wi-Fi a 2,4 GHz e funziona con Alexa, Google Home e SmartThings tramite le integrazioni di Kasa. L'integrazione ufficiale TP-Link Smart Home di Home Assistant la gestisce sulla rete locale. È una lampadina statunitense a colori con attacco E26, 800 lumen (equivalente a 60 W), con bianco regolabile da 2500 a 6500 K. Apple Home è la lacuna: Kasa non lo indica e non abbiamo trovato nessuna certificazione Matter per la KL125.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz; non si collega a una rete a 5 GHz.", "Apple Home non è indicato da Kasa e non c'è un supporto Matter confermato su cui ripiegare.", "Con il firmware più recente, Home Assistant può chiedere una volta le tue credenziali cloud TP-Link per autenticare.", "Home Assistant non offre gli effetti luminosi della lampadina."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz (802.11 b/g/n) secondo la scheda tecnica; la lampadina si collega direttamente alla rete di casa.",
+    "matter": "Né la pagina prodotto Kasa né la scheda tecnica della KL125 menzionano Matter, e non abbiamo trovato nessuna scheda CSA per la KL125.",
+    "hubRequired": "Per le lampadine, significa che serve un bridge o un hub per il controllo di base da app. La KL125 si collega direttamente al Wi-Fi a 2,4 GHz e si controlla dall'app Kasa.",
+    "localControl": "L'integrazione di Home Assistant dialoga con i dispositivi Kasa sulla LAN senza il cloud TP-Link (polling locale). Il firmware più recente può richiedere una volta le credenziali cloud TP-Link per autenticare.",
+    "colorType": "A colori più bianco regolabile da 2500 a 6500 K.",
+    "lumens": "800 lm, equivalente a 60 W.",
+    "compatibility.apple_home": "Kasa indica Alexa, Google Assistant e SmartThings per questa lampadina, e una guida della community TP-Link su Apple Home non elenca luci Kasa. Nessuna fonte dichiara esplicitamente «non supportato», e lo stato di Matter non è confermato.",
+    "compatibility.google_home": "Funziona con Google Assistant tramite l'integrazione cloud di Kasa.",
+    "compatibility.alexa": "Funziona con Alexa tramite la skill Kasa.",
+    "compatibility.smartthings": "Kasa indica SmartThings come piattaforma vocale/smart home supportata per la KL125.",
+    "compatibility.home_assistant": "L'integrazione ufficiale TP-Link Smart Home elenca la KL125 tra le lampadine supportate. Segnala che non ci sono effetti luminosi sulle lampadine Kasa."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Come termostato da parete per caldaie e pompe di calore, il tado° Wired Smart Thermostat X comanda il riscaldamento tramite un relè o OpenTherm. Si abbina tramite Matter su Thread con Apple Home, Google Home e Alexa, e Home Assistant funziona tramite la sua integrazione Matter, anche se tado° dice di non supportare ufficialmente Home Assistant. Va bene qualsiasi border router Thread, compreso il Bridge X di tado°. Funziona con 3 × AAA batterie.",
+  "caveats": ["Richiede un border router Thread, come il Bridge X di tado° (venduto separatamente, non compatibile con i dispositivi tado° V3+) o uno di terzi.", "tado° vende anche un modello cablato di 2ª generazione con batteria ricaricabile integrata; questa scheda riguarda la versione con 3 × AAA.", "tado° dice che funziona con la maggior parte delle caldaie e delle pompe di calore; controlla il suo strumento di compatibilità per la tua prima di acquistare."],
+  "notes": {
+    "radios": "Le pagine di tado° dicono che richiede un border router Thread. Il Bluetooth per la configurazione non è stato confermato per questo modello.",
+    "matter": "tado° documenta un codice di configurazione Matter per i suoi dispositivi X, compreso questo termostato. Un estratto di ricerca mostrava il certificato CSA CSA23C79MAT41789-24 (Smart Thermostat X, Thread), ma la pagina CSA stessa non è emersa, quindi non è citata.",
+    "hubRequired": "Per il controllo di base non serve un bridge tado°: tado° dice che il Bridge X o un altro border router Thread compatibile lo collega a internet. Senza nessun border router Thread non può raggiungere internet. I prodotti tado° X non funzionano con i dispositivi V3+.",
+    "localControl": "Nessuna pagina tado° trovata che descriva un controllo offline o solo locale.",
+    "systems": "Cablato all'impianto di riscaldamento. tado° dice che funziona con la maggior parte di questi impianti; controlla il suo strumento di compatibilità per la tua caldaia.",
+    "power": "tado° dice che lo Smart Thermostat X usa tre batterie alcaline AAA (LR03). Il Wired Smart Thermostat X (2ª generazione) usa invece una batteria ricaricabile integrata ed è un prodotto diverso.",
+    "compatibility.apple_home": "Si collega con un codice Matter dall'app tado° o dal codice QR del dispositivo. Richiede un border router Thread.",
+    "compatibility.google_home": "tado° ha una guida di configurazione per Google Home tramite Matter. Richiede un border router Thread.",
+    "compatibility.alexa": "Richiede un Echo o un eero compatibile con Matter più un border router Thread. tado° consiglia di aggiungere prima il dispositivo nella propria app per mantenere gli aggiornamenti del firmware.",
+    "compatibility.smartthings": "Non è stata trovata nessuna guida di configurazione tado° per SmartThings.",
+    "compatibility.home_assistant": "Tramite l'integrazione Matter di Home Assistant, che richiede un border router Thread. tado° dice di non supportare ufficialmente Home Assistant."
+  },
+  "values": {"systems": "Caldaie e pompe di calore tramite relè o OpenTherm"}
+}

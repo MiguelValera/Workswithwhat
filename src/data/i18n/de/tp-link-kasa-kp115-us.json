@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Greif zum Kasa KP115, wenn du in Alexa, Google Home oder SmartThings lebst und sehen willst, was ein Gerät verbraucht. Alle drei verbinden sich über dein Kasa-Konto, und die offizielle TP-Link-Integration von Home Assistant betreibt ihn über dein lokales Netzwerk. Der Energieverbrauch, live und im Verlauf, erscheint in der Kasa-App. Er ist ein schlanker US-WLAN-Zwischenstecker mit 2,4 GHz, ausgelegt für 15 A / 1800 W, ohne Hub. Apple Home und Matter stehen nicht auf TP-Links Liste; der KP125M ist die Matter-Version.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "TP-Link führt weder Apple Home noch Matter auf; Kasas HomeKit-Zwischenstecker sind der KP125 und der EP25, und seine Matter-Version ist der KP125M.",
+    "Die Kasa-App läuft über die Cloud; lokale Steuerung kommt von der TP-Link-Integration von Home Assistant."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN (IEEE 802.11b/g/n).",
+    "matter": "TP-Link führt für den KP115 Alexa, Google Assistant und SmartThings auf und erwähnt Matter nicht, sagt aber nie, dass er keins hat. TP-Links Matter-Version dieses Zwischensteckers ist der KP125M.",
+    "hubRequired": "Verbindet sich direkt mit 2,4-GHz-WLAN; laut TP-Link ist kein Hub nötig.",
+    "localControl": "Die Integration von Home Assistant steuert Kasa-Zwischenstecker über das lokale Netzwerk. Die Kasa-App selbst läuft über die Cloud.",
+    "energyMonitoring": "Echtzeit- und Verlaufsdaten zum Verbrauch in der Kasa-App.",
+    "maxLoadWatts": "15 A, 1,8 kW bei 120 V.",
+    "compatibility.apple_home": "TP-Links Plattformliste für den KP115 nennt Alexa, Google Assistant und SmartThings, nicht HomeKit, schließt es aber nicht aus. Kasas HomeKit-Zwischenstecker sind der KP125 und der EP25.",
+    "compatibility.google_home": "Cloud-zu-Cloud-Verknüpfung zwischen dem Kasa- und dem Google-Konto.",
+    "compatibility.alexa": "Cloud-zu-Cloud-Verknüpfung über den Kasa-Skill.",
+    "compatibility.smartthings": "TP-Link führt Samsung SmartThings unter den Plattformen des KP115 auf.",
+    "compatibility.home_assistant": "Von der offiziellen TP-Link-Smart-Home-Integration aufgeführt, die lokal mit Kasa-Zwischensteckern spricht."
+  }
+}

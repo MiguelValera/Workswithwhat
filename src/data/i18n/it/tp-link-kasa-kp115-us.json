@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Scegli la Kasa KP115 se vivi in Alexa, Google Home o SmartThings e vuoi vedere quanto assorbe un elettrodomestico. Tutti e tre si collegano tramite il tuo account Kasa, e l'integrazione ufficiale TP-Link di Home Assistant la gestisce sulla rete locale. Il consumo energetico, in tempo reale e storico, compare nell'app Kasa. È una presa statunitense sottile con Wi-Fi a 2,4 GHz, con valore nominale di 15 A / 1800 W, senza hub. Apple Home e Matter non sono nell'elenco di TP-Link; la KP125M è la versione Matter.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "TP-Link non indica Apple Home né Matter; le prese HomeKit di Kasa sono la KP125 e la EP25, e la sua versione Matter è la KP125M.", "L'app Kasa passa dal cloud; il controllo locale viene dall'integrazione TP-Link di Home Assistant."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz (IEEE 802.11b/g/n).",
+    "matter": "TP-Link indica Alexa, Google Assistant e SmartThings per la KP115 e non menziona Matter, ma non dice mai che non ce l'abbia. La versione Matter di questa presa di TP-Link è la KP125M.",
+    "hubRequired": "Si collega direttamente al Wi-Fi a 2,4 GHz; TP-Link dice che non serve nessun hub.",
+    "localControl": "L'integrazione di Home Assistant controlla le prese Kasa sulla rete locale. L'app Kasa stessa passa dal cloud.",
+    "energyMonitoring": "Consumo di potenza in tempo reale e storico nell'app Kasa.",
+    "maxLoadWatts": "15 A, 1,8 kW a 120 V.",
+    "compatibility.apple_home": "L'elenco delle piattaforme della KP115 di TP-Link nomina Alexa, Google Assistant e SmartThings, non HomeKit, ma non lo esclude. Le prese HomeKit di Kasa sono la KP125 e la EP25.",
+    "compatibility.google_home": "Collegamento cloud-to-cloud tra gli account Kasa e Google.",
+    "compatibility.alexa": "Collegamento cloud-to-cloud tramite la skill Kasa.",
+    "compatibility.smartthings": "TP-Link indica Samsung SmartThings tra le piattaforme della KP115.",
+    "compatibility.home_assistant": "Elencata dall'integrazione ufficiale TP-Link Smart Home, che dialoga con le prese Kasa in locale."
+  }
+}

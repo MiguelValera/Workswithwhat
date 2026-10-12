@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Nessun hub richiesto: lo Shelly Plus Plug S funziona con Wi-Fi e Bluetooth ed è autonomo, senza l'app o il cloud di Shelly. Alexa, Google Home e SmartThings si collegano tramite il cloud di Shelly, mentre l'integrazione ufficiale Shelly di Home Assistant lo controlla in locale. Ha un valore nominale di 12 A / 2500 W e riporta in tempo reale potenza e consumo di energia. Apple Home non è confermato per questa presa Gen2; il supporto di Shelly per Apple Home e Matter riguarda i modelli più recenti Gen3 e Gen4.",
+  "caveats": ["Apple Home e Matter non sono confermati per questa presa Gen2; le prese Matter di Shelly sono Gen3/Gen4.", "Alexa, Google Home e SmartThings passano dal cloud di Shelly; solo il controllo da Home Assistant (e MQTT) è locale."],
+  "notes": {
+    "radios": "Wi-Fi 802.11 b/g/n più Bluetooth 4.2 (ESP32), secondo la tabella delle specifiche V2.",
+    "matter": "Nessuna pagina Shelly trovata indica il supporto Matter per la Plus (Gen2) Plug S; le prese Matter e Works with Apple Home di Shelly sono Gen3/Gen4. Non confermato.",
+    "hubRequired": "Dispositivo Wi-Fi; la guida utente dice che l'app e il cloud di Shelly non sono necessari per farlo funzionare, e la KB V2 dice che può funzionare in autonomia sul Wi-Fi locale.",
+    "localControl": "RPC locale usata da Home Assistant; MQTT e scripting sono supportati sul dispositivo.",
+    "energyMonitoring": "Riporta in tempo reale potenza e consumo di energia.",
+    "maxLoadWatts": "Valore nominale di 12 A / 2500 W; il limite di potenza massima nell'app arriva a 2500 W.",
+    "compatibility.apple_home": "La pagina Apple Home di Shelly riguarda i dispositivi Gen3/Gen4 compatibili con Matter; non è stato trovato nulla che riguardi la Plus Plug S.",
+    "compatibility.google_home": "Tramite l'integrazione cloud di Shelly con Google.",
+    "compatibility.alexa": "Tramite l'integrazione cloud di Shelly con Alexa.",
+    "compatibility.smartthings": "Integrazione cloud-to-cloud mantenuta da Shelly; indicata sulla pagina prodotto di Shelly.",
+    "compatibility.home_assistant": "Integrazione locale ufficiale Shelly; i dispositivi Gen2+ usano RPC e non richiedono configurazione aggiuntiva."
+  }
+}

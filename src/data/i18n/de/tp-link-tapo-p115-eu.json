@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Mit 16 A / 3680 W bei 220-240 V arbeitet die EU-Tapo-P115 über dein Tapo-Konto mit Alexa und Google Home, und die eingebaute TP-Link-Smart-Home-Integration von Home Assistant führt sie namentlich auf. Sie erfasst den Energieverbrauch von allem, was eingesteckt ist, und du kannst deinen Strompreis für Kostenschätzungen eingeben. Kein Hub nötig. TP-Links EU-Seiten erwähnen weder Apple Home noch SmartThings oder Matter, behandle diese also als unbestätigt.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Die Einrichtung in Home Assistant fragt nach deinen TP-Link-Cloud-Zugangsdaten.",
+    "TP-Links EU-Seiten führen für dieses Modell keine Unterstützung für Apple Home, SmartThings oder Matter auf."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN 802.11b/g/n. Das gesehene Datenblatt führt kein Bluetooth auf; in keine Richtung bestätigt.",
+    "matter": "TP-Links P115-Seiten erwähnen Matter nicht, und es wurde kein CSA-Eintrag gefunden. Auch nicht als nicht unterstützt angegeben.",
+    "hubRequired": "WLAN-Zwischenstecker, eingerichtet in der Tapo-App; kein Hub aufgeführt.",
+    "localControl": "Tapo sagt, Geräte in deinem LAN blieben in der Tapo-App erreichbar, wenn das Internet ausfällt.",
+    "energyMonitoring": "Erfasst den Energieverbrauch angeschlossener Geräte; du kannst deinen Strompreis für Kostenschätzungen eingeben.",
+    "maxLoadWatts": "16 A / 3680 W bei 220-240 V.",
+    "compatibility.apple_home": "TP-Links P115-Seiten führen nur Alexa und den Google Assistant auf; keine Seite sagt, dass Apple Home nicht unterstützt wird.",
+    "compatibility.google_home": "Tapos Produktseite führt Sprachsteuerung per Google Assistant über die Tapo-Kontoverknüpfung auf.",
+    "compatibility.alexa": "Tapos Produktseite führt Sprachsteuerung per Amazon Alexa über den Tapo-Skill auf.",
+    "compatibility.smartthings": "Die EU-Produktseite führt nur Alexa und Google auf. TP-Links US-P115-Seiten und seine allgemeine SmartThings-FAQ erwähnen SmartThings, aber es wurde nichts EU-Spezifisches gefunden.",
+    "compatibility.home_assistant": "Die eingebaute TP-Link-Smart-Home-Integration von Home Assistant führt die P115 unter ihren unterstützten Tapo-Zwischensteckern auf. Braucht für die Einrichtung deine TP-Link-Cloud-Zugangsdaten."
+  }
+}

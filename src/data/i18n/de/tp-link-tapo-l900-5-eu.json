@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Die Tapo L900-5 (EU) koppelt sich mit Alexa und dem Google Assistant, sobald du sie in der Tapo-App verknüpfst, und mit Home Assistant über die TP-Link-Integration. Dieser 5 m lange Streifen läuft ohne Hub über 2,4-GHz-WLAN und zeigt 16 Millionen Farben plus Warm- und Kaltweiß. TP-Link erwähnt weder Apple Home noch SmartThings oder Matter.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Der Streifen lässt sich kürzen, aber die abgeschnittenen Stücke sind nicht wiederverwendbar.",
+    "TP-Link führt für diesen Streifen weder Apple Home noch SmartThings oder Matter auf."
+  ],
+  "notes": {
+    "radios": "Nur 2,4 GHz (IEEE 802.11 b/g/n).",
+    "matter": "Weder die Produktseite noch die EU-Anleitung erwähnen Matter; das Fehlen ist kein Beweis, daher unbestätigt.",
+    "hubRequired": "Laut TP-Link ist kein Hub nötig; er verbindet sich mit dem Heim-WLAN.",
+    "localControl": "Die TP-Link-Integration von Home Assistant verbindet sich lokal ohne die TP-Link-Cloud; TP-Links eigene App-Steuerung läuft über die Cloud.",
+    "colorType": "Über 16 Millionen Farben plus Warmweiß und kaltes Tageslichtweiß.",
+    "lengthM": "5-m-Streifen (5000 mm); er lässt sich kürzen, aber abgeschnittene Stücke sind nicht wiederverwendbar.",
+    "multiZone": "TP-Link beschreibt keine getrennten Farben entlang eines Streifens, daher unbestätigt.",
+    "power": "Eingang 220–240 V, Ausgang 12 V DC 1,0 A, max. 13,5 W.",
+    "compatibility.apple_home": "Die Seite erwähnt nur Siri-Kurzbefehle, nicht Apple Home oder HomeKit.",
+    "compatibility.google_home": "Sprachsteuerung über den Google Assistant, eingerichtet über die Drittanbieter-Dienste der Tapo-App.",
+    "compatibility.alexa": "Sprachsteuerung über Amazon Alexa, eingerichtet über die Drittanbieter-Dienste der Tapo-App.",
+    "compatibility.smartthings": "Auf TP-Links Seite nicht erwähnt.",
+    "compatibility.home_assistant": "Unter den Tapo-Lichtstreifen in der offiziellen TP-Link-Integration von Home Assistant aufgeführt, die sich lokal verbindet und TP-Link-Kontodaten braucht."
+  },
+  "values": {
+    "power": "Netzteil (12 V DC)"
+  }
+}

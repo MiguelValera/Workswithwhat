@@ -1,0 +1,31 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Apple Home funktioniert mit dem SwitchBot K10+ Pro nur über einen SwitchBot Hub 2, der die Matter-Bridge liefert. Google Home und Alexa sind direkt auf SwitchBots EU-Seite aufgeführt. Der Roboter ist kompakt, mit LiDAR, 3000 Pa Saugkraft und einer 4-l-Station zum automatischen Leeren, und er saugt und wischt, wenn auch nicht gleichzeitig.",
+  "caveats": [
+    "Matter beim einfachen K10+ Pro braucht einen SwitchBot Hub 2; der Weg ohne Hub (iOS 18.4.1) ist nur für das K10+ Pro Combo dokumentiert.",
+    "Das WLAN läuft nur auf 2,4 GHz; SwitchBot führt keine 5-GHz-Unterstützung auf.",
+    "Laut SwitchBot kann er nicht gleichzeitig saugen und wischen.",
+    "Die 3000 Pa sind die höchste von vier Stufen (600, 1100, 1600, 3000) laut SwitchBots US-Seite."
+  ],
+  "notes": {
+    "radios": "SwitchBot führt 2,4-GHz-WLAN (kein 5 GHz) und Bluetooth 5.0 auf.",
+    "matter": "Die CSA führt das K10+ Pro Combo, nicht das einfache K10+ Pro. SwitchBots EU-Seite sagt, Matter brauche einen SwitchBot Hub 2, das einfache Modell erreicht Matter also nur über die Bridge des Hubs.",
+    "hubRequired": "Verbindet sich über 2,4-GHz-WLAN mit der SwitchBot-App; laut Produktseite wird der Hub 2 nur für Matter gebraucht.",
+    "localControl": "Auf den gefundenen Seiten von SwitchBot nicht angegeben.",
+    "cleaning": "Eine Wischpad-Platte und ein Tuch liegen bei. Laut SwitchBot kann er nicht gleichzeitig saugen und wischen.",
+    "navigation": "SwitchBot führt LDS-Laser-Navigation (LiDAR SLAM) und PSD-Sensoren auf.",
+    "suctionPa": "Aus der Spezifikationstabelle auf SwitchBots US-Seite (600/1100/1600/3000 Pa über vier Stufen); die Ausschnitte der EU-Seite zeigten den Wert nicht.",
+    "selfEmptying": "SwitchBots Seiten beschreiben beim K10+ Pro eine Staubsammelstation mit 4 l und automatischem Leeren.",
+    "compatibility.apple_home": "Die EU-Seite führt Siri auf und sagt, Matter brauche den SwitchBot Hub 2. Der direkte Matter-Weg ohne Hub (iOS 18.4.1) ist nur für das Combo dokumentiert.",
+    "compatibility.google_home": "Als funktionierend mit Google Home aufgeführt; Matter ist mit einem SwitchBot Hub ebenfalls möglich.",
+    "compatibility.alexa": "Auf SwitchBots EU-Seite als funktionierend mit Alexa aufgeführt.",
+    "compatibility.smartthings": "Es wurde keine offizielle Seite gefunden.",
+    "compatibility.home_assistant": "Es wurde keine offizielle Home-Assistant-Seite für dieses Modell gefunden."
+  },
+  "via": {
+    "apple_home": "SwitchBot Hub 2 (Matter)"
+  },
+  "values": {
+    "navigation": "LiDAR"
+  }
+}

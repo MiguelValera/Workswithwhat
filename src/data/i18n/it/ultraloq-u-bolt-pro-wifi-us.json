@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "L'Ultraloq U-Bolt Pro WiFi è un chiavistello sostitutivo con tastierino e lettore di impronte (50 utenti, 50 codici, 100 impronte) e Wi-Fi a 2,4 GHz integrato, quindi non serve nessun bridge. Google Assistant, Alexa e SmartThings sono supportati. U-tec dice che non funziona con Apple Home, e per questo modello non esiste nessuna dichiarazione su Matter. Quattro batterie AA durano da 3 a 6 mesi.",
+  "caveats": ["Il Wi-Fi è solo a 2,4 GHz; il 5 GHz non è supportato.", "Nessun supporto per Apple Home; solo i modelli Bolt Fingerprint di Ultraloq indicano HomeKit.", "Le serrature Matter di Ultraloq sono un Bolt Pro separato basato su Thread, non questa.", "Home Assistant è documentato solo per la U-Bolt Pro Z-Wave, quindi questo modello Wi-Fi non è confermato.", "Il controllo remoto e vocale passa dal cloud di Ultraloq."],
+  "notes": {
+    "radios": "La specifica di U-tec indica Bluetooth standard più Wi-Fi a 2,4 GHz (802.11 b/g/n); il 5 GHz non è supportato. L'app raggiunge la serratura via Bluetooth da vicino.",
+    "matter": "Nessuna dichiarazione su Matter per questo modello. I prodotti Matter di Ultraloq sono un Bolt Pro separato basato su Thread, non questa serratura.",
+    "hubRequired": "Chip Wi-Fi integrato, quindi l'Ultraloq Bridge non è richiesto; U-tec dice che il Bridge è per i modelli U-Bolt senza Wi-Fi.",
+    "localControl": "Il controllo remoto e vocale passa dal cloud di Ultraloq; il controllo locale non è documentato.",
+    "lockFit": "Sostituisce il chiavistello esistente; venduto come chiavistello con tastierino e lettore di impronte.",
+    "keypad": "Tastierino più lettore di impronte; la specifica indica 50 utenti, 50 codici e 100 impronte.",
+    "power": "6 V da quattro batterie alcaline AA, con una porta micro USB per l'alimentazione di emergenza. U-tec indica da 3 a 6 mesi per il modello Wi-Fi e fino a un anno per le versioni senza Wi-Fi.",
+    "compatibility.apple_home": "L'articolo di U-tec «Does Ultraloq work with HomeKit?» dice che solo il Bolt Fingerprint (versione HomeKit) e il Bolt Fingerprint Matter supportano HomeKit, e elenca invece i modelli U-Bolt Wi-Fi con Google Assistant, Alexa, IFTTT e SmartThings.",
+    "compatibility.google_home": "Google Assistant, tramite il Wi-Fi integrato.",
+    "compatibility.alexa": "Alexa tramite il Wi-Fi integrato.",
+    "compatibility.smartthings": "Ultraloq indica SmartThings per le sue serrature con Wi-Fi integrato.",
+    "compatibility.home_assistant": "L'articolo di supporto di Ultraloq collega Home Assistant al modello Z-Wave U-Bolt/U-Bolt Pro, non a quello Wi-Fi."
+  }
+}
