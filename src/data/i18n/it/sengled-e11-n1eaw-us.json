@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Nulla controlla la Sengled Zigbee Color A19 (E11-N1EAW) senza un hub Zigbee. SmartThings funziona con un hub SmartThings, Alexa con un Echo dotato di hub Zigbee integrato (Echo Plus, Echo Show 2, Echo Studio) e Google Home con un Sengled Smart Hub collegato tramite il cloud di Sengled. Apple Home e Home Assistant non sono confermati. È una lampadina statunitense a colori con attacco E26, da 800 lumen, con 16 milioni di colori più bianco regolabile. Amazon avrebbe ritirato la skill Alexa di Sengled nel 2025, quindi l'abbinamento diretto a un Echo Zigbee è la via per Alexa che non dipende dall'account Sengled.",
+  "caveats": ["Solo Zigbee: serve un hub Zigbee e non ha Wi-Fi né Bluetooth.", "Amazon ha rimosso la skill Alexa di Sengled nel 2025, secondo un articolo di PCWorld che cita una serie di interruzioni del servizio Sengled.", "Il controllo da Google Home passa dal cloud di Sengled, quindi dipende dal funzionamento di quel servizio.", "Un normale Echo o Echo Dot non può controllarla; serve un modello Echo con hub Zigbee integrato."],
+  "notes": {
+    "radios": "Solo Zigbee; Sengled vende questa lampadina come «Hub Required».",
+    "matter": "Sengled la vende come lampadina Zigbee che richiede un hub e non menziona Matter. Non abbiamo trovato nessuna dichiarazione esplicita né scheda CSA in un senso o nell'altro.",
+    "hubRequired": "Per le lampadine, significa che serve un bridge o un hub per il controllo di base da app. Questa lampadina Zigbee richiede un hub Sengled, un hub SmartThings o un Echo Zigbee.",
+    "localControl": "Nessuna fonte ufficiale descrive il controllo locale. Il percorso con l'app Sengled dipende dal cloud di Sengled; gli hub Zigbee di terzi possono comportarsi diversamente.",
+    "colorType": "16 milioni di colori più bianco regolabile.",
+    "lumens": "800 lm secondo l'annuncio del kit di avvio di Sengled per la stessa lampadina Zigbee Color A19/E26; la pagina della singola lampadina indica 8,6 W (equivalente a 60 W) ma nessun valore in lumen.",
+    "compatibility.apple_home": "Sengled non indica Apple Home per questa lampadina; nessuna fonte ufficiale in un senso o nell'altro.",
+    "compatibility.google_home": "La guida di Sengled collega l'account Sengled Home (hub e relative lampadine) a Google Home, quindi dipende dal cloud di Sengled. Gli speaker Google Home non sono hub Zigbee.",
+    "compatibility.alexa": "Sengled indica i modelli Echo con hub Zigbee integrato (Echo Plus, Echo Show 2, Echo Studio). Echo ed Echo Dot non sono hub. La via della skill Alexa di Sengled sarebbe stata ritirata nel 2025 (vedi le avvertenze).",
+    "compatibility.smartthings": "Sengled indica l'hub SmartThings come compatibile e documenta l'abbinamento.",
+    "compatibility.home_assistant": "Nessuna fonte ufficiale di Home Assistant o Sengled nomina questa lampadina; un coordinatore Zigbee generico probabilmente funziona, ma non è confermato."
+  },
+  "via": {"google_home": "Sengled Smart Hub", "alexa": "Echo con hub Zigbee integrato", "smartthings": "hub SmartThings"}
+}

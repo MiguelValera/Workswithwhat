@@ -1,0 +1,54 @@
+---
+import MailLink from '../../MailLink.astro';
+import Base from '../../../layouts/Base.astro';
+import { CONTACT_URL } from '../../../site.config';
+---
+
+<Base
+  title="Come verifichiamo la compatibilità"
+  description="Da dove vengono i dati di compatibilità di Workswithwhat, cosa significa ogni stato e cosa facciamo quando un dato manca o le fonti non concordano."
+  crumbs={[{ name: 'Come verifichiamo', path: '/methodology/' }]}
+>
+  <h1>Come verifichiamo la compatibilità</h1>
+  <p class="lede">
+    Una risposta su "con cosa funziona" serve solo se puoi controllarla. Per questo ognuna rimanda alla pagina da cui proviene.
+  </p>
+
+  <h2>Da dove vengono i dati</h2>
+  <p>In ordine di preferenza:</p>
+  <ol>
+    <li>La pagina prodotto del produttore, la scheda tecnica, il manuale o gli articoli di assistenza.</li>
+    <li>Il database di certificazione della Connectivity Standards Alliance, per Matter.</li>
+    <li>Le pagine delle piattaforme di Apple, Google, Amazon, Samsung SmartThings e Home Assistant.</li>
+    <li>Rivenditori e recensioni indipendenti, solo per confermare una delle fonti precedenti.</li>
+  </ol>
+
+  <h2>Due passaggi per ogni dispositivo</h2>
+  <p>
+    Un primo passaggio raccoglie le specifiche e le fonti. Un secondo ricontrolla ogni affermazione in modo indipendente e
+    verifica che la pagina citata la riporti davvero, per quel modello e quella regione. Ciò che non regge viene segnato come
+    <span class="badge s-unknown">Non confermato</span> invece di essere indovinato. Un dispositivo compare sul sito solo dopo il secondo passaggio.
+  </p>
+
+  <h2>Cosa significano le etichette</h2>
+  <ul>
+    <li><span class="badge s-native">Sì</span> Funziona tramite l’integrazione del marchio: una skill Alexa, il collegamento con Google Home, HomeKit o un’integrazione ufficiale di Home Assistant.</li>
+    <li><span class="badge s-matter">Tramite Matter</span> Funziona perché il dispositivo è certificato Matter. Lo aggiungi con l’abbinamento Matter della piattaforma. I dispositivi Thread hanno bisogno anche di un border router Thread, come una Apple TV recente, un HomePod mini o un Nest Hub.</li>
+    <li><span class="badge s-hub">Tramite …</span> Funziona, ma solo con l’hub o il bridge indicato.</li>
+    <li><span class="badge s-no">No</span> Una fonte dice che non è supportato.</li>
+    <li><span class="badge s-unknown">Non confermato</span> Non abbiamo trovato una risposta ufficiale.</li>
+  </ul>
+
+  <h2>Regioni e versioni</h2>
+  <p>
+    Le versioni statunitense ed europea di un dispositivo hanno spesso codici modello, radio o certificazioni diversi. Le
+    trattiamo come dispositivi separati e indichiamo le regioni coperte da ogni scheda.
+  </p>
+
+  <h2>Correzioni</h2>
+  <p>
+    Gli aggiornamenti del firmware cambiano continuamente la compatibilità. Se qualcosa è sbagliato o superato, scrivi a
+    <MailLink /> o <a href={CONTACT_URL}>apri una segnalazione</a> con un link e lo ricontrolleremo. Nessun marchio paga per
+    comparire qui e non ci sono link di affiliazione.
+  </p>
+</Base>

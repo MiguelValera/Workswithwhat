@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemPath, getActiveCategories, getPublishedDevices, worksWith } from '../lib/devices';
-import { ACTIVE_LANGS } from '../i18n/lang';
+import { ACTIVE_LANGS, localize } from '../i18n/lang';
 import { byMarket, getActiveMarkets, getRegionPages } from '../lib/markets';
 import { compareName, comparePath, getComparisons } from '../lib/compare';
 
@@ -25,9 +25,11 @@ export const GET: APIRoute = async ({ site }) => {
     ...markets.map((m) => `- [${m.label} devices as JSON](${url(`/api/${m.key}/devices.json`)}): only models sold in ${m.phrase}; per category at /api/${m.key}/<category>.json`),
     `- [Full text for LLMs](${url('/llms-full.txt')}): every device page as Markdown`,
     `- [How we verify](${url('/methodology/')}): sourcing rules and label definitions`,
-    ...(ACTIVE_LANGS.includes('es')
-      ? [`- [Spanish version](${url('/es/')}): the same pages and data in Spanish (Spain), under /es/ with Spanish paths, e.g. ${url('/es/enchufes-inteligentes/')}`]
-      : []),
+    ...ACTIVE_LANGS.filter((l) => l !== 'en').map((l) => {
+      const name = { es: 'Spanish', de: 'German', fr: 'French', it: 'Italian' }[l];
+      const where = l === 'es' ? ' (Spain)' : '';
+      return `- [${name} version](${url(`/${l}/`)}): the same pages and data in ${name}${where}, under /${l}/ with ${name} paths, e.g. ${url(localize('/smart-plugs/', l))}`;
+    }),
     '',
   ];
   lines.push(

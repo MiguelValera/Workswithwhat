@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La Ring Indoor Cam (2nd Gen) nella versione europea funziona con Alexa tramite la skill Ring, con live view sui dispositivi Echo con schermo, e con Home Assistant tramite l'integrazione ufficiale Ring. È una telecamera Wi-Fi senza hub, alimentata da una presa con un cavo Micro USB da 1,9 m e un adattatore con spina europea. Live view e notifiche sono gratuite; per salvare i video serve un piano Ring Protect. Ring non conferma Apple Home, Google Home o SmartThings.",
+  "caveats": ["Il Wi-Fi è solo a 2,4 GHz.", "Senza un piano Ring Protect, video e foto non vengono salvati.", "Home Assistant dialoga con il cloud di Ring, non con la telecamera nella tua rete.", "La comunicazione bidirezionale tramite Echo è indicata da Ring per Germania, Francia, Italia e Spagna."],
+  "notes": {
+    "radios": "La pagina europea di Ring indica Wi-Fi 802.11 b/g/n a 2,4 GHz.",
+    "matter": "Nessuna menzione di Matter sulla pagina europea di Ring e nessuna scheda CSA per questa telecamera.",
+    "hubRequired": "Si collega via Wi-Fi all'app Ring; la pagina europea non menziona bridge o base station.",
+    "localControl": "Ring non dice se qualche controllo funzioni senza il suo cloud. La pagina di Home Assistant dice che l'integrazione Ring usa solo il cloud.",
+    "power": "Si collega a una presa con un cavo Micro USB da 1,9 m e un alimentatore da 5 V, 2 A con spina europea.",
+    "localStorage": "La pagina europea non menziona registrazione locale; i video salvati vanno nell'account Ring.",
+    "subscription": "Senza un piano hai live view e notifiche, ma video e foto non vengono salvati. Con l'acquisto è incluso un periodo di prova, a meno che la sede abbia già un piano.",
+    "compatibility.apple_home": "La pagina prodotto europea di Ring e le pagine di aiuto per Alexa non menzionano Apple Home o HomeKit.",
+    "compatibility.google_home": "Nessuna pagina Ring trovata che indichi Google Home o Google Assistant per questa telecamera.",
+    "compatibility.alexa": "La pagina di aiuto tedesca di Ring per questa telecamera indica Works with Alexa. Tramite la skill Ring, i dispositivi Alexa con schermo mostrano la live view; Ring indica Germania, Francia, Italia e Spagna per la comunicazione bidirezionale tramite Echo.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale di Ring o SmartThings trovata per questo modello.",
+    "compatibility.home_assistant": "L'integrazione ufficiale Ring elenca Indoor Cam (2nd Gen) tra le stick-up cam. Dialoga con il cloud di Ring, non con la telecamera nella tua rete."
+  },
+  "values": {"power": "Adattatore USB (rete elettrica)", "subscription": "Cronologia dei video salvati (piano Ring Protect)"}
+}

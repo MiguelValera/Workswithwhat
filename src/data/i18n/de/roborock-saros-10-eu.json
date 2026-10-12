@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Roborock führt den Saros 10 für die Matter-Firmware 02.32.44 (April 2025) auf, sodass Apple Home und Google Home ihn über Matter hinzufügen können, während Alexa über den Roborock-Plus-Skill funktioniert. Zur Hardware gehören ein einfahrbares LiDAR, 22 000 Pa Saugkraft, vibrierende Wischmopps mit Heißwasserwischen und eine Station, die den Staubbehälter leert.",
+  "caveats": [
+    "Das WLAN läuft nur auf 2,4 GHz; 5 GHz wird nicht unterstützt.",
+    "Matter braucht die Firmware 02.32.44, und laut Roborock variieren die Matter-Funktionen je nach Ökosystem.",
+    "Die CSA-Einträge für Roborock-Saugroboter, die wir gefunden haben, nennen den Saros 10 nicht, Matter beruht also auf Roborocks Aussage.",
+    "Die Seite zur offiziellen Roborock-Integration von Home Assistant nennt den Saros 10 nicht."
+  ],
+  "notes": {
+    "radios": "Laut Roborocks US-Produktseite läuft das WLAN nur auf 2,4 GHz (5 GHz nicht unterstützt); laut Roborocks Support-Artikel dient Bluetooth der schnellen Einrichtung in der App.",
+    "matter": "Roborocks Newsroom führt den Saros 10 für die Matter-Firmware 02.32.44 (April 2025) auf. Die CSA führt mehrere Roborock-Saugroboter, aber die gefundenen Einträge nennen das Modell nicht.",
+    "hubRequired": "Verbindet sich über das WLAN zu Hause mit der Roborock-App; ein Hub wird nicht erwähnt.",
+    "localControl": "Roborock sagt hier nicht, ob die Steuerung ohne die Cloud funktioniert.",
+    "cleaning": "Roborock führt vibrierende VibraRise-4.0-Wischmopps und Heißwasserwischen auf.",
+    "navigation": "RetractSense senkt den LDS ab; Roborock nennt außerdem dreifaches Laser-Strukturlicht und eine RGB-Kamera.",
+    "selfEmptying": "Roborocks Support-Artikel zur Station des Saros 10 führt das automatische Leeren des Staubbehälters im Gerät auf.",
+    "compatibility.apple_home": "Über Matter nach der Firmware 02.32.44; laut Roborock variieren die Matter-Funktionen je nach Ökosystem.",
+    "compatibility.google_home": "Über das Matter-Firmware-Update. Laut Roborock variieren die Funktionen je nach Ökosystem.",
+    "compatibility.alexa": "Über den Roborock-Plus-Skill für Roboter in der Roborock-App. Matter ist nach der Firmware 02.32.44 ebenfalls verfügbar.",
+    "compatibility.smartthings": "Es wurde keine offizielle Seite gefunden.",
+    "compatibility.home_assistant": "Home Assistant hat eine offizielle Roborock-Integration, aber die gefundene Seite nennt den Saros 10 nicht."
+  },
+  "values": {
+    "navigation": "Einfahrbares LiDAR, RGB-Kamera"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Collegata a una presa a muro tramite il suo adattatore USB, la Ring Indoor Cam (2nd Gen) funziona con Alexa grazie alla skill Ring: chiedi la live view a un Echo Show. Home Assistant la elenca nell'integrazione ufficiale Ring. La live view è gratuita, mentre i video di movimento salvati, conservati fino a 180 giorni, richiedono un piano Ring Protect. Non serve nessun hub. Apple Home e Google Home non sono confermati.",
+  "caveats": ["Il Wi-Fi è solo a 2,4 GHz.", "Per salvare i video serve un piano Ring Protect.", "Il supporto di Apple Home e Google Home non è confermato da Ring."],
+  "notes": {
+    "radios": "La pagina di supporto di Ring indica 802.11 b/g/n a 2,4 GHz.",
+    "matter": "Nessuna menzione di Matter sulle pagine di Ring e nessuna scheda di certificazione CSA per una telecamera Ring è emersa nella ricerca.",
+    "hubRequired": "Si collega via Wi-Fi all'app Ring; non è menzionato nessun bridge Ring.",
+    "localControl": "Ring non dichiara se qualche controllo funzioni senza il suo cloud.",
+    "power": "Si collega a una presa; nella confezione ci sono un alimentatore USB-A e un cavo micro USB, secondo le pagine regionali di Ring.",
+    "localStorage": "Nessuna opzione di registrazione locale trovata sulle pagine di Ring.",
+    "subscription": "Ring dice che la live view funziona senza un piano; con un piano i video di movimento vengono salvati fino a 180 giorni.",
+    "compatibility.apple_home": "Né la pagina di supporto di Ring né le sue pagine di aiuto per Alexa menzionano Apple Home o HomeKit.",
+    "compatibility.google_home": "Nessuna pagina Ring trovata che indichi Google Home o Google Assistant per questa telecamera. Sono emerse solo menzioni in forum e recensioni, che non sono citate.",
+    "compatibility.alexa": "La pagina di supporto di Ring indica Works with Alexa. Tramite la skill Ring puoi chiedere a un dispositivo Alexa con schermo, come un Echo Show, di mostrare la live view.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale di Ring o SmartThings trovata per questo modello; solo post nei forum, che non sono citati.",
+    "compatibility.home_assistant": "L'integrazione ufficiale Ring elenca Indoor Cam (2nd Gen) tra le stick-up cam supportate. Quali funzioni della telecamera esponga non è stato confermato."
+  },
+  "values": {"power": "Adattatore USB (rete elettrica)", "subscription": "Cronologia dei video salvati (piano Ring Protect)"}
+}

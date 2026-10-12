@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La SmartThings Station di Samsung (EP-P9500, versione statunitense) è un hub SmartThings che non richiede altri hub. Samsung dice che i dispositivi Matter, Thread e Zigbee si collegano alla Station e che più Station possono formare una rete multi-hub. I dispositivi della tua sede SmartThings arrivano su Google Home e Alexa tramite il collegamento o la skill SmartThings. Apple Home non è confermato.",
+  "caveats": ["L'integrazione SmartThings di Home Assistant passa dal cloud e l'accesso gratuito alle API termina a ottobre 2026; dopo serve un piano a pagamento.", "Le pagine di Samsung dicono che i dispositivi Thread si collegano alla Station ma non usano mai le parole «border router», quindi considera quel ruolo solo implicito."],
+  "notes": {
+    "radios": "La CSA certifica l'EP-P9500 per Zigbee 3.0 e Samsung dice che i dispositivi Matter, Thread e Zigbee si collegano alle SmartThings Station. Wi-Fi e Bluetooth sono omessi perché nessuna pagina ufficiale che abbiamo potuto leggere li indica; nessuna fonte ufficiale indica Z-Wave o Ethernet.",
+    "matter": "La CSA elenca SmartThings Station due volte: un componente software Matter 1.1 (2023) e l'EP-P9500 come Zigbee 3.0 (2022). Nessuno dei due collega Matter all'hardware né nomina un trasporto, quindi resta non confermato.",
+    "hubRequired": "È l'hub.",
+    "localControl": "Nessuna pagina ufficiale che abbiamo potuto leggere spiega se il controllo sia locale.",
+    "deviceProtocols": "Samsung nomina dispositivi Matter, Thread e Zigbee. Nessuna fonte ufficiale indica Z-Wave per la Station.",
+    "matterBridge": "Samsung dice che la Station supporta i dispositivi Matter; nessuna fonte dice che esponga i suoi dispositivi ad altri controller Matter.",
+    "threadBorderRouter": "Samsung dice che i dispositivi Thread si collegano alla Station; la pagina non usa le parole «border router».",
+    "maxDevices": "Nessun limite trovato nelle fonti ufficiali.",
+    "compatibility.apple_home": "Nessuna fonte ufficiale trovata che mostri i dispositivi abbinati alla Station in Apple Home.",
+    "compatibility.google_home": "Collega SmartThings in Works with Google nell'app Google Home; i dispositivi della sede SmartThings scelta diventano controllabili.",
+    "compatibility.alexa": "Attiva la skill SmartThings nell'app Alexa; Samsung elenca luci, interruttori, dimmer, termostati e serrature, oltre allo stato dei sensori di movimento e di contatto.",
+    "compatibility.smartthings": "La Station è un hub SmartThings; Samsung dice che i dispositivi Matter, Thread e Zigbee si collegano ad essa e che più Station possono formare una rete multi-hub.",
+    "compatibility.home_assistant": "L'integrazione SmartThings di Home Assistant è basata sul cloud e aggiunge l'hub SmartThings e i suoi dispositivi. La pagina non nomina la Station e dice che l'accesso gratuito alle API di SmartThings termina a ottobre 2026 (dopo serve un piano a pagamento)."
+  }
+}

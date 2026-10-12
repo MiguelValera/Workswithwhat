@@ -14,4 +14,28 @@ import { ACTIVE_LANGS } from '../i18n/lang';
       </p>
     )
   }
+  {
+    ACTIVE_LANGS.includes('de') && (
+      <p lang="de">
+        Diese Seite gibt es nicht oder sie ist umgezogen. Probier die <a href="/de/smarte-steckdosen/">Tabelle der Steckdosen</a>, die
+        <a href="/de/kompatibel-mit/">Seiten nach Ökosystem</a> oder die <a href="/de/">deutsche Startseite</a>.
+      </p>
+    )
+  }
+  {
+    ACTIVE_LANGS.includes('fr') && (
+      <p lang="fr">
+        Cette page n’existe pas ou a été déplacée. Essayez le <a href="/fr/prises-connectees/">tableau des prises</a>, les
+        <a href="/fr/compatible-avec/">pages par écosystème</a> ou l’<a href="/fr/">accueil en français</a>.
+      </p>
+    )
+  }
+  {
+    ACTIVE_LANGS.includes('it') && (
+      <p lang="it">
+        Questa pagina non esiste o è stata spostata. Prova la <a href="/it/prese-smart/">tabella delle prese</a>, le
+        <a href="/it/compatibile-con/">pagine per ecosistema</a> o la <a href="/it/">home in italiano</a>.
+      </p>
+    )
+  }
 </Base>

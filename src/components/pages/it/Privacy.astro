@@ -1,0 +1,76 @@
+---
+import MailLink from '../../MailLink.astro';
+import Base from '../../../layouts/Base.astro';
+import { CONTACT_URL, LEGAL_UPDATED, OPERATOR } from '../../../site.config';
+import { formatDate } from '../../../lib/devices';
+---
+
+<Base
+  title="Privacy e cookie"
+  description="Workswithwhat non imposta cookie e non usa statistiche né tracker. Cosa trattano i nostri fornitori di hosting per servire e proteggere il sito, e i tuoi diritti."
+  crumbs={[{ name: 'Privacy e cookie', path: '/privacy/' }]}
+>
+  <h1>Privacy e cookie</h1>
+  <p class="muted">Ultimo aggiornamento: <time datetime={LEGAL_UPDATED}>{formatDate(LEGAL_UPDATED, 'it')}</time></p>
+
+  <p class="callout">
+    <strong>In breve:</strong> non impostiamo cookie, non usiamo statistiche, pubblicità né script di tracciamento e non ti
+    chiediamo dati personali. Per questo non c’è un banner dei cookie.
+  </p>
+
+  <h2>Chi è responsabile</h2>
+  <p>
+    Il titolare del trattamento è chi gestisce Workswithwhat{OPERATOR.name && <> ({OPERATOR.name})</>}, indicato nelle
+    <a href="/it/note-legali/">note legali</a>.
+  </p>
+
+  <h2>Cosa viene trattato quando visiti il sito</h2>
+  <p>
+    Il sito è un insieme di pagine statiche. Per servirle, due fornitori gestiscono la tua richiesta e, come ogni server web,
+    vedono dati tecnici come il tuo indirizzo IP, lo user agent del browser, la pagina richiesta e l’ora:
+  </p>
+  <ul>
+    <li>
+      <strong>GitHub Pages</strong> (GitHub, Inc.) ospita i file. Vedi
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="nofollow noopener">l’informativa sulla privacy di GitHub</a>.
+    </li>
+    <li>
+      <strong>Cloudflare</strong> (Cloudflare, Inc.) sta davanti al sito per servirlo velocemente in HTTPS e bloccare gli
+      attacchi. Vedi <a href="https://www.cloudflare.com/trust-hub/gdpr/" rel="nofollow noopener">la pagina di Cloudflare sul GDPR</a>.
+    </li>
+  </ul>
+  <p>
+    Usiamo questi dati solo per servire il sito e mantenerlo sicuro, che è nostro legittimo interesse ai sensi dell’articolo
+    6, paragrafo 1, lettera f) del GDPR. Non riceviamo né conserviamo log di accesso personali, non creiamo profili e non
+    incrociamo questi dati con altri. Entrambi i fornitori hanno sede negli Stati Uniti e aderiscono al Data Privacy Framework
+    UE-USA, che copre i trasferimenti di dati dall’UE.
+  </p>
+
+  <h2>Cookie</h2>
+  <p>
+    Workswithwhat non imposta cookie e non usa lo storage locale. Cloudflare può impostare un cookie di sicurezza strettamente
+    necessario (come <code>cf_clearance</code>) se deve verificare che una richiesta non sia automatizzata. Questi cookie
+    servono solo a proteggere il sito, non ti tracciano e sono esenti dal consenso secondo le norme ePrivacy (in Spagna,
+    l’articolo 22.2 della LSSI).
+  </p>
+
+  <h2>Se ci contatti</h2>
+  <p>
+    Puoi inviare correzioni e domande {OPERATOR.email && <>via e-mail o </>}tramite le <a href={CONTACT_URL}>segnalazioni su GitHub</a>. Le segnalazioni sono pubbliche
+    e soggette all’informativa sulla privacy di GitHub, quindi non includere dati personali che non vuoi rendere pubblici.
+    {OPERATOR.email && <> Se scrivi a <MailLink />, il messaggio viene inoltrato da Cloudflare Email Routing a una casella Gmail (Google). Lo usiamo solo per risponderti e lo cancelliamo quando non serve più.</>}
+  </p>
+
+  <h2>I tuoi diritti</h2>
+  <p>
+    Puoi chiedere l’accesso ai tuoi dati personali, la loro rettifica o cancellazione, oppure opporti al trattamento,
+    contattandoci come indicato nelle note legali. Puoi anche presentare reclamo alla tua autorità per la protezione dei dati;
+    in Spagna è l’<a href="https://www.aepd.es/" rel="nofollow noopener">Agencia Española de Protección de Datos (AEPD)</a>.
+  </p>
+
+  <h2>Modifiche</h2>
+  <p>
+    Se un giorno aggiungeremo statistiche o qualsiasi altro strumento che tratti dati personali o imposti cookie non
+    essenziali, aggiorneremo prima questa pagina e chiederemo il tuo consenso quando la legge lo richiede.
+  </p>
+</Base>
