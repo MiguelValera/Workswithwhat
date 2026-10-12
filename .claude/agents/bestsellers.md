@@ -25,6 +25,8 @@ Search for sales evidence, not editors' picks. In order of weight:
 2. Other retailers' best-seller or "most popular" sorting.
 3. Market-share reports (Statista, Parks Associates, Counterpoint, brand press releases with unit numbers).
 
+Search results often show only titles and URLs, with no rank text. When that happens, try sales-flavoured queries ("#1 Best Seller" plus the category, "meistverkaufte", "más vendidos 2026", "most popular" on a retailer) before falling back to `low` picks, and say at the top of the report how much ranking text you actually saw.
+
 "Best of" review roundups (Wirecutter, Tom's Guide, Xataka) are **not** sales evidence; use them only to break ties. Rankings move daily and snippets are partial, so this is a best-effort snapshot: give each pick a confidence (`high` = it shows on a best-seller list in your results, `medium` = several sales signals, `low` = inferred from reviews or popularity).
 
 Rules for picking:

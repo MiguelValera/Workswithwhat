@@ -1,0 +1,140 @@
+{
+  "category": "smart-switch",
+  "brand": "Shelly",
+  "model": "Plus 1PM (SNSW-001P16EU)",
+  "name": "Shelly Plus 1PM (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.shelly.com/products/shelly-plus-1pm",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "shelly-plus-1pm-product",
+      "shelly-kb-plus-1pm"
+    ],
+    "note": "Wi-Fi 802.11 b/g/n and Bluetooth 4.2; Shelly's knowledge base mentions Bluetooth only for setup."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Shelly's pages for the Plus 1PM do not mention Matter, and we found no CSA listing."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Shelly's integration list for this model leaves out Apple HomeKit, and it has no Matter statement. Absence is not proof, so unknown."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "shelly-plus-1pm-product",
+        "shelly-kb-plus-1pm"
+      ],
+      "note": "Shelly's product page and knowledge base list Google among integrations for this model, which has no Matter, so the link is Shelly's own."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "shelly-plus-1pm-product",
+        "shelly-kb-plus-1pm"
+      ],
+      "note": "Shelly's product page and knowledge base list Alexa among integrations. Shelly's Alexa guide uses the Shelly Cloud skill but names only Gen3 and Gen4 devices."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "shelly-plus-1pm-product",
+        "shelly-kb-plus-1pm"
+      ],
+      "note": "Shelly's product page and knowledge base list Samsung SmartThings among integrations; neither says how the link works."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-shelly"
+      ],
+      "note": "Official Shelly integration, local push, which says all Shelly generations are supported. The page does not name the Plus 1PM."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "shelly-kb-plus-1pm"
+    ],
+    "note": "Shelly's knowledge base says it can work standalone on a local Wi-Fi network."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "shelly-plus-1pm-product",
+      "shelly-kb-plus-1pm"
+    ],
+    "note": "Embedded web interface, MQTT, scripting and webhooks; CoAP is not supported."
+  },
+  "switchForm": {
+    "value": "module",
+    "sources": [
+      "shelly-plus-1pm-product"
+    ],
+    "note": "37 x 42 x 16 mm relay that sits behind an existing switch or socket."
+  },
+  "dimmer": {
+    "value": false,
+    "sources": [
+      "shelly-plus-1pm-product"
+    ],
+    "note": "On/off relay with power measurement."
+  },
+  "neutralRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Shelly's pages show L and N power terminals and a neutral in the AC wiring diagram but never state that a neutral is mandatory."
+  },
+  "gangs": {
+    "value": "1 channel",
+    "sources": [
+      "shelly-plus-1pm-product"
+    ],
+    "note": "One relay output and one switch input; 16 A AC at up to 240 V."
+  },
+  "summary": "The Shelly Plus 1PM is a small relay with power metering (no dimming) that sits behind an existing switch or socket and switches up to 16 A at 240 V AC. Shelly lists Google, Alexa and SmartThings integrations, and Home Assistant has an official local integration. It has no Matter statement and no HomeKit listing. Shelly's page marks it discontinued in favour of the 1PM Gen3.",
+  "caveats": [
+    "Shelly's product page marks the Plus 1PM discontinued and points to the Shelly 1PM Gen3 as its successor.",
+    "No Matter and no Apple Home listing for this model.",
+    "Shelly does not state whether a neutral wire is required, although the wiring diagram uses L and N terminals."
+  ],
+  "sources": [
+    {
+      "id": "shelly-plus-1pm-product",
+      "url": "https://www.shelly.com/products/shelly-plus-1pm",
+      "title": "Shelly Plus 1PM",
+      "publisher": "Shelly Group",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "shelly-kb-plus-1pm",
+      "url": "https://kb.shelly.cloud/knowledge-base/shelly-plus-1pm",
+      "title": "Shelly Plus 1PM",
+      "publisher": "Shelly Knowledge Base",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-shelly",
+      "url": "https://www.home-assistant.io/integrations/shelly/",
+      "title": "Shelly - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

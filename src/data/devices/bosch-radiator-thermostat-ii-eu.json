@@ -1,0 +1,142 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Bosch",
+  "model": "Radiator Thermostat II (BTH-RA)",
+  "name": "Bosch Radiator Thermostat II (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.bosch-smarthome.com/de/de/support/hilfe/hilfe-zum-produkt/hilfe-zum-heizkoerper-thermostat-2-m/",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "bosch-trv2-guide"
+    ],
+    "note": "Zigbee 3.0 in the 2.4 GHz band per the quick guide. The newer [+M] variant adds Thread; this record is the Zigbee-only version."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "bosch-trv2-product"
+    ],
+    "note": "The Zigbee-only version is not itself a Matter device. Bosch's product FAQ says it joins Matter systems through the Controller II as a Matter bridge, but we found no CSA listing for this model."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Bosch Smart Home Controller II",
+      "sources": [
+        "bosch-trv2-help"
+      ],
+      "note": "Bosch's help page says Apple HomeKit works through the Smart Home Controller II and the Bosch Smart Home app."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Bosch Smart Home Controller II",
+      "sources": [
+        "bosch-trv2-help"
+      ],
+      "note": "Google Assistant works through the Smart Home Controller and the Bosch app."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Bosch Smart Home Controller II",
+      "sources": [
+        "bosch-trv2-help"
+      ],
+      "note": "Alexa works through the Smart Home Controller and the Bosch app."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Bosch lists Samsung SmartThings only on the [+M] product page; nothing says how, or whether, the Zigbee-only model connects."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's Bosch SHC integration lists a Thermostat Gen2 and a local push controller connection, but does not name the Radiator Thermostat II or the Controller II."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "bosch-trv2-help",
+      "bosch-trv2-product"
+    ],
+    "note": "Bosch says not to run it long-term without a Smart Home Controller (no firmware updates), and its FAQ says only [+M] devices can skip the controller."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [
+      "bosch-controller2-page"
+    ],
+    "note": "Bosch says the Controller II stores data locally and keeps automations running when the internet is down, but it makes no separate statement for this thermostat."
+  },
+  "thermostatType": {
+    "value": "radiator-valve",
+    "sources": [
+      "bosch-trv2-guide"
+    ],
+    "note": "Fits onto the radiator valve and controls it."
+  },
+  "systems": {
+    "value": "Radiators with M30 × 1.5 mm valve thread (adapters for some valves)",
+    "sources": [
+      "bosch-trv2-guide"
+    ],
+    "note": "M30 × 1.5 mm connection ring per the quick guide, which says some valves need a supplied adapter or one bought separately."
+  },
+  "power": {
+    "value": "2 × AA (LR6 alkaline)",
+    "sources": [
+      "bosch-trv2-guide"
+    ],
+    "note": "Typical battery life is under two years."
+  },
+  "summary": "The Bosch Radiator Thermostat II is a battery-powered Zigbee radiator head for M30 × 1.5 mm valves. It needs the Bosch Smart Home Controller II for long-term use, and Apple Home, Google Home and Alexa work through that controller and the Bosch app. Bosch also sells a [+M] version with Matter over Thread, which is a different model.",
+  "caveats": [
+    "Bosch says the thermostat can run without a Smart Home Controller only briefly; there are no firmware updates without one.",
+    "The [+M] version with Matter over Thread is a different model; this record is the Zigbee-only one.",
+    "Bosch's help page says the Controller II does not support Matter or Thread, while a product FAQ says it acts as a Matter bridge; the two pages disagree.",
+    "Some valves need an adapter."
+  ],
+  "sources": [
+    {
+      "id": "bosch-trv2-guide",
+      "url": "https://tt-smarthome.resource.bosch.com/nrt/web/produkt/heizkoerper-thermostat2/PDF/BOSCH_21_0108_TRV_II_V003_EN_Web.pdf",
+      "title": "Radiator thermostat II quick instructions Product description",
+      "publisher": "Bosch Smart Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "bosch-trv2-product",
+      "url": "https://www.bosch-smarthome.com/de/de/produkte/heizung/heizkoerper-thermostat/",
+      "title": "Heizkörper-Thermostat II [+M]",
+      "publisher": "Bosch Smart Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "bosch-trv2-help",
+      "url": "https://www.bosch-smarthome.com/de/de/support/hilfe/hilfe-zum-produkt/hilfe-zum-heizkoerper-thermostat-2-m/",
+      "title": "Hilfe zum Heizkörper-Thermostat II [+M]",
+      "publisher": "Bosch Smart Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "bosch-controller2-page",
+      "url": "https://www.bosch-smarthome.com/de/de/produkte/steuerung-und-zentrale/smart-home-controller/",
+      "title": "Bosch Smart Home Controller II",
+      "publisher": "Bosch Smart Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

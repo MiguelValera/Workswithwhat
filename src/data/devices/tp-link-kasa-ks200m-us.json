@@ -1,0 +1,128 @@
+{
+  "category": "smart-switch",
+  "brand": "TP-Link",
+  "model": "Kasa KS200M",
+  "name": "Kasa KS200M (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.kasasmart.com/us/products/smart-switches/kasa-smart-wifi-light-switch-motion-activated-ks200m",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "kasa-ks200m-datasheet",
+      "kasa-ks200m-page"
+    ],
+    "note": "2.4 GHz only (802.11b/g/n)."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Neither the product page nor the datasheet mentions Matter; no CSA listing was checked."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The KS200M page and datasheet do not mention Apple Home. (The non-motion KS200 page does mention it.)"
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "kasa-ks200m-datasheet",
+        "kasa-ks200m-page"
+      ],
+      "note": "Listed as working with Google Assistant."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "kasa-ks200m-datasheet",
+        "kasa-ks200m-page"
+      ],
+      "note": "Listed as working with Amazon Alexa."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "kasa-ks200m-datasheet",
+        "kasa-ks200m-page"
+      ],
+      "note": "Listed as working with SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant page naming the KS200M was checked."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "kasa-ks200m-datasheet"
+    ],
+    "note": "The datasheet says no hub is required; it connects straight to home Wi-Fi."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "TP-Link does not state what works without internet."
+  },
+  "switchForm": {
+    "value": "wall-switch",
+    "sources": [
+      "kasa-ks200m-datasheet",
+      "kasa-ks200m-page"
+    ],
+    "note": "Replaces a standard single-pole light switch and has a built-in motion sensor (up to 25 ft)."
+  },
+  "dimmer": {
+    "value": null,
+    "sources": [],
+    "note": "TP-Link mentions setting \"brightness levels\" but never calls it a dimmer; the datasheet gives only on/off load ratings (600 W incandescent, 1/6 HP motor). Left unconfirmed."
+  },
+  "neutralRequired": {
+    "value": true,
+    "sources": [
+      "kasa-ks200m-datasheet"
+    ],
+    "note": "The datasheet says a neutral wire in the wall box is required, in a standard box at least 2 in deep."
+  },
+  "gangs": {
+    "value": "1 gang",
+    "sources": [
+      "kasa-ks200m-datasheet"
+    ],
+    "note": "Single-pole only; not compatible with 3-way or multi-way wiring. Rated 120 V, 600 W incandescent or 1/6 HP motor."
+  },
+  "summary": "TP-Link lists the Kasa KS200M for Alexa, Google Assistant and SmartThings, with no hub needed. It's a US single-pole wall switch with a built-in motion sensor (up to 25 ft) that joins 2.4 GHz Wi-Fi directly. It needs a neutral wire and won't work in 3-way setups. Apple Home and Matter aren't mentioned for this model.",
+  "caveats": [
+    "Needs a neutral wire in the wall box.",
+    "Single-pole only; no 3-way or multi-way wiring.",
+    "2.4 GHz Wi-Fi only.",
+    "Apple Home and Matter support are not stated."
+  ],
+  "sources": [
+    {
+      "id": "kasa-ks200m-page",
+      "url": "https://www.kasasmart.com/us/products/smart-switches/kasa-smart-wifi-light-switch-motion-activated-ks200m",
+      "title": "Kasa Smart Wi-Fi Light Switch, Motion-Activated, KS200M",
+      "publisher": "TP-Link (Kasa Smart)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "kasa-ks200m-datasheet",
+      "url": "https://static.tp-link.com/upload/product-overview/2021/202111/20211105/KS200M(US)1.0_Datasheet.pdf",
+      "title": "KS200M(US) 1.0 Datasheet",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

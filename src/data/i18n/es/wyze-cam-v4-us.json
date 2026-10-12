@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La Wyze Cam v4 funciona con Alexa y Google Home mediante las integraciones propias de Wyze y no necesita hub. Es una cámara con cable, con IP65 para interior o exterior, que graba en una tarjeta microSD sin suscripción. La grabación en la nube y las detecciones con IA requieren un plan Cam Plus. Las páginas de Wyze no mencionan Apple Home, SmartThings ni Matter.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "Para usarla en exterior hace falta el Outdoor Power Adapter, que se vende aparte.",
+    "La grabación en la nube y las alertas con IA requieren una suscripción Cam Plus.",
+    "Las páginas de Wyze no coinciden en el tamaño máximo de la microSD (256 GB frente a 512 GB)."
+  ],
+  "notes": {
+    "radios": "Solo wifi de 2,4 GHz (802.11 b/g/n); no admite 5 GHz.",
+    "matter": "Ninguna de las dos páginas de Wyze menciona Matter y no se ha consultado ningún registro de la CSA. Que no se mencione no significa que no sea compatible.",
+    "hubRequired": "Los pasos de configuración de Wyze te piden elegir tu red de 2,4 GHz en la app con la cámara cerca del router; no se menciona ningún hub ni base. La vista en directo necesita internet.",
+    "localControl": "Wyze dice que la vista en directo en su app necesita conexión a internet. En las páginas que hemos visto no se menciona RTSP ni control solo local.",
+    "cameraType": "Cámara con cable apta para interior y exterior (IP65). Para usarla en exterior hace falta el Outdoor Power Adapter, que se vende aparte.",
+    "power": "Incluye un cable USB de 6 ft con un adaptador de interior de 5 V / 1 A.",
+    "localStorage": "Graba en una tarjeta microSD (se vende aparte). La página de especificaciones indica hasta 256 GB, exFAT; las FAQ de la página del producto mencionan hasta 512 GB.",
+    "subscription": "Wyze dice que la grabación en la nube requiere un plan; Cam Plus añade detección de personas, mascotas, paquetes y vehículos, y detección de sonido. En las páginas que hemos visto no se indicaban precios.",
+    "compatibility.apple_home": "Las páginas de la Cam v4 de Wyze no mencionan Apple Home ni HomeKit. Un artículo de Wyze que dice que la Wyze Cam no es compatible con HomeKit se refiere a la Wyze Cam original, no a este modelo.",
+    "compatibility.google_home": "Wyze incluye Google Assistant entre sus integraciones. Su artículo de soporte dice que una cámara vinculada se puede enviar a una pantalla con \"OK Google, show me (nombre de la cámara)\".",
+    "compatibility.alexa": "Funciona mediante la skill Wyze de Alexa. El artículo de soporte de Wyze dice que \"Alexa, show me [nombre de la cámara]\" muestra la vista en directo en un Fire TV, con una sola emisión a la vez.",
+    "compatibility.smartthings": "Las páginas de la Cam v4 de Wyze no mencionan SmartThings.",
+    "compatibility.home_assistant": "No se ha encontrado ninguna página oficial de Home Assistant ni de Wyze que confirme la compatibilidad con este modelo."
+  },
+  "values": {
+    "power": "Micro-USB, adaptador de 5 V (red eléctrica)",
+    "subscription": "Grabación en la nube y alertas con IA (Cam Plus)"
+  }
+}

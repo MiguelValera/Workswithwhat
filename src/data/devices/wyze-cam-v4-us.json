@@ -1,0 +1,138 @@
+{
+  "category": "smart-camera",
+  "brand": "Wyze",
+  "model": "Wyze Cam v4",
+  "name": "Wyze Cam v4 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://wyze.com/products/wyze-cam-v4",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "wyze-cam-v4-specs",
+      "wyze-cam-v4-product"
+    ],
+    "note": "2.4 GHz Wi-Fi only (802.11 b/g/n); no 5 GHz."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Neither Wyze page mentions Matter, and no CSA listing was checked. Absence is not a no."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Wyze's Cam v4 pages do not mention Apple Home or HomeKit. A Wyze article saying Wyze Cam is not compatible with HomeKit covers the original Wyze Cam, not this model."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "wyze-cam-v4-specs",
+        "wyze-cam-v4-tv"
+      ],
+      "note": "Wyze lists Google Assistant as an integration. Its support page says a linked camera can be cast to a screen with \"OK Google, show me (camera name)\"."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "wyze-cam-v4-specs",
+        "wyze-cam-v4-tv"
+      ],
+      "note": "Works through the Wyze Alexa skill. Wyze's support page says \"Alexa, show me [camera name]\" shows the live view on a Fire TV, one stream at a time."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Wyze's Cam v4 pages do not mention SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant or Wyze page confirming support for this model was found."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "wyze-cam-v4-product"
+    ],
+    "note": "Wyze's setup steps have you pick your 2.4 GHz network in the app with the camera near the router; no hub or base station is mentioned. Live view needs internet."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Wyze says live view in its app needs an internet connection. No RTSP or local-only control is mentioned on the pages we saw."
+  },
+  "cameraType": {
+    "value": "outdoor",
+    "sources": [
+      "wyze-cam-v4-specs",
+      "wyze-cam-v4-product"
+    ],
+    "note": "Wired camera rated for indoor and outdoor use (IP65). Outdoor use needs the separately sold Outdoor Power Adapter."
+  },
+  "power": {
+    "value": "Micro-USB, 5 V adapter (mains)",
+    "sources": [
+      "wyze-cam-v4-specs",
+      "wyze-cam-v4-product"
+    ],
+    "note": "6 ft USB cable with a 5 V / 1 A indoor adapter included."
+  },
+  "localStorage": {
+    "value": true,
+    "sources": [
+      "wyze-cam-v4-specs",
+      "wyze-cam-v4-product"
+    ],
+    "note": "Records to a microSD card (sold separately). The spec page says up to 256 GB, exFAT; the product page FAQ mentions up to 512 GB."
+  },
+  "subscription": {
+    "value": "Cloud recording and AI alerts (Cam Plus)",
+    "sources": [
+      "wyze-cam-v4-product",
+      "wyze-cam-v4-specs"
+    ],
+    "note": "Wyze says cloud recording needs a plan; Cam Plus adds person, pet, package and vehicle detection and sound detection. Prices were not stated on the pages we saw."
+  },
+  "summary": "Wyze Cam v4 works with Alexa and Google Home through Wyze's own integrations, and needs no hub. It's a wired camera rated IP65 for indoor or outdoor use, and it records to a microSD card without a subscription. Cloud recording and AI detections need a Cam Plus plan. Wyze's pages don't mention Apple Home, SmartThings or Matter.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Outdoor use needs the Outdoor Power Adapter, sold separately.",
+    "Cloud recording and AI alerts need a Cam Plus subscription.",
+    "Wyze's pages disagree on the maximum microSD size (256 GB vs 512 GB)."
+  ],
+  "sources": [
+    {
+      "id": "wyze-cam-v4-product",
+      "url": "https://wyze.com/products/wyze-cam-v4",
+      "title": "Wyze Cam v4",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "wyze-cam-v4-specs",
+      "url": "https://support.wyze.com/hc/en-us/articles/23746258989851-Wyze-Cam-v4-Tech-Specs",
+      "title": "Wyze Cam v4 Tech Specs",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "wyze-cam-v4-tv",
+      "url": "https://support.wyze.com/hc/en-us/articles/29915397654299-Can-I-view-my-Wyze-Cam-v4-on-my-smart-TV",
+      "title": "Can I view my Wyze Cam v4 on my smart TV?",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

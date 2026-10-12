@@ -118,7 +118,7 @@ Read this first if you are picking the project up.
 ### How content gets added (lessons learned)
 - **What to add:** run `bestsellers` (one run per market, `us`, `eu`, `uk`, in parallel) about once a month, then feed its queue to the collector in batches. It only writes `docs/bestsellers/`; adding a new category it recommends needs schema and registry work first.
 - **Batch size:** 5 devices per agent. Run collector, then verifier, then editor, then open a PR, then run the reviewer on it. Once CI is green and the reviewer says **Ready to merge**, Claude squash-merges (the owner asked for this on 2026-10-12); the `main` ruleset requires a PR and a green `build`. Run at most ~3 agents at once; more hits the account's usage limit.
-- **Network:** the cloud container cannot open external sites. WebFetch and curl fail, and only WebSearch works. Agents must cite only URLs that appeared in search results.
+- **Network:** curl can't open external sites. Since 2026-10-12 WebFetch works for most maker pages (amazon.com and eu.roborock.com refuse it), but its page summaries are sometimes wrong, so verifiers cross-check them. Agents must cite only URLs that appeared in search results or that they fetched.
 - **Verifier rules that keep coming up:**
   - **Absence is not "no":** if a maker's platform list just doesn't mention Matter or Apple Home, use `null` / `unknown` with a note, not `false` / `no`.
   - **Never derive watts from amps:** if only amps are given, set `value: null` and put the amps in the note.
