@@ -88,6 +88,7 @@ main p, main li:not(.card) { max-width: 72ch; }
 .site-header .locale .panel .muted { display: block; font-size: 0.8rem; padding: 4px 8px 0; }
 .site-header .locale .langs { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
 .site-header .locale summary { font-size: 0.9rem; }
+.site-header .locale .sep { margin: 0 0.35em; color: var(--muted, inherit); }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .only-narrow { display: none; }
 @media (max-width: 720px) {
