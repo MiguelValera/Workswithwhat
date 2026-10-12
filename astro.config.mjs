@@ -43,7 +43,8 @@ export default defineConfig({
     sitemap({
       serialize(item) {
         const path = new URL(item.url).pathname;
-        // noindex pages (comparisons beyond each device's closest rivals) stay out of the sitemap
+        // noindex pages (comparisons beyond each device's closest rivals) stay out of the sitemap;
+        // serialize runs at astro:build:done, so every page's HTML is already in dist/
         const html = new URL(`./dist${path}index.html`, import.meta.url);
         if (existsSync(html) && readFileSync(html, 'utf8').includes('<meta name="robots" content="noindex"')) return undefined;
         const date = lastmod.get(path) ?? newest;

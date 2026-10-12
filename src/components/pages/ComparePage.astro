@@ -7,7 +7,7 @@ import Refs from '../Refs.astro';
 import Status from '../Status.astro';
 import { catText, categoryOf } from '../../lib/categories';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemSlug, formatDate, getTranslations, listJoin, worksWith } from '../../lib/devices';
-import { compareAnswer, compareDescription, compareName, comparePath, compareRows, compareSummary, comparisonsFor, pairText, type Comparison } from '../../lib/compare';
+import { compareAnswer, compareDescription, compareName, comparePath, compareRows, comparisonsFor, summaryLines, pairText, type Comparison } from '../../lib/compare';
 import { marketText, regionPath } from '../../lib/markets';
 import { langOf, localize } from '../../i18n/lang';
 
@@ -60,9 +60,6 @@ const table = [
   }),
   ...rows.slice(1).map(factRow),
 ];
-const sum = compareSummary(comparison);
-const f = es && c.gender === 'f';
-const eco = (xs: typeof ECOSYSTEMS[number][]) => listJoin(xs.map((e) => ECOSYSTEM_LABELS[e]), lang);
 const marketChart = L((await regionPath(market, `/${cat.path}/`)) ?? `/${cat.path}/#${market.key}`);
 
 const faq = ECOSYSTEMS.map((e) => ({
@@ -123,10 +120,7 @@ const jsonLd = [
     </p>
 
     <ul class="verdict">
-      {sum.both.length > 0 && <li>{es ? `${f ? 'Las dos' : 'Los dos'} funcionan con ${eco(sum.both)}.` : `Both work with ${eco(sum.both)}.`}</li>}
-      {sum.onlyA.length > 0 && <li>{es ? `Solo ${a.data.name} funciona con ${eco(sum.onlyA)}.` : `Only the ${a.data.name} works with ${eco(sum.onlyA)}.`}</li>}
-      {sum.onlyB.length > 0 && <li>{es ? `Solo ${b.data.name} funciona con ${eco(sum.onlyB)}.` : `Only the ${b.data.name} works with ${eco(sum.onlyB)}.`}</li>}
-      {sum.neither.length > 0 && <li>{es ? `${f ? 'Ninguna confirmada' : 'Ninguno confirmado'} con ${eco(sum.neither)}.` : `Neither is confirmed for ${eco(sum.neither)}.`}</li>}
+      {summaryLines(comparison, lang).map((line) => <li>{line}</li>)}
       {
         differs.length > 0 && (
           <li>

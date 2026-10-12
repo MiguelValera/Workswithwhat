@@ -192,7 +192,7 @@ const how = (d: Device, e: Ecosystem, lang: Lang, words: DeviceText) => {
       return `works through ${/^(the|a|an) /i.test(via) ? via : `the ${via}`}`;
     }
     case 'no':
-      return "doesn't work with it";
+      return `doesn't work with ${ECOSYSTEM_LABELS[e]}`;
     default:
       return "isn't confirmed either way";
   }
@@ -205,52 +205,110 @@ const cap = (s: string) => s.replace(/^./, (x) => x.toUpperCase());
 export function compareAnswer(c: Comparison, e: Ecosystem, lang: Lang, wa: DeviceText, wb: DeviceText): string {
   const { a, b } = c;
   const label = ECOSYSTEM_LABELS[e];
-  const [x, y] = [a.data.compatibility[e], b.data.compatibility[e]];
+  const [x, y] = [a.data.compatibility[e].status, b.data.compatibility[e].status];
   const [ha, hb] = [how(a, e, lang, wa), how(b, e, lang, wb)];
   const [wA, wB] = [worksWith(a, e), worksWith(b, e)];
   const f = lang === 'es' && catText(categoryOf(a.data), 'es').gender === 'f';
+  // "only X" needs the other side to be a sourced "no"; an unconfirmed one isn't a no
   if (lang === 'es') {
-    if (x.status === y.status && ha === hb) {
-      if (x.status === 'no') return `${f ? 'Ninguna' : 'Ninguno'} funciona con ${label}.`;
-      if (x.status === 'unknown') return `Sin confirmar en los dos casos: no hemos encontrado ninguna fuente oficial que lo confirme o lo descarte.`;
+    if (x === y && ha === hb) {
+      if (x === 'no') return `${f ? 'Ninguna' : 'Ninguno'} funciona con ${label}.`;
+      if (x === 'unknown') return `Sin confirmar en los dos casos: no hemos encontrado ninguna fuente oficial que lo confirme o lo descarte.`;
       return `${f ? 'Las dos' : 'Los dos'} funcionan con ${label} ${ha.replace(/^funciona /, '')}.`;
     }
-    const lead = wA && wB ? (f ? 'Las dos' : 'Los dos') : wA ? `Solo ${a.data.name}` : wB ? `Solo ${b.data.name}` : f ? 'Ninguna confirmada' : 'Ninguno confirmado';
+    const lead =
+      wA && wB
+        ? f ? 'Las dos' : 'Los dos'
+        : wA || wB
+          ? (wA ? y : x) === 'no'
+            ? `Solo ${(wA ? a : b).data.name}`
+            : `Solo está confirmado para ${(wA ? a : b).data.name}`
+          : `${f ? 'Ninguna tiene' : 'Ninguno tiene'} compatibilidad confirmada con ${label}`;
     return `${lead}. ${a.data.name}: ${ha}; ${b.data.name}: ${hb}.`;
   }
-  if (x.status === y.status && ha === hb) {
-    if (x.status === 'no') return `Neither works with ${label}.`;
-    if (x.status === 'unknown') return `Not confirmed for either: we couldn't find an official source either way.`;
+  if (x === y && ha === hb) {
+    if (x === 'no') return `Neither works with ${label}.`;
+    if (x === 'unknown') return `Not confirmed for either: we couldn't find an official source either way.`;
     return `Both work with ${label} ${ha.replace(/^works /, '')}.`;
   }
-  const lead = wA && wB ? 'Both' : wA ? `Only ${the(a)}` : wB ? `Only ${the(b)}` : 'Neither is confirmed';
+  const lead =
+    wA && wB
+      ? 'Both'
+      : wA || wB
+        ? (wA ? y : x) === 'no'
+          ? `Only ${the(wA ? a : b)}`
+          : `Confirmed only for ${the(wA ? a : b)}`
+        : `Neither is confirmed to work with ${label}`;
   return `${lead}. ${cap(the(a))} ${ha}; ${the(b)} ${hb}.`;
 }
 
-/** Ecosystems grouped by who reaches them, for the summary at the top of a page. */
+/**
+ * Ecosystems grouped by who reaches them, for the summary at the top of a page.
+ * `onlyA` means the other device is a sourced "no"; `confirmedA` means it is unconfirmed.
+ */
 export function compareSummary(c: Comparison) {
-  const both = ECOSYSTEMS.filter((e) => worksWith(c.a, e) && worksWith(c.b, e));
-  const onlyA = ECOSYSTEMS.filter((e) => worksWith(c.a, e) && !worksWith(c.b, e));
-  const onlyB = ECOSYSTEMS.filter((e) => !worksWith(c.a, e) && worksWith(c.b, e));
-  const neither = ECOSYSTEMS.filter((e) => !worksWith(c.a, e) && !worksWith(c.b, e));
-  return { both, onlyA, onlyB, neither };
+  const st = (d: Device, e: Ecosystem) => d.data.compatibility[e].status;
+  const pick = (fn: (e: Ecosystem) => boolean) => ECOSYSTEMS.filter(fn);
+  const [wA, wB] = [(e: Ecosystem) => worksWith(c.a, e), (e: Ecosystem) => worksWith(c.b, e)];
+  return {
+    both: pick((e) => wA(e) && wB(e)),
+    onlyA: pick((e) => wA(e) && st(c.b, e) === 'no'),
+    onlyB: pick((e) => wB(e) && st(c.a, e) === 'no'),
+    confirmedA: pick((e) => wA(e) && st(c.b, e) === 'unknown'),
+    confirmedB: pick((e) => wB(e) && st(c.a, e) === 'unknown'),
+    neither: pick((e) => st(c.a, e) === 'no' && st(c.b, e) === 'no'),
+    unconfirmed: pick((e) => !wA(e) && !wB(e) && !(st(c.a, e) === 'no' && st(c.b, e) === 'no')),
+  };
+}
+
+/** The summary as sentences, for the top of the page. */
+export function summaryLines(c: Comparison, lang: Lang) {
+  const s = compareSummary(c);
+  const n = (xs: Ecosystem[]) => listJoin(xs.map((e) => ECOSYSTEM_LABELS[e]), lang);
+  const [A, B] = [c.a.data.name, c.b.data.name];
+  const f = lang === 'es' && catText(categoryOf(c.a.data), 'es').gender === 'f';
+  const lines: [Ecosystem[], string][] =
+    lang === 'es'
+      ? [
+          [s.both, `${f ? 'Las dos' : 'Los dos'} funcionan con ${n(s.both)}.`],
+          [s.onlyA, `Solo ${A} funciona con ${n(s.onlyA)}; ${B} no.`],
+          [s.onlyB, `Solo ${B} funciona con ${n(s.onlyB)}; ${A} no.`],
+          [s.confirmedA, `${A} funciona con ${n(s.confirmedA)}; en ${B} no está confirmado.`],
+          [s.confirmedB, `${B} funciona con ${n(s.confirmedB)}; en ${A} no está confirmado.`],
+          [s.neither, `${f ? 'Ninguna' : 'Ninguno'} funciona con ${n(s.neither)}.`],
+          [s.unconfirmed, `${f ? 'Ninguna tiene' : 'Ninguno tiene'} compatibilidad confirmada con ${n(s.unconfirmed)}.`],
+        ]
+      : [
+          [s.both, `Both work with ${n(s.both)}.`],
+          [s.onlyA, `Only the ${A} works with ${n(s.onlyA)}; the ${B} doesn't.`],
+          [s.onlyB, `Only the ${B} works with ${n(s.onlyB)}; the ${A} doesn't.`],
+          [s.confirmedA, `The ${A} works with ${n(s.confirmedA)}; for the ${B} it isn't confirmed.`],
+          [s.confirmedB, `The ${B} works with ${n(s.confirmedB)}; for the ${A} it isn't confirmed.`],
+          [s.neither, `Neither works with ${n(s.neither)}.`],
+          [s.unconfirmed, `Neither is confirmed to work with ${n(s.unconfirmed)}.`],
+        ];
+  return lines.filter(([xs]) => xs.length).map(([, text]) => text);
 }
 
 /** Meta description: what both reach and where they split. */
 export function compareDescription(c: Comparison, lang: Lang) {
-  const { both, onlyA, onlyB } = compareSummary(c);
+  const { both, onlyA, onlyB, confirmedA, confirmedB } = compareSummary(c);
   const names = (es: Ecosystem[]) => listJoin(es.map((e) => ECOSYSTEM_LABELS[e]), lang);
   const parts: string[] = [];
   if (lang === 'es') {
     if (both.length) parts.push(`los dos funcionan con ${names(both)}`);
     if (onlyA.length) parts.push(`solo ${c.a.data.name} con ${names(onlyA)}`);
     if (onlyB.length) parts.push(`solo ${c.b.data.name} con ${names(onlyB)}`);
+    if (confirmedA.length) parts.push(`${names(confirmedA)} solo está confirmado para ${c.a.data.name}`);
+    if (confirmedB.length) parts.push(`${names(confirmedB)} solo está confirmado para ${c.b.data.name}`);
     const lead = parts.length ? `${cap(parts.join('; '))}. ` : '';
     return `${lead}${c.a.data.name} frente a ${c.b.data.name}: Matter, ecosistemas, hub y especificaciones lado a lado, con fuentes.`;
   }
   if (both.length) parts.push(`both work with ${names(both)}`);
   if (onlyA.length) parts.push(`only ${the(c.a)} with ${names(onlyA)}`);
   if (onlyB.length) parts.push(`only ${the(c.b)} with ${names(onlyB)}`);
+  if (confirmedA.length) parts.push(`${names(confirmedA)} confirmed only for ${the(c.a)}`);
+  if (confirmedB.length) parts.push(`${names(confirmedB)} confirmed only for ${the(c.b)}`);
   const lead = parts.length ? `${cap(parts.join('; '))}. ` : '';
   return `${lead}${c.a.data.name} vs ${c.b.data.name}: Matter, ecosystems, hub needs and specs side by side, with sources.`;
 }
