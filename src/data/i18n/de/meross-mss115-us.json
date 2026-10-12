@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Bei der Meross MSS115 läuft alles über Matter über WLAN. Meross führt Apple Home, Google Home, Alexa und SmartThings, und jedes braucht seinen eigenen Matter-Controller, etwa eine Apple-Steuerzentrale oder einen SmartThings-Hub. Es ist eine kompakte Steckdose für die USA und Kanada mit 2,4-GHz-WLAN, und laut Meross funktioniert sie bei Internetausfall weiter in deinem LAN. Meross nennt für dieses Modell keine Lastgrenze und erwähnt keinen Leistungsmesser; die Matter-Steckdose mit Messung ist die MSS315.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Jedes Ökosystem braucht seinen eigenen Matter-Controller, etwa eine Apple-Steuerzentrale, einen Google-Matter-Controller, ein Echo oder einen SmartThings-Hub.",
+    "Home Assistant ist nicht bestätigt: Weder Meross noch Home Assistant nennen dieses Modell, und Forumsnutzer berichten von fehlgeschlagener Matter-Kopplung.",
+    "Meross veröffentlicht keine Lastgrenze für die MSS115, prüfe also vor dem Anschließen eines Geräts mit hohem Verbrauch.",
+    "Eine Verbrauchsmessung wird nicht erwähnt; für Leistungsdaten ist Meross' Matter-Steckdose mit Messung die MSS315."
+  ],
+  "notes": {
+    "radios": "Braucht ein vorhandenes 2,4-GHz-WLAN.",
+    "matter": "Meross verkauft sie als Matter-Steckdose. Die CSA führt mehrere Matter-Zertifikate für die Meross „Smart Plug Mini“, aber wir konnten keines der Modellnummer MSS115 zuordnen.",
+    "hubRequired": "Meross sagt nicht, ob die Meross-App allein sie ohne Matter-Controller betreiben kann.",
+    "localControl": "Meross beschreibt sie als vollständig lokal über Matter und sagt, sie funktioniert bei Internetausfall weiter im LAN.",
+    "energyMonitoring": "Die MSS115-Seiten erwähnen keinen Leistungsmesser. Meross' Matter-Steckdose mit Messung ist die MSS315, aber wir haben keine ausdrückliche Aussage „keine Messung“ für die MSS115 gefunden.",
+    "maxLoadWatts": "Wir haben keine offizielle Lastgrenze für die MSS115 gefunden. Die von Meross genannten 15 A / 1800 W gelten für andere Steckdosenmodelle.",
+    "compatibility.apple_home": "Über Matter; braucht eine Apple-Steuerzentrale.",
+    "compatibility.google_home": "Über Matter; braucht einen Google-Matter-Controller.",
+    "compatibility.alexa": "Über Matter. Wir konnten nicht bestätigen, ob der Meross-Alexa-Skill dieses Modell ebenfalls unterstützt.",
+    "compatibility.smartthings": "Über Matter; braucht einen SmartThings-Hub.",
+    "compatibility.home_assistant": "Sollte sich über die Matter-Integration von Home Assistant koppeln lassen, aber weder Meross noch Home Assistant nennen dieses Modell, und Forumsnutzer berichten von fehlgeschlagener Matter-Kopplung."
+  }
+}

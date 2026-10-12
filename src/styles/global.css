@@ -140,6 +140,8 @@ thead th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em;
 .note { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 2px; }
 
 .badge { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: 0.82rem; font-weight: 600; white-space: nowrap; }
+/* Italian status words are longer ("Non confermato"); let them wrap in table cells rather than widen the table. */
+:lang(it) td .badge { white-space: normal; }
 .s-native, .s-matter, .s-true { color: var(--yes); background: var(--yes-bg); }
 .s-hub { color: var(--hub); background: var(--hub-bg); }
 .s-no, .s-false { color: var(--no); background: var(--no-bg); }

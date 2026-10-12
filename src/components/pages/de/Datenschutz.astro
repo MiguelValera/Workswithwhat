@@ -1,0 +1,78 @@
+---
+import MailLink from '../../MailLink.astro';
+import Base from '../../../layouts/Base.astro';
+import { CONTACT_URL, LEGAL_UPDATED, OPERATOR } from '../../../site.config';
+import { formatDate } from '../../../lib/devices';
+---
+
+<Base
+  title="Datenschutz und Cookies"
+  description="Workswithwhat setzt keine Cookies und nutzt weder Analyse noch Tracking. Was unsere Hosting-Anbieter verarbeiten, um die Website auszuliefern und zu schützen, und welche Rechte du hast."
+  crumbs={[{ name: 'Datenschutz und Cookies', path: '/privacy/' }]}
+>
+  <h1>Datenschutz und Cookies</h1>
+  <p class="muted">Zuletzt aktualisiert am <time datetime={LEGAL_UPDATED}>{formatDate(LEGAL_UPDATED, 'de')}</time></p>
+
+  <p class="callout">
+    <strong>Kurz gesagt:</strong> Wir setzen keine Cookies, nutzen keine Analyse-, Werbe- oder Tracking-Skripte und fragen
+    keine personenbezogenen Daten ab. Deshalb gibt es keinen Cookie-Banner.
+  </p>
+
+  <h2>Wer verantwortlich ist</h2>
+  <p>
+    Verantwortlich ist der Betreiber von Workswithwhat{OPERATOR.name && <> ({OPERATOR.name})</>}, wie im
+    <a href="/de/impressum/">Impressum</a> angegeben.
+  </p>
+
+  <h2>Was bei deinem Besuch verarbeitet wird</h2>
+  <p>
+    Die Website besteht aus statischen Seiten. Um sie auszuliefern, bearbeiten zwei Anbieter deine Anfrage und sehen, wie
+    jeder Webserver, technische Daten wie deine IP-Adresse, den User-Agent deines Browsers, die aufgerufene Seite und die
+    Uhrzeit:
+  </p>
+  <ul>
+    <li>
+      <strong>GitHub Pages</strong> (GitHub, Inc.) hostet die Dateien. Siehe das
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="nofollow noopener">GitHub General Privacy Statement</a>.
+    </li>
+    <li>
+      <strong>Cloudflare</strong> (Cloudflare, Inc.) ist der Website vorgeschaltet, um sie schnell über HTTPS auszuliefern und
+      Angriffe abzuwehren. Siehe <a href="https://www.cloudflare.com/trust-hub/gdpr/" rel="nofollow noopener">Cloudflares Seite zur DSGVO</a>.
+    </li>
+  </ul>
+  <p>
+    Wir nutzen diese Daten nur, um die Website auszuliefern und sicher zu halten; das ist unser berechtigtes Interesse nach
+    Art. 6 Abs. 1 lit. f DSGVO. Wir erhalten und speichern keine personenbezogenen Zugriffsprotokolle, erstellen keine Profile
+    und verknüpfen nichts mit anderen Daten. Beide Anbieter sitzen in den USA und sind nach dem EU-U.S. Data Privacy Framework
+    zertifiziert, das Datenübermittlungen aus der EU abdeckt.
+  </p>
+
+  <h2>Cookies</h2>
+  <p>
+    Workswithwhat setzt keine Cookies und nutzt keinen lokalen Speicher. Cloudflare kann ein unbedingt erforderliches
+    Sicherheits-Cookie setzen (etwa <code>cf_clearance</code>), wenn es prüfen muss, ob eine Anfrage automatisiert ist. Diese
+    Cookies schützen nur die Website, verfolgen dich nicht und sind nach den ePrivacy-Regeln von der Einwilligung ausgenommen
+    (in Spanien Art. 22.2 LSSI).
+  </p>
+
+  <h2>Wenn du uns kontaktierst</h2>
+  <p>
+    Korrekturen und Fragen kannst du {OPERATOR.email && <>per E-Mail oder </>}über <a href={CONTACT_URL}>GitHub Issues</a> senden. Issues sind öffentlich und
+    unterliegen der Datenschutzerklärung von GitHub; gib dort also keine personenbezogenen Daten an, die nicht veröffentlicht werden sollen.
+    {OPERATOR.email && <> Wenn du an <MailLink /> schreibst, leitet Cloudflare Email Routing die Nachricht an ein Gmail-Postfach (Google) weiter. Wir nutzen sie nur, um dir zu antworten, und löschen sie, wenn sie nicht mehr gebraucht wird.</>}
+  </p>
+
+  <h2>Deine Rechte</h2>
+  <p>
+    Du kannst Auskunft, Berichtigung oder Löschung deiner personenbezogenen Daten verlangen oder der Verarbeitung
+    widersprechen, indem du uns wie im Impressum beschrieben kontaktierst. Du kannst dich auch bei deiner
+    Datenschutzaufsichtsbehörde beschweren; in Spanien ist das die
+    <a href="https://www.aepd.es/" rel="nofollow noopener">Agencia Española de Protección de Datos (AEPD)</a>.
+  </p>
+
+  <h2>Änderungen</h2>
+  <p>
+    Sollten wir jemals Analyse-Tools oder etwas anderes einsetzen, das personenbezogene Daten verarbeitet oder nicht
+    notwendige Cookies setzt, aktualisieren wir zuerst diese Seite und holen, wo gesetzlich nötig, eine Einwilligung ein.
+  </p>
+</Base>

@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Hinter Philips-Hue-Lampen und -Zubehör steckt als Zigbee-Hub die Hue Bridge (V2), und deine Hue-Lampen erscheinen über sie in Apple Home, Google Home, Alexa, SmartThings und Home Assistant. Sie ist Matter-zertifiziert, Matter funktioniert also ebenfalls, und sie hängt per Ethernet am Router. Philips begrenzt sie auf 50 Lampen und 12 Zubehörteile.",
+  "caveats": [
+    "Philips nennt 50 Lampen und 12 Zubehörteile als zwei getrennte Grenzen; die Hue Bridge Pro unterstützt mehr.",
+    "Über Matter kommen die Play HDMI Sync Box und das Drehrad des Tap-dial-Schalters nicht durch.",
+    "Die Bridge verbindet sich nur per Ethernet-Kabel mit dem Router, nicht per WLAN."
+  ],
+  "notes": {
+    "radios": "Zigbee für Lampen und Zubehör; laut Philips verbindet sich die Bridge per Ethernet-Kabel mit dem Router.",
+    "matter": "Die CSA führt die Philips Hue Bridge (Signify, 2022 zertifiziert, mit späterer Firmware rezertifiziert). Die Bridge erreicht das Netzwerk nur per Ethernet-Kabel, Matter läuft also über Ethernet. Die Hue Bridge Pro ist ein eigenes, neueres Modell.",
+    "hubRequired": "Sie ist der Hub: Philips nennt sie die zentrale Steuereinheit des Hue-Systems.",
+    "localControl": "Aus keiner offiziellen Quelle bestätigt.",
+    "deviceProtocols": "Ein privates Zigbee-Netzwerk für Hue-Lampen und -Zubehör, getrennt vom WLAN.",
+    "matterBridge": "Laut Philips funktionieren Hue-Produkte an der Bridge mit Matter, außer der Play HDMI Sync Box und dem Drehrad des Tap dial; die reine Bluetooth-Nutzung erreicht Matter nicht.",
+    "threadBorderRouter": "Für die V2-Bridge wurde kein Thread-Hinweis gefunden.",
+    "maxDevices": "Philips nennt 50 Lampen und 12 Zubehörteile, zwei getrennte Grenzen, deshalb wird keine einzelne Zahl erfasst. Die Bridge Pro unterstützt mehr.",
+    "compatibility.apple_home": "Philips führt Apple Home und Apple HomeKit über die Bridge. Matter funktioniert ebenfalls, außer bei der Play HDMI Sync Box und dem Drehrad des Tap dial.",
+    "compatibility.google_home": "Matter funktioniert ebenfalls über die Bridge.",
+    "compatibility.alexa": "Matter funktioniert ebenfalls über die Bridge.",
+    "compatibility.smartthings": "Auf der US-Seite der Hue Bridge als kompatibel mit Samsung SmartThings geführt.",
+    "compatibility.home_assistant": "Home Assistant hat eine offizielle Philips-Hue-Integration, die sich mit der Bridge koppelt und ihre Lampen, Sensoren und Fernbedienungen steuert."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Alexa, Google Home und Home Assistant sind beim Schlage Encode (BE489WB) abgedeckt, einem US-Riegelschloss mit Touchscreen-Tastenfeld und eingebautem WLAN, sodass kein Hub nötig ist. Apple Home nicht: Laut Allegion hat dieses Nicht-Plus-Modell keine HomeKit-Unterstützung und lässt sich nicht nachrüsten; Käufer werden auf das Encode Plus (BE499) verwiesen.",
+  "caveats": [
+    "Keine Apple-Home-Unterstützung; Allegion verweist Apple-Käufer auf das Encode Plus (BE499).",
+    "Die Unterstützung für Matter und SmartThings ist nicht bestätigt.",
+    "Die Home-Assistant-Integration läuft über Schlages Cloud."
+  ],
+  "notes": {
+    "radios": "Laut Allegion hat das Encode (BE489) Bluetooth und WLAN zum Koppeln mit der Schlage-Home-App, aber kein Z-Wave.",
+    "matter": "Keine Seite von Schlage oder Allegion äußert sich dazu für das Encode ohne Plus. Allegion sagt, das Encode Plus unterstütze Matter nicht; dieser Artikel behandelt dieses Modell nicht.",
+    "hubRequired": "Eingebautes WLAN; laut Schlage brauchen Encode-Schlösser keinen Hub und keinen Adapter.",
+    "localControl": "Die Home-Assistant-Steuerung läuft über Schlages Cloud; keine Quelle sagt, was bei ausgefallenem Internet funktioniert.",
+    "lockFit": "Schlage verkauft es als Encode Smart WiFi Deadbolt, ein vollständiges Ersatz-Riegelschloss.",
+    "keypad": "Touchscreen-Tastenfeld am Schloss; Allegion hat einen Fehlerbehebungsartikel zum BE489-Tastenfeld.",
+    "power": "Allegion gibt die Akkulaufzeit des Encode mit etwa 6 Monaten bei Alkaline-AA-Zellen an, aber keine offizielle Seite, die wir fanden, nennt die Anzahl; Händler führen vier AA, im Lieferumfang.",
+    "compatibility.apple_home": "Laut Allegion unterstützt das Encode (BE489) Apple HomeKit nicht und lässt sich nicht darauf aufrüsten; es verweist stattdessen auf das Encode Plus (BE499).",
+    "compatibility.google_home": "Über die Schlage-Home-App und den Google Assistant. Laut Schlage brauchen Encode-Schlösser keinen Hub und keinen Adapter.",
+    "compatibility.alexa": "Schlage-Home-Skill für Alexa. Amazons Entwicklerblog behandelt die Works-With-Alexa-Zertifizierung für Schlages Encode-Schlösser.",
+    "compatibility.smartthings": "Die gesehenen Schlage-Seiten führen Alexa und Google auf, aber nicht SmartThings. Dass es in der Liste fehlt, heißt nicht, dass es nicht funktioniert.",
+    "compatibility.home_assistant": "Offizielle Schlage-Integration; die Doku führt das Encode Smart WiFi Deadbolt als getestet auf. Sie nutzt Schlages Cloud-API."
+  }
+}

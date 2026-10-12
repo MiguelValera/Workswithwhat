@@ -3,7 +3,7 @@
 // Every page is written against its English path; localize() turns it into the current language.
 import { ENABLED_LANGS } from '../site.config.ts';
 
-export const LANGS = ['en', 'es'] as const;
+export const LANGS = ['en', 'es', 'de', 'fr', 'it'] as const;
 export type Lang = (typeof LANGS)[number];
 /** languages other than English: each one lives under /<lang>/ */
 export type LocaleLang = Exclude<Lang, 'en'>;
@@ -11,11 +11,11 @@ export const LOCALE_LANGS = LANGS.filter((l): l is LocaleLang => l !== 'en');
 /** languages that get built */
 export const ACTIVE_LANGS: Lang[] = LANGS.filter((l) => l === 'en' || (ENABLED_LANGS as readonly string[]).includes(l));
 
-export const HTML_LANG: Record<Lang, string> = { en: 'en', es: 'es-ES' };
-export const OG_LOCALE: Record<Lang, string> = { en: 'en_US', es: 'es_ES' };
-export const LANG_NAMES: Record<Lang, string> = { en: 'English', es: 'Español' };
+export const HTML_LANG: Record<Lang, string> = { en: 'en', es: 'es-ES', de: 'de', fr: 'fr', it: 'it' };
+export const OG_LOCALE: Record<Lang, string> = { en: 'en_US', es: 'es_ES', de: 'de_DE', fr: 'fr_FR', it: 'it_IT' };
+export const LANG_NAMES: Record<Lang, string> = { en: 'English', es: 'Español', de: 'Deutsch', fr: 'Français', it: 'Italiano' };
 /** locale for numbers and dates */
-const NUMBER_LOCALE: Record<Lang, string> = { en: 'en-US', es: 'es-ES' };
+const NUMBER_LOCALE: Record<Lang, string> = { en: 'en-US', es: 'es-ES', de: 'de-DE', fr: 'fr-FR', it: 'it-IT' };
 
 /** One value per language, picked for the current one: T({ en: 'Specs', es: 'Especificaciones' }). */
 export const pick =
@@ -41,6 +41,57 @@ const SEGMENTS: Record<LocaleLang, Record<string, string>> = {
     methodology: 'metodologia',
     legal: 'aviso-legal',
     privacy: 'privacidad',
+  },
+  de: {
+    'smart-plugs': 'smarte-steckdosen',
+    'smart-bulbs': 'smarte-lampen',
+    'smart-locks': 'smarte-tuerschloesser',
+    'smart-thermostats': 'smarte-thermostate',
+    'smart-sensors': 'smarte-sensoren',
+    'smart-cameras': 'kameras-und-tuerklingeln',
+    'smart-switches': 'smarte-schalter',
+    'robot-vacuums': 'saugroboter',
+    'smart-hubs': 'hubs-und-bridges',
+    'light-strips': 'led-strips',
+    'works-with': 'kompatibel-mit',
+    compare: 'vergleich',
+    methodology: 'methodik',
+    legal: 'impressum',
+    privacy: 'datenschutz',
+  },
+  fr: {
+    'smart-plugs': 'prises-connectees',
+    'smart-bulbs': 'ampoules-connectees',
+    'smart-locks': 'serrures-connectees',
+    'smart-thermostats': 'thermostats-connectes',
+    'smart-sensors': 'capteurs-connectes',
+    'smart-cameras': 'cameras-et-sonnettes',
+    'smart-switches': 'interrupteurs-connectes',
+    'robot-vacuums': 'aspirateurs-robots',
+    'smart-hubs': 'hubs-et-passerelles',
+    'light-strips': 'rubans-led',
+    'works-with': 'compatible-avec',
+    compare: 'comparer',
+    methodology: 'methodologie',
+    legal: 'mentions-legales',
+    privacy: 'confidentialite',
+  },
+  it: {
+    'smart-plugs': 'prese-smart',
+    'smart-bulbs': 'lampadine-smart',
+    'smart-locks': 'serrature-smart',
+    'smart-thermostats': 'termostati-smart',
+    'smart-sensors': 'sensori-smart',
+    'smart-cameras': 'telecamere-e-videocitofoni',
+    'smart-switches': 'interruttori-smart',
+    'robot-vacuums': 'robot-aspirapolvere',
+    'smart-hubs': 'hub-e-bridge',
+    'light-strips': 'strisce-led',
+    'works-with': 'compatibile-con',
+    compare: 'confronta',
+    methodology: 'metodologia',
+    legal: 'note-legali',
+    privacy: 'privacy',
   },
 };
 const SEGMENTS_EN = Object.fromEntries(

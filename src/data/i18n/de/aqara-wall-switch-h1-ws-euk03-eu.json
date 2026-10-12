@@ -1,0 +1,33 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Der Aqara Wall Switch H1 (WS-EUK03) ersetzt den Schalter in einer quadratischen oder runden EU-Unterputzdose mit 86 mm. Es ist ein Zigbee-3.0-Schalter mit einer Wippe, nur Ein/Aus, für 8 A, der einen Neutralleiter braucht, Leistungsstatistiken meldet und als Zigbee-Router arbeitet. Ein Aqara-Hub (G2H, M1S und M2 werden genannt) verbindet ihn mit Apple Home, Google Home und Alexa; SmartThings und Home Assistant sind nicht bestätigt.",
+  "caveats": [
+    "Braucht einen Aqara-Hub, separat erhältlich; App-Steuerung, Timer und Leistungsstatistiken funktionieren nach dem Binden an ihn.",
+    "Braucht einen Neutralleiter (Klemmen L, N und L1).",
+    "Der Schalter ist nur Zigbee und für sich allein nicht Matter-zertifiziert; Matter käme von einem Matter-fähigen Aqara-Hub.",
+    "Dies ist das Modell mit einer Wippe; die Doppelwippe ist das separate WS-EUK04."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0. Die Version mit Neutralleiter arbeitet außerdem als Zigbee-Router.",
+    "matter": "Die CSA führt für diesen Schalter nur Zigbee 3.0. Aqara sagt, Matter komme über einen Matter-fähigen Aqara-Hub, nicht vom Schalter selbst, der Schalter ist also für sich allein nicht Matter-zertifiziert.",
+    "hubRequired": "Aqaras Handbuch sagt, App-Steuerung, Timer und Leistungsstatistiken funktionierten nach dem Binden an einen Aqara-Hub; der Hub wird separat verkauft.",
+    "localControl": "In den gefundenen Quellen nicht genannt. Die Wippe funktioniert als normaler Schalter, wenn das Netzwerk ausfällt.",
+    "switchForm": "Ersetzt den Schalter in quadratischen oder runden europäischen Unterputzdosen mit 86 mm (85,8 x 86 x 37,55 mm).",
+    "dimmer": "Ein/Aus-Schalter, 8 A ohmsche Last bei 100-250 V.",
+    "neutralRequired": "Version mit Neutralleiter; die Verdrahtung nutzt die Klemmen L, N und L1.",
+    "gangs": "Version mit einer Wippe; die Doppelwippe ist ein separates Modell (WS-EUK04).",
+    "compatibility.apple_home": "Aqaras Seite zur Version mit Neutralleiter führt HomeKit auf, mit einem Aqara-Hub (z. B. G2H, M1S, M2) als Bridge.",
+    "compatibility.google_home": "Aqaras Seite zur Version mit Neutralleiter führt Google auf, über einen Aqara-Hub.",
+    "compatibility.alexa": "Aqaras Seite zur Version mit Neutralleiter führt Alexa auf, über einen Aqara-Hub.",
+    "compatibility.smartthings": "Keine Aqara-Seite gefunden, die SmartThings für diesen Schalter nennt.",
+    "compatibility.home_assistant": "Erreichbar über Aqaras Hubs mit Matter-Bridge oder einen Zigbee-Koordinator, doch eine offizielle Quelle wurde nicht bestätigt."
+  },
+  "via": {
+    "apple_home": "Aqara-Hub",
+    "google_home": "Aqara-Hub",
+    "alexa": "Aqara-Hub"
+  },
+  "values": {
+    "gangs": "1 Wippe"
+  }
+}

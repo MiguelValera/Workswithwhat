@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Die FRITZ DECT 200 funktioniert nur über eine AVM FRITZ Box mit DECT-Basis, und Home Assistant übernimmt sie von dort. Sie spricht DECT ULE statt WLAN und tritt daher ohne eine solche Box keinem Netzwerk bei. Sie misst Leistung und Spannung, protokolliert den Verbrauch pro Stunde, Tag, Monat und Jahr und schaltet bis zu 2300 W. AVMs Seiten erwähnen keine Unterstützung für Apple Home, Google Home, Alexa, SmartThings oder Matter.",
+  "caveats": [
+    "Braucht eine FRITZ Box mit DECT-Basis und FRITZ OS 6.83 oder neuer; laut AVM funktioniert die FRITZ Box 7412 nicht.",
+    "AVM verkauft sie jetzt als FRITZ Smart Energy 200, aktuelle Seiten nutzen daher diesen Namen.",
+    "Bei einem Internetausfall ist laut AVM das automatische Schalten eingeschränkt, Routinen stoppen und die FRITZ App Smart Home kann sich nicht verbinden."
+  ],
+  "notes": {
+    "radios": "Die Steckdose spricht DECT ULE mit einer FRITZ!Box (AVMs aktuelle Datenblattseite nennt DECT-ULE), was nicht in der Funkliste steht, daher wird kein Funkstandard erfasst. AVMs Shop-Adresse der FRITZ!DECT 200 öffnet jetzt die Seite der FRITZ!Smart Energy 200.",
+    "matter": "Keine Aussage zu Matter auf AVMs Seiten und kein CSA-Eintrag gefunden.",
+    "hubRequired": "Braucht eine FRITZ!Box mit DECT-Basis; AVMs aktuelle Seite nennt FRITZ!OS 6.83 oder neuer und nicht die FRITZ!Box 7412. Die FRITZ!Box ist der Router, daher wird keine separate Bridge verkauft.",
+    "localControl": "Home Assistant fragt die FRITZ!Box lokal ab, doch AVM sagt, bei einem Internetausfall sei das automatische Schalten eingeschränkt, Routinen stoppen und die FRITZ!App Smart Home könne sich nicht verbinden. AVMs Artikel (unter der DECT 200 abgelegt, aber mit dem Titel der DECT 500) sagt nicht, was offline funktioniert.",
+    "energyMonitoring": "Zeigt aktuelle Leistung und Spannung und erfasst den Verbrauch pro Stunde, Tag, Monat und Jahr.",
+    "maxLoadWatts": "AVMs Wissensdatenbank nennt 2300 W für ohmsche Lasten und 2300 VA für induktive Lasten bei 230 V; die aktuelle Produktseite sagt bis zu 2300 W.",
+    "compatibility.apple_home": "AVMs Seiten erwähnen weder Apple Home noch HomeKit.",
+    "compatibility.google_home": "AVMs Seiten erwähnen nur Google Kalender für Zeitpläne, nicht Google Home.",
+    "compatibility.alexa": "AVMs Seiten erwähnen weder Alexa noch Sprachassistenten.",
+    "compatibility.smartthings": "Keine offizielle Seite von AVM oder SmartThings gefunden.",
+    "compatibility.home_assistant": "Home Assistants Integration FRITZ!SmartHome liest die Steckdose von deiner FRITZ!Box aus, wo sie als Schalter mit Sensoren für Leistung, Energie, Spannung und Temperatur erscheint. Die Seite führt sie als FRITZ!Smart Energy 200 (früher FRITZ!DECT 200)."
+  },
+  "via": {
+    "home_assistant": "FRITZ!Box"
+  }
+}

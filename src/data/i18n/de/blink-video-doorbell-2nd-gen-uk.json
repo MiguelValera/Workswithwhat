@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Bestätigt ist für Blinks Video Doorbell (2. Generation, BDM01300U) in Großbritannien nur Alexa: Verknüpfe die Konten, und die Zwei-Wege-Audio funktioniert auf Geräten wie dem Echo Show. Die Türklingel läuft mit drei AA-Lithiumbatterien, optional mit Anschluss an die Klingelleitung, und braucht ein Sync Module; das britische Set enthält ein Sync Module Core. Cloud-Clips werden mit einem Blink-Tarif 30 Tage aufbewahrt. Apple Home, Google Home und Home Assistant sind nicht bestätigt.",
+  "caveats": [
+    "Lokaler Speicher braucht ein Sync Module 2 oder XR, separat erhältlich; das mitgelieferte Sync Module Core speichert nur in der Cloud.",
+    "Cloud-Speicher und Personenerkennung brauchen ein Blink-Abo; die Aufbewahrung in Großbritannien beträgt 30 Tage.",
+    "Nur 2,4-GHz-WLAN.",
+    "Die Unterstützung von Apple Home, Google Home und Home Assistant ist nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Blinks Datenblattseite und FAQ nennen nur 2,4 GHz 802.11b/g/n. Blink führt das Modell BDM01300U für Großbritannien und mehrere EU-Länder.",
+    "matter": "Keine Matter-Angabe auf Blinks britischen Seiten, und in der Suche tauchte kein CSA-Eintrag für diese Türklingel auf.",
+    "hubRequired": "Blinks FAQ zur 2nd Gen, die Einrichtungsanleitung, die Datenblattseite und die Tabelle zum Sync Module sagen, sie brauche ein Sync Module. Die FAQ zum Sync Module Core führt eine Video Doorbell ohne genannte Generation als optional; Amazon UK nennt das Core ein optionales Set.",
+    "localControl": "Blink sagt nicht, ob eine Steuerung ohne die Cloud funktioniert.",
+    "cameraType": "Batterie-Türklingel, IP65 wetterfest, mit optionalem Anschluss an eine vorhandene Klingel.",
+    "power": "Batterien werden auch bei Anschluss an die Klingel gebraucht. Blink nennt bei Standardeinstellungen bis zu zwei Jahre Batterielaufzeit.",
+    "localStorage": "Nur mit einem Sync Module 2 (USB-Stick) oder Sync Module XR (microSD), beides separat erhältlich. Das Sync Module Core im Set unterstützt nur Cloud-Speicher.",
+    "subscription": "Die Aufbewahrung in der Cloud beträgt in Großbritannien 30 Tage (anderswo 60). Eine 30-tägige Plus-Testphase ist enthalten; laut Amazon UK braucht die Personenerkennung einen Tarif.",
+    "compatibility.apple_home": "Blinks britische FAQ erwähnt Siri Shortcuts, aber weder HomeKit noch Apple Home, die Unterstützung von Apple Home ist also nicht bestätigt.",
+    "compatibility.google_home": "Blinks britische Seiten zu diesem Modell erwähnen Google Home nicht.",
+    "compatibility.alexa": "Blinks britische FAQ sagt, du kannst Blink- und Alexa-Konten verknüpfen, und die Zwei-Wege-Audio funktioniert auf Alexa-Geräten wie dem Echo Show. Kompatible Alexa-Geräte können auch als Klingel dienen.",
+    "compatibility.smartthings": "Keine offizielle Seite von Blink oder SmartThings gefunden.",
+    "compatibility.home_assistant": "Keine offizielle Home-Assistant-Seite nennt diese Türklingel."
+  },
+  "values": {
+    "power": "3 × AA-Lithium, optional Klingelanschluss",
+    "subscription": "Cloud-Clip-Speicher und Personenerkennung (Blink-Tarif)"
+  }
+}

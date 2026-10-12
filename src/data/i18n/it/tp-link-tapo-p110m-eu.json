@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Matter è il modo in cui la Tapo P110M europea raggiunge Apple Home, Google Home, Alexa e SmartThings, mentre Home Assistant può usare la sua integrazione TP-Link oppure Matter. L'app Tapo non richiede hub, ma ogni piattaforma di terzi richiede il proprio controller Matter. È una presa Wi-Fi a 2,4 GHz con valore nominale di 16 A / 3680 W, con il Bluetooth usato solo per la configurazione. Consumo, storico e stime della bolletta compaiono nell'app Tapo; il firmware 1.3.2 ha aggiunto la segnalazione dei consumi via Matter, che TP-Link ha verificato in SmartThings e Home Assistant.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Non c'è la modalità HomeKit, quindi Apple Home funziona solo tramite Matter e richiede un controller come un Apple TV o un HomePod.", "Alexa richiede un Echo che funzioni come controller Matter; i dispositivi Tapo Matter non passano dalla skill Tapo.", "Le letture energetiche via Matter richiedono il firmware 1.3.2 o successivo, e TP-Link nomina solo SmartThings e Home Assistant come verificati per mostrarle.", "L'integrazione TP-Link di Home Assistant chiede una volta le credenziali del tuo account TP-Link sui dispositivi più recenti.", "I carichi a motore sono limitati a 1/6 HP."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz (IEEE 802.11b/g/n). La scheda tecnica europea dice che il Bluetooth si usa solo per la configurazione.",
+    "matter": "Le pagine europee di TP-Link la definiscono certificata Matter. La scheda CSA (SKU di famiglia P110M, certificato CSA23546MAT41059-24) nomina solo la variante P110M(UK); non abbiamo trovato nessuna voce CSA che nomini la P110M(EU).",
+    "hubRequired": "La scheda tecnica europea dice che con l'app Tapo non serve nessun hub; le app di terzi richiedono un controller Matter.",
+    "localControl": "Le pagine europee di TP-Link dicono che i dispositivi Tapo Matter dialogano con altri dispositivi certificati sulla rete locale (LAN). È una dichiarazione su Matter; non abbiamo trovato nessuna pagina europea sul controllo dall'app Tapo senza internet.",
+    "energyMonitoring": "Consumo in tempo reale e storico più stime della bolletta nell'app Tapo. Il firmware 1.3.2 (2025) ha aggiunto la segnalazione dei consumi via Matter; TP-Link nomina SmartThings e Home Assistant come piattaforme verificate per mostrarla.",
+    "maxLoadWatts": "16 A / 3680 W per uso generale e carichi resistivi; motore da 1/6 HP.",
+    "compatibility.apple_home": "TP-Link indica Apple Home. Non c'è la modalità HomeKit (HAP), quindi passa da Matter; la scheda tecnica europea dice che serve un controller come un Apple TV o un HomePod.",
+    "compatibility.google_home": "Aggiunta nell'app Google Home scansionando il codice Matter. Richiede un controller Matter di Google.",
+    "compatibility.alexa": "TP-Link dice che i dispositivi Tapo abilitati per Matter si collegano ad Alexa direttamente tramite Matter, non tramite la skill Tapo. Richiede un Echo che funzioni come controller Matter.",
+    "compatibility.smartthings": "TP-Link indica Samsung SmartThings; la configurazione avviene tramite Matter.",
+    "compatibility.home_assistant": "L'integrazione TP-Link Smart Home di Home Assistant elenca la P110M tra le prese Tapo supportate; i dispositivi più recenti richiedono una volta le credenziali del tuo account TP-Link. Può essere aggiunta anche tramite l'integrazione Matter."
+  }
+}

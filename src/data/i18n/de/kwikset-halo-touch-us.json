@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Ein Fingerabdruck-Riegelschloss mit eingebautem WLAN: Das Kwikset Halo Touch funktioniert mit Alexa und Google Home und braucht keinen Hub. Es speichert bis zu 100 Fingerabdrücke für 50 Nutzer, hat einen Schlüssel als Reserve und läuft mit vier AA-Batterien. Kwikset bestätigt auf seinen Seiten weder Apple Home noch SmartThings oder Matter dafür.",
+  "caveats": [
+    "Die Unterstützung für Apple Home, SmartThings und Matter ist für dieses Modell nicht bestätigt.",
+    "Kwikset sagt nicht, ob es ein Tastenfeld hat oder welches WLAN-Band es nutzt."
+  ],
+  "notes": {
+    "radios": "Verbindet sich direkt mit deinem Heim-WLAN. Das WLAN-Band steht auf den gesehenen Seiten nicht.",
+    "matter": "Keine der beiden Halo-Touch-Seiten erwähnt Matter; Kwikset verkauft Matter unter seiner Linie Halo Select. Ein CSA-Eintrag wurde nicht geprüft. Das Fehlen ist kein Nein.",
+    "hubRequired": "WLAN ist eingebaut; die Kwikset-App verwaltet das Schloss.",
+    "localControl": "Laut Kwikset werden Fingerabdruck-Bilder lokal im Schloss gespeichert, aber es sagt nicht, ob App- oder Sprachsteuerung ohne Cloud funktioniert.",
+    "lockFit": "Wird als Riegelschloss im Stil Contemporary oder Traditional verkauft. Ein Schlüssel dient als Reserve.",
+    "keypad": "Kwikset nennt Fingerabdruck (bis zu 100 Abdrücke, 50 Nutzer) und einen Schlüssel als Zugangswege. Keine der beiden Seiten sagt, ob es ein Tastenfeld gibt, deshalb bleibt es unbestätigt.",
+    "power": "Vier AA-Batterien liegen bei.",
+    "compatibility.apple_home": "Keine der beiden Halo-Touch-Seiten erwähnt Apple Home oder HomeKit; die Produktseite führt nur Alexa, Google Home und Brilliant.",
+    "compatibility.google_home": "Kwikset führt Google Assistant und Google Home als kompatibel.",
+    "compatibility.alexa": "Kwikset führt Amazon Alexa als kompatibel.",
+    "compatibility.smartthings": "Keine der beiden Halo-Touch-Seiten erwähnt SmartThings.",
+    "compatibility.home_assistant": "Für dieses Modell wurde keine offizielle Home-Assistant- oder Kwikset-Seite gefunden."
+  },
+  "values": {
+    "power": "4 × AA"
+  }
+}

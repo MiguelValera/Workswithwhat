@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Das Öffnen von Tür, Fenster oder Schublade meldet der Tapo T110 (UK) als Push-Benachrichtigung. Alexa und Google Home funktionieren beide, aber nur über einen Tapo Hub oder Homebase, den der Sensor über Sub-1-GHz-Funk erreicht. Er läuft mit einer CR2032-Knopfzelle, die laut Angabe etwa 2 Jahre hält. TP-Links UK-Seite erwähnt weder Apple Home noch SmartThings oder Matter.",
+  "caveats": [
+    "Braucht für Benachrichtigungen einen Tapo Hub; allein funktioniert er nicht.",
+    "Unterstützung für Apple Home, SmartThings und Home Assistant nennt TP-Link nicht."
+  ],
+  "notes": {
+    "radios": "Die UK-Seite nennt Sub-1-GHz-Bänder bei 868 / 922 MHz (868 MHz in Europa) zum Tapo Hub, die nicht in unserer Funkliste stehen.",
+    "matter": "Für den Sensor selbst wurde keine Matter-Zertifizierung gefunden.",
+    "hubRequired": "Laut Spezifikation ist für Benachrichtigungen ein Tapo Hub (oder Homebase) nötig; die Download-Seite nennt den Hub seine Bridge.",
+    "localControl": "Aus keiner offiziellen Quelle bestätigt.",
+    "senses": "Erkennt das Öffnen einer Tür, eines Fensters oder einer Schublade.",
+    "power": "Laut Tapo etwa 2 Jahre, mit Warnung bei schwacher Batterie.",
+    "compatibility.apple_home": "Die UK-Seite erwähnt Apple Home nicht.",
+    "compatibility.google_home": "Die UK-Seite zeigt ein Abzeichen „Works with Google Home“; der Sensor braucht einen Tapo Hub oder Homebase.",
+    "compatibility.alexa": "Die UK-Seite zeigt ein Abzeichen „Works with Alexa“; der Sensor braucht einen Tapo Hub oder Homebase.",
+    "compatibility.smartthings": "Die UK-Seite erwähnt SmartThings nicht.",
+    "compatibility.home_assistant": "Für diesen Sensor wurde keine offizielle Quelle gefunden."
+  },
+  "via": {
+    "google_home": "Tapo Hub oder Tapo Homebase",
+    "alexa": "Tapo Hub oder Tapo Homebase"
+  },
+  "values": {
+    "power": "CR2032"
+  }
+}

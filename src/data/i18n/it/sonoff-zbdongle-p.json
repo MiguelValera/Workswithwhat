@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Dove lo ZBDongle-E usa un chip Silicon Labs, lo ZBDongle-P usa un Texas Instruments CC2652P con uscita da +20 dBm e firmware coordinatore Z-Stack. È un coordinatore USB Zigbee 3.0 per Home Assistant (ZHA) o Zigbee2MQTT su un host che fornisci tu, e Home Assistant è l'unico ecosistema confermato. I limiti di SONOFF stessa sono contrastanti: 21 figli diretti nelle specifiche, 50 diretti nelle FAQ.",
+  "caveats": ["Non è autonomo e richiede Home Assistant o Zigbee2MQTT su un host separato.", "ZHA e Zigbee2MQTT non possono condividere un solo dongle; usa due dongle su canali separati per eseguirli entrambi.", "Home Assistant non lo elenca come adattatore consigliato; compare solo nell'elenco di rilevamento USB."],
+  "notes": {
+    "radios": "Texas Instruments CC2652P con un bridge USB CP2102(N), uscita da +20 dBm, fornito con firmware coordinatore Z-Stack. Venduto come «Zigbee 3.0 USB Dongle Plus-P». Regioni: lo store del produttore lo vende in USD, EUR e GBP; non è indicato nessun elenco di spedizione.",
+    "matter": "Nessuna scheda CSA trovata.",
+    "hubRequired": "Non confermato da una fonte ufficiale.",
+    "localControl": "Il produttore dice che permette di controllare in locale i dispositivi Zigbee tramite Home Assistant o altre piattaforme open source.",
+    "hubType": "Si collega a un host che esegue Home Assistant o Zigbee2MQTT; non ha un'app propria.",
+    "deviceProtocols": "Solo Zigbee 3.0; la pagina non indica Thread né altre radio.",
+    "matterBridge": "Non è un bridge da solo; il produttore menziona Matter solo per il suo software separato eWeLink CUBE.",
+    "threadBorderRouter": "La pagina del produttore non offre una modalità border router Thread.",
+    "maxDevices": "Il produttore indica limiti contrastanti: 21 figli diretti per impostazione predefinita (40 al massimo, 100 con modifiche) nelle specifiche, e 50 diretti più fino a 200 con router nelle FAQ.",
+    "compatibility.apple_home": "Raggiungibile solo tramite il software Home Assistant, che non è un hub; non confermato.",
+    "compatibility.google_home": "Raggiungibile solo tramite il software Home Assistant; non confermato.",
+    "compatibility.alexa": "Raggiungibile solo tramite il software Home Assistant; non confermato.",
+    "compatibility.smartthings": "Non confermato.",
+    "compatibility.home_assistant": "Il produttore dice che supporta pienamente ZHA in Home Assistant o Zigbee2MQTT. Home Assistant lo nomina solo nell'elenco di rilevamento USB di ZHA, non tra gli adattatori consigliati o altri testati."
+  }
+}

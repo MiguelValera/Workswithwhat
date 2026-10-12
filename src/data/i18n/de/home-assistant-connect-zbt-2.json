@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Als Nachfolger des eingestellten ZBT-1 ist der ZBT-2 ein USB-Funkstick mit einem Silicon-Labs-MG24-Chip. Bei der Einrichtung wählst du Zigbee 3.0 (ZHA oder Zigbee2MQTT) oder Thread (OpenThread Border Router), pro Adapter immer nur eins. Er ist offizielle Home-Assistant-Hardware, und Home Assistant ist das einzige bestätigte Ökosystem.",
+  "caveats": [
+    "Er läuft mit Zigbee oder Thread, nie mit beiden auf einem Adapter.",
+    "Allein kann er nicht als Thread-Border-Router dienen; dafür braucht es den OpenThread Border Router in Home Assistant.",
+    "ZHA erlaubt nur eine Instanz, deshalb können zwei ZBT-2-Adapter nicht beide unter ZHA laufen."
+  ],
+  "notes": {
+    "radios": "Silicon Labs MG24 mit 2,4 GHz und ein ESP32-S3 als USB-Bridge. Läuft mit Zigbee-3.0- oder Thread-Firmware, nicht gleichzeitig; kein Bluetooth oder Z-Wave. Eine Modellnummer wird nicht genannt. Verkauft in Nordamerika, Europa (auch bei britischen Händlern), Australien und Asien.",
+    "matter": "Kein CSA-Eintrag gefunden.",
+    "hubRequired": "Aus keiner offiziellen Quelle bestätigt.",
+    "localControl": "Laut Home Assistant geben Zigbee und Thread Geräten eine lokale Verbindung, aber keine offizielle Seite nennt lokale Steuerung für den Adapter ausdrücklich.",
+    "hubType": "Nachfolger des ZBT-1; er hat dieses Modell ersetzt, das eingestellt ist.",
+    "deviceProtocols": "Immer nur eins: Du wählst bei der Einrichtung Zigbee oder Thread und kannst später wechseln.",
+    "matterBridge": "Keine Bridge; Matter-Geräte über Thread werden über die Matter-Integration von Home Assistant erreicht.",
+    "threadBorderRouter": "Mit Thread-Firmware und dem OpenThread Border Router in Home Assistant; laut Hersteller kann er allein kein eigenständiger Border Router sein.",
+    "maxDevices": "Vom Hersteller nicht angegeben.",
+    "compatibility.apple_home": "Nur über die Home-Assistant-Software erreichbar, die kein Hub ist; nicht bestätigt.",
+    "compatibility.google_home": "Nur über die Home-Assistant-Software erreichbar; nicht bestätigt.",
+    "compatibility.alexa": "Nur über die Home-Assistant-Software erreichbar; nicht bestätigt.",
+    "compatibility.smartthings": "Nicht bestätigt.",
+    "compatibility.home_assistant": "Offizielle Home-Assistant-Hardware und der empfohlene Zigbee-Adapter: Zigbee über ZHA oder Zigbee2MQTT, Thread über den OpenThread Border Router."
+  }
+}

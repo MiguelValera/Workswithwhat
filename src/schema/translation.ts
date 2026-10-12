@@ -13,15 +13,15 @@ export const translationSchema = z
   .object({
     // the English record's updatedAt this translation was made from; a newer record means it's stale
     basedOn: isoDate,
-    summary: z.string().min(80).max(800),
-    caveats: z.array(z.string().min(10).max(340)).default([]),
+    summary: z.string().min(80).max(950),
+    caveats: z.array(z.string().min(10).max(420)).default([]),
     // one entry per English note: "radios", "matter", "hubRequired", "localControl", a category fact key,
     // or "compatibility.<ecosystem>"
-    notes: z.record(z.string(), z.string().min(2).max(340)).default({}),
+    notes: z.record(z.string(), z.string().min(2).max(420)).default({}),
     // translated `via` text for ecosystems with status "hub"
-    via: z.partialRecord(z.enum(ECOSYSTEMS), z.string().min(2).max(90)).optional(),
+    via: z.partialRecord(z.enum(ECOSYSTEMS), z.string().min(2).max(120)).optional(),
     // translated wording of string facts, where the English value is words rather than a code
-    values: z.partialRecord(z.enum(TRANSLATABLE_VALUES), z.string().min(1).max(90)).optional(),
+    values: z.partialRecord(z.enum(TRANSLATABLE_VALUES), z.string().min(1).max(120)).optional(),
   })
   .strict();
 

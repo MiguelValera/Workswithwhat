@@ -1,0 +1,78 @@
+---
+import MailLink from '../../MailLink.astro';
+import Base from '../../../layouts/Base.astro';
+import { CONTACT_URL, LEGAL_UPDATED, OPERATOR } from '../../../site.config';
+import { formatDate } from '../../../lib/devices';
+---
+
+<Base
+  title="Confidentialité et cookies"
+  description="Workswithwhat ne dépose aucun cookie et n’utilise ni mesure d’audience ni traceur. Ce que nos hébergeurs traitent pour diffuser et protéger le site, et vos droits."
+  crumbs={[{ name: 'Confidentialité et cookies', path: '/privacy/' }]}
+>
+  <h1>Confidentialité et cookies</h1>
+  <p class="muted">Dernière mise à jour : <time datetime={LEGAL_UPDATED}>{formatDate(LEGAL_UPDATED, 'fr')}</time></p>
+
+  <p class="callout">
+    <strong>En bref :</strong> nous ne déposons pas de cookies, nous n’utilisons ni mesure d’audience, ni publicité, ni
+    scripts de suivi, et nous ne vous demandons aucune donnée personnelle. C’est pourquoi il n’y a pas de bandeau cookies.
+  </p>
+
+  <h2>Qui est responsable</h2>
+  <p>
+    Le responsable du traitement est l’éditeur de Workswithwhat{OPERATOR.name && <> ({OPERATOR.name})</>}, indiqué dans les
+    <a href="/fr/mentions-legales/">mentions légales</a>.
+  </p>
+
+  <h2>Ce qui est traité lors de votre visite</h2>
+  <p>
+    Le site est un ensemble de pages statiques. Pour les diffuser, deux prestataires traitent votre requête et voient, comme
+    tout serveur web, des données techniques comme votre adresse IP, le user-agent de votre navigateur, la page demandée et
+    l’heure :
+  </p>
+  <ul>
+    <li>
+      <strong>GitHub Pages</strong> (GitHub, Inc.) héberge les fichiers. Voir la
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="nofollow noopener">déclaration de confidentialité de GitHub</a>.
+    </li>
+    <li>
+      <strong>Cloudflare</strong> (Cloudflare, Inc.) se place devant le site pour le servir rapidement en HTTPS et bloquer
+      les attaques. Voir <a href="https://www.cloudflare.com/trust-hub/gdpr/" rel="nofollow noopener">la page de Cloudflare sur le RGPD</a>.
+    </li>
+  </ul>
+  <p>
+    Nous n’utilisons ces données que pour diffuser le site et le sécuriser, ce qui relève de notre intérêt légitime au sens
+    de l’article 6, paragraphe 1, point f) du RGPD. Nous ne recevons ni ne conservons de journaux d’accès personnels, ne créons
+    pas de profils et ne croisons pas ces données avec d’autres. Les deux prestataires sont établis aux États-Unis et certifiés
+    dans le cadre du Data Privacy Framework UE-États-Unis, qui couvre les transferts de données depuis l’UE.
+  </p>
+
+  <h2>Cookies</h2>
+  <p>
+    Workswithwhat ne dépose aucun cookie et n’utilise pas le stockage local. Cloudflare peut déposer un cookie de sécurité
+    strictement nécessaire (comme <code>cf_clearance</code>) s’il doit vérifier qu’une requête n’est pas automatisée. Ces
+    cookies ne servent qu’à protéger le site, ne vous suivent pas et sont exemptés de consentement par les règles ePrivacy
+    (en Espagne, article 22.2 de la LSSI).
+  </p>
+
+  <h2>Si vous nous contactez</h2>
+  <p>
+    Vous pouvez envoyer corrections et questions {OPERATOR.email && <>par e-mail ou </>}via les <a href={CONTACT_URL}>tickets GitHub</a>. Les tickets sont publics
+    et soumis à la déclaration de confidentialité de GitHub ; n’y mettez donc pas de données personnelles que vous ne voulez pas voir publiées.
+    {OPERATOR.email && <> Si vous nous écrivez à <MailLink />, le message est transféré par Cloudflare Email Routing vers une boîte Gmail (Google). Nous ne l’utilisons que pour vous répondre et le supprimons quand il n’est plus nécessaire.</>}
+  </p>
+
+  <h2>Vos droits</h2>
+  <p>
+    Vous pouvez demander l’accès à vos données personnelles, leur rectification ou leur effacement, ou vous opposer à leur
+    traitement, en nous contactant comme indiqué dans les mentions légales. Vous pouvez aussi saisir votre autorité de
+    protection des données ; en Espagne, il s’agit de
+    l’<a href="https://www.aepd.es/" rel="nofollow noopener">Agencia Española de Protección de Datos (AEPD)</a>.
+  </p>
+
+  <h2>Modifications</h2>
+  <p>
+    Si nous ajoutons un jour une mesure d’audience ou tout autre outil qui traite des données personnelles ou dépose des
+    cookies non essentiels, nous mettrons d’abord cette page à jour et demanderons votre consentement lorsque la loi l’exige.
+  </p>
+</Base>

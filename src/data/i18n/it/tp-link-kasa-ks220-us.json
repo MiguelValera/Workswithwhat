@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Dimmer Wi-Fi per una scatola a muro statunitense, senza hub: il Kasa KS220 richiede un filo neutro e un cablaggio unipolare. TP-Link indica Apple Home, Google Home, Alexa e SmartThings come piattaforme supportate, e Home Assistant lo supporta tramite la sua integrazione TP-Link. Regola 150 W di LED o 300 W a incandescenza.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Richiede un filo neutro e non supporta il cablaggio a 3 vie.", "Nessuna dichiarazione su Matter per il KS220; il dimmer Matter di TP-Link è il KS225, un prodotto separato.", "I carichi LED sono limitati a 150 W."],
+  "notes": {
+    "radios": "Solo Wi-Fi a 2,4 GHz. TP-Link indica Bluetooth 4.2 solo per la configurazione.",
+    "matter": "Il dimmer Matter di TP-Link è il KS225, un prodotto separato; le pagine del KS220 che abbiamo visto non dichiarano Matter. Il KS220 è comunque venduto accanto a esso, quindi l'abbiamo usato.",
+    "hubRequired": "Si collega direttamente al Wi-Fi a 2,4 GHz; il titolo della scheda tecnica di TP-Link dice che non serve nessun hub.",
+    "localControl": "L'integrazione TP-Link di Home Assistant dialoga direttamente con l'interruttore sulla tua rete, non tramite il cloud di TP-Link. Anche il controllo HomeKit funziona sulla rete locale; la guida di TP-Link dice che un hub domestico è solo facoltativo.",
+    "switchForm": "Sostituisce un normale interruttore a muro e include una placca.",
+    "dimmer": "Regolazione TRIAC; 300 W a incandescenza/alogeni, 150 W LED.",
+    "gangs": "La scheda tecnica di TP-Link dice che non funziona con il cablaggio a 3 vie (multi-punto).",
+    "compatibility.apple_home": "TP-Link indica Apple Home come piattaforma di terzi. La guida utente spiega come aggiungerlo nell'app Casa con il suo codice HomeKit; un hub domestico (HomePod o Apple TV) è facoltativo, per l'accesso remoto.",
+    "compatibility.google_home": "Indicata da TP-Link come piattaforma di terzi supportata.",
+    "compatibility.alexa": "Indicata da TP-Link come piattaforma di terzi supportata.",
+    "compatibility.smartthings": "Indicata da TP-Link come piattaforma di terzi supportata.",
+    "compatibility.home_assistant": "L'integrazione TP-Link Smart Home di Home Assistant elenca il KS220 come interruttore a muro supportato."
+  },
+  "values": {"gangs": "Solo unipolare"}
+}

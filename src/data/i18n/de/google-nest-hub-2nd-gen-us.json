@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Google Nest Hub (2. Generation) ist der Google-Home-Hub in Displayform. Laut Google funktionieren Matter-Geräte darüber mit Google Home, und er dient zugleich als Thread-Border-Router für Thread-Geräte. Er läuft mit Dualband-WLAN und Bluetooth 5.0. Nichts Offizielles zeigt, dass darüber gekoppelte Geräte in Apple Home, Alexa oder SmartThings erscheinen.",
+  "caveats": [
+    "Die Matter-Unterstützung stützt sich auf Googles eigene Seiten; ein CSA-Eintrag mit diesem Modell wurde nicht gefunden.",
+    "Googles Thread-Hilfeseite nennt keine Thread-Version für den Nest Hub (2. Generation).",
+    "Nichts Offizielles zeigt, dass darüber gekoppelte Geräte in Apple Home, Alexa, SmartThings oder Home Assistant erscheinen."
+  ],
+  "notes": {
+    "hubRequired": "Er ist der Hub für Google Home.",
+    "localControl": "Auf den gelesenen Seiten nicht bestätigt.",
+    "hubType": "Ein smartes Display, das als Hub für Google Home arbeitet.",
+    "deviceProtocols": "Thread-Geräte verbinden sich über den eingebauten Border-Router. Matter-Geräte werden auch über WLAN unterstützt.",
+    "matterBridge": "Von Google nicht genannt.",
+    "threadBorderRouter": "Googles Thread-Seite führt den Nest Hub (2. Generation) unter den Google-Produkten, die als Thread-Border-Router arbeiten können. Die Seite nennt keine Thread-Version.",
+    "maxDevices": "In den Quellen wurde kein Limit gefunden.",
+    "compatibility.apple_home": "Keine offizielle Quelle zeigt, dass mit dem Nest Hub gekoppelte Geräte in Apple Home erscheinen.",
+    "compatibility.alexa": "Keine offizielle Quelle zeigt, dass mit dem Nest Hub gekoppelte Geräte in Alexa erscheinen.",
+    "compatibility.smartthings": "Keine offizielle Quelle zeigt, dass mit dem Nest Hub gekoppelte Geräte in SmartThings erscheinen.",
+    "compatibility.home_assistant": "Home Assistants Thread-Seite führt den Nest Hub (2. Generation) als Thread-Border-Router; sie sagt nicht, dass in Google Home gekoppelte Geräte in Home Assistant erscheinen.",
+    "radios": "Dualband-WLAN 802.11 b/g/n/ac, Bluetooth 5.0 und ein eingebauter Thread-Border-Router (802.15.4 bei 2,4 GHz), laut der US-Datenblattseite im Google Store.",
+    "matter": "Google führt Matter als unterstützt und sagt, alle Matter-Geräte funktionierten über den Nest Hub (2. Generation) mit Google Home. Ein CSA-Produkteintrag mit seinem Namen wurde nicht gefunden, ein Zertifikat ist also nicht bestätigt.",
+    "compatibility.google_home": "Google sagt, der Nest Hub arbeite als Hub für Google Home und Matter-Geräte funktionierten darüber mit Google Home."
+  }
+}

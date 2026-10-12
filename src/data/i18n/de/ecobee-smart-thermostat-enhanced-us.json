@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Apple HomeKit, Alexa, Google Assistant und SmartThings führt ecobee allesamt für den Smart Thermostat Enhanced auf, ein US-Wandthermostat mit WLAN-Anbindung. Er kommt mit den meisten 24-V-Anlagen zurecht, auch mit Wärmepumpen, und das mitgelieferte Power Extender Kit erlaubt den Einbau in den meisten Haushalten ohne C-Draht. Home Assistant unterstützt ihn über die offizielle ecobee-Integration.",
+  "caveats": [
+    "Ohne C-Draht braucht das Power Extender Kit eine freie Ader und ist nicht kompatibel mit Anlagen mit zwei Transformatoren, Millivolt- oder Hochspannungsanlagen.",
+    "Die Matter-Unterstützung ist nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "ecobee beschreibt seine smarten Thermostate als WLAN-fähig. Händler führen außerdem Bluetooth und ein 915-MHz-Sensorfunkmodul auf; keine gesehene Herstellerseite bestätigt das.",
+    "matter": "Keine ecobee-Seite und kein CSA-Eintrag für dieses Modell erwähnt Matter. Fehlende Erwähnung heißt nicht, dass es fehlt.",
+    "hubRequired": "Verbindet sich über WLAN; keine Bridge nötig.",
+    "localControl": "Keine Herstellerquelle sagt, was ohne Internet funktioniert. Die ecobee-Integration von Home Assistant nutzt ecobees Cloud.",
+    "thermostatType": "Wandthermostat.",
+    "systems": "ecobee sagt, es unterstütze die meisten 24-V-Wohnanlagen in Nordamerika; Hochspannungs- und Millivolt-Anlagen sind nicht kompatibel.",
+    "power": "24 V am C-Draht. ecobees Seite zum Enhanced sagt, das mitgelieferte Power Extender Kit erlaube den Einbau in den meisten Haushalten ohne C-Draht; die Zubehörseite sagt, jedes Modell außer Essential und Lite werde mit dem Kit geliefert.",
+    "compatibility.apple_home": "ecobee führt Apple HomeKit unter den unterstützten Plattformen auf. HomeKit ist eine direkte lokale Kopplung, getrennt von Matter.",
+    "compatibility.google_home": "ecobee führt Google Assistant unter den unterstützten Plattformen auf.",
+    "compatibility.alexa": "ecobee führt Amazon Alexa unter den unterstützten Plattformen auf.",
+    "compatibility.smartthings": "ecobee führt SmartThings unter den unterstützten Plattformen auf.",
+    "compatibility.home_assistant": "Offizielle ecobee-Integration (Klima-Entität mit den Komforteinstellungen Home, Away und Sleep). Die HomeKit-Kopplung ist ein separater lokaler Weg."
+  },
+  "values": {
+    "power": "C-Draht 24 V; Power Extender Kit in der Packung",
+    "systems": "Die meisten 24-V-HLK-Anlagen, auch Wärmepumpen"
+  }
+}

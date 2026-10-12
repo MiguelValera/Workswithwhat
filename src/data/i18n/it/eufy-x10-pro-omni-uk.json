@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Il controllo vocale con Alexa e Google Assistant è ciò che la pagina britannica di eufy elenca per l'X10 Pro Omni (T2351), da configurare in Smart Integrations nell'app eufy Clean. Aspira e lava con aspirazione da 8000 Pa e navigazione laser, e l'All-in-One Station svuota il contenitore in un sacchetto da 2,5 L. Apple Home, SmartThings e Home Assistant non sono confermati.",
+  "caveats": ["Le pagine britanniche di eufy non indicano nessuna banda Wi-Fi; il manuale globale chiede i 2,4 GHz.", "Non è documentato nessun supporto Matter, quindi Apple Home non è confermato.", "Home Assistant non ha una pagina di integrazione ufficiale per questo modello."],
+  "notes": {
+    "radios": "Il manuale globale chiede la banda a 2,4 GHz sul router; le pagine britanniche non indicano una banda.",
+    "matter": "Nessuna dichiarazione su Matter nelle pagine britanniche di eufy e nessuna scheda CSA vista.",
+    "hubRequired": "Il manuale lo configura sul Wi-Fi di casa a 2,4 GHz tramite l'app eufy Clean; l'All-in-One Station non è un hub.",
+    "localControl": "Il solo controllo locale non è dichiarato.",
+    "cleaning": "Aspira e lava con doppi mop rotanti.",
+    "navigation": "eufy la chiama iPath Laser Navigation. L'evitamento degli ostacoli usa AI.See.",
+    "selfEmptying": "L'All-in-One Station svuota il contenitore in un sacchetto da 2,5 L. Si vendono anche kit con sacchetti aggiuntivi e detergente per pavimenti.",
+    "compatibility.apple_home": "Nessuna pagina eufy trovata per Apple Home.",
+    "compatibility.google_home": "La pagina britannica di eufy dice che puoi usare Google Assistant per la pulizia con comandi vocali; il manuale la collega in Smart Integrations nell'app eufy Clean.",
+    "compatibility.alexa": "La pagina britannica di eufy dice che puoi usare Amazon Alexa per la pulizia con comandi vocali; il manuale la collega in Smart Integrations nell'app eufy Clean.",
+    "compatibility.smartthings": "Nessuna pagina di eufy o Samsung trovata per SmartThings.",
+    "compatibility.home_assistant": "Nessuna pagina di integrazione ufficiale di Home Assistant trovata."
+  },
+  "values": {
+    "navigation": "LiDAR (iPath Laser Navigation)"
+  }
+}

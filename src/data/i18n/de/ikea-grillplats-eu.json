@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Jeder Weg zur IKEA GRILLPLATS führt über Matter über Thread. Das gilt für Apple Home, Google Home, Alexa und SmartThings, die IKEA aufführt, sowie für die Matter-Integration von Home Assistant, aber jeder Weg braucht einen Thread-Border-Router, etwa IKEAs DIRIGERA-Hub oder einen Thread-fähigen Hub von Apple, Google, Amazon oder SmartThings. Ohne einen koppelt sie sich nur direkt mit einer IKEA-Fernbedienung oder einem Bewegungssensor. Sie misst den Stromverbrauch und ist für ohmsche Lasten mit 3680 W / 16 A ausgelegt. Dieser Datensatz deckt den Typ E2491-EU ab.",
+  "caveats": [
+    "Für Steuerung per Handy, Sprache oder Ökosystem braucht sie einen Thread-Border-Router (DIRIGERA oder den eines anderen Ökosystems).",
+    "Für ohmsche Lasten mit 3680 W / 16 A ausgelegt, für Motorlasten aber nur 300 W.",
+    "Manche Käuferbewertungen berichten von fehlgeschlagener Alexa-Kopplung.",
+    "Welche Verbrauchsdaten du siehst, hängt von der Controller-App ab."
+  ],
+  "notes": {
+    "radios": "Laut IKEA nutzt sie Matter über Thread. Der CSA-Eintrag für die Familien-SKU E2491-EU nennt Thread und Bluetooth als Transporte; Bluetooth dient vermutlich nur der Matter-Einrichtung.",
+    "matter": "IKEA kennzeichnet sie als Matter-kompatibel. Das CSA-Zertifikat CSA255B7MAT46345-24 (Matter 1.4, zertifiziert am 2025-08-20) führt die Familien-SKU E2491-EU, den Typ aus IKEAs deutscher Anleitung. Die CSA hat auch weitere GRILLPLATS-Zertifikate.",
+    "hubRequired": "Laut IKEA braucht die Handy-Steuerung einen Thread-Border-Router, etwa den DIRIGERA-Hub oder den Border Router eines anderen Ökosystems. Ohne einen koppelt sie sich nur direkt mit einer IKEA-Fernbedienung oder einem Bewegungssensor.",
+    "localControl": "Matter-zertifiziert (CSA), und Home Assistant dokumentiert Matter als lokale Steuerung ohne Cloud. IKEA selbst nennt keine lokale Steuerung.",
+    "energyMonitoring": "Laut IKEA misst sie den Stromverbrauch. Was du siehst, hängt von der Controller-App ab.",
+    "maxLoadWatts": "IKEAs deutsche Anleitung für Typ E2491-EU: 220-240 V, max. 3680 W / 16 A ohmsche Last, max. 300 W Motorlast.",
+    "compatibility.apple_home": "IKEA nennt Apple unter den kompatiblen Systemen. Über Matter; braucht eine Apple-Steuerzentrale, die ein Thread-Border-Router ist.",
+    "compatibility.google_home": "IKEA nennt Google unter den kompatiblen Systemen. Über Matter; braucht einen Google-Hub, der ein Thread-Border-Router ist.",
+    "compatibility.alexa": "IKEA nennt Amazon unter den kompatiblen Systemen. Über Matter; braucht ein Echo, das Matter-Controller und Thread-Border-Router ist. Manche Käuferbewertungen berichten von fehlgeschlagener Alexa-Kopplung.",
+    "compatibility.smartthings": "IKEA nennt Samsung unter den kompatiblen Systemen. Über Matter; braucht einen SmartThings-Hub mit Thread.",
+    "compatibility.home_assistant": "Über die Matter-Integration von Home Assistant, die für Thread-Geräte einen Thread-Border-Router braucht. IKEA nennt Home Assistant selbst nicht."
+  }
+}

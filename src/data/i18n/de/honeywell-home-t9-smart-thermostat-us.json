@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Honeywell Home bietet das T9 als US-WLAN-Wandthermostat mit optionalen Funk-Raumsensoren an, und es braucht 24 V über ein C-Wire (ein Adapter liegt bei). Alexa und Google Assistant können Thermostat und Sensoren auslesen, HomeKit und SmartThings dagegen nur Sollwerte ändern, laut Honeywell. Es passt zu den meisten 24-V-Heiz-, Kühl- und Wärmepumpenanlagen. Home Assistant und Matter sind nicht bestätigt.",
+  "caveats": [
+    "HomeKit und SmartThings können Werte der Raumsensoren nicht auslesen, laut Honeywells Support-Artikel.",
+    "Ein C-Wire ist Pflicht; der mitgelieferte Adapter deckt Haushalte ohne eines ab, aber laut Honeywell ist der Einbau bei Zonenanlagen aufwendiger, und es rät zu einem Fachbetrieb.",
+    "Nicht für elektrische Konvektorheizungen oder Millivolt-Anlagen."
+  ],
+  "notes": {
+    "radios": "Honeywell nennt WLAN (2,4 und 5 GHz). Die Raumsensoren verbinden sich direkt mit dem Thermostat; die gesehenen Seiten nennen ihr Funkmodul nicht.",
+    "matter": "Keine gefundene Honeywell- oder CSA-Seite erwähnt Matter für das T9. Das Fehlen ist keine Aussage, dass es kein Matter hat.",
+    "hubRequired": "Eingebautes WLAN; die Raumsensoren koppeln direkt mit dem Thermostat.",
+    "localControl": "Keine Herstellerquelle sagt, was ohne Internet funktioniert.",
+    "thermostatType": "Wandthermostat.",
+    "systems": "Honeywells Anleitung sagt, es funktioniert nicht mit elektrischen Konvektorheizungen (120-240 V) oder Millivolt-Anlagen. Bei Netzspannungs-, Dual-Fuel- oder Gebläsekonvektor-Anlagen wende dich an einen Fachbetrieb. Ein Datensatz deckt das RCHT9510WFW (ohne Sensor) und das RCHT9610WFSW (mit Sensor) ab, die dieselbe Installationsanleitung haben.",
+    "power": "Honeywell sagt, das T9 braucht 24 V über ein C-Wire und wird mit einem C-Wire-Adapter für Haushalte ohne eines geliefert. Die Installationsanleitung sagt, der Einbau des Adapters sei bei Zonenanlagen aufwendiger.",
+    "compatibility.apple_home": "Honeywells T9-Bedienungsanleitung beschreibt die HomeKit-Kopplung (am Thermostat „Connect HomeKit“ wählen, dann den Code in der Home-App scannen). Laut Support-Artikel kann HomeKit Sollwerte ändern, aber die Raumsensoren nicht auslesen.",
+    "compatibility.google_home": "Laut Honeywell kann Google Assistant sowohl das Thermostat als auch seine Sensoren anzeigen und steuern.",
+    "compatibility.alexa": "Laut Honeywell kann Alexa sowohl das Thermostat als auch seine Sensoren anzeigen und steuern.",
+    "compatibility.smartthings": "Honeywell führt SmartThings auf. Laut Support-Artikel kann SmartThings Sollwerte ändern, aber die Sensoren nicht auslesen.",
+    "compatibility.home_assistant": "Die Honeywell-Integration von Home Assistant ist für Total Connect Comfort und führt andere Modelle; die gesehene Dokumentation nennt das T9 nicht. Ein Forumsnutzer betreibt ein T9 über HomeKit, das ist keine Herstellerquelle."
+  },
+  "values": {
+    "power": "C-Wire (24 V); Adapter liegt bei",
+    "systems": "Die meisten 24-V-Heiz-, Kühl- und Wärmepumpenanlagen"
+  }
+}

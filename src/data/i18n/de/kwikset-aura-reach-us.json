@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Aura Reach ist Kwiksets Riegelschloss mit Matter over Thread und funktioniert mit Apple Home, Google Home, Alexa, SmartThings und Home Assistant. Es hat ein beleuchtetes Touchscreen-Tastenfeld und läuft mit vier AA-Batterien. Bluetooth bedient die Kwikset-App ohne Hub, die Smart-Home-Plattformen brauchen aber einen Thread-Border-Router.",
+  "caveats": [
+    "Die Smart-Home-Steuerung braucht einen Thread-Border-Router, etwa einen HomePod mini, Apple TV oder Nest Hub.",
+    "Kwikset sagt nichts zur Unterstützung von Apple Home Key.",
+    "Der CSA-Eintrag nennt die Familien-SKU 994000-001, nicht den Code 9400 BLE DB 15 von der Seite."
+  ],
+  "notes": {
+    "radios": "Thread für Matter, Bluetooth für die Kwikset-App. WLAN ist nicht aufgeführt.",
+    "matter": "Die CSA führt Aura Reach von ASSA ABLOY (Kwiksets Muttergesellschaft): Eltern-SKU 994000-001, Thread und Bluetooth, zertifiziert am 2025-11-08. Kwiksets Seite verwendet den Modellcode 9400 BLE DB 15; Name, Hersteller und Funkstandards stimmen überein.",
+    "hubRequired": "Laut Kwiksets Spezifikation ist kein Hub nötig; Bluetooth deckt die Kwikset-App ab, die Smart-Home-Plattformen brauchen einen Thread-Border-Router.",
+    "localControl": "Kwikset sagt, Thread biete lokale Steuerung, erklärt aber nicht ausdrücklich, dass das Schloss ohne Internet funktioniert.",
+    "lockFit": "Einzelzylinder-Riegelschloss; Türen mit 1-3/8 in bis 2-1/4 in Dicke.",
+    "keypad": "Beleuchtetes Touchscreen-Tastenfeld.",
+    "power": "Vier AA-Batterien inklusive.",
+    "compatibility.apple_home": "Kwikset führt Apple Home; Matter over Thread braucht einen Thread-Border-Router wie einen HomePod mini oder Apple TV. Home Key wird nicht erwähnt.",
+    "compatibility.google_home": "Kwikset führt Google Home; Thread braucht einen Border-Router wie einen Nest Hub.",
+    "compatibility.alexa": "Kwikset führt Alexa; Matter over Thread braucht einen Echo, der ein Thread-Border-Router ist.",
+    "compatibility.smartthings": "Kwikset führt SmartThings als kompatibel; Thread braucht einen SmartThings-Hub oder einen anderen Border-Router.",
+    "compatibility.home_assistant": "Über die offizielle Matter-Integration; Thread-Geräte brauchen einen Border-Router."
+  },
+  "values": {
+    "power": "4 × AA"
+  }
+}

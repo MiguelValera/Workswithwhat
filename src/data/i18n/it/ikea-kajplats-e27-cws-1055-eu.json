@@ -1,0 +1,17 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Con un border router Thread, la lampadina a colori IKEA KAJPLATS E27 funziona con Apple Home, Google Home, Alexa, SmartThings e Home Assistant via Matter. Senza, non la controlli nemmeno dal telefono. Lo fa l'hub DIRIGERA di IKEA, e anche un HomePod, un Nest Hub o un Echo con Thread. La lampadina (706.085.75) emette 1055 lumen con colori pieni e bianco regolabile ed è certificata Matter (Matter 1.4). IKEA dice che KAJPLATS ha sostituito TRÅDFRI a gennaio 2026.",
+  "caveats": ["Serve un border router Thread (IKEA DIRIGERA, HomePod, Nest Hub o un Echo con Thread) anche per il controllo da telefono."],
+  "notes": {
+    "radios": "IKEA la descrive come Matter su Thread. Il Bluetooth risulta solo dalla scheda di certificazione CSA (trasporti Thread e Bluetooth); la pagina di IKEA non lo cita, e serve presumibilmente per la messa in servizio Matter.",
+    "matter": "Certificato CSA CSA25G1ZMAT49049-24 (certificato il 2025-12-16, Matter 1.4, Thread e Bluetooth). IKEA dice che KAJPLATS ha sostituito TRÅDFRI a gennaio 2026, soprattutto per la sicurezza e la compatibilità con Matter.",
+    "hubRequired": "IKEA dice che il controllo da telefono richiede un border router Thread, ad esempio il suo hub DIRIGERA. Fa da border router anche un HomePod, un Nest Hub o un Echo con Thread.",
+    "localControl": "Matter su Thread funziona sulla rete locale senza un servizio cloud.",
+    "colorType": "Spettro di colore e bianco: colori pieni più bianco regolabile.",
+    "compatibility.apple_home": "IKEA cita Apple tra i sistemi compatibili; funziona via Matter su Thread e richiede un border router Thread.",
+    "compatibility.google_home": "IKEA cita Google tra i sistemi compatibili; funziona via Matter su Thread e richiede un border router Thread.",
+    "compatibility.alexa": "IKEA cita Amazon tra i sistemi compatibili; funziona via Matter su Thread e richiede un Echo che sia un border router Thread.",
+    "compatibility.smartthings": "IKEA cita Samsung tra i sistemi compatibili; funziona via Matter su Thread e richiede un hub SmartThings che sia un border router Thread.",
+    "compatibility.home_assistant": "Tramite l'integrazione Matter ufficiale con un border router Thread."
+  }
+}

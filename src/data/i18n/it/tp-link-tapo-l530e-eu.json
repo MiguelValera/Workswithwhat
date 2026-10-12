@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La Tapo L530E (EU) funziona con Alexa e Google Home tramite la skill e l'integrazione cloud di TP-Link, e con SmartThings una volta collegato il tuo account TP-Link. Niente hub: si collega direttamente al Wi-Fi a 2,4 GHz, e l'integrazione ufficiale TP-Link Smart Home di Home Assistant la controlla sulla rete locale. Aspettati 806 lumen, 16 milioni di colori e bianco regolabile da 2500 a 6500 K, con attacco E27. Apple Home e Matter non sono confermati, dato che la pagina delle specifiche europea indica solo Alexa e Google.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Il supporto di Apple Home e Matter non è confermato; la lampadina Matter a colori di TP-Link è la Tapo L535E, non questa.", "SmartThings ottiene solo i controlli di base.", "Home Assistant richiede le credenziali del tuo account TP-Link, e potresti dover attivare la compatibilità con terze parti (Third-Party Compatibility) nell'app Tapo.", "Questa è la versione europea E27; la versione statunitense usa un attacco E26."],
+  "notes": {
+    "radios": "IEEE 802.11b/g/n, solo 2,4 GHz.",
+    "matter": "Nessuna fonte ufficiale dichiara Matter in un senso o nell'altro: la pagina delle specifiche europea indica solo Alexa e Google, e non abbiamo trovato nessuna scheda CSA per la L530E. La lampadina Matter a colori di TP-Link è la L535E. Non confermato.",
+    "hubRequired": "Si collega direttamente al Wi-Fi a 2,4 GHz e si controlla dall'app Tapo; non serve nessun bridge.",
+    "localControl": "L'integrazione TP-Link di Home Assistant dialoga con la lampadina sulla rete locale senza il cloud TP-Link, anche se usa le credenziali del tuo account TP-Link per autenticarsi.",
+    "colorType": "16 milioni di colori più bianco regolabile, 2500–6500 K.",
+    "lumens": "806 lm, paragonabile a una lampadina a incandescenza da 60 W.",
+    "bulbBase": "E27 per la versione UE/TW; la versione statunitense è E26.",
+    "compatibility.apple_home": "La pagina delle specifiche europea indica solo Alexa e Google, ma nessuna fonte ufficiale dice che Apple Home non sia supportato, e l'annuncio della lampadina statunitense di TP-Link etichetta la L530E come compatibile con HomeKit. Non confermato.",
+    "compatibility.google_home": "Tramite l'integrazione cloud Tapo per Google Home.",
+    "compatibility.alexa": "Tramite la skill Alexa di Tapo.",
+    "compatibility.smartthings": "Tramite il collegamento dell'account TP-Link nell'app SmartThings (Dispositivi partner > Tapo). La guida utente della L530E nomina SmartThings; le FAQ SmartThings di TP-Link (edizione statunitense) non nominano modelli e sono citate solo per i controlli di base.",
+    "compatibility.home_assistant": "Indicata come supportata dall'integrazione ufficiale TP-Link Smart Home; richiede le credenziali cloud TP-Link e può richiedere l'attivazione di Third-Party Compatibility nell'app Tapo."
+  }
+}

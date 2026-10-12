@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Eingerichtet in der Google-Home-App, kündigt die Nest Doorbell (kabelgebunden, 2. Generation) Besucher auf Google-Lautsprechern und -Displays im selben Zuhause an. Alexa funktioniert über den Skill Google Nest, mit Ansagen bei Klingeldruck und Live-Ansicht auf dem Echo Show, und Home Assistant bekommt sie über die Integration Google Nest. Sie braucht eine vorhandene Klingelleitung mit 16 bis 24 V AC und keinen Hub. Kostenlos bleiben 3 Stunden Ereignisvideo erhalten; bis zu 60 Tage brauchen Google Home Premium.",
+  "caveats": [
+    "Braucht eine Klingelleitung und einen Transformator mit 16–24 V AC, 10–40 VA; manche Haushalte brauchen einen neuen Transformator.",
+    "Ein Videoverlauf über 3 Stunden hinaus braucht einen kostenpflichtigen Tarif Google Home Premium.",
+    "Der Zugriff für Home Assistant läuft über Googles Device Access API, die 5 US-Dollar kostet.",
+    "Die Unterstützung von Apple Home ist nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Googles Installationsseite verbindet sie über die Google-Home-App mit dem WLAN. Keine gesehene Google-Seite nennt die Bänder für dieses Modell; Presse- und Händlerangebote sagen 2,4 und 5 GHz.",
+    "matter": "Keine Google-Seite nennt Matter für dieses Modell, und in der Suche tauchte kein CSA-Eintrag dafür auf. Eine deutsche Nachrichtenseite berichtet, die CSA führe Nest-Kameras und „die Nest Doorbell“ für Matter 1.5.1 ohne Firmware bislang, nennt das Modell aber nicht.",
+    "hubRequired": "Braucht WLAN, die Google-Home-App und ein Google-Konto; weder Hub noch Bridge werden erwähnt.",
+    "localControl": "Google sagt nicht, ob eine Steuerung ohne die Cloud funktioniert.",
+    "power": "Google verlangt einen Transformator mit 16–24 V AC, 10–40 VA; manche Haushalte brauchen einen neuen. Google führt außerdem ein optionales Innen-Steckernetzteil auf.",
+    "localStorage": "Google sagt, sie könne bis zu eine Stunde an Ereignissen in der Türklingel speichern, wenn das WLAN ausfällt, doch eine Option für lokalen Speicher oder microSD wird nicht genannt.",
+    "subscription": "Googles Vergleichsseite nennt 3 Stunden Ereignisvideo ohne Tarif und bis zu 60 Tage Ereignisverlauf mit Google Home Premium.",
+    "compatibility.apple_home": "Keine Seite von Google oder Apple gefunden, die diese Türklingel in Apple Home führt.",
+    "compatibility.google_home": "Wird in der Google-Home-App eingerichtet. Besucheransagen der Türklingel laufen auf Google-Lautsprechern und -Displays im selben Zuhause.",
+    "compatibility.alexa": "Über den Skill Google Nest in der Alexa-App. Google nennt dieses Modell für Ansagen bei Klingeldruck, sobald Visitor announcements in Google Home aktiviert ist, und die Live-Ansicht funktioniert auf dem Echo Show, wenn du danach fragst.",
+    "compatibility.smartthings": "Keine offizielle Seite von Google oder SmartThings für dieses Modell gefunden; nur Forenbeiträge und ein Artikel von 2020 über ältere Nest-Geräte.",
+    "compatibility.home_assistant": "Die offizielle Integration Google Nest nutzt Googles Device Access API, die 5 US-Dollar kostet. Googles Device-Access-Liste führt die Nest Doorbell (wired), im Februar 2023 hinzugefügt, mit WebRTC-Live-Ansicht und Clip-Vorschau."
+  },
+  "values": {
+    "power": "Kabelgebunden (Klingel 16–24 V AC)",
+    "subscription": "Ereignisvideo-Verlauf über 3 Stunden hinaus (Google Home Premium)"
+  }
+}

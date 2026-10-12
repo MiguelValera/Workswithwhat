@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Saugen und Wischen mit 5300 Pa Saugkraft, zwei rotierenden Wischpads und einer Station, die den Behälter in einen 3-L-Staubbeutel entleert, für bis zu 60 Tage: Das ist der Dreame L10s Ultra. Dreame führt die Sprachsteuerung über Alexa und Google Assistant auf. Er navigiert mit zwei Lasern plus RGB-Kamera, und eine Matter-Unterstützung wurde nicht gefunden.",
+  "caveats": [
+    "Dreame sagt, die 5300 Pa stammten aus eigenen Labortests.",
+    "Eine Dreame-Seite erwähnt Siri über die App Dreamehome; das ist Sprachsteuerung, keine bestätigte Unterstützung von Apple Home.",
+    "Für Home Assistant gibt es keine offizielle Seite zu diesem Modell; nur eine Community-Integration über HACS führt ihn auf."
+  ],
+  "notes": {
+    "radios": "Auf den gesehenen Seiten wurde keine Angabe zum WLAN-Band gefunden.",
+    "matter": "Weder auf Dreames Seiten noch in einem CSA-Eintrag wurde eine Angabe zu Matter gefunden.",
+    "hubRequired": "Die Entleerungsstation ist kein Hub.",
+    "localControl": "Keine Herstellerangabe zu reiner lokaler Steuerung gefunden.",
+    "cleaning": "Saugt und wischt mit zwei rotierenden Wischpads.",
+    "navigation": "Dreames Formulierung: zwei Laser, eine RGB-Kamera und KI für Kartierung, Navigation und Hindernisvermeidung. Die Vergleichstabelle nennt es „Double laser+AI“.",
+    "suctionPa": "Dreame sagt, der Wert stamme aus eigenen Labortests.",
+    "selfEmptying": "Die Station entleert den Behälter in einen 3-L-Staubbeutel, für bis zu 60 Tage.",
+    "compatibility.apple_home": "Eine Dreame-Seite führt Siri über die App Dreamehome auf; das ist Sprachsteuerung, keine bestätigte Unterstützung der Home-App.",
+    "compatibility.google_home": "Dreame führt die Sprachsteuerung über Google Assistant auf.",
+    "compatibility.alexa": "Dreame führt die Sprachsteuerung über Alexa auf.",
+    "compatibility.smartthings": "Keine Seite von Dreame oder Samsung zu SmartThings gefunden.",
+    "compatibility.home_assistant": "Keine offizielle Home-Assistant-Seite; nur eine Community-Integration über HACS führt den L10s Ultra auf."
+  },
+  "values": {
+    "navigation": "Zwei Laser und RGB-Kamera"
+  }
+}

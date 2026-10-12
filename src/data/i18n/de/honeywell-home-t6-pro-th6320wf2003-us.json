@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Der T6 Pro TH6320WF2003 von Honeywell Home ist ein Wand-Thermostat mit 2,4-GHz-WLAN für Niederspannungsanlagen: bis zu 3 Heiz- und 2 Kühlstufen bei Wärmepumpen, 2 und 2 bei konventionellen Anlagen. Honeywells Text zu diesem Modell nennt Apple Home und Amazon Echo. Ein Hub ist nicht nötig, aber ein C-Wire ist erforderlich.",
+  "caveats": [
+    "Braucht einen C-Wire; Honeywell verkauft einen C-Wire-Adapter.",
+    "Nur 2,4-GHz-WLAN.",
+    "Wird über Installateure verkauft: Honeywells Seite zeigt ihn als ausverkauft, mit Preis auf Anfrage beim Fachbetrieb, und eine Spezifikationstabelle nennt weniger Wärmepumpenstufen.",
+    "Unterstützung für Google Home, SmartThings, Matter und Home Assistant ist für dieses Modell nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Nur 2,4 GHz 802.11 b/g/n.",
+    "matter": "Honeywells Seite erwähnt Matter nicht; ein CSA-Eintrag wurde nicht geprüft.",
+    "hubRequired": "Verbindet sich direkt mit dem WLAN zu Hause; die Seite führt RedLINK als „No“.",
+    "localControl": "Honeywell sagt nicht, ob die Steuerung ohne die Cloud funktioniert.",
+    "systems": "Der Modellname und eine Spezifikationstabelle nennen 3 Heiz- und 2 Kühlstufen bei Wärmepumpen; eine andere Tabelle auf derselben Seite nennt 2 Heiz- und 1 Kühlstufe.",
+    "power": "Honeywells Support-Artikel sagt, dass die WLAN-Modelle T5/T6 Pro einen gemeinsamen Draht (Common Wire) brauchen.",
+    "compatibility.apple_home": "Der Funktionstext zum T6 Pro nennt „Integration with your Apple Home and Amazon Echo“.",
+    "compatibility.google_home": "Google Assistant steht nur in Honeywells markenweiter Logoreihe „Works with“, nicht im Text zu diesem Modell.",
+    "compatibility.alexa": "Der Funktionstext zum T6 Pro nennt die Integration mit Amazon Echo.",
+    "compatibility.smartthings": "Samsung SmartThings steht nur in Honeywells markenweiter Logoreihe „Works with“, nicht im Text zu diesem Modell.",
+    "compatibility.home_assistant": "Für dieses Modell wurde keine Home-Assistant-Seite geprüft."
+  },
+  "values": {
+    "power": "C-Wire erforderlich",
+    "systems": "Niederspannung; Wärmepumpe bis 3 Heiz-/2 Kühlstufen, konventionell 2 Heiz-/2 Kühlstufen"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "L'Aqara Wall Switch H1 (WS-EUK03) sostituisce l'interruttore in una scatola a muro europea quadrata o rotonda da 86 mm. È un interruttore Zigbee 3.0 on/off a un solo tasto a bilanciere, da 8 A, richiede il filo neutro, riporta le statistiche di consumo e fa da router Zigbee. Un hub Aqara (G2H, M1S e M2 sono nominati) lo collega a Apple Home, Google Home e Alexa; SmartThings e Home Assistant non sono confermati.",
+  "caveats": ["Richiede un hub Aqara, venduto a parte; controllo dall'app, timer e statistiche di consumo funzionano dopo l'associazione all'hub.", "Richiede il filo neutro (morsetti L, N e L1).", "L'interruttore è solo Zigbee e non è certificato Matter da solo; Matter arriverebbe da un hub Aqara compatibile con Matter.", "È il modello a un solo tasto; quello a doppio tasto è il WS-EUK04, distinto."],
+  "notes": {
+    "radios": "Zigbee 3.0. La versione con neutro fa anche da router Zigbee.",
+    "matter": "La CSA indica solo Zigbee 3.0 per questo interruttore. Aqara dice che Matter arriva tramite un hub Aqara compatibile con Matter, non dall'interruttore stesso, quindi l'interruttore non è certificato Matter da solo.",
+    "hubRequired": "Il manuale di Aqara dice che controllo dall'app, timer e statistiche di consumo funzionano dopo l'associazione a un hub Aqara; l'hub è venduto a parte.",
+    "localControl": "Non dichiarato nelle fonti trovate. Il bilanciere funziona come un normale interruttore quando la rete non c'è.",
+    "switchForm": "Sostituisce l'interruttore nelle scatole a muro europee quadrate o rotonde da 86 mm (85,8 x 86 x 37,55 mm).",
+    "dimmer": "Interruttore on/off, carico resistivo da 8 A a 100-250 V.",
+    "neutralRequired": "Versione con neutro; il cablaggio usa i morsetti L, N e L1.",
+    "gangs": "Versione a un solo tasto; quella a doppio tasto è un modello distinto (WS-EUK04).",
+    "compatibility.apple_home": "La pagina Aqara della versione con neutro indica HomeKit, con un hub Aqara (ad es. G2H, M1S, M2) come bridge.",
+    "compatibility.google_home": "La pagina Aqara della versione con neutro indica Google, tramite un hub Aqara.",
+    "compatibility.alexa": "La pagina Aqara della versione con neutro indica Alexa, tramite un hub Aqara.",
+    "compatibility.smartthings": "Nessuna pagina Aqara trovata che nomini SmartThings per questo interruttore.",
+    "compatibility.home_assistant": "Raggiungibile tramite gli hub con bridge Matter di Aqara o un coordinatore Zigbee, ma nessuna fonte ufficiale è stata confermata."
+  },
+  "via": {
+    "apple_home": "hub Aqara",
+    "google_home": "hub Aqara",
+    "alexa": "hub Aqara"
+  },
+  "values": {
+    "gangs": "1 tasto"
+  }
+}

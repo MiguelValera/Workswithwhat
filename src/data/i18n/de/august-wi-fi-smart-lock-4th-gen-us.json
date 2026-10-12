@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Das August Wi-Fi Smart Lock (4. Generation) wird innen über dein vorhandenes Riegelschloss montiert, sodass Außenbeschlag und Schlüssel bleiben, und hat WLAN eingebaut, ohne Bridge. Apple Home funktioniert über Bluetooth, Google Home und Alexa brauchen das Schloss im WLAN, und die August-Integration von Home Assistant führt es auf. Matter-Unterstützung ist nicht bestätigt, und der Status bei SmartThings ist unklar. Zwei CR123A-Zellen halten bei typischer WLAN-Nutzung etwa 3 Monate.",
+  "caveats": [
+    "Die Batterielaufzeit ist kurz: August nennt bis zu 3 Monate bei typischer WLAN-Nutzung mit zwei CR123A-Zellen.",
+    "Die Steuerung von unterwegs über Apple Home braucht ein Apple TV, einen HomePod oder ein iPad als Steuerzentrale.",
+    "Das Entriegeln per Alexa-Sprachbefehl setzt eine PIN voraus.",
+    "Die Batterieanzeige der Gen 4 ist in Home Assistant oft falsch.",
+    "Das Schloss hat kein Tastenfeld; Tastenfelder werden separat verkauft."
+  ],
+  "notes": {
+    "radios": "Eingebautes WLAN für Fern- und Sprachsteuerung; Bluetooth für den lokalen Betrieb und die Kommunikation mit HomeKit.",
+    "matter": "Keine offizielle Aussage zu Matter gefunden. Ein Datenblatt von Best Buy Canada führt Matter als nicht unterstützt, doch Händlerdaten reichen nicht, um es mit „nein“ zu markieren.",
+    "hubRequired": "WLAN ist eingebaut; August sagt, es sei keine Bridge nötig. Die Nutzung von HomeKit aus der Ferne braucht weiterhin eine Apple-Steuerzentrale.",
+    "localControl": "Die Bluetooth-Steuerung über die App ist lokal, doch keine Quelle bestätigt lokale Steuerung über eine Smart-Home-Plattform.",
+    "lockFit": "Wird auf der Innenseite über dein vorhandenes Riegelschloss montiert, sodass Außenbeschlag und Schlüssel bleiben.",
+    "keypad": "Kein Tastenfeld am Schloss; Yale/August verkaufen Tastenfeld-Versionen als separate Produkte.",
+    "power": "Laut Augusts FAQ zwei 3-V-Lithiumzellen CR123 oder CR123A (nicht wiederaufladbar), mit bis zu 3 Monaten Laufzeit bei typischer WLAN-Nutzung. Die 4 × AA auf manchen Angeboten gehören zu älteren August-Schlössern.",
+    "compatibility.apple_home": "HomeKit über Bluetooth. Die Steuerung von unterwegs braucht eine Apple-Steuerzentrale (Apple TV, HomePod oder iPad). Home Key wird nicht erwähnt.",
+    "compatibility.google_home": "Die Integration von Google Assistant braucht das Schloss im WLAN.",
+    "compatibility.alexa": "Braucht WLAN. Das Entriegeln per Sprache setzt eine PIN voraus.",
+    "compatibility.smartthings": "Augusts FAQ zum Wi-Fi Smart Lock und die älteren Integrationsseiten führen Samsung SmartThings auf (Cloud-Integration, kein Z-Wave), die aktuelle Produktseite aber nicht, und keine SmartThings-Seite bestätigt, dass die Integration noch angeboten wird.",
+    "compatibility.home_assistant": "Die August-Integration führt das Wi-Fi Smart Lock (Gen 4) als funktionierend ohne Connect Bridge auf. Die Batterieanzeige der Gen 4 ist in Home Assistant oft falsch."
+  },
+  "values": {
+    "power": "2 × CR123A"
+  }
+}

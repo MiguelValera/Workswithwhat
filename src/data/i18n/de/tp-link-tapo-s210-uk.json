@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Einen Neutralleiter braucht der Tapo S210 (UK) nicht: ein smarter 1-fach-Wechselschalter, der deinen Wandschalter ersetzt. Die Sprachsteuerung mit Alexa und Google Assistant läuft beide Male über einen Tapo Hub, den Tapo als H100 oder H200 nennt und separat verkauft. Apple Home, SmartThings und Matter werden nicht erwähnt, und die UK-Seiten sagen nicht, ob er dimmt.",
+  "caveats": [
+    "Braucht einen Tapo-Hub H100 oder H200, separat erhältlich.",
+    "TP-Links UK-Seiten beschreiben nur Ein-/Aus-Steuerung, gehe also nicht davon aus, dass er dimmt."
+  ],
+  "notes": {
+    "radios": "Aufgeführt ist nur eine Sub-1-GHz-Verbindung (868 MHz) zum Tapo Hub, die nicht in unserer Funkliste steht.",
+    "matter": "Die UK-Seite erwähnt Matter nicht.",
+    "hubRequired": "Die Seite sagt, für alle Smart-Funktionen sei ein Tapo Hub (H100 oder H200, separat erhältlich) nötig.",
+    "localControl": "Aus keiner offiziellen Quelle bestätigt.",
+    "switchForm": "Ersetzt den Wandschalter.",
+    "dimmer": "Keine der beiden UK-Seiten sagt, ob er dimmt; sie beschreiben nur Ein-/Aus-Steuerung, ohne zu sagen, dass er nicht dimmbar ist.",
+    "neutralRequired": "Die Seite sagt, ein Neutralleiter sei nicht nötig.",
+    "compatibility.apple_home": "Die UK-Seite erwähnt Apple Home nicht.",
+    "compatibility.google_home": "Die UK-Seite nennt Sprachsteuerung über den Google Assistant; der Schalter braucht einen Tapo Hub.",
+    "compatibility.alexa": "Die UK-Seite nennt Sprachsteuerung über Amazon Alexa; der Schalter braucht einen Tapo Hub.",
+    "compatibility.smartthings": "Die UK-Seite erwähnt SmartThings nicht.",
+    "compatibility.home_assistant": "Für diesen Schalter wurde keine offizielle Quelle gefunden."
+  },
+  "via": {
+    "google_home": "Tapo Hub (H100/H200)",
+    "alexa": "Tapo Hub (H100/H200)"
+  },
+  "values": {
+    "gangs": "1-fach, Wechselschaltung"
+  }
+}

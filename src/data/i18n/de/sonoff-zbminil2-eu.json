@@ -1,0 +1,31 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Für eine Schalterdose ohne Neutralleiter ist das Sonoff ZBMINI-L2 (auch als ZBMINI Extreme verkauft) ein kleines 6-A-Zigbee-Relais, das deinen Wandschalter über die Eingänge S1/S2 weiter funktionieren lässt. Es ist nicht dimmbar und braucht ein Zigbee-3.0-Gateway: ein Sonoff-Gateway für Google Home, einen Echo mit eingebautem Zigbee für Alexa, einen SmartThings Hub V3 oder einen Zigbee-Koordinator mit ZHA oder Zigbee2MQTT für Home Assistant. Apple Home ist nicht bestätigt.",
+  "caveats": [
+    "Braucht ein Zigbee-3.0-Gateway; Gateways von Philips Hue, IKEA und Fritzbox werden nicht unterstützt.",
+    "Es ist ein Endgerät und erweitert dein Zigbee-Mesh nicht.",
+    "Ohne Neutralleiter braucht es eine Mindestlast von etwa 3 W, und Funkenlöschmodule werden nicht unterstützt.",
+    "Die Unterstützung für Apple Home und Matter ist nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Zigbee-3.0-Endgerät; es leitet keinen Zigbee-Verkehr für andere Geräte weiter.",
+    "matter": "Auf Sonoffs Seiten wurde keine Matter-Angabe gefunden, und es wurde kein CSA-Matter-Eintrag gefunden. Nicht als „nein“ gewertet.",
+    "hubRequired": "Braucht ein Zigbee-3.0-Gateway wie die SONOFF ZBBridge, das NSPanel Pro, das iHost oder einen unterstützten Echo oder SmartThings-Hub.",
+    "localControl": "Sonoffs Seiten sagen, es funktioniere mit lokal fähigen Gateways, aber keine Seite nennt lokale Steuerung ausdrücklich.",
+    "switchForm": "Relais mit 39,5 x 32 x 18,4 mm für die Unterputzdose eines vorhandenen Schalters, mit S1/S2-Eingängen für den Wandschalter.",
+    "dimmer": "Ein/Aus-Relais, 6 A.",
+    "neutralRequired": "Als Variante ohne Neutralleiter verkauft; der Neutralleiter der Lampe selbst wird genutzt. Die Mindestlast liegt bei etwa 3 W, und Funkenlöschmodule werden nicht unterstützt.",
+    "gangs": "Sonoffs Seiten beschreiben einen Relaisausgang mit S1/S2-Schaltereingängen, nennen aber keine Kanal- oder Tastenzahl; nur Händler sagen einkanalig.",
+    "compatibility.apple_home": "Sonoffs Help Center führt Apple Home nicht auf.",
+    "compatibility.google_home": "Sonoff sagt, die Sprachsteuerung funktioniere mit dem Google Assistant, sobald der Schalter in eWeLink an einem Zigbee-Gateway hängt; der Weg vom Gateway zu Google wird nicht für jedes Gateway ausgeführt.",
+    "compatibility.alexa": "Sonoffs Liste nennt Echo Plus 2. Generation, Echo 4. Generation und Echo Show 2. Generation als unterstützte Zigbee-Gateways.",
+    "compatibility.smartthings": "Von Sonoff als unterstütztes Gateway aufgeführt.",
+    "compatibility.home_assistant": "Sonoff führt ZBDongle-P und ZBDongle-E mit ZHA oder Zigbee2MQTT auf. Braucht einen Koordinator; Gateways von Philips, IKEA und Fritzbox werden nicht unterstützt."
+  },
+  "via": {
+    "google_home": "SONOFF-Zigbee-Gateway (z. B. ZBBridge-P, NSPanel Pro, iHost)",
+    "alexa": "Echo mit eingebautem Zigbee-Hub",
+    "smartthings": "SmartThings Hub V3 / Aeotec Hub V3",
+    "home_assistant": "Zigbee-Koordinator (z. B. SONOFF ZBDongle-P/E)"
+  }
+}

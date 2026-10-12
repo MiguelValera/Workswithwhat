@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Das SwitchBot Lock Pro Matter Enabled hat WLAN und Bluetooth eingebaut und spricht Matter über WLAN, sodass sich Apple Home und Google Home ohne SwitchBot-Hub koppeln. SwitchBots Seite führt auch Alexa und Home Assistant auf. Es ist ein Nachrüstschloss, das über den Drehknauf von Euro-Profil-, UK-Oval-, Schweizer-Rund- und Knaufzylindern passt, und es läuft mit zwei wiederaufladbaren Akkupacks, von denen eines lädt, während das andere das Schloss versorgt.",
+  "caveats": [
+    "Das ursprüngliche SwitchBot Lock Pro hat kein WLAN und braucht für Matter einen SwitchBot Hub; dies ist das Modell Matter Enabled.",
+    "Apple Home braucht eine Steuerzentrale wie einen HomePod oder Apple TV, und Google Home braucht einen Nest-Hub.",
+    "SwitchBots Seite führt Alexa auf, ohne zu sagen, wie; wir haben es als Matter erfasst.",
+    "SwitchBots Seiten erwähnen SmartThings für dieses Modell nicht.",
+    "Der Zugang per Tastenfeld braucht ein separates Zubehör, das in den Touch- und Vision-Kombis verkauft wird."
+  ],
+  "notes": {
+    "radios": "Eingebautes WLAN plus Bluetooth zum Entriegeln im Nahbereich. Der CSA-Eintrag zeigt WLAN und Bluetooth.",
+    "matter": "Die CSA führt ein „SwitchBot Lock Pro“ von Woan Technology (SwitchBot), zertifiziert im Juli 2025 mit WLAN und Bluetooth. Das ursprüngliche Lock Pro hat kein WLAN und braucht für Matter einen SwitchBot-Hub, daher passt dieser Eintrag zum Modell Matter Enabled.",
+    "hubRequired": "Diese Variante hat eingebautes WLAN und Matter; das ursprüngliche SwitchBot Lock Pro (ohne Matter Enabled) braucht für Matter einen SwitchBot Hub.",
+    "localControl": "Keine SwitchBot-Quelle nennt rein lokale Steuerung.",
+    "lockFit": "Passt über den vorhandenen Drehknauf von Euro-Profil-, UK-Oval-, Schweizer-Rund- und Knaufzylindern.",
+    "keypad": "Der Zugang per Tastenfeld braucht ein separates Zubehör, das in den Touch- und Vision-Kombis verkauft wird.",
+    "power": "Zwei wiederaufladbare AB-Packs; eines versorgt das Schloss weiter, während das andere lädt.",
+    "compatibility.apple_home": "Die Produktseite sagt, es funktioniere über Matter mit Apple Home, ohne SwitchBot-Hub. Apple Home braucht eine Steuerzentrale wie einen HomePod oder Apple TV.",
+    "compatibility.google_home": "SwitchBots Einrichtungsanleitung für dieses Modell fügt es mit einem Matter-Code zu Google Home hinzu; es braucht einen Google-Nest-Hub.",
+    "compatibility.alexa": "Die Produktseite führt Alexa auf, ohne zu sagen, wie es sich verbindet. Als Matter erfasst, weil dieses Schloss Matter-zertifiziert ist und keine gefundene SwitchBot-Seite einen Skill-Weg für dieses Modell beschreibt.",
+    "compatibility.smartthings": "Die gesehenen Seiten von SwitchBot erwähnen SmartThings für dieses Modell nicht.",
+    "compatibility.home_assistant": "Die Produktseite führt Home Assistant auf. Die SwitchBot-Bluetooth-Doku von Home Assistant führt das ursprüngliche Lock Pro auf, nicht unbedingt diese Variante."
+  },
+  "values": {
+    "power": "Wiederaufladbare Akkupacks"
+  }
+}

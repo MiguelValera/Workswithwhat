@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Certificato Matter e orientato al locale, lo Shelly Plug S Gen3 (S3PL-00112EU) funziona con Apple Home, Google Home, Alexa e SmartThings tramite Matter, e Shelly dice che porta Works with Apple Home. L'integrazione ufficiale Shelly di Home Assistant lo controlla in locale con aggiornamenti push. Funziona con Wi-Fi e Bluetooth 4.2, ha un'interfaccia web integrata e non richiede hub né account cloud. Misura potenza, energia, tensione e corrente, con valore nominale di 12 A / 2500 W per carichi resistivi.",
+  "caveats": ["Shelly dice che su questo modello Matter richiede il firmware 1.6.0 o successivo, quindi aggiornalo prima dell'abbinamento.", "Lo scripting funziona solo con Matter disattivato.", "Il valore nominale di 12 A / 2500 W vale solo per carichi resistivi.", "Ogni piattaforma diversa da Home Assistant richiede il proprio controller Matter; Apple Home richiede un hub domestico per il controllo remoto e le automazioni.", "La CSA e la knowledge base di Shelly lo elencano come Shelly Plug S MTR Gen3."],
+  "notes": {
+    "radios": "Wi-Fi 802.11 b/g/n più Bluetooth 4.2; Shelly indica anche le funzioni di ripetitore Wi-Fi e gateway BLE.",
+    "matter": "La CSA lo elenca come Shelly Plug S MTR Gen3 (CSA243B1MAT43620-24, luglio 2024, firmware 1.2.0-s1). Le FAQ Matter di Shelly dicono che le unità Gen3 come questa ricevono Matter dal firmware 1.6.0, quindi aggiorna prima. Lo scripting funziona solo con Matter disattivato.",
+    "hubRequired": "Dispositivo Wi-Fi con configurazione tramite access point proprio e interfaccia web integrata; l'app e il cloud di Shelly sono facoltativi. Le piattaforme di terzi richiedono il proprio controller Matter.",
+    "localControl": "Interfaccia web integrata per controllo e configurazione, e controllo push locale dall'integrazione Shelly di Home Assistant.",
+    "energyMonitoring": "Misura potenza, energia, tensione e corrente.",
+    "maxLoadWatts": "12 A / 2500 W, solo carichi resistivi.",
+    "compatibility.apple_home": "Certificato Matter (CSA), e il comunicato stampa di Shelly dice che il Plug S MTR Gen3 ha ottenuto Works with Apple Home. L'elenco di Apple non è stato controllato. Richiede un hub domestico Apple per il controllo remoto e le automazioni.",
+    "compatibility.google_home": "Shelly segna Google Smart Home «Yes» senza dire se si tratti del collegamento cloud o di Matter, quindi indichiamo solo Matter. Richiede un controller Matter di Google.",
+    "compatibility.alexa": "Shelly segna Alexa «Yes»; nessuna pagina Shelly trovata conferma la skill Shelly Cloud per questo modello, quindi indichiamo solo Matter. Richiede un Echo che funzioni come controller Matter.",
+    "compatibility.smartthings": "Shelly dice che è certificato nel programma Works with SmartThings di Samsung per Matter.",
+    "compatibility.home_assistant": "Integrazione ufficiale Shelly con push locale; supporta tutte le generazioni di dispositivi Shelly. Può essere aggiunto anche tramite Matter."
+  }
+}

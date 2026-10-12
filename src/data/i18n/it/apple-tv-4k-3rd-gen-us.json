@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Un box per lo streaming che fa anche da hub di Apple Home: l'Apple TV 4K (3rd generation) gestisce accessori HomeKit e Matter e l'accesso remoto, una volta aggiunta a una stanza nell'app Casa. Solo il modello Wi-Fi + Ethernet ha Thread e funziona da border router Thread. Le pagine di Apple non la collegano a Google Home, Alexa o SmartThings.",
+  "caveats": [
+    "Solo il modello Wi-Fi + Ethernet (128 GB) ha Thread; il modello Wi-Fi (64 GB) non può fare da border router Thread.",
+    "Non è stato controllato nessun certificato Matter CSA per l'Apple TV stessa; il suo ruolo Matter si basa sulle pagine di supporto di Apple."
+  ],
+  "notes": {
+    "radios": "Thread è presente solo nel modello Wi-Fi + Ethernet (128 GB); il modello Wi-Fi (64 GB) non ha né Thread né Ethernet.",
+    "matter": "Apple dice che Apple TV 4K può fare da hub domestico per gli accessori Matter, ma non è stata controllata nessuna scheda CSA per questo dispositivo, quindi la certificazione non è confermata.",
+    "hubRequired": "L'Apple TV è essa stessa l'hub domestico.",
+    "localControl": "Le pagine di Apple non dicono quali automazioni girano in locale.",
+    "hubType": "Un box per lo streaming che Apple definisce hub per la casa smart. Lo schema non ha un tipo per i set-top box; «speaker-display» (un dispositivo con funzione principale multimediale e hub integrato, come HomePod) calza meglio di «hub» (un bridge dedicato).",
+    "deviceProtocols": "Thread (modello Wi-Fi + Ethernet) per gli accessori HomeKit e Matter su Thread.",
+    "matterBridge": "Apple non descrive l'Apple TV come bridge Matter.",
+    "threadBorderRouter": "Solo il modello Wi-Fi + Ethernet; Apple indica Apple TV 4K come hub domestico con Thread.",
+    "maxDevices": "Nessun limite trovato nelle fonti.",
+    "compatibility.apple_home": "Diventa hub domestico quando viene aggiunta a una stanza nell'app Casa, per accessori HomeKit e Matter e per l'accesso remoto. Gli accessori Thread richiedono il modello Wi-Fi + Ethernet.",
+    "compatibility.google_home": "Nessuna fonte ufficiale mostra l'Apple TV che ospita dispositivi per Google Home.",
+    "compatibility.alexa": "Nessuna fonte ufficiale mostra l'Apple TV che ospita dispositivi per Alexa.",
+    "compatibility.smartthings": "Nessuna fonte ufficiale mostra l'Apple TV che ospita dispositivi per SmartThings.",
+    "compatibility.home_assistant": "Nessuna fonte ufficiale mostra i dispositivi abbinati all'Apple TV in Home Assistant."
+  }
+}

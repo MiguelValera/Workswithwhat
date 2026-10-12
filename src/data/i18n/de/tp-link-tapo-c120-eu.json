@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Bei der Tapo C120 sind Alexa und Google Home die aufgeführten Ökosysteme, und Home Assistant unterstützt sie über die TP-Link-Integration. Apple Home, SmartThings und Matter werden nicht erwähnt. Es ist eine 2K-WLAN-Kamera mit Netzstecker, nach IP66 für innen und außen. Eine microSD-Karte bis 512 GB zeichnet lokal auf, und der optionale Tarif Tapo Care ergänzt 30 Tage Cloud-Verlauf.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Sie braucht Netzstrom über das 3 m lange Adapterkabel, am Standort muss also eine Steckdose sein.",
+    "Die Live-Ansicht in Home Assistant braucht ein Kamerakonto, das in der Tapo-App angelegt wird.",
+    "Apple Home, SmartThings und Matter werden auf Tapos Seite nicht erwähnt."
+  ],
+  "notes": {
+    "radios": "Nur 2,4-GHz-WLAN (802.11b/g/n).",
+    "matter": "Die spanische Produktseite erwähnt Matter nicht, und wir fanden keinen CSA-Eintrag.",
+    "hubRequired": "Eine WLAN-Kamera mit eigenem Netzadapter; die Seite erwähnt keinen Hub.",
+    "localControl": "Home Assistant verbindet sich über das lokale Netzwerk, aber Tapo sagt nicht, dass die App-Steuerung ohne Cloud funktioniert. ONVIF/RTSP wird auf der Produktseite nicht beschrieben.",
+    "cameraType": "Tapo verkauft sie für innen und außen, nach IP66; als Außenkamera erfasst, weil das ihr leistungsfähigerer Einsatz ist.",
+    "power": "Adapter mit 5 V DC, 1,0 A und 3 m Kabel.",
+    "localStorage": "microSD-Slot, bis 512 GB (Karte separat erhältlich).",
+    "subscription": "Tapo Care ergänzt einen Cloud-Clipverlauf von 30 Tagen; der erste Monat ist eine kostenlose Testphase. Preise in der EU nicht geprüft.",
+    "compatibility.apple_home": "Die spanische Produktseite erwähnt weder Apple Home noch HomeKit.",
+    "compatibility.google_home": "Die Seite führt Google Home und Google Assistant; was über die Live-Ansicht hinaus funktioniert, ist nicht näher beschrieben.",
+    "compatibility.alexa": "Die Seite führt Amazon Alexa; was über die Live-Ansicht hinaus funktioniert, ist nicht näher beschrieben.",
+    "compatibility.smartthings": "Auf Tapos Seite nicht erwähnt.",
+    "compatibility.home_assistant": "Home Assistants TP-Link-Smart-Home-Integration führt die C120. Die Live-Ansicht braucht ein in der Tapo-App angelegtes Kamerakonto."
+  },
+  "values": {
+    "power": "Steckernetzteil (Netzstrom)",
+    "subscription": "Optionaler Tarif Tapo Care für Cloud-Videoverlauf"
+  }
+}

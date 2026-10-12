@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Über Matter per WLAN verbindet sich der Shelly Plug Gen4 (US), Modell S4PL-00116US, mit Apple Home, Google Home, Alexa und SmartThings, und Home Assistant übernimmt ihn lokal über die offizielle Shelly-Integration. Er ist CSA-zertifiziert, braucht keinen Hub und hat zusätzlich Bluetooth- und Zigbee-Funk (er kann als Zigbee-Router arbeiten). Mit 15 A / 1800 W Nennlast hat er ein eingebautes Strommessgerät und speichert Zeitpläne und Skripte im Gerät.",
+  "caveats": [
+    "Apple Home braucht für Fernzugriff und Automatisierungen eine Steuerzentrale.",
+    "Alexa, Google Home und SmartThings sind nur über Matter bestätigt, du brauchst also einen Matter-fähigen Echo, einen Google-Matter-Controller oder einen SmartThings-Matter-Hub."
+  ],
+  "notes": {
+    "radios": "Shelly führt WLAN, Bluetooth und Zigbee auf und sagt, der Zwischenstecker könne als Zigbee-Router arbeiten. Matter läuft laut CSA-Eintrag über WLAN.",
+    "matter": "CSA-Zertifikat CSA250D9MAT45099-24 (02.10.2025, Firmware 1.3.0-s2, Produkt-ID 0x1852, WLAN-Transport). Der CSA-Beschreibungstext erwähnt das Shelly 1PM Gen4, was nach einem Kopierfehler aussieht.",
+    "hubRequired": "WLAN-Gerät mit Einrichtung über einen WLAN-Access-Point; keine Bridge nötig.",
+    "localControl": "Shelly führt lokale Steuerung, lokal gespeicherte Zeitpläne und lokales Scripting auf; die Shelly-Integration von Home Assistant spricht mit dem Gerät im lokalen Netzwerk.",
+    "energyMonitoring": "Eingebautes Strommessgerät. Außerdem gibt es einen Lichtsensor, der die Beleuchtungsstärke meldet.",
+    "maxLoadWatts": "15 A / 1800 W, mit Schutz vor Überhitzung, Überspannung, Überstrom und Überlast.",
+    "compatibility.apple_home": "Shelly sagt, es funktioniere dank seiner Matter-Zertifizierung mit Apple HomeKit. Apples eigene Zubehörliste wurde nicht geprüft. Braucht für Fernzugriff und Automatisierungen eine Apple-Steuerzentrale.",
+    "compatibility.google_home": "Shelly führt Google Smart Home (On/Off-Trait) auf, ohne dass eine gerätespezifische Seite die Cloud-Verknüpfung bestätigt, daher geben wir nur Matter an. Braucht einen Google-Matter-Controller.",
+    "compatibility.alexa": "Shelly führt Alexa (Power Controller) auf, ohne dass eine gerätespezifische Seite den Shelly-Cloud-Skill bestätigt, daher geben wir nur Matter an. Braucht einen Echo, der als Matter-Controller arbeitet.",
+    "compatibility.smartthings": "Shelly führt SmartThings (Switch, Power Meter) auf, ohne zu sagen, ob das eine Cloud-Verknüpfung oder Matter ist, daher geben wir nur Matter an. Braucht einen SmartThings-Matter-Hub.",
+    "compatibility.home_assistant": "Offizielle Shelly-Integration, die laut eigener Aussage alle vier Shelly-Gerätegenerationen unterstützt. Matter und Zigbee sind weitere Wege."
+  }
+}

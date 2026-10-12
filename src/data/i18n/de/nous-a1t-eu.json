@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Auf der Nous A1T (EU) ist Tasmota vorinstalliert, es gibt also keine Hersteller-Cloud: Sie geht direkt über die offizielle Tasmota-Integration in Home Assistant, die einen MQTT-Broker und Tasmota 9.2 oder neuer braucht. Sie misst und erfasst den Verbrauch, wobei die Werte für genaue Ergebnisse kalibriert werden müssen. Alexa und Google Assistant funktionieren nur über Home Assistant oder ähnliche Software, nicht über die Steckdose selbst. Nous' eigene Seite nennt widersprüchliche Lastgrenzen (10 A in der Spezifikationstabelle, 16 A im Namen), deshalb führen wir kein Maximum.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN; laut Nous verbindet sie sich nicht mit einem 5-GHz-Netz.",
+    "Die Tasmota-Integration von Home Assistant braucht einen MQTT-Broker und Tasmota 9.2 oder neuer.",
+    "Die Verbrauchswerte brauchen eine Kalibrierung der Leistungsmessung, bevor sie genau sind.",
+    "Nous' Spezifikationstabelle nennt 10 A / 2500 W, während der Produktname 16 A nennt, prüfe also vor dem Anschließen einer hohen Last.",
+    "Kein Alexa oder Google Assistant ohne Home Assistant oder ähnliche Software dazwischen."
+  ],
+  "notes": {
+    "radios": "Nur 2,4-GHz-WLAN; laut Nous funktioniert sie nicht in 5-GHz-Netzen.",
+    "matter": "Nous' A1T-Seite erwähnt Matter nicht, und es wurde kein CSA-Eintrag gefunden. Sie wird mit Tasmota-Firmware geliefert.",
+    "hubRequired": "WLAN-Steckdose mit Tasmota, konfiguriert über die eigene Weboberfläche. Sprachassistenten brauchen Home Assistant oder ähnliches.",
+    "localControl": "Die Tasmota-Firmware läuft lokal mit eingebauter Weboberfläche und MQTT; keine Hersteller-Cloud.",
+    "energyMonitoring": "Misst und erfasst den Verbrauch. Nous und die Tasmota-Vorlage sagen beide, dass sie für genaue Werte eine Kalibrierung der Leistungsmessung braucht.",
+    "maxLoadWatts": "Nous' eigene Seite widerspricht sich: Die Spezifikationstabelle nennt 10 A max. Last / 2500 W, während Produktname und Relaisbeschreibung 16 A nennen. Händler führen 16 A / 3680 W.",
+    "compatibility.apple_home": "Nous' A1T-Seite erwähnt Apple Home nicht.",
+    "compatibility.google_home": "Laut Nous funktioniert Google Assistant erst, nachdem die Steckdose mit Home Assistant oder ähnlicher Software verbunden wurde. Es gibt keine Nous-Cloud-Verknüpfung und keine Bridge, das hängt also von Home Assistants eigener Google-Integration ab, nicht von der Steckdose.",
+    "compatibility.alexa": "Laut Nous funktioniert Alexa erst, nachdem die Steckdose mit Home Assistant oder ähnlicher Software verbunden wurde. Es gibt keine Nous-Cloud-Verknüpfung und keine Bridge, das hängt also von Home Assistants eigener Alexa-Integration ab, nicht von der Steckdose.",
+    "compatibility.smartthings": "Nous' A1T-Seite erwähnt SmartThings nicht.",
+    "compatibility.home_assistant": "Über die offizielle Tasmota-Integration von HA per MQTT (braucht einen MQTT-Broker und Tasmota 9.2+). Nous nennt Home Assistant als vorgesehene Plattform."
+  }
+}

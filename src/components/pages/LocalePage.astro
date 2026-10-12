@@ -13,6 +13,15 @@ import MatterPage from './MatterPage.astro';
 import AvisoLegal from './es/AvisoLegal.astro';
 import Metodologia from './es/Metodologia.astro';
 import Privacidad from './es/Privacidad.astro';
+import Datenschutz from './de/Datenschutz.astro';
+import Impressum from './de/Impressum.astro';
+import Methodik from './de/Methodik.astro';
+import Confidentialite from './fr/Confidentialite.astro';
+import MentionsLegales from './fr/MentionsLegales.astro';
+import Methodologie from './fr/Methodologie.astro';
+import Metodologia_it from './it/Metodologia.astro';
+import NoteLegali from './it/NoteLegali.astro';
+import Privacy_it from './it/Privacy.astro';
 import type { LocalePage } from '../../lib/routes-i18n';
 import { langOf, type LocaleLang } from '../../i18n/lang';
 
@@ -21,8 +30,12 @@ interface Props {
 }
 const { page } = Astro.props;
 const lang = langOf(Astro.url.pathname) as LocaleLang;
-const FIXED = {
+// Hand-written methodology, legal and privacy pages: a new language needs an entry here.
+const FIXED: Record<LocaleLang, Record<'methodology' | 'legal' | 'privacy', typeof Metodologia>> = {
   es: { methodology: Metodologia, legal: AvisoLegal, privacy: Privacidad },
+  de: { methodology: Methodik, legal: Impressum, privacy: Datenschutz },
+  fr: { methodology: Methodologie, legal: MentionsLegales, privacy: Confidentialite },
+  it: { methodology: Metodologia_it, legal: NoteLegali, privacy: Privacy_it },
 };
 const Fixed = page.kind === 'methodology' || page.kind === 'legal' || page.kind === 'privacy' ? FIXED[lang][page.kind] : undefined;
 ---

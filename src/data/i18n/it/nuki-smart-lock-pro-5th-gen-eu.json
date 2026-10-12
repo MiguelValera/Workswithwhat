@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Sopra il tuo cilindro Europrofile esistente si monta la Nuki Smart Lock Pro (5th Gen), quindi non si cambia il cilindro. Matter su Thread la collega ad Apple Home, Google Home, Alexa e SmartThings, e il Wi-Fi integrato gestisce l'accesso da remoto senza Bridge. La batteria è integrata e si ricarica in circa due ore; sulla serratura non c'è un tastierino. Home Assistant non è confermato.",
+  "caveats": ["Matter richiede un border router Thread; un hub Matter solo Wi-Fi non funziona.", "Non tutti gli hub Matter supportano l'accesso da remoto via Thread, secondo la guida alla risoluzione dei problemi di Nuki.", "Non è compatibile con l'Universal Cylinder di Nuki.", "Il Keypad 2 NFC è un accessorio separato."],
+  "notes": {
+    "radios": "La tabella delle generazioni di Nuki segna Wi-Fi integrato e Matter su Thread come sì per la Pro (5th Gen). Quando l'accesso da remoto via Thread è disponibile, Nuki dice che il Wi-Fi viene spento.",
+    "matter": "La CSA elenca 'Nuki Smart Lock Pro' (hardware 10.00, firmware 1.4.1, certificata il 2025-11-18) senza indicazione della generazione, separata dalle schede della Pro 4th Gen (hardware 7.x). La tabella delle generazioni di Nuki segna Matter su Thread per la Pro (5th Gen).",
+    "hubRequired": "Wi-Fi integrato e accesso da remoto sono inclusi, quindi non serve un Bridge. Il controllo Matter richiede un border router Thread.",
+    "localControl": "Nessuna fonte Nuki descrive espressamente un controllo offline o solo locale.",
+    "lockFit": "Si monta sopra il cilindro interno esistente senza sostituirlo; Nuki dice che va bene per i cilindri Europrofile e alcuni cilindri svizzeri tondi selezionati. Non è compatibile con l'Universal Cylinder di Nuki.",
+    "keypad": "Nessun tastierino sulla serratura. Il Keypad 2 NFC di Nuki è un accessorio separato.",
+    "power": "Batteria agli ioni di litio integrata che si ricarica in circa 2 ore, sulla porta o fuori.",
+    "compatibility.apple_home": "Matter su Thread. Nuki dice che serve un hub che supporti Matter via Thread; un hub Matter solo Wi-Fi non funziona.",
+    "compatibility.google_home": "Matter su Thread, che richiede un border router Thread. Nuki documenta anche un collegamento cloud Nuki Web con Google Home per le sue serrature; non verificato per questa generazione.",
+    "compatibility.alexa": "Matter su Thread, che richiede un border router Thread. Nuki documenta anche una skill Nuki Web per Alexa; non verificata per questa generazione.",
+    "compatibility.smartthings": "Nuki cita Samsung SmartThings come piattaforma Matter su Thread; serve un border router Thread.",
+    "compatibility.home_assistant": "La pagina Nuki di Home Assistant che abbiamo visto riguarda le serrature 4th generation; nessuna fonte ufficiale cita la Pro 5th Gen. Una discussione sul forum segnala problemi di messa in servizio Matter, che non è una fonte ufficiale."
+  },
+  "values": {"power": "Batteria ricaricabile integrata"}
+}

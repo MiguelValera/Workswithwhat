@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Für Alexa, Google Home oder SmartThings ist die EU-Tapo-P100 ein schlichter Ein/Aus-Zwischenstecker, verknüpft über dein TP-Link-Konto in der Tapo-App. Die TP-Link-Integration von Home Assistant unterstützt sie auch lokal. Sie ist ein 2,4-GHz-WLAN-Zwischenstecker für 10 A / 2300 W ohne Hub und ohne Verbrauchsmessung. TP-Link führt für sie weder Apple Home noch Matter auf; die separate Tapo P100M ist die Matter-Version.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "TP-Link führt weder Apple Home noch Matter auf; die Tapo P100M ist die Matter-Version.",
+    "Keine Verbrauchsmessung; laut TP-Link sind P110 und P115 die Tapo-Zwischenstecker, die die Leistung messen.",
+    "Die Nennwerte unterscheiden sich je nach Region: Diese EU-Version hat 10 A / 2300 W, die UK-Version 13 A und die US-Version 10 A / 1200 W.",
+    "Die TP-Link-Integration von Home Assistant fragt bei neuerer Firmware einmalig nach deinen TP-Link-Kontodaten.",
+    "Motorlasten sind auf 1/6 PS begrenzt."
+  ],
+  "notes": {
+    "radios": "Nur 2,4-GHz-WLAN (IEEE 802.11b/g/n). TP-Link führt Bluetooth nur für die Einrichtung auf.",
+    "matter": "Keine offizielle Quelle gibt Matter-Unterstützung für die P100 an oder schließt sie ausdrücklich aus; die Produktseiten führen sie schlicht nicht auf. TP-Links Matter-Version ist die separate Tapo P100M.",
+    "hubRequired": "WLAN-Zwischenstecker, der sich direkt mit deinem 2,4-GHz-Router verbindet und in der Tapo-App eingerichtet wird; keine Bridge aufgeführt.",
+    "localControl": "Die TP-Link-Integration von Home Assistant steuert ihn über das lokale Netzwerk, wobei neuere Firmware TP-Link-Kontodaten zur Authentifizierung braucht. Wir fanden keine TP-Link-Seite zur Tapo-App-Steuerung ohne Internet.",
+    "energyMonitoring": "Laut TP-Links Zwischenstecker-FAQ messen P110 und P115 den Verbrauch, die P100 nicht.",
+    "maxLoadWatts": "10 A / 2300 W für die EU-Version, 1/6-PS-Motor. Die UK-Version ist für 13 A ausgelegt, die US-Version für 10 A / 1200 W; verwechsle sie nicht.",
+    "compatibility.apple_home": "TP-Links P100-Seiten führen Alexa, Google Assistant und SmartThings auf und erwähnen Apple Home nicht, aber keine offizielle Seite sagt, dass es nicht unterstützt wird. Die Tapo P100M ist die Matter-Version.",
+    "compatibility.google_home": "Über die Tapo-Cloud-Verknüpfung (Works with Google Home). Richte den Zwischenstecker zuerst in der Tapo-App ein.",
+    "compatibility.alexa": "Über den Tapo-Alexa-Skill, verknüpft mit deinem TP-Link-Konto.",
+    "compatibility.smartthings": "Über die Tapo-Partner-Integration in der SmartThings-App, angemeldet mit deiner TP-Link-ID.",
+    "compatibility.home_assistant": "Die TP-Link-Smart-Home-Integration von Home Assistant führt die P100 unter den unterstützten Tapo-Zwischensteckern auf. Neuere Geräte brauchen einmalig deine TP-Link-Kontodaten."
+  }
+}

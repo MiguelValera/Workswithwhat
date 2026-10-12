@@ -118,6 +118,9 @@ for (const [slug, d] of bySlug) {
 // Marketing filler each language's copy must not use (the English list is BANNED above).
 const BANNED_IN = {
   es: ['sin fisuras', 'revolucionari', 'en el mundo actual', 'sin esfuerzo', 'no busques más', 'de última generación', 'potencia tu', 'eleva tu'],
+  de: ['nahtlos', 'revolutionär', 'in der heutigen', 'mühelos', 'auf ein neues level', 'suchen sie nicht weiter', 'such nicht weiter', 'der nächsten generation'],
+  fr: ['sans couture', 'révolutionn', "dans le monde d'aujourd'hui", 'sans effort', 'ne cherchez plus', 'à la pointe', 'dernier cri', 'boostez'],
+  it: ['senza soluzione di continuità', 'rivoluzionari', 'nel mondo di oggi', 'senza sforzo', 'non cercare oltre', "all'avanguardia", 'di ultima generazione'],
 };
 // digit runs, with thousands separators removed ("1,100" and "1.100" are both 1100) so the
 // check is about values, not about number formatting ("2.4" and "2,4" both give 2 and 4)

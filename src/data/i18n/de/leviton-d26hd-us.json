@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Levitons D26HD ist ein WLAN-Dimmer im Decora-Stil, der einen US-Wandschalter ersetzt und einen Neutralleiter braucht. Leviton führt Apple Home, Alexa, Google Home und SmartThings ohne Hub. Ein Firmware-Update in der App My Leviton ergänzt Matter, worüber Home Assistant ihn erreicht. Das Update entfernt die HomeKit-Kopplung, du fügst ihn also mit dem Matter-Code und einer Apple-Steuerzentrale neu zu Apple Home hinzu. Er dimmt 300 W LED oder 600 W Glühlampen.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Braucht einen Neutralleiter in der Dose.",
+    "Das Matter-Update entfernt die HomeKit-Verknüpfung; das erneute Hinzufügen zu Apple Home braucht eine Apple-Steuerzentrale.",
+    "Home Assistant braucht das Matter-Update; es gibt keine offizielle Leviton-Integration.",
+    "Levitons Produktseite markiert den D26HD-1BW als eingestellt und empfiehlt stattdessen den D36HD-1BW; prüfe vor dem Kauf die Verfügbarkeit."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN laut Leviton; das Datenblatt nennt auch Bluetooth 5.0. Der CSA-Eintrag nennt WLAN und Bluetooth als Matter-Transporte.",
+    "matter": "Matter kommt mit einem Firmware-Update in der App My Leviton. Die CSA hat zwei Einträge für den D26HD: das Original (d26hd-2, Firmware 2.1.0, Matter 1.0, zertifiziert am 2023-03-01) und eine Rezertifizierung (d26hd, Firmware 2.3.10, Matter 1.3, zertifiziert am 2025-02-21).",
+    "hubRequired": "Verbindet sich direkt mit 2,4-GHz-WLAN und funktioniert mit der App My Leviton; kein Hub.",
+    "localControl": "Laut Leviton lässt die Matter-Firmware den Dimmer lokal mit Matter-Plattformen verbinden. Leviton nennt für die eigene App keine lokale Steuerung.",
+    "switchForm": "Wippendimmer im Decora-Stil, der einen Wandschalter ersetzt.",
+    "dimmer": "Bis zu 300 W dimmbare LED/Energiesparlampen, 600 W Glühlampen, 600 VA magnetische Niedervolt-Last bei 120 V.",
+    "gangs": "Auf den gesehenen Seiten nicht angegeben; es ist ein einzelner Dimmer für eine Dose.",
+    "compatibility.apple_home": "Laut Leviton funktioniert der D26HD der 2. Generation mit Apple HomeKit und wird in der Home-App eingerichtet. Das optionale Matter-Update entfernt diese HomeKit-Verknüpfung; du fügst ihn dann mit dem Matter-Code neu zu Apple Home hinzu, was eine Apple-Steuerzentrale (HomePod oder Apple TV) braucht.",
+    "compatibility.google_home": "Über die Cloud-Verknüpfung von My Leviton; nach dem Firmware-Update ist auch Matter eine Option.",
+    "compatibility.alexa": "Über My Leviton; nach dem Firmware-Update ist auch Matter eine Option.",
+    "compatibility.smartthings": "Leviton führt SmartThings und sagt, das Matter-Update lässt die bestehende Integration unberührt.",
+    "compatibility.home_assistant": "Über die Matter-Integration von Home Assistant nach dem Matter-Firmware-Update. Eine offizielle Leviton-Integration für Home Assistant haben wir nicht gefunden."
+  }
+}

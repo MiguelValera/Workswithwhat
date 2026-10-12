@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Lo Smart Bridge Caséta di Lutron (L-BDG2) gestisce fino a 75 dispositivi Caséta da una sola scatola: dimmer, interruttori, controlli per ventilatori, telecomandi Pico e sensori, via Clear Connect RF, la radio proprietaria di Lutron. Si collega al router via Ethernet, e il controllo resta locale se internet cade. I dispositivi abbinati compaiono in Apple Home, Google Home, Alexa e Home Assistant; Apple Home richiede il bridge di seconda generazione o il PRO.",
+  "caveats": ["Apple Home richiede lo Smart Bridge di seconda generazione (L-BDG2) o lo Smart Bridge PRO; i bridge più vecchi non funzionano con HomeKit.", "Lutron ora lo chiama Caséta Smart Hub, e lo Smart Bridge Pro è un modello a parte.", "Alcune schede dei rivenditori danno ancora il vecchio limite di 50 dispositivi; Lutron dice 75.", "Il supporto a SmartThings non è confermato da nessuna fonte ufficiale."],
+  "notes": {
+    "radios": "Lutron dice che l'hub si collega a una porta LAN del router con il cavo Ethernet in dotazione e non usa il Wi-Fi. I dispositivi comunicano via Lutron Clear Connect RF, che non è nell'elenco delle radio, quindi viene registrata solo l'Ethernet.",
+    "matter": "Nessuna dichiarazione su Matter trovata per lo Smart Bridge.",
+    "hubRequired": "È l'hub. I dimmer e gli interruttori Caséta funzionano con i telecomandi Pico anche senza, ma il controllo da app, i programmi, le scene e l'integrazione con gli speaker smart lo richiedono.",
+    "localControl": "Lutron dice che l'hub non usa il Wi-Fi, quindi il controllo locale continua a funzionare durante un'interruzione di internet.",
+    "deviceProtocols": "Lutron Clear Connect RF, verso dimmer, interruttori, controlli per ventilatori, telecomandi Pico e sensori Caséta.",
+    "matterBridge": "Nessuna dichiarazione su un bridge Matter trovata.",
+    "threadBorderRouter": "Nessuna dichiarazione su Thread trovata.",
+    "maxDevices": "Lutron dice fino a 75 dispositivi Caséta per hub. Alcune schede dei rivenditori danno ancora il vecchio limite di 50.",
+    "compatibility.apple_home": "Lutron dice che HomeKit richiede uno Smart Bridge di seconda generazione (L-BDG2) o lo Smart Bridge PRO; il codice di configurazione HomeKit si inserisce nell'app Lutron.",
+    "compatibility.google_home": "Collega il servizio Caséta Wireless nell'app Google Home.",
+    "compatibility.alexa": "Attiva la skill Lutron Caséta nell'app Alexa e accedi con il tuo account Lutron.",
+    "compatibility.smartthings": "Nessuna fonte ufficiale trovata nei risultati di ricerca.",
+    "compatibility.home_assistant": "Integrazione ufficiale Lutron Caséta; la documentazione elenca lo Smart Hub L-BDG2-WH e lo Smart Bridge PRO."
+  }
+}

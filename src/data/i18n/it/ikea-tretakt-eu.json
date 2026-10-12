@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Da sola, IKEA TRETAKT si abbina solo a un telecomando o a un sensore di movimento IKEA. Aggiungi un hub DIRIGERA (o il vecchio gateway TRÅDFRI) e arriva su Apple Home, Google Home e Alexa, con i collegamenti di IKEA o con il bridge Matter di DIRIGERA, che è anche il modo in cui la vede l'integrazione Matter di Home Assistant. La presa in sé è Zigbee, non Matter. Questa versione europea è data per 3680 W per carichi resistivi ma solo 300 W per i motori, e IKEA non cita la misura dei consumi.",
+  "caveats": ["Serve l'hub DIRIGERA (o il gateway TRÅDFRI) per il controllo da app, vocale o di qualunque ecosistema.", "I carichi motore sono limitati a 300 W, ben sotto i 3680 W per carichi resistivi.", "Non è un dispositivo Matter; le piattaforme Matter la vedono solo tramite il bridge Matter di DIRIGERA.", "La TRETAKT statunitense è una versione diversa, data per 1800 W.", "IKEA la indica come in dismissione in alcuni mercati."],
+  "notes": {
+    "radios": "La pagina del prodotto IKEA non nomina la radio. La CSA elenca la TRETAKT Smart Plug come certificata Zigbee 3.0 (la scheda non nomina la variante regionale); Zigbee2MQTT la elenca come E22x4 (E2204 EU).",
+    "matter": "Nessuna certificazione Matter trovata per la TRETAKT stessa. Raggiunge le piattaforme Matter solo tramite il bridge Matter dell'hub DIRIGERA.",
+    "hubRequired": "Serve DIRIGERA (o il vecchio gateway TRÅDFRI) per il controllo da app, vocale e dell'ecosistema. Senza hub si può comunque abbinare direttamente a un telecomando o a un sensore di movimento IKEA.",
+    "localControl": "Nessuna dichiarazione ufficiale sul controllo locale trovata.",
+    "energyMonitoring": "Le schede e il manuale IKEA trovati non citano la misura dei consumi, ma nessuna fonte dice espressamente che sia assente.",
+    "maxLoadWatts": "Carico resistivo di 3680 W; il manuale limita i carichi motore a 300 W. La TRETAKT statunitense è data per 1800 W.",
+    "compatibility.apple_home": "L'hub si aggiunge ad Apple Home dall'app IKEA Home smart; esiste anche un'opzione con bridge Matter.",
+    "compatibility.google_home": "Collegata con il servizio Works with Google e un account IKEA, oppure tramite il bridge Matter.",
+    "compatibility.alexa": "Tramite la skill IKEA Home Smart per Alexa, oppure tramite il bridge Matter.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale IKEA o SmartThings trovata riguarda questa presa.",
+    "compatibility.home_assistant": "La documentazione Matter di HA cita DIRIGERA come bridge ed elenca le prese smart tra i tipi collegati. L'abbinamento diretto a un coordinatore Zigbee (ZHA, Zigbee2MQTT) è segnalato dagli utenti ma non documentato ufficialmente."
+  },
+  "via": {"apple_home": "hub IKEA DIRIGERA", "google_home": "hub IKEA DIRIGERA", "alexa": "hub IKEA DIRIGERA", "home_assistant": "hub IKEA DIRIGERA (bridge Matter)"}
+}

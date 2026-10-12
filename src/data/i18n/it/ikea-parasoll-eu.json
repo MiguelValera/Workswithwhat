@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "IKEA PARASOLL è un sensore Zigbee di contatto per porte e finestre che richiede un hub IKEA DIRIGERA per arrivare su Apple Home, Google Home e Alexa. Senza l'hub può solo far scattare una lampadina TRÅDFRI abbinata. Il supporto a SmartThings e a Home Assistant non è confermato. Usa una pila AAA, e IKEA consiglia la sua ricaricabile LADDA.",
+  "caveats": ["Serve un hub DIRIGERA, venduto a parte, per le notifiche sul telefono e per Apple Home, Google Home e Alexa.", "La pagina di aiuto austriaca di IKEA dice che il PARASOLL è uscito di gamma, con il MYGGBETT come sostituto."],
+  "notes": {
+    "radios": "Il comunicato di lancio di IKEA descrive i tre sensori come basati su Zigbee.",
+    "matter": "IKEA dice che i dispositivi Zigbee su DIRIGERA possono essere resi disponibili tramite il suo bridge Matter. Nessuna pagina vista dice che il PARASOLL sia esposto, e nessuna scheda CSA è stata trovata.",
+    "hubRequired": "Le notifiche sul telefono e i collegamenti con la smart home richiedono un hub DIRIGERA (venduto a parte). Senza, può solo far scattare direttamente una lampadina TRÅDFRI abbinata.",
+    "localControl": "Nessuna pagina vista dice se funzioni senza internet tramite DIRIGERA.",
+    "power": "IKEA consiglia una pila ricaricabile AAA LADDA (HR03, 1,2 V).",
+    "compatibility.apple_home": "IKEA dice che il sensore funziona con Apple HomeKit tramite DIRIGERA.",
+    "compatibility.alexa": "L'esempio di IKEA è chiedere ad Alexa se la porta è aperta.",
+    "compatibility.smartthings": "Nessuna pagina IKEA o SmartThings vista riguarda il PARASOLL.",
+    "compatibility.home_assistant": "La documentazione di Home Assistant vista non cita nessun supporto al PARASOLL. Si abbina con ZHA o Zigbee2MQTT solo secondo i post dei forum, e tramite il bridge Matter di DIRIGERA a quanto pare non compare."
+  },
+  "via": {"apple_home": "hub IKEA DIRIGERA", "google_home": "hub IKEA DIRIGERA", "alexa": "hub IKEA DIRIGERA"},
+  "values": {"power": "1 × AAA"}
+}

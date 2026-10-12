@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Alimentato da 2 pile AA, il Bosch Radiator Thermostat II è una testina Zigbee per valvole M30 × 1,5 mm. Apple Home, Google Home e Alexa funzionano tutti tramite il Bosch Smart Home Controller II e l'app Bosch, e Bosch sconsiglia di usarlo a lungo senza quel controller. SmartThings e Home Assistant non sono confermati. La versione [+M] con Matter su Thread è un modello diverso.",
+  "caveats": ["Bosch sconsiglia di usarlo a lungo senza uno Smart Home Controller; senza, non ci sono aggiornamenti del firmware.", "La versione [+M] con Matter su Thread è un modello diverso; questa scheda riguarda quello solo Zigbee.", "La pagina di aiuto di Bosch dice che il Controller II non supporta Matter né Thread, mentre le FAQ di un prodotto dicono che fa da bridge Matter; le due pagine si contraddicono.", "Alcune valvole richiedono un adattatore."],
+  "notes": {
+    "radios": "Zigbee 3.0 nella banda a 2,4 GHz secondo la guida rapida. La variante più recente [+M] aggiunge Thread; questa scheda riguarda la versione solo Zigbee.",
+    "matter": "La versione solo Zigbee non è di per sé un dispositivo Matter. Le FAQ prodotto di Bosch dicono che entra nei sistemi Matter tramite il Controller II come bridge Matter, ma non abbiamo trovato nessuna scheda CSA per questo modello.",
+    "hubRequired": "Bosch sconsiglia di usarlo a lungo senza uno Smart Home Controller (niente aggiornamenti del firmware), e le sue FAQ dicono che solo i dispositivi [+M] possono fare a meno del controller.",
+    "localControl": "Bosch dice che il Controller II salva i dati in locale e mantiene attive le automazioni quando internet non c'è, ma non fa una dichiarazione separata per questo termostato.",
+    "thermostatType": "Si monta sulla valvola del radiatore e la controlla.",
+    "systems": "Ghiera di collegamento M30 × 1,5 mm secondo la guida rapida, che dice che alcune valvole richiedono un adattatore in dotazione o da acquistare a parte.",
+    "power": "L'autonomia tipica delle pile è inferiore a due anni.",
+    "compatibility.apple_home": "La pagina di aiuto di Bosch dice che Apple HomeKit funziona tramite lo Smart Home Controller II e l'app Bosch Smart Home.",
+    "compatibility.google_home": "Google Assistant funziona tramite lo Smart Home Controller e l'app Bosch.",
+    "compatibility.alexa": "Alexa funziona tramite lo Smart Home Controller e l'app Bosch.",
+    "compatibility.smartthings": "Bosch elenca Samsung SmartThings solo nella pagina prodotto del [+M]; nulla dice come, o se, il modello solo Zigbee si colleghi.",
+    "compatibility.home_assistant": "L'integrazione Bosch SHC di Home Assistant elenca un Thermostat Gen2 e una connessione locale push del controller, ma non nomina il Radiator Thermostat II né il Controller II."
+  },
+  "via": {
+    "apple_home": "Bosch Smart Home Controller II",
+    "google_home": "Bosch Smart Home Controller II",
+    "alexa": "Bosch Smart Home Controller II"
+  },
+  "values": {
+    "power": "2 × AA (LR6 alcaline)",
+    "systems": "Radiatori con filettatura della valvola M30 × 1,5 mm (adattatori per alcune valvole)"
+  }
+}

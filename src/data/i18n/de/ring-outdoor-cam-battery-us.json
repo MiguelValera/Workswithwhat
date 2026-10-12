@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Die Ring Outdoor Cam (Battery) ist eine 2,4-GHz-WLAN-Kamera mit Schnellwechsel-Akku, die Ring als „Works with Alexa“ führt. Home Assistants offizielle Ring-Integration deckt die Stick Up Cam (3. Generation) ab, aus der sie umbenannt wurde, mit Live-Ansicht und Bewegungsereignissen. Live-Ansicht und Benachrichtigungen sind kostenlos, gespeicherte Videos brauchen Ring Protect.",
+  "caveats": [
+    "Gespeicherte Videos brauchen einen Ring-Protect-Tarif.",
+    "Nur 2,4-GHz-WLAN.",
+    "Ring hat die Stick Up Cam (3. Generation) in Outdoor Cam umbenannt; die Produktseite bezeichnet das Akkumodell als „Outdoor Cam (2nd Gen), 2019 release“, die Generationsnummern unterscheiden sich also zwischen Rings Seiten.",
+    "Apple Home, Google Home und Matter sind nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Nur 2,4 GHz 802.11 b/g/n.",
+    "matter": "Rings Seiten erwähnen Matter nicht; ein CSA-Eintrag wurde nicht gefunden.",
+    "hubRequired": "Verbindet sich über WLAN; keine Bridge erwähnt.",
+    "localControl": "Ring sagt nicht, ob eine Steuerung ohne die Cloud funktioniert.",
+    "cameraType": "Wetterfest, ausgelegt für -5 bis 122 °F; laut Ring für draußen gebaut, funktioniert aber überall.",
+    "power": "Schnellwechsel-Akku inklusive; Netzadapter und Solarpanel gibt es separat.",
+    "localStorage": "Rings Seiten beschreiben nur einen Videoverlauf in der Cloud.",
+    "subscription": "Live-Ansicht und Benachrichtigungen funktionieren ohne Tarif; Videos werden nicht gespeichert. 30 Tage kostenlos testen.",
+    "compatibility.apple_home": "Auf Rings Seiten nicht erwähnt.",
+    "compatibility.google_home": "Auf Rings Seiten nicht erwähnt.",
+    "compatibility.alexa": "Ring führt „Works With Alexa“ unter den Funktionen der Outdoor Cam.",
+    "compatibility.smartthings": "Auf Rings Seiten nicht erwähnt.",
+    "compatibility.home_assistant": "Home Assistants offizielle Ring-Integration führt Stick Up Battery und Stick Up Cam (3. Generation): Live-Ansicht, Bewegungsereignisse und Akkustand; die letzte Aufnahme braucht Ring Protect, kein Zwei-Wege-Audio."
+  },
+  "values": {
+    "power": "Wiederaufladbarer Akku",
+    "subscription": "Gespeicherter Videoverlauf (Ring Protect)"
+  }
+}

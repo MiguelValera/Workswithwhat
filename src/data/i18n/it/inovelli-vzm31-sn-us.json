@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Solo Zigbee, l'Inovelli Blue Series 2-1 (VZM31-SN) è un interruttore da parete che funziona da dimmer o da semplice interruttore on/off. Funziona con o senza neutro, ma senza serve un bypass al punto luce, che non è in confezione. Richiede un hub Zigbee: Inovelli elenca SmartThings, Hubitat, Home Assistant (ZHA o Zigbee2MQTT) e i modelli Echo con hub Zigbee integrato. Apple Home e Google Home non sono confermati.",
+  "caveats": ["Solo Zigbee, quindi richiede un hub o un coordinatore; Matter non è confermato per questo modello.", "Senza filo neutro serve un bypass, e non è incluso.", "Le funzioni avanzate come le scene multi-tocco funzionano solo sugli hub che le supportano, e Alexa funziona solo con i modelli Echo con hub Zigbee integrato.", "Il supporto a Apple Home e Google Home non è confermato per questa versione."],
+  "notes": {
+    "radios": "Zigbee 3.0.",
+    "matter": "Questa è la versione Zigbee. La pagina di Inovelli riguarda anche una versione Matter, che è un altro modello; non abbiamo trovato nessuna dichiarazione su Matter per il VZM31-SN.",
+    "hubRequired": "Richiede un hub o coordinatore Zigbee (SmartThings, Hubitat, un Echo con Zigbee, o un adattatore USB con Home Assistant).",
+    "localControl": "Il controllo Zigbee tramite un coordinatore locale (ZHA o Zigbee2MQTT) non richiede il cloud di Inovelli, ma nessuna pagina di Inovelli o Home Assistant indica a parole il controllo locale per questo interruttore.",
+    "switchForm": "Sostituisce un interruttore da parete; può funzionare da dimmer o da interruttore on/off.",
+    "dimmer": "Un solo interruttore con modalità dimmer oppure on/off.",
+    "neutralRequired": "Funziona senza neutro, ma Inovelli dice che allora va installato un bypass al punto luce, e non è incluso. Senza neutro non c'è il monitoraggio dei consumi, e le installazioni a più punti richiedono un interruttore ausiliario Inovelli.",
+    "gangs": "Non indicato nelle pagine che abbiamo visto; funziona sia in installazioni a punto singolo sia a più punti.",
+    "compatibility.apple_home": "Le pagine di Inovelli che abbiamo visto non citano Apple Home per la versione Zigbee.",
+    "compatibility.google_home": "Le pagine di Inovelli che abbiamo visto non citano Google Home per la versione Zigbee.",
+    "compatibility.alexa": "Inovelli elenca Amazon Echo come hub compatibile, ma solo le versioni Echo con hub Zigbee integrato (Inovelli tiene una tabella di compatibilità). Le funzioni del firmware come le scene multi-tocco funzionano solo dove l'hub le supporta.",
+    "compatibility.smartthings": "Inovelli elenca SmartThings tra gli hub che supportano le funzioni avanzate dell'interruttore e pubblica una guida alla configurazione con SmartThings.",
+    "compatibility.home_assistant": "Inovelli elenca Home Assistant tramite ZHA e Zigbee2MQTT. Entrambe sono integrazioni Zigbee generiche, non un'integrazione Inovelli, e richiedono un coordinatore Zigbee come un adattatore USB."
+  },
+  "via": {"alexa": "Amazon Echo con hub Zigbee integrato", "smartthings": "hub SmartThings (Zigbee)", "home_assistant": "coordinatore Zigbee (ZHA/Zigbee2MQTT)"}
+}

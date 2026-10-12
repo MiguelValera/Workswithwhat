@@ -1,0 +1,30 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Wenn du neu bei Hive bist, plane einen Hive Hub ein: Der Hive Active Plug ist eine britische Zigbee-Steckdose, die Apple Home, Google Home, Alexa und Home Assistant nur über diesen Hub erreicht. Bestehende Hive-Nutzer können sie an ihren vorhandenen Hub anschließen. Die Hive-App zeigt die Leistungsaufnahme des angeschlossenen Geräts in Watt. Weder Hive noch SmartThings dokumentieren eine SmartThings-Unterstützung.",
+  "caveats": [
+    "Braucht einen Hive Hub; die Steckdose kann nicht selbst ins WLAN.",
+    "Zeitpläne und Aktionen lassen sich nicht über Apples Home-App steuern.",
+    "Hives Alexa-Verknüpfung unterstützt keine Mehrbenutzer- oder Mehrhaus-Setups.",
+    "Home Assistant braucht die Anmeldung des Hive-Kontoinhabers mit aktivierter Zwei-Faktor-Authentifizierung.",
+    "Nur Stecker vom Typ G (UK/Irland), und Hive nennt keine Lastgrenze."
+  ],
+  "notes": {
+    "radios": "Zigbee zum Hive Hub; sie verbindet sich nicht selbst mit dem WLAN. Stecker vom Typ G (UK/Irland).",
+    "matter": "Hives Steckdosenseiten erwähnen Matter nicht, und wir haben keinen CSA-Eintrag dafür gefunden.",
+    "hubRequired": "Braucht einen Hive Hub; laut Hive müssen Erstkäufer von Hive einen kaufen. Bestehende Hive-Nutzer können sie an ihren aktuellen Hub anschließen.",
+    "localControl": "Wir haben keine Hive-Aussage zur Steuerung ohne Internet gefunden.",
+    "energyMonitoring": "Die Hive-App zeigt die Leistungsaufnahme des angeschlossenen Geräts in Watt. „Hive Plug“ ist Hives aktueller Name für den Active Plug (gleiche Shop-Seite und gleiche Spezifikations-URL).",
+    "maxLoadWatts": "Hives Seiten nennen keine Lastgrenze. Britische Händler führen 13 A, aber eine offizielle Wattangabe wurde nicht gefunden.",
+    "compatibility.apple_home": "Hives Support-Seite führt Hive Plugs für Apple Home, aktiviert in der Hive-App über den Hive Hub. Zeitpläne und Aktionen lassen sich nicht in der Home-App steuern. Ein Händlereintrag sagt, kein HomeKit; Hives eigene Seiten sagen ja.",
+    "compatibility.google_home": "Hive nennt Google Assistant; die Steckdose erreicht ihn über den Hive Hub und das Hive-Konto.",
+    "compatibility.alexa": "Über den Hive-Alexa-Skill und den Hive Hub. Laut Hive unterstützt die Alexa-Verknüpfung keine Mehrbenutzer- oder Mehrhaus-Setups.",
+    "compatibility.smartthings": "Keine offizielle Hive- oder SmartThings-Seite behandelt sie. Nutzer im SmartThings-Forum berichten von gemischten Ergebnissen beim direkten Koppeln über Zigbee.",
+    "compatibility.home_assistant": "Die offizielle Hive-Integration von Home Assistant führt den Active Plug als Schalter. Sie nutzt dein Hive-Konto (Inhaber-Login, 2FA aktiv) und den Hive Hub."
+  },
+  "via": {
+    "apple_home": "Hive Hub",
+    "google_home": "Hive Hub",
+    "alexa": "Hive Hub",
+    "home_assistant": "Hive Hub"
+  }
+}

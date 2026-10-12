@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Tapos Lichtstreifen L930-5 ist 5 m lang, teilt sich in 50 Farbsegmente und verbindet sich per WLAN mit deinem Netzwerk, einen Hub musst du also nicht kaufen. Tapo nennt ihn seinen ersten Streifen mit Apple-HomeKit-Unterstützung, außerdem funktionieren Google Assistant und Alexa. Home Assistant führt ihn in der TP-Link-Integration. Matter und SmartThings erwähnt Tapo nicht.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Dimmen funktioniert laut Tapos spanischer Seite nur über die App und die Cloud.",
+    "Der Streifen lässt sich kürzen, aber ein abgeschnittenes Stück kann nicht weiterverwendet werden.",
+    "Tapos Seiten erwähnen Matter und SmartThings nicht."
+  ],
+  "notes": {
+    "radios": "Nur 2,4-GHz-WLAN (802.11b/g/n).",
+    "matter": "Weder die spanische Produktseite noch das Datenblatt erwähnt Matter, und wir fanden keinen CSA-Eintrag.",
+    "hubRequired": "WLAN-Streifen, gesteuert über die Tapo-App; ein Hub wird nicht erwähnt.",
+    "localControl": "Home Assistant spricht über das lokale Netzwerk mit ihm, aber Tapo sagt, dass das Dimmen nur über die App und die Cloud funktioniert; die App-Steuerung ohne Cloud ist daher unbestätigt.",
+    "colorType": "RGB plus separate weiße LEDs.",
+    "lengthM": "Streifen von 5 m; er lässt sich kürzen, aber abgeschnittene Stücke können nicht weiterverwendet werden.",
+    "multiZone": "Tapos spanische Seite beschreibt 50 Farbsegmente für die Zonensteuerung.",
+    "power": "Ausgang 12 V DC, 1,0 A; Eingang 100–240 V, 13 W.",
+    "compatibility.apple_home": "Tapos spanische Seite nennt ihn den ersten Lichtstreifen, der mit Apple HomeKit kompatibel ist (Siri, HomePod mini); das EU-Datenblatt nennt ihn ein HomeKit-fähiges Zubehör.",
+    "compatibility.google_home": "Funktioniert mit Google Assistant.",
+    "compatibility.alexa": "Sprachsteuerung von Farbe und Helligkeit.",
+    "compatibility.smartthings": "Auf Tapos Seite und im Datenblatt nicht erwähnt.",
+    "compatibility.home_assistant": "Home Assistants TP-Link-Smart-Home-Integration führt den L930-5 und verbindet sich lokal."
+  },
+  "values": {
+    "power": "Netzteil (12 V DC)"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Dein WLAN ist alles, was die WiZ Color A19 für Alexa, Google Home und SmartThings braucht: Sie verbindet sich über 2,4 GHz, nutzt Bluetooth für die Einrichtung, und jede Plattform läuft über WiZs eigene Integration. Die offizielle WiZ-Integration von Home Assistant steuert sie lokal. Diese US-Lampe (Produktcode 046677603441) hat einen E26-Sockel und liefert 800 Lumen bei 8,8 W, Äquivalent zu 60 W, mit Vollfarbe und Weiß von 2200 bis 6500 K. Apple Home ist unbestätigt, da WiZ keine HomeKit-Unterstützung aufführt und Matter für diesen Code nicht bestätigt ist.",
+  "caveats": [
+    "Braucht 2,4-GHz-WLAN.",
+    "Kein bestätigter Weg zu Apple Home: WiZ führt keine HomeKit-Unterstützung auf, und Siri-Kurzbefehle sind nicht dasselbe wie Apple Home.",
+    "WiZs eigene Seiten widersprechen sich bei Matter: Die Seite dieser Lampe sagt „via 3rd party hubs“, die Seite des 3er-Packs sagt „Matter certified“.",
+    "Home Assistant braucht die in der WiZ-App aktivierte Option „Allow local communication“; sie ist standardmäßig eingeschaltet."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN mit Bluetooth Low Energy (für die Einrichtung).",
+    "matter": "Für den Code 046677603441 unbestätigt. Die eigene Seite sagt nur „Matter: via 3rd party hubs“; die Seite des 3er-Packs sagt „Matter certified“. Wir fanden keinen CSA- oder WiZ-Listeneintrag für genau diesen Produktcode.",
+    "hubRequired": "Bei Lampen bedeutet das, dass für die grundlegende App-Steuerung eine Bridge oder ein Hub nötig ist. Die Lampe verbindet sich direkt mit dem WLAN und wird über die WiZ-App gesteuert.",
+    "localControl": "Die WiZ-Integration von Home Assistant steuert Lampen über das LAN (lokales Push).",
+    "colorType": "Vollfarbe plus einstellbares Weiß von 2200 bis 6500 K.",
+    "lumens": "800 lm nominal bei 8,8 W (Äquivalent zu 60 W).",
+    "compatibility.apple_home": "WiZ führt keine HomeKit-Unterstützung auf (Siri-Kurzbefehle sind nicht Apple Home). Apple Home bräuchte Matter, das für diesen Produktcode unbestätigt ist.",
+    "compatibility.google_home": "Funktioniert über WiZs Google-Home-Integration.",
+    "compatibility.alexa": "Funktioniert über den WiZ-Alexa-Skill.",
+    "compatibility.smartthings": "WiZ führt Samsung SmartThings unter den kompatiblen Plattformen auf.",
+    "compatibility.home_assistant": "Offizielle WiZ-Integration (lokales Push). Braucht „Allow local communication“ in der WiZ-App, was standardmäßig eingeschaltet ist."
+  }
+}

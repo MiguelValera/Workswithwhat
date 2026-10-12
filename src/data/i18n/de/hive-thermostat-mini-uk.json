@@ -1,0 +1,32 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Hive nennt für das Thermostat Mini Alexa, Google Home und Apple HomeKit. Es ist ein britisches Batteriethermostat, das deinen Heizkessel über einen Netzempfänger schaltet. Alexa und Google Home werden über dein Hive-Konto verknüpft, Apple Home läuft über einen Hive Hub. Es passt zu den meisten Gas-, Flüssiggas-, Öl- und Elektrokesseln sowie zu OpenTherm bei manchen Kombikesseln, aber nicht zu Wärmepumpen. Ob das Mini einen Hub braucht, steht nirgends, und Matter wird nicht beansprucht.",
+  "caveats": [
+    "Hive gibt nicht an, ob das Mini einen Hive Hub braucht; prüfe das Paket, das du kaufst.",
+    "Nicht für Wärmepumpen, Festbrennstoffkessel oder Nachtspeicherheizungen, und mehrere Worcester-Bosch-Modelle sind als inkompatibel aufgeführt.",
+    "Warmwasser lässt sich nur ein- oder ausschalten, planen oder für 1 bis 6 Stunden boosten, nicht auf eine Temperatur einstellen.",
+    "OpenTherm funktioniert nur mit kompatiblen Kombikesseln und Einzonenanlagen.",
+    "In Apple Home brauchen Warmwasser, Boost und Zeitpläne weiterhin die Hive-App."
+  ],
+  "notes": {
+    "radios": "Laut Hive nutzen die Heizungsgeräte Zigbee für die lokale Kommunikation. Die Seite nennt kein WLAN-Funkmodul im Thermostat, daher ist keines aufgeführt.",
+    "matter": "Auf Hives Mini-Seite wurde kein Matter-Hinweis gefunden.",
+    "hubRequired": "Hives Mini-Seite sagt dazu nichts. Der Lieferumfang nennt keinen Hub, und eine FAQ auf der Seite sagt, das erste Thermostat komme mit einem Hive Hub. Britische Händler verkaufen Pakete mit und ohne Hub. Prüfe das Paket, das du kaufst.",
+    "localControl": "Laut Hive arbeitet das Thermostat ohne Internet weiter und regelt die Temperatur, die App-Steuerung kommt aber erst zurück, wenn es wieder verfügbar ist. Das ist keine lokale Steuerung, deshalb bleibt es unbestätigt.",
+    "thermostatType": "Batteriethermostat, das deinen Heizkessel über einen Netzempfänger schaltet.",
+    "systems": "Keine Wärmepumpen, Festbrennstoff- oder Nachtspeicherheizungen. Warmwasser nur ein/aus und Boost. Mehrere Worcester-Bosch-Modelle sind als inkompatibel aufgeführt.",
+    "power": "Batterien liegen bei.",
+    "compatibility.apple_home": "Hives Mini-Seite nennt Apple HomeKit. Hives HomeKit-Anleitung koppelt über einen Hive Hub und nennt das Mini nicht; Warmwasser, Boost und Zeitpläne lassen sich in Apple Home nicht steuern.",
+    "compatibility.google_home": "Auf der Mini-Seite aufgeführt. Verknüpfe dein Hive-Konto in Google Home unter „Home Control“; die Anleitung nennt das Mini nicht.",
+    "compatibility.alexa": "Die Mini-Seite nennt Amazon Alexa; Hives Alexa-Support-Seite nennt das Mini nicht.",
+    "compatibility.smartthings": "Keine gefundene Hive-Seite nennt SmartThings.",
+    "compatibility.home_assistant": "Die Hive-Integration von Home Assistant führt Hive Active Heating, Multi-zone und Radiator Valve, aber nicht das Thermostat Mini; sie fragt die Cloud über dein Hive-Konto ab."
+  },
+  "via": {
+    "apple_home": "Hive Hub"
+  },
+  "values": {
+    "power": "4 × AAA; Empfänger an 230 V Netzspannung",
+    "systems": "Britische Gas-, Flüssiggas-, Öl- und Elektrokessel; OpenTherm bei manchen Kombikesseln"
+  }
+}

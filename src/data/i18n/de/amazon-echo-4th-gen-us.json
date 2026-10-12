@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Im Echo (4. Generation) steckt ein Zigbee-Hub: Zigbee-Lampen, -Steckdosen, -Unterputzschalter und -Türschlösser koppeln direkt damit und erscheinen in Alexa, ganz ohne separaten Hub. Außerdem arbeitet er als Thread-1.1-Border-Router für Matter-over-Thread-Geräte. Für Google Home, Apple Home, SmartThings und Home Assistant ist bei darüber gekoppelten Geräten nichts bestätigt.",
+  "caveats": [
+    "Der CSA-Eintrag für dieses Modell deckt nur Zigbee 3.0 ab; die Matter-Unterstützung stützt sich auf Amazons Entwicklerdokumentation."
+  ],
+  "notes": {
+    "radios": "Zigbee-Hub (CSA-zertifiziert nach Zigbee 3.0) und Thread-Border-Router laut Amazons Entwicklerdokumentation. WLAN und Bluetooth sind nicht aufgeführt, weil keine lesbare offizielle Seite sie nennt.",
+    "matter": "Amazons Matter-Dokumentation führt Echo (2. Generation und neuer) als Matter-fähig, wobei der Echo als Matter-Administrator dient. Der CSA-Eintrag für den Echo (4. Generation) betrifft nur Zigbee 3.0, daher ist für dieses Modell kein Matter-Zertifikat bestätigt.",
+    "hubRequired": "Der Echo selbst ist der Hub.",
+    "localControl": "Für dieses Modell nicht bestätigt. Amazons Matter-Dokumentation sagt, dass Alexa Geräte bei manchen Verbindungsarten lokal steuern kann, nennt aber keine Echo-Modelle.",
+    "deviceProtocols": "Zigbee-Geräte koppeln mit dem eingebauten Hub; der Thread-Border-Router (Thread 1.1) versorgt Matter-over-Thread-Geräte.",
+    "matterBridge": "Amazons Matter-Dokumentation nennt keinen Echo als Matter-Bridge.",
+    "threadBorderRouter": "Mit Thread 1.1 aufgeführt.",
+    "maxDevices": "In den Quellen wurde kein Limit gefunden.",
+    "compatibility.apple_home": "Keine offizielle Quelle zeigt über den Echo gekoppelte Zigbee-Geräte in Apple Home.",
+    "compatibility.google_home": "Keine offizielle Quelle zeigt über den Echo gekoppelte Zigbee-Geräte in Google Home.",
+    "compatibility.alexa": "Zigbee-Lampen, -Steckdosen, -Unterputzschalter und -Türschlösser koppeln direkt mit dem eingebauten Hub des Echo und erscheinen in Alexa.",
+    "compatibility.smartthings": "Keine offizielle Quelle zeigt über den Echo gekoppelte Zigbee-Geräte in SmartThings.",
+    "compatibility.home_assistant": "Keine offizielle Home-Assistant-Seite zeigt, dass über den Echo gekoppelte Geräte dort erscheinen."
+  }
+}

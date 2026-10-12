@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "WLAN-Dimmer für eine US-Schalterdose, ohne Hub: Der Kasa KS220 braucht einen Neutralleiter und eine einpolige Verdrahtung. TP-Link führt Apple Home, Google Home, Alexa und SmartThings als unterstützte Plattformen auf, und Home Assistant unterstützt ihn über die TP-Link-Integration. Er dimmt 150 W LED oder 300 W Glühlampen.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Braucht einen Neutralleiter und unterstützt keine 3-Wege-Schaltung.",
+    "Keine Matter-Angabe für den KS220; TP-Links Matter-Dimmer ist der separate KS225.",
+    "LED-Lasten sind auf 150 W begrenzt."
+  ],
+  "notes": {
+    "radios": "Nur 2,4-GHz-WLAN. TP-Link führt Bluetooth 4.2 nur für die Einrichtung auf.",
+    "matter": "TP-Links Matter-Dimmer ist der separate KS225; die gesehenen KS220-Seiten machen keine Matter-Angabe. Der KS220 wird weiterhin neben ihm verkauft, daher haben wir ihn genommen.",
+    "hubRequired": "Verbindet sich direkt mit 2,4-GHz-WLAN; der Titel von TP-Links Datenblatt sagt, es sei kein Hub nötig.",
+    "localControl": "Die TP-Link-Integration von Home Assistant spricht direkt in deinem Netzwerk mit dem Schalter, nicht über TP-Links Cloud. Auch die HomeKit-Steuerung läuft im lokalen Netzwerk; laut TP-Links Anleitung ist eine Steuerzentrale nur optional.",
+    "switchForm": "Ersetzt einen üblichen Wandschalter und wird mit einer Abdeckplatte geliefert.",
+    "dimmer": "TRIAC-Dimmung; 300 W Glühlampe/Halogen, 150 W LED.",
+    "gangs": "Laut TP-Links Datenblatt funktioniert er nicht mit 3-Wege-Schaltung (mehrere Schaltstellen).",
+    "compatibility.apple_home": "TP-Link führt Apple Home als Plattform von Drittanbietern auf. Die Anleitung beschreibt das Hinzufügen in der Home-App mit dem HomeKit-Code; eine Steuerzentrale (HomePod oder Apple TV) ist für den Fernzugriff optional.",
+    "compatibility.google_home": "Von TP-Link als unterstützte Plattform von Drittanbietern aufgeführt.",
+    "compatibility.alexa": "Von TP-Link als unterstützte Plattform von Drittanbietern aufgeführt.",
+    "compatibility.smartthings": "Von TP-Link als unterstützte Plattform von Drittanbietern aufgeführt.",
+    "compatibility.home_assistant": "Die TP-Link-Smart-Home-Integration von Home Assistant führt den KS220 als unterstützten Wandschalter auf."
+  },
+  "values": {
+    "gangs": "Nur einpolig"
+  }
+}

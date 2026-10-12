@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Matter basato su Thread è il modo in cui la Nuki Smart Lock Ultra raggiunge Apple Home, Google Home, Alexa, SmartThings e Home Assistant, e la serratura è certificata CSA. Il Wi-Fi è integrato, quindi l'accesso da remoto non richiede un Nuki Bridge. È una serratura a cilindro: l'Universal Cylinder da 58 mm sostituisce il tuo. La batteria è integrata e si ricarica in circa 2 ore, e sulla serratura non c'è un tastierino.",
+  "caveats": ["Matter richiede un border router Thread; Nuki dice che un hub Matter solo Wi-Fi non funziona.", "L'installazione comporta la sostituzione del cilindro esistente con quello integrato.", "I tastierini sono accessori separati."],
+  "notes": {
+    "radios": "La scheda tecnica dell'Ultra di Nuki elenca Bluetooth Low Energy, Wi-Fi a 2,4 GHz e Thread (IEEE 802.15.4). La scheda CSA indica Thread e Bluetooth come trasporti Matter.",
+    "matter": "La CSA elenca 'Nuki Smart Lock Ultra' (hardware 11.12, firmware 1.4.1, certificata il 2025-11-18) con trasporto Thread e Bluetooth.",
+    "hubRequired": "Il Wi-Fi integrato dà l'accesso da remoto senza un Nuki Bridge. Il controllo Matter richiede un border router Thread.",
+    "localControl": "Nessuna fonte Nuki descrive espressamente un controllo offline o solo locale.",
+    "lockFit": "Viene fornita con un Universal Cylinder integrato (58 mm) che sostituisce il tuo cilindro; la tabella di confronto di Nuki dice che il cambio del cilindro è necessario.",
+    "keypad": "Nessun tastierino sulla serratura. Nuki elenca Keypad, Keypad 2 e Keypad 2 Pro come accessori separati.",
+    "power": "Si ricarica in circa 2 ore, sulla porta o fuori; Nuki avvisa quando scende sotto il 20%.",
+    "compatibility.apple_home": "Matter su Thread. La pagina di aiuto Matter di Nuki riguarda l'Ultra e dice che serve un hub che supporti Matter via Thread; un hub Matter solo Wi-Fi non funziona.",
+    "compatibility.google_home": "Matter su Thread, che richiede un border router Thread.",
+    "compatibility.alexa": "Matter su Thread, che richiede un border router Thread.",
+    "compatibility.smartthings": "La pagina di aiuto Matter di Nuki cita gli hub Samsung SmartThings per Matter via Thread; serve un border router Thread.",
+    "compatibility.home_assistant": "La pagina di aiuto Matter di Nuki elenca Home Assistant Connect ZBT-1 come hub per Matter via Thread. Home Assistant richiede un border router Thread per questo."
+  },
+  "values": {"power": "Batteria ricaricabile integrata"}
+}

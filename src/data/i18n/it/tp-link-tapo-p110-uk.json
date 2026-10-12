@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Collegata tramite il tuo account TP-Link, la Tapo P110 britannica funziona con Alexa, Google Home e SmartThings, e l'integrazione ufficiale TP-Link di Home Assistant la supporta a sua volta. È una presa Wi-Fi a 2,4 GHz da 13 A con valore nominale di 2990 W, senza hub, con consumo energetico in tempo reale e storico nell'app Tapo. L'app può anche controllarla in locale senza internet. TP-Link non indica Apple Home; la sua versione Matter è la P110M.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Apple Home e Matter non sono indicati; la Tapo P110M è la versione Matter.", "Le FAQ di TP-Link stessa non concordano sul fatto che i dati di consumo arrivino a SmartThings, quindi aspettati di controllare i consumi nell'app Tapo.", "Tapo dice che non è adatta alla ricarica di auto elettriche."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz (802.11b/g/n). La scheda tecnica statunitense di TP-Link menziona il Bluetooth per la configurazione, ma non l'abbiamo confermato per il modello britannico.",
+    "matter": "Le pagine britanniche della P110 non menzionano Matter né lo escludono. La versione Matter di TP-Link è la Tapo P110M, un prodotto separato.",
+    "hubRequired": "Presa Wi-Fi che si collega direttamente al tuo router e si configura nell'app Tapo.",
+    "localControl": "Le FAQ sulle prese Tapo di TP-Link (P100/P105/P110/P115) dicono che l'app Tapo può controllare la presa in locale senza internet; le Smart Action richiedono poi un hub Tapo.",
+    "energyMonitoring": "Consumo energetico in tempo reale e storico nell'app Tapo.",
+    "maxLoadWatts": "Scheda delle specifiche britannica di TP-Link: 2990 W, 13 A, motore da 1/6 HP, 220-240 V. La pagina britannica di Tapo dice che la ricarica di auto elettriche non è supportata.",
+    "compatibility.apple_home": "TP-Link indica Alexa, Google Assistant e SmartThings per la P110 e non menziona Apple Home, ma nessuna pagina dice che non sia supportato. La P110M è la versione Matter.",
+    "compatibility.google_home": "Collega il tuo account TP-Link in Google Home dopo aver configurato la presa nell'app Tapo. La guida passo passo sono le FAQ generali di TP-Link sul suo sito statunitense; le pagine britanniche indicano Google Assistant.",
+    "compatibility.alexa": "Tramite la skill Alexa di Tapo, collegata dall'app Tapo o dall'app Alexa. La guida pratica sono le FAQ generali di TP-Link sul suo sito statunitense; le pagine britanniche indicano Alexa.",
+    "compatibility.smartthings": "Collega il tuo ID TP-Link nell'app SmartThings. Le FAQ SmartThings di TP-Link (generali, sul suo sito statunitense) elencano la P110; la pagina britannica mostra SmartThings. Le FAQ di TP-Link non concordano sul fatto che i dati di consumo arrivino a SmartThings.",
+    "compatibility.home_assistant": "L'integrazione TP-Link Smart Home di Home Assistant elenca la P110 tra le prese Tapo supportate. Configurala prima nell'app Tapo."
+  }
+}

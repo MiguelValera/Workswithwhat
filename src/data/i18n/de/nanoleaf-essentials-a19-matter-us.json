@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Apple Home, Google Home, Alexa, SmartThings und Home Assistant steuern die Nanoleaf Essentials A19 (NF080B03-1A19E) alle als Matter-Lampe, sobald ein Thread-Border-Router wie ein HomePod mini oder Nest Hub (2. Generation) in deinem Netzwerk ist. Ohne einen steuert die Nanoleaf-App sie weiterhin direkt über Bluetooth. Es ist eine Vollfarblampe mit E26-Sockel und einstellbarem Weiß von 2700 bis 6500 K. Nanoleaf gibt im Schnitt 806 Lumen an, ein 60-W-Äquivalent, und maximal 1100 Lumen.",
+  "caveats": [
+    "Die Ökosystem-Steuerung braucht einen Thread-Border-Router, etwa einen HomePod mini, Nest Hub (2. Generation) oder ein Thread-fähiges Echo oder eero.",
+    "Nanoleafs Helligkeitsangaben schwanken: 806 lm im Schnitt und 1100 lm maximal auf der SKU-Seite, 900 lm im Schnitt und 1000 lm maximal auf der Seite zum US-3er-Pack.",
+    "Nanoleafs ältere FAQ nennt die Alexa-Unterstützung noch „coming soon“, obwohl die aktuelle Produktseite sie führt."
+  ],
+  "notes": {
+    "radios": "Thread für die Matter-Steuerung; Bluetooth für die Einrichtung und die direkte Steuerung über die Nanoleaf-App.",
+    "matter": "CSA-Zertifikat CSA22099MAT40099-24 (Nanoleaf Essentials A19/A60), zertifiziert am 2022-11-14, Transport Thread und Bluetooth.",
+    "hubRequired": "Laut Nanoleaf lässt sich die Lampe über Bluetooth in der Nanoleaf-App ohne Hub einrichten und steuern. Matter und Ökosystem-Steuerung brauchen einen Thread-Border-Router.",
+    "localControl": "Matter läuft über das lokale Netzwerk (Thread/IPv6), und die Bluetooth-App-Steuerung ist direkt.",
+    "colorType": "Über 16 Millionen Farben plus einstellbares Weiß (2700–6500 K).",
+    "lumens": "Nanoleafs SKU-Seite nennt im Schnitt 806 lm und maximal 1100 lm und stuft die Lampe als 60-W-Äquivalent ein, was zu 806 lm passt, deshalb nutzen wir 806. Die Seite zum US-3er-Pack nennt 900 lm im Schnitt / 1000 lm maximal.",
+    "compatibility.apple_home": "Über Matter über Thread; braucht einen Thread-Border-Router wie einen HomePod mini, HomePod (2. Generation) oder Apple TV 4K.",
+    "compatibility.google_home": "Über Matter über Thread; braucht einen Thread-Border-Router wie einen Nest Hub (2. Generation), Nest Hub Max oder Nest Wifi Pro.",
+    "compatibility.alexa": "Nanoleafs SKU-Seite führt Alexa; Amazon unterstützt Matter-über-Thread-Lampen an Echo-Geräten. Braucht ein Echo oder eero, das ein Thread-Border-Router ist. Nanoleafs ältere FAQ sagt noch, Alexa sei „coming soon“.",
+    "compatibility.smartthings": "Nanoleaf führt SmartThings; funktioniert über Matter über Thread mit einem SmartThings-Hub, der ein Thread-Border-Router ist.",
+    "compatibility.home_assistant": "Über die offizielle Matter-Integration; Thread-Geräte brauchen einen Thread-Border-Router."
+  }
+}

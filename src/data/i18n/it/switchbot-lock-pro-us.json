@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La SwitchBot Lock Pro raggiunge Apple Home, Google Home, Alexa, SmartThings e Home Assistant solo tramite un hub SwitchBot: Hub 2 o Hub Mini Matter Enabled, con SmartThings e Home Assistant indicati solo per il Mini. La serratura in sé è un modello Bluetooth da montare sopra quella esistente, che funziona con 4 × AA batterie, fino a 9 mesi, e non ha tastierino a meno che tu non aggiunga un Keypad Touch o un Keypad Vision. È il modello statunitense senza Matter, non quello europeo Matter Enabled.",
+  "caveats": ["Controllo remoto, Matter e collegamenti alle piattaforme richiedono uno SwitchBot Hub, venduto separatamente.", "SmartThings e Home Assistant sono indicati solo tramite l'Hub Mini Matter Enabled.", "Le serrature a incasso e a infilare richiedono una verifica di compatibilità con l'assistenza SwitchBot; alcune installazioni statunitensi richiedono un adattatore stampato in 3D.", "Non è lo stesso prodotto della Lock Pro Matter Enabled venduta nell'UE."],
+  "notes": {
+    "radios": "Bluetooth Low Energy verso il telefono, il tastierino e lo SwitchBot Hub. Nessun Wi-Fi nella serratura; il controllo remoto passa da un hub.",
+    "matter": "SwitchBot dice che Matter arriva da un Hub 2 o da un Hub Mini Matter Enabled, non dalla serratura stessa. Non abbiamo collegato nessuna scheda CSA a questo modello statunitense.",
+    "hubRequired": "Serve uno SwitchBot Hub per il controllo remoto, Matter e le piattaforme smart home. Se la serratura funzioni dall'app via Bluetooth senza hub non è indicato nelle pagine che abbiamo visto.",
+    "localControl": "Nessuna fonte SwitchBot dichiara un controllo solo locale.",
+    "lockFit": "Si monta sopra la serratura esistente e la mantiene. La pagina di compatibilità per il Nord America di SwitchBot copre i chiavistelli singoli; le serrature a incasso e a infilare richiedono una verifica con l'assistenza.",
+    "keypad": "Keypad Touch e Keypad Vision sono accessori separati.",
+    "power": "4 × AA incluse, fino a 9 mesi. Una riga delle specifiche sulla pagina dello store statunitense dice 3 × 18350; la pagina principale della Lock Pro di SwitchBot indica solo AA. Un Dual Power Pack è venduto separatamente.",
+    "compatibility.apple_home": "La pagina di SwitchBot dice che l'Hub 2 aggiunge l'integrazione con iPhone e Siri e l'Hub Mini Matter Enabled aggiunge Apple Home.",
+    "compatibility.google_home": "Indicato tramite entrambi gli hub.",
+    "compatibility.alexa": "Indicato tramite entrambi gli hub.",
+    "compatibility.smartthings": "La pagina indica SmartThings tramite l'Hub Mini Matter Enabled.",
+    "compatibility.home_assistant": "La pagina indica Home Assistant tramite l'Hub Mini Matter Enabled."
+  },
+  "via": {"apple_home": "SwitchBot Hub 2 / Hub Mini Matter Enabled", "google_home": "SwitchBot Hub 2 / Hub Mini Matter Enabled", "alexa": "SwitchBot Hub 2 / Hub Mini Matter Enabled", "smartthings": "SwitchBot Hub Mini Matter Enabled", "home_assistant": "SwitchBot Hub Mini Matter Enabled"}
+}

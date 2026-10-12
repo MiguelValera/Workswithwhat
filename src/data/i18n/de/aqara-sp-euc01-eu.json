@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Ohne Aqara-Hub bringt diese Steckdose nichts. Die Aqara SP-EUC01 ist eine Zigbee-3.0-Steckdose, die nicht selbst ins WLAN kommt; sobald sie mit einem Aqara-Hub gekoppelt ist, führt Aqara sie als kompatibel mit Apple Home (HomeKit), Google Home und Alexa. Sie ist für 10 A / 2300 W ausgelegt und zeigt Leistung und kWh in der Aqara-Home-App. Wenn dein Internet ausfällt, laufen laut Aqara die lokale Steuerung und die Verknüpfungen mit anderen Geräten am Hub weiter. Aqaras Sicherheitsupdates für dieses Modell sind am 30. Juni 2026 ausgelaufen.",
+  "caveats": [
+    "Braucht einen Aqara-Zigbee-Hub; sie kann sich nicht direkt mit dem WLAN verbinden.",
+    "Ausgelegt für 10 A / 2300 W, also nicht für Geräte mit 16 A gedacht.",
+    "Aqaras Product Security Support Policy nennt als Ende der Sicherheitsupdates für die SP-EUC01 den 2026-06-30, ein Datum, das bereits vergangen ist.",
+    "Home Assistant und SmartThings sind für dieses Modell nicht offiziell dokumentiert; Zigbee2MQTT unterstützt sie, doch weder Aqara noch Home Assistant führen sie auf."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0.",
+    "matter": "Es wurde kein CSA-Eintrag gefunden, der die SP-EUC01 nennt. Die Steckdose ist Zigbee; Aqara-Hubs mit Matter-Bridge (z. B. M3) können Aqara-Zigbee-Geräte für Matter bereitstellen.",
+    "hubRequired": "Datenblatt: Hub Required: Yes. FAQ: Sie braucht einen Hub und kann sich nicht direkt mit dem WLAN verbinden.",
+    "localControl": "Aqara-FAQ: Wenn das Internet ausfällt, endet die App-Steuerung, aber die lokale Steuerung und die Verknüpfungen mit anderen Geräten am Hub laufen weiter.",
+    "energyMonitoring": "Zeigt Leistung und kWh-Verbrauchsstatistiken in Aqara Home an.",
+    "maxLoadWatts": "250 V AC, 10 A, max. 2300 W. Geräte mit 16 A werden nicht unterstützt.",
+    "compatibility.apple_home": "Aqara führt die Kompatibilität mit Apple HomeKit auf und nennt einen Hub als Voraussetzung.",
+    "compatibility.google_home": "Aqara führt die Kompatibilität mit Google Assistant auf und nennt einen Hub als Voraussetzung.",
+    "compatibility.alexa": "Aqara führt die Kompatibilität mit Amazon Alexa auf und nennt einen Hub als Voraussetzung.",
+    "compatibility.smartthings": "Keine offizielle Seite von Aqara oder SmartThings zu dieser Steckdose gefunden.",
+    "compatibility.home_assistant": "Zigbee2MQTT unterstützt sie als SP-EUC01, und HA-Nutzer betreiben sie über Zigbee, doch für dieses Modell wurde keine offizielle Seite von HA oder Aqara gefunden."
+  },
+  "via": {
+    "apple_home": "Aqara-Hub (HomeKit-kompatibel)",
+    "google_home": "Aqara-Hub",
+    "alexa": "Aqara-Hub"
+  }
+}

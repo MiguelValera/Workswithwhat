@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Alexa è l'unico ecosistema che Ring conferma per il Battery Doorbell 2K: tramite la skill Ring ottieni annunci, comunicazione bidirezionale e live view su un Echo Show. La live view è gratuita, ma il video salvato e gli annunci di persone e pacchi richiedono un piano Ring Protect. Il campanello funziona con una batteria ricaricabile e si collega via Wi-Fi senza hub, e si può anche cablare a un trasformatore per campanelli da 8 a 24 V CA. Apple Home, Google Home e SmartThings non sono confermati.",
+  "caveats": ["Il video salvato, più gli annunci di persone e pacchi con live view automatica su Echo Show, richiedono un piano Ring Protect.", "Le pagine di Ring non concordano sul fatto che il Wi-Fi sia solo a 2,4 GHz o dual band.", "Il supporto a Apple Home, Google Home e Home Assistant non è confermato per questo modello."],
+  "notes": {
+    "radios": "La pagina statunitense del prodotto Ring indica Wi-Fi 4 solo a 2,4 GHz. Una pagina di assistenza Ring per il Battery Doorbell (2nd Gen) indica dual band, quindi la banda non è chiara.",
+    "matter": "Nessuna dichiarazione su Matter nelle pagine di Ring, e nessuna scheda di certificazione CSA per un campanello Ring è comparsa nelle ricerche.",
+    "hubRequired": "Si collega via Wi-Fi all'app Ring. Un Ring Chime è facoltativo.",
+    "localControl": "Ring non dice se qualche controllo funzioni senza il suo cloud.",
+    "power": "Batteria integrata; il campanello si stacca dal muro per ricaricarsi. Ring dice che si può anche cablare a un trasformatore per campanelli da 8–24 V CA, o alimentare con un caricatore solare Ring, per ricaricarlo lentamente.",
+    "localStorage": "Nessuna opzione di registrazione locale trovata nelle pagine di Ring.",
+    "subscription": "Ring dice che le registrazioni si salvano tramite un piano Ring Protect; la live view funziona senza. La conservazione e i prezzi non sono stati letti nella pagina statunitense.",
+    "compatibility.apple_home": "Né la pagina del prodotto Ring né le sue pagine di aiuto su Alexa citano Apple Home o HomeKit. Non confermato.",
+    "compatibility.google_home": "Nessuna pagina Ring trovata elenca Google Home o Google Assistant per questo campanello. Sono state viste solo risposte dei forum, che non sono citate.",
+    "compatibility.alexa": "Tramite la skill Ring. Ring dice che tutti i suoi modelli di video campanello funzionano con Alexa, con annunci, comunicazione bidirezionale e live view su Echo Show. Gli annunci di persone e pacchi, con live view automatica su Echo Show, richiedono un piano Ring Protect.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale Ring o SmartThings trovata per questo modello; solo post dei forum, che non sono citati.",
+    "compatibility.home_assistant": "Home Assistant ha un'integrazione Ring ufficiale, ma il suo elenco di dispositivi cita 'Battery Doorbell' e 'Doorbell (2nd Gen)', non il Battery Doorbell 2K, quindi il supporto per questo modello non è confermato."
+  },
+  "values": {"power": "Batteria ricaricabile", "subscription": "Cronologia dei video salvati (piano Ring Protect)"}
+}

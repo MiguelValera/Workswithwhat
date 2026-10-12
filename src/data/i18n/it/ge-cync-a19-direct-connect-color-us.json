@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La lampadina a colori GE Cync Direct Connect A19 funziona con Apple Home e SmartThings tramite Matter, e con Alexa e Google Home tramite Cync, tutto via Wi-Fi a 2,4 GHz e senza hub. È una lampadina da 800 lumen con attacco medio. La CSA elenca un certificato Matter su Wi-Fi per la Cync Full Color Direct Connect A19. Home Assistant non è confermato.",
+  "caveats": ["GE vende diverse lampadine a colori Cync simili; controlla lo SKU (93132325 o 93132326) prima di acquistare.", "Solo Wi-Fi a 2,4 GHz.", "Apple Home richiede un hub domestico Apple per l'uso remoto.", "La pagina del negozio GE mostrava 'Sold out' il 2026-10-12."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz configurato nell'app Cync. La CSA indica Wi-Fi e Bluetooth; la pagina di GE cita il Bluetooth solo in una FAQ.",
+    "matter": "La pagina di GE per gli SKU 93132325 (confezione da 1) e 93132326 (confezione da 2) dice compatibile con Matter. La CSA elenca 'Cync Full Color Direct Connect LED A19' di Savant (Wi-Fi e Bluetooth); nessuna scheda CSA nomina uno SKU.",
+    "hubRequired": "GE dice che non servono hub né bridge.",
+    "localControl": "La pagina prodotto di GE non dichiara il controllo locale. Le FAQ generali di Cync sulle lampadine dicono che le lampadine Direct Connect si possono controllare anche senza internet, ma non nominano questo modello.",
+    "colorType": "Venduta come Full Color; GE cita anche una gamma di bianchi regolabili.",
+    "bulbBase": "GE dice 'medium base'; negli Stati Uniti è E26.",
+    "compatibility.apple_home": "GE dice che Apple Home funziona tramite Matter; per l'uso remoto serve un hub domestico Apple.",
+    "compatibility.google_home": "Le FAQ di Cync sulle lampadine dicono che le lampadine Direct Connect funzionano con Google Assistant senza hub aggiuntivi; GE elenca Google anche tramite Matter.",
+    "compatibility.alexa": "Le FAQ di Cync sulle lampadine dicono che le lampadine Direct Connect si collegano ad Alexa tramite la skill Cync o Frustration Free Setup; GE elenca Alexa anche tramite Matter.",
+    "compatibility.smartthings": "GE elenca Samsung SmartThings tramite Matter.",
+    "compatibility.home_assistant": "Home Assistant ha un'integrazione cloud ufficiale per Cync (2025.10), ma la sua documentazione non elenca modelli, e nulla nomina questa lampadina per l'integrazione Matter di HA."
+  },
+  "values": {
+    "bulbBase": "Attacco medio (A19)"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Echo Hub è il pannello di controllo da parete di Amazon per le case britanniche, con hub Zigbee e border router Thread 1.3 integrati: i dispositivi Zigbee si abbinano senza bridge aggiuntivi e compaiono in Alexa. Amazon UK dice che alcune luci, interruttori e prese continuano a funzionare senza internet. Per Apple Home, Google Home, SmartThings e Home Assistant nessuna fonte ufficiale conferma che i dispositivi abbinati compaiano.",
+  "caveats": ["Il supporto Matter si basa sulle pagine di Amazon; non è stata trovata nessuna scheda CSA per l'Echo Hub.", "L'Echo Hub si collega a internet via Wi-Fi; per l'Ethernet serve un adattatore PoE compatibile.", "Nessuna pagina ufficiale mostra i dispositivi abbinati all'Echo Hub in Apple Home, Google Home, SmartThings o Home Assistant."],
+  "notes": {
+    "radios": "Amazon UK indica un hub integrato con Zigbee, Thread, Bluetooth e Matter, dice che i dispositivi Wi-Fi si sincronizzano con esso e che si collega a internet in modalità wireless. L'Ethernet non è registrato perché richiede un adattatore PoE compatibile.",
+    "matter": "Amazon UK dice che Matter è integrato e la documentazione Matter di Amazon elenca Echo Hub come compatibile con Matter. Non è stata trovata nessuna scheda prodotto CSA per Echo Hub, quindi un certificato non è confermato.",
+    "hubRequired": "L'Echo Hub è l'hub. Amazon UK dice che non serve un bridge separato.",
+    "localControl": "Amazon UK dice che alcuni dispositivi, come luci, interruttori e prese, continuano a funzionare quando internet non c'è.",
+    "hubType": "Un pannello di controllo touch da 8 pollici per la smart home; Amazon UK lo mette in vendita a £169,99.",
+    "deviceProtocols": "I dispositivi Zigbee si abbinano all'hub integrato; Thread serve i dispositivi Matter su Thread.",
+    "matterBridge": "La documentazione Matter di Amazon descrive l'Echo come amministratore Matter per Alexa, non come bridge che espone i suoi dispositivi ad altri controller Matter.",
+    "threadBorderRouter": "Elencato tra i dispositivi Echo ed eero con border router Thread integrato, versione Thread 1.3.",
+    "maxDevices": "Nessun limite di dispositivi trovato nelle fonti Amazon.",
+    "compatibility.apple_home": "Nessuna fonte ufficiale mostra i dispositivi abbinati all'Echo Hub in Apple Home.",
+    "compatibility.google_home": "Nessuna fonte ufficiale mostra i dispositivi abbinati all'Echo Hub in Google Home.",
+    "compatibility.alexa": "Echo Hub è nell'elenco Amazon dei dispositivi Echo con hub Zigbee integrato, quindi i dispositivi Zigbee si abbinano direttamente e compaiono in Alexa. Amazon UK descrive anche il supporto a Matter e Thread.",
+    "compatibility.smartthings": "Nessuna fonte ufficiale mostra i dispositivi abbinati all'Echo Hub in SmartThings.",
+    "compatibility.home_assistant": "Nessuna pagina ufficiale di Home Assistant mostra i dispositivi abbinati all'Echo Hub come presenti lì."
+  }
+}

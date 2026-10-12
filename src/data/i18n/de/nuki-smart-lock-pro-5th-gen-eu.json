@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Über deinen vorhandenen Europrofil-Zylinder wird das Nuki Smart Lock Pro (5. Generation) montiert, ein Zylindertausch entfällt also. Matter über Thread verbindet es mit Apple Home, Google Home, Alexa und SmartThings, und das eingebaute WLAN übernimmt den Fernzugriff ohne Bridge. Der Akku ist eingebaut und lädt in etwa zwei Stunden auf; am Schloss gibt es kein Tastenfeld. Home Assistant ist nicht bestätigt.",
+  "caveats": [
+    "Matter braucht einen Thread-Border-Router; ein Matter-Hub nur mit WLAN funktioniert nicht.",
+    "Laut Nukis Fehlerbehebungsanleitung unterstützen nicht alle Matter-Hubs den Fernzugriff über Thread.",
+    "Nicht kompatibel mit Nukis Universalzylinder.",
+    "Das Keypad 2 NFC ist ein separates Zubehör."
+  ],
+  "notes": {
+    "radios": "Nukis Generationen-Tabelle markiert eingebautes WLAN und Matter über Thread für das Pro (5. Generation) mit Ja. Wenn der Fernzugriff über Thread verfügbar ist, ist laut Nuki das WLAN abgeschaltet.",
+    "matter": "Die CSA führt „Nuki Smart Lock Pro“ (Hardware 10.00, Firmware 1.4.1, zertifiziert am 2025-11-18) ohne Generationsangabe, getrennt von den Pro-Einträgen der 4. Generation (Hardware 7.x). Nukis Generationen-Tabelle markiert Matter über Thread für das Pro (5. Generation).",
+    "hubRequired": "Eingebautes WLAN und Fernzugriff sind enthalten, eine Bridge ist also nicht nötig. Die Matter-Steuerung braucht einen Thread-Border-Router.",
+    "localControl": "Keine Nuki-Quelle beschreibt Offline- oder rein lokale Steuerung ausdrücklich.",
+    "lockFit": "Wird über den vorhandenen Innenzylinder montiert, ohne Zylindertausch; laut Nuki passt es zu Europrofil-Zylindern und ausgewählten Schweizer Rundzylindern. Es ist nicht kompatibel mit Nukis Universalzylinder.",
+    "keypad": "Kein Tastenfeld am Schloss. Nukis Keypad 2 NFC ist ein separates Zubehör.",
+    "power": "Eingebauter Lithium-Ionen-Akku, der in etwa 2 Stunden auflädt, an der Tür oder abgenommen.",
+    "compatibility.apple_home": "Matter über Thread. Laut Nuki brauchst du einen Hub, der Matter über Thread unterstützt; ein Matter-Hub nur mit WLAN funktioniert nicht.",
+    "compatibility.google_home": "Matter über Thread, das einen Thread-Border-Router braucht. Nuki dokumentiert für seine Schlösser auch eine Nuki-Web-Cloud-Verknüpfung zu Google Home; für diese Generation nicht geprüft.",
+    "compatibility.alexa": "Matter über Thread, das einen Thread-Border-Router braucht. Nuki dokumentiert auch einen Nuki-Web-Skill für Alexa; für diese Generation nicht geprüft.",
+    "compatibility.smartthings": "Nuki nennt Samsung SmartThings als Plattform für Matter über Thread; ein Thread-Border-Router ist nötig.",
+    "compatibility.home_assistant": "Die gesehene Nuki-Seite von Home Assistant behandelt Schlösser der 4. Generation; keine offizielle Quelle nennt das Pro der 5. Generation. Ein Forenthread berichtet von Problemen bei der Matter-Inbetriebnahme, das ist keine offizielle Quelle."
+  },
+  "values": {
+    "power": "Eingebauter wiederaufladbarer Akku"
+  }
+}

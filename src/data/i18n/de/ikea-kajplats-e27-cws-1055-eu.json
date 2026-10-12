@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Mit einem Thread-Border-Router arbeitet die IKEA KAJPLATS E27 Farblampe über Matter mit Apple Home, Google Home, Alexa, SmartThings und Home Assistant zusammen. Ohne einen kann nicht einmal dein Handy sie steuern. IKEAs DIRIGERA-Hub übernimmt das, ebenso ein HomePod, Nest Hub oder Thread-fähiges Echo. Die Lampe (706.085.75) leistet 1055 Lumen mit Vollfarbe plus einstellbarem Weiß und ist Matter-zertifiziert (Matter 1.4). Laut IKEA hat KAJPLATS im Januar 2026 TRÅDFRI abgelöst.",
+  "caveats": [
+    "Braucht auch für die Handy-Steuerung einen Thread-Border-Router (IKEA DIRIGERA, HomePod, Nest Hub oder ein Thread-fähiges Echo)."
+  ],
+  "notes": {
+    "radios": "IKEA beschreibt sie als Matter über Thread. Bluetooth stammt nur aus dem CSA-Zertifizierungseintrag (Transporte Thread und Bluetooth); IKEAs Seite erwähnt es nicht, vermutlich dient es der Matter-Inbetriebnahme.",
+    "matter": "CSA-Zertifikat CSA25G1ZMAT49049-24 (zertifiziert am 2025-12-16, Matter 1.4, Thread und Bluetooth). Laut IKEA hat KAJPLATS im Januar 2026 TRÅDFRI abgelöst, vor allem wegen Sicherheit und Matter-Kompatibilität.",
+    "hubRequired": "Laut IKEA braucht die Handy-Steuerung einen Thread-Border-Router, z. B. den DIRIGERA-Hub. Auch ein HomePod, Nest Hub oder Thread-fähiges Echo funktioniert als Border Router.",
+    "localControl": "Matter über Thread läuft im lokalen Netzwerk ohne Cloud-Dienst.",
+    "colorType": "Farb- und Weißspektrum: Vollfarbe plus einstellbares Weiß.",
+    "compatibility.apple_home": "IKEA nennt Apple unter den kompatiblen Systemen; funktioniert über Matter über Thread und braucht einen Thread-Border-Router.",
+    "compatibility.google_home": "IKEA nennt Google unter den kompatiblen Systemen; funktioniert über Matter über Thread und braucht einen Thread-Border-Router.",
+    "compatibility.alexa": "IKEA nennt Amazon unter den kompatiblen Systemen; funktioniert über Matter über Thread und braucht ein Echo, das ein Thread-Border-Router ist.",
+    "compatibility.smartthings": "IKEA nennt Samsung unter den kompatiblen Systemen; funktioniert über Matter über Thread und braucht einen SmartThings-Hub, der ein Thread-Border-Router ist.",
+    "compatibility.home_assistant": "Über die offizielle Matter-Integration mit einem Thread-Border-Router."
+  }
+}

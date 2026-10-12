@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "TP-Link führt den Kasa KS200M für Alexa, Google Assistant und SmartThings auf, ohne dass ein Hub nötig ist. Er ist ein einpoliger US-Wandschalter mit eingebautem Bewegungsmelder (bis zu 25 ft), der sich direkt mit 2,4-GHz-WLAN verbindet. Er braucht einen Neutralleiter und funktioniert nicht in 3-Wege-Schaltungen. Apple Home und Matter werden für dieses Modell nicht erwähnt.",
+  "caveats": [
+    "Braucht einen Neutralleiter in der Schalterdose.",
+    "Nur einpolig; keine 3-Wege- oder Mehrfachschaltung.",
+    "Nur 2,4-GHz-WLAN.",
+    "Die Unterstützung für Apple Home und Matter wird nicht angegeben."
+  ],
+  "notes": {
+    "radios": "Nur 2,4 GHz (802.11b/g/n).",
+    "matter": "Weder die Produktseite noch das Datenblatt erwähnen Matter; ein CSA-Eintrag wurde nicht geprüft.",
+    "hubRequired": "Laut Datenblatt ist kein Hub nötig; er verbindet sich direkt mit dem Heim-WLAN.",
+    "localControl": "TP-Link gibt nicht an, was ohne Internet funktioniert.",
+    "switchForm": "Ersetzt einen üblichen einpoligen Lichtschalter und hat einen eingebauten Bewegungsmelder (bis zu 25 ft).",
+    "dimmer": "TP-Link erwähnt das Einstellen von „Helligkeitsstufen“, nennt es aber nie einen Dimmer; das Datenblatt gibt nur Ein/Aus-Lastwerte an (600 W Glühlampe, 1/6-PS-Motor). Unbestätigt gelassen.",
+    "neutralRequired": "Laut Datenblatt ist ein Neutralleiter in der Schalterdose erforderlich, in einer Standarddose von mindestens 2 in Tiefe.",
+    "gangs": "Nur einpolig; nicht kompatibel mit 3-Wege- oder Mehrfachschaltung. Ausgelegt für 120 V, 600 W Glühlampe oder 1/6-PS-Motor.",
+    "compatibility.apple_home": "Die Seite und das Datenblatt des KS200M erwähnen Apple Home nicht. (Die Seite des KS200 ohne Bewegungsmelder erwähnt es.)",
+    "compatibility.google_home": "Als funktionierend mit dem Google Assistant aufgeführt.",
+    "compatibility.alexa": "Als funktionierend mit Amazon Alexa aufgeführt.",
+    "compatibility.smartthings": "Als funktionierend mit SmartThings aufgeführt.",
+    "compatibility.home_assistant": "Es wurde keine offizielle Home-Assistant-Seite geprüft, die den KS200M nennt."
+  },
+  "values": {
+    "gangs": "1-fach"
+  }
+}

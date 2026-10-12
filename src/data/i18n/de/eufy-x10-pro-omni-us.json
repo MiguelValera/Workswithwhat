@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Auf eufys US-Seite ist der X10 Pro Omni als nicht mehr erhältlich markiert, das interessiert also vor allem, wenn du schon einen besitzt oder einen gebrauchten findest. Er funktioniert mit Google Home und Alexa, saugt und wischt mit 8000 Pa Saugkraft und Laser-Navigation, und seine Omni-Station leert den Behälter in einen 2,5-L-Staubbeutel.",
+  "caveats": [
+    "Auf eufys US-Seite nicht mehr im Verkauf.",
+    "Die Einrichtung braucht das 2,4-GHz-Band; eufys Handbuch sagt, bei Dualband-Routern solle 5 GHz ausgeschaltet werden.",
+    "Ein Verzeichnis eines Drittanbieters führt Matter über WLAN auf, doch weder eine eufy-Seite noch ein CSA-Eintrag belegt es, daher ist Apple Home nicht bestätigt.",
+    "Für Home Assistant gibt es für dieses Modell nur Community-Integrationen, keine offizielle."
+  ],
+  "notes": {
+    "radios": "Das Handbuch verlangt das 2,4-GHz-Band an deinem Router; schalte bei der Einrichtung bei Dualband-Routern 5 GHz aus.",
+    "matter": "Matter Alpha, ein Verzeichnis eines Drittanbieters, führt den X10 Pro Omni als Matter 1.4 über WLAN mit Firmware 3.0. Weder eine eufy-Seite noch ein CSA-Eintrag gesehen, daher wird es nicht behauptet.",
+    "hubRequired": "Die Omni-Station ist kein Hub.",
+    "localControl": "eufy sagt, die Hinderniserkennung laufe offline; reine lokale Steuerung wird nicht genannt.",
+    "cleaning": "Saugt und wischt mit rotierenden Pads (MopMaster).",
+    "navigation": "Das Handbuch nennt einen Navigations-Lidar; eufy nennt es iPath Laser Navigation. Die Hindernisvermeidung nutzt eine Kamera (AI.See).",
+    "selfEmptying": "Die Omni-Station leert den Behälter in einen 2,5-L-Staubbeutel.",
+    "compatibility.apple_home": "Keine eufy-Seite zu Apple Home gefunden.",
+    "compatibility.google_home": "eufys US-Seite führt Google Home als kompatibles Gerät und die Sprachsteuerung über Google Assistant auf.",
+    "compatibility.alexa": "eufys US-Seite führt Amazon Echo als kompatibles Gerät und die Sprachsteuerung über Alexa auf.",
+    "compatibility.smartthings": "Keine Seite von eufy oder Samsung zu SmartThings gefunden.",
+    "compatibility.home_assistant": "Keine offizielle Integrationsseite für Home Assistant gefunden; nur Community-Integrationen."
+  },
+  "values": {
+    "navigation": "LiDAR (iPath Laser Navigation)"
+  }
+}

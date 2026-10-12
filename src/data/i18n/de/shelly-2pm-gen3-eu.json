@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Zwei Relaiskanäle mit Leistungsmessung pro Kanal oder ein Rollladenkanal für einen Rollladen- oder Jalousiemotor: Das ist der Shelly 2PM Gen3, der hinter einem vorhandenen Schalter sitzt. Er braucht einen Neutralleiter und kann nicht dimmen. Matter over WLAN deckt Apple Home, Google Home und SmartThings ab, sobald die Firmware 1.6.0 oder neuer läuft; Alexa führt Shellys Seite, und Home Assistant hat eine lokale Integration.",
+  "caveats": [
+    "Braucht einen Neutralleiter in der Dose.",
+    "Matter braucht Firmware 1.6.0 oder neuer; der CSA-Eintrag selbst zeigt die Firmware 1.3.0-s2.",
+    "Ausgelegt für 10 A pro Kanal und 16 A insgesamt; zwei große Lasten können die Gesamtgrenze überschreiten.",
+    "Shellys Seite führt Apple Home nicht namentlich; es funktioniert nur über Matter."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN; Bluetooth dient der Einrichtung und als Gateway für Shelly-BLU-Geräte.",
+    "matter": "Die CSA führt den Shelly 2PM Gen3 (zertifiziert am 2025-05-21, Matter 1.3, WLAN). Shellys FAQ sagt, Matter brauche Firmware 1.6.0 oder neuer, also aktualisiere vor dem Koppeln.",
+    "hubRequired": "WLAN-Gerät mit eingebauter Weboberfläche; kein Hub nötig.",
+    "localControl": "Shelly führt eine Weboberfläche, HTTP-API, MQTT, Skripte und Webhooks; Home Assistants Integration nutzt Local Push.",
+    "switchForm": "Relais von 37 x 42 x 16 mm für die Unterputzdose, hinter einem Schalter oder einer Steckdose.",
+    "dimmer": "Shelly nennt es ein WLAN-Relais („WLAN Relais“) mit Leistungsmessung und beschreibt kein Dimmen. Es hat außerdem einen Rollladen-/Jalousie-Modus.",
+    "neutralRequired": "Die Versorgungsklemmen sind N und L, und Shellys Schaltpläne enthalten einen Neutralleiter. Er kann auch mit 24 V DC laufen.",
+    "gangs": "Zwei Relaisausgänge mit Leistungsmessung pro Kanal und zwei Schaltereingänge. 10 A pro Kanal, 16 A insgesamt, bei bis zu 240 V AC.",
+    "compatibility.apple_home": "Über Matter, sobald die Firmware 1.6.0 oder neuer läuft. Shellys Seite führt Apple Home nicht namentlich. Für die Nutzung von unterwegs braucht es eine Apple-Steuerzentrale.",
+    "compatibility.google_home": "Über Matter. Shellys Seite führt auch Google Smart Home, ohne zu sagen wie, daher wird nur Matter angegeben.",
+    "compatibility.alexa": "Shellys Seite führt Amazon Alexa. Er lässt sich auch über Matter hinzufügen.",
+    "compatibility.smartthings": "Über Matter. Shellys Seite führt auch SmartThings; der Weg wird nicht genannt.",
+    "compatibility.home_assistant": "Offizielle Shelly-Integration mit Local Push, die mehrere Shelly-Generationen abdeckt. Er lässt sich auch über Matter hinzufügen."
+  },
+  "values": {
+    "gangs": "2 Kanäle"
+  }
+}

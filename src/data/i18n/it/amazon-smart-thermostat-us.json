@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Pensato per Alexa, l'Amazon Smart Thermostat (S6ED3R) si configura nell'app Alexa con il Wi-Fi a 2,4 GHz e funziona anche con l'app Ring. Questo termostato da parete statunitense copre la maggior parte degli impianti a 24 V, pompe di calore comprese, ma può richiedere un filo C o un kit adattatore. Non è dichiarato alcun supporto a Matter, Apple Home o Google Home.",
+  "caveats": ["Può richiedere un filo C o un kit adattatore di alimentazione venduto a parte.", "Non compatibile con impianti a 110-240 V, come il riscaldamento elettrico a zoccolo.", "Solo Wi-Fi a 2,4 GHz.", "Il supporto a Apple Home, Google Home e Matter non è dichiarato."],
+  "notes": {
+    "radios": "Solo 2,4 GHz, 802.11 b/g/n; niente 5 GHz.",
+    "matter": "Nessuna pagina Amazon o Ring dichiara Matter, e le schede CSA trovate per \"Smart Thermostat\" appartengono a Tuya e Meross. L'assenza non equivale a un no.",
+    "hubRequired": "Si collega al Wi-Fi a 2,4 GHz e si configura nell'app Alexa, ma né Amazon né Ring dicono apertamente che non servano un hub o un Echo. Il controllo vocale richiede un dispositivo compatibile con Alexa.",
+    "localControl": "Amazon non indica cosa funzioni senza internet.",
+    "thermostatType": "Termostato da parete.",
+    "systems": "Copre impianti ad aria forzata, a pompa di calore e a caldaia radiante a 24 V. Non compatibile con impianti a 110-240 V, come il riscaldamento elettrico a zoccolo.",
+    "power": "Ring dice che può richiedere un filo C o un kit adattatore di alimentazione, venduto a parte, e che la maggior parte delle case ha un filo C. Il consumo in standby è di 0,89 W.",
+    "compatibility.apple_home": "Nessuna pagina Amazon o Ring cita Apple Home e non è stata trovata nessuna certificazione Matter.",
+    "compatibility.google_home": "Nessuna pagina Amazon o Ring cita Google Home e non è stata trovata nessuna certificazione Matter.",
+    "compatibility.alexa": "Si configura nell'app Alexa; il controllo vocale richiede un dispositivo compatibile con Alexa. Funziona anche con l'app Ring.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale cita SmartThings.",
+    "compatibility.home_assistant": "Non è stata trovata nessuna integrazione ufficiale di Home Assistant per questo termostato."
+  },
+  "values": {
+    "power": "Filo C (24 V) o kit adattatore",
+    "systems": "La maggior parte degli impianti HVAC a 24 V, pompe di calore incluse"
+  }
+}

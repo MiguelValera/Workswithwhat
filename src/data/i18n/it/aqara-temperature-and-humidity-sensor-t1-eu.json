@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Abbina prima l'Aqara Temperature and Humidity Sensor T1 (TH-S02D) a un hub Aqara: non può collegarsi direttamente a un telefono. Legge temperatura, umidità e pressione dell'aria (30–110 kPa) via Zigbee 3.0. Il supporto a Apple Home, Google Home, Alexa, SmartThings e Home Assistant non è confermato. Si alimenta con una pila CR2032.",
+  "caveats": ["Richiede un hub Aqara; le pagine Aqara del T1 che abbiamo visto non confermano il supporto a Apple Home, Google Home, Alexa o SmartThings."],
+  "notes": {
+    "radios": "Zigbee 3.0.",
+    "matter": "Nessuna scheda CSA trovata. Aqara dice che gli hub compatibili con Matter come l'M3 possono portare tramite bridge i sensori Zigbee di Aqara, ma nessuna pagina Aqara che abbiamo visto lo conferma per il T1.",
+    "hubRequired": "Le FAQ di Aqara sul T1 dicono che il sensore non può collegarsi direttamente a un telefono: aggiungi prima un hub Aqara, poi abbina il sensore all'hub.",
+    "localControl": "Nessuna pagina che abbiamo visto descrive il funzionamento locale tramite hub.",
+    "senses": "Misura anche la pressione dell'aria (30–110 kPa), che il sito non elenca come tipo di rilevamento.",
+    "power": "La pagina delle specifiche di Aqara sul T1 dice CR2032. Alcune pagine Aqara di altri sensori di temperatura dicono CR2450.",
+    "compatibility.apple_home": "La formulazione di Aqara su HomeKit tramite hub che abbiamo visto è nelle pagine del vecchio Temperature and Humidity Sensor (WSDCGQ11LM), non in quelle del T1. I rivenditori indicano HomeKit per il T1, ma da solo non basta.",
+    "compatibility.google_home": "Solo le schede dei rivenditori dicono che Google Home funziona.",
+    "compatibility.alexa": "Solo le schede dei rivenditori dicono che Alexa funziona.",
+    "compatibility.smartthings": "Solo le schede dei rivenditori citano SmartThings.",
+    "compatibility.home_assistant": "La documentazione di Home Assistant che abbiamo visto non nomina alcun supporto per l'Aqara T1. Un coordinatore Zigbee generico non è documentato per esso."
+  },
+  "values": {
+    "power": "CR2032"
+  }
+}

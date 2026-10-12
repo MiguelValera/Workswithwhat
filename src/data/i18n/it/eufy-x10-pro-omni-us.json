@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La pagina statunitense di eufy segna l'X10 Pro Omni come non più disponibile, quindi interessa soprattutto se ne hai già uno o lo trovi usato. Funziona con Google Home e Alexa, aspira e lava con aspirazione da 8000 Pa e navigazione laser, e la sua stazione Omni svuota il contenitore in un sacchetto da 2,5 L.",
+  "caveats": ["Non più venduto sulla pagina statunitense di eufy.", "La configurazione richiede la banda a 2,4 GHz; il manuale di eufy dice di disattivare i 5 GHz sui router dual band.", "Una directory di terze parti elenca Matter su Wi-Fi, ma nessuna pagina eufy né scheda CSA lo conferma, quindi Apple Home non è confermato.", "Home Assistant ha solo integrazioni della community per questo modello, nessuna ufficiale."],
+  "notes": {
+    "radios": "Il manuale chiede la banda a 2,4 GHz sul router; disattiva i 5 GHz sui router dual band durante la configurazione.",
+    "matter": "Matter Alpha, una directory di terze parti, elenca l'X10 Pro Omni come Matter 1.4 su Wi-Fi con firmware 3.0. Nessuna pagina eufy né scheda CSA vista, quindi non lo affermiamo.",
+    "hubRequired": "La stazione Omni non è un hub.",
+    "localControl": "eufy dice che il riconoscimento degli ostacoli funziona offline; il solo controllo locale non è dichiarato.",
+    "cleaning": "Aspira e lava con mop rotanti (MopMaster).",
+    "navigation": "Il manuale indica un lidar di navigazione; eufy lo chiama iPath Laser Navigation. L'evitamento degli ostacoli usa una fotocamera (AI.See).",
+    "selfEmptying": "La stazione Omni svuota il contenitore in un sacchetto da 2,5 L.",
+    "compatibility.apple_home": "Nessuna pagina eufy trovata per Apple Home.",
+    "compatibility.google_home": "La pagina statunitense di eufy elenca Google Home come dispositivo compatibile e il controllo vocale con Google Assistant.",
+    "compatibility.alexa": "La pagina statunitense di eufy elenca Amazon Echo come dispositivo compatibile e il controllo vocale con Alexa.",
+    "compatibility.smartthings": "Nessuna pagina di eufy o Samsung trovata per SmartThings.",
+    "compatibility.home_assistant": "Nessuna pagina di integrazione ufficiale di Home Assistant trovata; solo integrazioni della community."
+  },
+  "values": {
+    "navigation": "LiDAR (iPath Laser Navigation)"
+  }
+}

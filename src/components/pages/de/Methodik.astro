@@ -1,0 +1,54 @@
+---
+import MailLink from '../../MailLink.astro';
+import Base from '../../../layouts/Base.astro';
+import { CONTACT_URL } from '../../../site.config';
+---
+
+<Base
+  title="So prüfen wir die Kompatibilität"
+  description="Woher die Kompatibilitätsdaten von Workswithwhat kommen, was jeder Status bedeutet und wie wir mit fehlenden oder widersprüchlichen Angaben umgehen."
+  crumbs={[{ name: 'So prüfen wir', path: '/methodology/' }]}
+>
+  <h1>So prüfen wir die Kompatibilität</h1>
+  <p class="lede">
+    Eine Angabe wie „funktioniert mit“ hilft nur, wenn du sie nachprüfen kannst. Deshalb verweist jede Antwort hier auf die Seite, von der sie stammt.
+  </p>
+
+  <h2>Woher die Daten kommen</h2>
+  <p>In dieser Reihenfolge:</p>
+  <ol>
+    <li>Die Produktseite des Herstellers, sein Datenblatt, seine Anleitung oder seine Support-Artikel.</li>
+    <li>Die Zertifizierungsdatenbank der Connectivity Standards Alliance, für Matter.</li>
+    <li>Plattformseiten von Apple, Google, Amazon, Samsung SmartThings und Home Assistant.</li>
+    <li>Händler und unabhängige Tests, nur zur Bestätigung einer der Quellen oben.</li>
+  </ol>
+
+  <h2>Zwei Durchgänge pro Gerät</h2>
+  <p>
+    Ein Durchgang sammelt die technischen Daten und Quellen. Ein zweiter geht jede Angabe unabhängig noch einmal durch und
+    prüft, ob die zitierte Seite sie wirklich enthält, für genau dieses Modell und diese Region. Was nicht standhält, wird als
+    <span class="badge s-unknown">Unbestätigt</span> markiert statt geraten. Ein Gerät erscheint erst nach dem zweiten Durchgang auf der Website.
+  </p>
+
+  <h2>Was die Bezeichnungen bedeuten</h2>
+  <ul>
+    <li><span class="badge s-native">Ja</span> Funktioniert über die eigene Integration der Marke: einen Alexa-Skill, die Verknüpfung mit Google Home, HomeKit oder eine offizielle Home-Assistant-Integration.</li>
+    <li><span class="badge s-matter">Über Matter</span> Funktioniert, weil das Gerät Matter-zertifiziert ist. Du fügst es per Matter-Kopplung der Plattform hinzu. Thread-Geräte brauchen außerdem einen Thread-Border-Router, etwa ein aktuelles Apple TV, einen HomePod mini oder einen Nest Hub.</li>
+    <li><span class="badge s-hub">Über …</span> Funktioniert, aber nur über den genannten Hub oder die genannte Bridge.</li>
+    <li><span class="badge s-no">Nein</span> Eine Quelle sagt, dass es nicht unterstützt wird.</li>
+    <li><span class="badge s-unknown">Unbestätigt</span> Wir haben keine offizielle Antwort gefunden.</li>
+  </ul>
+
+  <h2>Regionen und Versionen</h2>
+  <p>
+    Die US- und EU-Version eines Geräts haben oft andere Modellnummern, Funkstandards oder Zertifizierungen. Wir behandeln sie
+    als getrennte Geräte und geben an, welche Regionen jeder Eintrag abdeckt.
+  </p>
+
+  <h2>Korrekturen</h2>
+  <p>
+    Firmware-Updates ändern die Kompatibilität ständig. Wenn hier etwas falsch oder veraltet ist, schreib an <MailLink /> oder
+    <a href={CONTACT_URL}>eröffne ein Issue</a> mit einem Link, und wir prüfen es erneut. Keine Marke zahlt für einen
+    Eintrag, und es gibt keine Affiliate-Links.
+  </p>
+</Base>

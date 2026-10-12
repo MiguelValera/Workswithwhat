@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Home Assistant controlla lo Shelly Plug M Gen3 in locale con la sua integrazione ufficiale Shelly, mentre Apple Home, Google Home, Alexa e SmartThings lo raggiungono tramite Matter. È una presa Wi-Fi con Bluetooth 4.2 che funziona in autonomia senza hub; il cloud e l'app Shelly sono facoltativi e c'è un'interfaccia web integrata. Misura potenza, tensione e corrente, e il suo valore nominale di 13 A / 3000 W vale solo per carichi resistivi. Il codice del modello europeo è S3PL-30110EU.",
+  "caveats": ["Il valore nominale di 13 A / 3000 W vale solo per carichi resistivi.", "Apple Home funziona solo tramite Matter e richiede un hub domestico Apple per il controllo remoto e le automazioni.", "La tabella delle specifiche di Shelly segna Alexa e Google come «Yes» senza dire se si tratti della sua integrazione cloud; confermiamo solo Matter per questi due e per SmartThings."],
+  "notes": {
+    "radios": "Wi-Fi 802.11 b/g/n più Bluetooth 4.2; Shelly indica anche una funzione di gateway BLE. Modello S3PL-30110EU.",
+    "matter": "Shelly indica il supporto Matter per questo modello. Una scheda CSA (CSA25F6AMAT48828-24) è stata vista solo nelle barre laterali di altre pagine CSA di Shelly, non in una pagina dedicata, quindi non è citata.",
+    "hubRequired": "Dispositivo Wi-Fi che può funzionare in autonomia sulla rete locale; il cloud e l'app Shelly sono facoltativi.",
+    "localControl": "Interfaccia web integrata per configurazione e controllo, e controllo locale dall'integrazione Shelly di Home Assistant.",
+    "energyMonitoring": "Misura potenza, tensione e corrente.",
+    "maxLoadWatts": "13 A / 3000 W, solo carichi resistivi.",
+    "compatibility.apple_home": "Tramite Matter; Shelly nomina Apple Home come piattaforma Matter. Richiede un hub domestico Apple per l'uso remoto e le automazioni.",
+    "compatibility.google_home": "Shelly dice che funziona con Google Home tramite Matter. La sua tabella delle specifiche segna anche Google Smart Home «Yes» senza dire se si tratti del collegamento cloud di Shelly, quindi non indichiamo un'integrazione nativa.",
+    "compatibility.alexa": "Shelly dice che funziona con Alexa tramite Matter. La sua tabella delle specifiche segna Alexa «Yes», ma nessuna pagina Shelly conferma la skill Alexa di Shelly Cloud per questo modello, quindi non indichiamo il nativo.",
+    "compatibility.smartthings": "Shelly dice che funziona con SmartThings tramite Matter. Non abbiamo trovato nessuna pagina che confermi l'integrazione cloud SmartThings di Shelly per questo modello.",
+    "compatibility.home_assistant": "Integrazione locale ufficiale Shelly, che dice di supportare tutte le generazioni di dispositivi. Shelly indica anche Home Assistant tramite Matter."
+  }
+}

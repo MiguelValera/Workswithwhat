@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Die Eve Energy Outdoor läuft mit Matter über Thread, und so funktioniert sie mit Apple Home, Google Home, Alexa, SmartThings und Home Assistant. Jede davon braucht einen Hub, der Matter-Controller und Thread-Border-Router zugleich ist. Weil sie am Netz hängt, kann sie auch als Thread-Router für andere Geräte arbeiten. Ihr Leistungsmesser zeigt Werte in der Eve-App und in SmartThings, nicht in Alexa oder Google Home. Ausgelegt für 10 A / 2300 W Dauerlast, 16 A / 3680 W Spitze.",
+  "caveats": [
+    "Braucht einen Hub, der Matter-Controller und Thread-Border-Router zugleich ist; für Apple Home nennt Eve HomePod (2. Generation), HomePod mini und Apple TV 4K (2. Generation oder 3. Generation mit 128 GB).",
+    "Leistungswerte erscheinen nicht in Alexa oder Google Home.",
+    "Die Dauerlast beträgt 10 A / 2300 W; 16 A / 3680 W ist nur der Spitzenwert.",
+    "Glühlampen sind auf 1 A / 240 W begrenzt."
+  ],
+  "notes": {
+    "radios": "Matter über Thread. Eve stuft sie als netzbetriebenes Full Thread Device ein, sie kann also als Thread-Router für andere Geräte arbeiten.",
+    "matter": "Eve verkauft sie als Matter-über-Thread-Gerät. Ein CSA-Eintrag, der dazu passt (CSA23K53MAT42554-24), tauchte nur in einer Seitenleiste auf einer anderen Eve-Seite auf, daher zitieren wir ihn nicht.",
+    "hubRequired": "Eve sagt, sie brauche einen Hub, der Matter-Controller und Thread-Border-Router zugleich ist. Eves hubfreier Modus unter iOS 18 existiert für einige Geräte, wir konnten aber nicht bestätigen, dass er dieses abdeckt.",
+    "localControl": "Matter über Thread läuft im lokalen Netzwerk über deinen eigenen Hub; an der Steuerung ist kein Eve-Cloud-Konto beteiligt.",
+    "energyMonitoring": "Eingebauter Leistungsmesser mit Kostenschätzungen in der Eve-App. Werte erscheinen in Apple Home (über die Eve-App) und in SmartThings, nicht in Alexa oder Google Home.",
+    "maxLoadWatts": "Eve nennt 10 A / 2300 W als Dauerlast und 16 A / 3680 W als Spitzenstrom, daher nutzen wir 2300 W. Glühlampen bis 1 A / 240 W.",
+    "compatibility.apple_home": "Über Matter. Braucht eine Apple-Steuerzentrale, die Thread-Border-Router ist; Eve nennt HomePod (2. Generation), HomePod mini und Apple TV 4K (2. Generation oder 3. Generation mit 128 GB).",
+    "compatibility.google_home": "Über Matter. Braucht einen Google-Hub, der Matter-Controller und Thread-Border-Router ist. Laut Eve wird die Leistungsmessung in Google Home nicht angezeigt.",
+    "compatibility.alexa": "Über Matter. Braucht einen Echo, der Matter-Controller und Thread-Border-Router ist. Laut Eve wird die Leistungsmessung in Alexa nicht angezeigt.",
+    "compatibility.smartthings": "Über Matter. Braucht einen SmartThings-Hub mit Thread. Laut Eve erscheinen Leistungswerte in SmartThings Energy.",
+    "compatibility.home_assistant": "Home Assistants Ankündigung zu Works with Home Assistant nennt die Eve Energy Outdoor, und Eves Seite zeigt das Logo. Koppelt über die Matter-Integration; braucht einen Thread-Border-Router."
+  }
+}

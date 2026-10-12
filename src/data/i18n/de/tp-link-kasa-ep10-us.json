@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Klein und einfach: Der Kasa EP10 funktioniert mit Alexa, Google Home und SmartThings, sobald du dein Kasa-Konto verknüpfst, und die offizielle TP-Link-Integration von Home Assistant führt ihn für lokale Steuerung auf. Er ist ein kompakter US-Zwischenstecker mit 2,4-GHz-WLAN, ausgelegt für 15 A / 1800 W, und braucht keinen Hub. TP-Link führt weder Apple Home noch Matter auf. Rechne auch nicht mit Verbrauchsdaten; TP-Links EP10-Seiten erwähnen kein Strommessgerät.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN; 5 GHz gibt es nicht.",
+    "TP-Link führt weder Apple Home noch Matter auf; Kasas HomeKit-Zwischenstecker sind der KP125 und der EP25.",
+    "Die Verbrauchsmessung ist nicht bestätigt; TP-Links EP10-Seiten führen kein Strommessgerät auf."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN (IEEE 802.11b/g/n); kein 5 GHz.",
+    "matter": "TP-Link und Kasa führen für den EP10 Alexa, Google und SmartThings auf und erwähnen Matter nicht, sagen aber nie, dass er keins hat. Wir fanden keinen CSA-Eintrag für den EP10.",
+    "hubRequired": "Verbindet sich direkt mit 2,4-GHz-WLAN; laut Kasa ist kein Hub nötig.",
+    "localControl": "Die Integration von Home Assistant steuert Kasa-Zwischenstecker über das lokale Netzwerk. Die Kasa-App selbst läuft über die Cloud.",
+    "energyMonitoring": "TP-Links EP10-Seiten führen kein Strommessgerät auf, und eine Antwort in der TP-Link-Community sagt, er habe keins, aber wir fanden keine offizielle Spezifikation, die das sagt.",
+    "maxLoadWatts": "15 A, 1800 W für allgemeine Nutzung / ohmsche Last bei 100–120 V AC.",
+    "compatibility.apple_home": "TP-Links Plattformliste für den EP10 nennt Alexa, Google Assistant und SmartThings, nicht HomeKit, schließt es aber nicht aus. Kasas HomeKit-Zwischenstecker sind der KP125 und der EP25.",
+    "compatibility.google_home": "Cloud-zu-Cloud-Verknüpfung zwischen dem Kasa- und dem Google-Konto.",
+    "compatibility.alexa": "Cloud-zu-Cloud-Verknüpfung über den Kasa-Skill.",
+    "compatibility.smartthings": "TP-Link führt Samsung SmartThings auf, und das Handbuch enthält die Einrichtungsschritte für SmartThings.",
+    "compatibility.home_assistant": "Von der offiziellen TP-Link-Smart-Home-Integration aufgeführt. Ein Forennutzer berichtete von EP10-Geräten, die nicht erkannt wurden."
+  }
+}

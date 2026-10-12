@@ -15,4 +15,4 @@ export const LEGAL_UPDATED = '2026-10-12';
 // Languages built besides English (each under /<lang>/). A language goes on only once
 // every published record has a translation in src/data/i18n/<lang>/; while it's off,
 // none of its pages, links or hreflang alternates are built.
-export const ENABLED_LANGS = ['es'] as const;
+export const ENABLED_LANGS = ['es', 'de', 'fr', 'it'] as const;

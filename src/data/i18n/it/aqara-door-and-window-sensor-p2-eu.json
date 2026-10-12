@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Il sensore Aqara Door and Window Sensor P2 usa un sensore Hall per segnalare aperto o chiuso e ha un allarme antimanomissione. Arriva su Apple Home, Google Home, Alexa, SmartThings e Home Assistant tramite Matter su Thread, quindi ti serve un border router Thread compatibile con Matter ma non un hub Aqara. Si alimenta con una pila CR123A.",
+  "caveats": ["Serve un border router Thread compatibile con Matter, come un HomePod mini, un Nest Hub 2nd gen o un Echo 4th gen.", "L'app Aqara Home e le funzioni extra come l'avviso di manomissione richiedono l'Hub M3 di Aqara."],
+  "notes": {
+    "radios": "La scheda tecnica di Aqara indica Thread e BLE; la CSA indica Thread e Bluetooth.",
+    "matter": "La CSA elenca Door and Window Sensor P2 di Lumi United (vendor 0x115F, product 0x2002). I modelli sono DW-S02E e DW-S02D.",
+    "hubRequired": "Per il controllo Matter non serve nessun hub Aqara; serve un controller Matter con un border router Thread (ad es. HomePod mini, Nest Hub 2nd gen, Echo 4th gen), che non è un hub di marca. L'app Aqara Home e le funzioni extra come l'avviso di manomissione richiedono l'Hub M3 di Aqara.",
+    "localControl": "Nessuna fonte Aqara che abbiamo visto dichiara il solo controllo locale.",
+    "senses": "La scheda tecnica di Aqara indica un sensore Hall per lo stato aperto/chiuso, più un allarme antimanomissione.",
+    "power": "Una pila CR123A.",
+    "compatibility.apple_home": "Aqara lo elenca come compatibile; l'uso con Matter richiede un border router Thread compatibile con Matter. Su Apple significa un HomePod mini, un HomePod 2nd gen o un Apple TV 4K.",
+    "compatibility.google_home": "Aqara lo elenca come compatibile; l'uso con Matter richiede un border router Thread compatibile con Matter.",
+    "compatibility.alexa": "Aqara lo elenca come compatibile; l'uso con Matter richiede un border router Thread compatibile con Matter.",
+    "compatibility.smartthings": "Aqara lo elenca come compatibile; l'uso con Matter richiede un border router Thread compatibile con Matter.",
+    "compatibility.home_assistant": "La pagina prodotto di Aqara elenca Home Assistant Yellow tra i controller Matter e i border router Thread testati. Si raggiunge tramite l'integrazione Matter di Home Assistant."
+  },
+  "values": {
+    "power": "CR123A"
+  }
+}

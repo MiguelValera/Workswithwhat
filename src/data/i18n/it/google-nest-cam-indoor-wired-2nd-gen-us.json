@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Il video in diretta della Nest Cam (indoor, wired) 2nd gen arriva sui display Nest e sui dispositivi Chromecast dall'app Google Home, e su un Echo Show tramite la skill Google Nest. La pagina del negozio Google include fino a 3 ore di cronologia dei video di evento; una cronologia più lunga e la registrazione 24/7 richiedono un piano Google a pagamento. Si alimenta con un cavo da 10 ft e un adattatore USB-A da 7,5 W, solo per uso in interni. Home Assistant la supporta, mentre Apple Home e SmartThings non sono confermati.",
+  "caveats": ["La telecamera da interno 3rd gen usa USB-C al posto di USB-A; assicurati di leggere le specifiche della 2nd gen.", "Home Assistant non può registrare il flusso WebRTC di questa telecamera tramite l'integrazione, e l'integrazione Nest richiede una tantum 5 USD di tariffa Google Device Access.", "La visione in diretta di Alexa sulle Nest cablate si interrompe dopo 12 ore finché non lo chiedi di nuovo.", "La registrazione 24/7 e una cronologia più lunga richiedono un piano Google a pagamento."],
+  "notes": {
+    "radios": "Telecamera Wi-Fi. Il Bluetooth Low Energy per la configurazione compare sulle schede dei rivenditori e sulla pagina delle specifiche Google della 3rd gen, ma non l'abbiamo visto confermato per la 2nd gen su una pagina Google.",
+    "matter": "Nessuna pagina Google che abbiamo trovato elenca Matter per questa telecamera.",
+    "hubRequired": "Si collega via Wi-Fi all'app Google Home; non è indicato nessun bridge.",
+    "localControl": "I flussi passano dal cloud di Google; nelle pagine che abbiamo visto non è documentata nessuna modalità solo locale.",
+    "cameraType": "Google la indica solo per uso in interni.",
+    "power": "Adattatore USB-A da 7,5 W incluso. Il modello 3rd gen usa invece USB-C.",
+    "localStorage": "Nessuna pagina Google che abbiamo visto cita l'archiviazione locale; i video di evento sono conservati nel cloud di Google.",
+    "subscription": "La pagina del negozio Google include fino a 3 ore di cronologia dei video di evento; una cronologia più lunga e la registrazione 24/7 richiedono un piano Google a pagamento. I nomi dei piani per questo modello non sono stati confermati da una pagina Google.",
+    "compatibility.apple_home": "Nessuna pagina Google elenca Apple Home; le recensioni dicono che non c'è il supporto a HomeKit, ma non è una dichiarazione ufficiale.",
+    "compatibility.google_home": "Si configura nell'app Google Home. Il video in diretta arriva sui display Nest e sui dispositivi Chromecast.",
+    "compatibility.alexa": "Tramite la skill Google Nest: 'Alexa, show [nome della telecamera]' porta il video in diretta su un Echo Show. La visione in diretta dalle Nest cablate si interrompe dopo 12 ore finché non lo chiedi di nuovo.",
+    "compatibility.smartthings": "Nessuna pagina di Google o Samsung trovata.",
+    "compatibility.home_assistant": "L'integrazione Google Nest di Home Assistant supporta le telecamere Nest con flussi in diretta ed eventi tramite Google Device Access, che ha una tariffa una tantum di 5 USD. Per le telecamere WebRTC come questa, HA dice che la registrazione del flusso non è supportata."
+  },
+  "values": {
+    "power": "Adattatore USB-A (rete elettrica), cavo da 10 ft",
+    "subscription": "Facoltativo: cronologia eventi più lunga e registrazione 24/7"
+  }
+}

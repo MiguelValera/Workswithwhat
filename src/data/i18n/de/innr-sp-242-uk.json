@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Echo-Lautsprecher mit eingebautem Zigbee-Hub können die Innr SP 242 (UK) für Alexa direkt koppeln; sonst braucht sie eine Bridge wie die Hue Bridge oder SmartThings. Home Assistant erkennt sie über ZHA oder Zigbee2MQTT, einschließlich Leistungsmessung. Es ist eine Zigbee-3.0-Steckdose mit 13 A Grenze, und sie verstärkt das Zigbee-Mesh. Google Home steht nicht auf Innrs Liste, und Apple Home ist unbestätigt: Laut Innr werden seine Geräte an einer Hue Bridge nicht an HomeKit weitergereicht.",
+  "caveats": [
+    "Braucht einen Zigbee-Hub; es gibt kein WLAN.",
+    "Philips Hue kann sie schalten, zeigt aber ihre Verbrauchswerte nicht.",
+    "Innr-Geräte an einer Hue Bridge werden nicht an Apple HomeKit weitergereicht.",
+    "Laut Innr funktioniert sie mit ZHA und Zigbee2MQTT, unterstützt diese Setups aber nicht selbst."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0 auf 2,4 GHz (laut Anleitung max. 10 dBm). Arbeitet als Zigbee-Repeater.",
+    "matter": "Reine Zigbee-Steckdose; Innr erwähnt Matter dafür nicht, und es wurde kein CSA-Eintrag gefunden.",
+    "hubRequired": "Zigbee-Steckdose: braucht einen Zigbee-Hub wie eine Hue Bridge, SmartThings, ein Echo mit Zigbee, Homey oder die Innr-Bridge.",
+    "localControl": "Keine Innr-Aussage zur Steuerung ohne Internet gefunden.",
+    "energyMonitoring": "Innrs UK-Erklärung nennt die SP 242 eine smarte Zigbee-3.0-Steckdose mit Leistungsmessung. Laut Innr zeigt Philips Hue die Werte nicht; SmartThings, Hubitat, Homey und Home Assistant tun es.",
+    "maxLoadWatts": "Innrs Anleitung nennt eine Gesamtstromgrenze von 13 A; eine Wattzahl wurde nicht gefunden.",
+    "compatibility.apple_home": "Innrs Works-with-Seite sagt, Innr-Geräte an einer Hue Bridge werden nicht an Apple HomeKit weitergereicht. Keine Quelle deckt andere Wege ab, deshalb nicht als „nein“ markiert.",
+    "compatibility.google_home": "Innrs Works-with-Seite führt Google Home für diese Steckdose nicht.",
+    "compatibility.alexa": "Koppelt sich direkt mit Echo-Modellen mit eingebautem Zigbee-Hub (z. B. Echo 4. Generation, Studio, Show 10) oder über eine Hue Bridge oder SmartThings.",
+    "compatibility.smartthings": "Innr führt SmartThings als unterstützten Zigbee-Hub.",
+    "compatibility.home_assistant": "Laut Innr funktionieren seine Produkte mit ZHA oder Zigbee2MQTT, einschließlich der Leistungsmessung der Steckdose, unterstützt diese Setups aber nicht selbst. Zigbee2MQTT führt die SP 242."
+  },
+  "via": {
+    "alexa": "Echo mit Zigbee-Hub, Hue Bridge oder SmartThings",
+    "smartthings": "SmartThings-Hub (Zigbee)",
+    "home_assistant": "Zigbee-Koordinator (ZHA oder Zigbee2MQTT)"
+  }
+}

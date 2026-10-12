@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Aqaras Water Leak Sensor T1 (WL-S02D) erkennt Wasser zwischen zwei Elektroden ab etwa 0,5 mm Tiefe und nutzt dafür Zigbee 3.0. Er muss mit einem Aqara-Hub gekoppelt werden, was auch sein Weg zu Apple Home ist. Google Home, Alexa, SmartThings und Home Assistant sind nicht bestätigt. Eine CR2032-Zelle hält etwa zwei Jahre.",
+  "caveats": [
+    "Braucht einen Aqara-Hub; es ist kein eigenständiges Zigbee-Gerät.",
+    "Die Unterstützung von Google Home, Alexa und SmartThings ist auf den gesehenen Aqara-Seiten unbestätigt."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0.",
+    "matter": "Es wurde kein CSA-Eintrag gefunden. Aqaras Hub M3 dient als Matter-Bridge für Aqara-Zigbee-Geräte; keine gesehene Seite sagt, dass dieser Sensor bereitgestellt wird.",
+    "hubRequired": "Aqaras FAQ sagt, der Sensor könne nicht allein arbeiten und müsse mit einem Aqara-Hub genutzt werden.",
+    "localControl": "Keine gesehene Seite beschreibt einen lokalen Betrieb über den Hub.",
+    "senses": "Erkennt Wasser zwischen zwei Elektroden, ab etwa 0,5 mm Wasserhöhe.",
+    "power": "Aqara gibt eine typische Batterielaufzeit von etwa zwei Jahren an.",
+    "compatibility.apple_home": "Aqaras T1-FAQ sagt, dass der Sensor einen Aqara-Hub braucht, um mit HomeKit zu funktionieren.",
+    "compatibility.google_home": "Nur Händlerangebote sagen, dass Google funktioniert; keine gesehene Aqara-Seite zum T1 bestätigt es.",
+    "compatibility.alexa": "Nur Händlerangebote sagen, dass Alexa funktioniert; die US-Seite des älteren Water Leak Sensor führt es auf, die T1-Seite wurde nicht gesehen.",
+    "compatibility.smartthings": "Nur Händlerangebote erwähnen SmartThings.",
+    "compatibility.home_assistant": "Die gesehene Home-Assistant-Dokumentation nennt keine Unterstützung für den Aqara T1. Ein allgemeiner Zigbee-Koordinator ist dafür nicht dokumentiert."
+  },
+  "via": {
+    "apple_home": "Aqara-Hub"
+  },
+  "values": {
+    "power": "CR2032"
+  }
+}

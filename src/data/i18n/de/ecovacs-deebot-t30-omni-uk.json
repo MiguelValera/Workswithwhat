@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Zum Ecovacs Deebot T30 Omni in Großbritannien bestätigen die Seiten von Ecovacs die Grundlagen: Er saugt und wischt, und die Station leert den Behälter automatisch. Sprachassistenten, Matter, Home Assistant, Navigationsart und Saugkraft sind für dieses Modell nicht bestätigt.",
+  "caveats": [
+    "Die britischen Ecovacs-Seiten widersprechen sich bei der Saugkraft (11000 Pa auf der Shopseite, 10000 Pa in einer Passage der Produktseite), daher nennen wir keinen Wert.",
+    "Ecovacs führt Alexa und Google Assistant beim T30 Pro Omni und T30S auf, doch keine gesehene Seite nennt sie für dieses Modell.",
+    "Home Assistants Ecovacs-Integration arbeitet über dein Ecovacs-Konto und nennt keine Modelle, die Unterstützung des T30 Omni ist also nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "In den Suchausschnitten wurde keine Angabe zu WLAN oder anderen Funkstandards gesehen.",
+    "matter": "Auf den Seiten von Ecovacs oder in einem CSA-Eintrag wurde keine Angabe zu Matter für den T30 Omni gefunden.",
+    "hubRequired": "Die Omni-Station ist kein Hub.",
+    "localControl": "Keine Herstellerangabe zu reiner lokaler Steuerung gefunden.",
+    "cleaning": "Ecovacs UK nennt ihn einen Saug- und Wischroboter mit automatischer Entleerung.",
+    "navigation": "Die Seite des Schwestermodells T30C von Ecovacs nennt LDS-Navigation, und Händler beschreiben die Laserkartierung TrueMapping 2.0, doch keine gesehene Ecovacs-Seite zum T30 Omni nennt seine Navigationsart.",
+    "suctionPa": "Die britischen Ecovacs-Seiten widersprechen sich: Die Shopseite und eine Set-Seite sagen 11000 Pa, während die Produktseite in einer Passage auch 10000 Pa nennt.",
+    "selfEmptying": "Ecovacs UK nennt ihn einen Saugroboter mit automatischer Entleerung und einer Entleerungsstation.",
+    "compatibility.apple_home": "Keine Ecovacs-Seite zu Apple Home oder Siri gefunden.",
+    "compatibility.google_home": "Ecovacs führt Google Assistant auf den Seiten zum T30 Pro Omni und T30S auf, doch keine gesehene Ecovacs-Seite zum britischen T30 Omni nennt ihn. Für dieses Modell nicht bestätigt.",
+    "compatibility.alexa": "Ecovacs führt Alexa auf den Seiten zum T30 Pro Omni und T30S auf, doch keine gesehene Ecovacs-Seite zum britischen T30 Omni nennt sie. Für dieses Modell nicht bestätigt.",
+    "compatibility.smartthings": "Keine Seite von Ecovacs oder Samsung zu SmartThings gefunden.",
+    "compatibility.home_assistant": "Home Assistants offizielle Ecovacs-Integration deckt Deebot-Sauger über das Ecovacs-Konto ab, nennt auf ihrer Seite aber keine Modelle und sagt, die Geräteunterstützung hänge von Beiträgen der Community ab. Unterstützung des T30 Omni nicht bestätigt."
+  }
+}

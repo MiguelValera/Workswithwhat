@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Ab Werk spricht der Philips Hue Smart Plug per Bluetooth mit der Hue-App, was das einfache Ein und Aus abdeckt. Apple Home, Google Home, Alexa, SmartThings und Home Assistant brauchen alle eine Hue Bridge; der Zwischenstecker verbindet sich per Zigbee mit ihr, und die Bridge stellt ihn auch Matter-Plattformen bereit. Das US-Modell ist für Steckdosen mit 100–120 V und 1800 W ausgelegt. Hue beschreibt nur das Ein- und Ausschalten und führt keine Verbrauchsmessung.",
+  "caveats": [
+    "Sprachassistenten, Ökosysteme und Fernzugriff brauchen alle eine Hue Bridge; Hues Bluetooth-Sprachsteuerung ohne Bridge gilt für Lampen, nicht für diesen Zwischenstecker.",
+    "Reine Bluetooth-Setups können Matter nicht nutzen; die Bridge stellt den Zwischenstecker Matter bereit.",
+    "Home-Assistant-Nutzer berichten, dass der Zwischenstecker als Lampe erscheint, sodass „alle Lampen aus“ ihn ebenfalls ausschalten kann."
+  ],
+  "notes": {
+    "radios": "Bluetooth für die direkte App-Steuerung; Zigbee zur Hue Bridge.",
+    "matter": "Für den Zwischenstecker selbst wurde keine Matter-Zertifizierung gefunden. Laut Hue stellt die Bridge an sie angeschlossene Produkte Matter bereit, und reine Bluetooth-Setups können Matter nicht nutzen.",
+    "hubRequired": "Die grundlegende Steuerung funktioniert per Bluetooth aus der Hue-App; die Hue Bridge ist für Sprachassistenten, Ökosysteme und Fernzugriff nötig.",
+    "localControl": "Bluetooth-Steuerung ohne Bridge; die Hue Bridge bietet auch eine lokale API, die Home Assistant nutzt.",
+    "energyMonitoring": "Hues Seiten beschreiben nur das Ein- und Ausschalten und führen keine Messung, aber keine sagt ausdrücklich, dass sie fehlt.",
+    "maxLoadWatts": "Hue-Support nennt 1800 W für Nordamerika (100–120 V).",
+    "compatibility.apple_home": "Die Produktseite führt Apple Home unter den Assistenten, die eine Hue Bridge brauchen.",
+    "compatibility.google_home": "Die US-Produktseite führt Google Assistant unter den Assistenten, die eine Hue Bridge brauchen. Hues FAQ zur Bluetooth-Sprachsteuerung ohne Bridge gilt für Lampen, nicht für diesen Zwischenstecker.",
+    "compatibility.alexa": "Die US-Produktseite führt Alexa unter den Assistenten, die eine Hue Bridge brauchen. Hues FAQ zur Bluetooth-Sprachsteuerung ohne Bridge gilt für Lampen, nicht für diesen Zwischenstecker.",
+    "compatibility.smartthings": "Die Seite der Hue Bridge führt die Kompatibilität mit Samsung SmartThings.",
+    "compatibility.home_assistant": "Die offizielle Hue-Integration steuert an eine Hue Bridge angeschlossene Geräte. Nutzer berichten, dass Zwischenstecker als Lampen-Entitäten erscheinen."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "google_home": "Philips Hue Bridge",
+    "alexa": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge",
+    "home_assistant": "Philips Hue Bridge"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Der Eve Motion ist ein Batterie-Bewegungsmelder mit integriertem Lichtsensor und einer Dämmerungseinstellung von 0 bis 15000 Lux. Apple Home, Google Home, Alexa, SmartThings und Home Assistant nehmen ihn alle über Matter auf Thread auf, jeweils über einen Thread-Border-Router statt eines Eve-Hubs. Die Steuerung bleibt lokal, ohne Eve-Cloud. Die Stromversorgung übernehmen zwei AAA-Zellen.",
+  "caveats": [
+    "Braucht einen Thread-Border-Router, der auch Matter-Controller sein muss.",
+    "Ob jede Plattform den Lichtwert anzeigt, ist nicht bestätigt.",
+    "Ältere HomeKit/Thread-Geräte brauchen Eves kostenloses Firmware-Update, um Matter zu bekommen."
+  ],
+  "notes": {
+    "radios": "Die CSA führt Thread und Bluetooth (Bluetooth dient der Matter-Einrichtung); Eves Seite führt Thread als Funkverbindung.",
+    "matter": "Die CSA führt den Eve Motion (Vendor 0x130A, Produkt 0x0059) mit Matter über Thread; der zitierte Eintrag gilt für Firmware 3.2.1, und frühere Einträge für 3.1.0 und 3.2.0 haben dieselbe Produkt-ID.",
+    "hubRequired": "Eine Eve-Bridge ist nicht nötig. Eve sagt, die erste Plattform brauche einen Hub mit den Funktionen Matter-Controller und Thread-Border-Router (z. B. HomePod mini oder Apple TV 4K); das ist ein allgemeiner Thread-Border-Router, kein Marken-Hub.",
+    "localControl": "Der CSA-Eintrag beschreibt keine Eve-Cloud, keine Registrierung und vollständig lokale Konnektivität; Home Assistants Eve-Seite sagt, Eves Matter-Geräte verbänden sich lokal.",
+    "senses": "Eve beschreibt einen Bewegungsmelder mit integriertem Lichtsensor (Dämmerungseinstellung 0 bis 15000 Lux). Ob jede Matter-Plattform den Lichtwert anzeigt, ist nicht bestätigt.",
+    "power": "Eves Datenblatt nennt zwei austauschbare AAA-Zellen; ein Presseartikel sagt AA, was das Datenblatt widerlegt.",
+    "compatibility.apple_home": "Braucht einen Thread-Border-Router (einen Hub, der auch Matter-Controller ist). Bei Apple heißt das ein HomePod mini, HomePod (2. Generation) oder Apple TV 4K.",
+    "compatibility.google_home": "Braucht einen Thread-Border-Router (einen Hub, der auch Matter-Controller ist).",
+    "compatibility.alexa": "Braucht einen Thread-Border-Router (einen Hub, der auch Matter-Controller ist).",
+    "compatibility.smartthings": "Braucht einen Thread-Border-Router (einen Hub, der auch Matter-Controller ist).",
+    "compatibility.home_assistant": "Home Assistants Eve-Seite führt den Eve Motion als Matter-Gerät, lokal über die Matter-Integration hinzugefügt. Braucht einen Thread-Border-Router."
+  },
+  "values": {
+    "power": "2 × AAA"
+  }
+}

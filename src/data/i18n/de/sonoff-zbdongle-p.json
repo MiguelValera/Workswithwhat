@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Wo der ZBDongle-E einen Silicon-Labs-Chip nutzt, setzt der ZBDongle-P auf einen Texas Instruments CC2652P mit +20 dBm Sendeleistung und Z-Stack-Koordinator-Firmware. Er ist ein USB-Zigbee-3.0-Koordinator für Home Assistant (ZHA) oder Zigbee2MQTT auf einem Host, den du selbst stellst, und Home Assistant ist das einzige bestätigte Ökosystem. SONOFFs eigene Grenzen widersprechen sich: 21 direkte Kindgeräte in den Spezifikationen, 50 direkte in der FAQ.",
+  "caveats": [
+    "Er ist nicht eigenständig und braucht Home Assistant oder Zigbee2MQTT auf einem separaten Host.",
+    "ZHA und Zigbee2MQTT können sich keinen Stick teilen; nutze zwei Sticks auf getrennten Kanälen, um beide zu betreiben.",
+    "Home Assistant führt ihn nicht als empfohlenen Adapter auf; er taucht nur in der USB-Erkennungsliste auf."
+  ],
+  "notes": {
+    "radios": "Texas Instruments CC2652P mit einer USB-Bridge CP2102(N), +20 dBm Sendeleistung, ausgeliefert mit Z-Stack-Koordinator-Firmware. Verkauft als „Zigbee 3.0 USB Dongle Plus-P“. Regionen: Der Shop des Herstellers verkauft ihn in USD, EUR und GBP; eine Versandliste wird nicht angegeben.",
+    "matter": "Es wurde kein CSA-Eintrag gefunden.",
+    "hubRequired": "Von keiner offiziellen Quelle bestätigt.",
+    "localControl": "Der Hersteller sagt, er lasse dich Zigbee-Geräte lokal über Home Assistant oder andere Open-Source-Plattformen steuern.",
+    "hubType": "Wird an einen Host gesteckt, auf dem Home Assistant oder Zigbee2MQTT läuft; er hat keine eigene App.",
+    "deviceProtocols": "Nur Zigbee 3.0; die Seite führt weder Thread noch einen anderen Funkstandard auf.",
+    "matterBridge": "Für sich allein keine Bridge; der Hersteller erwähnt Matter nur für seine separate eWeLink-CUBE-Software.",
+    "threadBorderRouter": "Die Herstellerseite bietet keinen Thread-Border-Router-Modus an.",
+    "maxDevices": "Der Hersteller nennt widersprüchliche Grenzen: standardmäßig 21 direkte Kindgeräte (höchstens 40, 100 mit Änderungen) in den Spezifikationen und 50 direkte plus bis zu 200 mit Routern in der FAQ.",
+    "compatibility.apple_home": "Nur über die Home-Assistant-Software erreichbar, die kein Hub ist; nicht bestätigt.",
+    "compatibility.google_home": "Nur über die Home-Assistant-Software erreichbar; nicht bestätigt.",
+    "compatibility.alexa": "Nur über die Home-Assistant-Software erreichbar; nicht bestätigt.",
+    "compatibility.smartthings": "Nicht bestätigt.",
+    "compatibility.home_assistant": "Der Hersteller sagt, er unterstütze ZHA in Home Assistant oder Zigbee2MQTT vollständig. Home Assistant nennt ihn nur in der ZHA-USB-Erkennungsliste, nicht unter seinen empfohlenen oder anderen getesteten Adaptern."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Home Assistant Connect ZBT-1 è una chiavetta radio USB per chi usa già Home Assistant: aggiunge Zigbee tramite ZHA, oppure Thread con l'app OpenThread Border Router. Ne scegli uno per chiavetta. Home Assistant è l'unico ecosistema confermato, e prima si vendeva come SkyConnect.",
+  "caveats": ["Esegue il firmware Zigbee o Thread, mai entrambi; con il firmware Thread i dispositivi Zigbee smettono di funzionare.", "Non è autonoma e richiede Home Assistant in esecuzione su un host come Home Assistant Green.", "Home Assistant ha annunciato il nuovo Connect ZBT-2 a novembre 2025, quindi controlla che la ZBT-1 sia ancora in vendita prima di acquistare."],
+  "notes": {
+    "radios": "Silicon Labs EFR32MG21, 2,4 GHz. Esegue il firmware Zigbee o Thread, non entrambi insieme; niente Bluetooth né Z-Wave. Modello NC-ZBT-9710.",
+    "matter": "Nessuna scheda CSA trovata.",
+    "hubRequired": "Non confermato da una fonte ufficiale.",
+    "localControl": "Una radio USB pilotata dall'host Home Assistant; nessuna pagina ufficiale citata qui indica il controllo locale in modo esplicito.",
+    "hubType": "Prima Home Assistant SkyConnect; stesso hardware.",
+    "deviceProtocols": "Uno alla volta: il firmware Thread è solo Thread, quindi i dispositivi Zigbee smettono di funzionare mentre è in uso.",
+    "matterBridge": "Non è un bridge; i dispositivi Matter su Thread si raggiungono tramite l'integrazione Matter di Home Assistant.",
+    "threadBorderRouter": "Con il firmware Thread e l'app OpenThread Border Router.",
+    "maxDevices": "Non indicato dal produttore.",
+    "compatibility.apple_home": "Raggiungibile solo tramite il software Home Assistant, che non è un hub; non confermato.",
+    "compatibility.google_home": "Raggiungibile solo tramite il software Home Assistant; non confermato.",
+    "compatibility.alexa": "Raggiungibile solo tramite il software Home Assistant; non confermato.",
+    "compatibility.smartthings": "Non confermato.",
+    "compatibility.home_assistant": "Hardware ufficiale di Home Assistant: Zigbee tramite ZHA, Thread tramite l'app OpenThread Border Router."
+  }
+}

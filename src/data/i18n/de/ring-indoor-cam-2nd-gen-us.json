@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "An der Steckdose über ihr USB-Netzteil betrieben, funktioniert die Ring Indoor Cam (2. Generation) mit Alexa über den Ring-Skill: Frag einen Echo Show nach dem Livebild. Home Assistant führt sie ebenfalls in der offiziellen Ring-Integration auf. Das Livebild ist kostenlos, gespeicherte Bewegungsvideos, bis zu 180 Tage aufbewahrt, brauchen ein Ring-Protect-Abo. Einen Hub gibt es nicht. Apple Home und Google Home sind nicht bestätigt.",
+  "caveats": [
+    "Das WLAN läuft nur auf 2,4 GHz.",
+    "Gespeicherte Videos brauchen ein Ring-Protect-Abo.",
+    "Die Unterstützung für Apple Home und Google Home bestätigt Ring nicht."
+  ],
+  "notes": {
+    "radios": "Rings Support-Seite führt 802.11 b/g/n auf 2,4 GHz auf.",
+    "matter": "Auf Rings Seiten steht kein Matter-Hinweis, und in der Suche tauchte kein CSA-Zertifizierungseintrag für eine Ring-Kamera auf.",
+    "hubRequired": "Verbindet sich per WLAN mit der Ring-App; eine Ring-Bridge wird nicht erwähnt.",
+    "localControl": "Ring sagt nicht, ob etwas ohne die Cloud funktioniert.",
+    "power": "Wird an die Steckdose angeschlossen; laut Rings regionalen Seiten liegen in der Box ein USB-A-Netzteil und ein Micro-USB-Kabel.",
+    "localStorage": "Auf den Ring-Seiten wurde keine lokale Aufzeichnung gefunden.",
+    "subscription": "Ring sagt, das Livebild funktioniert ohne Abo; mit Abo werden Bewegungsvideos bis zu 180 Tage gespeichert.",
+    "compatibility.apple_home": "Weder die Ring-Support-Seite noch die Alexa-Hilfeseiten erwähnen Apple Home oder HomeKit.",
+    "compatibility.google_home": "Es wurde keine Ring-Seite gefunden, die Google Home oder den Google Assistant für diese Kamera aufführt. Es gab nur Erwähnungen in Foren und Tests, die nicht zitiert werden.",
+    "compatibility.alexa": "Rings Support-Seite führt Works with Alexa auf. Über den Ring-Skill kannst du ein Alexa-Gerät mit Display, etwa einen Echo Show, bitten, das Livebild zu zeigen.",
+    "compatibility.smartthings": "Es wurde keine offizielle Seite von Ring oder SmartThings für dieses Modell gefunden; nur Forenbeiträge, die nicht zitiert werden.",
+    "compatibility.home_assistant": "Die offizielle Ring-Integration führt die Indoor Cam (2. Generation) unter ihren unterstützten Stick-up-Cams auf. Welche Kamerafunktionen sie bereitstellt, wurde nicht bestätigt."
+  },
+  "values": {
+    "power": "USB-Netzteil (Netzstrom)",
+    "subscription": "Gespeicherter Videoverlauf (Ring-Protect-Abo)"
+  }
+}
