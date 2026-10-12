@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Según iRobot, la Roomba Combo j9+ se empareja con Alexa y Google Assistant, y no hemos encontrado compatibilidad con Matter. Aspira y friega con navegación PrecisionVision basada en cámara, y la base Clean Base Auto-Fill vacía la suciedad durante hasta 60 días y rellena el líquido.",
+  "caveats": [
+    "iRobot menciona Siri, pero eso es control por voz, no un accesorio de la app Casa, así que Apple Home no está confirmado.",
+    "No hay ninguna declaración sobre Matter en las páginas de iRobot ni en el registro de la CSA; los despliegues posteriores de Matter de iRobot nombraron otros modelos.",
+    "La integración oficial de Roomba en Home Assistant no incluye la j9+ y dice que los modelos wifi x05 más nuevos no funcionan."
+  ],
+  "notes": {
+    "radios": "La página de iRobot dice que el robot necesita conexión wifi y una actualización de software antes del primer uso. La banda wifi no se ha confirmado en ninguna página de iRobot.",
+    "matter": "No hemos encontrado ninguna declaración sobre Matter en las páginas de iRobot ni un registro de la CSA. Los despliegues posteriores de Matter de iRobot nombraron otros modelos (Combo 10 Max, Roomba Plus 500 Combo, Max 700), no la Combo j9+.",
+    "hubRequired": "La base Clean Base Auto-Fill no es un hub.",
+    "localControl": "No hemos encontrado ninguna declaración del fabricante sobre control solo local.",
+    "cleaning": "Modelo combinado que aspira y friega.",
+    "navigation": "Cámara frontal con evitación de obstáculos.",
+    "suctionPa": "Las páginas de iRobot que hemos visto no indican la succión en pascales.",
+    "selfEmptying": "La base Clean Base Auto-Fill vacía la suciedad durante hasta 60 días y rellena el líquido.",
+    "compatibility.apple_home": "iRobot dice que el robot se puede emparejar con Siri; eso es control por voz, no un accesorio de la app Casa. Compatibilidad con Apple Home sin confirmar.",
+    "compatibility.google_home": "iRobot dice que el robot se puede emparejar con Google Assistant.",
+    "compatibility.alexa": "iRobot dice que el robot se puede emparejar con Alexa.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página de iRobot ni de Samsung sobre SmartThings.",
+    "compatibility.home_assistant": "La página de la integración oficial de Roomba no incluye la j9+ entre los modelos probados y dice que los modelos wifi x05 más nuevos no funcionan. Compatibilidad de la j9+ sin confirmar."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La página estadounidense de eufy marca el X10 Pro Omni como ya no disponible, así que te interesa sobre todo si ya tienes uno o lo encuentras de segunda mano. Funciona con Google Home y Alexa, aspira y friega con 8000 Pa de succión y navegación láser, y su estación Omni vacía el depósito en una bolsa de 2,5 L.",
+  "caveats": [
+    "Ya no se vende en la página estadounidense de eufy.",
+    "La configuración necesita la banda de 2,4 GHz; el manual de eufy indica desactivar la de 5 GHz en los routers de doble banda.",
+    "Un directorio de terceros indica Matter por wifi, pero ninguna página de eufy ni registro de la CSA lo respalda, así que Apple Home no está confirmado.",
+    "Home Assistant solo tiene integraciones de la comunidad para este modelo, ninguna oficial."
+  ],
+  "notes": {
+    "radios": "El manual pide la banda de 2,4 GHz en tu router; desactiva la de 5 GHz en los routers de doble banda durante la configuración.",
+    "matter": "Matter Alpha, un directorio de terceros, indica el X10 Pro Omni como Matter 1.4 por wifi con firmware 3.0. No hemos visto ninguna página de eufy ni registro de la CSA, así que no lo damos por cierto.",
+    "hubRequired": "La estación Omni no es un hub.",
+    "localControl": "eufy dice que el reconocimiento de obstáculos funciona sin conexión; no indica control solo local.",
+    "cleaning": "Aspira y friega con mopas giratorias (MopMaster).",
+    "navigation": "El manual indica un lidar de navegación; eufy lo llama iPath Laser Navigation. La evitación de obstáculos usa una cámara (AI.See).",
+    "selfEmptying": "La estación Omni vacía el depósito en una bolsa de polvo de 2,5 L.",
+    "compatibility.apple_home": "No hemos encontrado ninguna página de eufy sobre Apple Home.",
+    "compatibility.google_home": "La página estadounidense de eufy indica Google Home como dispositivo compatible y control por voz con Google Assistant.",
+    "compatibility.alexa": "La página estadounidense de eufy indica Amazon Echo como dispositivo compatible y control por voz con Alexa.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página de eufy ni de Samsung sobre SmartThings.",
+    "compatibility.home_assistant": "No hemos encontrado ninguna página de integración oficial de Home Assistant; solo integraciones de la comunidad."
+  }
+}

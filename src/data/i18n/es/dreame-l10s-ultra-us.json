@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El Dreame L10s Ultra aspira y friega con 5300 Pa de succión, dos mopas giratorias y una base que vacía el depósito en una bolsa de 3 L durante hasta 60 días. Dreame indica control por voz con Alexa y Google Assistant. Navega con dos láseres y una cámara RGB, y no hemos encontrado compatibilidad con Matter.",
+  "caveats": [
+    "Dreame dice que la cifra de 5300 Pa sale de sus propias pruebas de laboratorio.",
+    "Una página de Dreame menciona Siri a través de la app Dreamehome; eso es control por voz, no compatibilidad confirmada con Apple Home.",
+    "Home Assistant no tiene página oficial para este modelo; solo lo incluye una integración de la comunidad en HACS."
+  ],
+  "notes": {
+    "radios": "No hemos encontrado ninguna mención de la banda wifi en las páginas que hemos visto.",
+    "matter": "No hemos encontrado ninguna declaración sobre Matter en las páginas de Dreame ni en un registro de la CSA.",
+    "hubRequired": "La base de autovaciado no es un hub.",
+    "localControl": "No hemos encontrado ninguna declaración del fabricante sobre control solo local.",
+    "cleaning": "Aspira y friega con dos mopas giratorias.",
+    "navigation": "Según Dreame: dos láseres, una cámara RGB e IA para el mapeo, la navegación y la evitación de obstáculos. Su tabla comparativa lo llama «Double laser+AI».",
+    "suctionPa": "Dreame dice que la cifra sale de sus pruebas de laboratorio.",
+    "selfEmptying": "La base vacía el depósito en una bolsa de polvo de 3 L, hasta 60 días.",
+    "compatibility.apple_home": "Una página de Dreame indica Siri a través de la app Dreamehome; eso es control por voz, no compatibilidad confirmada con la app Casa.",
+    "compatibility.google_home": "Dreame indica control por voz con Google Assistant.",
+    "compatibility.alexa": "Dreame indica control por voz con Alexa.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página de Dreame ni de Samsung sobre SmartThings.",
+    "compatibility.home_assistant": "No hay página oficial de Home Assistant; solo una integración de la comunidad en HACS incluye el L10s Ultra."
+  },
+  "values": {
+    "navigation": "Dos láseres y cámara RGB"
+  }
+}
