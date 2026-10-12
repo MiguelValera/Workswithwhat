@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Amazon",
   "model": "Amazon Smart Plug",
-  "name": "Amazon Smart Plug",
+  "name": "Amazon Smart Plug (US)",
   "regions": ["US"],
   "officialUrl": "https://us.amazon.com/Amazon-smart-plug-works-with-Alexa/dp/B089DR29T6",
   "radios": {

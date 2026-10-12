@@ -2,7 +2,7 @@
   "category": "smart-plug",
   "brand": "Meross",
   "model": "MSS115",
-  "name": "Meross MSS115",
+  "name": "Meross MSS115 (US)",
   "regions": ["US", "CA"],
   "officialUrl": "https://shop.meross.com/products/matter-smart-plug-mss115-us",
   "radios": {
