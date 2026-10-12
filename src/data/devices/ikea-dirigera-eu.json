@@ -62,7 +62,7 @@
         "csa-dirigera",
         "ikea-dirigera-eu"
       ],
-      "note": "Added to Home Assistant's Matter integration as a Matter bridge."
+      "note": "Works as a Matter bridge: CSA certifies DIRIGERA for Matter and IKEA says it bridges its devices to Matter controllers."
     }
   },
   "hubRequired": {

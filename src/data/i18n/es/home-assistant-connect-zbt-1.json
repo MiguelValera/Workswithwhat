@@ -8,8 +8,8 @@
   ],
   "notes": {
     "radios": "Silicon Labs EFR32MG21, 2,4 GHz. Funciona con firmware Zigbee o Thread, no los dos a la vez; sin Bluetooth ni Z-Wave. Modelo NC-ZBT-9710.",
-    "matter": "No hemos buscado ni encontrado ningún registro en la CSA; el dongle es una radio, no un dispositivo Matter.",
-    "hubRequired": "No es independiente: necesita Home Assistant funcionando en un equipo como Home Assistant Green.",
+    "matter": "No hemos encontrado ningún registro en la CSA.",
+    "hubRequired": "Sin confirmar por una fuente oficial.",
     "localControl": "Una radio USB controlada por el equipo con Home Assistant; ninguna página oficial citada aquí afirma el control local con esas palabras.",
     "hubType": "Antes Home Assistant SkyConnect; es el mismo hardware.",
     "deviceProtocols": "Uno a la vez: el firmware Thread es solo Thread, así que los dispositivos Zigbee dejan de funcionar mientras está activo.",

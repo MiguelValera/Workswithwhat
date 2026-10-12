@@ -22,7 +22,7 @@
   "matter": {
     "certified": null,
     "sources": [],
-    "note": "No CSA listing sought or found; the dongle is a radio, not a Matter device."
+    "note": "No CSA listing found."
   },
   "compatibility": {
     "apple_home": {
@@ -57,7 +57,7 @@
   "hubRequired": {
     "value": null,
     "sources": [],
-    "note": "It is not standalone: it needs Home Assistant running on a host such as Home Assistant Green."
+    "note": "Not confirmed by an official source."
   },
   "localControl": {
     "value": null,

@@ -19,6 +19,6 @@
     "compatibility.google_home": "Se configura mediante una integración en la app IKEA Home smart. El hub también es un puente Matter.",
     "compatibility.alexa": "Se configura mediante una integración en la app IKEA Home smart. El hub también es un puente Matter.",
     "compatibility.smartthings": "IKEA no nombra ninguna integración con SmartThings. El hub es un puente Matter certificado, pero ninguna fuente oficial confirma SmartThings.",
-    "compatibility.home_assistant": "Se añade a la integración Matter de Home Assistant como puente Matter."
+    "compatibility.home_assistant": "Funciona como puente Matter: la CSA certifica DIRIGERA para Matter e IKEA dice que conecta sus dispositivos con controladores Matter."
   }
 }
