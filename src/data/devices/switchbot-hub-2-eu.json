@@ -14,6 +14,7 @@
     ],
     "sources": [
       "sb-hub2-eu",
+      "sb-hub-compare",
       "csa-sb-hub2"
     ],
     "note": "2.4 GHz Wi-Fi only and Bluetooth LE; it also has an IR blaster. CSA listing is for the global Hub 2; the EU SKU is not confirmed there."
@@ -111,7 +112,6 @@
   "maxDevices": {
     "value": null,
     "sources": [
-      "sb-matter-eu",
       "sb-hub-compare"
     ],
     "note": "SwitchBot gives 8 as the number of sub-devices Hub 2 can sync to Apple or Google over Matter, a bridge limit rather than a total."
@@ -207,6 +207,7 @@
   "variants": [
     "switchbot-hub-2-us"
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-12"
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
 }

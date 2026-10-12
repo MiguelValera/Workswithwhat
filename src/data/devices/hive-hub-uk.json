@@ -16,7 +16,7 @@
     "sources": [
       "hive-hub"
     ],
-    "note": "Hive's Hub page lists Ethernet to the router, Wi-Fi and Zigbee. Bluetooth is not listed for this model (the older Hub 360 had it)."
+    "note": "Hive's Hub page lists Ethernet to the router, Wi-Fi and Zigbee, and says the hub works with Ethernet or Wi-Fi. Another Hive shop page lists only Ethernet and Zigbee. Bluetooth is not listed."
   },
   "matter": {
     "certified": null,
@@ -27,23 +27,24 @@
     "apple_home": {
       "status": "native",
       "sources": [
+        "hive-homekit",
         "hive-hub"
       ],
-      "note": "Hive's Hub page says the product can be used with Apple HomeKit and Siri Shortcuts. Which Hive devices appear in Apple Home was not checked."
+      "note": "Hive's HomeKit page covers heating, lights and plugs in the Apple Home app, set up from the Hive app; it needs the latest Hive Hub or Hub 360. Hot water, the older SLT5 wired thermostat and the radiator valve are not supported."
     },
     "google_home": {
       "status": "native",
       "sources": [
         "hive-google"
       ],
-      "note": "Hive devices are added in the Google Home app by linking the Hive account."
+      "note": "Link the Hive account under Works with Google in the Google Home app; Hive lists heating, lights and plugs."
     },
     "alexa": {
       "status": "native",
       "sources": [
         "hive-alexa"
       ],
-      "note": "Enable the Hive skill; Hive lists its thermostats, sensors and Hive 2 devices as supported."
+      "note": "Enable the Hive skill and link your Hive account; Hive lists heating, lights and plugs."
     },
     "smartthings": {
       "status": "unknown",
@@ -74,7 +75,7 @@
     "value": "hub",
     "sources": [
       "hive-hub",
-      "hive-models"
+      "hive-hubs"
     ]
   },
   "deviceProtocols": {
@@ -112,25 +113,33 @@
       "accessed": "2026-10-12"
     },
     {
-      "id": "hive-models",
-      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=022433716131644",
-      "title": "Different Hive Hub Models",
+      "id": "hive-hubs",
+      "url": "https://www.hivehome.com/guides/hive-hubs",
+      "title": "Hive hubs",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hive-homekit",
+      "url": "https://hivehome.com/connects-with/homekit",
+      "title": "Apple HomeKit",
       "publisher": "Hive",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
     },
     {
       "id": "hive-alexa",
-      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=240318152810310",
-      "title": "Amazon Alexa Integration with Hive",
+      "url": "https://hivehome.com/alexa",
+      "title": "Hive and Amazon Alexa",
       "publisher": "Hive",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
     },
     {
       "id": "hive-google",
-      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=250130091614183",
-      "title": "Connecting Hive with Google Home",
+      "url": "https://hivehome.com/connects-with/google-assistant",
+      "title": "Hive and Google Assistant",
       "publisher": "Hive",
       "kind": "manufacturer",
       "accessed": "2026-10-12"
@@ -149,6 +158,7 @@
     "Hive says Alexa and Google Home need the Hive account linked and the devices on the same Wi-Fi.",
     "The hub is not a general Zigbee hub for third-party devices."
   ],
-  "status": "draft",
-  "updatedAt": "2026-10-12"
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
 }
