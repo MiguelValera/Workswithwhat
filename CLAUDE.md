@@ -54,6 +54,7 @@ Pipeline: **collector → verifier → editor → translator**, then **reviewer*
 | `ux` | HTML/CSS-only UX work on pages and components. Proves SEO is unchanged with a before/after snapshot diff of `dist/`. | Layouts, components, pages, `global.css`. |
 | `translator` | Translates a verified record's prose (summary, caveats, notes, `via`, text values) into Spanish (Spain). Never changes facts. | `src/data/i18n/es/<slug>.json` |
 | `reviewer` | Reviews an open PR against these rules (validate, build, CI, data, CSP, secrets, copy). Never merges. | One PR comment: **Ready to merge** or **Not ready**, with blockers. |
+| `monetization` | Researches the most viable and simple revenue options and proposes them, ranked, with sources. **Never implements anything:** the owner confirms each proposal explicitly first. Runs outside the content pipeline. | Nothing; returns a report. |
 
 After any agent run: `npm run validate` must pass.
 
@@ -158,6 +159,8 @@ Read this first if you are picking the project up.
 - **Optional:** Cloudflare Web Analytics, which is cookieless. It needs its JS token. To add it, allow `static.cloudflareinsights.com` (script) and `cloudflareinsights.com` (connect) in the CSP, mention it in `/privacy/`, and change "no trackers" in the footer.
 
 ### Monetisation plan (agreed direction, not implemented)
+**Rule:** no monetisation work (affiliate links, ads, paid API, newsletter, sponsorships, donation links, sign-ups) is implemented without the owner's explicit confirmation of that specific option. The `monetization` agent researches and proposes; it never builds. Ask the owner first even when an option below is marked as agreed direction.
+
 1. **Affiliate "where to buy" links per device, using regional Amazon Associates and brand programs:**
    - Keep tags in a config file, and switch the links off until the owner has accounts.
    - Add a disclosure on every page.
