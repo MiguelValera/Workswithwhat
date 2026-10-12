@@ -1,0 +1,160 @@
+{
+  "category": "smart-hub",
+  "brand": "IKEA",
+  "model": "DIRIGERA",
+  "name": "DIRIGERA Hub (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.ikea.com/lv/en/p/dirigera-hub-for-smart-products-white-smart-10503406/",
+  "radios": {
+    "value": [
+      "zigbee",
+      "thread",
+      "ethernet"
+    ],
+    "sources": [
+      "csa-dirigera-zigbee",
+      "ikea-dirigera-gb",
+      "ikea-dirigera-eu"
+    ],
+    "note": "Zigbee 3.0 certified; IKEA says it is a Thread Border Router; it connects to the router with the supplied network cable. Wi-Fi for devices not confirmed by an official source."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "ethernet",
+    "sources": [
+      "csa-dirigera",
+      "ikea-dirigera-eu"
+    ],
+    "note": "CSA lists the DIRIGERA Matter Controller (Matter 1.4, 2025). CSA shows no transport; the hub connects to the router by cable, so Matter runs over Ethernet."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "ikea-dirigera-eu"
+      ],
+      "note": "IKEA says Apple Home is connected through an integration in the IKEA Home smart app. The hub is also a Matter bridge."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "ikea-dirigera-eu"
+      ],
+      "note": "Set up through an integration in the IKEA Home smart app. The hub is also a Matter bridge."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "ikea-dirigera-eu"
+      ],
+      "note": "Set up through an integration in the IKEA Home smart app. The hub is also a Matter bridge."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "IKEA names no SmartThings integration. The hub is a certified Matter bridge, but no official source confirms SmartThings."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "csa-dirigera",
+        "ikea-dirigera-eu"
+      ],
+      "note": "Works as a Matter bridge: CSA certifies DIRIGERA for Matter and IKEA says it bridges its devices to Matter controllers."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "ikea-dirigera-eu"
+    ],
+    "note": "It is the hub: IKEA calls it the heart of the IKEA Home smart system."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "An IKEA FAQ says the hub needs the router but not an internet connection, but that FAQ only surfaced on a non-public IKEA host, so it is not cited."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "ikea-dirigera-eu"
+    ],
+    "note": "Own app: IKEA Home smart."
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee",
+      "thread"
+    ],
+    "sources": [
+      "csa-dirigera-zigbee",
+      "ikea-dirigera-gb"
+    ]
+  },
+  "matterBridge": {
+    "value": true,
+    "sources": [
+      "ikea-dirigera-eu",
+      "ikea-dirigera-gb"
+    ],
+    "note": "IKEA says products in the IKEA Home smart system can use the hub as a bridge into a Matter system. Which device types pass is not fully stated."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "ikea-dirigera-gb"
+    ],
+    "note": "IKEA's product page calls the hub a Matter controller and Thread Border Router (added by firmware update)."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "Not stated on the official pages cited here."
+  },
+  "summary": "DIRIGERA is IKEA's hub for Zigbee and Thread products, and it doubles as a Matter controller and Thread border router. IKEA devices reach Apple Home, Google Home and Alexa through an integration in the IKEA Home smart app, and Home Assistant picks it up as a Matter bridge. SmartThings is not confirmed.",
+  "sources": [
+    {
+      "id": "ikea-dirigera-eu",
+      "url": "https://www.ikea.com/lv/en/p/dirigera-hub-for-smart-products-white-smart-10503406/",
+      "title": "DIRIGERA hub for smart products, white smart",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ikea-dirigera-gb",
+      "url": "https://www.ikea.com/gb/en/p/-50503409/",
+      "title": "DIRIGERA hub for smart products (UK)",
+      "publisher": "IKEA",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-dirigera",
+      "url": "https://csa-iot.org/csa_product/dirigera/",
+      "title": "DIRIGERA Matter Controller",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-dirigera-zigbee",
+      "url": "https://csa-iot.org/csa_product/dirigera-hub-for-smart-products-2/",
+      "title": "DIRIGERA hub for smart products (Zigbee 3.0)",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "caveats": [
+    "IKEA names no SmartThings integration, and no official source confirms it works.",
+    "IKEA doesn't fully say which device types pass through the hub's Matter bridge.",
+    "The hub connects to your router with the supplied network cable."
+  ],
+  "verifiedAt": "2026-10-12"
+}

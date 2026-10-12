@@ -1,0 +1,174 @@
+{
+  "category": "smart-hub",
+  "brand": "Aqara",
+  "model": "Hub M3",
+  "name": "Aqara Hub M3 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://eu.aqara.com/en-eu/products/aqara-smart-hub-m3",
+  "radios": {
+    "value": [
+      "zigbee",
+      "thread",
+      "wifi",
+      "bluetooth",
+      "ethernet"
+    ],
+    "sources": [
+      "csa-m3-zigbee",
+      "aqara-pr-launch"
+    ],
+    "note": "Aqara's launch release lists Thread, Zigbee, Wi-Fi, Bluetooth and IR, with dual-band Wi-Fi and a PoE Ethernet port. Model number HM-G01D comes from retailers only."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "The M3's own CSA listing is a Zigbee 3.0 certificate. CSA's Aqara Hub Platform software certificate covers Aqara hubs, but no result confirmed it names the M3."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "aqara-bridging"
+      ],
+      "note": "Through the hub's Matter bridge; Aqara names this ecosystem for its Advanced Matter Bridging. Not every Aqara Zigbee device is bridged."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "aqara-bridging"
+      ],
+      "note": "Through the hub's Matter bridge; Aqara names this ecosystem for its Advanced Matter Bridging. Not every Aqara Zigbee device is bridged."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "aqara-bridging"
+      ],
+      "note": "Through the hub's Matter bridge; Aqara names this ecosystem for its Advanced Matter Bridging. Not every Aqara Zigbee device is bridged."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "aqara-bridging"
+      ],
+      "note": "Through the hub's Matter bridge; Aqara names this ecosystem for its Advanced Matter Bridging. Not every Aqara Zigbee device is bridged."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "aqara-bridging",
+        "ha-aqara-blog"
+      ],
+      "note": "Through the Matter bridge; Aqara is a Works with Home Assistant partner for its Matter products. Not every Aqara Zigbee device is bridged."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "aqara-m3-faq"
+    ],
+    "note": "It is the hub; Aqara's FAQ says it can lead other Aqara Zigbee hubs."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "aqara-m3-faq",
+      "aqara-pr-launch"
+    ],
+    "note": "Aqara says automations run locally on the hub. Push notifications, weather and geofencing still need the cloud."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "aqara-m3-faq",
+      "aqara-pr-launch"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee",
+      "thread",
+      "bluetooth",
+      "infrared"
+    ],
+    "sources": [
+      "csa-m3-zigbee",
+      "aqara-pr-launch"
+    ],
+    "note": "Built-in IR blaster; CSA describes Zigbee 3.0 and Bluetooth child devices."
+  },
+  "matterBridge": {
+    "value": true,
+    "sources": [
+      "aqara-bridging"
+    ],
+    "note": "Aqara says Advanced Matter Bridging started on the Hub M3. Some Aqara Zigbee devices have no Matter device type and are not bridged."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "aqara-m3-faq",
+      "csa-m3-zigbee"
+    ],
+    "note": "Aqara's FAQ and CSA listing both say the hub is a Thread Border Router."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "No figure confirmed on an official page; retailers quote 127 or 128 devices."
+  },
+  "summary": "Aqara Hub M3 bridges Aqara Zigbee devices into Apple Home, Google Home, Alexa, SmartThings and Home Assistant over Matter. It is also a Thread border router with a built-in IR blaster, and Aqara says automations run locally on the hub. Whether the M3 itself carries a Matter certificate is unconfirmed; its CSA listing is Zigbee 3.0.",
+  "sources": [
+    {
+      "id": "aqara-m3-faq",
+      "url": "https://www.aqara.com/eu/product/hub-m3-faq/",
+      "title": "Hub M3 - FAQ",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "aqara-bridging",
+      "url": "https://www.aqara.cn/eu/explore/introducing-advanced-matter-bridging/",
+      "title": "Introducing Advanced Matter Bridging",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "aqara-pr-launch",
+      "url": "https://www.businesswire.com/news/home/20240108710221/en",
+      "title": "Aqara Hub M3 launch press release (CES 2024)",
+      "publisher": "Aqara via Business Wire",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-m3-zigbee",
+      "url": "https://csa-iot.org/csa_product/hub-m3/",
+      "title": "Hub M3",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-aqara-blog",
+      "url": "https://home-assistant.io/blog/2024/09/03/aqara-joins-works-with-home-assistant/",
+      "title": "Aqara joins Works with Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "caveats": [
+    "Some Aqara Zigbee devices have no Matter device type and are not bridged.",
+    "The M3's own CSA listing is a Zigbee 3.0 certificate, and no source confirmed a Matter certificate naming it.",
+    "Push notifications, weather and geofencing still need the cloud, even though automations run locally.",
+    "Aqara gives no official device limit; retailers quote 127 or 128."
+  ],
+  "verifiedAt": "2026-10-12"
+}

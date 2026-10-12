@@ -1,0 +1,200 @@
+{
+  "category": "smart-hub",
+  "brand": "SwitchBot",
+  "model": "Hub 2",
+  "name": "SwitchBot Hub 2 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.switch-bot.com/products/switchbot-hub-2",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "sb-hub2",
+      "csa-sb-hub2"
+    ],
+    "note": "2.4 GHz Wi-Fi and Bluetooth; it also has an IR blaster."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "csa-sb-hub2",
+      "sb-hub2"
+    ],
+    "note": "CSA lists the Woan Technology Hub (SKU W3202100, certified 2023). The hub joins the network only over Wi-Fi, so Matter runs over Wi-Fi."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "sb-matter-bridge",
+        "sb-matter-thirdparty"
+      ],
+      "note": "Through the Matter bridge; needs a HomePod or Apple TV as the Matter controller. Only some SwitchBot device types are bridged."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "sb-hub2-google"
+      ],
+      "note": "SwitchBot Smart in Works with Google. Matter pairing to Google Home also works."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "sb-hub2-alexa"
+      ],
+      "note": "SwitchBot Smart skill. Matter also works."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "sb-matter-bridge"
+      ],
+      "note": "SwitchBot's Matter-over-Bridge guide has a SmartThings section. Only some SwitchBot device types are bridged."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "ha-switchbot-matter"
+      ],
+      "note": "Home Assistant's SwitchBot Matter page lists devices certified via Hub 2 or Hub 3."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "sb-hub-compare"
+    ],
+    "note": "It is the hub that SwitchBot's Bluetooth devices connect through."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from an official source."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "sb-hub2",
+      "sb-hub-compare"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "bluetooth",
+      "infrared"
+    ],
+    "sources": [
+      "sb-hub2"
+    ],
+    "note": "Talks to SwitchBot Bluetooth devices and learns IR remotes."
+  },
+  "matterBridge": {
+    "value": true,
+    "sources": [
+      "sb-matter-bridge",
+      "sb-matter-compat"
+    ],
+    "note": "SwitchBot lists Hub 2 as a Matter bridge for some SwitchBot devices and IR appliances; check SwitchBot's compatibility list for which types pass."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "No Thread claim found."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [
+      "sb-hub-compare"
+    ],
+    "note": "SwitchBot gives 8 as the number of sub-devices Hub 2 can sync to Apple or Google over Matter, a bridge limit rather than a total."
+  },
+  "summary": "SwitchBot Hub 2 connects SwitchBot devices and IR appliances over 2.4 GHz Wi-Fi and Bluetooth. Google Home and Alexa work through SwitchBot's own integrations, while Apple Home, SmartThings and Home Assistant get them through the hub's Matter bridge, which syncs up to 8 sub-devices to Apple or Google.",
+  "sources": [
+    {
+      "id": "sb-hub2",
+      "url": "https://www.switch-bot.com/products/switchbot-hub-2",
+      "title": "SwitchBot Hub 2",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sb-hub-compare",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/13569889726743",
+      "title": "The difference between Hub Mini, Hub 2 and Hub Mini Matter Enabled",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sb-matter-bridge",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/35927178604311-How-to-Connect-SwitchBot-Devices-to-Third-Party-Platforms-Matter-over-Bridge",
+      "title": "How to Connect SwitchBot Devices to Third-Party Platforms (Matter over Bridge)",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sb-matter-thirdparty",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/35927139566231-How-to-Connect-SwitchBot-Matter-Bridge-Devices-to-Third-Party-Platforms",
+      "title": "How to Connect SwitchBot Matter Bridge Devices to Third-Party Platforms",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sb-matter-compat",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/38979658026519-SwitchBot-Device-Matter-Compatibility",
+      "title": "SwitchBot Device Matter Compatibility",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sb-hub2-google",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/20694815642263-SwitchBot-Hub-2-Hub-Mini-Matter-Enabled-Google-Home-Setup-Guide",
+      "title": "SwitchBot Hub 2 & Hub Mini Matter Enabled Google Home Setup Guide",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sb-hub2-alexa",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/20694643395863",
+      "title": "SwitchBot Hub 2 & Hub Mini Matter Enabled Alexa Setup Guide",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-sb-hub2",
+      "url": "https://csa-iot.org/csa_product/hub-2-2/",
+      "title": "Hub 2",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-switchbot-matter",
+      "url": "https://home-assistant.io/integrations/switchbot_matter",
+      "title": "SwitchBot Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "caveats": [
+    "Hub 2 joins 2.4 GHz Wi-Fi, and Matter runs over Wi-Fi.",
+    "The Matter bridge syncs up to 8 sub-devices to Apple or Google, and only some SwitchBot device types are bridged; check SwitchBot's compatibility list.",
+    "Apple Home needs a HomePod or Apple TV as the Matter controller."
+  ],
+  "verifiedAt": "2026-10-12"
+}
