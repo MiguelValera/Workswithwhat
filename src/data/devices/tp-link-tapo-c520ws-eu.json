@@ -1,0 +1,103 @@
+{
+  "category": "smart-camera",
+  "brand": "TP-Link",
+  "model": "Tapo C520WS",
+  "name": "Tapo C520WS (EU)",
+  "regions": ["EU"],
+  "officialUrl": "https://www.tp-link.com/de/home-networking/cloud-camera/tapo-c520ws/",
+  "radios": {
+    "value": ["wifi", "ethernet"],
+    "sources": ["tp-link-de-c520ws"],
+    "note": "2.4 GHz Wi-Fi (802.11b/g/n) and a 10/100 Mbps Ethernet port."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "TP-Link's German page doesn't mention Matter, and we found no CSA listing. Not confirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "TP-Link's page doesn't mention Apple Home or HomeKit."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["tp-link-de-c520ws"],
+      "note": "TP-Link's page lists Google Assistant. Which features work in Google Home (live view on a display, for example) isn't spelled out."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["tp-link-de-c520ws"],
+      "note": "TP-Link's page lists Amazon Alexa. Which features work (live view on an Echo Show, for example) isn't spelled out."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No SmartThings mention on the pages we saw."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink"],
+      "note": "Home Assistant's built-in TP-Link Smart Home integration lists the C520WS among Tapo cameras. Live view needs a camera account set in the Tapo app; some firmware also needs third-party access turned on in Tapo Lab."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["tp-link-de-c520ws"],
+    "note": "Connects over Wi-Fi or Ethernet; the page lists no hub or base station."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["tp-link-de-c520ws", "ha-tplink"],
+    "note": "The page lists ONVIF and RTSP support and microSD recording; Home Assistant's integration polls locally."
+  },
+  "cameraType": {
+    "value": "outdoor",
+    "sources": ["tp-link-de-c520ws"],
+    "note": "Pan/tilt camera rated IP66, 2K QHD (2560 x 1440)."
+  },
+  "power": {
+    "value": "Mains (9 V DC adapter)",
+    "sources": ["tp-link-de-c520ws"],
+    "note": "The page says the camera doesn't support solar panels."
+  },
+  "localStorage": {
+    "value": true,
+    "sources": ["tp-link-de-c520ws"],
+    "note": "microSD card up to 512 GB, sold separately."
+  },
+  "subscription": {
+    "value": "Cloud clip history and snapshots (Tapo Care)",
+    "sources": ["tp-link-de-c520ws"],
+    "note": "Tapo Care adds cloud storage (30 days of clips) with a one-month free trial; local recording needs no plan."
+  },
+  "summary": "Outdoors, the Tapo C520WS (EU) pans and tilts, records 2K QHD video and is rated IP66. It runs on a 9 V mains adapter and saves clips to a microSD card of up to 512 GB; the page lists ONVIF and RTSP. Alexa and Google Assistant are listed, and Home Assistant has a built-in integration. TP-Link's page doesn't mention Apple Home or Matter.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only; use the Ethernet port for a wired link.",
+    "Needs a 9 V mains adapter at the camera; solar isn't supported.",
+    "Cloud clip history and snapshots need Tapo Care after the free month; microSD recording doesn't.",
+    "Home Assistant live view needs a camera account from the Tapo app."
+  ],
+  "sources": [
+    {
+      "id": "tp-link-de-c520ws",
+      "url": "https://www.tp-link.com/de/home-networking/cloud-camera/tapo-c520ws/",
+      "title": "Tapo C520WS",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

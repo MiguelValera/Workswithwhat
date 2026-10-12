@@ -1,0 +1,110 @@
+{
+  "category": "robot-vacuum",
+  "brand": "iRobot",
+  "model": "Roomba Combo 10 Max Robot + AutoWash Dock (X085840)",
+  "name": "Roomba Combo 10 Max (UK)",
+  "regions": ["UK"],
+  "officialUrl": "https://www.irobot.co.uk/en_GB/roomba-combo-10-max-robot-with-autowash-dock/X085840.html",
+  "radios": {
+    "value": null,
+    "sources": [],
+    "note": "iRobot's UK page doesn't state the radio. CSA lists Wi-Fi for the Roomba Combo 10 Max family SKU x085020 (the US model), not the UK X085840."
+  },
+  "matter": {
+    "certified": null,
+    "sources": ["csa-roomba-combo-10-max", "irobot-media-uk"],
+    "note": "CSA lists Roomba Combo 10 Max (family SKU x085020, the US model, Wi-Fi, 2025-01-23); no listing names the UK X085840. iRobot's July 2024 release, mirrored on its UK site, said Matter was planned for Q4 2024. The UK page doesn't mention Matter."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Matter is not confirmed for the UK model (see Matter). The UK page lists Siri, which works through Siri Shortcuts, not Apple Home."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["irobot-uk-combo-10-max"],
+      "note": "iRobot's UK page says it works with Google Assistant-enabled devices."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["irobot-uk-combo-10-max"],
+      "note": "iRobot's UK page says it works with Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No SmartThings mention on iRobot's pages we saw."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant has a local Roomba integration, but its docs don't name this model, and newer models are excluded in places. Not confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["irobot-uk-combo-10-max"],
+    "note": "Controlled through the iRobot Home app; the AutoWash Dock is not a hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from an official source for this model."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": ["irobot-uk-combo-10-max"],
+    "note": "Back-and-forth mopping pad that lifts on carpet; on hard floors it vacuums and mops at once."
+  },
+  "navigation": {
+    "value": "Camera (PrecisionVision Navigation)",
+    "sources": ["irobot-uk-combo-10-max"],
+    "note": "iRobot describes a camera and detection sensors with obstacle avoidance; no LiDAR is mentioned."
+  },
+  "suctionPa": {
+    "value": null,
+    "sources": [],
+    "note": "iRobot gives no pascal figure, only '100% stronger suction' than Roomba Combo i Series robots."
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": ["irobot-uk-combo-10-max"],
+    "note": "The AutoWash Dock empties debris into an enclosed bag, refills the mop tank and washes and dries the pad."
+  },
+  "summary": "iRobot's UK page lists Alexa and Google Assistant for the Roomba Combo 10 Max, a camera-navigated vacuum and mop that ships with the AutoWash Dock. The dock empties the bin, refills the water tank and washes and dries the pad. CSA lists Matter for the US model only, so Apple Home isn't confirmed here, and iRobot gives no suction figure in pascals.",
+  "caveats": [
+    "CSA's Matter listing names the US family SKU x085020, not the UK X085840, so Matter and Apple Home are not confirmed for this model.",
+    "iRobot doesn't state a suction figure in pascals.",
+    "SmartThings and Home Assistant support are not confirmed."
+  ],
+  "sources": [
+    {
+      "id": "irobot-uk-combo-10-max",
+      "url": "https://www.irobot.co.uk/en_GB/roomba-combo-10-max-robot-with-autowash-dock/X085840.html",
+      "title": "Roomba Combo 10 Max robot + AutoWash dock",
+      "publisher": "iRobot UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "irobot-media-uk",
+      "url": "https://media.irobot.co.uk/media-kits?item=21",
+      "title": "iRobot Roomba Combo 10 Max",
+      "publisher": "iRobot UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-roomba-combo-10-max",
+      "url": "https://csa-iot.org/csa_product/roomba-combo-10-max-13/",
+      "title": "Roomba Combo 10 Max",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}
