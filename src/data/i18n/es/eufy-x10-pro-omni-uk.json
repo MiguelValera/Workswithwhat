@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El control por voz con Alexa y Google Assistant es lo que indica la página británica de eufy para el X10 Pro Omni (T2351), que se configura en Integraciones inteligentes de la app eufy Clean. Aspira y friega con 8000 Pa de succión y navegación láser, y la All-in-One Station vacía el depósito en una bolsa de polvo de 2,5 L. Apple Home, SmartThings y Home Assistant están sin confirmar.",
+  "caveats": [
+    "Las páginas británicas de eufy no indican ninguna banda wifi; el manual global pide 2,4 GHz.",
+    "No hay compatibilidad con Matter documentada, así que Apple Home está sin confirmar.",
+    "Home Assistant no tiene ninguna página oficial de integración para este modelo."
+  ],
+  "notes": {
+    "radios": "El manual global pide la banda de 2,4 GHz en tu router; las páginas británicas no indican ninguna banda.",
+    "matter": "Las páginas británicas de eufy no mencionan Matter y no hemos visto ningún registro de la CSA.",
+    "hubRequired": "El manual lo configura en tu wifi doméstico de 2,4 GHz mediante la app eufy Clean; la All-in-One Station no es un hub.",
+    "localControl": "No se indica el control solo en local.",
+    "cleaning": "Aspira y friega con dos mopas giratorias.",
+    "navigation": "eufy lo llama iPath Laser Navigation. La detección de obstáculos usa AI.See.",
+    "selfEmptying": "La All-in-One Station vacía el depósito en una bolsa de polvo de 2,5 L. También se venden packs con bolsas de polvo adicionales y limpiasuelos.",
+    "compatibility.apple_home": "No hemos encontrado ninguna página de eufy sobre Apple Home.",
+    "compatibility.google_home": "La página británica de eufy dice que puedes usar Google Assistant para limpiar por voz; el manual lo enlaza en Integraciones inteligentes de la app eufy Clean.",
+    "compatibility.alexa": "La página británica de eufy dice que puedes usar Amazon Alexa para limpiar por voz; el manual lo enlaza en Integraciones inteligentes de la app eufy Clean.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página de eufy ni de Samsung sobre SmartThings.",
+    "compatibility.home_assistant": "No hemos encontrado ninguna página oficial de integración de Home Assistant."
+  }
+}

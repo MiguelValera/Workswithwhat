@@ -1,0 +1,146 @@
+{
+  "category": "light-strip",
+  "brand": "Nanoleaf",
+  "model": "Essentials Matter Lightstrip Smarter Kit 80 in / 2 m (NF080K03-2LS)",
+  "name": "Nanoleaf Essentials Lightstrip (Matter, US)",
+  "regions": [
+    "US",
+    "CA"
+  ],
+  "officialUrl": "https://nanoleaf.me/en-CA/products/essentials/lightstrips/matter-lightstrip-80-starter-kit-2m-each/",
+  "radios": {
+    "value": [
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "nanoleaf-lightstrip-ca",
+      "csa-nanoleaf-lightstrip"
+    ],
+    "note": "Thread for Matter, Bluetooth for app-only control."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "nanoleaf-lightstrip-ca",
+      "csa-nanoleaf-lightstrip"
+    ],
+    "note": "Nanoleaf says it works with Matter over Thread. CSA's Essentials Lightstrip listing (certified 2023-06-23, Thread and Bluetooth) names family SKU NF080K02-2LS, not NF080K03-2LS, so the exact SKU match is unconfirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "nanoleaf-lightstrip-ca",
+        "csa-nanoleaf-lightstrip"
+      ],
+      "note": "Via Matter over Thread; needs a Thread border router such as a HomePod mini."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "nanoleaf-lightstrip-ca",
+        "csa-nanoleaf-lightstrip"
+      ],
+      "note": "Via Matter over Thread; needs a Thread border router such as a Nest Hub (2nd gen)."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "nanoleaf-lightstrip-ca",
+        "csa-nanoleaf-lightstrip"
+      ],
+      "note": "Nanoleaf lists Alexa as a voice option; works via Matter over Thread with an Echo that is a Thread border router (4th gen named)."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [
+        "nanoleaf-lightstrip-ca"
+      ],
+      "note": "Not mentioned on Nanoleaf's page for this strip."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "ha-matter",
+        "csa-nanoleaf-lightstrip"
+      ],
+      "note": "Via the official Matter integration; Thread devices need a Thread border router."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "nanoleaf-lightstrip-ca"
+    ],
+    "note": "The Nanoleaf app controls it over Bluetooth alone; smart-home ecosystems need a Matter hub that is also a Thread border router."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Nanoleaf's page doesn't say whether control works without internet."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": [
+      "nanoleaf-lightstrip-ca"
+    ],
+    "note": "16+ million colours and tunable whites."
+  },
+  "lengthM": {
+    "value": 2,
+    "sources": [
+      "nanoleaf-lightstrip-ca"
+    ],
+    "note": "2 m (80 in) kit, as named in Nanoleaf's page address; the page's spec table didn't load for checking. Nanoleaf also sells a 5 m Matter kit (NF080K03-5LS)."
+  },
+  "multiZone": {
+    "value": null,
+    "sources": [
+      "nanoleaf-lightstrip-ca"
+    ],
+    "note": "Zones aren't described on this page, so unconfirmed."
+  },
+  "power": {
+    "value": null,
+    "sources": [],
+    "note": "Power supply details aren't stated on the Nanoleaf pages found."
+  },
+  "summary": "Nanoleaf Essentials Matter Lightstrip (2 m / 80 in kit) works with Apple Home, Google Home, Alexa and Home Assistant over Matter on Thread, as long as you have a Thread border router. Without one, the Nanoleaf app still controls it over Bluetooth. It does 16 million colours plus tunable whites. Nanoleaf doesn't mention SmartThings.",
+  "caveats": [
+    "Smart-home use needs a Thread border router such as a HomePod mini or Nest Hub (2nd gen).",
+    "Without a border router, Bluetooth in the Nanoleaf app is the only way to control it.",
+    "CSA's listing names family SKU NF080K02-2LS, not this kit's NF080K03-2LS, so the exact match is unconfirmed.",
+    "The official page used is Nanoleaf's Canada page; no US page for this SKU was found."
+  ],
+  "sources": [
+    {
+      "id": "nanoleaf-lightstrip-ca",
+      "url": "https://nanoleaf.me/en-CA/products/essentials/lightstrips/matter-lightstrip-80-starter-kit-2m-each/",
+      "title": "Nanoleaf Matter-enabled smart colour changing LED Lightstrip, 80 in Smarter Kit (2 m), Canada",
+      "publisher": "Nanoleaf",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-nanoleaf-lightstrip",
+      "url": "https://csa-iot.org/csa_product/nanoleaf-essentials-lightstrip-11/",
+      "title": "Nanoleaf Essentials Lightstrip - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-matter",
+      "url": "https://www.home-assistant.io/integrations/matter/",
+      "title": "Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

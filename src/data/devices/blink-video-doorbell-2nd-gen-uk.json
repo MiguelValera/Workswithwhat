@@ -1,0 +1,161 @@
+{
+  "category": "smart-camera",
+  "brand": "Blink",
+  "model": "Video Doorbell (2nd Gen) BDM01300U",
+  "name": "Blink Video Doorbell 2nd Gen (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://support.blinkforhome.com/en_GB/blink-tech-specs-video-doorbell-gen-2",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "blink-gb-specs",
+      "blink-gb-faq"
+    ],
+    "note": "Blink's spec page and FAQ list 2.4 GHz 802.11b/g/n only. Blink lists model BDM01300U for the UK and several EU countries."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim on Blink's UK pages, and no CSA listing for this doorbell surfaced in search."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Blink's UK FAQ mentions Siri Shortcuts but not HomeKit or Apple Home, so Apple Home support is not confirmed."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Blink's UK pages for this model don't mention Google Home."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "blink-gb-faq"
+      ],
+      "note": "Blink's UK FAQ says you can link Blink and Alexa accounts, and two-way audio works on Alexa devices such as the Echo Show. Compatible Alexa devices can also act as a chime."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Blink or SmartThings page found."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant page names this doorbell."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "blink-gb-faq",
+      "blink-gb-setup",
+      "blink-gb-specs",
+      "blink-gb-sync-reqs",
+      "blink-gb-sync-core"
+    ],
+    "note": "Blink's 2nd Gen FAQ, setup guide, spec page and Sync Module table say it requires a Sync Module. The Sync Module Core FAQ lists an unnamed-generation Video Doorbell as optional; Amazon UK calls the Core an optional bundle."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Blink does not state whether any control works without its cloud."
+  },
+  "cameraType": {
+    "value": "doorbell",
+    "sources": [
+      "blink-gb-specs"
+    ],
+    "note": "Battery doorbell, IP65 weather resistant, with optional wiring to an existing chime."
+  },
+  "power": {
+    "value": "3 × AA lithium, optional chime wiring",
+    "sources": [
+      "blink-gb-specs",
+      "blink-gb-faq"
+    ],
+    "note": "Batteries are needed even when wired to the chime. Blink quotes up to two years of battery life on default settings."
+  },
+  "localStorage": {
+    "value": true,
+    "sources": [
+      "blink-gb-faq",
+      "blink-gb-sync-core"
+    ],
+    "note": "Only with a Sync Module 2 (USB drive) or Sync Module XR (microSD), both sold separately. The Sync Module Core in the bundle supports cloud storage only."
+  },
+  "subscription": {
+    "value": "Cloud clip storage and person detection (Blink plan)",
+    "sources": [
+      "blink-gb-faq",
+      "amazon-uk-blink-guide"
+    ],
+    "note": "UK cloud retention is 30 days (60 elsewhere). A 30-day Plus trial is included; Amazon UK says Person Detection needs a plan."
+  },
+  "summary": "Only Alexa is confirmed for Blink's Video Doorbell (2nd Gen, BDM01300U) in the UK: link your accounts and two-way audio works on devices like the Echo Show. The doorbell runs on three AA lithium batteries, with optional chime wiring, and needs a Sync Module; the UK bundle includes a Sync Module Core. Cloud clips are kept for 30 days with a Blink plan. Apple Home, Google Home and Home Assistant are not confirmed.",
+  "caveats": [
+    "Local storage needs a Sync Module 2 or XR, sold separately; the bundled Sync Module Core stores in the cloud only.",
+    "Cloud storage and person detection need a Blink subscription; UK retention is 30 days.",
+    "2.4 GHz Wi-Fi only.",
+    "Apple Home, Google Home and Home Assistant support is not confirmed."
+  ],
+  "sources": [
+    {
+      "id": "blink-gb-specs",
+      "url": "https://support.blinkforhome.com/en_GB/blink-tech-specs-video-doorbell-gen-2",
+      "title": "Video Doorbell (2nd Gen) Technical Specifications",
+      "publisher": "Blink UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "blink-gb-faq",
+      "url": "https://support.blinkforhome.com/en_GB/video-doorbell-gen-2-faq/faq-video-doorbell-gen-2",
+      "title": "Video Doorbell (2nd Gen) FAQ — Blink Support",
+      "publisher": "Blink UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "blink-gb-setup",
+      "url": "https://support.blinkforhome.com/en_GB/video-doorbell-gen-2-getting-started/setting-up-your-video-doorbell-gen-2",
+      "title": "Video Doorbell (2nd Gen) Set Up Guide",
+      "publisher": "Blink UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "blink-gb-sync-core",
+      "url": "https://support.blinkforhome.com/en_GB/sync-module-core-faq",
+      "title": "Sync Module Core FAQ",
+      "publisher": "Blink UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "amazon-uk-blink-guide",
+      "url": "https://www.aboutamazon.co.uk/news/devices/blink-camera-doorbell-buying-guide",
+      "title": "Blink camera and doorbell buying guide",
+      "publisher": "Amazon UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "blink-gb-sync-reqs",
+      "url": "https://support.blinkforhome.com/en_GB/utilisant-sync-module-2/sync-module-reqs",
+      "title": "Sync Module Requirements for Blink Devices",
+      "publisher": "Blink UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

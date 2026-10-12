@@ -156,5 +156,8 @@
   ],
   "status": "verified",
   "updatedAt": "2026-10-12",
-  "verifiedAt": "2026-10-12"
+  "verifiedAt": "2026-10-12",
+  "variants": [
+    "google-nest-hub-2nd-gen-uk"
+  ]
 }

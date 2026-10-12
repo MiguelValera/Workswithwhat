@@ -235,6 +235,21 @@ export const CATEGORIES: Category[] = [
       { key: 'maxDevices', label: 'Max devices', labelEs: 'Máx. dispositivos', format: (v, lang) => formatNumber(Number(v), lang) },
     ],
   },
+  {
+    key: 'light-strip',
+    es: { label: 'Tiras LED inteligentes', navLabel: 'Tiras LED', singular: 'tira LED inteligente', plural: 'tiras LED inteligentes', gender: 'f' },
+    path: 'light-strips',
+    label: 'Smart LED light strips',
+    navLabel: 'Light strips',
+    singular: 'smart light strip',
+    plural: 'smart light strips',
+    specs: [
+      { key: 'colorType', label: 'Light', labelEs: 'Luz', format: COLOR_LABELS },
+      { key: 'lengthM', label: 'Length', labelEs: 'Longitud', format: (v, lang) => `${formatNumber(Number(v), lang)} m` },
+      { key: 'multiZone', label: 'Several colours at once', labelEs: 'Varios colores a la vez', format: yesNo },
+      { key: 'power', label: 'Power', labelEs: 'Alimentación', format: String },
+    ],
+  },
 ];
 
 // keep the registry and the schema in step

@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El Tapo L900-5 (EU) se empareja con Alexa y Google Assistant cuando los vinculas en la app Tapo, y con Home Assistant mediante la integración de TP-Link. Esta tira de 5 m usa wifi de 2,4 GHz, no necesita hub y muestra 16 millones de colores, además de blanco cálido y frío. TP-Link no menciona Apple Home, SmartThings ni Matter.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "La tira se puede cortar, pero los trozos cortados no se pueden reutilizar.",
+    "TP-Link no indica Apple Home, SmartThings ni Matter para esta tira."
+  ],
+  "notes": {
+    "radios": "Solo 2,4 GHz (IEEE 802.11 b/g/n).",
+    "matter": "Ni la página del producto ni el manual europeo mencionan Matter; que no se mencione no prueba nada, así que queda sin confirmar.",
+    "hubRequired": "TP-Link dice que no hace falta hub; se conecta al wifi de casa.",
+    "localControl": "La integración de TP-Link en Home Assistant se conecta en local, sin la nube de TP-Link; el control desde la app de TP-Link va por la nube.",
+    "colorType": "Más de 16 millones de colores, además de blanco cálido y blanco luz de día frío.",
+    "lengthM": "Tira de 5 m (5000 mm); se puede cortar, pero los trozos cortados no se pueden reutilizar.",
+    "multiZone": "TP-Link no describe colores distintos a lo largo de una misma tira, así que está sin confirmar.",
+    "power": "Entrada de 220-240 V, salida de 12 V CC y 1,0 A, máximo 13,5 W.",
+    "compatibility.apple_home": "La página solo menciona los atajos de Siri, no Apple Home ni HomeKit.",
+    "compatibility.google_home": "Control por voz con Google Assistant, que se configura en los servicios de terceros de la app Tapo.",
+    "compatibility.alexa": "Control por voz con Amazon Alexa, que se configura en los servicios de terceros de la app Tapo.",
+    "compatibility.smartthings": "No se menciona en la página de TP-Link.",
+    "compatibility.home_assistant": "Figura entre las tiras de luz Tapo en la integración oficial de TP-Link de Home Assistant, que se conecta en local y necesita las credenciales de la cuenta de TP-Link."
+  },
+  "values": {
+    "power": "Adaptador de corriente (12 V CC)"
+  }
+}

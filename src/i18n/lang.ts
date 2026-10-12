@@ -23,6 +23,7 @@ const SEGMENTS_ES: Record<string, string> = {
   'smart-switches': 'interruptores-inteligentes',
   'robot-vacuums': 'robots-aspiradores',
   'smart-hubs': 'hubs-y-pasarelas',
+  'light-strips': 'tiras-led',
   'works-with': 'compatible-con',
   compare: 'comparar',
   methodology: 'metodologia',
