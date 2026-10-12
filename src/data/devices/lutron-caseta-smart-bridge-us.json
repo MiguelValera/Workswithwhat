@@ -102,7 +102,7 @@
     ],
     "note": "Lutron says up to 75 Caséta devices per hub. Some retailer listings still give the older 50."
   },
-  "summary": "The Caséta Smart Bridge (L-BDG2) connects Lutron Caséta dimmers, switches, Pico remotes and shades to your router by Ethernet. Lutron's devices then work with Apple Home, Google Home, Alexa and Home Assistant.",
+  "summary": "Lutron's Caséta Smart Bridge (L-BDG2) runs up to 75 Caséta devices from one box: dimmers, switches, fan controls, Pico remotes and sensors, over Lutron's proprietary Clear Connect RF. It plugs into the router by Ethernet, and control stays local if your internet drops. Paired devices show up in Apple Home, Google Home, Alexa and Home Assistant; Apple Home needs the second-generation bridge or the PRO.",
   "sources": [
     {
       "id": "lutron-hub-what",
@@ -146,9 +146,10 @@
     }
   ],
   "caveats": [
-    "Lutron now calls it the Caséta Smart Hub; the L-BDG2 is the standard model and the Smart Bridge Pro is separate.",
-    "Only second-generation bridges (L-BDG2 and Pro 2) work with Apple HomeKit.",
-    "The bridge needs an Ethernet cable to the router; Lutron devices use Clear Connect RF, not Wi-Fi or Zigbee."
+    "Apple Home needs the second-generation Smart Bridge (L-BDG2) or Smart Bridge PRO; older bridges don't work with HomeKit.",
+    "Lutron now calls it the Caséta Smart Hub, and the Smart Bridge Pro is a separate model.",
+    "Some retailer listings still give the older limit of 50 devices; Lutron says 75.",
+    "SmartThings support isn't confirmed by any official source."
   ],
   "status": "verified",
   "updatedAt": "2026-10-12",

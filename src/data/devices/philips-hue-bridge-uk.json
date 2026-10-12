@@ -114,7 +114,7 @@
     ],
     "note": "Philips states 50 lights and 12 accessories, two separate limits, so no single number is recorded. The Bridge Pro supports more. UK model: EAN 8719514342583."
   },
-  "summary": "The Hue Bridge (V2) in its UK version is the Zigbee hub for Philips Hue lights and accessories. Hue devices on it show up in Apple Home, Google Home, Alexa, SmartThings and Home Assistant, and Matter works through the bridge.",
+  "summary": "The UK Hue Bridge (EAN 8719514342583) is a Matter bridge for Philips Hue: lights and accessories on it appear in Apple Home, Google Home, Alexa, SmartThings and Home Assistant. It talks Zigbee to the Hue gear and Ethernet to the router, with no Wi-Fi. Philips caps it at 50 lights and 12 accessories.",
   "sources": [
     {
       "id": "hue-uk-bridge",

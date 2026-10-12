@@ -102,7 +102,7 @@
     "sources": [],
     "note": "No maximum found."
   },
-  "summary": "The Hive Hub is the Zigbee hub that Hive heating and home devices connect through, linked to your router by Ethernet or Wi-Fi. Hive devices are controlled by Alexa and Google Home through Hive's own integrations.",
+  "summary": "Hive heating, lights and plugs show up in Apple Home, Google Home and Alexa once they're paired to the Hive Hub, the Zigbee hub that also links to your router by Ethernet or Wi-Fi. Apple Home is native through Hive's HomeKit integration but leaves out hot water, the SLT5 wired thermostat and the radiator valve. Home Assistant works through your Hive account. No Matter claim found.",
   "sources": [
     {
       "id": "hive-hub",
@@ -154,9 +154,10 @@
     }
   ],
   "caveats": [
-    "Hive sells a Hub (Nano3-style, Ethernet or Wi-Fi) now; the older Hub 360 and original hub are different models.",
-    "Hive says Alexa and Google Home need the Hive account linked and the devices on the same Wi-Fi.",
-    "The hub is not a general Zigbee hub for third-party devices."
+    "Apple Home needs the latest Hive Hub or Hub 360, and doesn't support hot water, the older SLT5 wired thermostat or the radiator valve.",
+    "Home Assistant uses the official Hive integration with your Hive account (cloud polling); the hub itself isn't paired to Home Assistant.",
+    "Hive's own pages disagree on whether the hub has Wi-Fi: one lists Ethernet, Wi-Fi and Zigbee, another only Ethernet and Zigbee.",
+    "SmartThings support isn't confirmed by any official source."
   ],
   "status": "verified",
   "updatedAt": "2026-10-12",
