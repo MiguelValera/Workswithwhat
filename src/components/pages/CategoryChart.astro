@@ -8,7 +8,7 @@ import { ui } from '../../i18n/ui';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemPath, formatDate, getTranslations, type Device } from '../../lib/devices';
 import { catText, type Category } from '../../lib/categories';
 import { byMarket, marketText, regionOrGlobal, regionPath, type Market } from '../../lib/markets';
-import { capitalize as cap, langOf, localize } from '../../i18n/lang';
+import { HTML_LANG, pick, capitalize as cap, langOf, localize } from '../../i18n/lang';
 import { getComparisons } from '../../lib/compare';
 
 interface Props {
@@ -19,11 +19,12 @@ interface Props {
 const { cat, devices, market } = Astro.props;
 const lang = langOf(Astro.url.pathname);
 const es = lang === 'es';
+const T = pick(lang);
 const t = ui(lang);
 const L = (p: string) => localize(p, lang);
 const c = catText(cat, lang);
 const m = market && marketText(market, lang);
-const translations = await getTranslations();
+const translations = await getTranslations(lang);
 const path = market ? `/${market.key}/${cat.path}/` : `/${cat.path}/`;
 
 const title = es
@@ -55,7 +56,7 @@ const jsonLd = [
     '@type': 'Dataset',
     name: es ? `Compatibilidad de ${c.plural}${m ? ` (${m.short})` : ''}` : `${market ? `${market.short} ${cat.singular}` : cap(cat.singular)} ecosystem compatibility`,
     description,
-    inLanguage: es ? 'es-ES' : 'en',
+    inLanguage: HTML_LANG[lang],
     url: new URL(L(path), Astro.site).href,
     ...(newest && { dateModified: newest }),
     creator: { '@type': 'Organization', name: 'Workswithwhat', url: Astro.site!.href },
@@ -65,7 +66,7 @@ const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: m ? (es ? `${c.label} para ${m.phrase}` : `${cat.label} for ${market!.phrase}`) : c.label,
+    name: m ? (T({ en: `${cat.label} for ${market!.phrase}`, es: `${c.label} para ${m.phrase}` })) : c.label,
     itemListElement: devices.map((d, i) => ({
       '@type': 'ListItem',
       position: i + 1,
@@ -116,11 +117,11 @@ const crumbs = market
         </form>
         {groups.map((g, i) => (
           <section class={`fr-${i + 1}`} aria-labelledby={g.market.key}>
-            <h2 id={g.market.key}>{es ? `${c.label} para ${g.text.phrase}` : `${cat.label} for ${g.market.phrase}`}</h2>
+            <h2 id={g.market.key}>{T({ en: `${cat.label} for ${g.market.phrase}`, es: `${c.label} para ${g.text.phrase}` })}</h2>
             {g.regionPage && (
               <p class="muted small">
                 <a href={L(g.regionPage)}>
-                  {es ? `Solo ${g.text.label}: tabla de ${c.plural} (${g.text.short})` : `Only ${g.market.label}: the ${g.market.short} ${cat.singular} chart`}
+                  {T({ en: `Only ${g.market.label}: the ${g.market.short} ${cat.singular} chart`, es: `Solo ${g.text.label}: tabla de ${c.plural} (${g.text.short})` })}
                 </a>
               </p>
             )}
@@ -133,10 +134,10 @@ const crumbs = market
   {
     newest && (
       <p class="muted small">
-        {es ? 'Actualizado el ' : 'Last updated '}
+        {T({ en: 'Last updated ', es: 'Actualizado el ' })}
         <time datetime={newest}>{formatDate(newest, lang)}</time>.
-        {es ? ' Los mismos datos están disponibles en ' : ' The same data is available as '}
-        <a href={api}>JSON</a>{es ? ' (en inglés).' : '.'}
+        {T({ en: ' The same data is available as ', es: ' Los mismos datos están disponibles en ' })}
+        <a href={api}>JSON</a>{T({ en: '.', es: ' (en inglés).' })}
       </p>
     )
   }
@@ -146,12 +147,12 @@ const crumbs = market
         <a href={compareLink}>
           {es ? `${pairCount} ${pairCount === 1 ? 'comparativa' : 'comparativas'} de ${c.plural}${m ? ` para ${m.phrase}` : ''}` : `${pairCount} head-to-head ${cat.singular} ${pairCount === 1 ? 'comparison' : 'comparisons'}${market ? ` for ${market.phrase}` : ''}`}
         </a>
-        {es ? ': dos modelos lado a lado.' : ': two models side by side.'}
+        {T({ en: ': two models side by side.', es: ': dos modelos lado a lado.' })}
       </p>
     )
   }
   <p class="muted">
-    {es ? '¿Buscas una plataforma concreta?' : 'Looking for one platform?'}{' '}
+    {T({ en: 'Looking for one platform?', es: '¿Buscas una plataforma concreta?' })}{' '}
     {
       ecoLinks.map(({ e, href }, i) => (
         <>
@@ -164,6 +165,6 @@ const crumbs = market
   <p class="muted">
     {t.missingDevice}{' '}
     <MailLink subject={t.missingDeviceSubject} body={t.missingDeviceBody}>{t.missingDeviceLink}</MailLink>
-    {es ? ` y lo añadiremos a la tabla de ${c.plural}.` : ` and we'll add it to the ${cat.singular} chart.`}
+    {T({ en: ` and we'll add it to the ${cat.singular} chart.`, es: ` y lo añadiremos a la tabla de ${c.plural}.` })}
   </p>
 </Base>

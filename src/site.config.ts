@@ -12,6 +12,7 @@ export const OPERATOR = {
 export const CONTACT_URL = 'https://github.com/MiguelValera/Workswithwhat/issues';
 export const LEGAL_UPDATED = '2026-10-12';
 
-// Spanish site (/es/). Off until every published record has a translation in
-// src/data/i18n/es/; while off, no /es/ page, link or hreflang is built.
-export const ES_ENABLED = true;
+// Languages built besides English (each under /<lang>/). A language goes on only once
+// every published record has a translation in src/data/i18n/<lang>/; while it's off,
+// none of its pages, links or hreflang alternates are built.
+export const ENABLED_LANGS = ['es'] as const;

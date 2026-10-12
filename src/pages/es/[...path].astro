@@ -1,40 +1,13 @@
 ---
-// Every Spanish page. The route list comes from getEsPages(), which mirrors the
-// English site; each kind renders the same component the English page uses.
-import CompareIndex from '../../components/pages/CompareIndex.astro';
-import ComparePage from '../../components/pages/ComparePage.astro';
-import CategoryChart from '../../components/pages/CategoryChart.astro';
-import DevicePage from '../../components/pages/DevicePage.astro';
-import EcosystemIndex from '../../components/pages/EcosystemIndex.astro';
-import EcosystemPage from '../../components/pages/EcosystemPage.astro';
-import HomePage from '../../components/pages/HomePage.astro';
-import MarketHome from '../../components/pages/MarketHome.astro';
-import MatterPage from '../../components/pages/MatterPage.astro';
-import AvisoLegal from '../../components/pages/es/AvisoLegal.astro';
-import Metodologia from '../../components/pages/es/Metodologia.astro';
-import Privacidad from '../../components/pages/es/Privacidad.astro';
-import { getEsPages, type EsPage } from '../../lib/routes-es';
+// Every Spanish page; the route list mirrors the English site (see src/lib/routes-i18n.ts).
+import LocalePageView from '../../components/pages/LocalePage.astro';
+import { localeStaticPaths, type LocalePage } from '../../lib/routes-i18n';
 
-export async function getStaticPaths() {
-  return (await getEsPages()).map(({ segments, page }) => ({
-    params: { path: segments.length ? segments.join('/') : undefined },
-    props: { page },
-  }));
+export function getStaticPaths() {
+  return localeStaticPaths('es');
 }
 
-const { page } = Astro.props as { page: EsPage };
+const { page } = Astro.props as { page: LocalePage };
 ---
 
-{page.kind === 'home' && <HomePage />}
-{page.kind === 'methodology' && <Metodologia />}
-{page.kind === 'legal' && <AvisoLegal />}
-{page.kind === 'privacy' && <Privacidad />}
-{page.kind === 'ecosystems' && <EcosystemIndex />}
-{page.kind === 'matter' && <MatterPage />}
-{page.kind === 'regionMatter' && <MatterPage market={page.market} />}
-{page.kind === 'ecosystem' && <EcosystemPage eco={page.eco} market={page.market} />}
-{page.kind === 'chart' && <CategoryChart cat={page.cat} devices={page.devices} market={page.market} />}
-{page.kind === 'market' && <MarketHome market={page.market} devices={page.devices} />}
-{page.kind === 'device' && <DevicePage device={page.device} devices={page.devices} />}
-{page.kind === 'compareIndex' && <CompareIndex />}
-{page.kind === 'compare' && <ComparePage comparison={page.comparison} />}
+<LocalePageView page={page} />

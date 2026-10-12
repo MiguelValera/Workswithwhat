@@ -2,36 +2,33 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// category → [English, Spanish] URL section (mirrors src/lib/categories.ts and src/i18n/lang.ts)
+import { ACTIVE_LANGS, localize } from './src/i18n/lang.ts';
+
+// category → English URL section (mirrors src/lib/categories.ts); localize() gives the other languages
 const SECTIONS = {
-  'smart-plug': ['smart-plugs', 'enchufes-inteligentes'],
-  'smart-bulb': ['smart-bulbs', 'bombillas-inteligentes'],
-  'smart-lock': ['smart-locks', 'cerraduras-inteligentes'],
-  'smart-thermostat': ['smart-thermostats', 'termostatos-inteligentes'],
-  'smart-sensor': ['smart-sensors', 'sensores-inteligentes'],
-  'smart-camera': ['smart-cameras', 'camaras-y-timbres'],
-  'smart-switch': ['smart-switches', 'interruptores-inteligentes'],
-  'robot-vacuum': ['robot-vacuums', 'robots-aspiradores'],
-  'smart-hub': ['smart-hubs', 'hubs-y-pasarelas'],
-  'light-strip': ['light-strips', 'tiras-led'],
+  'smart-plug': 'smart-plugs',
+  'smart-bulb': 'smart-bulbs',
+  'smart-lock': 'smart-locks',
+  'smart-thermostat': 'smart-thermostats',
+  'smart-sensor': 'smart-sensors',
+  'smart-camera': 'smart-cameras',
+  'smart-switch': 'smart-switches',
+  'robot-vacuum': 'robot-vacuums',
+  'smart-hub': 'smart-hubs',
+  'light-strip': 'light-strips',
 };
 
-// lastmod per device page (both languages), from the record's updatedAt
+// lastmod per device page (every language), from the record's updatedAt
 const deviceDir = new URL('./src/data/devices/', import.meta.url);
 const lastmod = new Map(
   readdirSync(deviceDir)
     .filter((f) => f.endsWith('.json'))
-    .map((f) => {
+    .flatMap((f) => {
       const d = JSON.parse(readFileSync(new URL(f, deviceDir), 'utf8'));
-      const slug = f.replace(/\.json$/, '');
+      const path = `/${SECTIONS[d.category]}/${f.replace(/\.json$/, '')}/`;
       const date = d.status === 'verified' ? d.updatedAt : null;
-      const [en, es] = SECTIONS[d.category];
-      return [
-        [`/${en}/${slug}/`, date],
-        [`/es/${es}/${slug}/`, date],
-      ];
-    })
-    .flat(),
+      return ACTIVE_LANGS.map((l) => [localize(path, l), date]);
+    }),
 );
 const newest = [...lastmod.values()].filter(Boolean).sort().at(-1);
 

@@ -1,0 +1,40 @@
+---
+// One page of a translated site. Each kind renders the same component the English page
+// uses; only the fixed pages (methodology, legal, privacy) are written per language.
+import CompareIndex from './CompareIndex.astro';
+import ComparePage from './ComparePage.astro';
+import CategoryChart from './CategoryChart.astro';
+import DevicePage from './DevicePage.astro';
+import EcosystemIndex from './EcosystemIndex.astro';
+import EcosystemPage from './EcosystemPage.astro';
+import HomePage from './HomePage.astro';
+import MarketHome from './MarketHome.astro';
+import MatterPage from './MatterPage.astro';
+import AvisoLegal from './es/AvisoLegal.astro';
+import Metodologia from './es/Metodologia.astro';
+import Privacidad from './es/Privacidad.astro';
+import type { LocalePage } from '../../lib/routes-i18n';
+import { langOf, type LocaleLang } from '../../i18n/lang';
+
+interface Props {
+  page: LocalePage;
+}
+const { page } = Astro.props;
+const lang = langOf(Astro.url.pathname) as LocaleLang;
+const FIXED = {
+  es: { methodology: Metodologia, legal: AvisoLegal, privacy: Privacidad },
+};
+const Fixed = page.kind === 'methodology' || page.kind === 'legal' || page.kind === 'privacy' ? FIXED[lang][page.kind] : undefined;
+---
+
+{Fixed && <Fixed />}
+{page.kind === 'home' && <HomePage />}
+{page.kind === 'ecosystems' && <EcosystemIndex />}
+{page.kind === 'matter' && <MatterPage />}
+{page.kind === 'regionMatter' && <MatterPage market={page.market} />}
+{page.kind === 'ecosystem' && <EcosystemPage eco={page.eco} market={page.market} />}
+{page.kind === 'chart' && <CategoryChart cat={page.cat} devices={page.devices} market={page.market} />}
+{page.kind === 'market' && <MarketHome market={page.market} devices={page.devices} />}
+{page.kind === 'device' && <DevicePage device={page.device} devices={page.devices} />}
+{page.kind === 'compareIndex' && <CompareIndex />}
+{page.kind === 'compare' && <ComparePage comparison={page.comparison} />}

@@ -4,15 +4,16 @@ import DeviceCard from '../DeviceCard.astro';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, categoryPhrase, ecosystemPath, getActiveCategories, getPublishedDevices } from '../../lib/devices';
 import { catText } from '../../lib/categories';
 import { getActiveMarkets, marketText } from '../../lib/markets';
-import { langOf, localize } from '../../i18n/lang';
+import { HTML_LANG, pick, langOf, localize } from '../../i18n/lang';
 
 const lang = langOf(Astro.url.pathname);
 const es = lang === 'es';
+const T = pick(lang);
 const L = (p: string) => localize(p, lang);
 const devices = await getPublishedDevices();
 const cats = await getActiveCategories();
 const markets = await getActiveMarkets();
-const what = categoryPhrase(cats.map((c) => catText(c, lang).plural), lang).long || (es ? 'dispositivos domóticos' : 'smart home devices');
+const what = categoryPhrase(cats.map((c) => catText(c, lang).plural), lang).long || (T({ en: 'smart home devices', es: 'dispositivos domóticos' }));
 const recent = [...devices].sort((a, b) => (b.data.verifiedAt ?? '').localeCompare(a.data.verifiedAt ?? '')).slice(0, 6);
 
 const jsonLd = [
@@ -21,8 +22,8 @@ const jsonLd = [
     '@type': 'WebSite',
     name: 'Workswithwhat',
     url: new URL(L('/'), Astro.site).href,
-    inLanguage: es ? 'es-ES' : 'en',
-    description: es ? 'Compatibilidad domótica, comprobada con fuentes oficiales.' : 'Smart home compatibility, checked against official sources.',
+    inLanguage: HTML_LANG[lang],
+    description: T({ en: 'Smart home compatibility, checked against official sources.', es: 'Compatibilidad domótica, comprobada con fuentes oficiales.' }),
     publisher: { '@id': `${Astro.site!.href}#org` },
   },
   {
@@ -72,7 +73,7 @@ const description = es
         <li class="card">
           <h2><a href={L(`/${c.path}/`)}>{catText(c, lang).label}</a></h2>
           <div class="muted">
-            {devices.filter((d) => d.data.category === c.key).length} {es ? 'comprobados, con fuentes' : 'checked, with sources'}
+            {devices.filter((d) => d.data.category === c.key).length} {T({ en: 'checked, with sources', es: 'comprobados, con fuentes' })}
           </div>
         </li>
       ))
@@ -81,23 +82,23 @@ const description = es
 
   <div class="callout jump">
     <p class="toc">
-      <span class="toc-label">{es ? 'O ve directamente a una plataforma:' : 'Or jump to a platform:'}</span>
+      <span class="toc-label">{T({ en: 'Or jump to a platform:', es: 'O ve directamente a una plataforma:' })}</span>
       {ECOSYSTEMS.map((e) => <a href={L(ecosystemPath(e))}>{ECOSYSTEM_LABELS[e]}</a>)}
     </p>
     <p class="toc">
-      <span class="toc-label">{es ? 'Solo tu región:' : 'Only your region:'}</span>
+      <span class="toc-label">{T({ en: 'Only your region:', es: 'Solo tu región:' })}</span>
       {markets.map((m) => <a href={L(`/${m.key}/`)}>{marketText(m, lang).label}</a>)}
     </p>
   </div>
 
-  <h2>{es ? 'Comprobados recientemente' : 'Recently checked'}</h2>
+  <h2>{T({ en: 'Recently checked', es: 'Comprobados recientemente' })}</h2>
   {
     recent.length ? (
       <ul class="cards">
         {recent.map((d) => <DeviceCard device={d} />)}
       </ul>
     ) : (
-      <p class="muted">{es ? 'Estamos comprobando los primeros dispositivos. Vuelve pronto.' : 'The first devices are being checked. Come back soon.'}</p>
+      <p class="muted">{T({ en: 'The first devices are being checked. Come back soon.', es: 'Estamos comprobando los primeros dispositivos. Vuelve pronto.' })}</p>
     )
   }
 </Base>

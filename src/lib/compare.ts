@@ -23,7 +23,7 @@ import {
   type Translation,
 } from './devices';
 import { marketOf, type Market } from './markets';
-import { capitalize as cap, type Lang } from '../i18n/lang';
+import { capitalize as cap, pick, type Lang } from '../i18n/lang';
 
 /** Indexed comparisons started from each device (it also appears in its rivals' picks). */
 export const RIVALS_PER_DEVICE = 3;
@@ -67,7 +67,7 @@ function sameKind(a: Device, b: Device) {
 
 /** The rows of a comparison: Matter, each ecosystem, radio, hub, local control, category facts. */
 export function compareRows(a: Device, b: Device, lang: Lang, ta?: DeviceText, tb?: DeviceText) {
-  const es = lang === 'es';
+  const T = pick(lang);
   const yesNo = (v: boolean | null) => yesNoText(v, lang);
   const matter = (d: Device) => matterText(d, lang);
   const [sa, sb] = [specFacts(a.data, lang, ta?.values), specFacts(b.data, lang, tb?.values)];
@@ -83,7 +83,7 @@ export function compareRows(a: Device, b: Device, lang: Lang, ta?: DeviceText, t
     },
     {
       key: 'hubRequired',
-      label: es ? 'Necesita hub' : 'Hub required',
+      label: T({ en: 'Hub required', es: 'Necesita hub' }),
       a: yesNo(a.data.hubRequired.value),
       b: yesNo(b.data.hubRequired.value),
       sa: a.data.hubRequired.sources,
@@ -91,7 +91,7 @@ export function compareRows(a: Device, b: Device, lang: Lang, ta?: DeviceText, t
     },
     {
       key: 'localControl',
-      label: es ? 'Control local' : 'Local control',
+      label: T({ en: 'Local control', es: 'Control local' }),
       a: yesNo(a.data.localControl.value),
       b: yesNo(b.data.localControl.value),
       sa: a.data.localControl.sources,

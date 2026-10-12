@@ -4,7 +4,7 @@ import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemPath, getActiveCategories } from
 import { getActiveMarkets, getRegionPages, marketText } from '../lib/markets';
 import { catText } from '../lib/categories';
 import MailLink from '../components/MailLink.astro';
-import { ACTIVE_LANGS, HTML_LANG, LANG_NAMES, OG_LOCALE, langOf, localize, toEnglish } from '../i18n/lang';
+import { ACTIVE_LANGS, HTML_LANG, LANG_NAMES, OG_LOCALE, langOf, localize, toEnglish, type Lang } from '../i18n/lang';
 import { ui } from '../i18n/ui';
 
 interface Crumb {
@@ -19,11 +19,13 @@ interface Props {
   ogType?: 'website' | 'article';
   /** false for pages that exist in one language only (the 404 page) */
   alternates?: boolean;
+  /** the languages this page exists in, when not all of them (a device page needs its translation) */
+  langs?: Lang[];
   /** pages that must stay out of search results (404, extra comparisons): noindex, no canonical, not in the sitemap */
   noindex?: boolean;
 }
 
-const { title, description, crumbs = [], jsonLd = [], ogType = 'website', alternates = true, noindex = false } = Astro.props;
+const { title, description, crumbs = [], jsonLd = [], ogType = 'website', alternates = true, langs = ACTIVE_LANGS, noindex = false } = Astro.props;
 // Pages pass English paths in crumbs; this layout localizes every link it builds.
 const lang = langOf(Astro.url.pathname);
 const t = ui(lang);
@@ -34,7 +36,7 @@ const canonical = new URL(Astro.url.pathname, site).href;
 // everything below works on the English path; links are localized when rendered
 const here = toEnglish(Astro.url.pathname);
 // the same page in each built language (hreflang + language switch)
-const langLinks = alternates && ACTIVE_LANGS.length > 1 ? ACTIVE_LANGS.map((l) => ({ l, href: localize(here, l) })) : [];
+const langLinks = alternates && langs.length > 1 ? langs.map((l) => ({ l, href: localize(here, l) })) : [];
 
 
 // Region switch: the same page for another market when it exists, else that market's

@@ -4,7 +4,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { join, basename } from 'node:path';
 import { deviceSchema, CATEGORY_FACTS } from '../src/schema/device.ts';
 import { translationSchema } from '../src/schema/translation.ts';
-import { ES_ENABLED } from '../src/site.config.ts';
+import { ACTIVE_LANGS, LANG_NAMES, LOCALE_LANGS } from '../src/i18n/lang.ts';
 
 const dir = new URL('../src/data/devices/', import.meta.url);
 const files = (await readdir(dir)).filter((f) => f.endsWith('.json')).sort();
@@ -113,85 +113,92 @@ for (const [slug, d] of bySlug) {
   }
 }
 
-// Spanish translations (src/data/i18n/es/<slug>.json): prose only, checked against the
-// English record so a translation can't drop a note, add a caveat, invent a number or go stale.
-const esDir = new URL('../src/data/i18n/es/', import.meta.url);
-const esFiles = (await readdir(esDir).catch(() => [])).filter((f) => f.endsWith('.json')).sort();
-const ES_BANNED = ['sin fisuras', 'revolucionari', 'en el mundo actual', 'sin esfuerzo', 'no busques más', 'de última generación', 'potencia tu', 'eleva tu'];
+// Translations (src/data/i18n/<lang>/<slug>.json): prose only, checked against the English
+// record so a translation can't drop a note, add a caveat, invent a number or go stale.
+// Marketing filler each language's copy must not use (the English list is BANNED above).
+const BANNED_IN = {
+  es: ['sin fisuras', 'revolucionari', 'en el mundo actual', 'sin esfuerzo', 'no busques más', 'de última generación', 'potencia tu', 'eleva tu'],
+};
 // digit runs, with thousands separators removed ("1,100" and "1.100" are both 1100) so the
-// check is about values, not about en/es number formatting ("2.4" and "2,4" both give 2 and 4)
-const numbers = (s) => new Set((s.replace(/(\d)[.,\u00a0 ](?=\d{3}\b)/g, '$1').match(/\d+/g) ?? []));
-const esOpenings = new Map();
-const translated = new Set();
-for (const file of esFiles) {
-  const slug = basename(file, '.json');
-  const errs = [];
-  const d = bySlug.get(slug);
-  let raw;
-  try {
-    raw = JSON.parse(await readFile(join(esDir.pathname, file), 'utf8'));
-  } catch (e) {
-    errs.push(`invalid JSON (${e.message})`);
-  }
-  const res = raw && translationSchema.safeParse(raw);
-  if (res && !res.success) for (const i of res.error.issues) errs.push(`${i.path.join('.') || '(root)'}: ${i.message}`);
-  if (!d) errs.push('no English record with this slug');
-  if (d && res?.success) {
-    const t = res.data;
-    translated.add(slug);
-    if (t.basedOn !== d.updatedAt) errs.push(`stale: translated from ${t.basedOn}, the record was updated ${d.updatedAt}`);
-    // every English note translated, nothing extra
-    const en = { radios: d.radios, matter: d.matter, hubRequired: d.hubRequired, localControl: d.localControl };
-    for (const k of CATEGORY_FACTS[d.category]) en[k] = d[k];
-    for (const [e, c] of Object.entries(d.compatibility)) en[`compatibility.${e}`] = c;
-    const enNotes = Object.fromEntries(Object.entries(en).filter(([, f]) => f.note).map(([k, f]) => [k, f.note]));
-    for (const k of Object.keys(enNotes)) if (!t.notes[k]) errs.push(`notes.${k}: missing translation`);
-    for (const k of Object.keys(t.notes)) if (!enNotes[k]) errs.push(`notes.${k}: the English record has no such note`);
-    if (t.caveats.length !== d.caveats.length) errs.push(`caveats: ${t.caveats.length} translated, the record has ${d.caveats.length}`);
-    for (const [e, c] of Object.entries(d.compatibility))
-      if (c.status === 'hub' && c.via && !t.via?.[e]) errs.push(`via.${e}: missing translation of "${c.via}"`);
-    for (const e of Object.keys(t.via ?? {})) if (d.compatibility[e]?.status !== 'hub') errs.push(`via.${e}: not a hub entry`);
-    for (const k of Object.keys(t.values ?? {}))
-      if (typeof d[k]?.value !== 'string') errs.push(`values.${k}: the record has no text value for ${k}`);
-    // no number the English text doesn't have
-    const pairs = [
-      ['summary', d.summary, t.summary],
-      ...d.caveats.map((c, i) => [`caveats.${i}`, c, t.caveats[i] ?? '']),
-      ...Object.entries(t.notes).map(([k, v]) => [`notes.${k}`, enNotes[k] ?? '', v]),
-      ...Object.entries(t.via ?? {}).map(([e, v]) => [`via.${e}`, d.compatibility[e]?.via ?? '', v]),
-      ...Object.entries(t.values ?? {}).map(([k, v]) => [`values.${k}`, String(d[k]?.value ?? ''), v]),
-    ];
-    // same numbers both ways: none invented, none dropped (a dropped number is usually a dropped fact)
-    for (const [k, enText, esText] of pairs) {
-      const en = numbers(enText);
-      const es = numbers(esText);
-      const extra = [...es].filter((n) => !en.has(n));
-      const lost = [...en].filter((n) => !es.has(n));
-      if (extra.length) errs.push(`${k}: number(s) ${extra.join(', ')} not in the English text`);
-      if (lost.length) errs.push(`${k}: number(s) ${lost.join(', ')} from the English text are missing`);
+// check is about values, not about number formatting ("2.4" and "2,4" both give 2 and 4)
+const numbers = (s) => new Set((s.replace(/(\d)[.,\u00a0\u202f' ](?=\d{3}\b)/g, '$1').match(/\d+/g) ?? []));
+const counts = [];
+for (const lang of LOCALE_LANGS) {
+  const langDir = new URL(`../src/data/i18n/${lang}/`, import.meta.url);
+  const langFiles = (await readdir(langDir).catch(() => [])).filter((f) => f.endsWith('.json')).sort();
+  const langOpenings = new Map();
+  const translated = new Set();
+  for (const file of langFiles) {
+    const slug = basename(file, '.json');
+    const errs = [];
+    const d = bySlug.get(slug);
+    let raw;
+    try {
+      raw = JSON.parse(await readFile(join(langDir.pathname, file), 'utf8'));
+    } catch (e) {
+      errs.push(`invalid JSON (${e.message})`);
     }
-    const copy = [t.summary, ...t.caveats].join(' ');
-    for (const w of ES_BANNED) if (copy.toLowerCase().includes(w)) errs.push(`banned phrase in copy: "${w}"`);
-    if (/[!¡]/.test(copy)) errs.push('no exclamation marks in copy');
-    if (/[?¿]/.test(t.summary)) errs.push('no rhetorical questions in the summary');
-    const open = t.summary.toLowerCase().split(/\s+/).slice(0, 3).join(' ');
-    if (esOpenings.has(open)) errs.push(`summary opens like ${esOpenings.get(open)} ("${open}…")`);
-    else esOpenings.set(open, file);
-  }
-  if (errs.length) {
-    failed++;
-    console.error(`✗ i18n/es/${file}`);
-    for (const e of errs) console.error(`    ${e}`);
-  }
-}
-// once the Spanish site is on, every published record needs its translation
-if (ES_ENABLED)
-  for (const [slug, d] of bySlug)
-    if (d.status === 'verified' && !translated.has(slug)) {
+    const res = raw && translationSchema.safeParse(raw);
+    if (res && !res.success) for (const i of res.error.issues) errs.push(`${i.path.join('.') || '(root)'}: ${i.message}`);
+    if (!d) errs.push('no English record with this slug');
+    if (d && res?.success) {
+      const t = res.data;
+      translated.add(slug);
+      if (t.basedOn !== d.updatedAt) errs.push(`stale: translated from ${t.basedOn}, the record was updated ${d.updatedAt}`);
+      // every English note translated, nothing extra
+      const en = { radios: d.radios, matter: d.matter, hubRequired: d.hubRequired, localControl: d.localControl };
+      for (const k of CATEGORY_FACTS[d.category]) en[k] = d[k];
+      for (const [e, c] of Object.entries(d.compatibility)) en[`compatibility.${e}`] = c;
+      const enNotes = Object.fromEntries(Object.entries(en).filter(([, f]) => f.note).map(([k, f]) => [k, f.note]));
+      for (const k of Object.keys(enNotes)) if (!t.notes[k]) errs.push(`notes.${k}: missing translation`);
+      for (const k of Object.keys(t.notes)) if (!enNotes[k]) errs.push(`notes.${k}: the English record has no such note`);
+      if (t.caveats.length !== d.caveats.length) errs.push(`caveats: ${t.caveats.length} translated, the record has ${d.caveats.length}`);
+      for (const [e, c] of Object.entries(d.compatibility))
+        if (c.status === 'hub' && c.via && !t.via?.[e]) errs.push(`via.${e}: missing translation of "${c.via}"`);
+      for (const e of Object.keys(t.via ?? {})) if (d.compatibility[e]?.status !== 'hub') errs.push(`via.${e}: not a hub entry`);
+      for (const k of Object.keys(t.values ?? {}))
+        if (typeof d[k]?.value !== 'string') errs.push(`values.${k}: the record has no text value for ${k}`);
+      // no number the English text doesn't have
+      const pairs = [
+        ['summary', d.summary, t.summary],
+        ...d.caveats.map((c, i) => [`caveats.${i}`, c, t.caveats[i] ?? '']),
+        ...Object.entries(t.notes).map(([k, v]) => [`notes.${k}`, enNotes[k] ?? '', v]),
+        ...Object.entries(t.via ?? {}).map(([e, v]) => [`via.${e}`, d.compatibility[e]?.via ?? '', v]),
+        ...Object.entries(t.values ?? {}).map(([k, v]) => [`values.${k}`, String(d[k]?.value ?? ''), v]),
+      ];
+      // same numbers both ways: none invented, none dropped (a dropped number is usually a dropped fact)
+      for (const [k, enText, trText] of pairs) {
+        const en = numbers(enText);
+        const tr = numbers(trText);
+        const extra = [...tr].filter((n) => !en.has(n));
+        const lost = [...en].filter((n) => !tr.has(n));
+        if (extra.length) errs.push(`${k}: number(s) ${extra.join(', ')} not in the English text`);
+        if (lost.length) errs.push(`${k}: number(s) ${lost.join(', ')} from the English text are missing`);
+      }
+      const copy = [t.summary, ...t.caveats].join(' ');
+      for (const w of BANNED_IN[lang] ?? []) if (copy.toLowerCase().includes(w)) errs.push(`banned phrase in copy: "${w}"`);
+      if (/[!¡]/.test(copy)) errs.push('no exclamation marks in copy');
+      if (/[?¿]/.test(t.summary)) errs.push('no rhetorical questions in the summary');
+      const open = t.summary.toLowerCase().split(/\s+/).slice(0, 3).join(' ');
+      if (langOpenings.has(open)) errs.push(`summary opens like ${langOpenings.get(open)} ("${open}…")`);
+      else langOpenings.set(open, file);
+    }
+    if (errs.length) {
       failed++;
-      console.error(`✗ ${slug}.json: no Spanish translation in src/data/i18n/es/ (the Spanish site is on)`);
+      console.error(`✗ i18n/${lang}/${file}`);
+      for (const e of errs) console.error(`    ${e}`);
     }
+  }
+  // once a language's site is on, every published record needs its translation
+  if (ACTIVE_LANGS.includes(lang))
+    for (const [slug, d] of bySlug)
+      if (d.status === 'verified' && !translated.has(slug)) {
+        failed++;
+        console.error(`✗ ${slug}.json: no ${LANG_NAMES[lang]} translation in src/data/i18n/${lang}/ (that site is on)`);
+      }
+  counts.push(`${langFiles.length} ${lang}`);
+}
 
-console.log(`${files.length} device file(s) and ${esFiles.length} Spanish translation(s) checked, ${failed} invalid.`);
+console.log(`${files.length} device file(s) and translations (${counts.join(', ')}) checked, ${failed} invalid.`);
 if (failed) process.exit(1);
 if (!files.length) console.warn('warning: no device data yet');
