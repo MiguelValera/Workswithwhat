@@ -136,9 +136,10 @@ if (crumbs.length) {
         {
           markets.length > 1 && !noindex && (
             <details class="locale">
-              <summary aria-label={`${t.language} / ${t.region}`}>
+              <summary>
                 <span>{lang.toUpperCase()}</span><span class="sep" aria-hidden="true">·</span><span class="only-wide">{hereMarket ? marketText(hereMarket, lang).label : t.regionAllLong}</span>
                 <span class="only-narrow">{hereMarket ? marketText(hereMarket, lang).short : t.regionAll}</span>
+                <span class="sr-only"> ({t.language} / {t.region})</span>
               </summary>
               <div class="panel">
                 <nav aria-label={t.region}>
