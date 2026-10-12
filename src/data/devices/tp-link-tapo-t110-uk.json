@@ -1,0 +1,110 @@
+{
+  "category": "smart-sensor",
+  "brand": "TP-Link",
+  "model": "Tapo T110",
+  "name": "Tapo T110 (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.tapo.com/uk/product/smart-sensor/tapo-t110",
+  "radios": {
+    "value": null,
+    "sources": [
+      "t110-uk"
+    ],
+    "note": "The UK page lists 868 / 922 MHz sub-1 GHz bands (868 MHz in Europe) to the Tapo Hub, which is not in our radio list."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter certification found for the sensor itself."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The UK page doesn't mention Apple Home."
+    },
+    "google_home": {
+      "status": "hub",
+      "via": "Tapo Hub or Tapo Homebase",
+      "sources": [
+        "t110-uk"
+      ],
+      "note": "The UK page shows a Works with Google Home badge; the sensor needs a Tapo Hub or Homebase."
+    },
+    "alexa": {
+      "status": "hub",
+      "via": "Tapo Hub or Tapo Homebase",
+      "sources": [
+        "t110-uk"
+      ],
+      "note": "The UK page shows a Works with Alexa badge; the sensor needs a Tapo Hub or Homebase."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The UK page doesn't mention SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source found for this sensor."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "t110-uk",
+      "t110-uk-download"
+    ],
+    "note": "The specs say a Tapo Hub (or Homebase) is needed for alerts; the download page calls the hub its bridge."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from an official source."
+  },
+  "senses": {
+    "value": [
+      "contact"
+    ],
+    "sources": [
+      "t110-uk"
+    ],
+    "note": "Detects a door, window or drawer opening."
+  },
+  "power": {
+    "value": "CR2032",
+    "sources": [
+      "t110-uk"
+    ],
+    "note": "About 2 years per Tapo, with a low-battery alert."
+  },
+  "summary": "Door, window or drawer opening is what the Tapo T110 (UK) reports, as a push alert. Alexa and Google Home both work, but only through a Tapo Hub or Homebase, which the sensor reaches over a sub-1 GHz radio. It runs on a CR2032 coin cell rated at about 2 years. TP-Link's UK page doesn't mention Apple Home, SmartThings or Matter.",
+  "caveats": [
+    "Needs a Tapo Hub for alerts; it doesn't work on its own.",
+    "Apple Home, SmartThings and Home Assistant support isn't stated by TP-Link."
+  ],
+  "sources": [
+    {
+      "id": "t110-uk",
+      "url": "https://www.tapo.com/uk/product/smart-sensor/tapo-t110",
+      "title": "Smart Contact Sensor",
+      "publisher": "Tapo (TP-Link)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "t110-uk-download",
+      "url": "https://www.tp-link.com/uk/support/download/tapo-t110/v1/",
+      "title": "Download for Tapo T110",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

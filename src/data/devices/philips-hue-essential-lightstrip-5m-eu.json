@@ -1,0 +1,161 @@
+{
+  "category": "light-strip",
+  "brand": "Philips Hue",
+  "model": "Hue Essential Lightstrip 5 m (EAN 8721103096388)",
+  "name": "Hue Essential Lightstrip 5 m (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.philips-hue.com/de-de/p/lightstrip-hue-essential-lightstrip-5-m/8721103096388",
+  "radios": {
+    "value": [
+      "bluetooth",
+      "zigbee"
+    ],
+    "sources": [
+      "hue-essential-de"
+    ],
+    "note": "The German page lists Bluetooth and Zigbee as protocols; it works without Wi-Fi."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "hue-essential-de",
+      "hue-matter-guide"
+    ],
+    "note": "Hue's page lists Matter among third-party systems but names no transport, and we found no CSA listing for this EAN. Hue's Matter guide offers Matter through the Hue Bridge, or directly only for lights with the Matter logo."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": [
+        "hue-essential-de",
+        "hue-no-bridge-faq",
+        "hue-matter-guide"
+      ],
+      "note": "Hue's page lists Apple Home; Hue's (US) no-Bridge FAQ puts Apple HomeKit on the Hue Bridge side, which links it via HomeKit or Matter."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "hue-essential-de",
+        "hue-no-bridge-faq"
+      ],
+      "note": "Hue's page lists Google Home. Hue's (US) FAQ says Bluetooth Hue lights pair without a Bridge with Nest Mini, Nest Hub and Nest Hub Max; with a Bridge it uses Hue's own integration."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "hue-essential-de",
+        "hue-no-bridge-faq"
+      ],
+      "note": "Hue's page lists Alexa. Hue's (US) FAQ says Bluetooth Hue lights pair without a Bridge with an Echo (4th gen), Echo Show or newer; with a Bridge it uses Hue's own skill."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": [
+        "hue-essential-de",
+        "hue-no-bridge-faq"
+      ],
+      "note": "Hue's page lists Samsung SmartThings; Hue's (US) no-Bridge FAQ puts SmartThings on the Hue Bridge side."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-hue"
+      ],
+      "note": "Official Philips Hue integration, which talks to the Hue Bridge over the local network; the strip needs a Bridge for it."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "hue-essential-de",
+      "hue-no-bridge-faq"
+    ],
+    "note": "The page says it works without Wi-Fi and a Hue Bridge unlocks all functions. Hue's FAQ allows up to 10 lights per phone over Bluetooth; a Bridge is needed for Apple Home, SmartThings and remote access."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "hue-essential-de",
+      "hue-no-bridge-faq",
+      "ha-hue"
+    ],
+    "note": "Hue's FAQ describes Bluetooth control without a Bridge as local only; the Hue Bridge talks to Home Assistant over the local network (local push)."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": [
+      "hue-essential-de"
+    ],
+    "note": "Multicolour RGBIC strip with dimming and colour change."
+  },
+  "lengthM": {
+    "value": 5,
+    "sources": [
+      "hue-essential-de"
+    ],
+    "note": "5,000 mm in the box. Can be cut to length but not extended, and cut pieces can't be rejoined."
+  },
+  "multiZone": {
+    "value": true,
+    "sources": [
+      "hue-essential-de"
+    ],
+    "note": "RGBIC: several colours and gradients at once."
+  },
+  "power": {
+    "value": "Mains adapter",
+    "sources": [
+      "hue-essential-de"
+    ],
+    "note": "Input 220–240 V; the page doesn't state the output voltage. Indoor use only (IP20)."
+  },
+  "summary": "Five metres of RGBIC strip, the Hue Essential Lightstrip 5 m shows several colours at once and runs over Bluetooth and Zigbee, with no Wi-Fi involved. Google Home and Alexa are native. Apple Home and SmartThings need a Hue Bridge, which Home Assistant's official Hue integration uses too. Hue's page lists Matter but names no transport.",
+  "caveats": [
+    "It can be cut to length but not extended, and cut pieces can't be rejoined.",
+    "Indoor use only (IP20).",
+    "Without a Hue Bridge, Bluetooth control is limited to 10 lights per phone and works only within range; a Bridge adds remote access.",
+    "Hue's page lists Matter but gives no transport and no CSA listing was found for this EAN."
+  ],
+  "sources": [
+    {
+      "id": "hue-essential-de",
+      "url": "https://www.philips-hue.com/de-de/p/lightstrip-hue-essential-lightstrip-5-m/8721103096388",
+      "title": "Hue Essential Lightstrip 5 m",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-matter-guide",
+      "url": "https://www.philips-hue.com/en-us/support/article/philips-hue-and-matter-complete-setup-and-support-guide/000012",
+      "title": "Philips Hue and Matter: complete setup and support guide",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-no-bridge-faq",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/faq/controls/how-to-connect-philips-hue-without-a-bridge",
+      "title": "How to connect Philips Hue without a Bridge?",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-hue",
+      "url": "https://www.home-assistant.io/integrations/hue/",
+      "title": "Philips Hue - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

@@ -1,0 +1,142 @@
+{
+  "category": "light-strip",
+  "brand": "TP-Link",
+  "model": "Tapo L930-5",
+  "name": "Tapo L930-5 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.tapo.com/es/product/smart-light-bulb/tapo-l930-5/",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "tapo-l930-es",
+      "tapo-l930-datasheet"
+    ],
+    "note": "2.4 GHz Wi-Fi (802.11b/g/n) only."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Neither the Spanish product page nor the datasheet mentions Matter, and we found no CSA listing."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "tapo-l930-es",
+        "tapo-l930-datasheet"
+      ],
+      "note": "Tapo's Spanish page calls it its first light strip compatible with Apple HomeKit (Siri, HomePod mini); the EU datasheet calls it a HomeKit-enabled accessory."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "tapo-l930-es",
+        "tapo-l930-datasheet"
+      ],
+      "note": "Works with Google Assistant."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "tapo-l930-es",
+        "tapo-l930-datasheet"
+      ],
+      "note": "Voice control of colour and brightness."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not mentioned on Tapo's page or datasheet."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-tplink"
+      ],
+      "note": "Home Assistant's TP-Link Smart Home integration lists the L930-5 and connects locally."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "tapo-l930-es"
+    ],
+    "note": "Wi-Fi strip controlled from the Tapo app; no hub is mentioned."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [
+      "ha-tplink"
+    ],
+    "note": "Home Assistant talks to it over the local network, but Tapo says dimming works only through the app and cloud, so app control without cloud is unconfirmed."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": [
+      "tapo-l930-es"
+    ],
+    "note": "RGB plus separate white LEDs."
+  },
+  "lengthM": {
+    "value": 5,
+    "sources": [
+      "tapo-l930-es",
+      "tapo-l930-datasheet"
+    ],
+    "note": "5 m strip; it can be cut but cut pieces can't be reused."
+  },
+  "multiZone": {
+    "value": true,
+    "sources": [
+      "tapo-l930-es"
+    ],
+    "note": "Tapo's Spanish page describes 50 colour segments for zone control."
+  },
+  "power": {
+    "value": "Mains adapter (12 V DC)",
+    "sources": [
+      "tapo-l930-es"
+    ],
+    "note": "Output 12 V DC, 1.0 A; input 100–240 V, 13 W."
+  },
+  "summary": "Tapo's L930-5 light strip is 5 m long, splits into 50 colour segments and joins your network over Wi-Fi, so there is no hub to buy. Tapo calls it its first strip with Apple HomeKit support, and Google Assistant and Alexa work as well. Home Assistant lists it in its TP-Link integration. Matter and SmartThings go unmentioned by Tapo.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Dimming works only through the app and cloud, per Tapo's Spanish page.",
+    "The strip can be cut but a cut-off piece can't be reused.",
+    "Tapo's pages don't mention Matter or SmartThings."
+  ],
+  "sources": [
+    {
+      "id": "tapo-l930-es",
+      "url": "https://www.tapo.com/es/product/smart-light-bulb/tapo-l930-5/",
+      "title": "Tapo L930-5",
+      "publisher": "TP-Link Tapo",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tapo-l930-datasheet",
+      "url": "https://static.tp-link.com/upload/product-overview/2022/202206/20220624/Tapo%20L930-5(EU)1.0&(US)1.0&1.8_Datasheet.pdf",
+      "title": "Tapo L930-5 Smart Wi-Fi Light Strip, Multicolor datasheet (EU 1.0, US 1.0 and 1.8)",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

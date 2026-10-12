@@ -1,0 +1,31 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Empieza con 2 m y llega hasta 10 m: la Hue Gradient Lightstrip es un kit base ampliable que muestra varios colores a la vez. Gracias a Bluetooth y Zigbee, la app Hue la controla sin Bridge. Google Home y Alexa son nativos; Apple Home y SmartThings pasan por un Hue Bridge, igual que la integración de Hue en Home Assistant. Hue indica Matter, sin nombrar ningún transporte.",
+  "caveats": [
+    "Consume 20 W de un adaptador de corriente, así que el kit de 2 m necesita un enchufe cerca.",
+    "Apple Home, SmartThings y el acceso remoto pasan por un Hue Bridge; sin él, el control por Bluetooth se limita a 10 luces por móvil.",
+    "La página de Hue menciona Matter, pero no indica transporte y no hemos encontrado ningún registro de la CSA para este EAN."
+  ],
+  "notes": {
+    "radios": "La página alemana indica Bluetooth y Zigbee como protocolos.",
+    "matter": "La página de Hue menciona Matter entre los sistemas de terceros, pero no indica transporte, y no hemos encontrado ningún registro de la CSA para este EAN. La guía de Matter de Hue ofrece Matter a través del Hue Bridge, o directamente solo para luces con el logotipo de Matter.",
+    "hubRequired": "La página dice que el control funciona con Bluetooth o con un Hue Bridge. Las FAQ de Hue permiten hasta 10 luces por móvil por Bluetooth; hace falta un Bridge para Apple Home, SmartThings y el acceso remoto.",
+    "localControl": "Las FAQ de Hue describen el control por Bluetooth sin Bridge como solo local; el Hue Bridge se comunica con Home Assistant por la red local (local push).",
+    "colorType": "White and Colour Ambiance.",
+    "lengthM": "Kit base de 2 m; ampliable hasta 10 m y se puede cortar.",
+    "multiZone": "La página dice que muestra varios colores a la vez; no indica el número de zonas.",
+    "power": "20 W, entrada de 220–240 V; la página no indica la tensión de salida.",
+    "compatibility.apple_home": "La página de Hue indica Apple Home; las FAQ de Hue (EE. UU.) sobre el uso sin Bridge sitúan Apple HomeKit en el lado del Hue Bridge, que la vincula mediante HomeKit o Matter.",
+    "compatibility.google_home": "La página de Hue indica Google Home. Las FAQ de Hue (EE. UU.) dicen que las luces Hue con Bluetooth se emparejan sin Bridge con Nest Mini, Nest Hub y Nest Hub Max; con un Bridge usa la integración propia de Hue.",
+    "compatibility.alexa": "La página de Hue indica Alexa. Las FAQ de Hue (EE. UU.) dicen que las luces Hue con Bluetooth se emparejan sin Bridge con un Echo (4.ª gen.), Echo Show o más reciente; con un Bridge usa la skill propia de Hue.",
+    "compatibility.smartthings": "La página de Hue indica Samsung SmartThings; las FAQ de Hue (EE. UU.) sobre el uso sin Bridge sitúan SmartThings en el lado del Hue Bridge.",
+    "compatibility.home_assistant": "Integración oficial de Philips Hue, que se comunica con el Hue Bridge por la red local; la tira necesita un Bridge para usarla."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge"
+  },
+  "values": {
+    "power": "Adaptador de corriente"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "category": "light-strip",
+  "brand": "Philips Hue",
+  "model": "Hue Gradient Lightstrip 2 m (EAN 8719514339965)",
+  "name": "Hue Gradient Lightstrip 2 m (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.philips-hue.com/de-de/p/hue-white-and-color-ambiance-philips-hue-play-gradient-lightstrip-2-meter/8719514339965",
+  "radios": {
+    "value": [
+      "bluetooth",
+      "zigbee"
+    ],
+    "sources": [
+      "hue-gradient-de"
+    ],
+    "note": "The German page lists Bluetooth and Zigbee as protocols."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "hue-gradient-de",
+      "hue-matter-guide"
+    ],
+    "note": "Hue's page lists Matter among third-party systems but names no transport, and we found no CSA listing for this EAN. Hue's Matter guide offers Matter through the Hue Bridge, or directly only for lights with the Matter logo."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": [
+        "hue-gradient-de",
+        "hue-no-bridge-faq",
+        "hue-matter-guide"
+      ],
+      "note": "Hue's page lists Apple Home; Hue's (US) no-Bridge FAQ puts Apple HomeKit on the Hue Bridge side, which links it via HomeKit or Matter."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "hue-gradient-de",
+        "hue-no-bridge-faq"
+      ],
+      "note": "Hue's page lists Google Home. Hue's (US) FAQ says Bluetooth Hue lights pair without a Bridge with Nest Mini, Nest Hub and Nest Hub Max; with a Bridge it uses Hue's own integration."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "hue-gradient-de",
+        "hue-no-bridge-faq"
+      ],
+      "note": "Hue's page lists Alexa. Hue's (US) FAQ says Bluetooth Hue lights pair without a Bridge with an Echo (4th gen), Echo Show or newer; with a Bridge it uses Hue's own skill."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": [
+        "hue-gradient-de",
+        "hue-no-bridge-faq"
+      ],
+      "note": "Hue's page lists Samsung SmartThings; Hue's (US) no-Bridge FAQ puts SmartThings on the Hue Bridge side."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-hue"
+      ],
+      "note": "Official Philips Hue integration, which talks to the Hue Bridge over the local network; the strip needs a Bridge for it."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "hue-gradient-de",
+      "hue-no-bridge-faq"
+    ],
+    "note": "The page says control works with Bluetooth or a Hue Bridge. Hue's FAQ allows up to 10 lights per phone over Bluetooth; a Bridge is needed for Apple Home, SmartThings and remote access."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "hue-no-bridge-faq",
+      "ha-hue"
+    ],
+    "note": "Hue's FAQ describes Bluetooth control without a Bridge as local only; the Hue Bridge talks to Home Assistant over the local network (local push)."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": [
+      "hue-gradient-de"
+    ],
+    "note": "White and Colour Ambiance."
+  },
+  "lengthM": {
+    "value": 2,
+    "sources": [
+      "hue-gradient-de"
+    ],
+    "note": "2 m base kit; extendable up to 10 m and cuttable."
+  },
+  "multiZone": {
+    "value": true,
+    "sources": [
+      "hue-gradient-de"
+    ],
+    "note": "The page says it shows several colours at once; it doesn't give a zone count."
+  },
+  "power": {
+    "value": "Mains adapter",
+    "sources": [
+      "hue-gradient-de"
+    ],
+    "note": "20 W, 220–240 V input; the page doesn't state the output voltage."
+  },
+  "summary": "Start with 2 m and grow to 10 m: the Hue Gradient Lightstrip is an extendable base kit that shows several colours at once. Bluetooth and Zigbee let the Hue app control it without a Bridge. Google Home and Alexa are native; Apple Home and SmartThings go through a Hue Bridge, as does Home Assistant's Hue integration. Matter is listed by Hue, with no transport named.",
+  "caveats": [
+    "It draws 20 W from a mains adapter, so the 2 m kit needs an outlet nearby.",
+    "Apple Home, SmartThings and remote access go through a Hue Bridge; without one, Bluetooth control is limited to 10 lights per phone.",
+    "Hue's page lists Matter but gives no transport and no CSA listing was found for this EAN."
+  ],
+  "sources": [
+    {
+      "id": "hue-gradient-de",
+      "url": "https://www.philips-hue.com/de-de/p/hue-white-and-color-ambiance-philips-hue-play-gradient-lightstrip-2-meter/8719514339965",
+      "title": "Hue White and Color Ambiance Gradient Lightstrip 2 m",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-matter-guide",
+      "url": "https://www.philips-hue.com/en-us/support/article/philips-hue-and-matter-complete-setup-and-support-guide/000012",
+      "title": "Philips Hue and Matter: complete setup and support guide",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-no-bridge-faq",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/faq/controls/how-to-connect-philips-hue-without-a-bridge",
+      "title": "How to connect Philips Hue without a Bridge?",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-hue",
+      "url": "https://www.home-assistant.io/integrations/hue/",
+      "title": "Philips Hue - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}
