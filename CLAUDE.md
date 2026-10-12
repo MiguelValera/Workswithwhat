@@ -145,14 +145,13 @@ Read this first if you are picking the project up.
   - A Transform Rule adds `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`.
   - **Bot Fight Mode must stay OFF.** It answered 403 (`cf-mitigated: challenge`) to every HTML page requested from a datacenter.
 - **Security:** a CSP meta tag is emitted in production builds only (`default-src 'none'`, no inline styles). JSON-LD escapes `<`. Dependabot is on. TypeScript is held at 6, because `astro check` rejects TS 7. `upload-pages-artifact` and `deploy-pages` stay on their current majors (open Dependabot PRs #4 and #5) until a deploy test confirms newer versions still publish `/.well-known/`.
-- **Legal:** the site sets no cookies and has no trackers, so there is no consent banner. The privacy policy names GitHub Pages and Cloudflare as processors, plus Cloudflare Email Routing and Gmail for email. In `src/site.config.ts`, `OPERATOR.email` is `info@workswithwhat.com`; the other operator details required by Spain's LSSI are still empty and must be filled in before monetising.
+- **Legal:** the site sets no cookies and has no trackers, so there is no consent banner. The privacy policy names GitHub Pages and Cloudflare as processors, plus Cloudflare Email Routing and Gmail for email. In `src/site.config.ts`, `OPERATOR` holds the operator details Spain's LSSI requires (name, NIF, address, email); they were filled in on 2026-10-12 and show on `/legal/` and `/es/aviso-legal/`.
 - **Email:** `info@workswithwhat.com` is a Cloudflare Email Routing rule that forwards to the owner's Gmail (no mailbox). The footer's "Tell us" link is a `mailto:` to it.
 
 ### Owner's to-do list
 - **Done 2026-10-12:** Google Search Console (domain property, sitemap submitted, indexing requested for the key EN/ES pages), Bing Webmaster Tools (imported from GSC), DNSSEC, DMARC at `p=none`, GitHub Pages domain verification, and a ruleset on `main` (PR required, 0 approvals, `build` check required, no force pushes or deletion; repository admins may bypass).
 - Email: keep the SPF record Email Routing created (add `include:_spf.google.com` if replying as info@ from Gmail). Only move DMARC to `p=reject` once outgoing mail is DKIM-signed with the domain.
 - HSTS in Cloudflare, once the site has been stable for a few days.
-- Fill in `src/site.config.ts` with operator details.
 - Post the community texts from `docs/launch-kit.md` (Reddit, Home Assistant forum).
 - **Cloudflare Cache Rule** (optional, speeds up repeat visits): cache `/_astro/*` at the edge and in browsers for a year; those files are content-hashed, so a new deploy never serves stale CSS.
 - Post the Spanish community texts from `docs/launch-kit.md`.
