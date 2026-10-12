@@ -209,3 +209,7 @@ a.badge.region:hover { border-color: var(--accent); }
   .logo { font-size: 1.05rem; }
   .site-header summary { padding: 0 6px; font-size: 0.9rem; }
 }
+
+/* plain link lists, e.g. the devices that work through a hub */
+.link-list { columns: 3 14rem; column-gap: 2rem; padding-left: 1.1rem; margin: 0 0 1.25rem; }
+.link-list li { break-inside: avoid; padding: 0.3rem 0; }

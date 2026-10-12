@@ -21,6 +21,8 @@ import {
   type Device,
 } from '../../lib/devices';
 import { marketOf, marketText, regionPath } from '../../lib/markets';
+import { hubFor, devicesViaHub } from '../../lib/hubs';
+import { CATEGORIES } from '../../lib/categories';
 import { langOf, localize } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
 
@@ -71,6 +73,10 @@ const variants = (d.variants ?? [])
 const related = devices
   .filter((o) => o.id !== device.id && o.data.category === d.category && marketOf(o) === market)
   .slice(0, 3);
+
+// a hub page lists what connects through it, grouped by category
+const viaHub = d.category === 'smart-hub' ? devicesViaHub(device, devices) : [];
+const viaHubGroups = CATEGORIES.map((k) => ({ cat: k, items: viaHub.filter((o) => o.data.category === k.key) })).filter((g) => g.items.length);
 
 const faq = ECOSYSTEMS.map((e) => ({
   eco: e,
@@ -174,6 +180,7 @@ const jsonLd = [
       {words.caveats.length > 0 && <a href="#before-you-buy">{es ? 'Antes de comprar' : 'Before you buy'}</a>}
       <a href="#quick-answers">{es ? 'Respuestas rápidas' : 'Quick answers'}</a>
       <a href="#sources">{es ? 'Fuentes' : 'Sources'}</a>
+      {viaHub.length > 0 && <a href="#works-through">{es ? 'Qué se conecta a través de él' : 'What connects through it'}</a>}
       {related.length > 0 && <a href="#related">{es ? `${c.plural.replace(/^./, (x) => x.toUpperCase())} ${similar}` : `Similar ${cat.plural}`}</a>}
     </nav>
 
@@ -199,7 +206,13 @@ const jsonLd = [
                 <tr role="row" id={`compat-${ecosystemSlug(e)}`}>
                   <th role="rowheader" scope="row">{ECOSYSTEM_LABELS[e]}</th>
                   <td role="cell"><Status status={cp.status} via={words.via(e)} /></td>
-                  <td role="cell" class="wide">{words.compatNote(e)}<Refs ids={cp.sources} all={src} /></td>
+                  <td role="cell" class="wide">
+                    {words.compatNote(e)}<Refs ids={cp.sources} all={src} />
+                    {(() => {
+                      const hub = cp.status === 'hub' ? hubFor(cp.via, device, devices) : undefined;
+                      return hub && <> <a href={devicePathIn(hub, lang, translations)}>{es ? `Más sobre el ${hub.data.name}` : `About the ${hub.data.name}`}</a></>;
+                    })()}
+                  </td>
                 </tr>
               );
             })
@@ -284,6 +297,27 @@ const jsonLd = [
       {es ? 'Página oficial del producto:' : 'Official product page:'} <a href={d.officialUrl} rel="nofollow noopener">{new URL(d.officialUrl).hostname}</a>
     </p>
   </article>
+
+  {
+    viaHub.length > 0 && (
+      <section aria-labelledby="works-through">
+        <h2 id="works-through">{es ? `Dispositivos que funcionan a través del ${d.name}` : `Devices that work through the ${d.name}`}</h2>
+        <p class="muted small">
+          {es
+            ? 'Fichas verificadas que necesitan este hub para llegar al menos a un ecosistema. Cada ficha dice para cuáles.'
+            : 'Verified records that need this hub to reach at least one ecosystem. Each page says which ones.'}
+        </p>
+        {viaHubGroups.map((g) => (
+          <>
+            <h3>{catText(g.cat, lang).label}</h3>
+            <ul class="link-list">
+              {g.items.map((o) => <li><a href={devicePathIn(o, lang, translations)}>{o.data.name}</a></li>)}
+            </ul>
+          </>
+        ))}
+      </section>
+    )
+  }
 
   {
     related.length > 0 && (
