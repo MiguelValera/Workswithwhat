@@ -2,6 +2,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, type CategoryKey } from '../schema/device.ts';
 import { CATEGORIES, categoryOf } from './categories';
 import { formatDate as fmtDate, localize, type Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 import type { TranslationData } from '../schema/translation.ts';
 
 export type Device = CollectionEntry<'devices'>;
@@ -20,7 +21,8 @@ export async function getPublishedDevices(category?: CategoryKey): Promise<Devic
 }
 
 export const ecosystemSlug = (e: string) => e.replace(/_/g, '-');
-export const ecosystemFromSlug = (s: string) => ECOSYSTEMS.find((e) => ecosystemSlug(e) === s);
+/** English path of an ecosystem page, e.g. /works-with/apple-home/ */
+export const ecosystemPath = (e: Ecosystem) => `/works-with/${ecosystemSlug(e)}/`;
 
 export const STATUS_TEXT = {
   native: 'Yes',
@@ -37,6 +39,24 @@ export const STATUS_TEXT_ES: Record<keyof typeof STATUS_TEXT, string> = {
   unknown: 'Sin confirmar',
 };
 export const statusText = (s: keyof typeof STATUS_TEXT, lang: Lang) => (lang === 'es' ? STATUS_TEXT_ES[s] : STATUS_TEXT[s]);
+
+/** "Yes", "No" or "Unconfirmed" (null) for a yes/no fact. */
+export const yesNoText = (v: boolean | null, lang: Lang) => {
+  const t = ui(lang);
+  return v === null ? t.unconfirmed : v ? t.yes : t.no;
+};
+
+/** A device's Matter certification in words: "Yes, over Wi-Fi", "No" or "Unconfirmed". */
+export function matterText(d: Device, lang: Lang) {
+  const m = d.data.matter;
+  if (!m.certified) return yesNoText(m.certified, lang);
+  const es = lang === 'es';
+  const transport = m.transport === 'wifi' ? (es ? 'wifi' : 'Wi-Fi') : m.transport === 'thread' ? 'Thread' : 'Ethernet';
+  return es ? `Sí, por ${transport}` : `Yes, over ${transport}`;
+}
+
+/** "Hue Bridge" → "the Hue Bridge"; names that already start with an article stay as they are. */
+export const withArticle = (name: string) => (/^(the|a|an) /i.test(name) ? name : `the ${name}`);
 
 export const worksWith = (d: Device, e: Ecosystem) => {
   const s = d.data.compatibility[e].status;
@@ -141,8 +161,7 @@ export function answerFor(d: Device, e: Ecosystem, lang: Lang = 'en', text?: Dev
       return `Yes, through Matter: add it with ${possessive} Matter pairing.${thread ? ' It uses Thread, so you also need a Thread border router.' : ''}${note}`;
     }
     case 'hub':
-      const via = /^(the|a|an) /i.test(c.via ?? '') ? c.via : `the ${c.via}`;
-      return `Yes, but only through ${via}.${note}`;
+      return `Yes, but only through ${withArticle(c.via!)}.${note}`;
     case 'no':
       return `No.${note}`;
     default:

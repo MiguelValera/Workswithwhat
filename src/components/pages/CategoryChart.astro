@@ -5,10 +5,10 @@ import Base from '../../layouts/Base.astro';
 import CompareTable from '../CompareTable.astro';
 import MailLink from '../MailLink.astro';
 import { ui } from '../../i18n/ui';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemSlug, formatDate, getTranslations, type Device } from '../../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemPath, formatDate, getTranslations, type Device } from '../../lib/devices';
 import { catText, type Category } from '../../lib/categories';
-import { byMarket, marketText, regionPath, type Market } from '../../lib/markets';
-import { langOf, localize } from '../../i18n/lang';
+import { byMarket, marketText, regionOrGlobal, regionPath, type Market } from '../../lib/markets';
+import { capitalize as cap, langOf, localize } from '../../i18n/lang';
 import { getComparisons } from '../../lib/compare';
 
 interface Props {
@@ -23,7 +23,6 @@ const t = ui(lang);
 const L = (p: string) => localize(p, lang);
 const c = catText(cat, lang);
 const m = market && marketText(market, lang);
-const cap = (s: string) => s.replace(/^./, (x) => x.toUpperCase());
 const translations = await getTranslations();
 const path = market ? `/${market.key}/${cat.path}/` : `/${cat.path}/`;
 
@@ -43,10 +42,7 @@ const groups = await Promise.all(
   byMarket(devices).map(async (g) => ({ ...g, text: marketText(g.market, lang), regionPage: await regionPath(g.market, `/${cat.path}/`) })),
 );
 const ecoLinks = await Promise.all(
-  ECOSYSTEMS.map(async (e) => {
-    const global = `/works-with/${ecosystemSlug(e)}/`;
-    return { e, href: L((market && (await regionPath(market, global))) || global) };
-  }),
+  ECOSYSTEMS.map(async (e) => ({ e, href: L(await regionOrGlobal(market, ecosystemPath(e))) })),
 );
 
 const pairCount = (await getComparisons()).filter((x) => x.indexed && x.a.data.category === cat.key && (!market || x.market === market)).length;

@@ -1,6 +1,7 @@
 ---
+import DeviceNameCell from './DeviceNameCell.astro';
 import Status from './Status.astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, getTranslations, radioList, type Device } from '../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, getTranslations, radioList, yesNoText, type Device } from '../lib/devices';
 import { langOf } from '../i18n/lang';
 import { ui } from '../i18n/ui';
 interface Props {
@@ -58,14 +59,11 @@ const brandIndex = (brand: string) => brands.indexOf(brand) + 1;
           const d = dev.data;
           return (
             <tr role="row" class={filter ? `fb-${brandIndex(d.brand)}` : undefined} id={firstOfBrand.has(dev.id) ? brandAnchor(d.brand) : undefined}>
-              <th role="rowheader" scope="row" class="name">
-                <a href={devicePathIn(dev, lang, translations)}>{d.name}</a>
-                <span class="note">{d.model} · {d.regions.join('/')}</span>
-              </th>
+              <DeviceNameCell device={dev} href={devicePathIn(dev, lang, translations)} />
               <td role="cell" class="radio" data-label={t.radio}>{radioList(d.radios.value, lang) || '—'}</td>
               <td role="cell" data-label="Matter">
                 <span class={`badge s-${d.matter.certified}`}>
-                  {d.matter.certified === null ? t.unconfirmed : d.matter.certified ? t.yes : t.no}
+                  {yesNoText(d.matter.certified, lang)}
                 </span>
               </td>
               {ECOSYSTEMS.map((e) => (

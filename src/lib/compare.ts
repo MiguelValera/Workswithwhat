@@ -12,15 +12,18 @@ import {
   deviceText,
   getPublishedDevices,
   listJoin,
+  matterText,
   radioList,
+  withArticle,
   worksWith,
+  yesNoText,
   type Device,
   type DeviceText,
   type Ecosystem,
   type Translation,
 } from './devices';
 import { marketOf, type Market } from './markets';
-import type { Lang } from '../i18n/lang';
+import { capitalize as cap, type Lang } from '../i18n/lang';
 
 /** Indexed comparisons started from each device (it also appears in its rivals' picks). */
 export const RIVALS_PER_DEVICE = 3;
@@ -65,14 +68,8 @@ function sameKind(a: Device, b: Device) {
 /** The rows of a comparison: Matter, each ecosystem, radio, hub, local control, category facts. */
 export function compareRows(a: Device, b: Device, lang: Lang, ta?: DeviceText, tb?: DeviceText) {
   const es = lang === 'es';
-  const yesNo = (v: boolean | null) => (v === null ? (es ? 'Sin confirmar' : 'Unconfirmed') : v ? (es ? 'Sí' : 'Yes') : 'No');
-  const matter = (d: Device) => {
-    const m = d.data.matter;
-    if (m.certified === null) return es ? 'Sin confirmar' : 'Unconfirmed';
-    if (!m.certified) return 'No';
-    const t = m.transport === 'wifi' ? (es ? 'wifi' : 'Wi-Fi') : m.transport === 'thread' ? 'Thread' : 'Ethernet';
-    return es ? `Sí, por ${t}` : `Yes, over ${t}`;
-  };
+  const yesNo = (v: boolean | null) => yesNoText(v, lang);
+  const matter = (d: Device) => matterText(d, lang);
   const [sa, sb] = [specFacts(a.data, lang, ta?.values), specFacts(b.data, lang, tb?.values)];
   return [
     { key: 'matter', label: 'Matter', a: matter(a), b: matter(b), sa: a.data.matter.sources, sb: b.data.matter.sources },
@@ -188,10 +185,8 @@ const how = (d: Device, e: Ecosystem, lang: Lang, words: DeviceText) => {
       return 'works directly';
     case 'matter':
       return thread ? 'works through Matter over Thread (needs a Thread border router)' : 'works through Matter';
-    case 'hub': {
-      const via = c.via ?? '';
-      return `works through ${/^(the|a|an) /i.test(via) ? via : `the ${via}`}`;
-    }
+    case 'hub':
+      return `works through ${withArticle(c.via!)}`;
     case 'no':
       return `doesn't work with ${ECOSYSTEM_LABELS[e]}`;
     default:
@@ -200,7 +195,6 @@ const how = (d: Device, e: Ecosystem, lang: Lang, words: DeviceText) => {
 };
 
 const the = (d: Device) => `the ${d.data.name}`;
-const cap = (s: string) => s.replace(/^./, (x) => x.toUpperCase());
 
 /** "Which works with Apple Home?" answered for a pair. */
 export function compareAnswer(c: Comparison, e: Ecosystem, lang: Lang, wa: DeviceText, wb: DeviceText): string {

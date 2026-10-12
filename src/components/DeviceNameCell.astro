@@ -1,0 +1,15 @@
+---
+// The first cell of a device row in a table: the name linked to its page, then model and regions.
+import type { Device } from '../lib/devices';
+interface Props {
+  device: Device;
+  href: string;
+}
+const { device, href } = Astro.props;
+const d = device.data;
+---
+
+<th role="rowheader" scope="row" class="name">
+  <a href={href}>{d.name}</a>
+  <span class="note">{d.model} · {d.regions.join('/')}</span>
+</th>

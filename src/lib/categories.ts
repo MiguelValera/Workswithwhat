@@ -1,5 +1,6 @@
 import { CATEGORY_KEYS, type CategoryKey, type DeviceData } from '../schema/device.ts';
 import { formatNumber, type Lang } from '../i18n/lang';
+import { ui } from '../i18n/ui';
 
 type Spec = { key: string; label: string; labelEs: string; format: (v: unknown, lang: Lang) => string };
 
@@ -29,7 +30,7 @@ export interface Category {
   es: CategoryEs;
 }
 
-const yesNo = (v: unknown, lang: Lang) => (v ? (lang === 'es' ? 'Sí' : 'Yes') : 'No');
+const yesNo = (v: unknown, lang: Lang) => (v ? ui(lang).yes : ui(lang).no);
 // enum value → label, per language
 const labels = (map: Record<string, [string, string]>) => (v: unknown, lang: Lang) =>
   map[String(v)]?.[lang === 'es' ? 1 : 0] ?? String(v);
@@ -256,7 +257,6 @@ export const CATEGORIES: Category[] = [
 if (CATEGORIES.map((c) => c.key).join() !== CATEGORY_KEYS.join()) throw new Error('CATEGORIES and CATEGORY_KEYS differ');
 
 export const categoryOf = (d: { category: CategoryKey }) => CATEGORIES.find((c) => c.key === d.category)!;
-export const categoryByPath = (path: string) => CATEGORIES.find((c) => c.path === path);
 
 type FactLike = { value: unknown; sources: string[]; note?: string };
 
@@ -274,12 +274,7 @@ export function specFacts(d: DeviceData, lang: Lang = 'en', values: Partial<Reco
   const facts = d as unknown as Record<string, FactLike>;
   return categoryOf(d).specs.map((s) => {
     const f = facts[s.key];
-    const text =
-      f.value === null
-        ? lang === 'es'
-          ? 'Sin confirmar'
-          : 'Unconfirmed'
-        : (lang === 'es' && values[s.key]) || s.format(f.value, lang);
+    const text = f.value === null ? ui(lang).unconfirmed : (lang === 'es' && values[s.key]) || s.format(f.value, lang);
     return { key: s.key, label: lang === 'es' ? s.labelEs : s.label, text, fact: f };
   });
 }

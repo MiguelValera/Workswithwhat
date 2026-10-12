@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getActiveCategories } from '../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemPath, getActiveCategories } from '../lib/devices';
 import { getActiveMarkets, getRegionPages, marketText } from '../lib/markets';
 import { catText } from '../lib/categories';
 import MailLink from '../components/MailLink.astro';
@@ -203,7 +203,7 @@ if (crumbs.length) {
           <div>
             <p class="dir-title">{t.navByEcosystem}</p>
             <ul>
-              {ECOSYSTEMS.map((e) => <li><a href={L(`/works-with/${ecosystemSlug(e)}/`)}>{ECOSYSTEM_LABELS[e]}</a></li>)}
+              {ECOSYSTEMS.map((e) => <li><a href={L(ecosystemPath(e))}>{ECOSYSTEM_LABELS[e]}</a></li>)}
               <li><a href={L('/works-with/matter/')}>Matter</a></li>
             </ul>
           </div>

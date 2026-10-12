@@ -32,8 +32,6 @@ const SEGMENTS_ES: Record<string, string> = {
 };
 const SEGMENTS_EN = Object.fromEntries(Object.entries(SEGMENTS_ES).map(([en, es]) => [es, en]));
 
-export const segmentEs = (en: string) => SEGMENTS_ES[en] ?? en;
-
 export const langOf = (pathname: string): Lang => (pathname === '/es/' || pathname.startsWith('/es/') ? 'es' : 'en');
 
 /** "/smart-plugs/x/#y" → "/es/enchufes-inteligentes/x/#y" for Spanish; unchanged for English. */
@@ -50,6 +48,9 @@ export function toEnglish(pathname: string): string {
   const segs = pathname.slice(3).split('/').filter(Boolean).map((s) => SEGMENTS_EN[s] ?? s);
   return `/${segs.length ? `${segs.join('/')}/` : ''}`;
 }
+
+/** "smart plugs" → "Smart plugs" */
+export const capitalize = (s: string) => s.replace(/^./, (c) => c.toUpperCase());
 
 /** Locale-formatted number and date. */
 export const formatNumber = (n: number, lang: Lang) => n.toLocaleString(lang === 'es' ? 'es-ES' : 'en-US');

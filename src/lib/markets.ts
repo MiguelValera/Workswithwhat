@@ -1,6 +1,6 @@
-import { CATEGORIES } from './categories';
+import { CATEGORIES, type Category } from './categories';
 import type { Lang } from '../i18n/lang';
-import { ECOSYSTEMS, ecosystemSlug, getPublishedDevices, worksWith, type Device } from './devices';
+import { ECOSYSTEMS, ecosystemPath, getPublishedDevices, worksWith, type Device } from './devices';
 
 // Buyers shop in one market at a time, so lists are split by market instead of
 // mixing a US plug with its EU sibling. A record belongs to the first market
@@ -58,7 +58,7 @@ export async function getRegionPages() {
         (c) => `/${market.key}/${c.path}/`,
       ),
       ...ECOSYSTEMS.filter((e) => devices.filter((d) => worksWith(d, e)).length >= MIN_REGION_DEVICES).map(
-        (e) => `/${market.key}/works-with/${ecosystemSlug(e)}/`,
+        (e) => `/${market.key}${ecosystemPath(e)}`,
       ),
       ...(devices.filter((d) => d.data.matter.certified).length >= MIN_REGION_DEVICES
         ? [`/${market.key}/works-with/matter/`]
@@ -80,4 +80,14 @@ export async function regionPath(market: Market, path: string) {
   const paths = new Set((await getRegionPages()).map((p) => p.path));
   const target = `/${market.key}${path}`;
   return paths.has(target) ? target : undefined;
+}
+
+/** A path's region version when there is one for `market`, else the all-regions path. */
+export async function regionOrGlobal(market: Market | undefined, path: string) {
+  return (market && (await regionPath(market, path))) || path;
+}
+
+/** Where a market's devices of one category are listed: its region chart, or its section of the full chart. */
+export async function marketChartPath(market: Market, cat: Category) {
+  return (await regionPath(market, `/${cat.path}/`)) ?? `/${cat.path}/#${market.key}`;
 }

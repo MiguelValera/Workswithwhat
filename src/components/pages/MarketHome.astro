@@ -2,10 +2,10 @@
 // Region home (/us/, /eu/, /uk/ and /es/us/ …): what we've checked for one market, with links to its pages.
 import Base from '../../layouts/Base.astro';
 import DeviceCard from '../DeviceCard.astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, type Device } from '../../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemPath, type Device } from '../../lib/devices';
 import { CATEGORIES, catText } from '../../lib/categories';
 import { getRegionPages, marketText, type Market } from '../../lib/markets';
-import { langOf, localize } from '../../i18n/lang';
+import { capitalize, langOf, localize } from '../../i18n/lang';
 
 interface Props {
   market: Market;
@@ -24,7 +24,7 @@ const cats = CATEGORIES.map((c) => {
   return { c, n, href: paths.has(own) ? own : `/${c.path}/#${market.key}` };
 }).filter((x) => x.n > 0);
 const platforms = [
-  ...ECOSYSTEMS.map((e) => ({ name: ECOSYSTEM_LABELS[e], href: `/${market.key}/works-with/${ecosystemSlug(e)}/` })),
+  ...ECOSYSTEMS.map((e) => ({ name: ECOSYSTEM_LABELS[e], href: `/${market.key}${ecosystemPath(e)}` })),
   { name: 'Matter', href: `/${market.key}/works-with/matter/` },
 ].filter((p) => paths.has(p.href));
 const recent = [...devices].sort((a, b) => (b.data.verifiedAt ?? '').localeCompare(a.data.verifiedAt ?? '')).slice(0, 6);
@@ -35,7 +35,7 @@ const description = es
 ---
 
 <Base title={title} description={description} crumbs={[{ name: mt.label, path: `/${market.key}/` }]}>
-  <h1>{title.replace(/^./, (c) => c.toUpperCase())}</h1>
+  <h1>{capitalize(title)}</h1>
   {
     es ? (
       <p class="lede">

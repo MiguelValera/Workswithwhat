@@ -1,11 +1,12 @@
 ---
 // Matter-certified devices: every market (/works-with/matter/) or one (/us/works-with/matter/).
 import Base from '../../layouts/Base.astro';
+import DeviceNameCell from '../DeviceNameCell.astro';
 import Refs from '../Refs.astro';
 import { deviceText, devicePathIn, getPublishedDevices, getTranslations, categoryPhrase, radioList, type Device } from '../../lib/devices';
 import { CATEGORIES, catText, specFacts } from '../../lib/categories';
 import { byMarket, marketOf, marketText, type Market } from '../../lib/markets';
-import { langOf } from '../../i18n/lang';
+import { capitalize, langOf } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
 
 interface Props {
@@ -33,15 +34,15 @@ const groups = CATEGORIES.map((cat) => {
 const { short: what, long: whatLong } = categoryPhrase(groups.map((g) => catText(g.cat, lang).plural), lang);
 
 const title = es
-  ? `${what.replace(/^./, (c) => c.toUpperCase())} con Matter${mt ? ` para ${mt.phrase}` : ''}`
+  ? `${capitalize(what)} con Matter${mt ? ` para ${mt.phrase}` : ''}`
   : market
     ? `Matter ${what} for ${market.phrase}`
     : `Matter ${what}`;
 const description = es
   ? `${matter.length} ${whatLong} con certificación Matter${mt ? ` para ${mt.phrase}` : ''}, separados por wifi y Thread, con lo que necesita cada uno para funcionar en Apple Home, Google Home, Alexa, SmartThings y Home Assistant.`
   : `${matter.length} Matter-certified ${whatLong}${market ? ` for ${market.phrase}` : ''}, split by Wi-Fi and Thread, with what each needs to work in Apple Home, Google Home, Alexa, SmartThings and Home Assistant.`;
-const wifiN = matter.filter((d) => d.data.matter.transport === 'wifi').length;
-const threadN = matter.filter((d) => d.data.matter.transport === 'thread').length;
+const wifiN = groups.reduce((n, g) => n + g.wifi.length, 0);
+const threadN = groups.reduce((n, g) => n + g.thread.length, 0);
 ---
 
 <Base
@@ -59,7 +60,7 @@ const threadN = matter.filter((d) => d.data.matter.transport === 'thread').lengt
         ]
   }
 >
-  <h1>{title.replace(/^./, (c) => c.toUpperCase())}</h1>
+  <h1>{capitalize(title)}</h1>
   {
     es ? (
       <p class="lede">
@@ -145,10 +146,7 @@ const threadN = matter.filter((d) => d.data.matter.transport === 'thread').lengt
                       const spec = specFacts(d.data, lang, words.values)[0];
                       return (
                         <tr role="row">
-                          <th role="rowheader" scope="row" class="name">
-                            <a href={href}>{d.data.name}</a>
-                            <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
-                          </th>
+                          <DeviceNameCell device={d} href={href} />
                           <td role="cell" data-label={t.radios}>{radioList(d.data.radios.value, lang) || '—'}</td>
                           <td role="cell" data-label={spec.label}>{spec.text}</td>
                           <td role="cell" class="wide">{words.note('matter', d.data.matter.note)}<Refs ids={d.data.matter.sources} all={d.data.sources} base={href} /></td>

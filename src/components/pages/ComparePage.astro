@@ -6,9 +6,9 @@ import Base from '../../layouts/Base.astro';
 import Refs from '../Refs.astro';
 import Status from '../Status.astro';
 import { catText, categoryOf } from '../../lib/categories';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemSlug, formatDate, getTranslations, listJoin, worksWith } from '../../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemPath, ecosystemSlug, formatDate, getTranslations, listJoin, worksWith } from '../../lib/devices';
 import { compareAnswer, compareDescription, compareName, comparePath, compareRows, comparisonsFor, summaryLines, pairText, type Comparison } from '../../lib/compare';
-import { marketText, regionPath } from '../../lib/markets';
+import { marketChartPath, marketText } from '../../lib/markets';
 import { langOf, localize } from '../../i18n/lang';
 
 interface Props {
@@ -60,7 +60,7 @@ const table = [
   }),
   ...rows.slice(1).map(factRow),
 ];
-const marketChart = L((await regionPath(market, `/${cat.path}/`)) ?? `/${cat.path}/#${market.key}`);
+const marketChart = L(await marketChartPath(market, cat));
 
 const faq = ECOSYSTEMS.map((e) => ({
   e,
@@ -189,7 +189,7 @@ const jsonLd = [
             <dd>
               {f.a}{' '}
               {(worksWith(a, f.e) || worksWith(b, f.e)) && (
-                <a href={L(`/works-with/${ecosystemSlug(f.e)}/`)}>{es ? `Más ${c.plural} para ${ECOSYSTEM_LABELS[f.e]}` : `More ${cat.plural} for ${ECOSYSTEM_LABELS[f.e]}`}</a>
+                <a href={L(ecosystemPath(f.e))}>{es ? `Más ${c.plural} para ${ECOSYSTEM_LABELS[f.e]}` : `More ${cat.plural} for ${ECOSYSTEM_LABELS[f.e]}`}</a>
               )}
             </dd>
           </div>
