@@ -44,10 +44,11 @@ The site is in **English** at the root and **Spanish (Spain)** under `/es/`; it 
 
 ## Agents (`.claude/agents/`)
 
-Pipeline: **collector → verifier → editor → translator**, then **reviewer** on the PR.
+Pipeline: **bestsellers** (what to add) → **collector → verifier → editor → translator**, then **reviewer** on the PR.
 
 | Agent | Job | Writes |
 |---|---|---|
+| `bestsellers` | Finds the 5 best-selling devices per category and market (Amazon best-seller lists first, review roundups only as tie-breakers), marks each as have / variant / missing, and ranks high-volume categories the site lacks. | `docs/bestsellers/<market>.md`, ending in a queue of batches of 5 for the collector. |
 | `collector` | Researches a device and drafts its JSON with sources. | New `src/data/devices/*.json` with `status: "draft"`. |
 | `verifier` | Re-checks every claim against its cited source, independently. Downgrades anything unsupported to `unknown`. | Edits the record and sets `status: "verified"` + `verifiedAt` only if everything holds. |
 | `editor` | Writes `summary` and `caveats` from the verified data, plus SEO copy. Never changes facts. | `summary`, `caveats`. |
@@ -115,6 +116,7 @@ Read this first if you are picking the project up.
 - **Who decides content:** the owner doesn't pick devices or review content. Claude chooses what to add next and writes it, following the principles above.
 
 ### How content gets added (lessons learned)
+- **What to add:** run `bestsellers` (one run per market, `us`, `eu`, `uk`, in parallel) about once a month, then feed its queue to the collector in batches. It only writes `docs/bestsellers/`; adding a new category it recommends needs schema and registry work first.
 - **Batch size:** 5 devices per agent. Run collector, then verifier, then editor, then open a PR, then run the reviewer on it. Once CI is green and the reviewer says **Ready to merge**, Claude squash-merges (the owner asked for this on 2026-10-12); the `main` ruleset requires a PR and a green `build`. Run at most ~3 agents at once; more hits the account's usage limit.
 - **Network:** the cloud container cannot open external sites. WebFetch and curl fail, and only WebSearch works. Agents must cite only URLs that appeared in search results.
 - **Verifier rules that keep coming up:**

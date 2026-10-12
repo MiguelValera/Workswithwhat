@@ -11,7 +11,7 @@ Read `CLAUDE.md` and `src/schema/device.ts` before you start. The schema decides
 
 ## Categories
 
-Set `category` to `smart-plug`, `smart-bulb`, `smart-lock`, `smart-thermostat`, `smart-sensor`, `smart-camera` or `smart-switch`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
+Set `category` to one of the keys in `CATEGORY_KEYS` (`src/schema/device.ts`): `smart-plug`, `smart-bulb`, `smart-lock`, `smart-thermostat`, `smart-sensor`, `smart-camera`, `smart-switch`, `robot-vacuum` or `smart-hub`. Category facts (all `{ value, sources, note? }`, `value: null` if unconfirmed):
 - smart-plug: `energyMonitoring` (boolean), `maxLoadWatts` (integer).
 - smart-bulb: `colorType` ("white", "tunable-white" or "color"), `lumens` (integer), `bulbBase` (e.g. "E27", "E26 (A19)", "GU10", "B22").
 - smart-lock: `lockFit` ("deadbolt" = replaces a whole US deadbolt, "retrofit" = fits over the existing interior thumb-turn or cylinder and keeps your keys, "cylinder" = replaces a euro-profile cylinder, "lever" = handle set with the lock built in), `keypad` (boolean: a keypad on the lock itself, not a separate accessory), `power` (string, e.g. "4 × AA", "Rechargeable battery").
