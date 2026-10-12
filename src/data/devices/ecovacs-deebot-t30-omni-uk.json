@@ -1,0 +1,123 @@
+{
+  "category": "robot-vacuum",
+  "brand": "Ecovacs",
+  "model": "DEEBOT T30 OMNI",
+  "name": "Ecovacs Deebot T30 Omni (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://ecovacs.com/uk/deebot-robotic-vacuum-cleaner/deebot-t30-omni",
+  "radios": {
+    "value": null,
+    "sources": [],
+    "note": "No Wi-Fi or other radio statement seen in the search snippets."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter statement found for the T30 Omni on Ecovacs pages or a CSA listing."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Ecovacs page found for Apple Home or Siri."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Ecovacs lists Google Assistant on the T30 Pro Omni and T30S pages, but no Ecovacs page seen for the UK T30 Omni names it. Not confirmed for this model."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Ecovacs lists Alexa on the T30 Pro Omni and T30S pages, but no Ecovacs page seen for the UK T30 Omni names it. Not confirmed for this model."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Ecovacs or Samsung page found for SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [
+        "ecovacs-ha"
+      ],
+      "note": "Home Assistant's official Ecovacs integration covers Deebot vacuums through the Ecovacs account, but its page names no models and says device support depends on community contributions. T30 Omni support not confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "ecovacs-uk"
+    ],
+    "note": "The Omni station is not a hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No maker statement on local-only control found."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "ecovacs-uk-shop"
+    ],
+    "note": "Ecovacs UK calls it an auto-empty robot vacuum and mop."
+  },
+  "navigation": {
+    "value": null,
+    "sources": [],
+    "note": "Ecovacs's sibling T30C page lists LDS navigation and retailers describe TrueMapping 2.0 laser mapping, but no Ecovacs page seen for the T30 Omni states its navigation type."
+  },
+  "suctionPa": {
+    "value": null,
+    "sources": [
+      "ecovacs-uk-shop",
+      "ecovacs-uk"
+    ],
+    "note": "Ecovacs UK pages disagree: the shop page and a bundle page say 11,000 Pa, while the product page also says 10,000 Pa in one passage."
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": [
+      "ecovacs-uk-shop"
+    ],
+    "note": "Ecovacs UK calls it an auto-empty robot vacuum with a self-empty station."
+  },
+  "summary": "For the Ecovacs Deebot T30 Omni in the UK, Ecovacs's pages confirm the basics: it vacuums and mops, and the station empties the bin automatically. Voice assistants, Matter, Home Assistant, navigation type and suction are not confirmed for this model.",
+  "caveats": [
+    "Ecovacs UK pages disagree on suction (11,000 Pa on the shop page, 10,000 Pa in one passage of the product page), so we don't state a figure.",
+    "Ecovacs lists Alexa and Google Assistant on the T30 Pro Omni and T30S, but no page we saw names them for this model.",
+    "Home Assistant's Ecovacs integration works through your Ecovacs account and names no models, so T30 Omni support isn't confirmed."
+  ],
+  "sources": [
+    {
+      "id": "ecovacs-uk",
+      "url": "https://ecovacs.com/uk/deebot-robotic-vacuum-cleaner/deebot-t30-omni",
+      "title": "DEEBOT T30 OMNI Black Robot Vacuum",
+      "publisher": "Ecovacs",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ecovacs-uk-shop",
+      "url": "https://www.ecovacs.com/uk/shop/deebot-robotic-vacuum-cleaner/deebot-t30-omni",
+      "title": "DEEBOT T30 OMNI Auto-Empty Robot Vacuum & Mop (Edge Cleaning, Mini, AI) - ECOVACS UK",
+      "publisher": "Ecovacs",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ecovacs-ha",
+      "url": "https://home-assistant.io/integrations/ecovacs",
+      "title": "Ecovacs - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

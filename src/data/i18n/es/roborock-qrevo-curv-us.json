@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Apple Home llega al Roborock Qrevo Curv mediante Matter, que Roborock añadió con una actualización de firmware (02.26.02) en abril de 2025. Google Home y Alexa figuran como compatibles de forma nativa. El robot aspira y friega, con navegación LiDAR, 18.500 Pa de succión y una base que vacía el depósito sola.",
+  "caveats": [
+    "El wifi es solo de 2,4 GHz; la página del producto de Roborock indica que no admite 5 GHz.",
+    "Matter necesita el firmware 02.26.02, y Roborock dice que los ajustes detallados se quedan en la app Roborock.",
+    "El anuncio de Roborock es la única fuente de Matter: los certificados de la CSA que hemos visto no nombran el Qrevo Curv.",
+    "La integración oficial de Roborock en Home Assistant no incluye este modelo, así que la compatibilidad no está confirmada."
+  ],
+  "notes": {
+    "radios": "La página del Qrevo Curv de Roborock indica que solo admite wifi de 2,4 GHz, no de 5 GHz.",
+    "matter": "El anuncio de Roborock de abril de 2025 incluye el Qrevo Curv (firmware 02.26.02) entre los modelos que reciben Matter por actualización de firmware. La CSA registra varios certificados de Roborock como «Robotic Vacuum Cleaner», pero ninguno de los que hemos visto nombra el Qrevo Curv; la afirmación se apoya en lo que dice el fabricante.",
+    "hubRequired": "La base multifunción no es un hub; el robot se conecta por wifi.",
+    "localControl": "No hemos encontrado ninguna declaración del fabricante sobre control solo local.",
+    "cleaning": "Aspira y friega con mopas giratorias.",
+    "navigation": "Las páginas del Qrevo Curv de Roborock mencionan navegación PreciSense LiDAR.",
+    "suctionPa": "Succión HyperForce; Roborock dice que los valores pueden variar según el país o la región.",
+    "selfEmptying": "La base multifunción 3.0 vacía el depósito automáticamente.",
+    "compatibility.apple_home": "Roborock dice que Matter permite controlar los aspiradores compatibles desde la app Casa; las funciones varían según el ecosistema y los ajustes detallados se quedan en la app Roborock.",
+    "compatibility.google_home": "La página estadounidense de Roborock indica comandos de voz con Google Home; el anuncio de Matter también nombra Google Home.",
+    "compatibility.alexa": "La página estadounidense de Roborock indica comandos de voz con Amazon Alexa; el anuncio de Matter también nombra Alexa.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página de Roborock ni de Samsung sobre SmartThings.",
+    "compatibility.home_assistant": "Home Assistant tiene una integración oficial de Roborock, pero su página no incluye el Qrevo Curv y dice que los dispositivos más nuevos de la serie Q no son totalmente compatibles. Compatibilidad del modelo sin confirmar."
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "category": "robot-vacuum",
+  "brand": "Xiaomi",
+  "model": "Robot Vacuum X20+",
+  "name": "Xiaomi X20+ (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.mi.com/es/product/xiaomi-robot-vacuum-x20-plus/",
+  "radios": {
+    "value": null,
+    "sources": [],
+    "note": "No Xiaomi page found that names the radio; control is through the Xiaomi Home app."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim on Xiaomi's pages and no CSA listing surfaced in search."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Xiaomi or Apple page found that lists Apple Home or Matter for this model."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "xiaomi-global-overview",
+        "xiaomi-uk-store"
+      ],
+      "note": "Xiaomi's global and UK store pages list voice control with Google Assistant (e.g. \"OK Google, start cleaning\"), not available in every language and country. Spain-page wording not confirmed."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "xiaomi-global-overview",
+        "xiaomi-uk-store"
+      ],
+      "note": "Xiaomi's global and UK store pages list voice control with Alexa (e.g. \"Alexa, start cleaning\") and say a compatible Alexa device is needed. Spain-page wording not confirmed."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official page found."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's Xiaomi Miio integration covers Xiaomi robot vacuums in general, but no official page found names the X20+. Community HACS integrations are not counted."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Xiaomi's pages describe app control and do not mention a hub; not stated explicitly."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Xiaomi does not say whether any control works without its cloud."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "xiaomi-es-specs"
+    ],
+    "note": "Spain spec page lists two mop-pad holders with two pads in the box."
+  },
+  "navigation": {
+    "value": "LDS laser",
+    "sources": [
+      "xiaomi-au-overview"
+    ],
+    "note": "Xiaomi's AU page lists LDS laser navigation and S-Cross structured-light obstacle avoidance."
+  },
+  "suctionPa": {
+    "value": 6000,
+    "sources": [
+      "xiaomi-es-overview",
+      "xiaomi-au-overview"
+    ],
+    "note": "Xiaomi states 6000 Pa on its Spain and AU pages."
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": [
+      "xiaomi-es-specs",
+      "xiaomi-au-overview"
+    ],
+    "note": "The Spain spec page lists the station's power draw while emptying dust and a disposable bag in the box; this is the X20+ bundle (the plain X20 has no such base)."
+  },
+  "summary": "Xiaomi lists Alexa and Google Assistant voice control for the Robot Vacuum X20+, and control runs through the Xiaomi Home app. The EU model is a vacuum and mop with LDS laser navigation, 6000 Pa suction and a station that empties the bin. Matter, Apple Home and SmartThings aren't confirmed.",
+  "caveats": [
+    "Xiaomi says voice control isn't available in every language and country, and the Spain page wording isn't confirmed.",
+    "The plain X20 has no self-emptying base; the station comes with the X20+ bundle.",
+    "Home Assistant's Xiaomi Miio integration covers Xiaomi vacuums in general, but no official page names the X20+."
+  ],
+  "sources": [
+    {
+      "id": "xiaomi-es-specs",
+      "url": "https://www.mi.com/es/product/xiaomi-robot-vacuum-x20-plus/specs/",
+      "title": "Xiaomi Robot Vacuum X20+ Especificaciones",
+      "publisher": "Xiaomi",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "xiaomi-es-overview",
+      "url": "https://www.mi.com/es/product/xiaomi-robot-vacuum-x20-plus/",
+      "title": "Xiaomi Robot Vacuum X20+ General",
+      "publisher": "Xiaomi",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "xiaomi-au-overview",
+      "url": "https://www.mi.com/au/product/xiaomi-robot-vacuum-x20-plus/",
+      "title": "Xiaomi Robot Vacuum X20+ Overview",
+      "publisher": "Xiaomi",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "xiaomi-global-overview",
+      "url": "https://www.mi.com/global/product/xiaomi-robot-vacuum-x20-plus/",
+      "title": "Xiaomi Robot Vacuum X20+ Overview",
+      "publisher": "Xiaomi",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "xiaomi-uk-store",
+      "url": "https://ams.buy.mi.com/uk/item/3223704739",
+      "title": "Xiaomi Robot Vacuum X20+",
+      "publisher": "Xiaomi",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

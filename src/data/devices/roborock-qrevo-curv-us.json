@@ -1,0 +1,148 @@
+{
+  "category": "robot-vacuum",
+  "brand": "Roborock",
+  "model": "Qrevo Curv",
+  "name": "Roborock Qrevo Curv (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://us.roborock.com/pages/roborock-qrevo-curv",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "roborock-us"
+    ],
+    "note": "Roborock's Qrevo Curv page says it supports only 2.4 GHz Wi-Fi, not 5 GHz."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "roborock-matter-news"
+    ],
+    "note": "Roborock's April 2025 announcement lists the Qrevo Curv (firmware 02.26.02) among models getting Matter by firmware update. CSA lists several Roborock 'Robotic Vacuum Cleaner' certificates, but none seen names the Qrevo Curv; the claim rests on the maker's statement."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "roborock-matter-news"
+      ],
+      "note": "Roborock says Matter lets the Home app control compatible vacuums; functionality varies by ecosystem and detailed settings stay in the Roborock app."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "roborock-us",
+        "roborock-matter-news"
+      ],
+      "note": "Roborock's US page lists voice commands through Google Home; the Matter announcement also names Google Home."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "roborock-us",
+        "roborock-matter-news"
+      ],
+      "note": "Roborock's US page lists voice commands through Amazon Alexa; the Matter announcement also names Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Roborock or Samsung page found for SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [
+        "roborock-ha"
+      ],
+      "note": "Home Assistant has an official Roborock integration, but its page does not list the Qrevo Curv and says newer Q-series devices are not fully supported. Model support not confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "roborock-us"
+    ],
+    "note": "The multifunctional dock is not a hub; the robot connects over Wi-Fi."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No maker statement on local-only control found."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "roborock-us"
+    ],
+    "note": "Vacuums and mops with spinning pads."
+  },
+  "navigation": {
+    "value": "PreciSense LiDAR",
+    "sources": [
+      "roborock-global"
+    ],
+    "note": "Roborock's Qrevo Curv pages name PreciSense LiDAR navigation."
+  },
+  "suctionPa": {
+    "value": 18500,
+    "sources": [
+      "roborock-us"
+    ],
+    "note": "HyperForce suction; Roborock says values may vary by country or region."
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": [
+      "roborock-us"
+    ],
+    "note": "Multifunctional Dock 3.0 empties the bin automatically."
+  },
+  "summary": "Apple Home reaches the Roborock Qrevo Curv through Matter, which Roborock added by firmware update (02.26.02) in April 2025. Google Home and Alexa are listed natively. The robot vacuums and mops, with LiDAR navigation, 18,500 Pa suction and a dock that empties the bin on its own.",
+  "caveats": [
+    "Wi-Fi is 2.4 GHz only; Roborock's product page says 5 GHz is not supported.",
+    "Matter needs firmware 02.26.02, and Roborock says detailed settings stay in the Roborock app.",
+    "Roborock's own announcement is the only Matter source: the CSA certificates we saw don't name the Qrevo Curv.",
+    "Home Assistant's official Roborock integration doesn't list this model, so support isn't confirmed."
+  ],
+  "sources": [
+    {
+      "id": "roborock-us",
+      "url": "https://us.roborock.com/pages/roborock-qrevo-curv",
+      "title": "Roborock Qrevo Curv - Tangle-Free Cleaning, Effortless Elegance",
+      "publisher": "Roborock",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "roborock-global",
+      "url": "https://global.roborock.com/pages/roborock-qrevo-curv",
+      "title": "Roborock Qrevo Curv - Tangle-Free Cleaning, Effortless Elegance",
+      "publisher": "Roborock",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "roborock-matter-news",
+      "url": "https://newsroom.roborock.com/gl/news/roborock-releases-matter-protocol-update-leading-smart-home-integration",
+      "title": "Roborock Releases Matter Protocol Update, Leading Smart Home Integration",
+      "publisher": "Roborock",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "roborock-ha",
+      "url": "https://home-assistant.io/integrations/roborock",
+      "title": "Roborock - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

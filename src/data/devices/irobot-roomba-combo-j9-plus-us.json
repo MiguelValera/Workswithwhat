@@ -1,0 +1,124 @@
+{
+  "category": "robot-vacuum",
+  "brand": "iRobot",
+  "model": "Roomba Combo j9+",
+  "name": "Roomba Combo j9+ (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.irobot.com/en_US/roomba-combo-j9plus-auto-fill-robot-vacuum-and-mop/C975020.html",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "irobot-j9"
+    ],
+    "note": "iRobot's page says the robot needs a Wi-Fi connection and a software update before first use. The Wi-Fi band was not confirmed on an iRobot page."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter statement found on iRobot pages or a CSA listing. iRobot's later Matter rollouts named other models (Combo 10 Max, Roomba Plus 500 Combo, Max 700), not the Combo j9+."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [
+        "irobot-j9"
+      ],
+      "note": "iRobot says the robot can pair with Siri; that is voice control, not a Home app accessory. Apple Home support not confirmed."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "irobot-j9"
+      ],
+      "note": "iRobot says the robot can be paired with Google Assistant."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "irobot-j9"
+      ],
+      "note": "iRobot says the robot can be paired with Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No iRobot or Samsung page found for SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [
+        "irobot-ha"
+      ],
+      "note": "The official Roomba integration page does not list the j9+ among tested models and says newer x05 Wi-Fi models do not work. j9+ support not confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "irobot-j9"
+    ],
+    "note": "The Clean Base Auto-Fill dock is not a hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No maker statement on local-only control found."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "irobot-j9"
+    ],
+    "note": "Combo model that vacuums and mops."
+  },
+  "navigation": {
+    "value": "PrecisionVision Navigation",
+    "sources": [
+      "irobot-j9"
+    ],
+    "note": "Front camera with obstacle avoidance."
+  },
+  "suctionPa": {
+    "value": null,
+    "sources": [],
+    "note": "iRobot's pages we saw do not state suction in pascals."
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": [
+      "irobot-j9"
+    ],
+    "note": "Clean Base Auto-Fill dock empties debris for up to 60 days and refills liquid."
+  },
+  "summary": "iRobot says the Roomba Combo j9+ pairs with Alexa and Google Assistant, and no Matter support turned up. It vacuums and mops with camera-based PrecisionVision navigation, and the Clean Base Auto-Fill dock empties debris for up to 60 days and refills the liquid.",
+  "caveats": [
+    "iRobot mentions Siri, but that is voice control, not a Home app accessory, so Apple Home isn't confirmed.",
+    "No Matter statement exists on iRobot's pages or in the CSA listing; later iRobot Matter rollouts named other models.",
+    "The official Home Assistant Roomba integration doesn't list the j9+ and says newer x05 Wi-Fi models don't work."
+  ],
+  "sources": [
+    {
+      "id": "irobot-j9",
+      "url": "https://www.irobot.com/en_US/roomba-combo-j9plus-auto-fill-robot-vacuum-and-mop/C975020.html",
+      "title": "Roomba Combo j9+ Auto-Fill Robot Vacuum & Mop",
+      "publisher": "iRobot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "irobot-ha",
+      "url": "https://www.home-assistant.io/integrations/roomba/",
+      "title": "iRobot Roomba and Braava - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

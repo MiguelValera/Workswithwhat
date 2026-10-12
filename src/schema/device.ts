@@ -106,6 +106,14 @@ export const THERMOSTAT_TYPES = ['wall', 'radiator-valve'] as const;
 export const SWITCH_FORMS = ['wall-switch', 'module'] as const;
 // indoor / outdoor = standalone cameras; doorbell = video doorbell; floodlight = camera with built-in lights
 export const CAMERA_TYPES = ['indoor', 'outdoor', 'doorbell', 'floodlight'] as const;
+// vacuum = vacuums only; vacuum-mop = vacuums and mops (pad or roller)
+export const CLEANING_TYPES = ['vacuum', 'vacuum-mop'] as const;
+// hub = standalone hub, bridge or gateway with its own app (Hue Bridge, DIRIGERA, Aqara);
+// usb-dongle = radio stick for a computer running Home Assistant, Zigbee2MQTT and the like;
+// speaker-display = smart speaker or display with a hub built in (Echo with Zigbee, HomePod, Nest Hub)
+export const HUB_TYPES = ['hub', 'usb-dongle', 'speaker-display'] as const;
+// what a hub talks to on the device side
+export const HUB_PROTOCOLS = ['zigbee', 'thread', 'z-wave', 'bluetooth', 'infrared', 'proprietary'] as const;
 // what a sensor reports; presence = mmWave-style presence that sees people who sit still
 export const SENSES = ['contact', 'motion', 'presence', 'temperature', 'humidity', 'leak', 'light', 'vibration', 'air-quality'] as const;
 
@@ -193,7 +201,37 @@ const switchSchema = z
   })
   .strict();
 
-export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor', 'smart-camera', 'smart-switch'] as const;
+const vacuumSchema = z
+  .object({
+    ...baseShape,
+    category: z.literal('robot-vacuum'),
+    cleaning: fact(z.enum(CLEANING_TYPES)),
+    // e.g. "LiDAR", "Camera (vSLAM)", "LiDAR and camera"; the maker's wording
+    navigation: fact(z.string().min(2).max(40)),
+    // suction as the maker states it, in pascals
+    suctionPa: fact(z.number().int().positive()),
+    // the included dock empties the bin by itself
+    selfEmptying: fact(z.boolean()),
+  })
+  .strict();
+
+// For hubs, `compatibility` means the hub's connected devices show up in that ecosystem
+// (natively or through the hub's Matter bridge), not the hub box itself.
+const hubSchema = z
+  .object({
+    ...baseShape,
+    category: z.literal('smart-hub'),
+    hubType: fact(z.enum(HUB_TYPES)),
+    deviceProtocols: fact(z.array(z.enum(HUB_PROTOCOLS)).min(1)),
+    // exposes the devices paired to it to Matter controllers (Apple Home, Google Home, Alexa…)
+    matterBridge: fact(z.boolean()),
+    threadBorderRouter: fact(z.boolean()),
+    // maximum number of connected devices, as the maker states it
+    maxDevices: fact(z.number().int().positive()),
+  })
+  .strict();
+
+export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor', 'smart-camera', 'smart-switch', 'robot-vacuum', 'smart-hub'] as const;
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const COMMON_FACTS = ['radios', 'hubRequired', 'localControl'] as const;
@@ -205,12 +243,14 @@ export const CATEGORY_FACTS = {
   'smart-sensor': ['senses', 'power'],
   'smart-camera': ['cameraType', 'power', 'localStorage', 'subscription'],
   'smart-switch': ['switchForm', 'dimmer', 'neutralRequired', 'gangs'],
+  'robot-vacuum': ['cleaning', 'navigation', 'suctionPa', 'selfEmptying'],
+  'smart-hub': ['hubType', 'deviceProtocols', 'matterBridge', 'threadBorderRouter', 'maxDevices'],
 } as const satisfies Record<CategoryKey, readonly string[]>;
 
 type FactValue = { value: unknown; sources: string[] };
 
 export const deviceSchema = z
-  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema, cameraSchema, switchSchema])
+  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema, cameraSchema, switchSchema, vacuumSchema, hubSchema])
   .superRefine((d, ctx) => {
     const ids = d.sources.map((s) => s.id);
     const known = new Set(ids);

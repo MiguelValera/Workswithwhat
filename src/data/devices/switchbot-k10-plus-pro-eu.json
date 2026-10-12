@@ -1,0 +1,156 @@
+{
+  "category": "robot-vacuum",
+  "brand": "SwitchBot",
+  "model": "K10+ Pro",
+  "name": "SwitchBot K10+ Pro (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://eu.switch-bot.com/products/switchbot-mini-robot-vacuum-k10-pro",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "switchbot-us-product",
+      "switchbot-24ghz-support"
+    ],
+    "note": "SwitchBot lists 2.4 GHz Wi-Fi (no 5 GHz) and Bluetooth 5.0."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "CSA lists the K10+ Pro Combo, not the plain K10+ Pro. SwitchBot's EU page says Matter needs a SwitchBot Hub 2, so the plain model reaches Matter only through the hub's bridge."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "sources": [
+        "switchbot-eu-product",
+        "switchbot-matter-support"
+      ],
+      "via": "SwitchBot Hub 2 (Matter)",
+      "note": "EU page lists Siri and says Matter needs the SwitchBot Hub 2. The direct, hub-free Matter route (iOS 18.4.1) is documented for the Combo only."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "switchbot-eu-product"
+      ],
+      "note": "Listed as working with Google Home; Matter also possible with a SwitchBot Hub."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "switchbot-eu-product"
+      ],
+      "note": "Listed as working with Alexa on SwitchBot's EU page."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official page found."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant page for this model found."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "switchbot-eu-product",
+      "switchbot-24ghz-support"
+    ],
+    "note": "Connects to the SwitchBot app over 2.4 GHz Wi-Fi; Hub 2 is only needed for Matter, per the product page."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not stated by SwitchBot in pages found."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "switchbot-eu-product",
+      "switchbot-mop-support"
+    ],
+    "note": "A mopping pad plate and cloth are in the box. SwitchBot says it cannot vacuum and mop at the same time."
+  },
+  "navigation": {
+    "value": "LiDAR",
+    "sources": [
+      "switchbot-eu-product"
+    ],
+    "note": "SwitchBot lists LDS laser navigation (LiDAR SLAM) and PSD sensors."
+  },
+  "suctionPa": {
+    "value": 3000,
+    "sources": [
+      "switchbot-us-product"
+    ],
+    "note": "From the spec table on SwitchBot's US page (600/1100/1600/3000 Pa across four modes); the EU page snippets did not show the figure."
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": [
+      "switchbot-eu-product",
+      "switchbot-us-product"
+    ],
+    "note": "SwitchBot's pages describe a 4 L auto-empty dust collection base with the K10+ Pro."
+  },
+  "summary": "Apple Home only works with the SwitchBot K10+ Pro through a SwitchBot Hub 2, which provides the Matter bridge. Google Home and Alexa are listed directly on SwitchBot's EU page. The robot is compact, with LiDAR, 3,000 Pa suction and a 4 L auto-empty base, and it vacuums and mops, though not at the same time.",
+  "caveats": [
+    "Matter on the plain K10+ Pro needs a SwitchBot Hub 2; the hub-free route (iOS 18.4.1) is documented only for the K10+ Pro Combo.",
+    "Wi-Fi is 2.4 GHz only; SwitchBot lists no 5 GHz support.",
+    "SwitchBot says it can't vacuum and mop at the same time.",
+    "The 3,000 Pa figure is the top of four modes (600, 1,100, 1,600, 3,000) from SwitchBot's US page."
+  ],
+  "sources": [
+    {
+      "id": "switchbot-eu-product",
+      "url": "https://eu.switch-bot.com/products/switchbot-mini-robot-vacuum-k10-pro",
+      "title": "SwitchBot Mini Robot Vacuum K10+ Pro",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-matter-support",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/30444300071447-Does-SwitchBot-Robot-Vacuum-K10-Pro-Combo-Support-Matter",
+      "title": "Does SwitchBot Robot Vacuum K10+ Pro Combo Support Matter",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-us-product",
+      "url": "https://us.switch-bot.com/products/switchbot-mini-robot-vacuum-k10-pro",
+      "title": "SwitchBot K10+ Pro World's 1st Mini Robot Vacuum",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-24ghz-support",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/14546624360983-Why-Does-SwitchBot-Mini-Robot-Vacuum-K10-K10-Pro-Only-Support-2-4GHz-Wi-Fi-and-Not-5GHz-Wi-Fi",
+      "title": "Why Does SwitchBot Mini Robot Vacuum K10+ / K10+ Pro Only Support 2.4GHz Wi-Fi and Not 5GHz Wi-Fi?",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-mop-support",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/14215810297879-Can-SwitchBot-Mini-Robot-Vacuum-K10-K10-Pro-K11-K11-Pro-Simultaneously-Vacuum-and-Mop",
+      "title": "Can SwitchBot Mini Robot Vacuum K10+/K10+ Pro/K11+/K11+ Pro Simultaneously Vacuum and Mop?",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

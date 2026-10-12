@@ -7,7 +7,7 @@ import { ECOSYSTEMS } from './device.ts';
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'use YYYY-MM-DD');
 
 /** String-valued facts whose wording can be translated (e.g. power "Rechargeable battery"). */
-export const TRANSLATABLE_VALUES = ['power', 'systems', 'subscription', 'gangs', 'bulbBase'] as const;
+export const TRANSLATABLE_VALUES = ['power', 'systems', 'subscription', 'gangs', 'bulbBase', 'navigation'] as const;
 
 export const translationSchema = z
   .object({
