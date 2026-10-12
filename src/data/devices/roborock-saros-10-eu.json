@@ -1,0 +1,150 @@
+{
+  "category": "robot-vacuum",
+  "brand": "Roborock",
+  "model": "Saros 10",
+  "name": "Roborock Saros 10 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://global.roborock.com/pages/roborock-saros-10",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "roborock-matter-update"
+    ],
+    "note": "Matter runs over Wi-Fi per Roborock's update notice. A manual (not cited) says 2.4 GHz only."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "roborock-matter-update"
+    ],
+    "note": "Roborock's own notice lists the Saros 10 for the Matter firmware 02.32.44 (April 2025). No CSA listing was found, so check one."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "roborock-matter-update"
+      ],
+      "note": "Via Matter; Roborock says features vary by ecosystem. Coverage says it needs iOS 18.4 or later and a home hub."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "roborock-matter-update"
+      ],
+      "note": "Via the Matter firmware update. Roborock says functions vary by ecosystem."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "roborock-alexa-skill",
+        "roborock-matter-update"
+      ],
+      "note": "Through the Roborock Plus skill, whose support article lists the Saros 10. Matter is also available."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official page found."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [
+        "ha-roborock"
+      ],
+      "note": "Home Assistant has an official Roborock integration, but the page found does not name the Saros 10."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "roborock-alexa-skill"
+    ],
+    "note": "The skill links the Roborock account; no hub is mentioned."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Roborock does not say here whether control works without its cloud."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "roborock-global-page"
+    ],
+    "note": "Roborock's page lists VibraRise 4.0 mopping."
+  },
+  "navigation": {
+    "value": "Retractable LiDAR, RGB camera",
+    "sources": [
+      "roborock-global-page"
+    ],
+    "note": "RetractSense lowers the LiDAR; structured light and an RGB camera are also listed."
+  },
+  "suctionPa": {
+    "value": 22000,
+    "sources": [
+      "roborock-global-page",
+      "roborock-support-features"
+    ]
+  },
+  "selfEmptying": {
+    "value": null,
+    "sources": [],
+    "note": "Roborock's pages seen mention hot-water mop washing in the dock but not bin emptying; EU retailers sell it with a RockDock Ultra. Not confirmed."
+  },
+  "summary": "The Roborock Saros 10 is a vacuum-and-mop robot with retractable LiDAR and 22,000 Pa suction. Roborock lists it for the Matter firmware 02.32.44, so it can be added to Apple Home, Google Home and Alexa.",
+  "caveats": [
+    "Matter features vary by ecosystem, as Roborock states.",
+    "Self-emptying dock is not confirmed on Roborock's pages."
+  ],
+  "sources": [
+    {
+      "id": "roborock-global-page",
+      "url": "https://global.roborock.com/pages/roborock-saros-10",
+      "title": "Saros 10 - Down To The Finest Detail.",
+      "publisher": "Roborock",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "roborock-support-features",
+      "url": "https://support.roborock.com/hc/en-us/articles/43397079118745-What-are-the-key-features-of-Saros-10",
+      "title": "What are the key features of Saros 10?",
+      "publisher": "Roborock",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "roborock-matter-update",
+      "url": "https://newsroom.roborock.com/gl/news/roborock-releases-matter-protocol-update-leading-smart-home-integration",
+      "title": "Roborock Releases Matter Protocol Update, Leading Smart Home Integration",
+      "publisher": "Roborock",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "roborock-alexa-skill",
+      "url": "https://support.roborock.com/hc/en-us/articles/360035929051-How-do-I-connect-robot-vacuum-to-alexa-via-skill-Roborock-Plus",
+      "title": "How do I connect robot vacuum to alexa via skill Roborock Plus?",
+      "publisher": "Roborock",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-roborock",
+      "url": "https://home-assistant.io/integrations/roborock",
+      "title": "Roborock",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-12"
+}

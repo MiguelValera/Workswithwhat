@@ -1,0 +1,123 @@
+{
+  "category": "robot-vacuum",
+  "brand": "SwitchBot",
+  "model": "K10+ Pro",
+  "name": "SwitchBot K10+ Pro (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://eu.switch-bot.com/products/switchbot-mini-robot-vacuum-k10-pro",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "switchbot-eu-product"
+    ],
+    "note": "Wi-Fi is 2.4 GHz and Bluetooth 5.0 per search snippets of SwitchBot's page; not re-opened."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "SwitchBot's support article on direct Matter covers the K10+ Pro Combo, and the product page says Matter needs a Hub 2. No CSA listing seen; certification of the plain K10+ Pro is unconfirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "sources": [
+        "switchbot-eu-product",
+        "switchbot-matter-support"
+      ],
+      "via": "SwitchBot Hub 2 (Matter)",
+      "note": "EU page lists Siri and says Matter needs the SwitchBot Hub 2. The direct, hub-free Matter route (iOS 18.4.1) is documented for the Combo only."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "switchbot-eu-product"
+      ],
+      "note": "Listed as working with Google Home; Matter also possible with a SwitchBot Hub."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "switchbot-eu-product"
+      ],
+      "note": "Listed as working with Alexa on SwitchBot's EU page."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official page found."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant page for this model found."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "switchbot-eu-product"
+    ],
+    "note": "Hub 2 is only needed for Matter, per the product page."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not stated by SwitchBot in pages found."
+  },
+  "cleaning": {
+    "value": null,
+    "sources": [],
+    "note": "Reviews say it mops, but no SwitchBot page seen confirms it."
+  },
+  "navigation": {
+    "value": "LiDAR",
+    "sources": [
+      "switchbot-eu-product"
+    ],
+    "note": "Search snippets also mention a PSD distance sensor."
+  },
+  "suctionPa": {
+    "value": 3000,
+    "sources": [
+      "switchbot-eu-product"
+    ],
+    "note": "From search snippets of the product page; verify."
+  },
+  "selfEmptying": {
+    "value": true,
+    "sources": [
+      "switchbot-eu-product"
+    ],
+    "note": "The page describes a 4 L dust collection base; not confirmed to be in the plain K10+ Pro box."
+  },
+  "summary": "The SwitchBot K10+ Pro is a compact robot vacuum with LiDAR, 3,000 Pa suction and a dust-collection base. SwitchBot's EU page lists Alexa, Google Home and Siri, with Matter available through a SwitchBot Hub 2.",
+  "caveats": [
+    "Matter needs a SwitchBot Hub 2 on the plain K10+ Pro; the direct route is documented for the Combo.",
+    "Mopping is not confirmed by SwitchBot pages seen."
+  ],
+  "sources": [
+    {
+      "id": "switchbot-eu-product",
+      "url": "https://eu.switch-bot.com/products/switchbot-mini-robot-vacuum-k10-pro",
+      "title": "SwitchBot Mini Robot Vacuum K10+ Pro",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "switchbot-matter-support",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/30444300071447-Does-SwitchBot-Robot-Vacuum-K10-Pro-Combo-Support-Matter",
+      "title": "Does SwitchBot Robot Vacuum K10+ Pro Combo Support Matter",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-12"
+}
