@@ -32,7 +32,10 @@ function snapPage(h) {
   for (const m of h.matchAll(/<meta[^>]*(?:property|name)="((?:og|twitter):[^"]+)"[^>]*content="([^"]*)"/g)) og[m[1]] = m[2];
   const block = (id) => {
     const i = h.indexOf(`id="${id}"`);
-    return i < 0 ? null : text(h.slice(i, h.indexOf('</section>', i) > 0 ? h.indexOf('</section>', i) : i + 4000));
+    if (i < 0) return null;
+    // the block ends at the next h2 or section end, whichever comes first
+    const ends = [h.indexOf('<h2', i + 1), h.indexOf('</section>', i)].filter((n) => n > 0);
+    return text(h.slice(i, ends.length ? Math.min(...ends) : i + 4000));
   };
   return {
     title: all(/<title>([\s\S]*?)<\/title>/g, h)[0] ?? null,
