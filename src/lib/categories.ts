@@ -1,16 +1,16 @@
 import { CATEGORY_KEYS, type CategoryKey, type DeviceData } from '../schema/device.ts';
-import { formatNumber, type Lang } from '../i18n/lang';
+import { formatNumber, type Lang, type LocaleLang } from '../i18n/lang';
 import { ui } from '../i18n/ui';
 
-type Spec = { key: string; label: string; labelEs: string; format: (v: unknown, lang: Lang) => string };
+type Spec = { key: string; label: string; labelIn: Record<LocaleLang, string>; format: (v: unknown, lang: Lang) => string };
 
-/** Spanish names; `gender` picks "otros"/"otras" and similar agreement. */
-export interface CategoryEs {
+/** A category's names in another language; `gender` picks "otros"/"otras" and similar agreement. */
+export interface CategoryNames {
   label: string;
   navLabel: string;
   singular: string;
   plural: string;
-  gender: 'm' | 'f';
+  gender: 'm' | 'f' | 'n';
 }
 
 export interface Category {
@@ -27,134 +27,133 @@ export interface Category {
   plural: string;
   /** Category-specific facts shown on device pages, in llms-full.txt and tables. */
   specs: Spec[];
-  es: CategoryEs;
+  i18n: Record<LocaleLang, CategoryNames>;
 }
 
 const yesNo = (v: unknown, lang: Lang) => (v ? ui(lang).yes : ui(lang).no);
 // enum value → label, per language
-const labels = (map: Record<string, [string, string]>) => (v: unknown, lang: Lang) =>
-  map[String(v)]?.[lang === 'es' ? 1 : 0] ?? String(v);
+const labels = (map: Record<string, Record<Lang, string>>) => (v: unknown, lang: Lang) => map[String(v)]?.[lang] ?? String(v);
 const COLOR_LABELS = labels({
-  white: ['White only', 'Solo blanca'],
-  'tunable-white': ['Tunable white', 'Blanco regulable'],
-  color: ['Full colour', 'Color'],
+  white: { en: 'White only', es: 'Solo blanca' },
+  'tunable-white': { en: 'Tunable white', es: 'Blanco regulable' },
+  color: { en: 'Full colour', es: 'Color' },
 });
 
 const FIT_LABELS = labels({
-  deadbolt: ['Replaces deadbolt', 'Sustituye el cerrojo'],
-  retrofit: ['Retrofit (keeps keys)', 'Sobre el cilindro (mantiene las llaves)'],
-  cylinder: ['Euro cylinder', 'Cilindro europeo'],
-  lever: ['Lever handle', 'Manilla'],
+  deadbolt: { en: 'Replaces deadbolt', es: 'Sustituye el cerrojo' },
+  retrofit: { en: 'Retrofit (keeps keys)', es: 'Sobre el cilindro (mantiene las llaves)' },
+  cylinder: { en: 'Euro cylinder', es: 'Cilindro europeo' },
+  lever: { en: 'Lever handle', es: 'Manilla' },
 });
 
 const THERMOSTAT_LABELS = labels({
-  wall: ['Wall thermostat', 'Termostato de pared'],
-  'radiator-valve': ['Radiator valve', 'Válvula de radiador'],
+  wall: { en: 'Wall thermostat', es: 'Termostato de pared' },
+  'radiator-valve': { en: 'Radiator valve', es: 'Válvula de radiador' },
 });
 
 const SENSE_LABELS = labels({
-  contact: ['Contact', 'Apertura'],
-  motion: ['Motion', 'Movimiento'],
-  presence: ['Presence', 'Presencia'],
-  temperature: ['Temperature', 'Temperatura'],
-  humidity: ['Humidity', 'Humedad'],
-  leak: ['Water leak', 'Fugas de agua'],
-  light: ['Light', 'Luz'],
-  vibration: ['Vibration', 'Vibración'],
-  'air-quality': ['Air quality', 'Calidad del aire'],
+  contact: { en: 'Contact', es: 'Apertura' },
+  motion: { en: 'Motion', es: 'Movimiento' },
+  presence: { en: 'Presence', es: 'Presencia' },
+  temperature: { en: 'Temperature', es: 'Temperatura' },
+  humidity: { en: 'Humidity', es: 'Humedad' },
+  leak: { en: 'Water leak', es: 'Fugas de agua' },
+  light: { en: 'Light', es: 'Luz' },
+  vibration: { en: 'Vibration', es: 'Vibración' },
+  'air-quality': { en: 'Air quality', es: 'Calidad del aire' },
 });
 
 const CAMERA_LABELS = labels({
-  indoor: ['Indoor camera', 'Cámara de interior'],
-  outdoor: ['Outdoor camera', 'Cámara de exterior'],
-  doorbell: ['Video doorbell', 'Videotimbre'],
-  floodlight: ['Floodlight camera', 'Cámara con foco'],
+  indoor: { en: 'Indoor camera', es: 'Cámara de interior' },
+  outdoor: { en: 'Outdoor camera', es: 'Cámara de exterior' },
+  doorbell: { en: 'Video doorbell', es: 'Videotimbre' },
+  floodlight: { en: 'Floodlight camera', es: 'Cámara con foco' },
 });
 
 const SWITCH_LABELS = labels({
-  'wall-switch': ['Wall switch', 'Interruptor de pared'],
-  module: ['In-wall module', 'Módulo empotrable'],
+  'wall-switch': { en: 'Wall switch', es: 'Interruptor de pared' },
+  module: { en: 'In-wall module', es: 'Módulo empotrable' },
 });
 
 const CLEANING_LABELS = labels({
-  vacuum: ['Vacuum', 'Aspira'],
-  'vacuum-mop': ['Vacuum and mop', 'Aspira y friega'],
+  vacuum: { en: 'Vacuum', es: 'Aspira' },
+  'vacuum-mop': { en: 'Vacuum and mop', es: 'Aspira y friega' },
 });
 
 const HUB_LABELS = labels({
-  hub: ['Hub or bridge', 'Hub o pasarela'],
-  'usb-dongle': ['USB dongle', 'Dongle USB'],
-  'speaker-display': ['Speaker or display', 'Altavoz o pantalla'],
+  hub: { en: 'Hub or bridge', es: 'Hub o pasarela' },
+  'usb-dongle': { en: 'USB dongle', es: 'Dongle USB' },
+  'speaker-display': { en: 'Speaker or display', es: 'Altavoz o pantalla' },
 });
 
 const PROTOCOL_LABELS = labels({
-  zigbee: ['Zigbee', 'Zigbee'],
-  thread: ['Thread', 'Thread'],
-  'z-wave': ['Z-Wave', 'Z-Wave'],
-  bluetooth: ['Bluetooth', 'Bluetooth'],
-  infrared: ['Infrared', 'Infrarrojos'],
-  proprietary: ['Proprietary radio', 'Radio propia'],
+  zigbee: { en: 'Zigbee', es: 'Zigbee' },
+  thread: { en: 'Thread', es: 'Thread' },
+  'z-wave': { en: 'Z-Wave', es: 'Z-Wave' },
+  bluetooth: { en: 'Bluetooth', es: 'Bluetooth' },
+  infrared: { en: 'Infrared', es: 'Infrarrojos' },
+  proprietary: { en: 'Proprietary radio', es: 'Radio propia' },
 });
 
 export const CATEGORIES: Category[] = [
   {
     key: 'smart-plug',
-    es: { label: 'Enchufes inteligentes', navLabel: 'Enchufes', singular: 'enchufe inteligente', plural: 'enchufes inteligentes', gender: 'm' },
+    i18n: { es: { label: 'Enchufes inteligentes', navLabel: 'Enchufes', singular: 'enchufe inteligente', plural: 'enchufes inteligentes', gender: 'm' } },
     path: 'smart-plugs',
     label: 'Smart plugs',
     navLabel: 'Plugs',
     singular: 'smart plug',
     plural: 'smart plugs',
     specs: [
-      { key: 'energyMonitoring', label: 'Energy monitoring', labelEs: 'Medición de consumo', format: yesNo },
-      { key: 'maxLoadWatts', label: 'Max load', labelEs: 'Carga máxima', format: (v, lang) => `${formatNumber(Number(v), lang)} W` },
+      { key: 'energyMonitoring', label: 'Energy monitoring', labelIn: { es: 'Medición de consumo' }, format: yesNo },
+      { key: 'maxLoadWatts', label: 'Max load', labelIn: { es: 'Carga máxima' }, format: (v, lang) => `${formatNumber(Number(v), lang)} W` },
     ],
   },
   {
     key: 'smart-bulb',
-    es: { label: 'Bombillas inteligentes', navLabel: 'Bombillas', singular: 'bombilla inteligente', plural: 'bombillas inteligentes', gender: 'f' },
+    i18n: { es: { label: 'Bombillas inteligentes', navLabel: 'Bombillas', singular: 'bombilla inteligente', plural: 'bombillas inteligentes', gender: 'f' } },
     path: 'smart-bulbs',
     label: 'Smart bulbs',
     navLabel: 'Bulbs',
     singular: 'smart bulb',
     plural: 'smart bulbs',
     specs: [
-      { key: 'colorType', label: 'Light', labelEs: 'Luz', format: COLOR_LABELS },
-      { key: 'lumens', label: 'Brightness', labelEs: 'Brillo', format: (v, lang) => `${formatNumber(Number(v), lang)} lm` },
-      { key: 'bulbBase', label: 'Base', labelEs: 'Casquillo', format: String },
+      { key: 'colorType', label: 'Light', labelIn: { es: 'Luz' }, format: COLOR_LABELS },
+      { key: 'lumens', label: 'Brightness', labelIn: { es: 'Brillo' }, format: (v, lang) => `${formatNumber(Number(v), lang)} lm` },
+      { key: 'bulbBase', label: 'Base', labelIn: { es: 'Casquillo' }, format: String },
     ],
   },
   {
     key: 'smart-lock',
-    es: { label: 'Cerraduras inteligentes', navLabel: 'Cerraduras', singular: 'cerradura inteligente', plural: 'cerraduras inteligentes', gender: 'f' },
+    i18n: { es: { label: 'Cerraduras inteligentes', navLabel: 'Cerraduras', singular: 'cerradura inteligente', plural: 'cerraduras inteligentes', gender: 'f' } },
     path: 'smart-locks',
     label: 'Smart locks',
     navLabel: 'Locks',
     singular: 'smart lock',
     plural: 'smart locks',
     specs: [
-      { key: 'lockFit', label: 'Fit', labelEs: 'Montaje', format: FIT_LABELS },
-      { key: 'keypad', label: 'Keypad', labelEs: 'Teclado', format: yesNo },
-      { key: 'power', label: 'Power', labelEs: 'Alimentación', format: String },
+      { key: 'lockFit', label: 'Fit', labelIn: { es: 'Montaje' }, format: FIT_LABELS },
+      { key: 'keypad', label: 'Keypad', labelIn: { es: 'Teclado' }, format: yesNo },
+      { key: 'power', label: 'Power', labelIn: { es: 'Alimentación' }, format: String },
     ],
   },
   {
     key: 'smart-thermostat',
-    es: { label: 'Termostatos inteligentes', navLabel: 'Termostatos', singular: 'termostato inteligente', plural: 'termostatos inteligentes', gender: 'm' },
+    i18n: { es: { label: 'Termostatos inteligentes', navLabel: 'Termostatos', singular: 'termostato inteligente', plural: 'termostatos inteligentes', gender: 'm' } },
     path: 'smart-thermostats',
     label: 'Smart thermostats',
     navLabel: 'Thermostats',
     singular: 'smart thermostat',
     plural: 'smart thermostats',
     specs: [
-      { key: 'thermostatType', label: 'Type', labelEs: 'Tipo', format: THERMOSTAT_LABELS },
-      { key: 'systems', label: 'Controls', labelEs: 'Controla', format: String },
-      { key: 'power', label: 'Power', labelEs: 'Alimentación', format: String },
+      { key: 'thermostatType', label: 'Type', labelIn: { es: 'Tipo' }, format: THERMOSTAT_LABELS },
+      { key: 'systems', label: 'Controls', labelIn: { es: 'Controla' }, format: String },
+      { key: 'power', label: 'Power', labelIn: { es: 'Alimentación' }, format: String },
     ],
   },
   {
     key: 'smart-sensor',
-    es: { label: 'Sensores inteligentes', navLabel: 'Sensores', singular: 'sensor inteligente', plural: 'sensores inteligentes', gender: 'm' },
+    i18n: { es: { label: 'Sensores inteligentes', navLabel: 'Sensores', singular: 'sensor inteligente', plural: 'sensores inteligentes', gender: 'm' } },
     path: 'smart-sensors',
     label: 'Smart sensors',
     navLabel: 'Sensors',
@@ -164,91 +163,91 @@ export const CATEGORIES: Category[] = [
       {
         key: 'senses',
         label: 'Senses',
-        labelEs: 'Detecta',
+        labelIn: { es: 'Detecta' },
         format: (v, lang) => (v as string[]).map((x) => SENSE_LABELS(x, lang)).join(', '),
       },
-      { key: 'power', label: 'Power', labelEs: 'Alimentación', format: String },
+      { key: 'power', label: 'Power', labelIn: { es: 'Alimentación' }, format: String },
     ],
   },
   {
     key: 'smart-camera',
-    es: { label: 'Cámaras y timbres inteligentes', navLabel: 'Cámaras', singular: 'cámara inteligente', plural: 'cámaras inteligentes', gender: 'f' },
+    i18n: { es: { label: 'Cámaras y timbres inteligentes', navLabel: 'Cámaras', singular: 'cámara inteligente', plural: 'cámaras inteligentes', gender: 'f' } },
     path: 'smart-cameras',
     label: 'Smart cameras and doorbells',
     navLabel: 'Cameras',
     singular: 'smart camera',
     plural: 'smart cameras',
     specs: [
-      { key: 'cameraType', label: 'Type', labelEs: 'Tipo', format: CAMERA_LABELS },
-      { key: 'power', label: 'Power', labelEs: 'Alimentación', format: String },
-      { key: 'localStorage', label: 'Local recording', labelEs: 'Grabación local', format: yesNo },
-      { key: 'subscription', label: 'Paid plan needed for', labelEs: 'Requiere suscripción para', format: String },
+      { key: 'cameraType', label: 'Type', labelIn: { es: 'Tipo' }, format: CAMERA_LABELS },
+      { key: 'power', label: 'Power', labelIn: { es: 'Alimentación' }, format: String },
+      { key: 'localStorage', label: 'Local recording', labelIn: { es: 'Grabación local' }, format: yesNo },
+      { key: 'subscription', label: 'Paid plan needed for', labelIn: { es: 'Requiere suscripción para' }, format: String },
     ],
   },
   {
     key: 'smart-switch',
-    es: { label: 'Interruptores y reguladores inteligentes', navLabel: 'Interruptores', singular: 'interruptor inteligente', plural: 'interruptores inteligentes', gender: 'm' },
+    i18n: { es: { label: 'Interruptores y reguladores inteligentes', navLabel: 'Interruptores', singular: 'interruptor inteligente', plural: 'interruptores inteligentes', gender: 'm' } },
     path: 'smart-switches',
     label: 'Smart switches and dimmers',
     navLabel: 'Switches',
     singular: 'smart switch',
     plural: 'smart switches',
     specs: [
-      { key: 'switchForm', label: 'Form', labelEs: 'Formato', format: SWITCH_LABELS },
-      { key: 'dimmer', label: 'Dimmer', labelEs: 'Regulable', format: yesNo },
-      { key: 'neutralRequired', label: 'Needs neutral wire', labelEs: 'Necesita neutro', format: yesNo },
-      { key: 'gangs', label: 'Gangs / channels', labelEs: 'Teclas / canales', format: String },
+      { key: 'switchForm', label: 'Form', labelIn: { es: 'Formato' }, format: SWITCH_LABELS },
+      { key: 'dimmer', label: 'Dimmer', labelIn: { es: 'Regulable' }, format: yesNo },
+      { key: 'neutralRequired', label: 'Needs neutral wire', labelIn: { es: 'Necesita neutro' }, format: yesNo },
+      { key: 'gangs', label: 'Gangs / channels', labelIn: { es: 'Teclas / canales' }, format: String },
     ],
   },
   {
     key: 'robot-vacuum',
-    es: { label: 'Robots aspiradores', navLabel: 'Robots', singular: 'robot aspirador', plural: 'robots aspiradores', gender: 'm' },
+    i18n: { es: { label: 'Robots aspiradores', navLabel: 'Robots', singular: 'robot aspirador', plural: 'robots aspiradores', gender: 'm' } },
     path: 'robot-vacuums',
     label: 'Robot vacuums',
     navLabel: 'Vacuums',
     singular: 'robot vacuum',
     plural: 'robot vacuums',
     specs: [
-      { key: 'cleaning', label: 'Cleaning', labelEs: 'Limpieza', format: CLEANING_LABELS },
-      { key: 'navigation', label: 'Navigation', labelEs: 'Navegación', format: String },
-      { key: 'suctionPa', label: 'Suction', labelEs: 'Succión', format: (v, lang) => `${formatNumber(Number(v), lang)} Pa` },
-      { key: 'selfEmptying', label: 'Self-emptying dock', labelEs: 'Base de autovaciado', format: yesNo },
+      { key: 'cleaning', label: 'Cleaning', labelIn: { es: 'Limpieza' }, format: CLEANING_LABELS },
+      { key: 'navigation', label: 'Navigation', labelIn: { es: 'Navegación' }, format: String },
+      { key: 'suctionPa', label: 'Suction', labelIn: { es: 'Succión' }, format: (v, lang) => `${formatNumber(Number(v), lang)} Pa` },
+      { key: 'selfEmptying', label: 'Self-emptying dock', labelIn: { es: 'Base de autovaciado' }, format: yesNo },
     ],
   },
   {
     key: 'smart-hub',
-    es: { label: 'Hubs y pasarelas', navLabel: 'Hubs', singular: 'hub', plural: 'hubs', gender: 'm' },
+    i18n: { es: { label: 'Hubs y pasarelas', navLabel: 'Hubs', singular: 'hub', plural: 'hubs', gender: 'm' } },
     path: 'smart-hubs',
     label: 'Smart home hubs and bridges',
     navLabel: 'Hubs',
     singular: 'smart home hub',
     plural: 'smart home hubs',
     specs: [
-      { key: 'hubType', label: 'Type', labelEs: 'Tipo', format: HUB_LABELS },
+      { key: 'hubType', label: 'Type', labelIn: { es: 'Tipo' }, format: HUB_LABELS },
       {
         key: 'deviceProtocols',
         label: 'Connects devices over',
-        labelEs: 'Conecta dispositivos por',
+        labelIn: { es: 'Conecta dispositivos por' },
         format: (v, lang) => (v as string[]).map((x) => PROTOCOL_LABELS(x, lang)).join(', '),
       },
-      { key: 'matterBridge', label: 'Matter bridge', labelEs: 'Puente Matter', format: yesNo },
-      { key: 'threadBorderRouter', label: 'Thread border router', labelEs: 'Router de borde Thread', format: yesNo },
-      { key: 'maxDevices', label: 'Max devices', labelEs: 'Máx. dispositivos', format: (v, lang) => formatNumber(Number(v), lang) },
+      { key: 'matterBridge', label: 'Matter bridge', labelIn: { es: 'Puente Matter' }, format: yesNo },
+      { key: 'threadBorderRouter', label: 'Thread border router', labelIn: { es: 'Router de borde Thread' }, format: yesNo },
+      { key: 'maxDevices', label: 'Max devices', labelIn: { es: 'Máx. dispositivos' }, format: (v, lang) => formatNumber(Number(v), lang) },
     ],
   },
   {
     key: 'light-strip',
-    es: { label: 'Tiras LED inteligentes', navLabel: 'Tiras LED', singular: 'tira LED inteligente', plural: 'tiras LED inteligentes', gender: 'f' },
+    i18n: { es: { label: 'Tiras LED inteligentes', navLabel: 'Tiras LED', singular: 'tira LED inteligente', plural: 'tiras LED inteligentes', gender: 'f' } },
     path: 'light-strips',
     label: 'Smart LED light strips',
     navLabel: 'Light strips',
     singular: 'smart light strip',
     plural: 'smart light strips',
     specs: [
-      { key: 'colorType', label: 'Light', labelEs: 'Luz', format: COLOR_LABELS },
-      { key: 'lengthM', label: 'Length', labelEs: 'Longitud', format: (v, lang) => `${formatNumber(Number(v), lang)} m` },
-      { key: 'multiZone', label: 'Several colours at once', labelEs: 'Varios colores a la vez', format: yesNo },
-      { key: 'power', label: 'Power', labelEs: 'Alimentación', format: String },
+      { key: 'colorType', label: 'Light', labelIn: { es: 'Luz' }, format: COLOR_LABELS },
+      { key: 'lengthM', label: 'Length', labelIn: { es: 'Longitud' }, format: (v, lang) => `${formatNumber(Number(v), lang)} m` },
+      { key: 'multiZone', label: 'Several colours at once', labelIn: { es: 'Varios colores a la vez' }, format: yesNo },
+      { key: 'power', label: 'Power', labelIn: { es: 'Alimentación' }, format: String },
     ],
   },
 ];
@@ -261,10 +260,8 @@ export const categoryOf = (d: { category: CategoryKey }) => CATEGORIES.find((c) 
 type FactLike = { value: unknown; sources: string[]; note?: string };
 
 /** A category's names in one language. */
-export const catText = (cat: Category, lang: Lang) =>
-  lang === 'es'
-    ? cat.es
-    : { label: cat.label, navLabel: cat.navLabel, singular: cat.singular, plural: cat.plural, gender: 'm' as const };
+export const catText = (cat: Category, lang: Lang): CategoryNames =>
+  lang === 'en' ? { label: cat.label, navLabel: cat.navLabel, singular: cat.singular, plural: cat.plural, gender: 'm' } : cat.i18n[lang];
 
 /**
  * Category-specific facts of a device, ready to display. `values` holds translated
@@ -274,7 +271,7 @@ export function specFacts(d: DeviceData, lang: Lang = 'en', values: Partial<Reco
   const facts = d as unknown as Record<string, FactLike>;
   return categoryOf(d).specs.map((s) => {
     const f = facts[s.key];
-    const text = f.value === null ? ui(lang).unconfirmed : (lang === 'es' && values[s.key]) || s.format(f.value, lang);
-    return { key: s.key, label: lang === 'es' ? s.labelEs : s.label, text, fact: f };
+    const text = f.value === null ? ui(lang).unconfirmed : (lang !== 'en' && values[s.key]) || s.format(f.value, lang);
+    return { key: s.key, label: lang === 'en' ? s.label : s.labelIn[lang], text, fact: f };
   });
 }

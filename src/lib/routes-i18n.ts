@@ -1,14 +1,13 @@
-// Every Spanish page (/es/…), derived from the English ones so the two sites always
-// match page for page. Nothing is returned while ES_ENABLED is off.
+// Every page of a translated site (/es/…, …), derived from the English ones so the sites
+// always match page for page. Nothing is returned for a language that isn't enabled.
 import { CATEGORIES } from './categories';
 import { ECOSYSTEMS, ecosystemPath, getPublishedDevices, getTranslations, type Ecosystem, type Device } from './devices';
 import { getRegionPages, marketOf, type Market } from './markets';
 import { comparePath, getComparisons, type Comparison } from './compare';
-import { localize } from '../i18n/lang';
-import { ES_ENABLED } from '../site.config';
+import { ACTIVE_LANGS, localize, type LocaleLang } from '../i18n/lang';
 import type { Category } from './categories';
 
-export type EsPage =
+export type LocalePage =
   | { kind: 'home' }
   | { kind: 'methodology' | 'legal' | 'privacy' | 'ecosystems' | 'matter' }
   | { kind: 'chart'; cat: Category; devices: Device[]; market?: Market }
@@ -19,12 +18,12 @@ export type EsPage =
   | { kind: 'compareIndex' }
   | { kind: 'compare'; comparison: Comparison };
 
-/** Spanish pages keyed by their path segments after /es/. */
-export async function getEsPages(): Promise<{ segments: string[]; page: EsPage }[]> {
-  if (!ES_ENABLED) return [];
+/** A language's pages keyed by their path segments after /<lang>/. */
+export async function getLocalePages(lang: LocaleLang): Promise<{ segments: string[]; page: LocalePage }[]> {
+  if (!ACTIVE_LANGS.includes(lang)) return [];
   const all = await getPublishedDevices();
-  const translations = await getTranslations();
-  const pages: { en: string; page: EsPage }[] = [
+  const translations = await getTranslations(lang);
+  const pages: { en: string; page: LocalePage }[] = [
     { en: '/', page: { kind: 'home' } },
     { en: '/methodology/', page: { kind: 'methodology' } },
     { en: '/legal/', page: { kind: 'legal' } },
@@ -36,7 +35,7 @@ export async function getEsPages(): Promise<{ segments: string[]; page: EsPage }
   for (const cat of CATEGORIES) {
     const devices = all.filter((d) => d.data.category === cat.key);
     if (devices.length) pages.push({ en: `/${cat.path}/`, page: { kind: 'chart', cat, devices } });
-    // a device gets a Spanish page once its prose is translated
+    // a device gets a page in a language once its prose is translated
     for (const device of devices)
       if (translations.has(device.id)) pages.push({ en: `/${cat.path}/${device.id}/`, page: { kind: 'device', device, devices: all } });
   }
@@ -49,7 +48,7 @@ export async function getEsPages(): Promise<{ segments: string[]; page: EsPage }
     const rest = path.slice(market.key.length + 1);
     const cat = CATEGORIES.find((c) => rest === `/${c.path}/`);
     const eco = ECOSYSTEMS.find((e) => rest === ecosystemPath(e));
-    const page: EsPage | undefined =
+    const page: LocalePage | undefined =
       rest === '/'
         ? { kind: 'market', market, devices: mine }
         : cat
@@ -61,5 +60,13 @@ export async function getEsPages(): Promise<{ segments: string[]; page: EsPage }
               : undefined;
     if (page) pages.push({ en: path, page });
   }
-  return pages.map(({ en, page }) => ({ segments: localize(en, 'es').split('/').filter(Boolean).slice(1), page }));
+  return pages.map(({ en, page }) => ({ segments: localize(en, lang).split('/').filter(Boolean).slice(1), page }));
+}
+
+/** getStaticPaths() of a language's catch-all route (src/pages/<lang>/[...path].astro). */
+export async function localeStaticPaths(lang: LocaleLang) {
+  return (await getLocalePages(lang)).map(({ segments, page }) => ({
+    params: { path: segments.length ? segments.join('/') : undefined },
+    props: { page },
+  }));
 }

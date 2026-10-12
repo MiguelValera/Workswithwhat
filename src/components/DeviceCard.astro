@@ -11,7 +11,7 @@ const t = ui(lang);
 const d = device.data;
 const works = ECOSYSTEMS.filter((e) => worksWith(device, e));
 const radios = radioList(d.radios.value, lang, ' + ');
-const href = devicePathIn(device, lang, await getTranslations());
+const href = devicePathIn(device, lang, await getTranslations(lang));
 ---
 
 <li class="card">

@@ -6,7 +6,7 @@ import Refs from '../Refs.astro';
 import { deviceText, devicePathIn, getPublishedDevices, getTranslations, categoryPhrase, radioList, type Device } from '../../lib/devices';
 import { CATEGORIES, catText, specFacts } from '../../lib/categories';
 import { byMarket, marketOf, marketText, type Market } from '../../lib/markets';
-import { capitalize, langOf } from '../../i18n/lang';
+import { pick, capitalize, langOf } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
 
 interface Props {
@@ -15,8 +15,9 @@ interface Props {
 const { market } = Astro.props;
 const lang = langOf(Astro.url.pathname);
 const es = lang === 'es';
+const T = pick(lang);
 const t = ui(lang);
-const translations = await getTranslations();
+const translations = await getTranslations(lang);
 const mt = market && marketText(market, lang);
 const all = (await getPublishedDevices()).filter((d) => !market || marketOf(d) === market);
 const path = market ? `/${market.key}/works-with/matter/` : '/works-with/matter/';
@@ -73,15 +74,15 @@ const threadN = groups.reduce((n, g) => n + g.thread.length, 0);
     )
   }
 
-  <nav class="toc" aria-label={es ? 'En esta página' : 'On this page'}>
+  <nav class="toc" aria-label={T({ en: 'On this page', es: 'En esta página' })}>
     <span class="toc-label">{t.jumpTo}</span>
     {
       groups.flatMap((g) => [
-        g.wifi.length > 0 && <a href={`#${g.cat.path}-wifi`}>{catText(g.cat, lang).label} {es ? 'por wifi' : 'over Wi-Fi'} ({g.wifi.length})</a>,
-        g.thread.length > 0 && <a href={`#${g.cat.path}-thread`}>{catText(g.cat, lang).label} {es ? 'por Thread' : 'over Thread'} ({g.thread.length})</a>,
+        g.wifi.length > 0 && <a href={`#${g.cat.path}-wifi`}>{catText(g.cat, lang).label} {T({ en: 'over Wi-Fi', es: 'por wifi' })} ({g.wifi.length})</a>,
+        g.thread.length > 0 && <a href={`#${g.cat.path}-thread`}>{catText(g.cat, lang).label} {T({ en: 'over Thread', es: 'por Thread' })} ({g.thread.length})</a>,
       ])
     }
-    <a href="#what-matter-means">{es ? 'Qué significa Matter' : 'What Matter means'}</a>
+    <a href="#what-matter-means">{T({ en: 'What Matter means', es: 'Qué significa Matter' })}</a>
   </nav>
   {
     es ? (
@@ -119,13 +120,13 @@ const threadN = groups.reduce((n, g) => n + g.thread.length, 0);
   {
     groups.map((g) =>
       [
-        { label: es ? 'por wifi' : 'over Wi-Fi', list: g.wifi, id: `${g.cat.path}-wifi` },
-        { label: es ? 'por Thread' : 'over Thread', list: g.thread, id: `${g.cat.path}-thread` },
+        { label: T({ en: 'over Wi-Fi', es: 'por wifi' }), list: g.wifi, id: `${g.cat.path}-wifi` },
+        { label: T({ en: 'over Thread', es: 'por Thread' }), list: g.thread, id: `${g.cat.path}-thread` },
       ].map(
         (tr) =>
           tr.list.length > 0 && (
             <>
-              <h2 id={tr.id}>{es ? `${catText(g.cat, lang).label} con Matter ${tr.label}` : `Matter ${g.cat.plural} ${tr.label}`}</h2>
+              <h2 id={tr.id}>{T({ en: `Matter ${g.cat.plural} ${tr.label}`, es: `${catText(g.cat, lang).label} con Matter ${tr.label}` })}</h2>
               {split(tr.list).map((m) => (
               <>
               {!market && <h3 id={`${tr.id}-${m.market.key}`}>{marketText(m.market, lang).label} ({m.devices.length})</h3>}
@@ -135,7 +136,7 @@ const threadN = groups.reduce((n, g) => n + g.thread.length, 0);
                     <tr role="row">
                       <th role="columnheader" scope="col">{t.device}</th>
                       <th role="columnheader" scope="col">{t.radios}</th>
-                      <th role="columnheader" scope="col">{es ? g.cat.specs[0].labelEs : g.cat.specs[0].label}</th>
+                      <th role="columnheader" scope="col">{lang === 'en' ? g.cat.specs[0].label : g.cat.specs[0].labelIn[lang]}</th>
                       <th role="columnheader" scope="col">{t.notes}</th>
                     </tr>
                   </thead>

@@ -1,5 +1,5 @@
 import { CATEGORIES, type Category } from './categories';
-import type { Lang } from '../i18n/lang';
+import type { Lang, LocaleLang } from '../i18n/lang';
 import { ECOSYSTEMS, ecosystemPath, getPublishedDevices, worksWith, type Device } from './devices';
 
 // Buyers shop in one market at a time, so lists are split by market instead of
@@ -14,19 +14,19 @@ export interface Market {
   /** "the US and Canada": "Smart plugs for the US and Canada" */
   phrase: string;
   regions: string[];
-  es: { label: string; short: string; phrase: string };
+  i18n: Record<LocaleLang, { label: string; short: string; phrase: string }>;
 }
 
 export const MARKETS: Market[] = [
-  { key: 'us', label: 'US & Canada', short: 'US', phrase: 'the US and Canada', regions: ['US', 'CA'], es: { label: 'EE. UU. y Canadá', short: 'EE. UU.', phrase: 'Estados Unidos y Canadá' } },
-  { key: 'eu', label: 'Europe', short: 'EU', phrase: 'Europe', regions: ['EU'], es: { label: 'Europa', short: 'UE', phrase: 'Europa' } },
-  { key: 'uk', label: 'UK', short: 'UK', phrase: 'the UK', regions: ['UK'], es: { label: 'Reino Unido', short: 'Reino Unido', phrase: 'Reino Unido' } },
-  { key: 'au', label: 'Australia', short: 'Australian', phrase: 'Australia', regions: ['AU'], es: { label: 'Australia', short: 'Australia', phrase: 'Australia' } },
-  { key: 'jp', label: 'Japan', short: 'Japanese', phrase: 'Japan', regions: ['JP'], es: { label: 'Japón', short: 'Japón', phrase: 'Japón' } },
+  { key: 'us', label: 'US & Canada', short: 'US', phrase: 'the US and Canada', regions: ['US', 'CA'], i18n: { es: { label: 'EE. UU. y Canadá', short: 'EE. UU.', phrase: 'Estados Unidos y Canadá' } } },
+  { key: 'eu', label: 'Europe', short: 'EU', phrase: 'Europe', regions: ['EU'], i18n: { es: { label: 'Europa', short: 'UE', phrase: 'Europa' } } },
+  { key: 'uk', label: 'UK', short: 'UK', phrase: 'the UK', regions: ['UK'], i18n: { es: { label: 'Reino Unido', short: 'Reino Unido', phrase: 'Reino Unido' } } },
+  { key: 'au', label: 'Australia', short: 'Australian', phrase: 'Australia', regions: ['AU'], i18n: { es: { label: 'Australia', short: 'Australia', phrase: 'Australia' } } },
+  { key: 'jp', label: 'Japan', short: 'Japanese', phrase: 'Japan', regions: ['JP'], i18n: { es: { label: 'Japón', short: 'Japón', phrase: 'Japón' } } },
 ];
 
 /** A market's names in one language. */
-export const marketText = (m: Market, lang: Lang) => (lang === 'es' ? m.es : { label: m.label, short: m.short, phrase: m.phrase });
+export const marketText = (m: Market, lang: Lang) => (lang === 'en' ? { label: m.label, short: m.short, phrase: m.phrase } : m.i18n[lang]);
 
 export const marketOf = (d: Device) =>
   MARKETS.find((m) => d.data.regions.some((r) => m.regions.includes(r))) ?? MARKETS[0];

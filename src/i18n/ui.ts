@@ -95,4 +95,5 @@ const es: UI = {
   source: (n: number) => `Fuente ${n}`,
 };
 
-export const ui = (lang: Lang): UI => (lang === 'es' ? es : en);
+const UI_TEXT: Record<Lang, UI> = { en, es };
+export const ui = (lang: Lang): UI => UI_TEXT[lang];

@@ -16,7 +16,7 @@ interface Props {
 const { devices, brandJump = false, anchorPrefix = '', region } = Astro.props;
 const lang = langOf(Astro.url.pathname);
 const t = ui(lang);
-const translations = await getTranslations();
+const translations = await getTranslations(lang);
 // anchor on the first row of each brand, for the brand jump links (rows are sorted by brand)
 const brandAnchor = (brand: string) => `${anchorPrefix}brand-${brand.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
 const firstOfBrand = new Set(devices.filter((d, i) => i === 0 || devices[i - 1].data.brand !== d.data.brand).map((d) => d.id));

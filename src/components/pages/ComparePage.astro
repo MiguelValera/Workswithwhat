@@ -6,10 +6,10 @@ import Base from '../../layouts/Base.astro';
 import Refs from '../Refs.astro';
 import Status from '../Status.astro';
 import { catText, categoryOf } from '../../lib/categories';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemPath, ecosystemSlug, formatDate, getTranslations, listJoin, worksWith } from '../../lib/devices';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemPath, ecosystemSlug, formatDate, getTranslations, langsFor, listJoin, worksWith } from '../../lib/devices';
 import { compareAnswer, compareDescription, compareName, comparePath, compareRows, comparisonsFor, summaryLines, pairText, type Comparison } from '../../lib/compare';
 import { marketChartPath, marketText } from '../../lib/markets';
-import { langOf, localize } from '../../i18n/lang';
+import { HTML_LANG, pick, langOf, localize } from '../../i18n/lang';
 
 interface Props {
   comparison: Comparison;
@@ -18,8 +18,9 @@ const { comparison } = Astro.props;
 const { a, b, market } = comparison;
 const lang = langOf(Astro.url.pathname);
 const es = lang === 'es';
+const T = pick(lang);
 const L = (p: string) => localize(p, lang);
-const translations = await getTranslations();
+const translations = await getTranslations(lang);
 const { wa, wb } = pairText(comparison, lang, translations);
 const cat = categoryOf(a.data);
 const c = catText(cat, lang);
@@ -27,9 +28,9 @@ const mt = marketText(market, lang);
 const name = compareName(comparison);
 const pathA = devicePathIn(a, lang, translations);
 const pathB = devicePathIn(b, lang, translations);
-const both = [a, b].every((d) => translations.has(d.id));
+const langs = await langsFor(a, b);
 
-const title = es ? `${name}: compatibilidad comparada` : `${name}: smart home compatibility compared`;
+const title = T({ en: `${name}: smart home compatibility compared`, es: `${name}: compatibilidad comparada` });
 const description = compareDescription(comparison, lang);
 const rows = compareRows(a, b, lang, wa, wb);
 const differs = rows.filter((r) => r.a !== r.b);
@@ -64,7 +65,7 @@ const marketChart = L(await marketChartPath(market, cat));
 
 const faq = ECOSYSTEMS.map((e) => ({
   e,
-  q: es ? `¿Cuál funciona con ${ECOSYSTEM_LABELS[e]}, ${a.data.name} o ${b.data.name}?` : `${a.data.name} or ${b.data.name}: which works with ${ECOSYSTEM_LABELS[e]}?`,
+  q: T({ en: `${a.data.name} or ${b.data.name}: which works with ${ECOSYSTEM_LABELS[e]}?`, es: `¿Cuál funciona con ${ECOSYSTEM_LABELS[e]}, ${a.data.name} o ${b.data.name}?` }),
   a: compareAnswer(comparison, e, lang, wa, wb),
 }));
 
@@ -93,7 +94,7 @@ const jsonLd = [
     '@type': 'WebPage',
     name: title,
     description,
-    inLanguage: es ? 'es-ES' : 'en',
+    inLanguage: HTML_LANG[lang],
     dateModified: [a.data.updatedAt, b.data.updatedAt].sort().at(-1),
     about: [product(a, wa, pathA), product(b, wb, pathB)],
   },
@@ -106,17 +107,18 @@ const jsonLd = [
   ogType="article"
   crumbs={[
     { name: c.label, path: `/${cat.path}/` },
-    { name: es ? 'Comparativas' : 'Comparisons', path: '/compare/' },
+    { name: T({ en: 'Comparisons', es: 'Comparativas' }), path: '/compare/' },
     { name, path: comparePath(comparison) },
   ]}
-  alternates={both}
+  alternates={langs.length > 1}
+  langs={langs}
   noindex={!comparison.indexed}
   jsonLd={jsonLd}
 >
   <article>
     <h1>{name}</h1>
     <p class="muted">
-      {c.label} · <a class="badge region" href={marketChart}>{es ? `Para ${mt.phrase}` : `For ${market.phrase}`}</a>
+      {c.label} · <a class="badge region" href={marketChart}>{T({ en: `For ${market.phrase}`, es: `Para ${mt.phrase}` })}</a>
     </p>
 
     <ul class="verdict">
@@ -124,26 +126,26 @@ const jsonLd = [
       {
         differs.length > 0 && (
           <li>
-            {es ? 'También difieren en: ' : 'They also differ on: '}
+            {T({ en: 'They also differ on: ', es: 'También difieren en: ' })}
             {listJoin(differs.map((r) => (r.key === 'matter' ? r.label : r.label.replace(/^./, (x) => x.toLowerCase()))), lang)}.
           </li>
         )
       }
     </ul>
 
-    <nav class="toc" aria-label={es ? 'En esta página' : 'On this page'}>
-      <span class="toc-label">{es ? 'En esta página:' : 'On this page:'}</span>
-      <a href="#side-by-side">{es ? 'Lado a lado' : 'Side by side'}</a>
-      <a href="#quick-answers">{es ? 'Respuestas rápidas' : 'Quick answers'}</a>
-      {others.length > 0 && <a href="#more">{es ? 'Más comparativas' : 'More comparisons'}</a>}
+    <nav class="toc" aria-label={T({ en: 'On this page', es: 'En esta página' })}>
+      <span class="toc-label">{T({ en: 'On this page:', es: 'En esta página:' })}</span>
+      <a href="#side-by-side">{T({ en: 'Side by side', es: 'Lado a lado' })}</a>
+      <a href="#quick-answers">{T({ en: 'Quick answers', es: 'Respuestas rápidas' })}</a>
+      {others.length > 0 && <a href="#more">{T({ en: 'More comparisons', es: 'Más comparativas' })}</a>}
     </nav>
 
-    <h2 id="side-by-side">{es ? 'Lado a lado' : 'Side by side'}</h2>
+    <h2 id="side-by-side">{T({ en: 'Side by side', es: 'Lado a lado' })}</h2>
     <div class="table-scroll">
       <table role="table" class="stack pair-compare">
         <thead role="rowgroup">
           <tr role="row">
-            <th role="columnheader" scope="col"><span class="sr-only">{es ? 'Dato' : 'Fact'}</span></th>
+            <th role="columnheader" scope="col"><span class="sr-only">{T({ en: 'Fact', es: 'Dato' })}</span></th>
             <th role="columnheader" scope="col"><a href={pathA}>{a.data.name}</a></th>
             <th role="columnheader" scope="col"><a href={pathB}>{b.data.name}</a></th>
           </tr>
@@ -180,7 +182,7 @@ const jsonLd = [
       )
     }
 
-    <h2 id="quick-answers">{es ? 'Respuestas rápidas' : 'Quick answers'}</h2>
+    <h2 id="quick-answers">{T({ en: 'Quick answers', es: 'Respuestas rápidas' })}</h2>
     <dl class="faq">
       {
         faq.map((f) => (
@@ -189,7 +191,7 @@ const jsonLd = [
             <dd>
               {f.a}{' '}
               {(worksWith(a, f.e) || worksWith(b, f.e)) && (
-                <a href={L(ecosystemPath(f.e))}>{es ? `Más ${c.plural} para ${ECOSYSTEM_LABELS[f.e]}` : `More ${cat.plural} for ${ECOSYSTEM_LABELS[f.e]}`}</a>
+                <a href={L(ecosystemPath(f.e))}>{T({ en: `More ${cat.plural} for ${ECOSYSTEM_LABELS[f.e]}`, es: `Más ${c.plural} para ${ECOSYSTEM_LABELS[f.e]}` })}</a>
               )}
             </dd>
           </div>
@@ -198,14 +200,14 @@ const jsonLd = [
     </dl>
 
     <p>
-      {es ? 'Todos los detalles y fuentes:' : 'Full details and sources:'} <a href={pathA}>{a.data.name}</a> · <a href={pathB}>{b.data.name}</a>
+      {T({ en: 'Full details and sources:', es: 'Todos los detalles y fuentes:' })} <a href={pathA}>{a.data.name}</a> · <a href={pathB}>{b.data.name}</a>
     </p>
   </article>
 
   {
     others.length > 0 && (
       <section aria-labelledby="more">
-        <h2 id="more">{es ? 'Más comparativas' : 'More comparisons'}</h2>
+        <h2 id="more">{T({ en: 'More comparisons', es: 'Más comparativas' })}</h2>
         <ul class="link-list">
           {others.map((o) => <li><a href={L(comparePath(o))}>{compareName(o)}</a></li>)}
         </ul>

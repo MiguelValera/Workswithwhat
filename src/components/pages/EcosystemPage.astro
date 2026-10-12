@@ -21,7 +21,7 @@ import {
 } from '../../lib/devices';
 import { CATEGORIES, catText } from '../../lib/categories';
 import { byMarket, marketOf, marketText, regionOrGlobal, type Market } from '../../lib/markets';
-import { capitalize, langOf, localize } from '../../i18n/lang';
+import { pick, capitalize, langOf, localize } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
 
 interface Props {
@@ -31,9 +31,10 @@ interface Props {
 const { eco, market } = Astro.props;
 const lang = langOf(Astro.url.pathname);
 const es = lang === 'es';
+const T = pick(lang);
 const t = ui(lang);
 const L = (p: string) => localize(p, lang);
-const translations = await getTranslations();
+const translations = await getTranslations(lang);
 const mt = market && marketText(market, lang);
 const label = ECOSYSTEM_LABELS[eco];
 const all = (await getPublishedDevices()).filter((d) => !market || marketOf(d) === market);
@@ -141,18 +142,18 @@ const description = es
       </p>
     )
   }
-  <nav class="toc" aria-label={es ? 'En esta página' : 'On this page'}>
+  <nav class="toc" aria-label={T({ en: 'On this page', es: 'En esta página' })}>
     <span class="toc-label">{t.jumpTo}</span>
     {groups.map((g) => <a href={`#${g.cat.path}`}>{catText(g.cat, lang).label} ({g.yes.length})</a>)}
-    <a href="#how">{es ? 'Cómo se conectan' : 'How devices connect'}</a>
+    <a href="#how">{T({ en: 'How devices connect', es: 'Cómo se conectan' })}</a>
   </nav>
-  <h2 id="how">{es ? `Cómo se conectan los dispositivos a ${label}` : `How devices connect to ${label}`}</h2>
+  <h2 id="how">{T({ en: `How devices connect to ${label}`, es: `Cómo se conectan los dispositivos a ${label}` })}</h2>
   {(es ? HOW_ES : HOW)[eco].map((p) => <p>{p}</p>)}
 
   {
     groups.map((g) => (
       <section aria-labelledby={g.cat.path}>
-        <h2 id={g.cat.path}>{es ? `${catText(g.cat, lang).label} compatibles con ${label}` : `${g.cat.label} that work with ${label}`}</h2>
+        <h2 id={g.cat.path}>{T({ en: `${g.cat.label} that work with ${label}`, es: `${catText(g.cat, lang).label} compatibles con ${label}` })}</h2>
         {g.yes.length > 0 ? (
           split(g.yes).map((m) => (
           <>
@@ -182,11 +183,11 @@ const description = es
           </>
           ))
         ) : (
-          <p>{es ? `Por ahora no hay ${catText(g.cat, lang).plural} comprobados con compatibilidad confirmada con ${label}.` : `None of the ${g.cat.plural} we've checked so far are confirmed for ${label}.`}</p>
+          <p>{T({ en: `None of the ${g.cat.plural} we've checked so far are confirmed for ${label}.`, es: `Por ahora no hay ${catText(g.cat, lang).plural} comprobados con compatibilidad confirmada con ${label}.` })}</p>
         )}
         {g.unsure.length > 0 && (
           <p class="muted small">
-            {es ? 'Sin confirmar ni descartar:' : 'Not confirmed either way:'}{' '}
+            {T({ en: 'Not confirmed either way:', es: 'Sin confirmar ni descartar:' })}{' '}
             {g.unsure.map((d, i) => (
               <>
                 {i > 0 && ', '}
@@ -200,7 +201,7 @@ const description = es
   }
 
   <p class="muted">
-    {es ? 'Otras plataformas:' : 'Other platforms:'}{' '}
+    {T({ en: 'Other platforms:', es: 'Otras plataformas:' })}{' '}
     {
       otherLinks.map(({ e, href }, i) => (
         <>

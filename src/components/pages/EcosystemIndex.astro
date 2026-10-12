@@ -1,37 +1,38 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemPath, getPublishedDevices, worksWith } from '../../lib/devices';
-import { langOf, localize } from '../../i18n/lang';
+import { pick, langOf, localize } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
 
 const lang = langOf(Astro.url.pathname);
 const es = lang === 'es';
+const T = pick(lang);
 const t = ui(lang);
 const L = (p: string) => localize(p, lang);
 const all = await getPublishedDevices();
 ---
 
 <Base
-  title={es ? 'Dispositivos domóticos por ecosistema' : 'Smart home devices by ecosystem'}
+  title={T({ en: 'Smart home devices by ecosystem', es: 'Dispositivos domóticos por ecosistema' })}
   description={es
     ? 'Encuentra dispositivos domóticos compatibles con Apple Home, Google Home, Amazon Alexa, SmartThings o Home Assistant, con una fuente para cada respuesta.'
     : 'Find smart home devices that work with Apple Home, Google Home, Amazon Alexa, SmartThings or Home Assistant, with a source for every answer.'}
   crumbs={[{ name: t.navByEcosystem, path: '/works-with/' }]}
 >
-  <h1>{es ? 'Buscar por ecosistema' : 'Browse by ecosystem'}</h1>
-  <p class="lede">{es ? 'Elige la plataforma que ya usas.' : 'Pick the platform you already use.'}</p>
+  <h1>{T({ en: 'Browse by ecosystem', es: 'Buscar por ecosistema' })}</h1>
+  <p class="lede">{T({ en: 'Pick the platform you already use.', es: 'Elige la plataforma que ya usas.' })}</p>
   <ul class="cards">
     {
       ECOSYSTEMS.map((e) => (
         <li class="card">
           <h2><a href={L(ecosystemPath(e))}>{ECOSYSTEM_LABELS[e]}</a></h2>
-          <div class="muted">{all.filter((d) => worksWith(d, e)).length} {es ? 'dispositivos compatibles' : 'compatible devices'}</div>
+          <div class="muted">{all.filter((d) => worksWith(d, e)).length} {T({ en: 'compatible devices', es: 'dispositivos compatibles' })}</div>
         </li>
       ))
     }
     <li class="card">
       <h2><a href={L('/works-with/matter/')}>Matter</a></h2>
-      <div class="muted">{all.filter((d) => d.data.matter.certified).length} {es ? 'dispositivos con certificación Matter' : 'Matter-certified devices'}</div>
+      <div class="muted">{all.filter((d) => d.data.matter.certified).length} {T({ en: 'Matter-certified devices', es: 'dispositivos con certificación Matter' })}</div>
     </li>
   </ul>
 </Base>

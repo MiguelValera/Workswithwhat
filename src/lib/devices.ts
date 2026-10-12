@@ -1,7 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, type CategoryKey } from '../schema/device.ts';
 import { CATEGORIES, categoryOf } from './categories';
-import { formatDate as fmtDate, localize, type Lang } from '../i18n/lang';
+import { ACTIVE_LANGS, formatDate as fmtDate, localize, type Lang } from '../i18n/lang';
 import { ui } from '../i18n/ui';
 import type { TranslationData } from '../schema/translation.ts';
 
@@ -31,14 +31,10 @@ export const STATUS_TEXT = {
   no: 'No',
   unknown: 'Unconfirmed',
 } as const;
-export const STATUS_TEXT_ES: Record<keyof typeof STATUS_TEXT, string> = {
-  native: 'Sí',
-  matter: 'Vía Matter',
-  hub: 'Vía hub',
-  no: 'No',
-  unknown: 'Sin confirmar',
+const STATUS_TEXT_IN: Record<Exclude<Lang, 'en'>, Record<keyof typeof STATUS_TEXT, string>> = {
+  es: { native: 'Sí', matter: 'Vía Matter', hub: 'Vía hub', no: 'No', unknown: 'Sin confirmar' },
 };
-export const statusText = (s: keyof typeof STATUS_TEXT, lang: Lang) => (lang === 'es' ? STATUS_TEXT_ES[s] : STATUS_TEXT[s]);
+export const statusText = (s: keyof typeof STATUS_TEXT, lang: Lang) => (lang === 'en' ? STATUS_TEXT[s] : STATUS_TEXT_IN[lang][s]);
 
 /** "Yes", "No" or "Unconfirmed" (null) for a yes/no fact. */
 export const yesNoText = (v: boolean | null, lang: Lang) => {
@@ -50,9 +46,8 @@ export const yesNoText = (v: boolean | null, lang: Lang) => {
 export function matterText(d: Device, lang: Lang) {
   const m = d.data.matter;
   if (!m.certified) return yesNoText(m.certified, lang);
-  const es = lang === 'es';
-  const transport = m.transport === 'wifi' ? (es ? 'wifi' : 'Wi-Fi') : m.transport === 'thread' ? 'Thread' : 'Ethernet';
-  return es ? `Sí, por ${transport}` : `Yes, over ${transport}`;
+  const transport = m.transport === 'wifi' ? WIFI[lang].word : m.transport === 'thread' ? 'Thread' : 'Ethernet';
+  return lang === 'es' ? `Sí, por ${transport}` : `Yes, over ${transport}`;
 }
 
 /** "Hue Bridge" → "the Hue Bridge"; names that already start with an article stay as they are. */
@@ -73,46 +68,66 @@ export const RADIO_LABELS: Record<string, string> = {
 };
 
 export const formatDate = fmtDate;
+// how each language writes Wi-Fi (Spanish: "wifi"); other radios keep their names
+export const WIFI: Record<Lang, { label: string; word: string }> = {
+  en: { label: 'Wi-Fi', word: 'Wi-Fi' },
+  es: { label: 'Wifi', word: 'wifi' },
+};
 export const radioList = (radios: string[] | null, lang: Lang, sep = ', ') =>
-  (radios ?? []).map((r) => (r === 'wifi' && lang === 'es' ? 'Wifi' : RADIO_LABELS[r])).join(sep);
+  (radios ?? []).map((r) => (r === 'wifi' ? WIFI[lang].label : RADIO_LABELS[r])).join(sep);
 
 /** English path of a device page; localize() it for other languages (see devicePathIn). */
 export const devicePath = (d: Device) => `/${categoryOf(d.data).path}/${d.id}/`;
 
+const AND: Record<Lang, string> = { en: 'and', es: 'y' };
 export const listJoin = (xs: string[], lang: Lang = 'en') =>
-  xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} ${lang === 'es' ? 'y' : 'and'} ${xs.at(-1)}`;
+  xs.length < 2 ? xs.join('') : `${xs.slice(0, -1).join(', ')} ${AND[lang]} ${xs.at(-1)}`;
 
-// ---- Spanish prose -------------------------------------------------------------
+// ---- Translated prose ----------------------------------------------------------
 
 export type Translation = TranslationData;
-let esCache: Map<string, Translation> | undefined;
-/** Spanish translations by slug (src/data/i18n/es/). */
-export async function getTranslations(): Promise<Map<string, Translation>> {
-  esCache ??= new Map((await getCollection('devicesEs')).map((t) => [t.id, t.data]));
-  return esCache;
+const translationCache = new Map<Lang, Map<string, Translation>>();
+/** A language's translations by slug (src/data/i18n/<lang>/); English has none. */
+export async function getTranslations(lang: Lang): Promise<Map<string, Translation>> {
+  if (lang === 'en') return new Map();
+  if (!translationCache.has(lang)) {
+    const entries = (await getCollection(`devices_${lang}` as 'devices')) as unknown as { id: string; data: Translation }[];
+    translationCache.set(lang, new Map(entries.map((t) => [t.id, t.data])));
+  }
+  return translationCache.get(lang)!;
 }
 
 /**
- * A device's words in one language: Spanish where a translation exists, English otherwise
- * (an untranslated record has no Spanish page, but can still show up in a Spanish list).
+ * A device's words in one language: the translation where one exists, English otherwise
+ * (an untranslated record has no page in that language, but can still show up in its lists).
  */
 export function deviceText(d: Device, lang: Lang, t?: Translation) {
-  const es = lang === 'es' ? t : undefined;
-  const note = (key: string, en: string | undefined) => (en ? (es?.notes[key] ?? en) : undefined);
+  const tr = lang === 'en' ? undefined : t;
+  const note = (key: string, en: string | undefined) => (en ? (tr?.notes[key] ?? en) : undefined);
   return {
-    summary: es?.summary ?? d.data.summary,
-    caveats: es?.caveats ?? d.data.caveats,
+    summary: tr?.summary ?? d.data.summary,
+    caveats: tr?.caveats ?? d.data.caveats,
     note,
     compatNote: (e: Ecosystem) => note(`compatibility.${e}`, d.data.compatibility[e].note),
-    via: (e: Ecosystem) => es?.via?.[e] ?? d.data.compatibility[e].via,
-    values: (es?.values ?? {}) as Partial<Record<string, string>>,
+    via: (e: Ecosystem) => tr?.via?.[e] ?? d.data.compatibility[e].via,
+    values: (tr?.values ?? {}) as Partial<Record<string, string>>,
   };
 }
 export type DeviceText = ReturnType<typeof deviceText>;
 
-/** Path of a device page in a language: the Spanish page exists only for translated records. */
+/** Languages a page about these devices exists in: English, plus each built language that translated them all. */
+export async function langsFor(...devices: Device[]): Promise<Lang[]> {
+  const out: Lang[] = [];
+  for (const l of ACTIVE_LANGS) {
+    const t = await getTranslations(l);
+    if (l === 'en' || devices.every((d) => t.has(d.id))) out.push(l);
+  }
+  return out;
+}
+
+/** Path of a device page in a language: a translated page exists only for translated records. */
 export function devicePathIn(d: Device, lang: Lang, translations?: Map<string, Translation>) {
-  return lang === 'es' && translations?.has(d.id) ? localize(devicePath(d), 'es') : devicePath(d);
+  return lang !== 'en' && translations?.has(d.id) ? localize(devicePath(d), lang) : devicePath(d);
 }
 
 // Category names for titles and descriptions. Past three categories a full list
