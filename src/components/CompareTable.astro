@@ -50,7 +50,7 @@ const brands = [...new Set(devices.map((d) => d.data.brand))];
                 <a href={devicePathIn(dev, lang, translations)}>{d.name}</a>
                 <span class="note">{d.model} · {d.regions.join('/')}</span>
               </th>
-              <td role="cell" data-label={t.radio}>{radioList(d.radios.value, lang) || '—'}</td>
+              <td role="cell" class="radio" data-label={t.radio}>{radioList(d.radios.value, lang) || '—'}</td>
               <td role="cell" data-label="Matter">
                 <span class={`badge s-${d.matter.certified}`}>
                   {d.matter.certified === null ? t.unconfirmed : d.matter.certified ? t.yes : t.no}
