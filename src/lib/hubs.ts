@@ -7,9 +7,11 @@ import { marketOf } from './markets';
 // A name can map to several regional records; the link goes to the one in the device's own
 // market, and none if that market has no record (lists never mix regions).
 const HUB_NAMES: { pattern: RegExp; slugs: string[] }[] = [
-  { pattern: /\bhue bridge\b(?!\s*pro)/i, slugs: ['philips-hue-bridge-us'] },
+  { pattern: /\bhue bridge\b(?!\s*pro)/i, slugs: ['philips-hue-bridge-us', 'philips-hue-bridge-eu', 'philips-hue-bridge-uk'] },
   { pattern: /\bdirigera\b/i, slugs: ['ikea-dirigera-eu'] },
-  { pattern: /\bswitchbot hub 2\b/i, slugs: ['switchbot-hub-2-us'] },
+  { pattern: /\bswitchbot hub 2\b/i, slugs: ['switchbot-hub-2-us', 'switchbot-hub-2-eu'] },
+  { pattern: /\bhive hub\b/i, slugs: ['hive-hub-uk'] },
+  { pattern: /\bcas[eé]ta smart bridge\b/i, slugs: ['lutron-caseta-smart-bridge-us'] },
 ];
 
 /** The published hub record, in the same market as `device`, that its `via` text names. */

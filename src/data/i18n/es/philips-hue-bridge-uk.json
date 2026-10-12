@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Con EAN 8719514342583, el modelo británico del Hue Bridge es un puente Matter para Philips Hue: las luces y accesorios conectados a él aparecen en Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Usa Zigbee con el material Hue y Ethernet con el router, sin wifi. Philips lo limita a 50 luces y 12 accesorios.",
+  "caveats": [
+    "Philips indica 50 luces y 12 accesorios como dos límites separados; el Hue Bridge Pro admite más.",
+    "Con Matter no llegan el Play HDMI Sync Box ni el dial del interruptor Tap dial.",
+    "El puente se conecta al router solo por cable Ethernet, no por wifi."
+  ],
+  "notes": {
+    "radios": "Zigbee para luces y accesorios; Philips indica que el puente se conecta al router con un cable Ethernet.",
+    "matter": "La CSA registra el Philips Hue Bridge (un único registro para el puente, última certificación en 2024, no uno por variante regional). El puente solo accede a la red por cable Ethernet, así que Matter funciona sobre Ethernet. El Hue Bridge Pro es un modelo distinto y más reciente.",
+    "hubRequired": "Es el propio hub: Philips lo llama el controlador central del sistema Hue.",
+    "localControl": "Sin confirmar por ninguna fuente oficial.",
+    "deviceProtocols": "Una red Zigbee privada para las luces y accesorios Hue, separada del wifi.",
+    "matterBridge": "Philips dice que los productos Hue conectados al puente funcionan con Matter, salvo el Play HDMI Sync Box y el dial del Tap dial; el uso solo por Bluetooth no llega a Matter.",
+    "threadBorderRouter": "No hemos encontrado ninguna indicación de Thread para el puente V2.",
+    "maxDevices": "Philips indica 50 luces y 12 accesorios, dos límites separados, así que no registramos una cifra única. El Bridge Pro admite más. Modelo británico: EAN 8719514342583.",
+    "compatibility.apple_home": "La página británica del Hue Bridge indica Apple Home; se configura desde la app Hue. Matter también funciona a través del puente, salvo con el Play HDMI Sync Box y el dial del Tap dial.",
+    "compatibility.google_home": "Vincula Philips Hue en la app Google Home (Works with Google). Matter también funciona a través del puente.",
+    "compatibility.alexa": "Activa la skill Hue en la app Alexa y elige el puente; Philips dice que un puente también se conecta mediante Matter.",
+    "compatibility.smartthings": "La página británica del Hue Bridge indica Samsung SmartThings.",
+    "compatibility.home_assistant": "Home Assistant tiene una integración oficial de Philips Hue que se empareja con el puente."
+  }
+}

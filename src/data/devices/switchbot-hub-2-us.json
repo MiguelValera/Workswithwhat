@@ -196,5 +196,8 @@
     "The Matter bridge syncs up to 8 sub-devices to Apple or Google, and only some SwitchBot device types are bridged; check SwitchBot's compatibility list.",
     "Apple Home needs a HomePod or Apple TV as the Matter controller."
   ],
-  "verifiedAt": "2026-10-12"
+  "verifiedAt": "2026-10-12",
+  "variants": [
+    "switchbot-hub-2-eu"
+  ]
 }

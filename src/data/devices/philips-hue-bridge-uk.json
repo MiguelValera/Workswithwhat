@@ -1,0 +1,196 @@
+{
+  "category": "smart-hub",
+  "brand": "Philips Hue",
+  "model": "Hue Bridge (V2, EAN 8719514342583)",
+  "name": "Hue Bridge (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.philips-hue.com/en-gb/p/hue-bridge/8719514342583",
+  "radios": {
+    "value": [
+      "zigbee",
+      "ethernet"
+    ],
+    "sources": [
+      "hue-bridge-faq"
+    ],
+    "note": "Zigbee for lights and accessories; Philips says the bridge connects to the router with an Ethernet cable."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "ethernet",
+    "sources": [
+      "csa-hue-bridge",
+      "hue-bridge-faq"
+    ],
+    "note": "CSA lists the Philips Hue Bridge (one listing for the bridge, latest certified 2024, not per regional plug). The bridge reaches the network only by Ethernet cable, so Matter runs over Ethernet. The Hue Bridge Pro is a separate, newer model."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "hue-uk-bridge",
+        "hue-apple-setup"
+      ],
+      "note": "The UK Hue Bridge page lists Apple Home; set up through the Hue app. Matter also works through the bridge, except for the Play HDMI Sync Box and the Tap dial's dial."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "hue-uk-bridge",
+        "hue-google-setup"
+      ],
+      "note": "Link Philips Hue in the Google Home app (Works with Google). Matter also works through the bridge."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "hue-uk-bridge",
+        "hue-alexa-setup"
+      ],
+      "note": "Enable the Hue skill in the Alexa app and pick the bridge; Philips says a bridge also connects through Matter."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "hue-uk-bridge"
+      ],
+      "note": "The UK Hue Bridge page lists Samsung SmartThings."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-hue"
+      ],
+      "note": "Home Assistant has an official Philips Hue integration that pairs with the bridge."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "hue-bridge-faq"
+    ],
+    "note": "It is the hub: Philips calls it the central controller of the Hue system."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from an official source."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "hue-uk-bridge",
+      "hue-bridge-faq"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "hue-bridge-faq"
+    ],
+    "note": "A private Zigbee network for Hue lights and accessories, separate from Wi-Fi."
+  },
+  "matterBridge": {
+    "value": true,
+    "sources": [
+      "hue-matter",
+      "csa-hue-bridge"
+    ],
+    "note": "Philips says Hue products on the bridge work with Matter, except the Play HDMI Sync Box and the Tap dial's dial; Bluetooth-only use can't reach Matter."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "No Thread claim found for the V2 bridge."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [
+      "hue-uk-bridge"
+    ],
+    "note": "Philips states 50 lights and 12 accessories, two separate limits, so no single number is recorded. The Bridge Pro supports more. UK model: EAN 8719514342583."
+  },
+  "summary": "The UK Hue Bridge (EAN 8719514342583) is a Matter bridge for Philips Hue: lights and accessories on it appear in Apple Home, Google Home, Alexa, SmartThings and Home Assistant. It talks Zigbee to the Hue gear and Ethernet to the router, with no Wi-Fi. Philips caps it at 50 lights and 12 accessories.",
+  "sources": [
+    {
+      "id": "hue-uk-bridge",
+      "url": "https://www.philips-hue.com/en-gb/p/hue-bridge/8719514342583",
+      "title": "Bridge - Smart hub (UK, EAN 8719514342583)",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-bridge-faq",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/faq/controls/what-is-the-hue-bridge",
+      "title": "What is the Hue Bridge?",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-matter",
+      "url": "https://www.philips-hue.com/en-my/explore-hue/works-with/matter",
+      "title": "Philips Hue and Matter",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-apple-setup",
+      "url": "https://www.philips-hue.com/en-in/explore-hue/works-with/apple-homekit/set-up",
+      "title": "How to set up Philips Hue with Apple Home",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-google-setup",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/works-with/the-google-assistant/set-up",
+      "title": "How to connect Philips Hue to Google Home",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-alexa-setup",
+      "url": "https://philips-hue.com/en-gb/explore-hue/works-with/amazon-alexa/set-up",
+      "title": "How to set up Philips Hue with Amazon Alexa",
+      "publisher": "Philips Hue",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-hue-bridge",
+      "url": "https://csa-iot.org/csa_product/philips-hue-bridge/",
+      "title": "Philips Hue Bridge",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-hue",
+      "url": "https://home-assistant.io/integrations/hue",
+      "title": "Philips Hue - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "caveats": [
+    "Philips states 50 lights and 12 accessories as two separate limits; the Hue Bridge Pro supports more.",
+    "Over Matter, the Play HDMI Sync Box and the dial on the Tap dial switch don't come through.",
+    "The bridge connects to the router by Ethernet cable only, not Wi-Fi."
+  ],
+  "variants": [
+    "philips-hue-bridge-us",
+    "philips-hue-bridge-eu"
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

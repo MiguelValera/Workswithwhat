@@ -1,0 +1,157 @@
+{
+  "category": "smart-hub",
+  "brand": "Lutron",
+  "model": "Caséta Smart Bridge (L-BDG2)",
+  "name": "Caséta Smart Bridge (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://support.lutron.com/us/en/product/casetawireless/article/product-selection/What-is-the-Caseta-Smart-Hub-and-when-do-I-need-one",
+  "radios": {
+    "value": [
+      "ethernet"
+    ],
+    "sources": [
+      "lutron-hub-what"
+    ],
+    "note": "Lutron says the hub plugs into a LAN port on the router with the included Ethernet cable and doesn't use Wi-Fi. Devices talk over Lutron Clear Connect RF, which is not in the radio list, so only Ethernet is recorded."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim found for the Smart Bridge."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "lutron-homekit-faq"
+      ],
+      "note": "Lutron says HomeKit needs a second-generation Smart Bridge (L-BDG2) or Smart Bridge PRO; the HomeKit setup code goes into the Lutron app."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "lutron-google"
+      ],
+      "note": "Link the Caséta Wireless service in the Google Home app."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "lutron-alexa"
+      ],
+      "note": "Enable the Lutron Caséta skill in the Alexa app and sign in with your Lutron account."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source found in search results."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-lutron"
+      ],
+      "note": "Official Lutron Caséta integration; the docs list the L-BDG2-WH Smart Hub and the Smart Bridge PRO."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "lutron-hub-what"
+    ],
+    "note": "It is the hub. Caséta dimmers and switches work with Pico remotes without it, but app control, schedules, scenes and smart-speaker integration need it."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "lutron-hub-what"
+    ],
+    "note": "Lutron says the hub doesn't use Wi-Fi, so local control keeps working during an internet outage."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "lutron-hub-what"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "proprietary"
+    ],
+    "sources": [
+      "lutron-hub-what"
+    ],
+    "note": "Lutron Clear Connect RF, to Caséta dimmers, switches, fan controls, Pico remotes and sensors."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "No Matter bridge claim found."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "No Thread claim found."
+  },
+  "maxDevices": {
+    "value": 75,
+    "sources": [
+      "lutron-hub-what"
+    ],
+    "note": "Lutron says up to 75 Caséta devices per hub. Some retailer listings still give the older 50."
+  },
+  "summary": "Lutron's Caséta Smart Bridge (L-BDG2) runs up to 75 Caséta devices from one box: dimmers, switches, fan controls, Pico remotes and sensors, over Lutron's proprietary Clear Connect RF. It plugs into the router by Ethernet, and control stays local if your internet drops. Paired devices show up in Apple Home, Google Home, Alexa and Home Assistant; Apple Home needs the second-generation bridge or the PRO.",
+  "sources": [
+    {
+      "id": "lutron-hub-what",
+      "url": "https://support.lutron.com/us/en/product/casetawireless/article/product-selection/What-is-the-Caseta-Smart-Hub-and-when-do-I-need-one",
+      "title": "What is the Caséta Smart Hub and when do I need one?",
+      "publisher": "Lutron",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "lutron-homekit-faq",
+      "url": "https://assets.lutron.com/a/documents/Caseta_Works_with_HomeKit.pdf",
+      "title": "Caséta Works with HomeKit",
+      "publisher": "Lutron",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "lutron-alexa",
+      "url": "https://support.lutron.com/us/en/product/casetawireless/article/using-the-app/Amazon-Alexa-and-how-to-Set-Up-and-Troubleshoot-within-the-Caseta-or-RA2-Select-Systems",
+      "title": "Amazon Alexa set-up for Caseta or RA2 Select",
+      "publisher": "Lutron",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "lutron-google",
+      "url": "https://support.lutron.com/us/en/product/casetawireless/article/connected-products/Google-Home-Set-up-for-Caseta-RA2-Select-Systems",
+      "title": "Google Home Set up for Caseta / RA2 Select Systems",
+      "publisher": "Lutron",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-lutron",
+      "url": "https://home-assistant.io/integrations/lutron_caseta",
+      "title": "Lutron Caséta - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "caveats": [
+    "Apple Home needs the second-generation Smart Bridge (L-BDG2) or Smart Bridge PRO; older bridges don't work with HomeKit.",
+    "Lutron now calls it the Caséta Smart Hub, and the Smart Bridge Pro is a separate model.",
+    "Some retailer listings still give the older limit of 50 devices; Lutron says 75.",
+    "SmartThings support isn't confirmed by any official source."
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

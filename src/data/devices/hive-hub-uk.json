@@ -1,0 +1,164 @@
+{
+  "category": "smart-hub",
+  "brand": "Hive",
+  "model": "Hive Hub",
+  "name": "Hive Hub (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.hivehome.com/shop/smart-home/hive-hub",
+  "radios": {
+    "value": [
+      "zigbee",
+      "ethernet"
+    ],
+    "sources": [
+      "hive-hub"
+    ],
+    "note": "Both Hive pages list Ethernet to the router and Zigbee. Wi-Fi is left out because Hive's pages disagree: the Hub page lists it, another shop page doesn't. Bluetooth is not listed."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim found for the Hive Hub."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "hive-homekit",
+        "hive-hub"
+      ],
+      "note": "Hive's HomeKit page covers heating, lights and plugs in the Apple Home app, set up from the Hive app; it needs the latest Hive Hub or Hub 360. Hot water, the older SLT5 wired thermostat and the radiator valve are not supported."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "hive-google"
+      ],
+      "note": "Link the Hive account under Works with Google in the Google Home app; Hive lists heating, lights and plugs."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "hive-alexa"
+      ],
+      "note": "Enable the Hive skill and link your Hive account; Hive lists heating, lights and plugs."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source found; only community posts."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-hive"
+      ],
+      "note": "Official Hive integration using your Hive account (cloud polling); the hub itself is not paired to Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "hive-hub"
+    ],
+    "note": "It is the hub that Hive heating and home devices connect through."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from an official source."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "hive-hub",
+      "hive-hubs"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "hive-hub"
+    ],
+    "note": "Zigbee to Hive thermostats, radiator valves, plugs and sensors."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "No Matter bridge claim found."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "No Thread claim found."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "No maximum found."
+  },
+  "summary": "Hive heating, lights and plugs show up in Apple Home, Google Home and Alexa once they're paired to the Hive Hub, the Zigbee hub that also links to your router by Ethernet. Apple Home is native through Hive's HomeKit integration but leaves out hot water, the SLT5 wired thermostat and the radiator valve. Home Assistant works through your Hive account. No Matter claim found.",
+  "sources": [
+    {
+      "id": "hive-hub",
+      "url": "https://www.hivehome.com/shop/smart-home/hive-hub",
+      "title": "Hive Hub",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hive-hubs",
+      "url": "https://www.hivehome.com/guides/hive-hubs",
+      "title": "Hive hubs",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hive-homekit",
+      "url": "https://hivehome.com/connects-with/homekit",
+      "title": "Apple HomeKit",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hive-alexa",
+      "url": "https://hivehome.com/alexa",
+      "title": "Hive and Amazon Alexa",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hive-google",
+      "url": "https://hivehome.com/connects-with/google-assistant",
+      "title": "Hive and Google Assistant",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-hive",
+      "url": "https://www.home-assistant.io/integrations/hive/",
+      "title": "Hive - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "caveats": [
+    "Apple Home needs the latest Hive Hub or Hub 360, and doesn't support hot water, the older SLT5 wired thermostat or the radiator valve.",
+    "Home Assistant uses the official Hive integration with your Hive account (cloud polling); the hub itself isn't paired to Home Assistant.",
+    "Hive's own pages disagree on whether the hub has Wi-Fi: one lists Ethernet, Wi-Fi and Zigbee, another only Ethernet and Zigbee.",
+    "SmartThings support isn't confirmed by any official source."
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

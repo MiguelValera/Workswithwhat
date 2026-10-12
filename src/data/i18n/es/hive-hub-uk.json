@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La calefacción, las luces y los enchufes de Hive aparecen en Apple Home, Google Home y Alexa una vez emparejados con el Hive Hub, el hub Zigbee que además se conecta a tu router por Ethernet. Apple Home es nativo gracias a la integración HomeKit de Hive, pero deja fuera el agua caliente, el termostato cableado SLT5 y la válvula de radiador. Home Assistant funciona mediante tu cuenta de Hive. No hemos encontrado ninguna indicación de Matter.",
+  "caveats": [
+    "Apple Home necesita el Hive Hub más reciente o el Hub 360, y no admite el agua caliente, el termostato cableado SLT5 más antiguo ni la válvula de radiador.",
+    "Home Assistant usa la integración oficial de Hive con tu cuenta de Hive (consulta en la nube); el hub en sí no se empareja con Home Assistant.",
+    "Las propias páginas de Hive no coinciden sobre si el hub tiene wifi: una indica Ethernet, wifi y Zigbee, y otra solo Ethernet y Zigbee.",
+    "Ninguna fuente oficial confirma la compatibilidad con SmartThings."
+  ],
+  "notes": {
+    "radios": "Las dos páginas de Hive indican Ethernet al router y Zigbee. Dejamos fuera el wifi porque las páginas de Hive no coinciden: la del Hub lo incluye y otra de la tienda no. Bluetooth no figura.",
+    "matter": "No hemos encontrado ninguna indicación de Matter para el Hive Hub.",
+    "hubRequired": "Es el hub a través del cual se conectan la calefacción y los dispositivos del hogar de Hive.",
+    "localControl": "Sin confirmar por ninguna fuente oficial.",
+    "deviceProtocols": "Zigbee con termostatos, válvulas de radiador, enchufes y sensores de Hive.",
+    "matterBridge": "No hemos encontrado ninguna indicación de puente Matter.",
+    "threadBorderRouter": "No hemos encontrado ninguna indicación de Thread.",
+    "maxDevices": "No hemos encontrado ningún máximo.",
+    "compatibility.apple_home": "La página de HomeKit de Hive cubre calefacción, luces y enchufes en la app Apple Home, configurados desde la app Hive; necesita el Hive Hub más reciente o el Hub 360. El agua caliente, el termostato cableado SLT5 más antiguo y la válvula de radiador no son compatibles.",
+    "compatibility.google_home": "Vincula la cuenta de Hive en Works with Google, dentro de la app Google Home; Hive indica calefacción, luces y enchufes.",
+    "compatibility.alexa": "Activa la skill Hive y vincula tu cuenta de Hive; Hive indica calefacción, luces y enchufes.",
+    "compatibility.smartthings": "Ninguna fuente oficial lo confirma; solo hay publicaciones de la comunidad.",
+    "compatibility.home_assistant": "Integración oficial de Hive que usa tu cuenta de Hive (consulta en la nube); el hub en sí no se empareja con Home Assistant."
+  }
+}
