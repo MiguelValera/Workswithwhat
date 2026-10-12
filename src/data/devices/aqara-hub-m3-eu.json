@@ -1,0 +1,177 @@
+{
+  "category": "smart-hub",
+  "brand": "Aqara",
+  "model": "Hub M3",
+  "name": "Aqara Hub M3 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://eu.aqara.com/en-eu/products/aqara-smart-hub-m3",
+  "radios": {
+    "value": [
+      "zigbee",
+      "thread",
+      "wifi",
+      "bluetooth",
+      "ethernet"
+    ],
+    "sources": [
+      "aqara-m3-eu",
+      "csa-m3-zigbee"
+    ],
+    "note": "EU page lists dual-band Wi-Fi and a PoE Ethernet port; CSA's Zigbee listing mentions Thread and Bluetooth child devices. Model number HM-G01D comes from retailers only."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "csa-aqara-platform",
+      "aqara-m3-dev"
+    ],
+    "note": "CSA's Aqara Hub Platform software certificate lists Hub M3; a separate Hub M3 Matter certificate ID was seen in a CSA page but not opened. Transport shown as Wi-Fi; the hub also has Ethernet."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "aqara-m3-eu"
+      ],
+      "note": "Aqara lists Apple HomeKit. IR control is not supported through HomeKit."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "aqara-m3-eu"
+      ]
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "aqara-m3-eu"
+      ]
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "aqara-m3-dev"
+      ],
+      "note": "Aqara's developer docs list SmartThings among Matter bridge platforms."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "aqara-m3-dev",
+        "ha-aqara-blog"
+      ],
+      "note": "Home Assistant's Works with program lists Aqara hubs including the M3, via Matter."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Not applicable to the hub itself; not assessed."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "aqara-m3-eu"
+    ],
+    "note": "Aqara describes it as an edge hub with local automation storage; verifier should confirm wording."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "aqara-m3-eu"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee",
+      "thread",
+      "bluetooth",
+      "infrared"
+    ],
+    "sources": [
+      "aqara-m3-eu",
+      "csa-m3-zigbee"
+    ],
+    "note": "Built-in 360 degree IR blaster; Bluetooth child devices per CSA listing."
+  },
+  "matterBridge": {
+    "value": true,
+    "sources": [
+      "aqara-m3-dev",
+      "aqara-m3-faq"
+    ],
+    "note": "Aqara's developer docs list it as a Matter bridge for Apple Home, Alexa, Google Home, SmartThings and Home Assistant. Some Aqara Zigbee devices cannot be exposed to Matter. Only one AC device can be exposed to Matter."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "aqara-m3-faq"
+    ],
+    "note": "Aqara's FAQ says the hub acts as a Thread Border Router."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [
+      "aqara-m3-eu",
+      "aqara-m3-faq"
+    ],
+    "note": "Maker gives two figures: up to 127 Thread/Zigbee devices, but the FAQ says 64 direct child devices and 127 through routers or mesh extenders."
+  },
+  "summary": "Placeholder summary pending the editor: this record lists what the hub connects to and which ecosystems see those devices. Aqara Zigbee, Thread and Matter hub with an IR blaster, EU version.",
+  "sources": [
+    {
+      "id": "aqara-m3-eu",
+      "url": "https://eu.aqara.com/en-eu/products/aqara-smart-hub-m3",
+      "title": "Aqara Hub M3: Matter-Enabled Smart Home Hub (Zigbee, Thread, Wi-Fi)",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "aqara-m3-faq",
+      "url": "https://www.aqara.com/en/product/hub-m3-faq/",
+      "title": "Hub M3 - Faq",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "aqara-m3-dev",
+      "url": "https://opendoc.aqara.com/en/docs/AqaraDevice/Hub-M3.html",
+      "title": "Hub M3 - Aqara Developer Platform Documentation",
+      "publisher": "Aqara",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-m3-zigbee",
+      "url": "https://csa-iot.org/csa_product/hub-m3/",
+      "title": "Hub M3",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-aqara-platform",
+      "url": "https://csa-iot.org/csa_product/aqara-hub-platform/",
+      "title": "Aqara Hub Platform",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-aqara-blog",
+      "url": "https://www.home-assistant.io/blog/2024/09/03/aqara-joins-works-with-home-assistant/",
+      "title": "Aqara joins Works with Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-12",
+  "caveats": []
+}

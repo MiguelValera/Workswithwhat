@@ -1,0 +1,147 @@
+{
+  "category": "smart-hub",
+  "brand": "Nabu Casa",
+  "model": "Home Assistant Connect ZBT-1",
+  "name": "Connect ZBT-1",
+  "regions": [
+    "US",
+    "CA",
+    "EU",
+    "AU"
+  ],
+  "officialUrl": "https://www.home-assistant.io/connectzbt1/",
+  "radios": {
+    "value": [
+      "zigbee",
+      "thread"
+    ],
+    "sources": [
+      "ha-zbt1",
+      "nabu-zbt1-about"
+    ],
+    "note": "Silicon Labs EFR32MG21, 2.4 GHz. Runs Zigbee or Thread firmware, not both at once; no Bluetooth or Z-Wave."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No CSA listing sought or found; the dongle is a radio, not a Matter device."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software, which is not a hub; not confirmed."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software; not confirmed."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software; not confirmed."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not confirmed."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-zbt1",
+        "ha-thread"
+      ],
+      "note": "Official Home Assistant hardware; Zigbee via ZHA or Zigbee2MQTT, Thread via the OpenThread Border Router app."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "It is not standalone: it needs Home Assistant running on a host such as Home Assistant Green."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "ha-zbt1",
+      "nabu-zbt1-about"
+    ],
+    "note": "A USB radio; control runs on the Home Assistant host."
+  },
+  "hubType": {
+    "value": "usb-dongle",
+    "sources": [
+      "ha-zbt1",
+      "nabu-zbt1-about"
+    ],
+    "note": "Formerly Home Assistant SkyConnect; same hardware. Production ended; replaced by ZBT-2."
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee",
+      "thread"
+    ],
+    "sources": [
+      "ha-zbt1",
+      "nabu-zbt1-thread"
+    ],
+    "note": "One at a time. Multiprotocol firmware is no longer recommended."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Not a bridge; Matter devices on Thread are reached through Home Assistant's Matter integration."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "nabu-zbt1-thread",
+      "ha-thread"
+    ],
+    "note": "With Thread firmware and the OpenThread Border Router app; Zigbee control stops while it runs Thread."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "Not stated by the maker."
+  },
+  "summary": "Placeholder summary pending the editor: this record lists what the hub connects to and which ecosystems see those devices. USB radio stick for Home Assistant, Zigbee or Thread, one at a time.",
+  "sources": [
+    {
+      "id": "ha-zbt1",
+      "url": "https://www.home-assistant.io/connectzbt1/",
+      "title": "Home Assistant Connect ZBT-1",
+      "publisher": "Home Assistant",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "nabu-zbt1-about",
+      "url": "https://support.nabucasa.com/hc/en-us/articles/30878291112349-About-Home-Assistant-Connect-ZBT-1",
+      "title": "About Home Assistant Connect ZBT-1",
+      "publisher": "Nabu Casa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "nabu-zbt1-thread",
+      "url": "https://support.nabucasa.com/hc/en-us/articles/26124710072861-Switching-from-Zigbee-to-Thread-support-on-Home-Assistant-Connect-ZBT-1",
+      "title": "Switching from Zigbee to Thread support on Home Assistant Connect ZBT-1",
+      "publisher": "Nabu Casa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-thread",
+      "url": "https://www.home-assistant.io/integrations/thread/",
+      "title": "Thread - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-12",
+  "caveats": []
+}

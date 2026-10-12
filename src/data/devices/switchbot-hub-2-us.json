@@ -1,0 +1,157 @@
+{
+  "category": "smart-hub",
+  "brand": "SwitchBot",
+  "model": "Hub 2",
+  "name": "SwitchBot Hub 2 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://us.switch-bot.com/products/switchbot-hub-2",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "sb-hub2-us",
+      "csa-sb-hub2"
+    ],
+    "note": "2.4 GHz Wi-Fi only per SwitchBot; CSA lists Wi-Fi and Bluetooth. It also has an IR blaster."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "csa-sb-hub2"
+    ],
+    "note": "CSA lists Hub 2 from Woan Technology, Matter 1.3, Wi-Fi and Bluetooth. Search showed more than one Hub 2 certificate ID; the verifier should check which applies."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "sb-matter-devices",
+        "sb-hub2-us"
+      ],
+      "note": "Fullest support; the Hub 2 touch buttons and universal remote work only through Apple Home."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "sb-matter-thirdparty"
+      ]
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "sb-matter-thirdparty"
+      ]
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "sb-matter-thirdparty"
+      ],
+      "note": "Added through Partner devices > Matter in the SmartThings app."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "ha-switchbot-matter"
+      ],
+      "note": "Home Assistant's SwitchBot Matter page lists devices certified via Hub 2 or Hub 3."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Not applicable to the hub itself; not assessed."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from an official source."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "sb-hub2-us"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "bluetooth",
+      "infrared"
+    ],
+    "sources": [
+      "sb-hub2-us"
+    ],
+    "note": "Talks to SwitchBot Bluetooth devices and IR appliances."
+  },
+  "matterBridge": {
+    "value": true,
+    "sources": [
+      "sb-matter-devices",
+      "sb-matter-thirdparty"
+    ],
+    "note": "Bridges SwitchBot devices only (locks, curtains, blind tilts, meters, some sensors, plugs, lights, fans; vacuums on/off) and IR appliances (AC with modes, others on/off). Other brands cannot go through it."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "No Thread claim found."
+  },
+  "maxDevices": {
+    "value": 8,
+    "sources": [
+      "sb-matter-devices"
+    ],
+    "note": "Support pages say up to 8 Matter sub-devices; its own temperature and humidity sensor counts as one. Source for the number is from a search snippet of SwitchBot support pages; verifier should confirm."
+  },
+  "summary": "Placeholder summary pending the editor: this record lists what the hub connects to and which ecosystems see those devices. SwitchBot Hub 2 with IR blaster and Matter bridge for SwitchBot devices.",
+  "sources": [
+    {
+      "id": "sb-hub2-us",
+      "url": "https://us.switch-bot.com/products/switchbot-hub-2",
+      "title": "SwitchBot Hub 2",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sb-matter-devices",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/13282638111127-Which-Devices-Are-Compatible-With-Matter-via-SwitchBot-Hub-3-Hub-2-and-Hub-Mini-Matter-Enabled",
+      "title": "Which SwitchBot Devices Can Be Added to Apple Home As Sub-devices via Matter?",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "sb-matter-thirdparty",
+      "url": "https://support.switch-bot.com/hc/en-us/articles/35927139566231-How-to-Connect-SwitchBot-Matter-Bridge-Devices-to-Third-Party-Platforms",
+      "title": "How to Connect SwitchBot Matter Bridge Devices to Third-Party Platforms",
+      "publisher": "SwitchBot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-sb-hub2",
+      "url": "https://csa-iot.org/csa_product/hub-2/",
+      "title": "Hub 2",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-switchbot-matter",
+      "url": "https://www.home-assistant.io/integrations/switchbot_matter/",
+      "title": "SwitchBot Matter - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-12",
+  "caveats": []
+}
