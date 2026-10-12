@@ -105,10 +105,12 @@
     ],
     "note": "Roborock's support article on the Saros 10 dock lists auto-emptying of the onboard dustbin."
   },
-  "summary": "The Roborock Saros 10 is a vacuum-and-mop robot with retractable LiDAR and 22,000 Pa suction. Roborock lists it for the Matter firmware 02.32.44, so it can be added to Apple Home, Google Home and Alexa.",
+  "summary": "Roborock lists the Saros 10 for Matter firmware 02.32.44 (April 2025), so Apple Home and Google Home can add it over Matter, while Alexa works through the Roborock Plus skill. Hardware is a retractable LiDAR, 22,000 Pa suction, vibrating mops with hot-water mopping and a dock that empties the dustbin.",
   "caveats": [
-    "Matter features vary by ecosystem, as Roborock states.",
-    "Self-emptying dock is not confirmed on Roborock's pages."
+    "Wi-Fi is 2.4 GHz only; 5 GHz is not supported.",
+    "Matter needs firmware 02.32.44, and Roborock says Matter features vary by ecosystem.",
+    "The CSA listings we found for Roborock robot vacuums don't name the Saros 10, so Matter rests on Roborock's statement.",
+    "Home Assistant's official Roborock integration page doesn't name the Saros 10."
   ],
   "sources": [
     {

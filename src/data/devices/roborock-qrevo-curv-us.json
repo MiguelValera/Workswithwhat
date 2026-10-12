@@ -101,9 +101,12 @@
     ],
     "note": "Multifunctional Dock 3.0 empties the bin automatically."
   },
-  "summary": "Roborock lists the Qrevo Curv as a vacuum and mop with 18,500 Pa suction and a dock that empties the bin on its own. It works with Alexa and Google Home voice control and received Matter by firmware update in April 2025.",
+  "summary": "Apple Home reaches the Roborock Qrevo Curv through Matter, which Roborock added by firmware update (02.26.02) in April 2025. Google Home and Alexa are listed natively. The robot vacuums and mops, with LiDAR navigation, 18,500 Pa suction and a dock that empties the bin on its own.",
   "caveats": [
-    "Placeholder caveat: the editor will rewrite this."
+    "Wi-Fi is 2.4 GHz only; Roborock's support FAQ says 5 GHz is not supported.",
+    "Matter needs firmware 02.26.02, and Roborock says detailed settings stay in the Roborock app.",
+    "Roborock's own announcement is the only Matter source: the CSA certificates we saw don't name the Qrevo Curv.",
+    "Home Assistant's official Roborock integration doesn't list this model, so support isn't confirmed."
   ],
   "sources": [
     {

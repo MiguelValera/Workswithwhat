@@ -85,9 +85,11 @@
     ],
     "note": "Ecovacs UK calls it an auto-empty robot vacuum with a self-empty station."
   },
-  "summary": "Ecovacs sells the Deebot T30 Omni as a vacuum and mop with 11,000 Pa suction, laser navigation and an Omni station that empties the bin. Ecovacs lists Alexa and Google Assistant for the T30 family.",
+  "summary": "For the Ecovacs Deebot T30 Omni in the UK, Ecovacs's pages confirm the basics: it vacuums and mops, and the station empties the bin automatically. Voice assistants, Matter, Home Assistant, navigation type and suction are not confirmed for this model.",
   "caveats": [
-    "Placeholder caveat: the editor will rewrite this."
+    "Ecovacs UK pages disagree on suction (11,000 Pa on the shop page, 10,000 Pa in one passage of the product page), so we don't state a figure.",
+    "Ecovacs lists Alexa and Google Assistant on the T30 Pro Omni and T30S, but no page we saw names them for this model.",
+    "Home Assistant's Ecovacs integration works through your Ecovacs account and names no models, so T30 Omni support isn't confirmed."
   ],
   "sources": [
     {

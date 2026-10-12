@@ -91,9 +91,11 @@
     ],
     "note": "The base empties the bin into a 3 L dust bag, up to 60 days."
   },
-  "summary": "Dreame lists the L10s Ultra as a vacuum and mop with 5,300 Pa suction and a base that empties the bin into a dust bag. It supports Alexa and Google Assistant voice control. No Matter support was found.",
+  "summary": "The Dreame L10s Ultra is a vacuum and mop with 5,300 Pa suction, two spinning mops and a base that empties the bin into a 3 L dust bag for up to 60 days. Dreame lists Alexa and Google Assistant voice control. It navigates with dual lasers plus an RGB camera, and no Matter support was found.",
   "caveats": [
-    "Placeholder caveat: the editor will rewrite this."
+    "Dreame says the 5,300 Pa figure comes from its own lab tests.",
+    "One Dreame page mentions Siri through the Dreamehome app; that is voice control, not confirmed Apple Home support.",
+    "Home Assistant has no official page for this model; only a community HACS integration lists it."
   ],
   "sources": [
     {

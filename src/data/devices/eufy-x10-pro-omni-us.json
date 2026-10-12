@@ -92,9 +92,12 @@
     ],
     "note": "The Omni station empties the bin into a 2.5 L dust bag."
   },
-  "summary": "The eufy X10 Pro Omni is a vacuum and mop with 8,000 Pa suction, laser navigation and an Omni station that empties the bin. eufy lists Alexa and Google Home voice control. The US page marks it as no longer available.",
+  "summary": "eufy's US page marks the X10 Pro Omni as no longer available, so this matters mostly if you already own one or find it second-hand. It works with Google Home and Alexa, vacuums and mops with 8,000 Pa suction and laser navigation, and its Omni station empties the bin into a 2.5 L dust bag.",
   "caveats": [
-    "Placeholder caveat: the editor will rewrite this."
+    "No longer sold on eufy's US page.",
+    "Setup needs the 2.4 GHz band; eufy's manual says to turn off 5 GHz on dual-band routers.",
+    "A third-party directory lists Matter over Wi-Fi, but no eufy page or CSA listing backs it, so Apple Home isn't confirmed.",
+    "Home Assistant has only community integrations for this model, no official one."
   ],
   "sources": [
     {

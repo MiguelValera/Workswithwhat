@@ -101,10 +101,12 @@
     ],
     "note": "SwitchBot's pages describe a 4 L auto-empty dust collection base with the K10+ Pro."
   },
-  "summary": "The SwitchBot K10+ Pro is a compact robot vacuum with LiDAR, 3,000 Pa suction and a dust-collection base. SwitchBot's EU page lists Alexa, Google Home and Siri, with Matter available through a SwitchBot Hub 2.",
+  "summary": "Apple Home only works with the SwitchBot K10+ Pro through a SwitchBot Hub 2, which provides the Matter bridge. Google Home and Alexa are listed directly on SwitchBot's EU page. The robot is compact, with LiDAR, 3,000 Pa suction and a 4 L auto-empty base, and it vacuums and mops, though not at the same time.",
   "caveats": [
-    "Matter needs a SwitchBot Hub 2 on the plain K10+ Pro; the direct route is documented for the Combo.",
-    "Mopping is not confirmed by SwitchBot pages seen."
+    "Matter on the plain K10+ Pro needs a SwitchBot Hub 2; the hub-free route (iOS 18.4.1) is documented only for the K10+ Pro Combo.",
+    "Wi-Fi is 2.4 GHz only; SwitchBot lists no 5 GHz support.",
+    "SwitchBot says it can't vacuum and mop at the same time.",
+    "The 3,000 Pa figure is the top of four modes (600, 1,100, 1,600, 3,000) from SwitchBot's US page."
   ],
   "sources": [
     {

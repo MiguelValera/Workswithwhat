@@ -90,10 +90,11 @@
     ],
     "note": "The Spain spec page lists the station's power draw while emptying dust and a disposable bag in the box; this is the X20+ bundle (the plain X20 has no such base)."
   },
-  "summary": "The Xiaomi Robot Vacuum X20+ is a vacuum-and-mop robot with LDS laser navigation, 6000 Pa suction and an all-in-one station that empties the dust bin by itself. Xiaomi lists voice control with Alexa and Google Assistant.",
+  "summary": "Xiaomi lists Alexa and Google Assistant voice control for the Robot Vacuum X20+, and control runs through the Xiaomi Home app. The EU model is a vacuum and mop with LDS laser navigation, 6000 Pa suction and a station that empties the bin. Matter, Apple Home and SmartThings aren't confirmed.",
   "caveats": [
-    "Matter, Apple Home and SmartThings support are not confirmed by Xiaomi.",
-    "Voice assistants are not available in every language and country."
+    "Xiaomi says voice control isn't available in every language and country, and the Spain page wording isn't confirmed.",
+    "The plain X20 has no self-emptying base; the station comes with the X20+ bundle.",
+    "Home Assistant's Xiaomi Miio integration covers Xiaomi vacuums in general, but no official page names the X20+."
   ],
   "sources": [
     {

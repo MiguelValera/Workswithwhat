@@ -94,9 +94,11 @@
     ],
     "note": "Clean Base Auto-Fill dock empties debris for up to 60 days and refills liquid."
   },
-  "summary": "iRobot's Roomba Combo j9+ vacuums and mops and comes with a dock that empties the bin and refills the tank. It pairs with Alexa, Google Assistant and Siri voice control. No Matter support was found.",
+  "summary": "iRobot says the Roomba Combo j9+ pairs with Alexa and Google Assistant, and no Matter support turned up. It vacuums and mops with camera-based PrecisionVision navigation, and the Clean Base Auto-Fill dock empties debris for up to 60 days and refills the liquid.",
   "caveats": [
-    "Placeholder caveat: the editor will rewrite this."
+    "iRobot mentions Siri, but that is voice control, not a Home app accessory, so Apple Home isn't confirmed.",
+    "No Matter statement exists on iRobot's pages or in the CSA listing; later iRobot Matter rollouts named other models.",
+    "The official Home Assistant Roomba integration doesn't list the j9+ and says newer x05 Wi-Fi models don't work."
   ],
   "sources": [
     {
