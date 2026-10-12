@@ -19,9 +19,11 @@ interface Props {
   ogType?: 'website' | 'article';
   /** false for pages that exist in one language only (the 404 page) */
   alternates?: boolean;
+  /** pages that must stay out of search results (404): noindex and no canonical */
+  noindex?: boolean;
 }
 
-const { title, description, crumbs = [], jsonLd = [], ogType = 'website', alternates = true } = Astro.props;
+const { title, description, crumbs = [], jsonLd = [], ogType = 'website', alternates = true, noindex = false } = Astro.props;
 // Pages pass English paths in crumbs; this layout localizes every link it builds.
 const lang = langOf(Astro.url.pathname);
 const t = ui(lang);
@@ -85,7 +87,7 @@ if (crumbs.length) {
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
     {langLinks.map(({ l, href }) => <link rel="alternate" hreflang={HTML_LANG[l]} href={new URL(href, site).href} />)}
     {langLinks.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(here, site).href} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />

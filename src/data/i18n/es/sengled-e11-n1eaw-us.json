@@ -9,14 +9,14 @@
   ],
   "notes": {
     "radios": "Solo Zigbee; Sengled vende esta bombilla como «Hub Required».",
-    "matter": "Sengled la vende como una bombilla Zigbee que requiere hub y no menciona Matter. No encontramos ninguna declaración explícita ni registro de la CSA en ningún sentido.",
+    "matter": "Sengled la vende como una bombilla Zigbee que requiere hub y no menciona Matter. No encontramos ninguna declaración explícita ni registro de la CSA que lo confirme o lo descarte.",
     "hubRequired": "En las bombillas, esto significa necesitar un puente o hub para el control básico desde la app. Esta bombilla Zigbee necesita un hub de Sengled, un hub SmartThings o un Echo con Zigbee.",
     "localControl": "Ninguna fuente oficial describe el control local. La vía de la app de Sengled depende de la nube de Sengled; los hubs Zigbee de terceros pueden variar.",
     "colorType": "16 millones de colores y blanco regulable.",
     "lumens": "800 lm según la ficha del kit de inicio de Sengled para la misma bombilla Zigbee Color A19/E26; la página de la bombilla suelta indica 8,6 W (equivalente a 60 W) pero no da la cifra de lúmenes.",
     "compatibility.apple_home": "Sengled no incluye Apple Home para esta bombilla; ninguna fuente oficial lo confirma ni lo descarta.",
     "compatibility.google_home": "La guía de Sengled vincula la cuenta de Sengled Home (el hub y sus bombillas) con Google Home, así que depende de la nube de Sengled. Los altavoces Google Home no son hubs Zigbee.",
-    "compatibility.alexa": "Sengled incluye los modelos de Echo con hub Zigbee integrado (Echo Plus, Echo Show 2, Echo Studio). Echo y Echo Dot no son hubs. Según se ha informado, la vía de la skill de Alexa de Sengled se retiró en 2025 (ver advertencias).",
+    "compatibility.alexa": "Sengled recoge los modelos de Echo con hub Zigbee integrado (Echo Plus, Echo Show 2, Echo Studio). Echo y Echo Dot no son hubs. Según se ha informado, la vía de la skill de Alexa de Sengled se retiró en 2025 (ver advertencias).",
     "compatibility.smartthings": "Sengled da el hub SmartThings como compatible y documenta el emparejamiento.",
     "compatibility.home_assistant": "Ninguna fuente oficial de Home Assistant ni de Sengled nombra esta bombilla; un coordinador Zigbee genérico probablemente funcione, pero no está confirmado."
   },

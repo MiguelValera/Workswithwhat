@@ -98,12 +98,14 @@ After any agent run: `npm run validate` must pass.
 Read this first if you are picking the project up.
 
 ### What is live on https://workswithwhat.com
+- **Two languages:** English at the root and Spanish (Spain) under `/es/`, page for page, with hreflang and an EN · ES switch.
 - **113 verified devices:** 41 smart plugs (US, EU, UK), 15 smart bulbs, 18 smart locks, 10 smart thermostats (US, EU), 10 smart sensors (EU), 9 smart cameras and doorbells (US, EU) and 10 smart switches and dimmers (US, EU), each with sourced compatibility for Apple Home, Google Home, Alexa, SmartThings and Home Assistant.
 - **Pages:**
   - `/smart-plugs/`, `/smart-bulbs/`, `/smart-locks/`, `/smart-thermostats/`, `/smart-sensors/`, `/smart-cameras/` and `/smart-switches/`: comparison charts.
   - A page per device.
   - `/works-with/<ecosystem>/` and `/works-with/matter/`.
   - `/methodology/`, `/legal/` and `/privacy/`.
+- **Regions:** every list split by market, region pages under `/us/`, `/eu/`, `/uk/` (and `/es/us/` …), a region switch in the header.
 - **For AI assistants:** `/llms.txt`, `/llms-full.txt`, `/api/devices.json` and `/api/<category>.json`.
 
 ### Unfinished work
@@ -152,6 +154,8 @@ Read this first if you are picking the project up.
 - Verify the domain in GitHub Pages settings, and add a ruleset protecting `main`.
 - Fill in `src/site.config.ts` with operator details.
 - Post the community texts from `docs/launch-kit.md` (Reddit, Home Assistant forum).
+- **Cloudflare Cache Rule** (optional, speeds up repeat visits): cache `/_astro/*` at the edge and in browsers for a year; those files are content-hashed, so a new deploy never serves stale CSS.
+- Post the Spanish community texts from `docs/launch-kit.md` and request indexing of `/es/` in Search Console.
 - **Optional:** Cloudflare Web Analytics, which is cookieless. It needs its JS token. To add it, allow `static.cloudflareinsights.com` (script) and `cloudflareinsights.com` (connect) in the CSP, mention it in `/privacy/`, and change "no trackers" in the footer.
 
 ### Monetisation plan (agreed direction, not implemented)

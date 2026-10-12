@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "El ecobee Smart Thermostat Premium se conecta por wifi sin hub y ecobee lo lista para Apple HomeKit, Alexa, Google Assistant y SmartThings. Home Assistant tiene una integración oficial de ecobee, y Alexa integrado es una opción en el propio termostato. Controla la mayoría de los sistemas de 24 V, bombas de calor incluidas, y trae en la caja el Power Extender Kit para casas sin cable C. Matter no está confirmado.",
+  "summary": "El ecobee Smart Thermostat Premium se conecta por wifi sin hub y ecobee lo recoge como compatible con Apple HomeKit, Alexa, Google Assistant y SmartThings. Home Assistant tiene una integración oficial de ecobee, y Alexa integrado es una opción en el propio termostato. Controla la mayoría de los sistemas de 24 V, bombas de calor incluidas, y trae en la caja el Power Extender Kit para casas sin cable C. Matter no está confirmado.",
   "caveats": [
     "Sin cable C, el Power Extender Kit necesita un cable libre; no funciona con sistemas de doble transformador, de milivoltios ni de alto voltaje."
   ],

@@ -62,6 +62,9 @@ check /smart-plugs/ 200
 check /smart-plugs/eve-energy-matter-us/ 200
 check /works-with/apple-home/ 200
 check /methodology/ 200
+check /es/ 200
+check /es/enchufes-inteligentes/ 200
+check /es/eu/enchufes-inteligentes/ 200
 check /sitemap-index.xml 200
 check /robots.txt 200
 check /.well-known/security.txt 200

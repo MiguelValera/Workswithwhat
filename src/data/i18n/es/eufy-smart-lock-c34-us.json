@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "La C34 de eufy se une a Apple Home y SmartThings mediante Matter sobre Thread, mientras que Alexa y Google Home se conectan vinculando tu cuenta de eufy. Es un cerrojo con teclado para puertas estadounidenses estándar, con wifi integrado y ocho pilas AA que eufy da por buenas hasta 8 meses. Home Assistant no está confirmado.",
+  "summary": "La C34 de eufy se une a Apple Home y SmartThings mediante Matter sobre Thread, mientras que Alexa y Google Home se conectan vinculando tu cuenta de eufy. Es un cerrojo con teclado para puertas estadounidenses estándar, con wifi integrado y ocho pilas AA que según eufy duran hasta 8 meses. Home Assistant no está confirmado.",
   "caveats": [
     "El control con Matter necesita un router de borde Thread, como un HomePod mini, un Apple TV 4K o un hub Nest, Echo o SmartThings compatible con Matter.",
     "El control remoto con Apple Home necesita un centro de la casa, aunque iOS 18 pueda añadir la cerradura sin él.",

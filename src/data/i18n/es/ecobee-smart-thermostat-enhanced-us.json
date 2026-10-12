@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Apple HomeKit, Alexa, Google Assistant y SmartThings figuran en la lista de ecobee para el Smart Thermostat Enhanced, un termostato de pared estadounidense que se conecta por wifi. Controla la mayoría de los sistemas de 24 V, incluidas las bombas de calor, y el Power Extender Kit que incluye permite instalarlo en la mayoría de las casas sin cable C. Home Assistant lo admite mediante la integración oficial de ecobee.",
+  "summary": "Apple HomeKit, Alexa, Google Assistant y SmartThings figuran en la lista de compatibilidad de ecobee para el Smart Thermostat Enhanced, un termostato de pared estadounidense que se conecta por wifi. Controla la mayoría de los sistemas de 24 V, incluidas las bombas de calor, y el Power Extender Kit que incluye permite instalarlo en la mayoría de las casas sin cable C. Home Assistant lo admite mediante la integración oficial de ecobee.",
   "caveats": [
     "Sin cable C, el Power Extender Kit necesita un cable libre y no es compatible con sistemas de doble transformador, de milivoltios ni de alto voltaje.",
     "La compatibilidad con Matter no está confirmada."
