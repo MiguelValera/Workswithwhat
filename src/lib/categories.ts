@@ -75,6 +75,11 @@ const SWITCH_LABELS = labels({
   module: ['In-wall module', 'Módulo empotrable'],
 });
 
+const CLEANING_LABELS = labels({
+  vacuum: ['Vacuum', 'Aspira'],
+  'vacuum-mop': ['Vacuum and mop', 'Aspira y friega'],
+});
+
 export const CATEGORIES: Category[] = [
   {
     key: 'smart-plug',
@@ -177,6 +182,21 @@ export const CATEGORIES: Category[] = [
       { key: 'dimmer', label: 'Dimmer', labelEs: 'Regulable', format: yesNo },
       { key: 'neutralRequired', label: 'Needs neutral wire', labelEs: 'Necesita neutro', format: yesNo },
       { key: 'gangs', label: 'Gangs / channels', labelEs: 'Teclas / canales', format: String },
+    ],
+  },
+  {
+    key: 'robot-vacuum',
+    es: { label: 'Robots aspiradores', navLabel: 'Robots', singular: 'robot aspirador', plural: 'robots aspiradores', gender: 'm' },
+    path: 'robot-vacuums',
+    label: 'Robot vacuums',
+    navLabel: 'Vacuums',
+    singular: 'robot vacuum',
+    plural: 'robot vacuums',
+    specs: [
+      { key: 'cleaning', label: 'Cleaning', labelEs: 'Limpieza', format: CLEANING_LABELS },
+      { key: 'navigation', label: 'Navigation', labelEs: 'Navegación', format: String },
+      { key: 'suctionPa', label: 'Suction', labelEs: 'Succión', format: (v, lang) => `${formatNumber(Number(v), lang)} Pa` },
+      { key: 'selfEmptying', label: 'Self-emptying dock', labelEs: 'Base de autovaciado', format: yesNo },
     ],
   },
 ];

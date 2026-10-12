@@ -106,6 +106,8 @@ export const THERMOSTAT_TYPES = ['wall', 'radiator-valve'] as const;
 export const SWITCH_FORMS = ['wall-switch', 'module'] as const;
 // indoor / outdoor = standalone cameras; doorbell = video doorbell; floodlight = camera with built-in lights
 export const CAMERA_TYPES = ['indoor', 'outdoor', 'doorbell', 'floodlight'] as const;
+// vacuum = vacuums only; vacuum-mop = vacuums and mops (pad or roller)
+export const CLEANING_TYPES = ['vacuum', 'vacuum-mop'] as const;
 // what a sensor reports; presence = mmWave-style presence that sees people who sit still
 export const SENSES = ['contact', 'motion', 'presence', 'temperature', 'humidity', 'leak', 'light', 'vibration', 'air-quality'] as const;
 
@@ -193,7 +195,21 @@ const switchSchema = z
   })
   .strict();
 
-export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor', 'smart-camera', 'smart-switch'] as const;
+const vacuumSchema = z
+  .object({
+    ...baseShape,
+    category: z.literal('robot-vacuum'),
+    cleaning: fact(z.enum(CLEANING_TYPES)),
+    // e.g. "LiDAR", "Camera (vSLAM)", "LiDAR and camera"; the maker's wording
+    navigation: fact(z.string().min(2).max(40)),
+    // suction as the maker states it, in pascals
+    suctionPa: fact(z.number().int().positive()),
+    // the included dock empties the bin by itself
+    selfEmptying: fact(z.boolean()),
+  })
+  .strict();
+
+export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor', 'smart-camera', 'smart-switch', 'robot-vacuum'] as const;
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const COMMON_FACTS = ['radios', 'hubRequired', 'localControl'] as const;
@@ -205,12 +221,13 @@ export const CATEGORY_FACTS = {
   'smart-sensor': ['senses', 'power'],
   'smart-camera': ['cameraType', 'power', 'localStorage', 'subscription'],
   'smart-switch': ['switchForm', 'dimmer', 'neutralRequired', 'gangs'],
+  'robot-vacuum': ['cleaning', 'navigation', 'suctionPa', 'selfEmptying'],
 } as const satisfies Record<CategoryKey, readonly string[]>;
 
 type FactValue = { value: unknown; sources: string[] };
 
 export const deviceSchema = z
-  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema, cameraSchema, switchSchema])
+  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema, cameraSchema, switchSchema, vacuumSchema])
   .superRefine((d, ctx) => {
     const ids = d.sources.map((s) => s.id);
     const known = new Set(ids);

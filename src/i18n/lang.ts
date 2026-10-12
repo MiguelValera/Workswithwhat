@@ -21,6 +21,7 @@ const SEGMENTS_ES: Record<string, string> = {
   'smart-sensors': 'sensores-inteligentes',
   'smart-cameras': 'camaras-y-timbres',
   'smart-switches': 'interruptores-inteligentes',
+  'robot-vacuums': 'robots-aspiradores',
   'works-with': 'compatible-con',
   methodology: 'metodologia',
   legal: 'aviso-legal',
