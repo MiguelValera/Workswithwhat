@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Según iRobot, el Roomba 205 DustCompactor Combo funciona con dispositivos compatibles con Alexa y Google Assistant; también menciona Siri, aunque es solo control por voz. Aspira, friega o hace ambas cosas, y crea mapas con ClearView LiDAR (hasta 3 mapas). No tiene base de autovaciado: compacta la suciedad en el propio robot, y iRobot dice que eso dura hasta 60 días. No apareció ninguna compatibilidad con Matter.",
+  "caveats": [
+    "iRobot menciona Siri, pero es control por voz, no un accesorio de la app Casa, así que Apple Home no está confirmado.",
+    "Ninguna página de iRobot menciona Matter, y no se encontró ningún registro de la CSA.",
+    "La integración Roomba de Home Assistant dice que los modelos wifi x05 más recientes no funcionan; nombra el 105, el 405 y el 505, no el 205."
+  ],
+  "notes": {
+    "radios": "La página de iRobot menciona la app Roomba Home y los asistentes de voz, pero no indica wifi ni su banda.",
+    "matter": "Ni la página de iRobot ni su hoja de datos básicos mencionan Matter, y no se encontró ningún registro de la CSA.",
+    "hubRequired": "Se entrega con una base de carga estándar, que no es un hub.",
+    "localControl": "No se encontró ninguna declaración del fabricante sobre control solo local.",
+    "cleaning": "Solo aspirar, solo fregar o ambas cosas, con una mopa de microfibra lavable.",
+    "navigation": "Mapea la casa y guarda hasta 3 mapas.",
+    "suctionPa": "iRobot indica la succión solo como comparación con la serie Roomba 600, no en pascales.",
+    "selfEmptying": "Sin base de autovaciado: el robot compacta la suciedad en su interior, lo que según iRobot dura hasta 60 días, y se entrega con una base de carga estándar.",
+    "compatibility.apple_home": "iRobot dice que funciona con dispositivos compatibles con Siri; eso es control por voz, no un accesorio de la app Casa. La compatibilidad con Apple Home no está confirmada.",
+    "compatibility.google_home": "iRobot dice que funciona con dispositivos compatibles con Google Assistant.",
+    "compatibility.alexa": "iRobot dice que funciona con dispositivos compatibles con Alexa.",
+    "compatibility.smartthings": "No se encontró ninguna página de iRobot ni de Samsung sobre SmartThings.",
+    "compatibility.home_assistant": "La integración oficial de Roomba dice que no funciona con los modelos wifi x05 más recientes, y nombra el 105, el 405 y el 505. No nombra el 205, así que la compatibilidad no está confirmada."
+  }
+}

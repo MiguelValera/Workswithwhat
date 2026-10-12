@@ -1,0 +1,160 @@
+{
+  "category": "smart-lock",
+  "brand": "Nuki",
+  "model": "Smart Lock Ultra",
+  "name": "Nuki Smart Lock Ultra (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://nuki.io/en-at/products/smart-lock-ultra",
+  "radios": {
+    "value": [
+      "bluetooth",
+      "wifi",
+      "thread"
+    ],
+    "sources": [
+      "nuki-ultra-datasheet",
+      "nuki-generations",
+      "csa-nuki-ultra"
+    ],
+    "note": "Nuki's Ultra datasheet lists Bluetooth Low Energy, 2.4 GHz Wi-Fi and Thread (IEEE 802.15.4). The CSA listing names Thread and Bluetooth as Matter transports."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "thread",
+    "sources": [
+      "csa-nuki-ultra",
+      "nuki-ultra"
+    ],
+    "note": "CSA lists 'Nuki Smart Lock Ultra' (hardware 11.12, firmware 1.4.1, certified 2025-11-18) with Thread and Bluetooth transport."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "nuki-matter-help",
+        "csa-nuki-ultra"
+      ],
+      "note": "Matter over Thread. Nuki's Matter help page covers the Ultra and says you need a hub that supports Matter via Thread; a Wi-Fi-only Matter hub will not work."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": [
+        "nuki-matter-help",
+        "csa-nuki-ultra"
+      ],
+      "note": "Matter over Thread, which needs a Thread border router."
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": [
+        "nuki-matter-help",
+        "csa-nuki-ultra"
+      ],
+      "note": "Matter over Thread, which needs a Thread border router."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "nuki-matter-help",
+        "csa-nuki-ultra"
+      ],
+      "note": "Nuki's Matter help page names Samsung SmartThings hubs for Matter via Thread; a Thread border router is needed."
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": [
+        "nuki-matter-help",
+        "csa-nuki-ultra"
+      ],
+      "note": "Nuki's Matter help page lists Home Assistant Connect ZBT-1 as a hub for Matter via Thread. Home Assistant needs a Thread border router for this."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "nuki-ultra",
+      "nuki-generations"
+    ],
+    "note": "Built-in Wi-Fi gives remote access without a Nuki Bridge. Matter control needs a Thread border router."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Nuki source describes offline or local-only control explicitly."
+  },
+  "lockFit": {
+    "value": "cylinder",
+    "sources": [
+      "nuki-ultra",
+      "nuki-generations"
+    ],
+    "note": "Ships with an integrated Universal Cylinder (58 mm) that replaces your existing cylinder; Nuki's comparison table says a cylinder change is required."
+  },
+  "keypad": {
+    "value": false,
+    "sources": [
+      "nuki-ultra"
+    ],
+    "note": "No keypad on the lock. Nuki lists Keypad, Keypad 2 and Keypad 2 Pro as separate accessories."
+  },
+  "power": {
+    "value": "Built-in rechargeable battery",
+    "sources": [
+      "nuki-ultra"
+    ],
+    "note": "Recharges in about 2 hours, on or off the door; Nuki warns when it drops below 20%."
+  },
+  "summary": "Thread-based Matter is how the Nuki Smart Lock Ultra reaches Apple Home, Google Home, Alexa, SmartThings and Home Assistant, and the lock is CSA-certified. Wi-Fi is built in, so remote access needs no Nuki Bridge. It's a cylinder lock: the 58 mm Universal Cylinder replaces yours. The battery is built in and recharges in about 2 hours, and there's no keypad on the lock itself.",
+  "caveats": [
+    "Matter needs a Thread border router; Nuki says a Wi-Fi-only Matter hub will not work.",
+    "Installation means swapping your existing cylinder for the integrated one.",
+    "Keypads are separate accessories."
+  ],
+  "sources": [
+    {
+      "id": "nuki-ultra",
+      "url": "https://nuki.io/en-at/products/smart-lock-ultra",
+      "title": "Three times faster",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "nuki-generations",
+      "url": "https://help.nuki.io/hc/en-001/articles/33659819862289-Smart-Lock-Generations",
+      "title": "Smart Lock Generations",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "nuki-ultra-datasheet",
+      "url": "https://pro.nuki.io/wp-content/uploads/2024/11/Ultra-Datasheet-10-2024_DE.pdf",
+      "title": "Smart Lock Ultra Datenblatt",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "nuki-matter-help",
+      "url": "https://help.nuki.io/hc/en-001/articles/14596875392017",
+      "title": "Setting up your Matter integration",
+      "publisher": "Nuki",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-nuki-ultra",
+      "url": "https://csa-iot.org/csa_product/nuki-smart-lock-ultra/",
+      "title": "Nuki Smart Lock Ultra - CSA-IOT",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-12",
+  "updatedAt": "2026-10-12"
+}
