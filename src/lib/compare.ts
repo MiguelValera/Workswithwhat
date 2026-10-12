@@ -36,6 +36,7 @@ const KIND_FACT: Partial<Record<CategoryKey, string>> = {
   'smart-switch': 'switchForm',
   'robot-vacuum': 'cleaning',
   'smart-hub': 'hubType',
+  'light-strip': 'colorType',
 };
 
 export interface Comparison {

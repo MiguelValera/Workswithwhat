@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El Govee H618A funciona con Alexa y, a través de tu red local, con Home Assistant mediante la integración oficial Govee Light Local. Es una tira RGBIC de 5 m (16,4 ft) que se conecta por wifi y Bluetooth, sin hub. La tabla de especificaciones de Govee no indica Matter, y Apple Home, Google Home y SmartThings están sin confirmar.",
+  "caveats": [
+    "Govee no indica compatibilidad con Matter para el H618A.",
+    "El control local de Home Assistant necesita que actives el control LAN en la app Govee.",
+    "Las páginas de Govee consultadas no confirman Google Home ni Apple Home.",
+    "La tabla de especificaciones de Govee dice que la tira no se puede cortar."
+  ],
+  "notes": {
+    "radios": "La tabla de especificaciones de Govee indica «Bluetooth+WiFi» como método de control; las páginas consultadas no dicen la banda de wifi.",
+    "matter": "La tabla de especificaciones de las tiras RGBIC de Govee indica Matter como «NO» para el H618A.",
+    "hubRequired": "Se controla desde la app Govee por wifi o Bluetooth; no se menciona ningún hub.",
+    "localControl": "La integración Govee Light Local de Home Assistant se comunica con la tira por la red local (push local); el control LAN debe estar activado en la app Govee.",
+    "colorType": "Figura como RGBIC.",
+    "lengthM": "Govee indica un solo rollo de 5 m (16,4 ft). La tabla de especificaciones dice que no se puede cortar.",
+    "multiZone": "RGBIC significa varios colores a la vez a lo largo de la tira.",
+    "power": "La tabla de especificaciones de Govee indica un adaptador de corriente de 24 V / 0,5 A.",
+    "compatibility.apple_home": "No figura en las páginas de Govee consultadas.",
+    "compatibility.google_home": "La tabla de especificaciones de Govee no tiene columna de Google, y las páginas de Govee consultadas no indican compatibilidad con Google para el H618A.",
+    "compatibility.alexa": "La tabla de especificaciones de las tiras RGBIC de Govee indica Alexa como «YES» para el H618A, mediante la skill propia de Govee.",
+    "compatibility.smartthings": "No figura en las páginas de Govee consultadas.",
+    "compatibility.home_assistant": "El H618A está en la lista de compatibles de la integración oficial Govee Light Local de Home Assistant, que necesita el control LAN activado en la tira."
+  },
+  "values": {
+    "power": "Adaptador de corriente (24 V)"
+  }
+}

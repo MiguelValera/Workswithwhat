@@ -10,7 +10,7 @@
     "radios": "El enchufe usa DECT ULE con una FRITZ!Box (la ficha actual de AVM indica DECT-ULE), que no está en la lista de radios, así que no se registra ninguna. La dirección de la tienda de AVM para el FRITZ!DECT 200 abre ahora la página del FRITZ!Smart Energy 200.",
     "matter": "Las páginas de AVM no dicen nada sobre Matter y no hemos encontrado ningún registro de la CSA.",
     "hubRequired": "Necesita una FRITZ!Box con base DECT; la página actual de AVM indica FRITZ!OS 6.83 o posterior, y que no sirve la FRITZ!Box 7412. La FRITZ!Box es el router, así que no se vende un puente aparte.",
-    "localControl": "Home Assistant consulta la FRITZ!Box en local, pero AVM dice que, si se cae internet, la conmutación automática queda limitada, las rutinas se detienen y la FRITZ!App Smart Home no puede conectarse. AVM no indica qué funciona sin conexión.",
+    "localControl": "Home Assistant consulta la FRITZ!Box en local, pero AVM dice que, si se cae internet, la conmutación automática queda limitada, las rutinas se detienen y la FRITZ!App Smart Home no puede conectarse. El artículo de AVM (archivado bajo el DECT 200, con título del DECT 500) no dice qué funciona sin conexión.",
     "energyMonitoring": "Muestra la potencia y la tensión actuales y registra el consumo por hora, día, mes y año.",
     "maxLoadWatts": "La base de conocimiento de AVM da 2300 W para cargas resistivas y 2300 VA para cargas inductivas a 230 V; la página actual del producto indica hasta 2300 W.",
     "compatibility.apple_home": "Las páginas de AVM no mencionan Apple Home ni HomeKit.",

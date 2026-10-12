@@ -47,7 +47,8 @@ for (const file of files) {
 // catching them here is free and immediate.
 const BANNED = ['seamless', 'elevate', "in today's", 'game-changer', 'robust', 'unlock', 'effortless', 'delve', "whether you're", 'look no further'];
 const WEAK = new Set(['retailer', 'review']);
-const FACTS = ['radios', 'hubRequired', 'localControl', 'energyMonitoring', 'maxLoadWatts', 'colorType', 'lumens', 'bulbBase', 'lockFit', 'keypad', 'power', 'thermostatType', 'systems', 'senses', 'cameraType', 'localStorage', 'subscription', 'switchForm', 'dimmer', 'neutralRequired', 'gangs', 'cleaning', 'navigation', 'suctionPa', 'selfEmptying', 'hubType', 'deviceProtocols', 'matterBridge', 'threadBorderRouter', 'maxDevices'];
+// every fact field, from the schema, so a new category's facts are checked too
+const FACTS = [...new Set(['radios', 'hubRequired', 'localControl', ...Object.values(CATEGORY_FACTS).flat()])];
 const openings = new Map();
 
 for (const { file, d } of records) {

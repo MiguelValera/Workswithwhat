@@ -1,0 +1,154 @@
+{
+  "category": "light-strip",
+  "brand": "Govee",
+  "model": "H618A (RGBIC Basic Wi-Fi + Bluetooth LED Strip Lights, 16.4 ft)",
+  "name": "Govee RGBIC Basic LED Strip H618A (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://us.govee.com/collections/strip-lights/products/govee-rgbic-basic-wi-fi-bluetooth-led-strip-lights",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "govee-app-mall-h618a",
+      "govee-spec-faq"
+    ],
+    "note": "Govee's specs table gives 'Bluetooth+WiFi' as the control method; the Wi-Fi band isn't stated on the pages found."
+  },
+  "matter": {
+    "certified": false,
+    "sources": [
+      "govee-spec-faq"
+    ],
+    "note": "Govee's RGBIC strip specs table lists Matter as 'NO' for H618A."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [
+        "govee-spec-faq"
+      ],
+      "note": "Not stated on the Govee pages found."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [
+        "govee-spec-faq"
+      ],
+      "note": "Govee's specs table has no Google column, and the Govee pages found don't state Google support for H618A."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "govee-spec-faq"
+      ],
+      "note": "Govee's RGBIC strip specs table lists Alexa as 'YES' for H618A, through Govee's own skill."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [
+        "govee-spec-faq"
+      ],
+      "note": "Not stated on the Govee pages found."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-govee-local"
+      ],
+      "note": "H618A is on the supported list of Home Assistant's official Govee Light Local integration, which needs LAN control enabled on the strip."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "govee-app-mall-h618a",
+      "govee-spec-faq"
+    ],
+    "note": "Controlled from the Govee app over Wi-Fi or Bluetooth; no hub is mentioned."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "ha-govee-local"
+    ],
+    "note": "Home Assistant's Govee Light Local integration talks to the strip over the LAN (local push); LAN control must be switched on in the Govee app."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": [
+      "govee-app-mall-h618a"
+    ],
+    "note": "Listed as RGBIC."
+  },
+  "lengthM": {
+    "value": 5,
+    "sources": [
+      "govee-app-mall-h618a",
+      "govee-spec-faq"
+    ],
+    "note": "Govee lists one 5 m roll (16.4 ft). The specs table says it can't be cut."
+  },
+  "multiZone": {
+    "value": true,
+    "sources": [
+      "govee-app-mall-h618a",
+      "govee-us-rgbic-basic"
+    ],
+    "note": "RGBIC means several colours at once along the strip."
+  },
+  "power": {
+    "value": "Mains adapter (24 V)",
+    "sources": [
+      "govee-spec-faq"
+    ],
+    "note": "Govee's specs table lists a power adapter at 24 V / 0.5 A."
+  },
+  "summary": "Govee H618A works with Alexa, and with Home Assistant over your local network through the official Govee Light Local integration. It's a 5 m (16.4 ft) RGBIC strip that connects by Wi-Fi and Bluetooth, no hub needed. Govee's specs table lists no Matter, and Apple Home, Google Home and SmartThings aren't confirmed.",
+  "caveats": [
+    "Govee lists no Matter support for H618A.",
+    "Home Assistant's local control needs LAN control enabled in the Govee app.",
+    "Google Home and Apple Home are not confirmed by the Govee pages found.",
+    "Govee's specs table says the strip can't be cut."
+  ],
+  "sources": [
+    {
+      "id": "govee-us-rgbic-basic",
+      "url": "https://us.govee.com/collections/strip-lights/products/govee-rgbic-basic-wi-fi-bluetooth-led-strip-lights",
+      "title": "Smart LED Strip Lights: RGBIC & Color Changing (RGBIC Basic Wi-Fi + Bluetooth)",
+      "publisher": "Govee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "govee-app-mall-h618a",
+      "url": "https://app-mall.govee.com/product-detail?sku=H618A1D1",
+      "title": "Govee RGBIC Basic Wi-Fi + Bluetooth LED Strip Lights - 16.4ft",
+      "publisher": "Govee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "govee-spec-faq",
+      "url": "https://community.govee.com/support/faqs/specs",
+      "title": "Product specs: RGBIC Strip Lights (Govee support FAQ)",
+      "publisher": "Govee",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-govee-local",
+      "url": "https://www.home-assistant.io/integrations/govee_light_local/",
+      "title": "Govee lights local - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

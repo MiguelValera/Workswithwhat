@@ -215,6 +215,21 @@ const vacuumSchema = z
   })
   .strict();
 
+const stripSchema = z
+  .object({
+    ...baseShape,
+    category: z.literal('light-strip'),
+    // white = fixed white, tunable-white = adjustable colour temperature, color = full RGB
+    colorType: fact(z.enum(COLOR_TYPES)),
+    // length of the strip in the box, in metres, as the maker states it (e.g. 2, 5)
+    lengthM: fact(z.number().positive()),
+    // shows several colours at once along the strip (segments, zones, "RGBIC")
+    multiZone: fact(z.boolean()),
+    // e.g. "Mains adapter (24 V)", "USB"
+    power: fact(z.string().min(2).max(40)),
+  })
+  .strict();
+
 // For hubs, `compatibility` means the hub's connected devices show up in that ecosystem
 // (natively or through the hub's Matter bridge), not the hub box itself.
 const hubSchema = z
@@ -231,7 +246,7 @@ const hubSchema = z
   })
   .strict();
 
-export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor', 'smart-camera', 'smart-switch', 'robot-vacuum', 'smart-hub'] as const;
+export const CATEGORY_KEYS = ['smart-plug', 'smart-bulb', 'smart-lock', 'smart-thermostat', 'smart-sensor', 'smart-camera', 'smart-switch', 'robot-vacuum', 'smart-hub', 'light-strip'] as const;
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 const COMMON_FACTS = ['radios', 'hubRequired', 'localControl'] as const;
@@ -245,12 +260,13 @@ export const CATEGORY_FACTS = {
   'smart-switch': ['switchForm', 'dimmer', 'neutralRequired', 'gangs'],
   'robot-vacuum': ['cleaning', 'navigation', 'suctionPa', 'selfEmptying'],
   'smart-hub': ['hubType', 'deviceProtocols', 'matterBridge', 'threadBorderRouter', 'maxDevices'],
+  'light-strip': ['colorType', 'lengthM', 'multiZone', 'power'],
 } as const satisfies Record<CategoryKey, readonly string[]>;
 
 type FactValue = { value: unknown; sources: string[] };
 
 export const deviceSchema = z
-  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema, cameraSchema, switchSchema, vacuumSchema, hubSchema])
+  .discriminatedUnion('category', [plugSchema, bulbSchema, lockSchema, thermostatSchema, sensorSchema, cameraSchema, switchSchema, vacuumSchema, hubSchema, stripSchema])
   .superRefine((d, ctx) => {
     const ids = d.sources.map((s) => s.id);
     const known = new Set(ids);

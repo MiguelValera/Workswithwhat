@@ -62,7 +62,7 @@
       "ha-fritzbox",
       "avm-kb-internet"
     ],
-    "note": "Home Assistant polls the FRITZ!Box locally, but AVM says that during an internet outage automatic switching is limited, routines stop and the FRITZ!App Smart Home can't connect. AVM doesn't state what works offline."
+    "note": "Home Assistant polls the FRITZ!Box locally, but AVM says during an internet outage automatic switching is limited, routines stop and the FRITZ!App Smart Home can't connect. AVM's article (filed under the DECT 200, titled for the DECT 500) doesn't say what works offline."
   },
   "energyMonitoring": {
     "value": true,

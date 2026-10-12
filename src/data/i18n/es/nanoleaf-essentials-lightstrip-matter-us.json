@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La Nanoleaf Essentials Matter Lightstrip (kit de 2 m / 80 in) funciona con Apple Home, Google Home, Alexa y Home Assistant mediante Matter sobre Thread, siempre que tengas un router de borde Thread. Sin él, la app Nanoleaf sigue controlándola por Bluetooth. Muestra 16 millones de colores y blancos regulables. Nanoleaf no menciona SmartThings.",
+  "caveats": [
+    "Para usarla con el hogar inteligente necesitas un router de borde Thread, como un HomePod mini o un Nest Hub (2.ª generación).",
+    "Sin router de borde, el Bluetooth de la app Nanoleaf es la única forma de controlarla.",
+    "El registro de la CSA nombra el SKU de familia NF080K02-2LS, no el NF080K03-2LS de este kit, así que la coincidencia exacta está sin confirmar.",
+    "La página oficial usada es la de Nanoleaf Canadá; no se encontró ninguna página estadounidense para este SKU."
+  ],
+  "notes": {
+    "radios": "Thread para Matter, Bluetooth para el control solo con la app.",
+    "matter": "Nanoleaf dice que funciona con Matter sobre Thread. El registro de la CSA de la Essentials Lightstrip (certificada el 2023-06-23, Thread y Bluetooth) nombra el SKU de familia NF080K02-2LS, no el NF080K03-2LS, así que la coincidencia exacta con el SKU está sin confirmar.",
+    "hubRequired": "La app Nanoleaf la controla solo por Bluetooth; para usarla con ecosistemas del hogar inteligente necesitas un hub Matter que sea además router de borde Thread.",
+    "localControl": "La página de Nanoleaf no dice si el control funciona sin internet.",
+    "colorType": "Más de 16 millones de colores y blancos regulables.",
+    "lengthM": "Kit de 2 m (80 in), según la dirección de la página de Nanoleaf; la tabla de especificaciones de la página no cargó y no pudimos comprobarla. Nanoleaf vende también un kit Matter de 5 m (NF080K03-5LS).",
+    "multiZone": "Esta página no describe zonas, así que está sin confirmar.",
+    "power": "Las páginas de Nanoleaf consultadas no indican los datos de la fuente de alimentación.",
+    "compatibility.apple_home": "Mediante Matter sobre Thread; necesita un router de borde Thread, como un HomePod mini.",
+    "compatibility.google_home": "Mediante Matter sobre Thread; necesita un router de borde Thread, como un Nest Hub (2.ª generación).",
+    "compatibility.alexa": "Nanoleaf indica Alexa como opción de voz; funciona mediante Matter sobre Thread con un Echo que sea router de borde Thread (se nombra el de 4.ª generación).",
+    "compatibility.smartthings": "No se menciona en la página de Nanoleaf para esta tira.",
+    "compatibility.home_assistant": "Mediante la integración oficial de Matter; los dispositivos Thread necesitan un router de borde Thread."
+  }
+}
