@@ -130,7 +130,7 @@ export function answerFor(d: Device, e: Ecosystem, lang: Lang = 'en', text?: Dev
       case 'no':
         return `No.${note}`;
       default:
-        return `Sin confirmar. No hemos encontrado una fuente oficial en ningún sentido.${note}`;
+        return `Sin confirmar: no hemos encontrado ninguna fuente oficial que lo confirme o lo descarte.${note}`;
     }
   }
   switch (c.status) {

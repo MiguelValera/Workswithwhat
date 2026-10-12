@@ -19,7 +19,7 @@
     "compatibility.google_home": "Hive lista Google Assistant; el enchufe llega a él a través del Hive Hub y la cuenta de Hive.",
     "compatibility.alexa": "Mediante la skill Hive de Alexa y el Hive Hub. Hive dice que el enlace con Alexa no admite configuraciones con varios usuarios ni varias casas.",
     "compatibility.smartthings": "Ninguna página oficial de Hive ni de SmartThings lo cubre. Usuarios del foro de SmartThings cuentan resultados desiguales al emparejarlo directamente por Zigbee.",
-    "compatibility.home_assistant": "La integración oficial Hive de Home Assistant lista el Active Plug como interruptor. Usa tu cuenta de Hive (inicio de sesión del propietario, con verificación en dos pasos) y el Hive Hub."
+    "compatibility.home_assistant": "La integración oficial Hive de Home Assistant lista el Active Plug como interruptor. Usa tu cuenta de Hive (inicio de sesión del propietario, con verificación en dos pasos, 2FA) y el Hive Hub."
   },
   "via": {
     "apple_home": "Hive Hub",

@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Movimiento, temperatura y nivel de luz es lo que informa el Hue Motion Sensor (interior), todo por Zigbee hacia un Hue Bridge. El Bridge es lo que lo conecta con Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Incluye dos pilas AAA y Hue indica una duración de al menos dos años.",
+  "summary": "El Hue Motion Sensor (interior) informa de movimiento, temperatura y nivel de luz, todo por Zigbee hacia un Hue Bridge. El Bridge es lo que lo conecta con Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Incluye dos pilas AAA y Hue indica una duración de al menos dos años.",
   "caveats": [
     "Necesita un Hue Bridge, que se vende aparte; Hue dice que los productos conectados por Bluetooth no funcionan con Matter.",
     "Hue indica un límite de 12 accesorios con un Hue Bridge."

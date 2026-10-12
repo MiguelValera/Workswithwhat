@@ -22,5 +22,5 @@ export const GET: APIRoute = async ({ props, site }) => {
     count: devices.length,
     devices: devices.map((d) => apiRecord(d, site!)),
   };
-  return new Response(JSON.stringify(body, null, 2), { headers: { 'Content-Type': 'application/json' } });
+  return new Response(JSON.stringify(body), { headers: { 'Content-Type': 'application/json' } });
 };

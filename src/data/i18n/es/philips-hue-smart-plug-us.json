@@ -4,7 +4,7 @@
   "caveats": [
     "Los asistentes de voz, los ecosistemas y el acceso remoto necesitan un Hue Bridge; el control por voz por Bluetooth sin puente de Hue cubre bombillas, no este enchufe.",
     "Las configuraciones solo con Bluetooth no pueden usar Matter; el Bridge es lo que expone el enchufe a Matter.",
-    "Usuarios de Home Assistant cuentan que el enchufe aparece como una luz, así que «apagar todas las luces» también puede apagarlo."
+    "Hay usuarios de Home Assistant que cuentan que el enchufe aparece como una luz, así que «apagar todas las luces» también puede apagarlo."
   ],
   "notes": {
     "radios": "Bluetooth para el control directo desde la app; Zigbee hacia el Hue Bridge.",
