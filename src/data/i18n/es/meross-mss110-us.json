@@ -10,11 +10,11 @@
   ],
   "notes": {
     "radios": "Solo wifi de 2,4 GHz; Meross dice que el wifi empresarial no es compatible.",
-    "matter": "Las páginas del MSS110 describen HomeKit, no Matter. El minienchufe Matter de Meross es el MSS115, que es otro modelo. No encontramos ninguna declaración explícita en un sentido ni en otro para el MSS110.",
+    "matter": "Las páginas del MSS110 describen HomeKit, no Matter. El minienchufe Matter de Meross es el MSS115, que es otro modelo. No encontramos ninguna declaración explícita que lo confirme o lo descarte para el MSS110.",
     "compatibility.apple_home": "HomeKit (HAP) sobre wifi; la unidad con HomeKit se vende como MSS110HK (EE. UU./Canadá). El control remoto necesita un centro de la casa de Apple (HomePod, Apple TV o iPad).",
     "compatibility.google_home": "Mediante el enlace de cuenta «Works with Google Home» de Meross; añade primero el enchufe en la app Meross.",
     "compatibility.alexa": "Mediante la skill de Alexa de Meross, vinculada a tu cuenta de Meross.",
-    "compatibility.smartthings": "La página del MSS110US de Meross lista SmartThings. Se conecta vinculando tu cuenta de Meross en la app SmartThings (de nube a nube), según las FAQ genéricas de SmartThings de Meross.",
+    "compatibility.smartthings": "La página del MSS110US de Meross incluye SmartThings. Se conecta vinculando tu cuenta de Meross en la app SmartThings (de nube a nube), según las FAQ genéricas de SmartThings de Meross.",
     "compatibility.home_assistant": "No hay integración oficial de Meross en Home Assistant. Usuarios del foro cuentan que lo emparejan mediante la integración HomeKit Device o el complemento comunitario Meross LAN, pero ninguna página oficial nombra este modelo.",
     "hubRequired": "Se une a tu wifi de 2,4 GHz existente directamente; no hace falta puente. Solo se necesita un centro de la casa de Apple para el control remoto con HomeKit.",
     "localControl": "Los accesorios HomeKit suelen funcionar por la LAN, pero no encontramos ninguna página de Meross que declare el control local para este modelo.",

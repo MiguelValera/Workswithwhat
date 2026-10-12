@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Eve Thermo (5.ª generación) es una cabeza de válvula para radiador que, según Eve, funciona en local, sin nube, suscripción ni registro. Usa Matter sobre Thread y figura para Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Tu plataforma necesita un hub que sea a la vez controlador Matter y router de borde Thread. Encaja en válvulas M30 × 1,5 y trae incluidos los adaptadores Danfoss RA, RAV y RAVL.",
+  "summary": "Eve Thermo (5.ª generación) es un cabezal termostático para radiador que, según Eve, funciona en local, sin nube, suscripción ni registro. Usa Matter sobre Thread y figura como compatible con Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Tu plataforma necesita un hub que sea a la vez controlador Matter y router de borde Thread. Encaja en válvulas M30 × 1,5 y trae incluidos los adaptadores Danfoss RA, RAV y RAVL.",
   "caveats": [
     "Necesita un hub de tu plataforma con funciones de controlador Matter y router de borde Thread; no hace falta ningún puente de Eve.",
     "Eve dice que los horarios en el propio dispositivo no funcionan en Alexa ni en SmartThings y requieren la app de Eve."
@@ -13,9 +13,9 @@
     "power": "Las reseñas y los minoristas dicen 2 × AA, pero ninguna página de Eve vista en las búsquedas lo confirma.",
     "matter": "Eve lanzó la 5.ª generación en diciembre de 2025 con Matter sobre Thread. El registro de la CSA citado (firmware 3.6.5, certificado el 21 nov. 2025, Matter 1.4.1) coincide con ese lanzamiento; un registro hermano con otro ID de producto tiene el mismo firmware.",
     "compatibility.apple_home": "Eve dice que la primera plataforma necesita un hub con funciones de controlador Matter y de router de borde Thread.",
-    "compatibility.google_home": "Eve lista Google Home. Eve dice que sus horarios en el dispositivo requieren la app de Eve, que está disponible en Android para quienes usan Google Home.",
-    "compatibility.alexa": "Eve lista Alexa mediante Matter, con los dispositivos Echo como hubs. Eve dice que los horarios en el dispositivo no funcionan en Alexa.",
-    "compatibility.smartthings": "Eve lista Samsung SmartThings mediante Matter. Eve dice que los horarios en el dispositivo no funcionan en SmartThings.",
+    "compatibility.google_home": "Eve incluye Google Home. Eve dice que sus horarios en el dispositivo requieren la app de Eve, que está disponible en Android para quienes usan Google Home.",
+    "compatibility.alexa": "Eve incluye Alexa mediante Matter, con los dispositivos Echo como hubs. Eve dice que los horarios en el dispositivo no funcionan en Alexa.",
+    "compatibility.smartthings": "Eve incluye Samsung SmartThings mediante Matter. Eve dice que los horarios en el dispositivo no funcionan en SmartThings.",
     "compatibility.home_assistant": "La página de Eve en Home Assistant incluye Eve Thermo como dispositivo Matter, que se ejecuta en local con la integración Matter. Necesita un router de borde Thread."
   },
   "values": {

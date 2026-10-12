@@ -18,8 +18,8 @@
     "compatibility.apple_home": "Matter sobre Thread. Nuki dice que necesitas un hub compatible con Matter mediante Thread; un hub Matter solo wifi no sirve.",
     "compatibility.google_home": "Matter sobre Thread, que necesita un router de borde Thread. Nuki también documenta un enlace en la nube de Nuki Web con Google Home para sus cerraduras; no lo hemos comprobado para esta generación.",
     "compatibility.alexa": "Matter sobre Thread, que necesita un router de borde Thread. Nuki también documenta una skill de Nuki Web para Alexa; no la hemos comprobado para esta generación.",
-    "compatibility.smartthings": "Nuki nombra Samsung SmartThings como plataforma de Matter sobre Thread; hace falta un router de borde Thread.",
-    "compatibility.home_assistant": "La página de Nuki en Home Assistant que hemos visto trata las cerraduras de 4th generation; ninguna fuente oficial nombra la Pro de 5th gen. Un hilo de un foro informa de problemas al poner en servicio Matter, y eso no es una fuente oficial."
+    "compatibility.smartthings": "Nuki menciona Samsung SmartThings como plataforma de Matter sobre Thread; hace falta un router de borde Thread.",
+    "compatibility.home_assistant": "La página de Nuki en Home Assistant que hemos visto trata las cerraduras de 4th generation; ninguna fuente oficial menciona la Pro de 5th gen. Un hilo de un foro cuenta problemas al poner en servicio Matter, y eso no es una fuente oficial."
   },
   "values": {
     "power": "Batería recargable integrada"

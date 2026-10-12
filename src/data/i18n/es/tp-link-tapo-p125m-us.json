@@ -12,7 +12,7 @@
     "matter": "TP-Link lo describe como certificado Matter y la ficha técnica estadounidense incluye Matter entre sus certificaciones. No hemos encontrado ningún registro de la CSA que nombre el número de modelo P125M.",
     "hubRequired": "No hace falta hub con la app Tapo. Los ecosistemas de terceros necesitan su propio controlador Matter.",
     "localControl": "TP-Link dice que los dispositivos Matter de tu red doméstica se pueden seguir controlando desde la app Tapo o desde otra app Matter sin internet.",
-    "energyMonitoring": "La página de producto y la ficha técnica estadounidenses no indican medición de consumo, y el personal del foro de TP-Link dice que el P125M no la tiene. La ficha técnica italiana sí la indica, así que las versiones regionales pueden diferir. Ninguna declaración oficial estadounidense en un sentido ni en otro.",
+    "energyMonitoring": "La página de producto y la ficha técnica estadounidenses no indican medición de consumo, y el personal de TP-Link en su foro dice que el P125M no la tiene. La ficha técnica italiana sí la indica, así que las versiones regionales pueden diferir. Ninguna declaración oficial estadounidense lo confirma ni lo descarta.",
     "maxLoadWatts": "15 A / 1800 W como máximo para cargas resistivas a 100–125 V.",
     "compatibility.apple_home": "TP-Link indica Apple Home. El enchufe no tiene modo HomeKit (HAP), así que funciona mediante Matter y necesita un centro de la casa de Apple.",
     "compatibility.google_home": "Se añade en la app Google Home escaneando el código Matter. También puede funcionar vinculándolo con Tapo Actions, pero no hemos encontrado ninguna fuente que lo confirme para este modelo.",

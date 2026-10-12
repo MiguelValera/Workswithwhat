@@ -10,11 +10,11 @@
   ],
   "notes": {
     "radios": "Wifi de 2,4 GHz según la guía de Leviton. El registro de la CSA muestra wifi y Bluetooth como transportes; el Bluetooth probablemente sirve solo para la configuración.",
-    "matter": "Matter llega con una actualización de firmware desde la app My Leviton. La CSA lista el D215P (Matter 1.3, firmware 2.3.10, certificado el 2025-05-20); otras páginas de la CSA muestran un segundo ID de certificado para él.",
+    "matter": "Matter llega con una actualización de firmware desde la app My Leviton. La CSA registra el D215P (Matter 1.3, firmware 2.3.10, certificado el 2025-05-20); otras páginas de la CSA muestran un segundo ID de certificado para él.",
     "compatibility.apple_home": "Se empareja directamente con Apple Home mediante HomeKit, con el código HomeKit que trae. La actualización opcional de Matter elimina el enlace con HomeKit; después hay que volver a añadirlo con el código Matter, lo que requiere un centro de la casa de Apple.",
     "compatibility.google_home": "Mediante el enlace en la nube de My Leviton; Matter también es una opción tras la actualización de firmware.",
     "compatibility.alexa": "Mediante la skill My Leviton de Alexa; Matter también es una opción tras la actualización de firmware.",
-    "compatibility.smartthings": "Leviton lista SmartThings y dice que la actualización Matter no afecta a la integración existente con SmartThings. Matter también es una opción.",
+    "compatibility.smartthings": "Leviton incluye SmartThings y dice que la actualización Matter no afecta a la integración existente con SmartThings. Matter también es una opción.",
     "compatibility.home_assistant": "Mediante la integración de Matter de Home Assistant tras la actualización de firmware Matter. No encontramos ninguna integración oficial de Leviton para Home Assistant.",
     "hubRequired": "Se conecta directamente al wifi de 2,4 GHz; no hace falta ningún hub de Leviton.",
     "localControl": "Con el firmware Matter, los controladores Matter lo alcanzan en la red wifi local. Leviton no declara el control local para su propia app.",

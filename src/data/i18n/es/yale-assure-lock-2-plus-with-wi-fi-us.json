@@ -17,8 +17,8 @@
     "keypad": "Teclado táctil en la cerradura. Yale no indica lector de huellas en la Plus.",
     "power": "Cuatro pilas alcalinas AA incluidas, según la tienda de Yale.",
     "compatibility.apple_home": "Apple Home Key está integrada en la cerradura (iPhone XS o posterior con iOS 15 o superior, o Apple Watch Series 4 o posterior con watchOS 8 o superior). El control remoto mediante Apple Home necesita un HomePod, un HomePod mini o un Apple TV como centro de la casa.",
-    "compatibility.google_home": "Yale dice que todas las integraciones de socios funcionan en los modelos con wifi, y su comunicado de lanzamiento nombra Google Home para la versión con wifi. No está disponible en la Plus solo con Bluetooth.",
-    "compatibility.alexa": "El comunicado de lanzamiento de Yale nombra el control por voz con Alexa para la versión con wifi, y su página de la Plus dice que las integraciones de socios funcionan solo en los modelos con wifi.",
+    "compatibility.google_home": "Yale dice que todas las integraciones de socios funcionan en los modelos con wifi, y su comunicado de lanzamiento menciona Google Home para la versión con wifi. No está disponible en la Plus solo con Bluetooth.",
+    "compatibility.alexa": "El comunicado de lanzamiento de Yale menciona el control por voz con Alexa para la versión con wifi, y su página de la Plus dice que las integraciones de socios funcionan solo en los modelos con wifi.",
     "compatibility.smartthings": "Las páginas de Yale que vimos no mencionan SmartThings y la cerradura no tiene registro de Matter, así que no la marcamos como «no».",
     "compatibility.home_assistant": "La página de August de Home Assistant indica que la Assure Lock 2 funciona, pero con un Connect Bridge o un indicador de timbre activado, y las publicaciones de la comunidad dicen que las cuentas nuevas de Yale Home necesitan la integración de Yale. No está confirmado si este modelo con wifi funciona sin hardware adicional."
   }

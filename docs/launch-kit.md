@@ -44,6 +44,25 @@ For r/HomeKit, link `/works-with/apple-home/` instead. For r/Matter, link `/work
 Same text, linking `/works-with/home-assistant/`. Mention the JSON at `/api/smart-plugs.json`:
 HA users like data they can script against.
 
+### Spanish communities (the /es/ site)
+
+Post from your own accounts, one per day, and answer comments in Spanish.
+
+- **r/domotica** and **r/HomeKit_ES**, if active; **r/spain** only in a weekly thread, never as a standalone post.
+- **Foro de Home Assistant en español** (community.home-assistant.io, *Spanish* category) and the Spanish Home Assistant Telegram groups.
+- **Domótica en Casa** and **Foro Domótica** forums (*proyectos* / *software* sections).
+
+**Título:** He hecho una web que dice con qué funciona cada dispositivo domótico (Apple Home, Google, Alexa, Home Assistant), con la fuente de cada dato
+
+**Texto:**
+> Cansado de cajas que ponen «compatible con» sin decir si hace falta un hub, si va por Matter o si la versión europea es distinta, he montado workswithwhat.com/es/. Cada respuesta enlaza a la página del fabricante, al registro de la CSA (Matter) o a la documentación de la plataforma. Si no hay fuente oficial, pone «sin confirmar» en vez de inventárselo.
+>
+> Las listas están separadas por región (Europa, EE. UU., Reino Unido), porque el mismo enchufe cambia de modelo y de certificación según el país: workswithwhat.com/es/eu/enchufes-inteligentes/
+>
+> Ahora mismo hay 113 dispositivos: enchufes, bombillas, cerraduras, termostatos, sensores, cámaras e interruptores. Sin cookies ni publicidad. Si veis algún error, decídmelo y lo corrijo.
+
+Also in Spanish Search Console: the Spanish pages are already in the sitemap. After step 1, use *URL inspection* → *Request indexing* on `/es/`, `/es/enchufes-inteligentes/` and `/es/eu/`.
+
 ### Hacker News (Show HN), once there are 40+ devices
 **Title:** Show HN: Workswithwhat – smart home compatibility with a source for every claim
 Lead with the method: two-pass verification, "unknown beats a guess", static site, open JSON.

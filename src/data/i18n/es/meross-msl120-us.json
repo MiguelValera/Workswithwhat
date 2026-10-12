@@ -1,21 +1,21 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Siri y la app Casa controlan directamente la Meross MSL120: Meross lista Apple HomeKit para esta bombilla de color, que se une al wifi de 2,4 GHz sin hub. Meross también lista Alexa, Google Assistant y SmartThings. Esta versión estadounidense es una bombilla E26 de 810 lúmenes (equivalente a 60 W, 9 W), con color RGB y blanco ajustable de 2700 a 6500 K. Home Assistant no tiene integración oficial de Meross, y Matter no está confirmado.",
+  "summary": "Siri y la app Casa controlan directamente la Meross MSL120: Meross incluye Apple HomeKit para esta bombilla de color, que se une al wifi de 2,4 GHz sin hub. Meross también incluye Alexa, Google Assistant y SmartThings. Esta versión estadounidense es una bombilla E26 de 810 lúmenes (equivalente a 60 W, 9 W), con color RGB y blanco ajustable de 2700 a 6500 K. Home Assistant no tiene integración oficial de Meross, y Matter no está confirmado.",
   "caveats": [
     "Solo wifi de 2,4 GHz.",
     "Este registro sigue la página de producto de Meross para la MSL120; comprueba en la caja el logotipo de HomeKit.",
     "Este registro es la versión estadounidense E26 (90-125 V); Meross vende versiones E27 y B22 para otros mercados.",
-    "Home Assistant no tiene integración oficial de Meross; emparejarla mediante la integración HomeKit Device de HA puede funcionar, pero no está documentado para este modelo.",
+    "Home Assistant no tiene integración oficial de Meross; emparejarla mediante la integración HomeKit Device de Home Assistant puede funcionar, pero no está documentado para este modelo.",
     "La línea «compatible con Matter» de algunas páginas de la tienda de Meross es de toda la marca, y nada confirma Matter para esta bombilla."
   ],
   "notes": {
     "radios": "IEEE 802.11 b/g/n, solo 2,4 GHz.",
     "matter": "Algunas páginas de la tienda de Meross llevan una línea «compatible con Matter» para toda la marca, pero no encontramos ningún registro de la CSA ni especificación de producto que confirme Matter para la MSL120. Sin confirmar.",
-    "compatibility.apple_home": "La página de producto de Meross para la MSL120 lista Apple HomeKit y Siri.",
-    "compatibility.google_home": "Meross lista Google Assistant, mediante su integración en la nube.",
-    "compatibility.alexa": "Meross lista Amazon Alexa, mediante su skill.",
-    "compatibility.smartthings": "Meross lista SmartThings para la MSL120.",
-    "compatibility.home_assistant": "Home Assistant no tiene integración oficial de Meross. La edición HomeKit puede emparejarse mediante la integración HomeKit Device de HA, pero ninguna página oficial cubre este modelo.",
+    "compatibility.apple_home": "La página de producto de Meross para la MSL120 incluye Apple HomeKit y Siri.",
+    "compatibility.google_home": "Meross incluye Google Assistant, mediante su integración en la nube.",
+    "compatibility.alexa": "Meross incluye Amazon Alexa, mediante su skill.",
+    "compatibility.smartthings": "Meross incluye SmartThings para la MSL120.",
+    "compatibility.home_assistant": "Home Assistant no tiene integración oficial de Meross. La edición HomeKit puede emparejarse mediante la integración HomeKit Device de Home Assistant, pero ninguna página oficial cubre este modelo.",
     "hubRequired": "Aquí significa que no hace falta puente ni hub para el control básico desde la app. Se une directamente al wifi de 2,4 GHz; Meross dice que no requiere hub.",
     "localControl": "El control por HomeKit suele funcionar en la red local, pero ninguna fuente oficial que encontramos declara el control local para esta bombilla.",
     "colorType": "Color RGB más blanco ajustable de 2700 a 6500 K.",

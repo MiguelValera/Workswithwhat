@@ -1,14 +1,14 @@
 {
   "basedOn": "2026-10-10",
-  "summary": "Sin hub: el Shelly Plus Plug S funciona con wifi y Bluetooth, de forma autónoma, sin la app Shelly ni la nube. Alexa, Google Home y SmartThings se conectan a través de la nube de Shelly, mientras que la integración oficial de Shelly en Home Assistant lo controla en local. Soporta 12 A / 2500 W y muestra en directo la potencia y el consumo. Apple Home no está confirmado para este enchufe Gen2; la compatibilidad de Shelly con Apple Home y Matter llega a sus modelos más nuevos, Gen3 y Gen4.",
+  "summary": "Sin hub: el Shelly Plus Plug S funciona con wifi y Bluetooth, de forma autónoma, sin la app Shelly ni la nube. Alexa, Google Home y SmartThings se conectan a través de la nube de Shelly, mientras que la integración oficial de Shelly en Home Assistant lo controla en local. Admite 12 A / 2500 W y muestra en directo la potencia y el consumo. Apple Home no está confirmado para este enchufe Gen2; la compatibilidad de Shelly con Apple Home y Matter llega a sus modelos más nuevos, Gen3 y Gen4.",
   "caveats": [
     "Apple Home y Matter no están confirmados para este enchufe Gen2; los enchufes Matter de Shelly son Gen3 y Gen4.",
     "Alexa, Google Home y SmartThings pasan por la nube de Shelly; solo el control desde Home Assistant (y MQTT) es local."
   ],
   "notes": {
     "radios": "Wifi 802.11 b/g/n más Bluetooth 4.2 (ESP32), según la tabla de especificaciones de la V2.",
-    "matter": "No hemos encontrado ninguna página de Shelly que indique compatibilidad con Matter para el Plus (Gen2) Plug S; los enchufes Matter y Works with Apple Home de Shelly son Gen3 y Gen4. Sin confirmar en ningún sentido.",
-    "hubRequired": "Dispositivo wifi; la guía de usuario dice que no hacen falta la app Shelly ni la nube para que funcione, y la KB de la V2 dice que puede funcionar de forma autónoma en la wifi local.",
+    "matter": "No hemos encontrado ninguna página de Shelly que indique compatibilidad con Matter para el Plus (Gen2) Plug S; los enchufes Matter y Works with Apple Home de Shelly son Gen3 y Gen4. No hay nada que lo confirme ni lo descarte.",
+    "hubRequired": "Dispositivo wifi; la guía de usuario dice que no hacen falta la app Shelly ni la nube para que funcione, y la base de conocimiento de la V2 dice que puede funcionar de forma autónoma en el wifi local.",
     "localControl": "Home Assistant usa RPC local; el dispositivo admite MQTT y scripts.",
     "energyMonitoring": "Muestra en directo la potencia y el consumo de energía.",
     "maxLoadWatts": "Valor nominal de 12 A / 2500 W; el límite de potencia máxima de la app llega hasta 2500 W.",

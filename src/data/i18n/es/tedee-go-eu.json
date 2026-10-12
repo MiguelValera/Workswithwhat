@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Tedee GO es una cerradura pequeña para cilindros de perfil europeo que se monta sobre el cilindro existente y conserva tus llaves. Una actualización de firmware añadió Matter sobre Thread, así que Apple Home, Google Home, Alexa y SmartThings funcionan solo con un router de borde Thread y sin puente de Tedee. Home Assistant usa su integración oficial de Tedee, que necesita el Tedee Bridge opcional. Tres pilas CR123A dan de 6 a 8 meses, según Tedee.",
+  "summary": "Tedee GO es una cerradura pequeña para cilindros de perfil europeo que se monta por dentro sobre el cilindro actual y conserva tus llaves. Una actualización de firmware añadió Matter sobre Thread, así que Apple Home, Google Home, Alexa y SmartThings funcionan solo con un router de borde Thread y sin puente de Tedee. Home Assistant usa su integración oficial de Tedee, que necesita el Tedee Bridge opcional. Tres pilas CR123A dan de 6 a 8 meses, según Tedee.",
   "caveats": [
     "Matter necesita un router de borde Thread y el firmware 2.1.3493 o posterior.",
     "El cilindro necesita una función de emergencia (doble embrague) para que tu llave siga funcionando.",

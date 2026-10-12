@@ -1,13 +1,13 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Movimiento, temperatura y nivel de luz es lo que informa el Hue Motion Sensor (interior), todo por Zigbee hacia un Hue Bridge. El Bridge es lo que lo conecta con Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Incluye dos pilas AAA y Hue indica una duración de al menos dos años.",
+  "summary": "El Hue Motion Sensor (interior) informa de movimiento, temperatura y nivel de luz, todo por Zigbee hacia un Hue Bridge. El Bridge es lo que lo conecta con Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Incluye dos pilas AAA y Hue indica una duración de al menos dos años.",
   "caveats": [
     "Necesita un Hue Bridge, que se vende aparte; Hue dice que los productos conectados por Bluetooth no funcionan con Matter.",
     "Hue indica un límite de 12 accesorios con un Hue Bridge."
   ],
   "notes": {
     "radios": "Las páginas de producto alemana (EAN 8719514342125) y estadounidense de Hue indican Bluetooth y Zigbee como protocolos de comunicación.",
-    "matter": "Que hayamos visto, el sensor no tiene registro propio en la CSA. Hue dice que los productos conectados a un Hue Bridge funcionan con Matter (los conectados por Bluetooth no), y las páginas de producto incluyen Matter entre los sistemas de terceros. Ninguna página de Hue consultada nombra el tipo de dispositivo Matter del sensor.",
+    "matter": "Que hayamos visto, el sensor no tiene registro propio en la CSA. Hue dice que los productos conectados a un Hue Bridge funcionan con Matter (los conectados por Bluetooth no), y las páginas de producto incluyen Matter entre los sistemas de terceros. Ninguna página de Hue consultada menciona el tipo de dispositivo Matter del sensor.",
     "hubRequired": "Hue dice que el sensor necesita una configuración controlada por un Hue Bridge; el Bridge se vende aparte. Hasta 12 accesorios con un Hue Bridge.",
     "localControl": "Ninguna página consultada dice si el sensor funciona sin internet.",
     "senses": "La temperatura y el nivel de luz aparecen en la documentación de Hue de Home Assistant.",

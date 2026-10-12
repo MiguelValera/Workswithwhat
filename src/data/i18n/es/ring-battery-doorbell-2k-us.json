@@ -14,11 +14,11 @@
     "power": "Batería integrada; el timbre se retira de la pared para recargarlo. Ring dice que también se puede cablear a un transformador de timbre de 8–24 V de CA, o alimentar con un cargador solar de Ring, para cargarlo poco a poco.",
     "localStorage": "En las páginas de Ring no aparece ninguna opción de grabación local.",
     "subscription": "Ring dice que las grabaciones se almacenan mediante un plan Ring Protect; la vista en directo funciona sin él. No se consultaron la retención ni los precios en la página estadounidense.",
-    "compatibility.apple_home": "Ni la página de producto de Ring ni sus páginas de ayuda de Alexa mencionan Apple Home ni HomeKit. Sin confirmar en ningún sentido.",
+    "compatibility.apple_home": "Ni la página de producto de Ring ni sus páginas de ayuda de Alexa mencionan Apple Home ni HomeKit. No hay nada que lo confirme ni lo descarte.",
     "compatibility.google_home": "No se encontró ninguna página de Ring que incluya Google Home o Google Assistant para este timbre. Solo se vieron respuestas en foros, que no se citan.",
     "compatibility.alexa": "Mediante la skill de Ring. Ring dice que todos sus modelos de videotimbre funcionan con Alexa, con anuncios, conversación bidireccional y vista en directo en Echo Show. Los anuncios de personas y paquetes, con vista en directo automática en Echo Show, requieren un plan Ring Protect.",
     "compatibility.smartthings": "No se encontró ninguna página oficial de Ring ni de SmartThings para este modelo; solo mensajes de foros, que no se citan.",
-    "compatibility.home_assistant": "Home Assistant tiene una integración oficial de Ring, pero su lista de dispositivos nombra «Battery Doorbell» y «Doorbell (2nd Gen)», no el Battery Doorbell 2K, así que la compatibilidad con este modelo no está confirmada."
+    "compatibility.home_assistant": "Home Assistant tiene una integración oficial de Ring, pero su lista de dispositivos recoge «Battery Doorbell» y «Doorbell (2nd Gen)», no el Battery Doorbell 2K, así que la compatibilidad con este modelo no está confirmada."
   },
   "values": {
     "power": "Batería recargable",

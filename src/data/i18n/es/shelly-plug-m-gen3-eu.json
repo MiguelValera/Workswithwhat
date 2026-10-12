@@ -13,7 +13,7 @@
     "localControl": "Interfaz web integrada para configurar y controlar, y control local desde la integración de Shelly en Home Assistant.",
     "energyMonitoring": "Mide potencia, tensión y corriente.",
     "maxLoadWatts": "13 A / 3000 W, solo cargas resistivas.",
-    "compatibility.apple_home": "Mediante Matter; Shelly nombra Apple Home como plataforma Matter. Necesita un centro de la casa de Apple para el uso remoto y las automatizaciones.",
+    "compatibility.apple_home": "Mediante Matter; Shelly menciona Apple Home como plataforma Matter. Necesita un centro de la casa de Apple para el uso remoto y las automatizaciones.",
     "compatibility.google_home": "Shelly dice que funciona con Google Home mediante Matter. Su tabla de especificaciones también marca Google Smart Home con «Yes» sin decir si eso significa el enlace en la nube de Shelly, así que no afirmamos una integración nativa.",
     "compatibility.alexa": "Shelly dice que funciona con Alexa mediante Matter. Su tabla de especificaciones marca Alexa con «Yes», pero ninguna página de Shelly confirma la skill de Shelly Cloud para este modelo, así que no afirmamos que sea nativa.",
     "compatibility.smartthings": "Shelly dice que funciona con SmartThings mediante Matter. No encontramos ninguna página que confirme la integración en la nube de Shelly con SmartThings para este modelo.",

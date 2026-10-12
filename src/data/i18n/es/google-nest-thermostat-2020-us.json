@@ -8,17 +8,17 @@
     "La compatibilidad con SmartThings no está confirmada."
   ],
   "notes": {
-    "radios": "Google indica wifi 802.11n. Ninguna página de Google que hayamos visto lista una radio Thread para este modelo, así que no se incluye.",
+    "radios": "Google indica wifi 802.11n. Ninguna página de Google que hayamos visto indica una radio Thread para este modelo, así que no se incluye.",
     "hubRequired": "Se conecta por wifi y se configura en la app Google Home; no hace falta puente.",
     "localControl": "Ninguna fuente del fabricante indica qué funciona sin internet. La integración Nest de Home Assistant depende de la nube.",
     "thermostatType": "Termostato de pared.",
-    "systems": "Google lista la mayoría de los sistemas de 24 V (gas, eléctrico, gasóleo, aire forzado, bomba de calor, suelo radiante). Usa g.co/nest/works para comprobar el tuyo.",
+    "systems": "Google indica la mayoría de los sistemas de 24 V (gas, eléctrico, gasóleo, aire forzado, bomba de calor, suelo radiante). Usa g.co/nest/works para comprobar el tuyo.",
     "power": "Google dice que toma la energía de los cables del sistema de climatización y que está diseñado para funcionar sin cable C, con 2 pilas alcalinas AAA como respaldo o complemento. Los sistemas solo de calefacción, solo de refrigeración y por zonas pueden necesitar un cable C o un Nest Power Connector.",
     "matter": "La CSA registra el Nest Thermostat de Google como certificado Matter sobre wifi (firmware 1.3, febrero de 2023; registros posteriores cubren el 1.3a y el 2.2). No se indica número de modelo, pero el firmware 1.3 coincide con el historial de actualizaciones de Google: Matter llegó en la versión 1.3-10.",
     "compatibility.apple_home": "Mediante Matter: añádelo primero a Google Home y luego vincúlalo a Apple Home. Google limita cada termostato a 5 apps Matter. Necesita un centro de la casa de Apple (HomePod o Apple TV).",
     "compatibility.google_home": "Se configura y se controla en la app Google Home.",
     "compatibility.alexa": "Mediante la skill Nest de Google para Alexa, que se activa desde la app Google Home. Las especificaciones técnicas de Google dicen que funciona con Alexa (hace falta un dispositivo compatible).",
-    "compatibility.smartthings": "Ninguna página de Google ni de Samsung lista este modelo. Solo un mensaje del foro de SmartThings menciona un termostato Nest con Matter.",
+    "compatibility.smartthings": "Ninguna página de Google ni de Samsung incluye este modelo. Solo un mensaje del foro de SmartThings menciona un termostato Nest con Matter.",
     "compatibility.home_assistant": "Integración oficial Google Nest que usa la API Smart Device Management, que según Google admite todos los modelos de termostato Nest; Google cobra una tarifa única de 5 USD por Device Access. Matter es una segunda vía."
   },
   "values": {

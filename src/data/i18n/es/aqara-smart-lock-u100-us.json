@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "La cerradura inteligente U100 de Aqara habla directamente con Apple Home, con Home Key al acercar un iPhone o un Apple Watch, pero Alexa y Google Home pasan por un hub Zigbee 3.0 de Aqara. De fábrica se empareja por Bluetooth con la app Aqara Home. Es un cerrojo estadounidense con teclado, lector de huellas y cuatro pilas AA. SmartThings y Home Assistant no están confirmados.",
+  "summary": "La cerradura inteligente U100 de Aqara se comunica directamente con Apple Home, con Home Key al acercar un iPhone o un Apple Watch, pero Alexa y Google Home pasan por un hub Zigbee 3.0 de Aqara. De fábrica se empareja por Bluetooth con la app Aqara Home. Es un cerrojo estadounidense con teclado, lector de huellas y cuatro pilas AA. SmartThings y Home Assistant no están confirmados.",
   "caveats": [
     "El control remoto, los códigos remotos, Alexa, Google Home y Matter necesitan un hub de Aqara; para Matter, uno compatible con Matter.",
     "Encaja en distancias al borde de 2 3/8 o 2 3/4 pulgadas y en puertas de 35 a 55 mm de grosor."

@@ -9,7 +9,7 @@
   ],
   "notes": {
     "radios": "Wifi de 2,4 GHz 802.11 b/g/n y Bluetooth 4.2. No admite redes WPA/WPA2 Enterprise.",
-    "matter": "Las páginas del FP2 que hemos visto de Aqara no mencionan Matter, y un moderador del foro de Aqara dice que no lo admite. Tampoco hay confirmación en un registro de la CSA en un sentido ni en otro.",
+    "matter": "Las páginas del FP2 que hemos visto de Aqara no mencionan Matter, y un moderador del foro de Aqara dice que no lo admite. Tampoco un registro de la CSA lo confirma ni lo descarta.",
     "hubRequired": "La tabla de especificaciones de Aqara dice que no hace falta hub. La automatización local completa necesita un hub de Aqara con wifi, según el manual.",
     "localControl": "El control por HomeKit o Home Assistant puede quedarse en la red local, pero Aqara no indica control solo local.",
     "power": "5 V / 1 A por USB-C; sin batería.",
@@ -18,7 +18,7 @@
     "compatibility.google_home": "Aqara indica Google Home sin necesidad de hub. El manual de Aqara dice que aparece como varios sensores independientes; las plataformas de terceros solo reciben datos básicos del sensor.",
     "compatibility.alexa": "Aqara indica Alexa sin necesidad de hub. El manual de Aqara dice que aparece como varios sensores independientes; las plataformas de terceros solo reciben datos básicos del sensor.",
     "compatibility.smartthings": "Samsung tiene una página de catálogo de SmartThings para el FP2, pero la lista de plataformas de Aqara omite SmartThings y no pudimos abrir la página de Samsung para ver cómo se conecta.",
-    "compatibility.home_assistant": "Aqara indica añadirlo con la integración HomeKit Device de Home Assistant, sin hub de Aqara. Un dispositivo emparejado con Apple Home debe eliminarse antes de allí."
+    "compatibility.home_assistant": "Aqara indica añadirlo con la integración HomeKit Device de Home Assistant, sin hub de Aqara. Si ya está emparejado con Apple Home, hay que eliminarlo de allí antes."
   },
   "values": {
     "power": "USB-C 5 V (red eléctrica)"

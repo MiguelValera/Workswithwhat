@@ -15,7 +15,7 @@
     "compatibility.apple_home": "Aqara indica HomeKit (con Adaptive Lighting); hace falta un hub de Aqara. Un hub de Aqara compatible con Matter también puede hacer de puente.",
     "compatibility.google_home": "Aqara indica Google Assistant; funciona a través de un hub de Aqara.",
     "compatibility.alexa": "Aqara indica Alexa; funciona a través de un hub de Aqara.",
-    "compatibility.smartthings": "La página de la bombilla de Aqara no menciona SmartThings; no hemos encontrado ninguna fuente oficial en un sentido ni en otro.",
+    "compatibility.smartthings": "La página de la bombilla de Aqara no menciona SmartThings; ninguna fuente oficial lo confirma ni lo descarta.",
     "compatibility.home_assistant": "Ninguna fuente oficial de Home Assistant ni de Aqara nombra esta bombilla. Rutas como un hub de Aqara mediante HomeKit Controller o Matter, o un coordinador Zigbee, son plausibles pero no están confirmadas.",
     "colorType": "Solo blanco, 2700–6500 K, CRI Ra90. Sin color RGB.",
     "lumens": "806 lm; la tabla de especificaciones de Aqara indica 8,5 W de potencia nominal, y algunos materiales dicen 9 W."

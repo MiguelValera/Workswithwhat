@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "La SwitchBot Lock Pro Matter Enabled lleva wifi y Bluetooth integrados y habla Matter por wifi, así que Apple Home y Google Home la emparejan sin hub de SwitchBot. La página de SwitchBot también indica Alexa y Home Assistant. Es una cerradura que se monta sobre el pomo interior de cilindros de perfil europeo, oval británico, redondo suizo y de pomo, y funciona con dos baterías recargables: una carga mientras la otra alimenta la cerradura.",
+  "summary": "La SwitchBot Lock Pro Matter Enabled lleva wifi y Bluetooth integrados y usa Matter por wifi, así que Apple Home y Google Home la emparejan sin hub de SwitchBot. La página de SwitchBot también indica Alexa y Home Assistant. Es una cerradura que se monta sobre el pomo interior de cilindros de perfil europeo, oval británico, redondo suizo y de pomo, y funciona con dos baterías recargables: una carga mientras la otra alimenta la cerradura.",
   "caveats": [
     "La SwitchBot Lock Pro original no tiene wifi y necesita un hub SwitchBot para Matter; este es el modelo Matter Enabled.",
     "Apple Home necesita un centro de la casa (HomePod o Apple TV) y Google Home necesita un hub Nest.",

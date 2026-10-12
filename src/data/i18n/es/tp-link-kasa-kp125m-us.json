@@ -4,7 +4,7 @@
   "caveats": [
     "Solo wifi de 2,4 GHz.",
     "No hemos encontrado un modo HomeKit (HAP), así que Apple Home solo funciona mediante Matter.",
-    "Apple Home no muestra los datos de consumo; las lecturas de energía por Matter requieren el firmware 1.4.1 o posterior y solo están verificadas en SmartThings y Home Assistant.",
+    "Apple Home no muestra los datos de consumo; las lecturas de consumo por Matter requieren el firmware 1.4.1 o posterior y solo están verificadas en SmartThings y Home Assistant.",
     "Alexa necesita un Echo que funcione como controlador Matter; los dispositivos Kasa con Matter no usan la skill de Kasa.",
     "La integración de TP-Link en Home Assistant necesita las credenciales de tu cuenta de TP-Link para los dispositivos más nuevos.",
     "Las cargas con motor están limitadas a 1/6 CV."
@@ -12,9 +12,9 @@
   "notes": {
     "radios": "Wifi de 2,4 GHz (IEEE 802.11b/g/n). La ficha técnica indica Bluetooth solo para la configuración.",
     "matter": "TP-Link lo llama el primer enchufe de Kasa con certificación Matter. No hemos encontrado ningún registro de la CSA que nombre el número de modelo KP125M.",
-    "hubRequired": "Se conecta directamente a la wifi de 2,4 GHz y se configura en la app Kasa, sin hub. Las plataformas de terceros necesitan su propio controlador Matter.",
+    "hubRequired": "Se conecta directamente al wifi de 2,4 GHz y se configura en la app Kasa, sin hub. Las plataformas de terceros necesitan su propio controlador Matter.",
     "localControl": "TP-Link dice que mantiene el control por LAN entre dispositivos aunque la conexión a internet de la casa se caiga.",
-    "energyMonitoring": "Consumo en tiempo real e histórico en la app Kasa (o Tapo). El firmware 1.4.1 (ago. 2026) añade el envío de datos de energía por Matter; TP-Link lo verifica en SmartThings y Home Assistant, y dice que Apple Home no muestra la energía.",
+    "energyMonitoring": "Consumo en tiempo real e histórico en la app Kasa (o Tapo). El firmware 1.4.1 (ago. 2026) añade el envío de datos de consumo por Matter; TP-Link lo verifica en SmartThings y Home Assistant, y dice que Apple Home no muestra el consumo.",
     "maxLoadWatts": "15 A / 1800 W para uso general y cargas resistivas a 100–120 V; motor de 1/6 CV.",
     "compatibility.apple_home": "Se configura en Apple Home escaneando el código Matter. No hemos encontrado soporte aparte de HomeKit (HAP) para este modelo.",
     "compatibility.google_home": "Se configura en la app Google Home mediante Matter; necesita un controlador Matter de Google.",

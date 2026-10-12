@@ -7,7 +7,7 @@
     "No sirve para calefacción eléctrica de zócalo ni para sistemas de milivoltios."
   ],
   "notes": {
-    "radios": "Honeywell lista wifi (2,4 y 5 GHz). Los sensores de habitación se enlazan directamente con el termostato; las páginas que vimos no nombran su radio.",
+    "radios": "Honeywell indica wifi (2,4 y 5 GHz). Los sensores de habitación se enlazan directamente con el termostato; las páginas que vimos no nombran su radio.",
     "hubRequired": "Wifi integrado; los sensores de habitación se emparejan directamente con el termostato.",
     "localControl": "Ninguna fuente del fabricante indica qué funciona sin internet.",
     "thermostatType": "Termostato de pared.",
@@ -17,8 +17,8 @@
     "compatibility.apple_home": "El manual del T9 de Honeywell incluye un procedimiento de emparejamiento con HomeKit (Connect HomeKit en el termostato y escanear el código en la app Casa). Su artículo de soporte dice que HomeKit puede cambiar las consignas pero no leer los sensores de habitación.",
     "compatibility.google_home": "Honeywell dice que Google Assistant puede ver y controlar tanto el termostato como sus sensores.",
     "compatibility.alexa": "Honeywell dice que Alexa puede ver y controlar tanto el termostato como sus sensores.",
-    "compatibility.smartthings": "Honeywell lista SmartThings. Su artículo de soporte dice que SmartThings puede cambiar las consignas pero no leer los sensores.",
-    "compatibility.home_assistant": "La integración Honeywell de Home Assistant es para Total Connect Comfort y lista otros modelos; la documentación que vimos no nombra el T9. Un usuario del foro lo usa mediante HomeKit, lo cual no es una fuente del fabricante."
+    "compatibility.smartthings": "Honeywell incluye SmartThings. Su artículo de soporte dice que SmartThings puede cambiar las consignas pero no leer los sensores.",
+    "compatibility.home_assistant": "La integración Honeywell de Home Assistant es para Total Connect Comfort y incluye otros modelos; la documentación que vimos no nombra el T9. Un usuario del foro lo usa mediante HomeKit, lo cual no es una fuente del fabricante."
   },
   "values": {
     "systems": "La mayoría de los sistemas de calefacción, refrigeración y bomba de calor de 24 V",

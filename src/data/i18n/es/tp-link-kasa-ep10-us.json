@@ -9,14 +9,14 @@
   "notes": {
     "radios": "Wifi de 2,4 GHz (IEEE 802.11b/g/n); sin 5 GHz.",
     "matter": "TP-Link y Kasa indican Alexa, Google y SmartThings para el EP10 y no mencionan Matter, pero nunca dicen que no lo tenga. No hemos encontrado ningún registro de la CSA para el EP10.",
-    "hubRequired": "Se conecta directamente a la wifi de 2,4 GHz; Kasa dice que no hace falta hub.",
+    "hubRequired": "Se conecta directamente al wifi de 2,4 GHz; Kasa dice que no hace falta hub.",
     "localControl": "La integración de Home Assistant controla los enchufes Kasa a través de la red local. La propia app Kasa funciona a través de la nube.",
     "energyMonitoring": "Las páginas del EP10 de TP-Link no indican medidor de potencia, y una respuesta en la comunidad de TP-Link dice que no lo tiene, pero no hemos encontrado ninguna especificación oficial que lo diga.",
     "maxLoadWatts": "15 A, 1800 W de uso general / carga resistiva a 100–120 V CA.",
-    "compatibility.apple_home": "La lista de plataformas del EP10 de TP-Link nombra Alexa, Google Assistant y SmartThings, no HomeKit, pero no lo descarta. Los enchufes HomeKit de Kasa son el KP125 y el EP25.",
+    "compatibility.apple_home": "La lista de plataformas del EP10 de TP-Link incluye Alexa, Google Assistant y SmartThings, no HomeKit, pero no lo descarta. Los enchufes HomeKit de Kasa son el KP125 y el EP25.",
     "compatibility.google_home": "Vinculación de nube a nube entre las cuentas de Kasa y de Google.",
     "compatibility.alexa": "Vinculación de nube a nube mediante la skill de Kasa.",
     "compatibility.smartthings": "TP-Link indica Samsung SmartThings, y la guía de usuario incluye los pasos de configuración de SmartThings.",
-    "compatibility.home_assistant": "Figura en la integración oficial TP-Link Smart Home. Un usuario del foro informó de unidades de EP10 que no se detectaron."
+    "compatibility.home_assistant": "Figura en la integración oficial TP-Link Smart Home. Un usuario del foro contó que no se detectaron algunas unidades del EP10."
   }
 }

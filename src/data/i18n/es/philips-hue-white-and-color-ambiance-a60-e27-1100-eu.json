@@ -1,9 +1,9 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Empareja la Philips Hue White and Colour Ambiance A60 europea con un Hue Bridge y funcionará con Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Alexa, Google y Home Assistant usan las integraciones propias de Hue; Apple Home y SmartThings necesitan el Bridge. Por sí sola, la bombilla funciona por Bluetooth desde la app Hue. Es el EAN 8720169364066, una bombilla de color con casquillo E27 de 1100 lúmenes a 4000 K. Matter está sin confirmar para este EAN.",
+  "summary": "Empareja la Philips Hue White and Colour Ambiance A60 europea con un Hue Bridge y funcionará con Apple Home, Google Home, Alexa, SmartThings y Home Assistant. Alexa, Google y Home Assistant usan las integraciones propias de Hue; Apple Home y SmartThings necesitan el Bridge. Por sí sola, la bombilla funciona por Bluetooth desde la app Hue. Es el EAN 8720169364066, una bombilla de color con casquillo E27 de 1100 lúmenes a 4000 K. Matter no está confirmado para este EAN.",
   "caveats": [
     "Apple Home y SmartThings necesitan un Hue Bridge; el emparejamiento directo con Matter no está confirmado para este EAN.",
-    "La página europea de Hue incluye Alexa y Google Home en «Hue Bridge required»; el control por voz sin puente solo aparece descrito en las preguntas frecuentes estadounidenses de Hue.",
+    "La página europea de Hue incluye Alexa y Google Home en «Hue Bridge necesario»; el control por voz sin puente solo aparece descrito en las preguntas frecuentes estadounidenses de Hue.",
     "El modo Bluetooth admite unas 10 luces en una sola habitación y no tiene acceso remoto.",
     "Una bombilla Hue E27 de color anterior, también vendida como «1100» (EAN 8719514291171), llega a 1055 lm como máximo, así que comprueba el EAN en la caja."
   ],
@@ -14,11 +14,11 @@
     "localControl": "El control por Bluetooth desde el móvil no necesita internet; el Hue Bridge también ofrece una API local que usa Home Assistant.",
     "colorType": "Color completo y blanco regulable; Hue indica un rango de 1000–20000 K.",
     "lumens": "1100 lm a 4000 K para el EAN 8720169364066. La bombilla E27 de color anterior de Hue, vendida como «1100» (EAN 8719514291171), llega a 1055 lm como máximo; comprueba el EAN en la caja.",
-    "compatibility.apple_home": "La página de producto de Hue incluye Apple Home en «Hue Bridge required»; el Bridge se vincula mediante HomeKit o Matter. Si esta bombilla es el modelo Thread registrado en la CSA, quizá también se empareje directamente con Matter; sin confirmar.",
-    "compatibility.google_home": "Funciona con la integración propia de Hue para Google Home. Las preguntas frecuentes de Hue (EE. UU.) dicen que las bombillas Bluetooth funcionan sin puente solo con altavoces y pantallas Google Nest; la página europea incluye Google en «Hue Bridge required».",
-    "compatibility.alexa": "Funciona con la integración propia de Hue para Alexa. Las preguntas frecuentes de Hue (EE. UU.) dicen que las bombillas Bluetooth se pueden emparejar con dispositivos Echo compatibles sin Bridge; la página europea incluye Alexa en «Hue Bridge required».",
-    "compatibility.smartthings": "La página de producto de Hue incluye SmartThings en «Hue Bridge required». El emparejamiento directo con Matter no está confirmado para este EAN (ver Matter).",
-    "compatibility.home_assistant": "Integración oficial de Hue (con Hue Bridge) e integración oficial Hue BLE (2025.12, Bluetooth sin puente). La documentación de BLE nombra modelos concretos de Hue y dice que los demás deberían funcionar; este EAN no aparece."
+    "compatibility.apple_home": "La página de producto de Hue incluye Apple Home en «Hue Bridge necesario»; el Bridge se vincula mediante HomeKit o Matter. Si esta bombilla es el modelo Thread registrado en la CSA, quizá también se empareje directamente con Matter; sin confirmar.",
+    "compatibility.google_home": "Funciona con la integración propia de Hue para Google Home. Las preguntas frecuentes de Hue (EE. UU.) dicen que las bombillas Bluetooth funcionan sin puente solo con altavoces y pantallas Google Nest; la página europea incluye Google en «Hue Bridge necesario».",
+    "compatibility.alexa": "Funciona con la integración propia de Hue para Alexa. Las preguntas frecuentes de Hue (EE. UU.) dicen que las bombillas Bluetooth se pueden emparejar con dispositivos Echo compatibles sin Bridge; la página europea incluye Alexa en «Hue Bridge necesario».",
+    "compatibility.smartthings": "La página de producto de Hue incluye SmartThings en «Hue Bridge necesario». El emparejamiento directo con Matter no está confirmado para este EAN (ver Matter).",
+    "compatibility.home_assistant": "Integración oficial de Hue (con Hue Bridge) e integración oficial Hue BLE (2025.12, Bluetooth sin puente). La documentación de BLE menciona modelos concretos de Hue y dice que los demás deberían funcionar; este EAN no aparece."
   },
   "via": {
     "apple_home": "Philips Hue Bridge",

@@ -9,8 +9,10 @@ interface Props {
   brandJump?: boolean;
   /** prefix for brand anchors, so several tables on one page don't share ids (e.g. "us-") */
   anchorPrefix?: string;
+  /** names the brand jump bar when a page has several tables (e.g. "Europe") */
+  region?: string;
 }
-const { devices, brandJump = false, anchorPrefix = '' } = Astro.props;
+const { devices, brandJump = false, anchorPrefix = '', region } = Astro.props;
 const lang = langOf(Astro.url.pathname);
 const t = ui(lang);
 const translations = await getTranslations();
@@ -22,7 +24,7 @@ const brands = [...new Set(devices.map((d) => d.data.brand))];
 
 {
   brandJump && brands.length > 4 && (
-    <nav class="toc" aria-label={t.jumpToBrand.replace(/:$/, '')}>
+    <nav class="toc" aria-label={`${t.jumpToBrand.replace(/:$/, '')}${region ? ` (${region})` : ''}`}>
       <span class="toc-label">{t.jumpToBrand}</span>
       {brands.map((b) => <a href={`#${brandAnchor(b)}`}>{b}</a>)}
     </nav>

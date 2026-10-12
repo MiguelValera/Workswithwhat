@@ -10,7 +10,7 @@
   "notes": {
     "radios": "Solo wifi de 2,4 GHz.",
     "matter": "Las páginas de especificaciones de TP-Link solo indican Alexa y Google, y no hemos encontrado ningún registro de la CSA para la L510E. Sin confirmar.",
-    "hubRequired": "Aquí significa necesitar un puente o hub para el control básico desde la app. Se une directamente a la wifi de 2,4 GHz y se controla desde la app Tapo; no hace falta hub.",
+    "hubRequired": "Aquí significa necesitar un puente o hub para el control básico desde la app. Se une directamente al wifi de 2,4 GHz y se controla desde la app Tapo; no hace falta hub.",
     "localControl": "La integración de TP-Link en Home Assistant controla los dispositivos compatibles en la red local, aunque se autentica con las credenciales de tu cuenta de TP-Link.",
     "colorType": "Blanco cálido fijo, 2700 K; regulable solo a través de la app y la nube.",
     "lumens": "806 lm, comparable a una incandescente de 60 W.",

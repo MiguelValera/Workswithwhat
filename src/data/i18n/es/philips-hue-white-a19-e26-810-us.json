@@ -5,7 +5,7 @@
     "Apple Home y SmartThings necesitan un Hue Bridge.",
     "810 lm es la cifra de brillo máximo de Hue; Hue no muestra un rendimiento nominal aparte.",
     "Blanco fijo de 2700 K: sin color y sin ajuste de temperatura de color.",
-    "El modo Bluetooth maneja unas 10 luces a corta distancia y no tiene acceso remoto.",
+    "El modo Bluetooth admite unas 10 luces a corta distancia y no tiene acceso remoto.",
     "Hue incluye Matter para esta bombilla solo en «Hue Bridge necesario», y no hemos encontrado ningún registro de la CSA para la propia bombilla.",
     "Hue vende esta bombilla sobre todo en packs de 2 y de 4."
   ],
@@ -20,7 +20,7 @@
     "compatibility.google_home": "Mediante la integración propia de Hue con Google Home. La FAQ de Hue dice que las bombillas Bluetooth funcionan sin puente solo con altavoces y pantallas Google Nest; la página de producto incluye Google en «Hue Bridge necesario».",
     "compatibility.alexa": "Mediante la integración propia de Hue con Alexa. La FAQ de Hue dice que las bombillas Bluetooth se pueden emparejar sin Bridge con la mayoría de los Echo; la página de producto incluye Alexa en «Hue Bridge necesario».",
     "compatibility.smartthings": "La página de producto de Hue incluye Samsung SmartThings entre los sistemas de terceros, en «Hue Bridge necesario».",
-    "compatibility.home_assistant": "Integración oficial de Hue (mediante Hue Bridge) e integración oficial de Hue BLE (desde la 2025.12, Bluetooth sin puente). La documentación de BLE no nombra esta bombilla concreta."
+    "compatibility.home_assistant": "Integración oficial de Hue (mediante Hue Bridge) e integración oficial de Hue BLE (desde la 2025.12, Bluetooth sin puente). La documentación de BLE no menciona esta bombilla concreta."
   },
   "via": {
     "apple_home": "Philips Hue Bridge",

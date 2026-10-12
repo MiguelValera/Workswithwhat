@@ -160,10 +160,14 @@ for (const file of esFiles) {
       ...Object.entries(t.via ?? {}).map(([e, v]) => [`via.${e}`, d.compatibility[e]?.via ?? '', v]),
       ...Object.entries(t.values ?? {}).map(([k, v]) => [`values.${k}`, String(d[k]?.value ?? ''), v]),
     ];
+    // same numbers both ways: none invented, none dropped (a dropped number is usually a dropped fact)
     for (const [k, enText, esText] of pairs) {
-      const allowed = numbers(enText);
-      const extra = [...numbers(esText)].filter((n) => !allowed.has(n));
+      const en = numbers(enText);
+      const es = numbers(esText);
+      const extra = [...es].filter((n) => !en.has(n));
+      const lost = [...en].filter((n) => !es.has(n));
       if (extra.length) errs.push(`${k}: number(s) ${extra.join(', ')} not in the English text`);
+      if (lost.length) errs.push(`${k}: number(s) ${lost.join(', ')} from the English text are missing`);
     }
     const copy = [t.summary, ...t.caveats].join(' ');
     for (const w of ES_BANNED) if (copy.toLowerCase().includes(w)) errs.push(`banned phrase in copy: "${w}"`);

@@ -39,7 +39,8 @@ Read `CLAUDE.md` first. You never touch `src/data/devices/`. You write only `src
   - Matter controller → controlador Matter
   - pairing → emparejamiento · set up → configurar · link your account → vincula tu cuenta
   - skill (Alexa) → skill · integration → integración · bridge → puente (generic) · hub → hub
-  - neutral wire → cable neutro · deadbolt → cerrojo · retrofit lock → cerradura que se monta sobre el cilindro existente
+  - neutral wire → cable neutro · deadbolt → cerrojo · retrofit lock → cerradura que se monta por dentro sobre el cilindro actual · cylinder → cilindro (not "bombín") · keyhole → bocallave
+  - "not confirmed either way" → "sin confirmar" / "ninguna fuente oficial lo confirma o lo descarta" (not "en ningún sentido")
   - energy monitoring → medición de consumo · local control → control local · firmware update → actualización de firmware
   - datasheet → ficha técnica · user guide/manual → manual · support article → artículo de soporte · listing (CSA) → registro (de la CSA)
   - US / EU / UK → estadounidense / europeo / británico (as adjectives), EE. UU. / UE / Reino Unido (as nouns)

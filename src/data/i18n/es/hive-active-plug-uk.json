@@ -1,6 +1,6 @@
 {
   "basedOn": "2026-10-11",
-  "summary": "Si eres nuevo en Hive, cuenta con comprar un Hive Hub: el Hive Active Plug es un enchufe Zigbee británico que llega a Apple Home, Google Home, Alexa y Home Assistant solo a través de ese hub. Quienes ya usan Hive pueden añadirlo al hub que tienen. La app Hive muestra en vatios el consumo del aparato enchufado. Ni Hive ni SmartThings documentan compatibilidad con SmartThings.",
+  "summary": "Si eres nuevo en Hive, tendrás que comprar un Hive Hub: el Hive Active Plug es un enchufe Zigbee británico que llega a Apple Home, Google Home, Alexa y Home Assistant solo a través de ese hub. Quienes ya usan Hive pueden añadirlo al hub que tienen. La app Hive muestra en vatios el consumo del aparato enchufado. Ni Hive ni SmartThings documentan compatibilidad con SmartThings.",
   "caveats": [
     "Necesita un Hive Hub; el enchufe no puede conectarse solo al wifi.",
     "Los horarios y las acciones no se pueden controlar desde la app Casa de Apple.",
@@ -15,11 +15,11 @@
     "energyMonitoring": "La app Hive muestra en vatios el consumo del aparato enchufado. «Hive Plug» es el nombre actual que da Hive al Active Plug (misma página de tienda y misma URL de especificaciones).",
     "maxLoadWatts": "Las páginas de Hive no dan la carga máxima. Los minoristas británicos indican 13 A, pero no hemos encontrado ninguna cifra oficial en vatios.",
     "matter": "Las páginas del enchufe de Hive no mencionan Matter, y no hemos encontrado ningún registro de la CSA.",
-    "compatibility.apple_home": "El sitio de soporte de Hive lista los Hive Plug para Apple Home, que se activa desde la app Hive mediante el Hive Hub. Los horarios y las acciones no se pueden controlar desde la app Casa. Un minorista dice que no admite HomeKit; las propias páginas de Hive dicen que sí.",
-    "compatibility.google_home": "Hive lista Google Assistant; el enchufe llega a él a través del Hive Hub y la cuenta de Hive.",
+    "compatibility.apple_home": "El sitio de soporte de Hive incluye los Hive Plug entre los compatibles con Apple Home, que se activa desde la app Hive mediante el Hive Hub. Los horarios y las acciones no se pueden controlar desde la app Casa. Un minorista dice que no admite HomeKit; las propias páginas de Hive dicen que sí.",
+    "compatibility.google_home": "Hive indica Google Assistant; el enchufe llega a él a través del Hive Hub y la cuenta de Hive.",
     "compatibility.alexa": "Mediante la skill Hive de Alexa y el Hive Hub. Hive dice que el enlace con Alexa no admite configuraciones con varios usuarios ni varias casas.",
     "compatibility.smartthings": "Ninguna página oficial de Hive ni de SmartThings lo cubre. Usuarios del foro de SmartThings cuentan resultados desiguales al emparejarlo directamente por Zigbee.",
-    "compatibility.home_assistant": "La integración oficial Hive de Home Assistant lista el Active Plug como interruptor. Usa tu cuenta de Hive (inicio de sesión del propietario, con verificación en dos pasos) y el Hive Hub."
+    "compatibility.home_assistant": "La integración oficial Hive de Home Assistant incluye el Active Plug como interruptor. Usa tu cuenta de Hive (inicio de sesión del propietario, con verificación en dos pasos, 2FA) y el Hive Hub."
   },
   "via": {
     "apple_home": "Hive Hub",
