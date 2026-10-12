@@ -1,0 +1,115 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Honeywell Home",
+  "model": "T6 Pro Smart Thermostat TH6320WF2003",
+  "name": "Honeywell Home T6 Pro (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://honeywellhome.com/us/en/products/air/thermostats/wifi-thermostats/t6-pro-smart-thermostat-th6320wf2003-u",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "honeywell-t6-pro"
+    ],
+    "note": "2.4 GHz 802.11 b/g/n only."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Honeywell's page doesn't mention Matter; no CSA listing was checked."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "honeywell-t6-pro"
+      ],
+      "note": "The T6 Pro feature copy says \"Integration with your Apple Home and Amazon Echo\"."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Google Assistant appears only in Honeywell's brand-wide works-with logo row, not in this model's own copy."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "honeywell-t6-pro"
+      ],
+      "note": "The T6 Pro feature copy names Amazon Echo integration."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Samsung SmartThings appears only in Honeywell's brand-wide works-with logo row, not in this model's own copy."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Home Assistant page was checked for this model."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "honeywell-t6-pro"
+    ],
+    "note": "Connects straight to home Wi-Fi; page lists RedLINK as No."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Honeywell doesn't say whether control works without its cloud."
+  },
+  "thermostatType": {
+    "value": "wall",
+    "sources": [
+      "honeywell-t6-pro"
+    ]
+  },
+  "systems": {
+    "value": "Low voltage; up to 3 heat/2 cool heat pump, 2 heat/2 cool conventional",
+    "sources": [
+      "honeywell-t6-pro"
+    ],
+    "note": "The model name and one spec table say 3 heat/2 cool on heat pumps; another spec table on the same page says 2 heat/1 cool."
+  },
+  "power": {
+    "value": "C-wire required",
+    "sources": [
+      "honeywell-c-wire"
+    ],
+    "note": "Honeywell's support article says the T5/T6 Pro Wi-Fi models require a common wire."
+  },
+  "summary": "The T6 Pro TH6320WF2003 from Honeywell Home is a 2.4 GHz Wi-Fi wall thermostat for low-voltage systems: up to 3 heat and 2 cool stages on heat pumps, 2 and 2 on conventional. Honeywell's copy for this model names Apple Home and Amazon Echo. No hub is needed, but it requires a C-wire.",
+  "caveats": [
+    "Needs a C-wire; Honeywell sells a C-wire adapter.",
+    "2.4 GHz Wi-Fi only.",
+    "Sold through installers: Honeywell's page shows it as sold out with pricing from a pro, and one spec table lists fewer heat pump stages.",
+    "Google Home, SmartThings, Matter and Home Assistant support are not confirmed for this model."
+  ],
+  "sources": [
+    {
+      "id": "honeywell-t6-pro",
+      "url": "https://honeywellhome.com/us/en/products/air/thermostats/wifi-thermostats/t6-pro-smart-thermostat-th6320wf2003-u",
+      "title": "T6 Pro Smart Thermostat Multi-Stage 3 Heat/2 Cool",
+      "publisher": "Honeywell Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "honeywell-c-wire",
+      "url": "https://www.honeywellhome.com/blogs/support/do-the-t5-t6-pro-wifi-model-thermostats-require-a-c-wire",
+      "title": "Do the Lyric T5/T6 Pro Wi Fi model thermostats require a C wire?",
+      "publisher": "Honeywell Home",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-12",
+  "updatedAt": "2026-10-12"
+}

@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El T6 Pro TH6320WF2003 de Honeywell Home es un termostato de pared con wifi de 2,4 GHz para sistemas de baja tensión: hasta 3 etapas de calor y 2 de frío en bombas de calor, y 2 y 2 en sistemas convencionales. La web de Honeywell para este modelo nombra Apple Home y Amazon Echo. No necesita hub, pero requiere cable C.",
+  "caveats": [
+    "Necesita cable C; Honeywell vende un adaptador de cable C.",
+    "Solo wifi de 2,4 GHz.",
+    "Se vende a través de instaladores: la página de Honeywell lo muestra agotado, con el precio a consultar con un profesional, y una tabla de especificaciones indica menos etapas en bomba de calor.",
+    "Google Home, SmartThings, Matter y Home Assistant están sin confirmar para este modelo."
+  ],
+  "notes": {
+    "radios": "Solo 802.11 b/g/n a 2,4 GHz.",
+    "matter": "La página de Honeywell no menciona Matter; no se ha consultado ningún registro de la CSA.",
+    "hubRequired": "Se conecta directamente al wifi de casa; la página indica RedLINK como No.",
+    "localControl": "Honeywell no dice si el control funciona sin su nube.",
+    "systems": "El nombre del modelo y una tabla de especificaciones indican 3 etapas de calor y 2 de frío en bombas de calor; otra tabla de la misma página indica 2 de calor y 1 de frío.",
+    "power": "El artículo de soporte de Honeywell dice que los modelos wifi T5/T6 Pro requieren un cable común.",
+    "compatibility.apple_home": "El texto de características del T6 Pro dice \"Integration with your Apple Home and Amazon Echo\" (integración con tu Apple Home y Amazon Echo).",
+    "compatibility.google_home": "Google Assistant aparece solo en la fila de logotipos de compatibilidad de toda la marca Honeywell, no en el texto propio de este modelo.",
+    "compatibility.alexa": "El texto de características del T6 Pro nombra la integración con Amazon Echo.",
+    "compatibility.smartthings": "Samsung SmartThings aparece solo en la fila de logotipos de compatibilidad de toda la marca Honeywell, no en el texto propio de este modelo.",
+    "compatibility.home_assistant": "No se ha consultado ninguna página de Home Assistant para este modelo."
+  },
+  "values": {
+    "systems": "Baja tensión; bomba de calor hasta 3 calor/2 frío, convencional 2 calor/2 frío",
+    "power": "Cable C obligatorio"
+  }
+}

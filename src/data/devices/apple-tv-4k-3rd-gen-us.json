@@ -1,0 +1,150 @@
+{
+  "category": "smart-hub",
+  "brand": "Apple",
+  "model": "Apple TV 4K (3rd generation) Wi-Fi + Ethernet",
+  "name": "Apple TV 4K 3rd Gen (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.apple.com/apple-tv-4k/",
+  "radios": {
+    "value": [
+      "wifi",
+      "ethernet",
+      "bluetooth",
+      "thread"
+    ],
+    "sources": [
+      "apple-tv-specs"
+    ],
+    "note": "Thread is on the Wi-Fi + Ethernet (128 GB) model only; the Wi-Fi (64 GB) model has no Thread or Ethernet."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "apple-home-hub"
+    ],
+    "note": "Apple says Apple TV 4K can act as the home hub for Matter accessories, but no CSA listing for this device was checked, so certification is not confirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "native",
+      "sources": [
+        "apple-tv-specs",
+        "apple-home-hub"
+      ],
+      "note": "Becomes a home hub when added to a room in the Home app, for HomeKit and Matter accessories and remote access. Thread accessories need the Wi-Fi + Ethernet model."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Apple TV hosting devices for Google Home."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Apple TV hosting devices for Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Apple TV hosting devices for SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows devices paired to the Apple TV appearing in Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "apple-home-hub"
+    ],
+    "note": "The Apple TV itself is the home hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Apple's pages don't say which automations run locally."
+  },
+  "hubType": {
+    "value": "speaker-display",
+    "sources": [
+      "apple-tv-specs",
+      "apple-home-hub",
+      "apple-tv-page"
+    ],
+    "note": "A streaming box that Apple calls a smart home hub. The schema has no set-top-box type; 'speaker-display' (a device whose main job is media, with a hub built in, like HomePod) fits better than 'hub' (a dedicated bridge)."
+  },
+  "deviceProtocols": {
+    "value": [
+      "thread"
+    ],
+    "sources": [
+      "apple-tv-specs",
+      "apple-matter-pairing"
+    ],
+    "note": "Thread (Wi-Fi + Ethernet model) for HomeKit and Matter Thread accessories."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Apple doesn't describe the Apple TV as a Matter bridge."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "apple-tv-specs",
+      "apple-matter-pairing"
+    ],
+    "note": "Wi-Fi + Ethernet model only; Apple names Apple TV 4K as a Thread-enabled home hub."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "No limit found in the sources."
+  },
+  "summary": "A streaming box that doubles as the Apple Home hub, the Apple TV 4K (3rd generation) handles HomeKit and Matter accessories and remote access once you add it to a room in the Home app. Only the Wi-Fi + Ethernet model has Thread and works as a Thread border router. Apple's pages don't tie it to Google Home, Alexa or SmartThings.",
+  "caveats": [
+    "Only the Wi-Fi + Ethernet (128 GB) model has Thread; the Wi-Fi (64 GB) model cannot serve as a Thread border router.",
+    "No CSA Matter certificate for the Apple TV itself was checked; its Matter role rests on Apple's support pages."
+  ],
+  "sources": [
+    {
+      "id": "apple-tv-specs",
+      "url": "https://support.apple.com/en-us/111839",
+      "title": "Apple TV 4K (3rd generation) - Tech Specs",
+      "publisher": "Apple",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "apple-tv-page",
+      "url": "https://www.apple.com/apple-tv-4k/",
+      "title": "Apple TV 4K",
+      "publisher": "Apple",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "apple-home-hub",
+      "url": "https://support.apple.com/en-us/102557",
+      "title": "Set up your HomePod, HomePod mini, or Apple TV as a home hub",
+      "publisher": "Apple",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "apple-matter-pairing",
+      "url": "https://support.apple.com/en-us/102135",
+      "title": "Pair and manage your Matter accessories",
+      "publisher": "Apple",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}
