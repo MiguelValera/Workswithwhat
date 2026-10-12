@@ -3,7 +3,7 @@ import '../styles/global.css';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, ecosystemSlug, getActiveCategories } from '../lib/devices';
 import { getActiveMarkets, getRegionPages, marketText } from '../lib/markets';
 import { catText } from '../lib/categories';
-import { OPERATOR } from '../site.config';
+import MailLink from '../components/MailLink.astro';
 import { ACTIVE_LANGS, HTML_LANG, LANG_NAMES, OG_LOCALE, langOf, localize, toEnglish } from '../i18n/lang';
 import { ui } from '../i18n/ui';
 
@@ -219,7 +219,9 @@ if (crumbs.length) {
         </nav>
         <p>
           {t.footerCorrection}{' '}
-          <a href={`mailto:${OPERATOR.email}?subject=${encodeURIComponent(t.footerMailSubject)}`}>{t.footerTellUs}</a>.
+          <MailLink subject={t.footerMailSubject}>{t.footerTellUs}</MailLink>.
+          {t.missingDevice}{' '}
+          <MailLink subject={t.missingDeviceSubject} body={t.missingDeviceBody}>{t.missingDeviceLink}</MailLink>.
         </p>
         <p class="muted">
           {t.footerNotAffiliated}

@@ -1,0 +1,18 @@
+---
+// A mailto: link to OPERATOR.email, wrapped in <!--email_off--> so Cloudflare's
+// Email Obfuscation leaves it alone. Obfuscated links need a decoding script,
+// which the CSP blocks, so visitors would only see "[email protected]".
+import { OPERATOR } from '../site.config';
+
+interface Props {
+  subject?: string;
+  body?: string;
+}
+const { subject, body } = Astro.props;
+const params = [
+  subject && `subject=${encodeURIComponent(subject)}`,
+  body && `body=${encodeURIComponent(body)}`,
+].filter(Boolean);
+const href = `mailto:${OPERATOR.email}${params.length ? `?${params.join('&')}` : ''}`;
+---
+<Fragment set:html="<!--email_off-->" /><a href={href}><slot>{OPERATOR.email}</slot></a><Fragment set:html="<!--/email_off-->" />

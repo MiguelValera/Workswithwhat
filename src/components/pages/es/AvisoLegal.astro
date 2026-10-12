@@ -1,4 +1,5 @@
 ---
+import MailLink from '../../MailLink.astro';
 import Base from '../../../layouts/Base.astro';
 import { CONTACT_URL, LEGAL_UPDATED, OPERATOR } from '../../../site.config';
 import { formatDate } from '../../../lib/devices';
@@ -26,7 +27,7 @@ const details = [
         {details.map(([k, v]) => (
           <div>
             <dt>{k}</dt>
-            <dd>{v}</dd>
+            <dd>{v === OPERATOR.email ? <MailLink /> : v}</dd>
           </div>
         ))}
       </dl>
@@ -35,7 +36,7 @@ const details = [
   <p>
     Workswithwhat (workswithwhat.com) es un sitio de referencia independiente sobre la compatibilidad de dispositivos
     domóticos. Para preguntas, correcciones o requerimientos legales,
-    <a href={CONTACT_URL}>contacta a través del gestor de incidencias del proyecto</a>{OPERATOR.email && <> o por correo electrónico en <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a></>}.
+    <a href={CONTACT_URL}>contacta a través del gestor de incidencias del proyecto</a>{OPERATOR.email && <> o por correo electrónico en <MailLink /></>}.
   </p>
 
   <h2>Solo información, sin garantía</h2>

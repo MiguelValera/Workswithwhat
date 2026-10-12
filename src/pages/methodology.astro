@@ -1,6 +1,7 @@
 ---
+import MailLink from '../components/MailLink.astro';
 import Base from '../layouts/Base.astro';
-import { CONTACT_URL, OPERATOR } from '../site.config';
+import { CONTACT_URL } from '../site.config';
 ---
 
 <Base
@@ -47,7 +48,7 @@ import { CONTACT_URL, OPERATOR } from '../site.config';
   <h2>Corrections</h2>
   <p>
     Firmware updates change compatibility all the time. If something here is wrong or out of date,
-    email <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a> or <a href={CONTACT_URL}>open an issue</a> with a link, and we'll re-check it.
+    email <MailLink /> or <a href={CONTACT_URL}>open an issue</a> with a link, and we'll re-check it.
     No brand pays to be listed, and there are no affiliate links.
   </p>
 </Base>

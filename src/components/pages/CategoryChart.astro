@@ -3,6 +3,8 @@
 // market) or one market (/us/smart-plugs/, one table). Both languages.
 import Base from '../../layouts/Base.astro';
 import CompareTable from '../CompareTable.astro';
+import MailLink from '../MailLink.astro';
+import { ui } from '../../i18n/ui';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemSlug, formatDate, getTranslations, type Device } from '../../lib/devices';
 import { catText, type Category } from '../../lib/categories';
 import { byMarket, marketText, regionPath, type Market } from '../../lib/markets';
@@ -18,6 +20,7 @@ const lang = langOf(Astro.url.pathname);
 const es = lang === 'es';
 const L = (p: string) => localize(p, lang);
 const c = catText(cat, lang);
+const t = ui(lang);
 const m = market && marketText(market, lang);
 const cap = (s: string) => s.replace(/^./, (x) => x.toUpperCase());
 const translations = await getTranslations();
@@ -141,5 +144,10 @@ const crumbs = market
         </>
       ))
     }
+  </p>
+  <p class="muted">
+    {t.missingDevice}{' '}
+    <MailLink subject={t.missingDeviceSubject} body={t.missingDeviceBody}>{t.missingDeviceLink}</MailLink>
+    {es ? ` y lo añadiremos a la tabla de ${c.plural}.` : ` and we'll add it to the ${cat.singular} chart.`}
   </p>
 </Base>
