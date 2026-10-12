@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemSlug, getPublishedDevices, worksWith } from '../lib/devices';
 import { CATEGORIES } from '../lib/categories';
+import { ES_ENABLED } from '../site.config';
 import { byMarket, getActiveMarkets, getRegionPages } from '../lib/markets';
 
 // llms.txt (https://llmstxt.org): a plain map of the site for AI assistants.
@@ -24,6 +25,9 @@ export const GET: APIRoute = async ({ site }) => {
     ...markets.map((m) => `- [${m.label} devices as JSON](${url(`/api/${m.key}/devices.json`)}): only models sold in ${m.phrase}; per category at /api/${m.key}/<category>.json`),
     `- [Full text for LLMs](${url('/llms-full.txt')}): every device page as Markdown`,
     `- [How we verify](${url('/methodology/')}): sourcing rules and label definitions`,
+    ...(ES_ENABLED
+      ? [`- [Spanish version](${url('/es/')}): the same pages and data in Spanish (Spain), under /es/ with Spanish paths, e.g. ${url('/es/enchufes-inteligentes/')}`]
+      : []),
     '',
   ];
   lines.push(

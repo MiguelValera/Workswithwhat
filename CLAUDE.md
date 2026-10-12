@@ -2,7 +2,7 @@
 
 **workswithwhat.com** — a compatibility reference for smart-home devices. It answers one question per device: *which ecosystem does it work with, how does it connect, and how do we know?* Every claim on the site links to a source.
 
-The site is in **English**; it targets the global search market. Internal docs and agent prompts may be in Spanish or English.
+The site is in **English** at the root and **Spanish (Spain)** under `/es/`; it targets the global search market plus Spain. Internal docs and agent prompts may be in Spanish or English.
 
 ## Principles
 
@@ -44,7 +44,7 @@ The site is in **English**; it targets the global search market. Internal docs a
 
 ## Agents (`.claude/agents/`)
 
-Pipeline: **collector → verifier → editor**, then **reviewer** on the PR.
+Pipeline: **collector → verifier → editor → translator**, then **reviewer** on the PR.
 
 | Agent | Job | Writes |
 |---|---|---|
@@ -52,6 +52,7 @@ Pipeline: **collector → verifier → editor**, then **reviewer** on the PR.
 | `verifier` | Re-checks every claim against its cited source, independently. Downgrades anything unsupported to `unknown`. | Edits the record and sets `status: "verified"` + `verifiedAt` only if everything holds. |
 | `editor` | Writes `summary` and `caveats` from the verified data, plus SEO copy. Never changes facts. | `summary`, `caveats`. |
 | `ux` | HTML/CSS-only UX work on pages and components. Proves SEO is unchanged with a before/after snapshot diff of `dist/`. | Layouts, components, pages, `global.css`. |
+| `translator` | Translates a verified record's prose (summary, caveats, notes, `via`, text values) into Spanish (Spain). Never changes facts. | `src/data/i18n/es/<slug>.json` |
 | `reviewer` | Reviews an open PR against these rules (validate, build, CI, data, CSP, secrets, copy). Never merges. | One PR comment: **Ready to merge** or **Not ready**, with blockers. |
 
 After any agent run: `npm run validate` must pass.
@@ -69,6 +70,15 @@ After any agent run: `npm run validate` must pass.
 - Device pages open with a "Compatibility at a glance" tile grid linking to `#compat-<eco>` rows, then an "On this page" list. Chart pages have region jump links (`#us`, `#eu`, `#uk`) and, per region, brand jump links (`#<market>-brand-<brand>`). Keep these when editing pages.
 - **Markets:** lists never mix regions. `src/lib/markets.ts` groups records into US & Canada, Europe, UK (Australia and Japan when they exist); charts, `/works-with/` pages and the Matter page show one table per market. Region pages: `/<market>/` (home), `/<market>/<category>/`, `/<market>/works-with/<ecosystem>/` and `/<market>/works-with/matter/`, generated only when the market has at least 3 devices for that page (`getRegionPages()`, `MIN_REGION_DEVICES`). The page bodies live in `src/components/pages/` (CategoryChart, EcosystemPage, MatterPage) and render both the all-regions and the one-region version. The header has a region switch (All · US · EU · UK) that links to the same page in the other market, or its closest page. Device pages show a region badge (linking to that market's chart) and "Other regions" links. `/api/<market>/devices.json` and `/api/<market>/<category>.json` hold one market; every API record has `market` and `variants`. `llms.txt` has a "By region" section and lists devices per category and market.
 - Tables with `class="stack"` turn into one card per row below 980 px (labels come from `data-label`; `td.wide` spans the card). New tables should use it, so nothing scrolls sideways on phones.
+
+### Languages (i18n)
+
+- English at the root, Spanish under `/es/` with Spanish path segments: `/es/enchufes-inteligentes/<slug>/`, `/es/compatible-con/apple-home/`, `/es/eu/enchufes-inteligentes/`, `/es/metodologia/`, `/es/aviso-legal/`, `/es/privacidad/`. The segment map is in `src/i18n/lang.ts` (`localize()`, `toEnglish()`); market codes, ecosystem slugs and device slugs stay the same.
+- Pages are written against English paths; components read the language from the URL (`langOf()`) and localize every link. Interface strings live in `src/i18n/ui.ts` or inline as `es ? … : …` in the page components (`src/components/pages/`). Category, market, spec and status names have Spanish versions in `categories.ts`, `markets.ts` and `devices.ts`.
+- Device prose in Spanish lives in `src/data/i18n/es/<slug>.json` (schema `src/schema/translation.ts`): summary, caveats, one entry per note, `via` and text `values`. Facts and sources exist only in the English record, so they can't diverge. `basedOn` must equal the record's `updatedAt`: **any edit to a record makes its translation stale and the validator fails until the translator updates it.**
+- `ES_ENABLED` in `src/site.config.ts` switches the Spanish site on. While it's on, every verified record needs a translation. All Spanish routes come from `getEsPages()` (`src/lib/routes-es.ts`) and render through `src/pages/es/[...path].astro`.
+- Every page has hreflang `en`, `es-ES` and `x-default` (English) alternates, plus a language switch (EN · ES) in the header. Fixed pages (methodology, legal, privacy) have hand-written Spanish versions in `src/components/pages/es/`. The JSON API and `llms*.txt` stay in English.
+- Spanish copy rules: Spain Spanish ("enchufe", "bombilla", "wifi", tú), same facts and numbers as the English (the validator rejects any number not in the English text), decimal comma, banned phrases listed in `scripts/validate-data.mjs`.
 
 ### AI search and agents (GEO)
 

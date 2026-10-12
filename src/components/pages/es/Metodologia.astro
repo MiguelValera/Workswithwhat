@@ -1,0 +1,59 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { CONTACT_URL, OPERATOR } from '../../../site.config';
+---
+
+<Base
+  title="Cómo verificamos la compatibilidad"
+  description="De dónde salen los datos de compatibilidad de Workswithwhat, qué significa cada estado y qué hacemos cuando la información falta o se contradice."
+  crumbs={[{ name: 'Cómo verificamos', path: '/methodology/' }]}
+>
+  <h1>Cómo verificamos la compatibilidad</h1>
+  <p class="lede">
+    Una respuesta de «compatible con» solo sirve si puedes comprobarla. Por eso cada una enlaza a la página de la que sale.
+  </p>
+
+  <h2>De dónde salen los datos</h2>
+  <p>Por orden de preferencia:</p>
+  <ol>
+    <li>La página de producto del fabricante, su ficha técnica, su manual o sus artículos de soporte.</li>
+    <li>La base de datos de certificación de la Connectivity Standards Alliance (CSA), para Matter.</li>
+    <li>Las páginas de las plataformas: Apple, Google, Amazon, Samsung SmartThings y Home Assistant.</li>
+    <li>Tiendas y análisis independientes, solo para respaldar una de las anteriores.</li>
+  </ol>
+  <p>
+    Las fuentes suelen estar en inglés, porque es el idioma en el que publican la mayoría de los fabricantes. Los datos
+    son los mismos en las dos versiones del sitio; solo cambia el texto.
+  </p>
+
+  <h2>Dos revisiones por dispositivo</h2>
+  <p>
+    Una primera revisión reúne las especificaciones y las fuentes. Una segunda vuelve a comprobar cada dato por su cuenta
+    y verifica que la página citada lo dice de verdad, para ese modelo y esa región concretos. Lo que no se sostiene se
+    marca como <span class="badge s-unknown">Sin confirmar</span> en lugar de suponerlo. Un dispositivo solo aparece en
+    la web después de la segunda revisión.
+  </p>
+
+  <h2>Qué significa cada etiqueta</h2>
+  <ul>
+    <li><span class="badge s-native">Sí</span> Funciona con la integración de la propia marca: una skill de Alexa, la vinculación en Google Home, HomeKit o una integración oficial de Home Assistant.</li>
+    <li><span class="badge s-matter">Vía Matter</span> Funciona porque el dispositivo tiene certificación Matter. Lo añades con el emparejamiento Matter de la plataforma. Los dispositivos Thread necesitan además un router de borde Thread, como un Apple TV o un HomePod mini recientes o un Nest Hub.</li>
+    <li><span class="badge s-hub">Vía …</span> Funciona, pero solo a través del hub o puente indicado.</li>
+    <li><span class="badge s-no">No</span> Una fuente dice que no es compatible.</li>
+    <li><span class="badge s-unknown">Sin confirmar</span> No hemos encontrado una respuesta oficial.</li>
+  </ul>
+
+  <h2>Regiones y versiones</h2>
+  <p>
+    Las versiones estadounidense y europea de un dispositivo suelen tener números de modelo, radios o certificaciones
+    distintos. Las tratamos como dispositivos diferentes, mostramos cada lista separada por región y enlazamos las
+    versiones de un mismo producto entre sí.
+  </p>
+
+  <h2>Correcciones</h2>
+  <p>
+    Las actualizaciones de firmware cambian la compatibilidad continuamente. Si algo está mal o desactualizado, escribe
+    a <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a> o <a href={CONTACT_URL}>abre una incidencia</a> con un
+    enlace y lo volveremos a comprobar. Ninguna marca paga por aparecer y no hay enlaces de afiliado.
+  </p>
+</Base>

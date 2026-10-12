@@ -1,0 +1,114 @@
+---
+import Base from '../../layouts/Base.astro';
+import DeviceCard from '../DeviceCard.astro';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, categoryPhrase, ecosystemSlug, getActiveCategories, getPublishedDevices } from '../../lib/devices';
+import { catText } from '../../lib/categories';
+import { getActiveMarkets, marketText } from '../../lib/markets';
+import { langOf, localize } from '../../i18n/lang';
+
+const lang = langOf(Astro.url.pathname);
+const es = lang === 'es';
+const L = (p: string) => localize(p, lang);
+const devices = await getPublishedDevices();
+const cats = await getActiveCategories();
+const markets = await getActiveMarkets();
+const what = categoryPhrase(cats.map((c) => catText(c, lang).plural), lang).long || (es ? 'dispositivos domóticos' : 'smart home devices');
+const recent = [...devices].sort((a, b) => (b.data.verifiedAt ?? '').localeCompare(a.data.verifiedAt ?? '')).slice(0, 6);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Workswithwhat',
+    url: new URL(L('/'), Astro.site).href,
+    inLanguage: es ? 'es-ES' : 'en',
+    description: es ? 'Compatibilidad domótica, comprobada con fuentes oficiales.' : 'Smart home compatibility, checked against official sources.',
+    publisher: { '@id': `${Astro.site!.href}#org` },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${Astro.site!.href}#org`,
+    name: 'Workswithwhat',
+    url: Astro.site!.href,
+    logo: new URL('/favicon.svg', Astro.site).href,
+    sameAs: ['https://github.com/MiguelValera/Workswithwhat'],
+  },
+];
+const title = es
+  ? 'Workswithwhat: ¿es compatible este dispositivo con tu casa inteligente?'
+  : 'Workswithwhat: does this smart home device work with my system?';
+const description = es
+  ? `Comprueba si ${what} funcionan con Apple Home, Google Home, Alexa, SmartThings o Home Assistant. Cada respuesta enlaza a la fuente del fabricante o de la certificación.`
+  : `Check if ${what} work with Apple Home, Google Home, Alexa, SmartThings or Home Assistant. Every answer links to the manufacturer or certification source.`;
+---
+
+<Base title={title} description={description} jsonLd={jsonLd}>
+  {
+    es ? (
+      <>
+        <h1>¿Funcionará con tu casa inteligente?</h1>
+        <p class="lede">
+          La caja dice «compatible con» y se calla los detalles: si necesita un hub, si va por Matter o si la versión de
+          tu región es distinta. Lo buscamos en las especificaciones de los fabricantes y en las bases de datos de
+          certificación, y enlazamos cada respuesta a donde lo encontramos.
+        </p>
+      </>
+    ) : (
+      <>
+        <h1>Will it work with your smart home?</h1>
+        <p class="lede">
+          Box labels say “works with” and leave out the details: whether it needs a hub, if it goes through Matter,
+          or if your region's version is different. We look those up in manufacturer specs and certification
+          databases, and link every answer to where we found it.
+        </p>
+      </>
+    )
+  }
+
+  <ul class="cards">
+    {
+      cats.map((c) => (
+        <li class="card">
+          <h3><a href={L(`/${c.path}/`)}>{catText(c, lang).label}</a></h3>
+          <div class="muted">
+            {devices.filter((d) => d.data.category === c.key).length} {es ? 'comprobados, con fuentes' : 'checked, with sources'}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p class="callout">
+    {es ? 'O ve directamente a una plataforma:' : 'Or jump to a platform:'}{' '}
+    {
+      ECOSYSTEMS.map((e, i) => (
+        <>
+          {i > 0 && ' · '}
+          <a href={L(`/works-with/${ecosystemSlug(e)}/`)}>{ECOSYSTEM_LABELS[e]}</a>
+        </>
+      ))
+    }
+    <br />
+    {es ? 'Solo tu región:' : 'Only your region:'}{' '}
+    {
+      markets.map((m, i) => (
+        <>
+          {i > 0 && ' · '}
+          <a href={L(`/${m.key}/`)}>{marketText(m, lang).label}</a>
+        </>
+      ))
+    }
+  </p>
+
+  <h2>{es ? 'Comprobados recientemente' : 'Recently checked'}</h2>
+  {
+    recent.length ? (
+      <ul class="cards">
+        {recent.map((d) => <DeviceCard device={d} />)}
+      </ul>
+    ) : (
+      <p class="muted">{es ? 'Estamos comprobando los primeros dispositivos. Vuelve pronto.' : 'The first devices are being checked. Come back soon.'}</p>
+    )
+  }
+</Base>

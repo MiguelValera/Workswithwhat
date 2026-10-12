@@ -14,4 +14,4 @@ export const LEGAL_UPDATED = '2026-10-11';
 
 // Spanish site (/es/). Off until every published record has a translation in
 // src/data/i18n/es/; while off, no /es/ page, link or hreflang is built.
-export const ES_ENABLED = false;
+export const ES_ENABLED = true;

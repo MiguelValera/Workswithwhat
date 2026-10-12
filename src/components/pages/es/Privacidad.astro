@@ -1,0 +1,76 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { CONTACT_URL, LEGAL_UPDATED, OPERATOR } from '../../../site.config';
+import { formatDate } from '../../../lib/devices';
+---
+
+<Base
+  title="Privacidad y cookies"
+  description="Workswithwhat no instala cookies ni usa analítica o rastreadores. Qué tratan nuestros proveedores de alojamiento para servir y proteger el sitio, y tus derechos."
+  crumbs={[{ name: 'Privacidad y cookies', path: '/privacy/' }]}
+>
+  <h1>Privacidad y cookies</h1>
+  <p class="muted">Última actualización: <time datetime={LEGAL_UPDATED}>{formatDate(LEGAL_UPDATED, 'es')}</time></p>
+
+  <p class="callout">
+    <strong>En resumen:</strong> no instalamos cookies, no usamos analítica, publicidad ni scripts de seguimiento, y no te
+    pedimos ningún dato personal. Por eso no hay banner de cookies.
+  </p>
+
+  <h2>Responsable del tratamiento</h2>
+  <p>
+    El responsable del tratamiento es el titular de Workswithwhat{OPERATOR.name && <> ({OPERATOR.name})</>}, según figura
+    en el <a href="/es/aviso-legal/">aviso legal</a>.
+  </p>
+
+  <h2>Qué se trata cuando visitas el sitio</h2>
+  <p>
+    El sitio es un conjunto de páginas estáticas. Para servirlas, dos proveedores gestionan tu petición y, como cualquier
+    servidor web, ven datos técnicos como tu dirección IP, el agente de usuario del navegador, la página solicitada y la hora:
+  </p>
+  <ul>
+    <li>
+      <strong>GitHub Pages</strong> (GitHub, Inc.) aloja los archivos. Consulta la
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="nofollow noopener">declaración de privacidad de GitHub</a>.
+    </li>
+    <li>
+      <strong>Cloudflare</strong> (Cloudflare, Inc.) está delante del sitio para servirlo rápido por HTTPS y bloquear
+      ataques. Consulta <a href="https://www.cloudflare.com/trust-hub/gdpr/" rel="nofollow noopener">la página de Cloudflare sobre el RGPD</a>.
+    </li>
+  </ul>
+  <p>
+    Usamos estos datos solo para servir el sitio y mantenerlo seguro, que es nuestro interés legítimo según el artículo
+    6.1.f del RGPD. No recibimos ni guardamos registros de acceso personales, no creamos perfiles y no los combinamos con
+    otros datos. Los dos proveedores tienen sede en Estados Unidos y están certificados en el Marco de Privacidad de Datos
+    UE-EE. UU., que cubre las transferencias de datos desde la UE.
+  </p>
+
+  <h2>Cookies</h2>
+  <p>
+    Workswithwhat no instala cookies ni usa el almacenamiento local. Cloudflare puede instalar una cookie de seguridad
+    estrictamente necesaria (como <code>cf_clearance</code>) si tiene que comprobar que una petición no es automatizada.
+    Estas cookies solo protegen el sitio, no te rastrean y están exentas de consentimiento según la normativa de
+    privacidad electrónica (en España, el artículo 22.2 de la LSSI).
+  </p>
+
+  <h2>Si nos escribes</h2>
+  <p>
+    Puedes enviar correcciones y preguntas {OPERATOR.email && <>por correo electrónico o </>}a través de las
+    <a href={CONTACT_URL}>incidencias de GitHub</a>. Las incidencias son públicas y se rigen por la declaración de
+    privacidad de GitHub, así que no incluyas datos personales que no quieras publicar.
+    {OPERATOR.email && <> Si nos escribes a <a href={`mailto:${OPERATOR.email}`}>{OPERATOR.email}</a>, Cloudflare Email Routing reenvía el mensaje a un buzón de Gmail (Google). Lo usamos solo para responderte y lo borramos cuando ya no hace falta.</>}
+  </p>
+
+  <h2>Tus derechos</h2>
+  <p>
+    Puedes solicitar el acceso, la rectificación o la supresión de tus datos personales, u oponerte a su tratamiento,
+    contactando como se indica en el aviso legal. También puedes reclamar ante la autoridad de protección de datos; en
+    España es la <a href="https://www.aepd.es/" rel="nofollow noopener">Agencia Española de Protección de Datos (AEPD)</a>.
+  </p>
+
+  <h2>Cambios</h2>
+  <p>
+    Si alguna vez añadimos analítica o cualquier otra cosa que trate datos personales o instale cookies no esenciales,
+    actualizaremos antes esta página y pediremos el consentimiento cuando la ley lo exija.
+  </p>
+</Base>
