@@ -12,9 +12,9 @@
       "wifi"
     ],
     "sources": [
-      "roborock-curv-support"
+      "roborock-us"
     ],
-    "note": "Roborock's Qrevo Curv support FAQ says its robots connect on 2.4 GHz Wi-Fi only, not 5 GHz."
+    "note": "Roborock's Qrevo Curv page says it supports only 2.4 GHz Wi-Fi, not 5 GHz."
   },
   "matter": {
     "certified": true,
@@ -103,7 +103,7 @@
   },
   "summary": "Apple Home reaches the Roborock Qrevo Curv through Matter, which Roborock added by firmware update (02.26.02) in April 2025. Google Home and Alexa are listed natively. The robot vacuums and mops, with LiDAR navigation, 18,500 Pa suction and a dock that empties the bin on its own.",
   "caveats": [
-    "Wi-Fi is 2.4 GHz only; Roborock's support FAQ says 5 GHz is not supported.",
+    "Wi-Fi is 2.4 GHz only; Roborock's product page says 5 GHz is not supported.",
     "Matter needs firmware 02.26.02, and Roborock says detailed settings stay in the Roborock app.",
     "Roborock's own announcement is the only Matter source: the CSA certificates we saw don't name the Qrevo Curv.",
     "Home Assistant's official Roborock integration doesn't list this model, so support isn't confirmed."
@@ -139,14 +139,6 @@
       "title": "Roborock - Home Assistant",
       "publisher": "Home Assistant",
       "kind": "ecosystem",
-      "accessed": "2026-10-12"
-    },
-    {
-      "id": "roborock-curv-support",
-      "url": "https://forum.roborock.com/en-US/product/roborock-qrevo-curv-message?category=faqs",
-      "title": "Support for your Roborock Qrevo Curv",
-      "publisher": "Roborock",
-      "kind": "manufacturer",
       "accessed": "2026-10-12"
     }
   ],
