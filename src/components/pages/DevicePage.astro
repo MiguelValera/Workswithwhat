@@ -129,12 +129,13 @@ const jsonLd = [
     inLanguage: HTML_LANG[lang],
     dateModified: d.updatedAt,
     ...(d.verifiedAt && { lastReviewed: d.verifiedAt }),
-    mainEntity: {
-      '@type': 'Product',
+    // Thing, not Product: Google requires offers, review or aggregateRating on
+    // any Product, and we publish none of them.
+    about: {
+      '@type': 'Thing',
       name: d.name,
-      model: d.model,
-      brand: { '@type': 'Brand', name: d.brand },
-      category: capitalize(c.singular),
+      identifier: d.model,
+      disambiguatingDescription: `${d.brand} ${c.singular}`,
       description: words.summary,
       url: d.officialUrl,
     },
