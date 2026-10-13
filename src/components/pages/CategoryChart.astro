@@ -80,6 +80,8 @@ const jsonLd = [
     url: new URL(L(path), Astro.site).href,
     ...(newest && { dateModified: newest }),
     creator: { '@type': 'Organization', name: 'Workswithwhat', url: Astro.site!.href },
+    // Our reuse terms ("Using our content" on the legal page), not an open licence.
+    license: new URL(L('/legal/'), Astro.site).href,
     variableMeasured: ['Matter certification', ...ECOSYSTEMS.map((e) => `${ECOSYSTEM_LABELS[e]} compatibility`)],
     distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: new URL(api, Astro.site).href }],
   },
