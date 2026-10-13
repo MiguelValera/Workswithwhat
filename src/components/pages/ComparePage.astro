@@ -75,10 +75,10 @@ const others = (await comparisonsFor(a))
 
 const checked = [a.data.verifiedAt, b.data.verifiedAt].filter(Boolean).sort()[0];
 const product = (d: typeof a, words: typeof wa, path: string) => ({
-  '@type': 'Product',
+  // Thing, not Product: see DevicePage.astro.
+  '@type': 'Thing',
   name: d.data.name,
-  model: d.data.model,
-  brand: { '@type': 'Brand', name: d.data.brand },
+  identifier: d.data.model,
   description: words.summary,
   url: new URL(path, Astro.site).href,
 });
