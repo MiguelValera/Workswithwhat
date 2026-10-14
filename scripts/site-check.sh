@@ -52,6 +52,27 @@ hsts=$(echo "$headers" | grep -i '^strict-transport-security:' | tr -d '\r')
 [ -n "$hsts" ] && ok "$hsts" || warn "no HSTS header yet"
 curl -sS --max-time 20 "$BASE/" | grep -q 'http-equiv="Content-Security-Policy"' && ok "CSP meta tag present" || fail "CSP meta tag missing"
 
+echo "== Caching (Cloudflare edge)"
+# Second request of each URL, so a cacheable file shows HIT. Informational:
+# the cache rules live in the Cloudflare dashboard (docs/cloudflare-cache.md).
+cache_status() {
+  curl -sS -o /dev/null --max-time 20 "$1"
+  curl -sSI --max-time 20 "$1" | tr -d '\r' | grep -iE '^(cf-cache-status|cache-control|age):' | tr '\n' ' '
+}
+css=$(curl -sS --max-time 20 "$BASE/" | grep -o '/_astro/[^"]*\.css' | head -1)
+if [ -n "$css" ]; then
+  # A cached home page must never point at CSS a newer deploy removed
+  code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 "$BASE$css")
+  [ "$code" = 200 ] && ok "stylesheet linked from / -> $code" || fail "stylesheet $css linked from / -> $code (stale cached HTML? purge the cache)"
+fi
+for u in / /smart-plugs/ /api/devices.json /llms.txt ${css:+$css}; do
+  v=$(cache_status "$BASE$u")
+  case "$v" in
+    *[Hh][Ii][Tt]*) ok "$u $v" ;;
+    *) warn "$u ${v:-no cache headers} (not cached at the edge)" ;;
+  esac
+done
+
 echo "== Pages"
 check() {
   code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 20 "$BASE$1")

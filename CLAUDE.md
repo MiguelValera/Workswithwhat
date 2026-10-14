@@ -144,6 +144,7 @@ Read this first if you are picking the project up.
   - The proxy is on with SSL Full (strict), Always Use HTTPS and minimum TLS 1.2.
   - A Transform Rule adds `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`.
   - **Bot Fight Mode must stay OFF.** It answered 403 (`cf-mitigated: challenge`) to every HTML page requested from a datacenter.
+  - **Caching:** GitHub Pages can't set headers (`max-age=600` everywhere) and Cloudflare skips HTML/JSON/TXT by default, so only 0.46 % was cached on 2026-10-14. The fix is two dashboard Cache Rules (whole site 1 day at the edge, `/_astro/*` 1 year) plus a purge on every deploy (`purge-cache` job in `deploy.yml`, needs secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ZONE_ID`; it skips without them). Steps in `docs/cloudflare-cache.md`; the site check reports `cf-cache-status`.
 - **Security:** a CSP meta tag is emitted in production builds only (`default-src 'none'`, no inline styles). JSON-LD escapes `<`. Dependabot is on. TypeScript is held at 6, because `astro check` rejects TS 7. `upload-pages-artifact` and `deploy-pages` stay on their current majors (open Dependabot PRs #4 and #5) until a deploy test confirms newer versions still publish `/.well-known/`.
 - **Legal:** the site sets no cookies and has no trackers, so there is no consent banner. The privacy policy names GitHub Pages and Cloudflare as processors, plus Cloudflare Email Routing and Gmail for email. In `src/site.config.ts`, `OPERATOR.email` is `info@workswithwhat.com`; the other operator details required by Spain's LSSI are still empty and must be filled in before monetising.
 - **Email:** `info@workswithwhat.com` is a Cloudflare Email Routing rule that forwards to the owner's Gmail (no mailbox). The footer's "Tell us" link is a `mailto:` to it.
@@ -154,7 +155,7 @@ Read this first if you are picking the project up.
 - HSTS in Cloudflare, once the site has been stable for a few days.
 - Fill in `src/site.config.ts` with operator details.
 - Post the community texts from `docs/launch-kit.md` (Reddit, Home Assistant forum).
-- **Cloudflare Cache Rule** (optional, speeds up repeat visits): cache `/_astro/*` at the edge and in browsers for a year; those files are content-hashed, so a new deploy never serves stale CSS.
+- **Cloudflare caching:** add the purge token secrets, then the two Cache Rules, following `docs/cloudflare-cache.md`.
 - Post the Spanish community texts from `docs/launch-kit.md`.
 - **Optional:** Cloudflare Web Analytics, which is cookieless. It needs its JS token. To add it, allow `static.cloudflareinsights.com` (script) and `cloudflareinsights.com` (connect) in the CSP, mention it in `/privacy/`, and change "no trackers" in the footer.
 

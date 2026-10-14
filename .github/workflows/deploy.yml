@@ -45,10 +45,30 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
+  # Cloudflare caches the whole site at the edge (cache rules in docs/cloudflare-cache.md),
+  # so each deploy purges it. Skipped until the two repository secrets exist.
+  purge-cache:
+    needs: deploy
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge Cloudflare cache
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          if [ -z "$CF_TOKEN" ] || [ -z "$CF_ZONE" ]; then
+            echo "::notice::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ZONE_ID not set; cache not purged"
+            exit 0
+          fi
+          curl -sSf -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE/purge_cache" \
+            -H "Authorization: Bearer $CF_TOKEN" -H 'Content-Type: application/json' \
+            -d '{"purge_everything":true}' | jq -e '.success'
+
   # Tell IndexNow engines (Bing, Yandex, …) which URLs exist after each deploy.
   # The key is public by design: it is also served at /b065f34bf6c2a7a6c90cf76a5ada5c02.txt.
   indexnow:
-    needs: deploy
+    needs: purge-cache
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
