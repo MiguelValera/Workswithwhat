@@ -43,7 +43,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   # Cloudflare Pages: the new host (docs/cloudflare-pages.md). GitHub Pages keeps
   # deploying as a fallback until the DNS switch is confirmed. Skipped until the
