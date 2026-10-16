@@ -45,30 +45,51 @@ jobs:
       - id: deployment
         uses: actions/deploy-pages@v4
 
-  # Cloudflare caches the whole site at the edge (cache rules in docs/cloudflare-cache.md),
-  # so each deploy purges it. Skipped until the two repository secrets exist.
-  purge-cache:
-    needs: deploy
+  # Cloudflare Pages: the new host (docs/cloudflare-pages.md). GitHub Pages keeps
+  # deploying as a fallback until the DNS switch is confirmed. Skipped until the
+  # CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets exist.
+  deploy-cloudflare:
+    needs: build
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - name: Purge Cloudflare cache
+      - uses: actions/download-artifact@v5
+        with:
+          name: github-pages
+      - name: Deploy to Cloudflare Pages
         env:
-          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CF_ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PROJECT: workswithwhat
+          WRANGLER: wrangler@4.151.1
         run: |
-          if [ -z "$CF_TOKEN" ] || [ -z "$CF_ZONE" ]; then
-            echo "::notice::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ZONE_ID not set; cache not purged"
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::notice::Cloudflare secrets not set; Cloudflare Pages deploy skipped"
             exit 0
           fi
-          curl -sSf -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE/purge_cache" \
-            -H "Authorization: Bearer $CF_TOKEN" -H 'Content-Type: application/json' \
-            -d '{"purge_everything":true}' | jq -e '.success'
+          mkdir dist && tar -xf artifact.tar -C dist
+          # First run creates the project; later runs find it already there
+          npx --yes "$WRANGLER" pages project list | grep -qw "$PROJECT" \
+            || npx --yes "$WRANGLER" pages project create "$PROJECT" --production-branch=main
+          npx --yes "$WRANGLER" pages deploy dist --project-name="$PROJECT" --branch=main --commit-hash="$GITHUB_SHA" | tee deploy.log
+          url=$(grep -o 'https://[a-z0-9.-]*\.pages\.dev' deploy.log | tail -1)
+          echo "Deployed to $url"
+          # Smoke test the deployment itself, before or after the DNS switch
+          sleep 15
+          fails=0
+          for p in / /smart-plugs/ /es/ /.well-known/security.txt /robots.txt /api/devices.json; do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' --retry 3 --retry-all-errors "$url$p")
+            echo "$p -> $code"; [ "$code" = 200 ] || fails=$((fails + 1))
+          done
+          code=$(curl -sS -o /dev/null -w '%{http_code}' "$url/this-page-does-not-exist/")
+          echo "/this-page-does-not-exist/ -> $code"; [ "$code" = 404 ] || fails=$((fails + 1))
+          curl -sSI "$url/" | grep -qi '^x-frame-options:' || { echo "_headers not applied"; fails=$((fails + 1)); }
+          [ "$fails" = 0 ]
 
   # Tell IndexNow engines (Bing, Yandex, …) which URLs exist after each deploy.
   # The key is public by design: it is also served at /b065f34bf6c2a7a6c90cf76a5ada5c02.txt.
   indexnow:
-    needs: purge-cache
+    needs: [deploy, deploy-cloudflare]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:

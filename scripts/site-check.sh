@@ -54,7 +54,7 @@ curl -sS --max-time 20 "$BASE/" | grep -q 'http-equiv="Content-Security-Policy"'
 
 echo "== Caching (Cloudflare edge)"
 # Second request of each URL, so a cacheable file shows HIT. Informational:
-# the cache rules live in the Cloudflare dashboard (docs/cloudflare-cache.md).
+# on Cloudflare Pages, public/_headers sets the caching (docs/cloudflare-pages.md).
 cache_status() {
   curl -sS -o /dev/null --max-time 20 "$1"
   curl -sSI --max-time 20 "$1" | tr -d '\r' | grep -iE '^(cf-cache-status|cache-control|age):' | tr '\n' ' '
