@@ -1,0 +1,12 @@
+# Cloudflare Pages response headers (ignored by GitHub Pages).
+# HTML keeps Pages' default (max-age=0, must-revalidate): the edge serves it
+# from cache until the next deploy, browsers revalidate with ETag.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+
+# Content-hashed build output: a new deploy gets new file names
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
