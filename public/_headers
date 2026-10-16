@@ -1,4 +1,4 @@
-# Cloudflare Pages response headers (ignored by GitHub Pages).
+# Cloudflare Pages response headers.
 # HTML keeps Pages' default (max-age=0, must-revalidate): the edge serves it
 # from cache until the next deploy, browsers revalidate with ETag.
 /*

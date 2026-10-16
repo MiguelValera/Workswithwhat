@@ -1,12 +1,12 @@
 # Migración a Cloudflare Pages
 
-Escrito el 2026-10-16. El sitio pasa de GitHub Pages a Cloudflare Pages (plan gratuito: peticiones y tráfico ilimitados, 20.000 ficheros por despliegue, 25 MiB por fichero; hoy el sitio genera unos 6.100 ficheros, el mayor de 1 MB).
+Hecha el 2026-10-16: el dominio apunta a Cloudflare Pages y el chequeo del sitio pasó entero. El sitio pasó de GitHub Pages a Cloudflare Pages (plan gratuito: peticiones y tráfico ilimitados, 20.000 ficheros por despliegue, 25 MiB por fichero; hoy el sitio genera unos 6.100 ficheros, el mayor de 1 MB).
 
 ## Qué cambia en el repo
 
 - `public/_headers`: cabeceras de seguridad y un año de caché para `/_astro/*` (ficheros con hash). El HTML se queda con lo que pone Pages por defecto: el borde lo sirve de caché hasta el siguiente despliegue y los navegadores revalidan con ETag. No hacen falta reglas de caché ni purgas.
-- `.github/workflows/deploy.yml`: el job `deploy-cloudflare` publica el mismo `dist/` en Cloudflare Pages (proyecto `workswithwhat`) y prueba el despliegue en su URL `*.pages.dev`: páginas clave, `/.well-known/security.txt`, el 404 y las cabeceras. Sin los secretos del paso 1, se salta sin fallar.
-- GitHub Pages sigue desplegando como respaldo hasta que el DNS apunte a Cloudflare y el chequeo del sitio pase.
+- `.github/workflows/deploy.yml`: el job `deploy-cloudflare` publica el mismo `dist/` en Cloudflare Pages (proyecto `workswithwhat`) y prueba el despliegue en su URL `*.pages.dev`: páginas clave, `/.well-known/security.txt`, el 404 y las cabeceras. Sin los secretos del paso 1, falla: es el único despliegue.
+- El despliegue a GitHub Pages se quitó tras la migración.
 
 ## Pasos en el panel
 
@@ -43,13 +43,14 @@ Lanza **Actions → Live site check → Run workflow** en GitHub (o pídeselo a 
 
 ### Volver atrás
 
-Si algo falla: **Custom domains** → quita `workswithwhat.com` del proyecto y vuelve a crear los cuatro registros A de GitHub (`185.199.108.153` a `185.199.111.153`, proxied). GitHub Pages sigue desplegando, así que vuelve a servir al momento.
+Ya no hay respaldo automático: GitHub Pages dejó de desplegar. Para volver habría que restaurar el job `deploy` de `deploy.yml` (historial de git), reactivar Pages en el repo con el dominio y recrear los cuatro registros A de GitHub (`185.199.108.153` a `185.199.111.153`, proxied).
 
-## Después de la migración (otro PR)
+## Después de la migración
 
-- La política de privacidad (5 idiomas) nombra a GitHub Pages como quien aloja los ficheros: pasará a decir Cloudflare Pages.
-- Se quita el despliegue a GitHub Pages del workflow y se desactiva Pages en el repo.
+- Hecho: la política de privacidad (5 idiomas) nombra solo a Cloudflare, y el workflow ya no despliega a GitHub Pages.
+- Pendiente del dueño: desactivar Pages en el repo (Settings → Pages). El registro `www` (CNAME a `miguelvalera.github.io`, proxied) puede quedarse: la Redirect Rule responde antes de llegar a GitHub. El TXT `_github-pages-challenge-…` ya no hace falta.
 - La Transform Rule de cabeceras de Cloudflare sobra (las pone `_headers`); se puede borrar o dejar.
+- En el chequeo, el HTML sale `cf-cache-status: DYNAMIC`: Pages lo sirve desde su propio almacenamiento en el borde, no desde la caché de la zona, así que el «Percent Cached» del panel seguirá bajo. Los ficheros de `/_astro/` sí salen HIT.
 
 ## Bots
 

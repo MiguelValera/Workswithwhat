@@ -14,7 +14,7 @@ The site is in **English** at the root, plus **Spanish (Spain)** under `/es/`, *
 
 ## Stack
 
-- **Astro 7** static site, moving from **GitHub Pages** to **Cloudflare Pages** (custom domain `workswithwhat.com`; see `docs/cloudflare-pages.md`). Everything runs on free tiers.
+- **Astro 7** static site on **Cloudflare Pages** (project `workswithwhat`, custom domain `workswithwhat.com`; moved from GitHub Pages on 2026-10-16, see `docs/cloudflare-pages.md`). Everything runs on free tiers.
 - Data: one JSON file per device in `src/data/devices/<slug>.json`.
 - Schema: `src/schema/device.ts` (Zod 4). It is shared by the Astro content collection (`src/content.config.ts`) and `scripts/validate-data.mjs`.
 - `npm run validate` checks all data; `npm run build` validates, then builds. CI runs both on every push.
@@ -143,23 +143,24 @@ Read this first if you are picking the project up.
 
 ### Infrastructure
 - **Git:** develop on branch `claude/astro-phase-1-setup-3garkt`, open a PR to `main`, and squash-merge. After a merge, reset the branch to `origin/main` (`git checkout -B <branch> origin/main`, then a force push).
-- **Deploy:** `.github/workflows/deploy.yml` validates and builds on every push and PR. On `main` it deploys the same `dist/` to GitHub Pages (fallback until the DNS switch) and to Cloudflare Pages (`deploy-cloudflare` job: wrangler, project `workswithwhat`, secrets `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`, skipped without them, then smoke-tests the `*.pages.dev` URL), then submits all sitemap URLs to IndexNow (the key file is `public/<key>.txt`, public by design).
+- **Deploy:** `.github/workflows/deploy.yml` validates and builds on every push and PR. On `main` it deploys `dist/` to Cloudflare Pages (`deploy-cloudflare` job: wrangler, project `workswithwhat`, secrets `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`, then smoke-tests the `*.pages.dev` URL), then submits all sitemap URLs to IndexNow (the key file is `public/<key>.txt`, public by design).
 - **Live checks:** `.github/workflows/site-check.yml` runs `scripts/site-check.sh` daily at 06:17 UTC or on demand. It checks DNS, TLS, redirects, security headers, key pages, the JSON API, AI-crawler access and that no cookies are set. The container can't reach the live site itself, so trigger this workflow and read its logs.
 - **Cloudflare:**
   - The proxy is on with SSL Full (strict), Always Use HTTPS and minimum TLS 1.2.
   - A Transform Rule adds `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy` and `Permissions-Policy`.
   - **Bot Fight Mode must stay OFF.** It answered 403 (`cf-mitigated: challenge`) to every HTML page requested from a datacenter.
-  - **Caching:** on GitHub Pages only 0.46 % was cached (2026-10-14): it can't set headers and Cloudflare skips HTML/JSON/TXT by default. Cloudflare Pages fixes that: the edge keeps every file until the next deploy, and `public/_headers` sets security headers and a year of caching for `/_astro/*`. No Cache Rules or purges needed. The site check reports `cf-cache-status`.
-- **Security:** a CSP meta tag is emitted in production builds only (`default-src 'none'`, no inline styles). JSON-LD escapes `<`. Dependabot is on. TypeScript is held at 6, because `astro check` rejects TS 7. `upload-pages-artifact` and `deploy-pages` stay on their current majors (open Dependabot PRs #4 and #5) until a deploy test confirms newer versions still publish `/.well-known/`.
+  - **Caching:** on GitHub Pages only 0.46 % was cached (2026-10-14). On Cloudflare Pages, `public/_headers` sets security headers and a year of caching for `/_astro/*` (HIT); HTML shows `cf-cache-status: DYNAMIC` because Pages serves it from its own edge storage, so the zone's "Percent Cached" stays low and that's fine. No Cache Rules or purges needed.
+  - **www:** a Redirect Rule (`https://www.*` → `https://${1}`, 301) handles www; the apex is a proxied CNAME to `workswithwhat.pages.dev`.
+- **Security:** a CSP meta tag is emitted in production builds only (`default-src 'none'`, no inline styles). JSON-LD escapes `<`. Dependabot is on. TypeScript is held at 6, because `astro check` rejects TS 7. `upload-pages-artifact` stays on v3: its tar is what `deploy-cloudflare` unpacks, and it keeps dotfiles (`/.well-known/`). `deploy-pages` is no longer used.
 - **Email:** `info@workswithwhat.com` is a Cloudflare Email Routing rule that forwards to the owner's Gmail (no mailbox). The footer's "Tell us" link is a `mailto:` to it. Cloudflare Email Obfuscation rewrites `mailto:` links and needs a script the CSP blocks (visitors saw "[email protected]"), so every email link goes through `src/components/MailLink.astro`, which wraps it in `<!--email_off-->`; the site check fails if an obfuscated link reaches the live site. The footer and every category chart also have a "Can't find your device?" link (a `mailto:` with a prefilled subject and body).
-- **Legal:** the site sets no cookies and has no trackers, so there is no consent banner. The privacy policy names GitHub Pages and Cloudflare as processors, plus Cloudflare Email Routing and Gmail for email. In `src/site.config.ts`, `OPERATOR` holds the operator details Spain's LSSI requires (name, NIF, address, email); they were filled in on 2026-10-12 and show on `/legal/` and `/es/aviso-legal/`.
+- **Legal:** the site sets no cookies and has no trackers, so there is no consent banner. The privacy policy names Cloudflare (hosting on Cloudflare Pages) as the processor, plus Cloudflare Email Routing and Gmail for email. In `src/site.config.ts`, `OPERATOR` holds the operator details Spain's LSSI requires (name, NIF, address, email); they were filled in on 2026-10-12 and show on `/legal/` and `/es/aviso-legal/`.
 
 ### Owner's to-do list
 - **Done 2026-10-12:** Google Search Console (domain property, sitemap submitted, indexing requested for the key EN/ES pages), Bing Webmaster Tools (imported from GSC), DNSSEC, DMARC at `p=none`, GitHub Pages domain verification, and a ruleset on `main` (PR required, 0 approvals, `build` check required, no force pushes or deletion; repository admins may bypass).
 - Email: keep the SPF record Email Routing created (add `include:_spf.google.com` if replying as info@ from Gmail). Only move DMARC to `p=reject` once outgoing mail is DKIM-signed with the domain.
 - HSTS in Cloudflare, once the site has been stable for a few days.
 - Post the community texts from `docs/launch-kit.md` (Reddit, Home Assistant forum).
-- **Cloudflare Pages migration:** token + secrets, merge, custom domain, www redirect rule, then site check; steps in `docs/cloudflare-pages.md`. Afterwards (separate PR): privacy policy in 5 languages names Cloudflare Pages instead of GitHub Pages, drop the GitHub Pages deploy.
+- **After the Cloudflare Pages move (done 2026-10-16):** disable GitHub Pages in the repo settings; optionally delete the `_github-pages-challenge` TXT record and the header Transform Rule (`_headers` sets them now).
 - Post the Spanish community texts from `docs/launch-kit.md`.
 - **Optional:** Cloudflare Web Analytics, which is cookieless. It needs its JS token. To add it, allow `static.cloudflareinsights.com` (script) and `cloudflareinsights.com` (connect) in the CSP, mention it in `/privacy/`, and change "no trackers" in the footer.
 
