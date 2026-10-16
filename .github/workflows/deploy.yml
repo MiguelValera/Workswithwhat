@@ -74,16 +74,21 @@ jobs:
           npx --yes "$WRANGLER" pages deploy dist --project-name="$PROJECT" --branch=main --commit-hash="$GITHUB_SHA" | tee deploy.log
           url=$(grep -o 'https://[a-z0-9.-]*\.pages\.dev' deploy.log | tail -1)
           echo "Deployed to $url"
-          # Smoke test the deployment itself, before or after the DNS switch
-          sleep 15
+          # Smoke test the deployment itself, before or after the DNS switch.
+          # A new deployment's TLS certificate can take a few minutes to appear.
+          get() { curl -sS -o /dev/null -w '%{http_code}' --max-time 20 "$url$1" || true; }
+          for i in $(seq 1 24); do
+            [ "$(get /)" = 200 ] && break
+            echo "waiting for $url ($i)"; sleep 15
+          done
           fails=0
           for p in / /smart-plugs/ /es/ /.well-known/security.txt /robots.txt /api/devices.json; do
-            code=$(curl -sS -o /dev/null -w '%{http_code}' --retry 3 --retry-all-errors "$url$p")
+            code=$(get "$p")
             echo "$p -> $code"; [ "$code" = 200 ] || fails=$((fails + 1))
           done
-          code=$(curl -sS -o /dev/null -w '%{http_code}' "$url/this-page-does-not-exist/")
+          code=$(get /this-page-does-not-exist/)
           echo "/this-page-does-not-exist/ -> $code"; [ "$code" = 404 ] || fails=$((fails + 1))
-          curl -sSI "$url/" | grep -qi '^x-frame-options:' || { echo "_headers not applied"; fails=$((fails + 1)); }
+          curl -sSI --max-time 20 "$url/" | grep -qi '^x-frame-options:' || { echo "_headers not applied"; fails=$((fails + 1)); }
           [ "$fails" = 0 ]
 
   # Tell IndexNow engines (Bing, Yandex, …) which URLs exist after each deploy.
@@ -97,8 +102,10 @@ jobs:
         env:
           KEY: b065f34bf6c2a7a6c90cf76a5ada5c02
         run: |
-          urls=$(curl -sSf https://workswithwhat.com/sitemap-0.xml | grep -o '<loc>[^<]*' | sed 's/<loc>//' | jq -R . | jq -sc .)
-          echo "Submitting $(echo "$urls" | jq length) URLs"
+          # Payload goes through a file: 3,000+ URLs overflow the argument list
+          curl -sSf https://workswithwhat.com/sitemap-0.xml | grep -o '<loc>[^<]*' | sed 's/<loc>//' \
+            | jq -R . | jq -s --arg key "$KEY" \
+              '{host: "workswithwhat.com", key: $key, keyLocation: "https://workswithwhat.com/\($key).txt", urlList: .}' > payload.json
+          echo "Submitting $(jq '.urlList | length' payload.json) URLs"
           curl -sS -o /dev/null -w 'IndexNow HTTP %{http_code}\n' -X POST https://api.indexnow.org/indexnow \
-            -H 'Content-Type: application/json; charset=utf-8' \
-            -d "{\"host\":\"workswithwhat.com\",\"key\":\"$KEY\",\"keyLocation\":\"https://workswithwhat.com/$KEY.txt\",\"urlList\":$urls}"
+            -H 'Content-Type: application/json; charset=utf-8' --data-binary @payload.json
