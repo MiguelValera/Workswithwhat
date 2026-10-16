@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Matter über Thread bringt das eufy Smart Lock E30 in Apple Home und SmartThings. Alexa und Google Home werden über die Verknüpfung deines eufy-Kontos angebunden. Es ist ein US-Riegelschloss als Ersatz mit Tastenfeld, Fingerabdruckleser und einem Schlüsselloch für einen mechanischen Schlüssel, versorgt von acht AA-Batterien. Home Assistant ist nicht bestätigt.",
+  "caveats": [
+    "Die Matter-Steuerung braucht einen Thread-Border-Router: einen HomePod mini oder Apple TV 4K, einen Matter-fähigen Nest-Hub oder Echo oder einen Matter-fähigen SmartThings-Hub.",
+    "Die Fernsteuerung über Apple Home braucht eine Steuerzentrale, auch wenn iOS 18 das Schloss ohne eine hinzufügen kann.",
+    "Acht AA-Batterien werden gebraucht."
+  ],
+  "notes": {
+    "radios": "CSA und eufy beschreiben Matter über Thread plus eingebautes WLAN für die eufy-App und die Fernsteuerung. Keine gefundene Quelle bestätigt ein Bluetooth-Funkmodul für dieses Modell, daher ist es nicht aufgeführt.",
+    "matter": "Die CSA führt das eufy Smart Lock E30 von Anker Innovations (Matter 1.2, zertifiziert am 2024-07-02, Firmware V1.0.0.0, Hardware V3). Es ist Matter über Thread, nicht über WLAN.",
+    "hubRequired": "Eingebautes WLAN verbindet das Schloss ohne Bridge mit der eufy-App. Jede Matter-Plattform braucht ihren eigenen Matter-Controller mit Thread-Border-Router, und die Fernsteuerung über Apple Home braucht eine Steuerzentrale.",
+    "localControl": "Keine eufy-Quelle beschreibt reine lokale Steuerung ausdrücklich.",
+    "lockFit": "Ersetzt ein gängiges US-Riegelschloss und behält ein physisches Schlüsselloch für den mechanischen Schlüssel.",
+    "keypad": "Tastenfeld am Schloss, dazu ein Fingerabdruckleser.",
+    "power": "Acht AA-Batterien; eufy gibt bis zu 8 Monate pro Satz an.",
+    "compatibility.apple_home": "Matter über Thread. eufy sagt, iOS 18 könne Matter-Geräte ohne Hub hinzufügen und das iPhone 15 Pro oder neuer könne Thread-Geräte direkt steuern, doch die Fernsteuerung braucht einen HomePod mini, HomePod oder Apple TV 4K als Steuerzentrale.",
+    "compatibility.google_home": "eufy dokumentiert die Verknüpfung des eufy-Kontos über Works with Google für das C34/E30, mit einem 4-stelligen Code zum Entriegeln per Sprache. Matter über Thread funktioniert auch mit einem Matter-fähigen Nest-Hub.",
+    "compatibility.alexa": "eufy dokumentiert die Verknüpfung des eufy-Kontos in der Alexa-App für das C34/E30, mit einer optionalen Sprach-PIN zum Entriegeln. Matter über Thread funktioniert auch mit einem Matter-fähigen Echo.",
+    "compatibility.smartthings": "eufys Produktseite führt SmartThings auf; die Matter-FAQ sagt, es sei ein SmartThings-Hub mit Matter-Unterstützung nötig, mit einem Thread-Border-Router.",
+    "compatibility.home_assistant": "Keine Home-Assistant-Dokumentationsseite für dieses Schloss gefunden. Als Matter-über-Thread-Schloss funktioniert es möglicherweise über die Matter-Integration mit einem Thread-Border-Router, doch keine offizielle Quelle bestätigt es."
+  },
+  "values": {
+    "power": "8 × AA"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Sprachsteuerung über Alexa und Google Assistant führt eufys britische Seite für den X10 Pro Omni (T2351) auf, eingerichtet unter Smart Integrations in der eufy-Clean-App. Er saugt und wischt mit 8000 Pa Saugkraft und Laser-Navigation, und die All-in-One Station leert den Behälter in einen 2,5-L-Staubbeutel. Apple Home, SmartThings und Home Assistant sind nicht bestätigt.",
+  "caveats": [
+    "eufys britische Seiten nennen kein WLAN-Band; das globale Handbuch verlangt 2,4 GHz.",
+    "Es ist keine Matter-Unterstützung dokumentiert, daher ist Apple Home nicht bestätigt.",
+    "Für Home Assistant gibt es keine offizielle Integrationsseite zu diesem Modell."
+  ],
+  "notes": {
+    "radios": "Das globale Handbuch verlangt das 2,4-GHz-Band an deinem Router; die britischen Seiten nennen kein Band.",
+    "matter": "Keine Matter-Angabe auf eufys britischen Seiten und kein CSA-Eintrag gesehen.",
+    "hubRequired": "Laut Handbuch wird er über die eufy-Clean-App in deinem 2,4-GHz-Heim-WLAN eingerichtet; die All-in-One Station ist kein Hub.",
+    "localControl": "Reine lokale Steuerung wird nicht genannt.",
+    "cleaning": "Saugt und wischt mit zwei rotierenden Pads.",
+    "navigation": "eufy nennt es iPath Laser Navigation. Die Hindernisvermeidung nutzt AI.See.",
+    "selfEmptying": "Die All-in-One Station leert den Behälter in einen 2,5-L-Staubbeutel. Sets mit zusätzlichen Staubbeuteln und Bodenreiniger werden ebenfalls verkauft.",
+    "compatibility.apple_home": "Keine eufy-Seite zu Apple Home gefunden.",
+    "compatibility.google_home": "eufys britische Seite sagt, du kannst Google Assistant für sprachgesteuertes Reinigen nutzen; das Handbuch verknüpft ihn unter Smart Integrations in der eufy-Clean-App.",
+    "compatibility.alexa": "eufys britische Seite sagt, du kannst Amazon Alexa für sprachgesteuertes Reinigen nutzen; das Handbuch verknüpft sie unter Smart Integrations in der eufy-Clean-App.",
+    "compatibility.smartthings": "Keine Seite von eufy oder Samsung zu SmartThings gefunden.",
+    "compatibility.home_assistant": "Keine offizielle Integrationsseite für Home Assistant gefunden."
+  },
+  "values": {
+    "navigation": "LiDAR (iPath Laser Navigation)"
+  }
+}

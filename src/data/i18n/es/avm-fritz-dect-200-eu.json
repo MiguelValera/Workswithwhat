@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El FRITZ DECT 200 solo funciona a través de una FRITZ Box de AVM con base DECT, y Home Assistant lo recoge desde ahí. Usa DECT ULE en lugar de wifi, así que no se conecta a una red sin ella. Mide potencia y tensión, registra el consumo por hora, día, mes y año, y conmuta hasta 2300 W. Las páginas de AVM no mencionan compatibilidad con Apple Home, Google Home, Alexa, SmartThings ni Matter.",
+  "caveats": [
+    "Necesita una FRITZ Box con base DECT y FRITZ OS 6.83 o posterior; AVM dice que la FRITZ Box 7412 no funciona.",
+    "AVM lo vende ahora como FRITZ Smart Energy 200, así que las páginas actuales usan ese nombre.",
+    "Si se cae internet, AVM dice que la conmutación automática queda limitada, las rutinas se detienen y la FRITZ App Smart Home no puede conectarse."
+  ],
+  "notes": {
+    "radios": "El enchufe usa DECT ULE con una FRITZ!Box (la ficha actual de AVM indica DECT-ULE), que no está en la lista de radios, así que no se registra ninguna. La dirección de la tienda de AVM para el FRITZ!DECT 200 abre ahora la página del FRITZ!Smart Energy 200.",
+    "matter": "Las páginas de AVM no dicen nada sobre Matter y no hemos encontrado ningún registro de la CSA.",
+    "hubRequired": "Necesita una FRITZ!Box con base DECT; la página actual de AVM indica FRITZ!OS 6.83 o posterior, y que no sirve la FRITZ!Box 7412. La FRITZ!Box es el router, así que no se vende un puente aparte.",
+    "localControl": "Home Assistant consulta la FRITZ!Box en local, pero AVM dice que, si se cae internet, la conmutación automática queda limitada, las rutinas se detienen y la FRITZ!App Smart Home no puede conectarse. El artículo de AVM (archivado bajo el DECT 200, con título del DECT 500) no dice qué funciona sin conexión.",
+    "energyMonitoring": "Muestra la potencia y la tensión actuales y registra el consumo por hora, día, mes y año.",
+    "maxLoadWatts": "La base de conocimiento de AVM da 2300 W para cargas resistivas y 2300 VA para cargas inductivas a 230 V; la página actual del producto indica hasta 2300 W.",
+    "compatibility.apple_home": "Las páginas de AVM no mencionan Apple Home ni HomeKit.",
+    "compatibility.google_home": "Las páginas de AVM solo mencionan Google Calendar para los horarios, no Google Home.",
+    "compatibility.alexa": "Las páginas de AVM no mencionan Alexa ni asistentes de voz.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página oficial de AVM ni de SmartThings.",
+    "compatibility.home_assistant": "La integración FRITZ!SmartHome de Home Assistant lee el enchufe desde tu FRITZ!Box, donde aparece como un interruptor con sensores de potencia, energía, tensión y temperatura. La página lo lista como FRITZ!Smart Energy 200 (antes FRITZ!DECT 200)."
+  },
+  "via": {
+    "home_assistant": "FRITZ!Box"
+  }
+}

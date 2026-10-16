@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Apple Home erreicht den Roborock Qrevo Curv über Matter, das Roborock im April 2025 per Firmware-Update (02.26.02) nachgerüstet hat. Google Home und Alexa sind nativ aufgeführt. Der Roboter saugt und wischt, mit LiDAR-Navigation, 18 500 Pa Saugkraft und einer Station, die den Behälter selbstständig leert.",
+  "caveats": [
+    "Das WLAN läuft nur auf 2,4 GHz; laut Roborocks Produktseite wird 5 GHz nicht unterstützt.",
+    "Matter braucht die Firmware 02.26.02, und laut Roborock bleiben detaillierte Einstellungen in der Roborock-App.",
+    "Roborocks eigene Ankündigung ist die einzige Matter-Quelle: Die CSA-Zertifikate, die wir gesehen haben, nennen den Qrevo Curv nicht.",
+    "Die offizielle Roborock-Integration von Home Assistant führt dieses Modell nicht auf, die Unterstützung ist also nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Laut Roborocks Seite zum Qrevo Curv unterstützt er nur WLAN mit 2,4 GHz, nicht 5 GHz.",
+    "matter": "Roborocks Ankündigung vom April 2025 führt den Qrevo Curv (Firmware 02.26.02) unter den Modellen auf, die Matter per Firmware-Update bekommen. Die CSA führt mehrere Roborock-Zertifikate für „Robotic Vacuum Cleaner“, doch keines der gesehenen nennt den Qrevo Curv; die Angabe beruht auf der Aussage des Herstellers.",
+    "hubRequired": "Die Multifunktionsstation ist kein Hub; der Roboter verbindet sich per WLAN.",
+    "localControl": "Es wurde keine Herstelleraussage zu rein lokaler Steuerung gefunden.",
+    "cleaning": "Saugt und wischt mit rotierenden Pads.",
+    "navigation": "Roborocks Seiten zum Qrevo Curv nennen die PreciSense-LiDAR-Navigation.",
+    "suctionPa": "HyperForce-Saugkraft; laut Roborock können die Werte je nach Land oder Region abweichen.",
+    "selfEmptying": "Die Multifunctional Dock 3.0 leert den Behälter automatisch.",
+    "compatibility.apple_home": "Laut Roborock kann die Home-App mit Matter kompatible Saugroboter steuern; der Funktionsumfang variiert je nach Ökosystem, und detaillierte Einstellungen bleiben in der Roborock-App.",
+    "compatibility.google_home": "Roborocks US-Seite führt Sprachbefehle über Google Home auf; auch die Matter-Ankündigung nennt Google Home.",
+    "compatibility.alexa": "Roborocks US-Seite führt Sprachbefehle über Amazon Alexa auf; auch die Matter-Ankündigung nennt Alexa.",
+    "compatibility.smartthings": "Es wurde keine Seite von Roborock oder Samsung zu SmartThings gefunden.",
+    "compatibility.home_assistant": "Home Assistant hat eine offizielle Roborock-Integration, doch ihre Seite führt den Qrevo Curv nicht auf und sagt, neuere Q-Serien-Geräte würden nicht vollständig unterstützt. Modellunterstützung nicht bestätigt."
+  },
+  "values": {
+    "navigation": "PreciSense-LiDAR"
+  }
+}

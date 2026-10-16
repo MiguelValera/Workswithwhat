@@ -1,0 +1,81 @@
+{
+  "category": "smart-lock",
+  "brand": "Yale",
+  "model": "Linus Smart Lock L2 (UK, SL 103)",
+  "name": "Yale Linus Smart Lock L2 (UK)",
+  "regions": ["UK"],
+  "officialUrl": "https://yalehome.co.uk/linus-smart-lock-l2-uk/",
+  "radios": {
+    "value": ["wifi", "bluetooth"],
+    "sources": ["yale-uk-page", "yale-matter-uk"],
+    "note": "Yale's UK page lists built-in Wi-Fi and Bluetooth; its UK Matter page says the lock uses Wi-Fi for Matter, not Thread."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": ["yale-matter-uk", "csa-yale-l2"],
+    "note": "Matter comes by firmware update. CSA lists the Linus Smart Lock L2 (Wi-Fi and Bluetooth); the listing does not name the UK model code (SL 103)."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["yale-matter-uk"],
+      "note": "Listed on Yale UK's Matter page. Set the lock up in the Yale Home app first, then enable Matter under External Platform."
+    },
+    "google_home": {
+      "status": "matter",
+      "sources": ["yale-matter-uk"]
+    },
+    "alexa": {
+      "status": "matter",
+      "sources": ["yale-matter-uk"]
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": ["yale-matter-uk"]
+    },
+    "home_assistant": {
+      "status": "matter",
+      "sources": ["yale-matter-uk", "csa-yale-l2"],
+      "note": "Yale's platform FAQ doesn't list Home Assistant, but its Matter page names it as the Matter hub that currently offers separate Unlock and Open Door actions."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["yale-uk-page", "yale-matter-uk"],
+    "note": "Built-in Wi-Fi, so no Yale bridge is needed for app control; Yale's Matter page says no extra accessory is needed. The box includes a Yale Dot, which the page does not call a requirement."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Yale source states local-only control."
+  },
+  "lockFit": {
+    "value": "retrofit",
+    "sources": ["yale-faq-uk", "yale-uk-page"],
+    "note": "Yale says it may fit over an existing Euro/DIN cylinder, and the UK box includes a thumbturn adapter. Some doors need a new cylinder; Yale has a fit checker."
+  },
+  "keypad": {
+    "value": false,
+    "sources": ["yale-faq-uk"],
+    "note": "No keypad on the lock; Yale says PIN access needs the separate Yale Smart Keypad."
+  },
+  "power": {
+    "value": "Rechargeable battery",
+    "sources": ["yale-brochure", "yale-faq-uk"],
+    "note": "Yale's global brochure describes a Li-ion pack charged over USB-C; the UK FAQ gives up to 6 months per charge but does not name the battery type."
+  },
+  "summary": "Yale sells the Linus Smart Lock L2 in the UK as model SL 103. It fits over an existing Euro cylinder and has Wi-Fi and Bluetooth built in, so the Yale Home app works remotely without a bridge. Matter over Wi-Fi covers Apple Home, Google Home, Alexa and SmartThings, and Home Assistant works through Matter. The lock has no keypad of its own.",
+  "caveats": ["Matter needs a firmware update on the lock, and the lock must be set up in the Yale Home app first.", "Some doors need a new cylinder; check Yale's fit checker before buying.", "PIN access needs the separate Yale Smart Keypad.", "Battery life is up to about 6 months, and the UK pages don't name the battery type."],
+  "sources": [
+    { "id": "yale-uk-page", "url": "https://yalehome.co.uk/linus-smart-lock-l2-uk/", "title": "Linus Smart Lock L2 (UK)", "publisher": "Yale", "kind": "manufacturer", "accessed": "2026-10-12" },
+    { "id": "yale-matter-uk", "url": "https://yalehome.co.uk/matter-uk/", "title": "Our Linus Smart Lock L2 Just Got Smarter with Matter", "publisher": "Yale", "kind": "manufacturer", "accessed": "2026-10-12" },
+    { "id": "yale-faq-uk", "url": "https://yalehome.co.uk/faq-about-yale-linusl2", "title": "FAQ Yale Linus Smart Lock L2", "publisher": "Yale", "kind": "manufacturer", "accessed": "2026-10-12" },
+    { "id": "yale-brochure", "url": "https://www.yalehome.com/it/en/content-fragments/products/smart-security-ecosystem/smart-locks/linus-smart-lock-l2/documents/Yale_LinusL2_Brochure_ENG_2025_03.pdf", "title": "Smart Lock Linus L2 brochure", "publisher": "Yale", "kind": "manufacturer", "accessed": "2026-10-12" },
+    { "id": "csa-yale-l2", "url": "https://csa-iot.org/csa_product/yale-linus-smart-lock-l2/", "title": "Yale Linus Smart Lock L2", "publisher": "Connectivity Standards Alliance", "kind": "certification", "accessed": "2026-10-12" }
+  ],
+  "variants": ["yale-linus-smart-lock-l2-eu"],
+  "status": "verified",
+  "verifiedAt": "2026-10-12",
+  "updatedAt": "2026-10-12"
+}

@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "HomeKit ist im Kasa EP25 eingebaut, daher verbindet er sich ohne Hub direkt mit Apple Home. Alexa, Google Home und SmartThings verbinden sich über dein Kasa-Konto, und die offizielle TP-Link-Integration von Home Assistant steuert ihn lokal. Er ist ein US-WLAN-Zwischenstecker mit 2,4 GHz, ausgelegt für 15 A / 1800 W, mit Verbrauchsmessung, doch die Leistungsdaten siehst du in der Kasa-App, nicht in Apple Home. Er ist kein Matter-Zwischenstecker; TP-Links Matter-Zwischenstecker von Kasa ist der KP125M.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Verbrauchsdaten erscheinen nicht in Apple Home; nutze die Kasa-App (TP-Link führt außerdem EP25-Hardware V2.60 für Verbrauchsdaten in SmartThings auf).",
+    "Home Assistant braucht eventuell einmalig deine TP-Link-Cloud-Zugangsdaten, um neuere Geräte zu authentifizieren.",
+    "Keine offizielle Matter-Unterstützung; TP-Links Matter-Zwischenstecker von Kasa ist der KP125M."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN (IEEE 802.11b/g/n). Laut TP-Link unterstützen Kasa-Produkte weder 5 GHz noch Zigbee, Z-Wave oder Ethernet.",
+    "matter": "Keine offizielle Quelle erwähnt Matter für den EP25. Ein Forenbeitrag nennt die Hardware V2.6 ein Matter-Gerät; TP-Link sagt das nicht. TP-Links Matter-Zwischenstecker von Kasa ist der KP125M.",
+    "hubRequired": "Verbindet sich direkt mit 2,4-GHz-WLAN; laut TP-Link brauchen Kasa-Geräte keinen Hub.",
+    "localControl": "Die Integration von Home Assistant steuert Kasa-Geräte im lokalen Netzwerk ohne die TP-Link-Cloud. Die Kasa-App selbst nutzt die Cloud, wenn der Zwischenstecker online ist.",
+    "energyMonitoring": "Echtzeit- und Verlaufsdaten zum Verbrauch in der Kasa-App. In Apple Home nicht verfügbar.",
+    "maxLoadWatts": "15 A, 1,8 kW bei 120 V; 1/6-PS-Motor.",
+    "compatibility.apple_home": "HomeKit eingebaut, ohne separaten Hub. Laut Datenblatt wird die Verbrauchsmessung in der Home-App nicht angezeigt.",
+    "compatibility.google_home": "Cloud-zu-Cloud-Verknüpfung zwischen dem Kasa- und dem Google-Konto.",
+    "compatibility.alexa": "Cloud-zu-Cloud-Verknüpfung über den Kasa-Skill.",
+    "compatibility.smartthings": "Verknüpfe das TP-Link-Konto in der SmartThings-App. TP-Links SmartThings-FAQ zur Verbrauchsmessung führt den EP25 (V2.60) auf, und die Kasa-EP25-Seite führt SmartThings auf.",
+    "compatibility.home_assistant": "Die offizielle TP-Link-Smart-Home-Integration führt den EP25 auf. Sie spricht lokal mit Kasa-Zwischensteckern. Neuere Geräte brauchen einmalig TP-Link-Cloud-Zugangsdaten zur Authentifizierung."
+  }
+}

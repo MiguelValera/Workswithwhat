@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Schau auf die Packung, bevor du die Meross MSS210 (EU) für Apple Home kaufst: Meross verkauft HomeKit-Versionen (MSS210HK) und Versionen ohne HomeKit unter demselben Namen, und laut seinem Shop funktioniert nur die HomeKit-Version mit Apple Home. Jede Version funktioniert über dein Meross-Konto mit Alexa, Google Home und SmartThings. Es ist eine 2,4-GHz-WLAN-Steckdose mit 16 A, ohne Hub und ohne Verbrauchsmessung.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Laut Meross' Shop funktioniert nur die HomeKit-Version (MSS210HK) mit Apple Home.",
+    "Keine Verbrauchsmessung; Meross verkauft Steckdosen mit Messung als eigene Modelle, etwa die MSS210PZF und MSS310.",
+    "Matter ist für das EU-Modell nicht bestätigt; wir haben keinen CSA-Eintrag gefunden.",
+    "Home Assistant hat keine offizielle Meross-Integration; Besitzer verlassen sich auf Community-Add-ons."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN (802.11 b/g/n) mit einer internen Antenne.",
+    "matter": "Meross' EU-Seite und Datenblatt führen HomeKit, Alexa, Google und SmartThings, aber nicht Matter, und wir haben keinen CSA-Eintrag gefunden. Nur eine Meross-UK-Shopseite für die MSS210HK erwähnt Matter, deshalb lassen wir es unbestätigt.",
+    "hubRequired": "Laut Meross ist kein Hub nötig; sie verbindet sich mit deinem 2,4-GHz-WLAN.",
+    "localControl": "Meross sagt nicht, ob sie ohne Internet funktioniert. Die HomeKit-Version sollte in Apple Home lokal laufen, aber wir haben keine Meross-Seite gefunden, die das bestätigt.",
+    "energyMonitoring": "Meross' EU-Spezifikation führt „Energy Monitor: No“. Meross verkauft Steckdosen mit Messung als eigene Modelle (z. B. MSS210PZF, MSS310).",
+    "maxLoadWatts": "Meross gibt die EU-/FR-Version mit höchstens 16 A an, nennt aber keine Wattzahl. Bei 230 V wären das etwa 3680 W.",
+    "compatibility.apple_home": "Wird als HomeKit-Version (MSS210HK) und Version ohne HomeKit unter einem Namen verkauft. Laut Meross' Shop unterstützt nur die HomeKit-Version Apple Home; die EU-Produktseite führt HomeKit, ohne sie zu trennen. Achte auf das HomeKit-Etikett.",
+    "compatibility.google_home": "Meross führt Google Assistant; funktioniert durch Verknüpfen deines Meross-Kontos.",
+    "compatibility.alexa": "Meross führt Amazon Alexa; funktioniert über den Meross-Skill, verknüpft mit deinem Meross-Konto.",
+    "compatibility.smartthings": "Meross führt SmartThings; funktioniert durch Verknüpfen deines Meross-Kontos in der SmartThings-App.",
+    "compatibility.home_assistant": "Home Assistant hat keine offizielle Meross-Integration. Besitzer nutzen Community-Add-ons (HACS), und die HomeKit-Version kann sich über HomeKit Device koppeln, aber beides ist für dieses Modell nicht dokumentiert."
+  }
+}

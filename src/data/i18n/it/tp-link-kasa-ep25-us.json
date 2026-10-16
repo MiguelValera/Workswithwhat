@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "HomeKit è integrato nella Kasa EP25, quindi si aggiunge direttamente ad Apple Home senza hub. Alexa, Google Home e SmartThings si collegano tramite il tuo account Kasa, e l'integrazione ufficiale TP-Link di Home Assistant la controlla in locale. È una presa statunitense con Wi-Fi a 2,4 GHz, con valore nominale di 15 A / 1800 W e monitoraggio dei consumi, ma i dati di potenza li vedi nell'app Kasa, non in Apple Home. Non è una presa Matter; la presa Kasa Matter di TP-Link è la KP125M.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "I dati di consumo non compaiono in Apple Home; usa l'app Kasa (TP-Link indica anche l'EP25 con hardware V2.60 per i dati di consumo in SmartThings).", "Home Assistant può richiedere una volta le tue credenziali cloud TP-Link per autenticare le unità più recenti.", "Nessun supporto ufficiale a Matter; la presa Kasa Matter di TP-Link è la KP125M."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz (IEEE 802.11b/g/n). TP-Link dice che i prodotti Kasa non supportano 5 GHz, Zigbee, Z-Wave né Ethernet.",
+    "matter": "Nessuna fonte ufficiale menziona Matter per l'EP25. Un post nel forum degli utenti definisce l'hardware V2.6 un dispositivo Matter; TP-Link non lo dice. La presa Kasa Matter di TP-Link è la KP125M.",
+    "hubRequired": "Si collega direttamente al Wi-Fi a 2,4 GHz; TP-Link dice che i dispositivi Kasa non richiedono hub.",
+    "localControl": "L'integrazione di Home Assistant controlla i dispositivi Kasa sulla rete locale senza il cloud TP-Link. L'app Kasa stessa usa il cloud quando la presa è online.",
+    "energyMonitoring": "Consumo di potenza in tempo reale e storico nell'app Kasa. Non disponibile in Apple Home.",
+    "maxLoadWatts": "15 A, 1,8 kW a 120 V; motore da 1/6 HP.",
+    "compatibility.apple_home": "HomeKit integrato, senza hub separato. La scheda tecnica dice che il monitoraggio dei consumi non viene mostrato nell'app Casa.",
+    "compatibility.google_home": "Collegamento cloud-to-cloud tra gli account Kasa e Google.",
+    "compatibility.alexa": "Collegamento cloud-to-cloud tramite la skill Kasa.",
+    "compatibility.smartthings": "Collega l'account TP-Link nell'app SmartThings. Le FAQ energia di TP-Link per SmartThings elencano l'EP25 (V2.60), e la pagina Kasa dell'EP25 indica SmartThings.",
+    "compatibility.home_assistant": "L'integrazione ufficiale TP-Link Smart Home elenca l'EP25. Dialoga con le prese Kasa in locale. I dispositivi più recenti possono richiedere una volta le credenziali cloud TP-Link per autenticarsi."
+  }
+}

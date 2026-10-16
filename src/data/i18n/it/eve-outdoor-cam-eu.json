@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "L'Eve Outdoor Cam è una telecamera con faro cablata, costruita esclusivamente per Apple HomeKit Secure Video. I clip vengono analizzati su un Apple TV o un HomePod e archiviati cifrati in iCloud, quindi la registrazione richiede un piano iCloud+, e la visione in diretta passa dall'hub domestico. L'installazione richiede alimentazione di rete con fili neutro e di terra. Eve non elenca Google Home, Alexa né SmartThings, che restano quindi non confermati.",
+  "caveats": ["Richiede un piano iCloud+ e un hub domestico Apple; senza, nessuna registrazione.", "L'installazione richiede i fili neutro e di terra; senza, non si può montare in quel punto.", "Solo Wi-Fi a 2,4 GHz.", "Specifiche e dati sugli ecosistemi vengono da pagine dell'epoca del lancio, nel 2022; il numero di modello esatto della variante europea non è stato trovato."],
+  "notes": {
+    "radios": "Il manuale dice che si collega solo a reti Wi-Fi a 2,4 GHz.",
+    "matter": "Nessuna pagina Eve che abbiamo trovato dice che la Outdoor Cam supporti Matter; è descritta come costruita per HomeKit Secure Video.",
+    "hubRequired": "Nessun bridge Eve. Serve un hub domestico Apple (Apple TV o HomePod) per HomeKit Secure Video e l'accesso remoto.",
+    "localControl": "Eve dice che il video in diretta non passa mai da un cloud e che l'accesso avviene tramite l'hub domestico; il funzionamento solo locale non è dichiarato.",
+    "cameraType": "Telecamera con faro regolabile, pensata per sostituire una luce esterna esistente.",
+    "power": "Il manuale di Eve richiede alimentazione in corrente alternata con filo neutro e filo di terra; senza, la telecamera non si può installare in quel punto. I rivenditori indicano 100-240 V AC; non visto in una pagina Eve.",
+    "localStorage": "Le registrazioni vanno su iCloud tramite HomeKit Secure Video; nessuna pagina del produttore che abbiamo visto cita l'archiviazione locale.",
+    "subscription": "Per registrare serve un piano iCloud+ (non incluso); la dimensione del piano Apple stabilisce quante telecamere sono consentite.",
+    "compatibility.apple_home": "Costruita esclusivamente per HomeKit Secure Video: i clip vengono analizzati su un Apple TV o un HomePod e archiviati cifrati in iCloud; la visione in diretta passa dall'hub domestico.",
+    "compatibility.google_home": "Eve la descrive come progettata esclusivamente per HomeKit Secure Video e non elenca Google Home; nessuna pagina dice esplicitamente che non sia supportato.",
+    "compatibility.alexa": "Eve la descrive come progettata esclusivamente per HomeKit Secure Video e non elenca Alexa; nessuna pagina dice esplicitamente che non sia supportato.",
+    "compatibility.smartthings": "Nessuna pagina del produttore o di Samsung trovata.",
+    "compatibility.home_assistant": "Solo una guida della community la abbina tramite l'integrazione HomeKit più go2rtc; nessuna documentazione ufficiale di Home Assistant per questa telecamera."
+  },
+  "values": {
+    "power": "Cablata alla rete elettrica (neutro + terra)",
+    "subscription": "iCloud+ (HomeKit Secure Video)"
+  }
+}

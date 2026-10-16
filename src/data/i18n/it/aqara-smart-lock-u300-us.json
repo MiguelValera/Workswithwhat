@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Prima serratura a maniglia di Aqara, la Smart Lock U300 sostituisce una maniglia o un pomolo a singolo scrocco e ha un tastierino sul pannello esterno. Matter su Thread la collega a Apple Home, Google Home, Alexa e SmartThings tramite un border router Thread. Aqara non dice con chiarezza se serva anche il suo hub.",
+  "caveats": ["Matter richiede un border router Thread; per Apple significa un HomePod mini, un HomePod 2nd gen o un Apple TV 4K.", "Le FAQ di Aqara dicono che il pannello esterno è IPX4 e ne sconsigliano l'uso in punti esterni esposti.", "Se serva un hub Aqara non è confermato da una fonte ufficiale."],
+  "notes": {
+    "radios": "Le FAQ di Aqara dicono che la U300 supporta Matter su Thread e Bluetooth 5.0; la CSA indica Thread e Bluetooth.",
+    "matter": "La CSA elenca la Smart Lock U300 di Lumi United (Aqara): Matter 1.2, certificata il 2024-06-04, product ID 0x2801, Matter su Thread. La scheda non nomina una regione.",
+    "hubRequired": "Non chiarito da una fonte ufficiale che abbiamo potuto vedere. Le tabelle delle specifiche dei rivenditori dicono che serve un hub; la stampa dice che l'app Aqara funziona senza e che le altre piattaforme Matter richiedono un border router Thread.",
+    "localControl": "Nessuna fonte Aqara dichiara il solo controllo locale.",
+    "lockFit": "Prima serratura a maniglia di Aqara; le FAQ dicono che sostituisce le comuni serrature con maniglia o pomolo a singolo scrocco.",
+    "keypad": "Tastierino sul pannello esterno, che Aqara classifica IPX4.",
+    "power": "Rivenditori e recensioni indicano quattro pile AA (fino a 10 mesi) più una porta di emergenza USB-C; non abbiamo trovato nessuna pagina ufficiale di Aqara che lo dichiari.",
+    "compatibility.apple_home": "Matter su Thread. Serve un hub domestico Apple con Thread (HomePod mini, HomePod 2nd gen o Apple TV 4K).",
+    "compatibility.google_home": "Serve un border router Thread che supporti Matter.",
+    "compatibility.alexa": "Serve un border router Thread che supporti Matter.",
+    "compatibility.smartthings": "Serve un border router Thread che supporti Matter.",
+    "compatibility.home_assistant": "Nessuna pagina di documentazione di Aqara o Home Assistant che abbiamo trovato nomina questa serratura. L'integrazione Matter potrebbe funzionare, non confermato."
+  }
+}

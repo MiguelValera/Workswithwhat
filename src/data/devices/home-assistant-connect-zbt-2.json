@@ -1,0 +1,161 @@
+{
+  "category": "smart-hub",
+  "brand": "Nabu Casa",
+  "model": "Home Assistant Connect ZBT-2",
+  "name": "Home Assistant Connect ZBT-2",
+  "regions": [
+    "US",
+    "CA",
+    "EU",
+    "UK",
+    "AU"
+  ],
+  "officialUrl": "https://www.home-assistant.io/connect/zbt-2/",
+  "radios": {
+    "value": [
+      "zigbee",
+      "thread"
+    ],
+    "sources": [
+      "zbt2-site",
+      "zbt2-nabu"
+    ],
+    "note": "Silicon Labs MG24 at 2.4 GHz with an ESP32-S3 as USB bridge. Runs Zigbee 3.0 or Thread firmware, not both; no Bluetooth or Z-Wave. No model number is stated. Sold in North America, Europe (incl. UK retailers), Australia and Asia."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No CSA listing found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software, which is not a hub; not confirmed."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software; not confirmed."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software; not confirmed."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not confirmed."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "zbt2-site",
+        "zbt2-nabu",
+        "ha-zha",
+        "ha-thread"
+      ],
+      "note": "Official Home Assistant hardware and its recommended Zigbee adapter: Zigbee through ZHA or Zigbee2MQTT, Thread through the OpenThread Border Router."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed by an official source."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Home Assistant says Zigbee and Thread give devices a local connection, but no official page states local control for the adapter in so many words."
+  },
+  "hubType": {
+    "value": "usb-dongle",
+    "sources": [
+      "zbt2-site",
+      "zbt2-nabu"
+    ],
+    "note": "Successor to the ZBT-1; it replaced that model, which is discontinued."
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee",
+      "thread"
+    ],
+    "sources": [
+      "zbt2-site",
+      "zbt2-nabu"
+    ],
+    "note": "One at a time: you pick Zigbee or Thread during setup and can switch later."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Not a bridge; Matter devices on Thread are reached through Home Assistant's Matter integration."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "zbt2-site",
+      "zbt2-nabu",
+      "zbt2-blog"
+    ],
+    "note": "With Thread firmware and the OpenThread Border Router in Home Assistant; the maker says it cannot be a standalone border router on its own."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "Not stated by the maker."
+  },
+  "summary": "Replacing the discontinued ZBT-1, the ZBT-2 is a USB radio with a Silicon Labs MG24 chip. You pick Zigbee 3.0 (ZHA or Zigbee2MQTT) or Thread (OpenThread Border Router) during setup, one at a time per adapter. It is official Home Assistant hardware, and Home Assistant is the only ecosystem confirmed.",
+  "sources": [
+    {
+      "id": "zbt2-site",
+      "url": "https://www.home-assistant.io/connect/zbt-2/",
+      "title": "Home Assistant Connect ZBT-2",
+      "publisher": "Home Assistant",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "zbt2-nabu",
+      "url": "https://support.nabucasa.com/hc/en-us/articles/31313065259421-About-Home-Assistant-Connect-ZBT-2",
+      "title": "About Home Assistant Connect ZBT-2",
+      "publisher": "Nabu Casa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "zbt2-blog",
+      "url": "https://www.home-assistant.io/blog/2025/11/19/home-assistant-connect-zbt-2",
+      "title": "The best gets better - Home Assistant Connect ZBT-2",
+      "publisher": "Home Assistant",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-zha",
+      "url": "https://www.home-assistant.io/integrations/zha/",
+      "title": "Zigbee Home Automation - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-thread",
+      "url": "https://www.home-assistant.io/integrations/thread/",
+      "title": "Thread - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "caveats": [
+    "It runs Zigbee or Thread, never both on one adapter.",
+    "Alone it cannot act as a Thread border router; that needs the OpenThread Border Router in Home Assistant.",
+    "ZHA allows one instance, so two ZBT-2 adapters cannot both run under ZHA."
+  ],
+  "verifiedAt": "2026-10-12"
+}

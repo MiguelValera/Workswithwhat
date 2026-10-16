@@ -1,6 +1,6 @@
 ---
 import EcosystemPage from '../../../components/pages/EcosystemPage.astro';
-import { ECOSYSTEMS, ecosystemSlug } from '../../../lib/devices';
+import { ECOSYSTEMS, ecosystemPath, ecosystemSlug } from '../../../lib/devices';
 import { getRegionPages, type Market } from '../../../lib/markets';
 import type { Ecosystem } from '../../../lib/devices';
 
@@ -8,7 +8,7 @@ import type { Ecosystem } from '../../../lib/devices';
 export async function getStaticPaths() {
   const pages = await getRegionPages();
   return pages.flatMap(({ market, path }) => {
-    const eco = ECOSYSTEMS.find((e) => path === `/${market.key}/works-with/${ecosystemSlug(e)}/`);
+    const eco = ECOSYSTEMS.find((e) => path === `/${market.key}${ecosystemPath(e)}`);
     return eco ? [{ params: { market: market.key, ecosystem: ecosystemSlug(eco) }, props: { market, eco } }] : [];
   });
 }

@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Als Wandthermostat für Heizkessel und Wärmepumpen schaltet das tado° Wired Smart Thermostat X die Heizung über ein Relais oder OpenTherm. Es koppelt sich über Matter auf Thread mit Apple Home, Google Home und Alexa, und Home Assistant funktioniert über seine Matter-Integration, obwohl tado° sagt, Home Assistant werde nicht offiziell unterstützt. Jeder Thread-Border-Router genügt, auch tado°s Bridge X. Es läuft mit 3 × AAA-Batterien.",
+  "caveats": [
+    "Braucht einen Thread-Border-Router, etwa tado°s Bridge X (separat verkauft, nicht kompatibel mit tado°-V3+-Geräten) oder einen von einem anderen Hersteller.",
+    "tado° verkauft auch ein kabelgebundenes Modell der 2. Generation mit eingebautem wiederaufladbarem Akku; dieser Eintrag ist die Version mit 3 × AAA.",
+    "Laut tado° funktioniert es mit den meisten Heizkesseln und Wärmepumpen; prüfe vor dem Kauf mit dem Kompatibilitätscheck von tado°, ob es zu deinem passt."
+  ],
+  "notes": {
+    "radios": "Die Seiten von tado° sagen, es brauche einen Thread-Border-Router. Bluetooth für die Einrichtung wurde für dieses Modell nicht bestätigt.",
+    "matter": "tado° dokumentiert einen Matter-Einrichtungscode für seine X-Geräte, einschließlich dieses Thermostats. Ein Suchausschnitt zeigte das CSA-Zertifikat CSA23C79MAT41789-24 (Smart Thermostat X, Thread), aber die CSA-Seite selbst tauchte nicht auf, daher wird es nicht zitiert.",
+    "hubRequired": "Für die Grundsteuerung ist keine tado°-Bridge nötig: Laut tado° verbindet die Bridge X oder ein anderer kompatibler Thread-Border-Router es mit dem Internet. Ohne irgendeinen Thread-Border-Router erreicht es das Internet nicht. tado°-X-Produkte funktionieren nicht mit V3+-Geräten.",
+    "localControl": "Es wurde keine tado°-Seite gefunden, die Offline- oder rein lokale Steuerung beschreibt.",
+    "systems": "Mit dem Heizsystem verdrahtet. Laut tado° funktioniert es mit den meisten solchen Systemen; prüfe mit dem Kompatibilitätscheck von tado° deinen Heizkessel.",
+    "power": "Laut tado° braucht das Smart Thermostat X drei AAA-Alkaline-Zellen (LR03). Das Wired Smart Thermostat X (2. Generation) nutzt stattdessen einen eingebauten wiederaufladbaren Akku und ist ein anderes Produkt.",
+    "compatibility.apple_home": "Wird mit einem Matter-Code aus der tado°-App oder dem QR-Code des Geräts verknüpft. Braucht einen Thread-Border-Router.",
+    "compatibility.google_home": "tado° hat eine Einrichtungsanleitung für Google Home über Matter. Braucht einen Thread-Border-Router.",
+    "compatibility.alexa": "Braucht einen Matter-fähigen Echo oder eero plus einen Thread-Border-Router. tado° rät, das Gerät zuerst in der eigenen App hinzuzufügen, damit Firmware-Updates erhalten bleiben.",
+    "compatibility.smartthings": "Es wurde keine tado°-Einrichtungsanleitung für SmartThings gefunden.",
+    "compatibility.home_assistant": "Über die Matter-Integration von Home Assistant, die einen Thread-Border-Router braucht. tado° sagt, Home Assistant werde nicht offiziell unterstützt."
+  },
+  "values": {
+    "power": "3 × AAA",
+    "systems": "Heizkessel und Wärmepumpen über Relais oder OpenTherm"
+  }
+}

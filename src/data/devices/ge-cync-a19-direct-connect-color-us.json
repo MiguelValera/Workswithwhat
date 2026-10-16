@@ -1,0 +1,144 @@
+{
+  "category": "smart-bulb",
+  "brand": "GE Cync",
+  "model": "A19 Direct Connect Color Changing Clear",
+  "name": "GE Cync Direct Connect A19 Color (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://shop.gelighting.com/products/ge-cync-a19-direct-connect-led-light-bulb-color-changing-clear-smart-light-matter-compatible-works-with-alexa-and-google-home-2-pack",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "csa-cync-full-color-a19",
+      "ge-cync-a19-direct-connect"
+    ],
+    "note": "2.4 GHz Wi-Fi set up in the Cync app. CSA lists Wi-Fi and Bluetooth; GE's page mentions Bluetooth only in an FAQ."
+  },
+  "matter": {
+    "certified": true,
+    "transport": "wifi",
+    "sources": [
+      "csa-cync-full-color-a19",
+      "ge-cync-a19-direct-connect"
+    ],
+    "note": "GE's page for SKUs 93132325 (1-pack) and 93132326 (2-pack) says Matter compatible. CSA lists 'Cync Full Color Direct Connect LED A19' by Savant (Wi-Fi and Bluetooth); no CSA listing names a SKU."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": [
+        "ge-cync-a19-direct-connect"
+      ],
+      "note": "GE says Apple Home works through Matter; an Apple home hub is needed for remote use."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "ge-cync-a19-direct-connect",
+        "cync-light-bulb-faq"
+      ],
+      "note": "Cync's bulb FAQ says Direct Connect bulbs work with Google Assistant with no extra hub; GE also lists Google through Matter."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "ge-cync-a19-direct-connect",
+        "cync-light-bulb-faq"
+      ],
+      "note": "Cync's bulb FAQ says Direct Connect bulbs link to Alexa through the Cync skill or Frustration Free Setup; GE also lists Alexa through Matter."
+    },
+    "smartthings": {
+      "status": "matter",
+      "sources": [
+        "ge-cync-a19-direct-connect"
+      ],
+      "note": "GE lists Samsung SmartThings through Matter."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant has an official cloud Cync integration (2025.10), but its docs list no models, and nothing names this bulb for HA's Matter integration."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "ge-cync-a19-direct-connect"
+    ],
+    "note": "GE says no hub or bridge is needed."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "GE's product page does not state local control. Cync's general bulb FAQ says Direct Connect bulbs can still be controlled without internet, but does not name this model."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": [
+      "ge-cync-a19-direct-connect"
+    ],
+    "note": "Sold as Full Color; GE also mentions a tunable white range."
+  },
+  "lumens": {
+    "value": 800,
+    "sources": [
+      "ge-cync-a19-direct-connect"
+    ]
+  },
+  "bulbBase": {
+    "value": "Medium base (A19)",
+    "sources": [
+      "ge-cync-a19-direct-connect"
+    ],
+    "note": "GE says 'medium base'; in the US that is E26."
+  },
+  "summary": "GE Cync Direct Connect A19 color bulb works with Apple Home and SmartThings over Matter, and with Alexa and Google Home through Cync, all over 2.4 GHz Wi-Fi and with no hub. It's an 800-lumen medium-base bulb. CSA lists a Matter-over-Wi-Fi certificate for the Cync Full Color Direct Connect A19. Home Assistant isn't confirmed.",
+  "caveats": [
+    "GE sells several similar Cync color bulbs; check the SKU (93132325 or 93132326) before buying.",
+    "2.4 GHz Wi-Fi only.",
+    "Apple Home needs an Apple home hub for remote use.",
+    "GE's shop page showed 'Sold out' on 2026-10-12."
+  ],
+  "sources": [
+    {
+      "id": "ge-cync-a19-direct-connect",
+      "url": "https://shop.gelighting.com/products/ge-cync-a19-direct-connect-led-light-bulb-color-changing-clear-smart-light-matter-compatible-works-with-alexa-and-google-home-2-pack",
+      "title": "GE Cync A19 Direct Connect LED Light Bulb, Color Changing, Matter Compatible, Works with Alexa and Google Home",
+      "publisher": "GE Lighting (Savant)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ge-cync-a19-color-matter",
+      "url": "https://www.gelighting.com/led-lights/bulbs/medium-base/ge-cync-smart-led-light-bulb-color-changing-matter-compatible",
+      "title": "GE Cync Smart LED Light Bulb, Color Changing, Matter Compatible",
+      "publisher": "GE Lighting (Savant)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12",
+      "forCaveat": true
+    },
+    {
+      "id": "csa-cync-full-color-a19",
+      "url": "https://csa-iot.org/csa_product/cync-full-color-direct-connect-led-a19/",
+      "title": "Cync Full Color Direct Connect LED A19",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "cync-light-bulb-faq",
+      "url": "https://cyncsupport.gelighting.com/light-bulb-faq",
+      "title": "Cync Light Bulbs FAQs",
+      "publisher": "GE Lighting (Savant)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

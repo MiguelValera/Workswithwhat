@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Ring Outdoor Cam (Battery) è una telecamera Wi-Fi a 2,4 GHz con batteria a sgancio rapido, indicata da Ring come Works with Alexa. L'integrazione Ring ufficiale di Home Assistant copre la Stick Up Cam (3rd Gen) da cui è stata rinominata, con visione dal vivo ed eventi di movimento. La visione dal vivo e gli avvisi sono gratuiti, ma i video salvati richiedono Ring Protect.",
+  "caveats": [
+    "I video salvati richiedono un piano Ring Protect.",
+    "Solo Wi-Fi a 2,4 GHz.",
+    "Ring ha rinominato la Stick Up Cam (3rd Gen) in Outdoor Cam; la pagina prodotto indica il modello a batteria come «Outdoor Cam (2nd Gen), 2019 release», quindi i numeri di generazione differiscono tra le pagine di Ring.",
+    "Apple Home, Google Home e Matter non sono confermati."
+  ],
+  "notes": {
+    "radios": "Solo 802.11 b/g/n a 2,4 GHz.",
+    "matter": "Le pagine di Ring non citano Matter; nessuna scheda CSA trovata.",
+    "hubRequired": "Si collega via Wi-Fi; non si cita nessuna bridge.",
+    "localControl": "Ring non dice se qualche controllo funzioni senza il suo cloud.",
+    "cameraType": "Resistente alle intemperie, classificata da -5 a 122 °F; Ring dice che è pensata per l'esterno ma funziona ovunque.",
+    "power": "Batteria a sgancio rapido inclusa; adattatore da presa e pannello solare venduti a parte.",
+    "localStorage": "Le pagine di Ring descrivono solo lo storico video nel cloud.",
+    "subscription": "La visione dal vivo e gli avvisi funzionano senza piano; i video non vengono salvati. Prova gratuita di 30 giorni.",
+    "compatibility.apple_home": "Non citato nelle pagine di Ring.",
+    "compatibility.google_home": "Non citato nelle pagine di Ring.",
+    "compatibility.alexa": "Ring elenca Works With Alexa tra le funzioni della Outdoor Cam.",
+    "compatibility.smartthings": "Non citato nelle pagine di Ring.",
+    "compatibility.home_assistant": "L'integrazione Ring ufficiale di Home Assistant elenca Stick Up Battery e Stick Up Cam (3rd Gen): visione dal vivo, eventi di movimento e livello della batteria; l'ultima registrazione richiede Ring Protect, nessun audio bidirezionale."
+  },
+  "values": {
+    "power": "Batteria ricaricabile",
+    "subscription": "Storico dei video salvati (Ring Protect)"
+  }
+}

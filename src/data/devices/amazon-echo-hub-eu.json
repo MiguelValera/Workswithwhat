@@ -1,0 +1,170 @@
+{
+  "category": "smart-hub",
+  "brand": "Amazon",
+  "model": "Echo Hub",
+  "name": "Echo Hub (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.amazon.de/echo-hub/dp/B0BCR8Z7QL",
+  "radios": {
+    "value": [
+      "zigbee",
+      "thread",
+      "bluetooth",
+      "wifi"
+    ],
+    "sources": [
+      "amazon-de-press",
+      "amazon-uk-echo-hub",
+      "alexa-zigbee",
+      "alexa-thread"
+    ],
+    "note": "Amazon's German announcement lists a built-in hub with Zigbee, Thread, Bluetooth and Matter, plus wireless internet or Ethernet through an optional PoE adapter; Amazon UK names the wireless link as Wi-Fi. Ethernet is not recorded because it needs the adapter."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "alexa-matter"
+    ],
+    "note": "Amazon's Matter docs list Echo Hub as Matter-enabled. No CSA product listing for Echo Hub was found, so a certificate is not confirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Echo Hub-paired devices in Apple Home."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Echo Hub-paired devices in Google Home."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "alexa-zigbee",
+        "amazon-de-press",
+        "amazon-uk-echo-hub"
+      ],
+      "note": "Echo Hub is on Amazon's list of Echo devices with a built-in Zigbee hub, so Zigbee devices pair straight to it and appear in Alexa. It also shows Matter devices through Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Echo Hub-paired devices in SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Home Assistant page shows Echo Hub-paired devices appearing there."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "amazon-uk-echo-hub",
+      "amazon-de-press"
+    ],
+    "note": "The Echo Hub is the hub. Amazon's German announcement describes a built-in smart home hub, and Amazon UK says no separate bridge is needed."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "amazon-uk-echo-hub"
+    ],
+    "note": "Amazon UK says select devices such as lights, switches and plugs still work when the internet is down. Amazon's German announcement doesn't cover this."
+  },
+  "hubType": {
+    "value": "speaker-display",
+    "sources": [
+      "amazon-de-press",
+      "amazon-uk-echo-hub"
+    ],
+    "note": "An 8-inch touch-screen smart home control panel for the wall or, with an optional stand, the countertop."
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee",
+      "thread",
+      "bluetooth"
+    ],
+    "sources": [
+      "amazon-de-press",
+      "alexa-zigbee",
+      "alexa-thread"
+    ],
+    "note": "Zigbee devices pair to the built-in hub; Thread serves Matter-over-Thread devices."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Amazon's Matter docs describe Echo as the Matter administrator for Alexa, not as a bridge that exposes its devices to other Matter controllers."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "alexa-thread"
+    ],
+    "note": "Listed among Echo and eero devices with a built-in Thread border router, Thread version 1.3."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "No device limit found in Amazon's sources."
+  },
+  "summary": "Devices paired to the Echo Hub show up in Alexa, with no extra hub: its 8-inch touch-screen panel has a Zigbee hub and a Thread 1.3 border router built in. Matter devices also work through Alexa. Amazon UK says select lights, switches and plugs keep working when the internet is down. For Apple Home, Google Home, SmartThings and Home Assistant, no official source confirms that paired devices appear there.",
+  "caveats": [
+    "Matter support rests on Amazon's developer docs; no CSA listing for Echo Hub was found.",
+    "The Echo Hub connects to the internet over Wi-Fi; Ethernet needs a compatible PoE adapter.",
+    "No official page shows devices paired to it appearing in Apple Home, Google Home, SmartThings or Home Assistant."
+  ],
+  "sources": [
+    {
+      "id": "amazon-de-press",
+      "url": "https://press.aboutamazon.com/de/2023/9/amazon-stellt-echo-hub-und-naechste-generation-des-echo-show-8-vor",
+      "title": "Amazon stellt Echo Hub und nächste Generation des Echo Show 8 vor",
+      "publisher": "Amazon",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "amazon-uk-echo-hub",
+      "url": "https://www.aboutamazon.co.uk/news/devices/echo-hub-smart-home-tips",
+      "title": "Echo Hub smart home tips",
+      "publisher": "Amazon",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "alexa-zigbee",
+      "url": "https://developer.amazon.com/en-US/docs/alexa/smarthome/zigbee-support.html",
+      "title": "Understand Smart Home Zigbee Support",
+      "publisher": "Amazon Alexa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "alexa-thread",
+      "url": "https://www.developer.amazon.com/en-US/docs/alexa/smarthome/thread-support.html",
+      "title": "Understand Smart Home Thread Support",
+      "publisher": "Amazon Alexa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "alexa-matter",
+      "url": "https://developer.amazon.com/en-US/docs/alexa/smarthome/matter-support.html",
+      "title": "Connect Your Device to Alexa with Matter",
+      "publisher": "Amazon Alexa",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-12",
+  "updatedAt": "2026-10-12",
+  "variants": [
+    "amazon-echo-hub-uk"
+  ]
+}

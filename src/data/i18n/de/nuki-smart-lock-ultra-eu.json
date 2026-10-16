@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "CSA-zertifiziert ist das Nuki Smart Lock Ultra, und über Matter über Thread erreicht es Apple Home, Google Home, Alexa, SmartThings und Home Assistant. WLAN ist eingebaut, der Fernzugriff braucht also keine Nuki Bridge. Es ist ein Zylinderschloss: Der 58 mm lange Universalzylinder ersetzt deinen. Der Akku ist eingebaut und lädt in etwa 2 Stunden auf, und am Schloss selbst gibt es kein Tastenfeld.",
+  "caveats": [
+    "Matter braucht einen Thread-Border-Router; laut Nuki funktioniert ein Matter-Hub nur mit WLAN nicht.",
+    "Beim Einbau tauschst du deinen vorhandenen Zylinder gegen den integrierten aus.",
+    "Tastenfelder sind separate Zubehörteile."
+  ],
+  "notes": {
+    "radios": "Nukis Ultra-Datenblatt führt Bluetooth Low Energy, 2,4-GHz-WLAN und Thread (IEEE 802.15.4). Der CSA-Eintrag nennt Thread und Bluetooth als Matter-Transporte.",
+    "matter": "Die CSA führt „Nuki Smart Lock Ultra“ (Hardware 11.12, Firmware 1.4.1, zertifiziert am 2025-11-18) mit Thread- und Bluetooth-Transport.",
+    "hubRequired": "Das eingebaute WLAN bietet Fernzugriff ohne Nuki Bridge. Die Matter-Steuerung braucht einen Thread-Border-Router.",
+    "localControl": "Keine Nuki-Quelle beschreibt Offline- oder rein lokale Steuerung ausdrücklich.",
+    "lockFit": "Wird mit einem integrierten Universalzylinder (58 mm) geliefert, der deinen vorhandenen Zylinder ersetzt; Nukis Vergleichstabelle sagt, ein Zylinderwechsel ist nötig.",
+    "keypad": "Kein Tastenfeld am Schloss. Nuki führt Keypad, Keypad 2 und Keypad 2 Pro als separates Zubehör.",
+    "power": "Lädt in etwa 2 Stunden auf, an der Tür oder abgenommen; Nuki warnt, wenn der Stand unter 20 % fällt.",
+    "compatibility.apple_home": "Matter über Thread. Nukis Matter-Hilfeseite deckt das Ultra ab und sagt, du brauchst einen Hub, der Matter über Thread unterstützt; ein Matter-Hub nur mit WLAN funktioniert nicht.",
+    "compatibility.google_home": "Matter über Thread, das einen Thread-Border-Router braucht.",
+    "compatibility.alexa": "Matter über Thread, das einen Thread-Border-Router braucht.",
+    "compatibility.smartthings": "Nukis Matter-Hilfeseite nennt Samsung-SmartThings-Hubs für Matter über Thread; ein Thread-Border-Router ist nötig.",
+    "compatibility.home_assistant": "Nukis Matter-Hilfeseite führt den Home Assistant Connect ZBT-1 als Hub für Matter über Thread. Home Assistant braucht dafür einen Thread-Border-Router."
+  },
+  "values": {
+    "power": "Eingebauter wiederaufladbarer Akku"
+  }
+}

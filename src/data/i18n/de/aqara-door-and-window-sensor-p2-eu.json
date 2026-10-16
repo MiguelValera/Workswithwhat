@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Der Aqara Door and Window Sensor P2 meldet per Hall-Sensor offen oder geschlossen und hat einen Sabotagealarm. Über Matter auf Thread erreicht er Apple Home, Google Home, Alexa, SmartThings und Home Assistant; du brauchst also einen Matter-kompatiblen Thread-Border-Router, aber keinen Aqara-Hub. Die Stromversorgung übernimmt eine CR123A-Zelle.",
+  "caveats": [
+    "Braucht einen Matter-kompatiblen Thread-Border-Router, etwa einen HomePod mini, Nest Hub (2. Generation) oder Echo (4. Generation).",
+    "Die Aqara-Home-App und Extras wie die Sabotagemeldung brauchen Aqaras Hub M3."
+  ],
+  "notes": {
+    "radios": "Aqaras Datenblatt nennt Thread und BLE; die CSA nennt Thread und Bluetooth.",
+    "matter": "Die CSA führt den Door and Window Sensor P2 von Lumi United (Vendor 0x115F, Produkt 0x2002). Die Modelle sind DW-S02E und DW-S02D.",
+    "hubRequired": "Für die Matter-Steuerung ist kein Aqara-Hub nötig; es braucht einen Matter-Controller mit Thread-Border-Router (z. B. HomePod mini, Nest Hub 2. Generation, Echo 4. Generation), der kein Marken-Hub ist. Die Aqara-Home-App und Extras wie die Sabotagemeldung brauchen Aqaras Hub M3.",
+    "localControl": "Keine von uns gesehene Aqara-Quelle nennt reine lokale Steuerung.",
+    "senses": "Aqaras Datenblatt nennt einen Hall-Sensor für den Zustand offen/geschlossen sowie einen Sabotagealarm.",
+    "power": "Eine CR123A-Zelle.",
+    "compatibility.apple_home": "Aqara führt ihn als kompatibel auf; die Nutzung über Matter braucht einen Matter-kompatiblen Thread-Border-Router. Bei Apple heißt das ein HomePod mini, HomePod (2. Generation) oder Apple TV 4K.",
+    "compatibility.google_home": "Aqara führt ihn als kompatibel auf; die Nutzung über Matter braucht einen Matter-kompatiblen Thread-Border-Router.",
+    "compatibility.alexa": "Aqara führt ihn als kompatibel auf; die Nutzung über Matter braucht einen Matter-kompatiblen Thread-Border-Router.",
+    "compatibility.smartthings": "Aqara führt ihn als kompatibel auf; die Nutzung über Matter braucht einen Matter-kompatiblen Thread-Border-Router.",
+    "compatibility.home_assistant": "Aqaras Produktseite führt Home Assistant Yellow unter den getesteten Matter-Controllern und Thread-Border-Routern. Erreichbar über Home Assistants Matter-Integration."
+  },
+  "values": {
+    "power": "CR123A"
+  }
+}

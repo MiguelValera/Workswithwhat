@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Cerrojo con huella y wifi integrado, el Kwikset Halo Touch funciona con Alexa y Google Home y no necesita hub. Guarda hasta 100 huellas para 50 usuarios, tiene una llave de respaldo y funciona con cuatro pilas AA. Las páginas de Kwikset no confirman Apple Home, SmartThings ni Matter para este modelo.",
+  "caveats": [
+    "No está confirmada la compatibilidad con Apple Home, SmartThings ni Matter en este modelo.",
+    "Kwikset no dice si tiene teclado ni qué banda de wifi usa."
+  ],
+  "notes": {
+    "radios": "Se conecta directamente a tu wifi doméstico. En las páginas que hemos visto no se indica la banda de wifi.",
+    "matter": "Ninguna de las dos páginas del Halo Touch menciona Matter; Kwikset vende Matter en su línea Halo Select. No se ha consultado ningún registro de la CSA. Que no se mencione no significa que no sea compatible.",
+    "hubRequired": "Lleva wifi integrado; la app de Kwikset gestiona la cerradura.",
+    "localControl": "Kwikset dice que las imágenes de las huellas se guardan en local en la cerradura, pero no indica si el control por app o por voz funciona sin la nube.",
+    "lockFit": "Se vende como cerrojo, con estilo Contemporary o Traditional. Una llave sirve de respaldo.",
+    "keypad": "Kwikset indica la huella (hasta 100 huellas, 50 usuarios) y una llave como formas de entrar. Ninguna página dice si hay teclado, así que sigue sin confirmar.",
+    "power": "Incluye cuatro pilas AA.",
+    "compatibility.apple_home": "Ninguna de las dos páginas del Halo Touch menciona Apple Home ni HomeKit; la página del producto solo indica Alexa, Google Home y Brilliant.",
+    "compatibility.google_home": "Kwikset indica Google Assistant y Google Home como compatibles.",
+    "compatibility.alexa": "Kwikset indica Amazon Alexa como compatible.",
+    "compatibility.smartthings": "Ninguna de las dos páginas del Halo Touch menciona SmartThings.",
+    "compatibility.home_assistant": "No se ha encontrado ninguna página oficial de Home Assistant ni de Kwikset para este modelo."
+  }
+}

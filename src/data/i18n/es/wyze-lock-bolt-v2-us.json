@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Wyze Lock Bolt v2 (WLCKB2) es un cerrojo con wifi que puedes abrir con Alexa o Google Assistant, sin necesidad de hub. Tiene teclado de cristal retroiluminado y usa ocho pilas AA, con un puerto USB-C para alimentación de emergencia. Las páginas de Wyze no mencionan Matter, Apple Home ni SmartThings.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz; Bluetooth sirve para la configuración y algunas funciones de la app.",
+    "No es válido para puertas de cristal, correderas, de cerradura de embutir ni de varios puntos de cierre.",
+    "Matter y Apple Home están sin confirmar."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz; Bluetooth para la configuración y algunas funciones de la app.",
+    "matter": "Ninguna de las dos páginas de Wyze menciona Matter; no se ha consultado ningún registro de la CSA.",
+    "hubRequired": "Wifi integrado; no se menciona ningún hub ni puerta de enlace.",
+    "localControl": "Wyze no dice si la cerradura funciona sin su nube.",
+    "lockFit": "Sustituye un cerrojo de cilindro simple en puertas de madera de 1-3/8 a 2-11/64 in de grosor.",
+    "keypad": "Teclado de vidrio templado retroiluminado.",
+    "power": "Pilas incluidas; puerto USB-C para alimentación de emergencia.",
+    "compatibility.apple_home": "No se menciona en las páginas de Wyze.",
+    "compatibility.google_home": "La página de Wyze dice que puedes abrir con Google Assistant.",
+    "compatibility.alexa": "La página de Wyze dice que puedes abrir con Alexa.",
+    "compatibility.smartthings": "No se menciona en las páginas de Wyze.",
+    "compatibility.home_assistant": "No se ha consultado ninguna página de integración de Home Assistant para esta cerradura."
+  }
+}

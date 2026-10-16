@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Apple Home Key funziona sul Level Lock+ (Matter), un chiavistello sostitutivo che si unisce anche a Google Home, Alexa, SmartThings e Home Assistant via Matter su Thread. Usa Bluetooth e Thread insieme, quindi l'app Level funziona senza border router mentre le piattaforme Matter e il controllo da fuori casa ne richiedono uno. Una pila CR2 dura fino a un anno nell'uso tipico. Il tastierino si acquista a parte.",
+  "caveats": ["Il controllo Matter richiede un border router Thread come un HomePod mini, un Apple TV 4K con Thread, un Nest Hub (2nd gen) o un Echo con Thread.", "Sostituisce la tua serratura e include chiavi nuove; il Level Bolt è il modello da montare sull'esistente che mantiene le tue chiavi attuali.", "Controlla prima la porta: Level indica una porta da 1 3/4 in, un foro da 2 1/8 in e un backset da 2 3/8 in.", "Gli utenti del forum di Home Assistant segnalano problemi di messa in servizio con il Level Bolt."],
+  "notes": {
+    "radios": "Level indica Bluetooth 4.0/5.0 e Matter su Thread, in funzione contemporaneamente.",
+    "matter": "La CSA elenca 'Level Lock+ (Matter)' di Assa Abloy con trasporti Thread e Bluetooth. Ci sono diverse schede, una per versione del firmware (dal 2024 a gennaio 2026).",
+    "hubRequired": "L'app Level controlla la serratura direttamente via Bluetooth. Le piattaforme Matter e il controllo da fuori casa richiedono un border router Thread.",
+    "localControl": "Matter su Thread resta sulla rete locale.",
+    "lockFit": "Level dice che il Lock+ sostituisce la tua serratura attuale e include le sue chiavi di casa; la pagina delle specifiche indica una porta da 1 3/4 in, un foro da 2 1/8 in e un backset da 2 3/8 in. Non confonderlo con il Level Bolt, il modello da montare sull'esistente che mantiene le tue chiavi attuali.",
+    "keypad": "Il Level Keypad è un accessorio separato, venduto a parte.",
+    "power": "Una pila al litio CR2 (non ricaricabile) nascosta nel chiavistello; Level indica fino a un anno di durata nell'uso tipico.",
+    "compatibility.apple_home": "Matter su Thread, con Apple Home Key. Serve un border router Thread che faccia da hub domestico, come un HomePod mini o un Apple TV 4K con Thread.",
+    "compatibility.google_home": "Matter su Thread; serve un border router Thread come un Nest Hub (2nd gen).",
+    "compatibility.alexa": "Matter su Thread; serve un Echo o un altro dispositivo Alexa che sia un border router Thread.",
+    "compatibility.smartthings": "Matter su Thread tramite un hub SmartThings che sia un border router Thread.",
+    "compatibility.home_assistant": "La pagina Level di Home Assistant dice che i dispositivi Level Matter funzionano in locale tramite l'integrazione Matter. Serve un border router Thread. Gli utenti del forum segnalano problemi di messa in servizio con il Level Bolt."
+  },
+  "values": {"power": "1 × CR2"}
+}

@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Levitons D215P deckt alle fünf ab: Apple Home über eingebautes HomeKit, Alexa, Google Home und SmartThings über My Leviton und Home Assistant über Matter nach Levitons Matter-Firmware-Update. Sie verbindet sich direkt mit 2,4-GHz-WLAN, ohne Hub. Das Update lässt Matter-Controller sie im lokalen Netzwerk erreichen, entfernt aber die HomeKit-Kopplung, du fügst sie also mit dem Matter-Code und einer Apple-Steuerzentrale neu zu Apple Home hinzu. Sie ist für 15 A Allgemeinnutzung bei 120 V und 1500 W für Glühlampen ausgelegt; Leviton erwähnt keine Verbrauchsmessung.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Das Matter-Update entfernt die HomeKit-Verknüpfung; das erneute Hinzufügen zu Apple Home mit dem Matter-Code braucht eine Apple-Steuerzentrale.",
+    "Home Assistant braucht das Matter-Update; es gibt keine offizielle Leviton-Integration.",
+    "Die Grenzen hängen von der Last ab: 15 A Allgemeinnutzung, 1500 W Glüh-/Halogenlampen, 5 A LED/Energiesparlampen, 3/4 PS Motor.",
+    "Levitons Produktseite und Datenblatt erwähnen keine Verbrauchsmessung."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN laut Levitons Anleitung. Der CSA-Eintrag nennt WLAN und Bluetooth als Transporte; Bluetooth dient vermutlich nur der Einrichtung.",
+    "matter": "Matter kommt mit einem Firmware-Update in der App My Leviton. Die CSA führt die D215P (Matter 1.3, Firmware 2.3.10, zertifiziert am 2025-05-20); andere CSA-Seiten zeigen eine zweite Zertifikats-ID dafür.",
+    "hubRequired": "Verbindet sich direkt mit 2,4-GHz-WLAN; kein Leviton-Hub nötig.",
+    "localControl": "Mit der Matter-Firmware erreichen Matter-Controller sie im lokalen WLAN. Leviton nennt für die eigene App keine lokale Steuerung.",
+    "energyMonitoring": "Levitons Produktseite und Datenblatt erwähnen keine Verbrauchsmessung, aber keine Quelle sagt, dass sie fehlt.",
+    "maxLoadWatts": "Leviton gibt 15 A Allgemeinnutzung bei 120 V, 1500 W Glüh-/Halogenlampen, 5 A LED/Energiesparlampen und 3/4 PS Motor an. Eine einzelne Wattzahl für die Allgemeinnutzung nennt es nicht.",
+    "compatibility.apple_home": "Koppelt direkt mit Apple Home über HomeKit, mit dem mitgelieferten HomeKit-Code. Das optionale Matter-Update entfernt die HomeKit-Verknüpfung; dann muss sie mit dem Matter-Code neu hinzugefügt werden, was eine Apple-Steuerzentrale braucht.",
+    "compatibility.google_home": "Über die Cloud-Verknüpfung von My Leviton; nach dem Firmware-Update ist auch Matter eine Option.",
+    "compatibility.alexa": "Über den Alexa-Skill von My Leviton; nach dem Firmware-Update ist auch Matter eine Option.",
+    "compatibility.smartthings": "Leviton führt SmartThings und sagt, das Matter-Update beeinflusst die bestehende SmartThings-Integration nicht. Matter ist ebenfalls eine Option.",
+    "compatibility.home_assistant": "Über die Matter-Integration von Home Assistant nach dem Matter-Firmware-Update. Eine offizielle Leviton-Integration für Home Assistant haben wir nicht gefunden."
+  }
+}

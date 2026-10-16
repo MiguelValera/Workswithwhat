@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Richte einen HomePod mini ein, und er wird automatisch zum Apple-Home-Hub, der Fernzugriff und Automationen für HomeKit- und Matter-Zubehör ergänzt. Apple nennt ihn eine Thread-fähige Steuerzentrale, und Home Assistant führt ihn als Thread-Border-Router. Er hat WLAN 802.11n und Bluetooth 5.0. Dass seine Geräte in Google Home, Alexa oder SmartThings erscheinen, zeigt nichts Offizielles.",
+  "caveats": [
+    "Für Fernzugriff und Thread-Zubehör ist eine Steuerzentrale nötig; die Einrichtungsseite sagt, dass nur Hausbesitzer eine in der Home-App hinzufügen können."
+  ],
+  "notes": {
+    "radios": "WLAN 802.11n, Bluetooth 5.0 und Thread.",
+    "matter": "Apple führt den HomePod mini als Steuerzentrale für Matter-Zubehör. Der CSA-Software-Eintrag für HomePod (Matter 1.0, Oktober 2022) ist eine Softwarekomponente und nennt kein HomePod-Modell, daher ist ein Zertifikat pro Modell nicht bestätigt.",
+    "hubRequired": "Er ist der Hub.",
+    "localControl": "Aus offizieller Quelle nicht bestätigt.",
+    "deviceProtocols": "Apple sagt, dass HomeKit- oder Matter-fähiges Thread-Zubehör über eine Thread-fähige Steuerzentrale wie den HomePod mini verbunden wird.",
+    "matterBridge": "Von Apple nicht genannt.",
+    "threadBorderRouter": "Apple nennt den HomePod mini eine Thread-fähige Steuerzentrale, neben Thread-Border-Routern von Drittanbietern; Home Assistants Thread-Seite führt ihn als Border-Router.",
+    "maxDevices": "In den Quellen wurde kein Limit gefunden.",
+    "compatibility.apple_home": "Wer einen HomePod mini einrichtet, macht ihn automatisch zur Steuerzentrale; er ergänzt Fernzugriff und Automationen für HomeKit- und Matter-Zubehör und dient als Thread-Hub.",
+    "compatibility.google_home": "Keine offizielle Quelle zeigt mit dem HomePod mini gekoppelte Geräte in Google Home.",
+    "compatibility.alexa": "Keine offizielle Quelle zeigt mit dem HomePod mini gekoppelte Geräte in Alexa.",
+    "compatibility.smartthings": "Keine offizielle Quelle zeigt mit dem HomePod mini gekoppelte Geräte in SmartThings.",
+    "compatibility.home_assistant": "Home Assistants Thread-Seite führt den HomePod mini als Thread-Border-Router; sie sagt nicht, dass in Apple Home gekoppelte Geräte in Home Assistant erscheinen."
+  }
+}

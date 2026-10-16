@@ -1,0 +1,134 @@
+{
+  "category": "smart-bulb",
+  "brand": "Wyze",
+  "model": "Bulb Color WLPA19C",
+  "name": "Wyze Bulb Color (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.wyze.com/products/wyze-bulb-color",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth"
+    ],
+    "sources": [
+      "wyze-bulb-color-product",
+      "wyze-bulb-color-specs"
+    ],
+    "note": "Wyze lists 802.11 b/g/n on 2.4 GHz plus Bluetooth; setup needs a 2.4 GHz network."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Neither Wyze's product page nor its specs page mentions Matter, and we found no CSA listing for this bulb."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Wyze's pages we saw do not mention Apple Home or HomeKit; not treated as a 'no' because absence is not proof."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "wyze-bulb-color-product",
+        "wyze-bulb-color-google"
+      ],
+      "note": "Wyze lists Google Assistant and Google Home, linked through the Wyze app's own integration."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "wyze-bulb-color-product",
+        "wyze-bulb-color-alexa"
+      ],
+      "note": "Wyze lists Alexa and has a support article on setting it up with the Wyze skill."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Wyze's pages we saw do not mention SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Wyze's pages we saw do not mention Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "wyze-bulb-color-product"
+    ],
+    "note": "Wyze's page says the bulb connects directly to Wi-Fi."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No Wyze page we saw states whether the bulb works without the cloud."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": [
+      "wyze-bulb-color-product",
+      "wyze-bulb-color-specs"
+    ],
+    "note": "16 million colors plus tunable white from 1800K to 6500K."
+  },
+  "lumens": {
+    "value": 1100,
+    "sources": [
+      "wyze-bulb-color-specs"
+    ],
+    "note": "Wyze gives a range of 30 to 1100 lumens; 1100 is the maximum."
+  },
+  "bulbBase": {
+    "value": "E26 (A19)",
+    "sources": [
+      "wyze-bulb-color-specs"
+    ]
+  },
+  "summary": "Wyze Bulb Color (WLPA19C) works with Alexa and Google Home over 2.4 GHz Wi-Fi, with no hub. It is an A19 bulb with an E26 base: 16 million colors, tunable white from 1800K to 6500K and up to 1100 lumens. Wyze's pages don't mention Matter, Apple Home, SmartThings or Home Assistant, so those stay unconfirmed.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Wyze does not mention Matter or Apple Home for this bulb, so those are unconfirmed rather than ruled out."
+  ],
+  "sources": [
+    {
+      "id": "wyze-bulb-color-product",
+      "url": "https://www.wyze.com/products/wyze-bulb-color",
+      "title": "Wyze Color Bulbs",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "wyze-bulb-color-specs",
+      "url": "https://support.wyze.com/hc/en-us/articles/360056455972-Wyze-Bulb-Color-Specs",
+      "title": "Wyze Bulb Color Specs",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "wyze-bulb-color-alexa",
+      "url": "https://support.wyze.com/hc/en-us/articles/360056605772-Wyze-Bulb-Color-and-Alexa",
+      "title": "Wyze Bulb Color and Alexa",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "wyze-bulb-color-google",
+      "url": "https://support.wyze.com/hc/en-us/articles/360056605932-Wyze-Bulb-Color-and-Google-Assistant",
+      "title": "Wyze Bulb Color and Google Assistant",
+      "publisher": "Wyze",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

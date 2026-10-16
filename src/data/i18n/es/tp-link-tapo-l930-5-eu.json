@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La tira de luz Tapo L930-5 mide 5 m, se divide en 50 segmentos de color y se conecta a tu red por wifi, así que no hay que comprar ningún hub. Tapo la presenta como su primera tira con compatibilidad con Apple HomeKit, y también funcionan Google Assistant y Alexa. Home Assistant la incluye en su integración de TP-Link. Tapo no menciona Matter ni SmartThings.",
+  "caveats": [
+    "Solo wifi de 2,4 GHz.",
+    "La regulación de intensidad solo funciona a través de la app y la nube, según la página española de Tapo.",
+    "La tira se puede cortar, pero el trozo cortado no se puede reutilizar.",
+    "Las páginas de Tapo no mencionan Matter ni SmartThings."
+  ],
+  "notes": {
+    "radios": "Solo wifi de 2,4 GHz (802.11b/g/n).",
+    "matter": "Ni la página española del producto ni la ficha técnica mencionan Matter, y no hemos encontrado ningún registro de la CSA.",
+    "hubRequired": "Tira wifi que se controla desde la app Tapo; no se menciona ningún hub.",
+    "localControl": "Home Assistant se comunica con ella por la red local, pero Tapo dice que la regulación de intensidad solo funciona a través de la app y la nube, así que el control desde la app sin nube sigue sin confirmar.",
+    "colorType": "RGB más LED blancos independientes.",
+    "lengthM": "Tira de 5 m; se puede cortar, pero los trozos cortados no se pueden reutilizar.",
+    "multiZone": "La página española de Tapo describe 50 segmentos de color para el control por zonas.",
+    "power": "Salida de 12 V CC, 1,0 A; entrada de 100–240 V, 13 W.",
+    "compatibility.apple_home": "La página española de Tapo la presenta como su primera tira de luz compatible con Apple HomeKit (Siri, HomePod mini); la ficha técnica europea la llama accesorio compatible con HomeKit.",
+    "compatibility.google_home": "Funciona con Google Assistant.",
+    "compatibility.alexa": "Control por voz del color y del brillo.",
+    "compatibility.smartthings": "No se menciona en la página de Tapo ni en la ficha técnica.",
+    "compatibility.home_assistant": "La integración TP-Link Smart Home de Home Assistant incluye la L930-5 y se conecta en local."
+  },
+  "values": {
+    "power": "Adaptador de corriente (12 V CC)"
+  }
+}

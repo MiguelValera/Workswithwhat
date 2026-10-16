@@ -1,0 +1,21 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Xiaomi indica il controllo vocale con Alexa e Google Assistant per il Robot Vacuum X20+, e il controllo passa dall'app Xiaomi Home. Il modello europeo aspira e lava, con navigazione laser LDS, aspirazione da 6000 Pa e una stazione che svuota il contenitore. Matter, Apple Home e SmartThings non sono confermati.",
+  "caveats": ["Xiaomi dice che il controllo vocale non è disponibile in tutte le lingue e in tutti i paesi, e la formulazione della pagina spagnola non è confermata.", "L'X20 semplice non ha una base con svuotamento automatico; la stazione è inclusa nel pacchetto X20+.", "L'integrazione Xiaomi Miio di Home Assistant copre in generale gli aspirapolvere Xiaomi, ma nessuna pagina ufficiale nomina l'X20+."],
+  "notes": {
+    "radios": "Nessuna pagina Xiaomi trovata nomina la radio; il controllo passa dall'app Xiaomi Home.",
+    "matter": "Nessuna dichiarazione su Matter sulle pagine di Xiaomi e nessuna scheda CSA è emersa nella ricerca.",
+    "hubRequired": "Le pagine di Xiaomi descrivono il controllo da app e non menzionano un hub; non dichiarato esplicitamente.",
+    "localControl": "Xiaomi non dice se qualche controllo funzioni senza il suo cloud.",
+    "cleaning": "La pagina delle specifiche spagnola indica due supporti per panni di lavaggio con due panni nella confezione.",
+    "navigation": "La pagina australiana di Xiaomi indica la navigazione laser LDS e l'evitamento degli ostacoli a luce strutturata S-Cross.",
+    "suctionPa": "Xiaomi dichiara 6000 Pa sulle sue pagine spagnola e australiana.",
+    "selfEmptying": "La pagina delle specifiche spagnola indica l'assorbimento della stazione durante lo svuotamento della polvere e un sacchetto usa e getta nella confezione; questo è il pacchetto X20+ (l'X20 semplice non ha una base simile).",
+    "compatibility.apple_home": "Nessuna pagina Xiaomi o Apple trovata indica Apple Home o Matter per questo modello.",
+    "compatibility.google_home": "Le pagine globali e dello store britannico di Xiaomi indicano il controllo vocale con Google Assistant (ad es. «OK Google, start cleaning»), non disponibile in tutte le lingue e in tutti i paesi. Formulazione della pagina spagnola non confermata.",
+    "compatibility.alexa": "Le pagine globali e dello store britannico di Xiaomi indicano il controllo vocale con Alexa (ad es. «Alexa, start cleaning») e dicono che serve un dispositivo Alexa compatibile. Formulazione della pagina spagnola non confermata.",
+    "compatibility.smartthings": "Nessuna pagina ufficiale trovata.",
+    "compatibility.home_assistant": "L'integrazione Xiaomi Miio di Home Assistant copre in generale gli aspirapolvere robot Xiaomi, ma nessuna pagina ufficiale trovata nomina l'X20+. Le integrazioni HACS della community non sono contate."
+  },
+  "values": {"navigation": "Laser LDS"}
+}

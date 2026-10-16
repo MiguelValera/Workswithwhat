@@ -1,16 +1,40 @@
 ---
 import Base from '../layouts/Base.astro';
-import { ES_ENABLED } from '../site.config';
+import { ACTIVE_LANGS } from '../i18n/lang';
 ---
 
 <Base title="Page not found" description="This page doesn't exist on Workswithwhat." alternates={false} noindex>
   <h1>Page not found</h1>
   <p>That page doesn't exist, or it moved. Try the <a href="/smart-plugs/">smart plug chart</a>, the <a href="/works-with/">ecosystem pages</a> or the <a href="/">home page</a>.</p>
   {
-    ES_ENABLED && (
+    ACTIVE_LANGS.includes('es') && (
       <p lang="es-ES">
         Esta página no existe o ha cambiado de sitio. Prueba la <a href="/es/enchufes-inteligentes/">tabla de enchufes</a>, las
         <a href="/es/compatible-con/">páginas por ecosistema</a> o la <a href="/es/">portada en español</a>.
+      </p>
+    )
+  }
+  {
+    ACTIVE_LANGS.includes('de') && (
+      <p lang="de">
+        Diese Seite gibt es nicht oder sie ist umgezogen. Probier die <a href="/de/smarte-steckdosen/">Tabelle der Steckdosen</a>, die
+        <a href="/de/kompatibel-mit/">Seiten nach Ökosystem</a> oder die <a href="/de/">deutsche Startseite</a>.
+      </p>
+    )
+  }
+  {
+    ACTIVE_LANGS.includes('fr') && (
+      <p lang="fr">
+        Cette page n’existe pas ou a été déplacée. Essayez le <a href="/fr/prises-connectees/">tableau des prises</a>, les
+        <a href="/fr/compatible-avec/">pages par écosystème</a> ou l’<a href="/fr/">accueil en français</a>.
+      </p>
+    )
+  }
+  {
+    ACTIVE_LANGS.includes('it') && (
+      <p lang="it">
+        Questa pagina non esiste o è stata spostata. Prova la <a href="/it/prese-smart/">tabella delle prese</a>, le
+        <a href="/it/compatibile-con/">pagine per ecosistema</a> o la <a href="/it/">home in italiano</a>.
       </p>
     )
   }

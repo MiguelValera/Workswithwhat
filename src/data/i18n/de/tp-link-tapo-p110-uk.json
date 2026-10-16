@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Verknüpft über dein TP-Link-Konto funktioniert die UK-Tapo-P110 mit Alexa, Google Home und SmartThings, und die offizielle TP-Link-Integration von Home Assistant unterstützt sie ebenfalls. Sie ist ein 13-A-Zwischenstecker mit 2,4-GHz-WLAN, ausgelegt für 2990 W, ohne Hub, mit Live- und Verlaufsdaten zum Verbrauch in der Tapo-App. Die App kann sie auch lokal ohne Internet steuern. TP-Link führt Apple Home nicht auf; seine Matter-Version ist die P110M.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Apple Home und Matter werden nicht aufgeführt; die Tapo P110M ist die Matter-Version.",
+    "TP-Links eigene FAQs widersprechen sich, ob Verbrauchsdaten SmartThings erreichen, also prüfe den Verbrauch besser in der Tapo-App.",
+    "Laut Tapo ist sie nicht zum Laden von E-Autos gedacht."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN (802.11b/g/n). TP-Links US-Datenblatt erwähnt Bluetooth für die Einrichtung, aber das haben wir für das UK-Modell nicht bestätigt.",
+    "matter": "Die UK-P110-Seiten erwähnen Matter nicht und schließen es nicht aus. TP-Links Matter-Version ist die separate Tapo P110M.",
+    "hubRequired": "WLAN-Zwischenstecker, der sich direkt mit deinem Router verbindet und in der Tapo-App eingerichtet wird.",
+    "localControl": "TP-Links Tapo-Zwischenstecker-FAQ (P100/P105/P110/P115) sagt, die Tapo-App könne den Zwischenstecker lokal ohne Internet steuern; Smart Actions brauchen dann einen Tapo-Hub.",
+    "energyMonitoring": "Live- und Verlaufsdaten zum Energieverbrauch in der Tapo-App.",
+    "maxLoadWatts": "TP-Links UK-Datenblatt: 2990 W, 13 A, 1/6-PS-Motor, 220-240 V. Tapos UK-Seite sagt, E-Auto-Laden werde nicht unterstützt.",
+    "compatibility.apple_home": "TP-Link führt für die P110 Alexa, Google Assistant und SmartThings auf und erwähnt Apple Home nicht, aber keine Seite sagt, dass es nicht unterstützt wird. Die P110M ist die Matter-Version.",
+    "compatibility.google_home": "Verknüpfe dein TP-Link-Konto in Google Home, nachdem du den Zwischenstecker in der Tapo-App eingerichtet hast. Die Schritt-für-Schritt-Anleitung ist TP-Links allgemeine FAQ auf der US-Seite; die UK-Seiten führen den Google Assistant auf.",
+    "compatibility.alexa": "Über den Tapo-Alexa-Skill, verknüpft aus der Tapo-App oder der Alexa-App. Die Anleitung ist TP-Links allgemeine FAQ auf der US-Seite; die UK-Seiten führen Alexa auf.",
+    "compatibility.smartthings": "Verknüpfe deine TP-Link-ID in der SmartThings-App. TP-Links SmartThings-FAQ (allgemein, auf der US-Seite) führt die P110 auf; die UK-Seite zeigt SmartThings. TP-Links FAQs widersprechen sich, ob Verbrauchsdaten SmartThings erreichen.",
+    "compatibility.home_assistant": "Die TP-Link-Smart-Home-Integration von Home Assistant führt die P110 unter den unterstützten Tapo-Zwischensteckern auf. Richte sie zuerst in der Tapo-App ein."
+  }
+}

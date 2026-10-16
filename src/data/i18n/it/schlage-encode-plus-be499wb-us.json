@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Avvicina un iPhone o un Apple Watch e lo Schlage Encode Plus si apre con Apple Home Key. È un chiavistello completo con tastiera touchscreen e Wi-Fi a 2,4 GHz integrato, e funziona con Apple Home, Google Home e Alexa senza hub. Home Assistant usa l'integrazione ufficiale Schlage tramite il cloud di Schlage. Non è certificato Matter e SmartThings non è indicato. Quattro batterie AA sono incluse, per un'autonomia fino a sei mesi.",
+  "caveats": ["Il Wi-Fi è a 2,4 GHz.", "Non è abilitato per Matter; Allegion dice che al momento non supporta Matter.", "Home Key richiede iPhone XS o successivo con iOS 15+, oppure Apple Watch Series 4+ con watchOS 8+.", "Il controllo vocale si ferma durante un'interruzione del Wi-Fi e l'integrazione di Home Assistant passa dal cloud di Schlage.", "Schlage non indica SmartThings e non abbiamo potuto confermarlo né escluderlo."],
+  "notes": {
+    "radios": "Schlage lo descrive come un chiavistello con Wi-Fi integrato (2,4 GHz). Anche gli annunci dei rivenditori menzionano il Bluetooth, e la guida di configurazione di Allegion ti fa attivare il Bluetooth del telefono per l'abbinamento, ma nessuna pagina Schlage vista indica il Bluetooth come radio della serratura.",
+    "matter": "La knowledge base di Allegion dice che l'Encode Plus non è abilitato per Matter e al momento non supporta Matter.",
+    "hubRequired": "Schlage dice che i prodotti Encode non richiedono hub né adattatori; la serratura ha il Wi-Fi integrato.",
+    "localControl": "Il controllo da Home Assistant passa dal cloud di Schlage; nessuna fonte conferma cosa funzioni senza internet. Schlage nota che il controllo vocale si ferma durante un'interruzione del Wi-Fi.",
+    "lockFit": "Venduto come chiavistello smart completo (BE499WB) con finitura Century o Camelot, in diverse finiture.",
+    "keypad": "Tastiera touchscreen sulla serratura con codici di accesso unici per ogni persona.",
+    "power": "La pagina prodotto Schlage del BE499WB indica quattro batterie AA alcaline (incluse) e fino a sei mesi di autonomia in uso tipico.",
+    "compatibility.apple_home": "Aggiunto ad Apple Home tramite HomeKit, compreso Apple Home Key (avvicina iPhone o Apple Watch). Home Key richiede iPhone XS o successivo con iOS 15+, oppure Apple Watch Series 4+ con watchOS 8+.",
+    "compatibility.google_home": "Tramite l'app Schlage Home e Google Assistant: blocca, sblocca e controlla lo stato. Nessun hub necessario.",
+    "compatibility.alexa": "Skill Alexa tramite l'app Schlage Home. Lo sblocco vocale va attivato nell'app Alexa.",
+    "compatibility.smartthings": "Le pagine di Schlage viste indicano Alexa, Google e Apple ma non SmartThings, e la serratura non ha Matter. Solo post nei forum dicono che SmartThings è incompatibile, quindi non lo segniamo come «no».",
+    "compatibility.home_assistant": "Integrazione ufficiale Schlage, che usa l'API cloud di Schlage per le serrature Wi-Fi e indica l'Encode Plus come funzionante."
+  }
+}

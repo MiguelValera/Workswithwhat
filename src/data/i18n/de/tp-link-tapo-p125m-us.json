@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Matter erledigt bei der Tapo P125M die Hauptarbeit: Darüber erreicht der Zwischenstecker Apple Home, Google Home, Alexa und SmartThings. Es gibt keinen HomeKit-Modus, und laut TP-Link verbinden sich Matter-Tapo-Geräte direkt mit Alexa statt über den Tapo-Skill. Home Assistant kann die TP-Link-Integration oder Matter nutzen. Dieser US-Zwischenstecker läuft über 2,4-GHz-WLAN (Bluetooth nur für die Einrichtung), ist für 15 A / 1800 W ausgelegt und funktioniert in deinem Heimnetz auch ohne Internet weiter. TP-Links US-Spezifikationen führen keine Verbrauchsmessung auf.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Apple Home funktioniert nur über Matter, du brauchst also eine Apple-Steuerzentrale.",
+    "Alexa braucht einen Echo, der als Matter-Controller arbeitet; der Tapo-Skill deckt es nicht ab.",
+    "Verlass dich nicht auf Verbrauchsmessung: Die US-Produktseite und das Datenblatt führen sie nicht auf, wobei manche regionalen Versionen abweichen können."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN (IEEE 802.11b/g/n). TP-Link führt Bluetooth nur für die Einrichtung auf.",
+    "matter": "TP-Link nennt sie Matter-zertifiziert, und das US-Datenblatt führt Matter unter den Zertifizierungen auf. Wir fanden keinen CSA-Eintrag, der die Modellnummer P125M nennt.",
+    "hubRequired": "Mit der Tapo-App ist kein Hub nötig. Ökosysteme von Drittanbietern brauchen ihren eigenen Matter-Controller.",
+    "localControl": "Laut TP-Link lassen sich Matter-Geräte in deinem Heimnetz auch ohne Internet über die Tapo-App oder eine andere Matter-App steuern.",
+    "energyMonitoring": "Die US-Produktseite und das Datenblatt führen keine Verbrauchsmessung auf, und TP-Link-Mitarbeiter im Forum sagen, der P125M fehle sie. Das italienische Datenblatt führt sie auf, regionale Versionen können also abweichen. Keine offizielle US-Aussage in irgendeine Richtung.",
+    "maxLoadWatts": "Maximal 15 A / 1800 W für ohmsche Lasten bei 100–125 V.",
+    "compatibility.apple_home": "TP-Link führt Apple Home auf. Der Zwischenstecker hat keinen HomeKit-Modus (HAP), daher läuft es über Matter und braucht eine Apple-Steuerzentrale.",
+    "compatibility.google_home": "Wird in der Google-Home-App durch Scannen des Matter-Codes hinzugefügt. Die Verknüpfung über Tapo Actions funktioniert eventuell auch, aber wir fanden keine Quelle, die das für dieses Modell bestätigt.",
+    "compatibility.alexa": "TP-Links Alexa-Anleitung sagt, Matter-fähige Tapo-Geräte verbänden sich direkt mit Alexa, nicht über den Tapo-Skill. Braucht einen Echo, der als Matter-Controller arbeitet.",
+    "compatibility.smartthings": "TP-Link führt Samsung SmartThings auf. Eine direkte Tapo-Cloud-Integration konnten wir nicht bestätigen, daher erfassen wir es als Matter.",
+    "compatibility.home_assistant": "Die TP-Link-Smart-Home-Integration von Home Assistant führt die P125M unter den unterstützten Tapo-Zwischensteckern auf. Sie lässt sich auch über die Matter-Integration hinzufügen."
+  }
+}

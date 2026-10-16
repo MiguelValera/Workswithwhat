@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Govee indica solo Alexa e Google Assistant per l'H5086, ed entrambi passano dal cloud di Govee. Apple Home, SmartThings e Matter non sono elencati per questo modello. È una presa Wi-Fi a 2,4 GHz e Bluetooth da 15 A / 1800 W a 120 V, controllata dall'app Govee Home senza hub, e lì monitora anche i consumi. La presa Matter di Govee è un altro modello, la Smart Plug Pro B5085.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Nessun supporto confermato per Apple Home o Matter; Govee assegna Matter solo alla Smart Plug Pro (B5085), un altro modello.", "Nessuna integrazione ufficiale per Home Assistant; le integrazioni personalizzate della community danno risultati alterni.", "Le integrazioni documentate da Govee passano dal cloud e Govee non dice nulla sul controllo locale.", "Govee dice che si può collegare una ciabatta con protezione dalle sovratensioni solo se il carico totale resta entro 1800 W."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz più Bluetooth.",
+    "matter": "La pagina dell'H5086 e le FAQ di Govee non citano Matter; la tabella di confronto di Govee assegna Matter solo alla Smart Plug Pro (B5085), un altro modello. Nessuna fonte dice espressamente che l'H5086 non ha Matter.",
+    "hubRequired": "Govee indica come connessione il Wi-Fi a 2,4 GHz più Bluetooth e l'app Govee Home per il controllo; nessun hub è elencato.",
+    "localControl": "Nessuna dichiarazione ufficiale sul controllo locale; le integrazioni documentate da Govee passano dal cloud.",
+    "energyMonitoring": "Monitora i consumi nell'app Govee Home.",
+    "maxLoadWatts": "15 A a 120 V, massimo 1800 W. Govee dice che si può collegare una ciabatta con protezione dalle sovratensioni se il totale resta entro questo valore.",
+    "compatibility.apple_home": "Govee indica solo Alexa e Google Assistant per l'H5086, ma Matter non è escluso espressamente, quindi non possiamo segnarlo come non supportato.",
+    "compatibility.google_home": "Govee indica Google Assistant; passa dal cloud di Govee.",
+    "compatibility.alexa": "Govee indica Alexa; passa dal cloud di Govee.",
+    "compatibility.smartthings": "Nessuna pagina di Govee o SmartThings trovata riguarda questa presa.",
+    "compatibility.home_assistant": "Per quanto abbiamo trovato, nessuna integrazione ufficiale di Home Assistant riguarda questa presa; esistono integrazioni personalizzate della community con risultati alterni."
+  }
+}

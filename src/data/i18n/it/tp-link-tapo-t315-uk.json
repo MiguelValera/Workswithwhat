@@ -1,0 +1,30 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Temperatura e umidità su uno schermo e-ink da 2,7 pollici: è il Tapo T315 (UK). Raggiunge Apple Home, Google Home e Alexa solo tramite il Matter Bridge di un Tapo Hub, e l'hub è necessario per le sue funzioni smart. Il sensore si collega all'hub su una banda sub-1 GHz, non via Wi-Fi, e va con 2 batterie AAA che Tapo indica fino a 2 anni.",
+  "caveats": [
+    "Richiede un Tapo Hub; il sensore non entra da solo nel Wi-Fi né in Matter.",
+    "TP-Link non conferma il supporto a SmartThings e Home Assistant.",
+    "Il bridge Matter richiede un Tapo Hub con firmware aggiornato; le FAQ di TP-Link non elencano quali modelli di hub siano adatti a questo sensore."
+  ],
+  "notes": {
+    "radios": "La pagina UK dice che funziona solo su una banda sub-1 GHz verso il Tapo Hub, che non è nel nostro elenco di radio.",
+    "matter": "Il sensore stesso non è certificato Matter in nessuna fonte che abbiamo trovato; i Tapo Hub possono collegarlo a Matter con un bridge.",
+    "hubRequired": "La pagina UK dice che il Tapo Hub è necessario per le funzioni smart e per le piattaforme di terze parti.",
+    "localControl": "Non confermato da una fonte ufficiale.",
+    "senses": "Display e-ink da 2,7 pollici.",
+    "power": "Fino a 2 anni in condizioni di laboratorio secondo Tapo.",
+    "compatibility.apple_home": "Le FAQ Matter UK di TP-Link nominano il T315 tra i dispositivi sub-1 GHz che un Tapo Hub può aggiungere a un altro ecosistema tramite il suo Matter Bridge, e nominano Apple TV e l'app Casa come controller Matter.",
+    "compatibility.google_home": "Tramite il Matter Bridge del Tapo Hub; le stesse FAQ nominano il Google Nest Hub come controller Matter.",
+    "compatibility.alexa": "Tramite il Matter Bridge del Tapo Hub; le stesse FAQ nominano un Echo come controller Matter.",
+    "compatibility.smartthings": "Le FAQ Matter di TP-Link non nominano SmartThings come controller per i dispositivi collegati dal bridge.",
+    "compatibility.home_assistant": "Nessuna fonte ufficiale lo conferma; Home Assistant potrebbe usare il bridge Matter dell'hub, ma non abbiamo potuto citarlo."
+  },
+  "via": {
+    "apple_home": "Tapo Hub (Matter Bridge)",
+    "google_home": "Tapo Hub (Matter Bridge)",
+    "alexa": "Tapo Hub (Matter Bridge)"
+  },
+  "values": {
+    "power": "2 × AAA"
+  }
+}

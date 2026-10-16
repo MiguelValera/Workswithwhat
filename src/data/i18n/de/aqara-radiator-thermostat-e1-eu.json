@@ -1,0 +1,30 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Zigbee, nicht Thread: Der Aqara Radiator Thermostat E1 erreicht Apple Home, Google Home und Alexa nur über einen Aqara-Zigbee-3.0-Hub, der separat verkauft wird. Home Assistant funktioniert über die Integration HomeKit Controller an der HomeKit-Bridge dieses Hubs. Das Ventil passt auf M30 × 1,5, Adapter für RA, RAV und RAVL liegen bei, und er läuft mit 2 × AA-Batterien (im Lieferumfang) bis zu einem Jahr. Aqara sagt, Matter könne später per Hub-Update kommen.",
+  "caveats": [
+    "Braucht einen Aqara-Zigbee-3.0-Hub, separat erhältlich.",
+    "Matter wurde als künftiges Hub-Update angekündigt; auf den gesehenen Aqara-Seiten ist es nicht bestätigt."
+  ],
+  "notes": {
+    "matter": "Aqara sagt, die Matter-Unterstützung komme später als OTA-Update eines kompatiblen Aqara-Hubs. Für den E1 selbst wurde kein CSA-Eintrag gefunden.",
+    "hubRequired": "Aqara sagt, ein Aqara-Zigbee-3.0-Hub sei nötig und werde separat verkauft.",
+    "localControl": "Keine gesehene Aqara-Seite beschreibt eine lokale Steuerung über den Hub.",
+    "systems": "Händler sagen, manuelle Anlagen, Anlagen mit Rücklauftemperaturbegrenzer und Einrohranlagen würden nicht unterstützt; auf einer Aqara-Seite nicht bestätigt.",
+    "power": "Aqaras Datenblatt nennt zwei 1,5-V-AA-Batterien (im Lieferumfang) und gibt je nach Nutzung bis zu einem Jahr Batterielaufzeit an.",
+    "compatibility.apple_home": "Aqara führt HomeKit-Unterstützung auf, bereitgestellt über einen Aqara-Hub.",
+    "compatibility.google_home": "Aqara führt Google-Unterstützung über den Aqara-Hub auf.",
+    "compatibility.alexa": "Aqara führt Alexa-Unterstützung über den Aqara-Hub auf.",
+    "compatibility.smartthings": "In den Suchergebnissen nicht auf Aqaras Plattformliste.",
+    "compatibility.home_assistant": "Aqaras Pressemitteilung zur Markteinführung führt Home Assistant auf und sagt, die Unterstützung laufe über die Integration HomeKit Controller, die sich mit der HomeKit-Bridge des Aqara-Hubs koppelt. Direkte Zigbee-Kopplung ist von Aqara nicht dokumentiert."
+  },
+  "via": {
+    "apple_home": "Aqara-Zigbee-3.0-Hub",
+    "google_home": "Aqara-Zigbee-3.0-Hub",
+    "alexa": "Aqara-Zigbee-3.0-Hub",
+    "home_assistant": "Aqara-Zigbee-3.0-Hub mit HomeKit"
+  },
+  "values": {
+    "power": "2 × AA",
+    "systems": "Ventile M30 × 1,5; Adapter RA, RAV, RAVL im Lieferumfang"
+  }
+}

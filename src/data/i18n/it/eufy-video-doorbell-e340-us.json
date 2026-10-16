@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Il eufy Video Doorbell E340 registra su 8 GB di memoria integrata, che secondo eufy contiene circa 90 giorni di clip, e si presenta come privo di canone mensile. Alexa e Google Assistant funzionano tramite l'integrazione eufy Security, con funzioni limitate. Per Apple Home è un no netto: la scheda tecnica di eufy dice che HomeKit non è supportato. Va con una batteria rimovibile o con il cablaggio del campanello, via Wi-Fi a 2,4 GHz.",
+  "caveats": ["Il Wi-Fi è solo a 2,4 GHz.", "Il supporto a Alexa e Google Assistant è limitato: niente comunicazione bidirezionale né annunci di movimento; Google non ha nemmeno gli annunci di pressione del campanello.", "Nessun supporto a HomeKit, secondo eufy.", "La pagina prodotto e la scheda tecnica di eufy indicano tensioni minime diverse per il cablaggio (8 V contro 16 V)."],
+  "notes": {
+    "radios": "La pagina statunitense di eufy dice che supporta solo il Wi-Fi a 2,4 GHz; la scheda tecnica indica 802.11 b/g/n.",
+    "matter": "Nessuna dichiarazione su Matter nelle pagine di eufy, e nessuna scheda di certificazione CSA per questo campanello è emersa nelle ricerche.",
+    "hubRequired": "Il campanello registra sulla propria memoria da 8 GB. eufy dice che funziona anche con una HomeBase S280 o S380 (la S380 richiede il firmware 3.3.2.6 o successivo), che è facoltativa.",
+    "localControl": "eufy non dichiara se il controllo funzioni senza il suo cloud. La registrazione è locale, ma non è stato confermato che il controllo da app e vocale lo sia.",
+    "power": "Batteria rimovibile, oppure cablaggio del campanello. La pagina statunitense di eufy chiede 8–24 V e oltre 10 VA; la scheda tecnica dice 16–24 V, 10 VA.",
+    "localStorage": "8 GB di memoria eMMC nel campanello. eufy dice che contiene circa 90 giorni di video con 30 clip da 20 secondi al giorno.",
+    "subscription": "eufy presenta il campanello come funzionante senza abbonamento; l'esistenza di piani a pagamento facoltativi non è stata controllata.",
+    "compatibility.apple_home": "La scheda tecnica di eufy indica Works with HomeKit come N per l'E340, e le sue FAQ dicono che HomeKit al momento non è supportato.",
+    "compatibility.google_home": "Google Assistant funziona tramite l'integrazione eufy Security. La scheda tecnica di eufy indica solo lo streaming con comando vocale; comunicazione bidirezionale, annunci di movimento e annunci di pressione del campanello risultano non supportati. Gli speaker Google Home non possono fare da suoneria.",
+    "compatibility.alexa": "Si collega con la skill eufy Security per Alexa. La scheda tecnica indica come supportati lo streaming con comando vocale e gli annunci di pressione del campanello; comunicazione bidirezionale e annunci di movimento risultano non supportati. I dispositivi Echo possono fare da suoneria.",
+    "compatibility.smartthings": "L'articolo generale di eufy sui campanelli segna SmartThings come non supportato, ma non nomina l'E340, quindi non è trattato come un no definitivo.",
+    "compatibility.home_assistant": "L'elenco delle piattaforme di terze parti di eufy segna Home Assistant come non supportato, ma quell'articolo non è chiaramente specifico per l'E340, quindi non è trattato come un no definitivo. Esistono integrazioni della community ma non sono ufficiali."
+  },
+  "values": {
+    "power": "Batteria ricaricabile o cablato",
+    "subscription": "Nessuno richiesto (nessun canone mensile)"
+  }
+}

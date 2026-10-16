@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Das Yale Assure Lock 2 Plus mit WLAN ersetzt ein US-Riegelschloss und funktioniert nativ mit Apple Home (einschließlich Home Key), Google Home und Alexa, ohne zusätzlichen Hub für den Fernzugriff über die Yale-Access-App. Tippe mit einem iPhone oder einer Apple Watch auf das Schloss mit Touchscreen-Tastenfeld, um es zu entriegeln. Es gibt keinen Matter-Eintrag, und SmartThings und Home Assistant sind unbestätigt. Es läuft mit vier mitgelieferten AA-Batterien.",
+  "caveats": [
+    "Home Key braucht ein iPhone XS oder neuer (iOS 15+) oder eine Apple Watch Series 4 oder neuer (watchOS 8+).",
+    "Die Fernsteuerung über Apple Home braucht einen HomePod, HomePod mini oder Apple TV als Steuerzentrale.",
+    "Das WLAN läuft nur auf 2,4 GHz.",
+    "Google Home und Alexa funktionieren nur beim WLAN-Modell, nicht beim Plus mit nur Bluetooth.",
+    "Yale verkauft diese Version ohne Schließzylinder."
+  ],
+  "notes": {
+    "radios": "Das WLAN läuft laut Yales Shopseite und FAQ auf 2,4 GHz. Yales Markteinführungsmeldung sagt, Bluetooth und Apple HomeKit seien beim Plus Standard, ergänzt um WLAN für den Fernzugriff. Home Key nutzt NFC, das in unserem Schema kein Funkstandard ist.",
+    "matter": "Kein CSA-Eintrag für das Assure Lock 2 Plus gefunden. Yales Matter Smart Module ist ein separates Zusatzmodul, und Yales Plus-FAQ erwähnt Matter für dieses Schloss nicht.",
+    "hubRequired": "Laut Yale bietet das WLAN-Modell Fernzugriff über die Yale-Access-App. Die Fernnutzung in Apple Home braucht weiterhin eine Steuerzentrale.",
+    "localControl": "Die Fernsteuerung läuft über die Yale-Access-App und die Cloud; keine Quelle bestätigt rein lokale Steuerung.",
+    "lockFit": "Ersetzt das Riegelschloss an üblichen US-Türen. Yale verkauft das Plus ohne Schließzylinder und auch gebündelt mit Norwood- oder Ridgefield-Griffen als separate Angebote.",
+    "keypad": "Touchscreen-Tastenfeld am Schloss. Yale führt beim Plus keinen Fingerabdruckleser auf.",
+    "power": "Vier AA-Alkaline-Batterien sind laut Yales Shopseite enthalten.",
+    "compatibility.apple_home": "Apple Home Key ist ins Schloss eingebaut (iPhone XS oder neuer mit iOS 15+ oder Apple Watch Series 4 oder neuer mit watchOS 8+). Die Fernsteuerung über Apple Home braucht einen HomePod, HomePod mini oder Apple TV als Steuerzentrale.",
+    "compatibility.google_home": "Laut Yale funktionieren alle Partner-Integrationen bei WLAN-Modellen, und die Markteinführungsmeldung nennt Google Home für die WLAN-Version. Beim Plus mit nur Bluetooth nicht verfügbar.",
+    "compatibility.alexa": "Yales Markteinführungsmeldung nennt Alexa-Sprachsteuerung für die WLAN-Version, und die Plus-Seite sagt, Partner-Integrationen funktionierten nur bei WLAN-Modellen.",
+    "compatibility.smartthings": "Die gesehenen Yale-Seiten erwähnen SmartThings nicht, und das Schloss hat keinen Matter-Eintrag, daher markieren wir es nicht mit „nein“.",
+    "compatibility.home_assistant": "Die August-Seite von Home Assistant führt das Assure Lock 2 als funktionierend auf, aber mit gesetztem Connect-Bridge- oder Türklingel-Hinweis, und Community-Beiträge sagen, neuere Yale-Home-Konten bräuchten die Yale-Integration. Ob dieses WLAN-Modell ohne zusätzliche Hardware funktioniert, ist nicht bestätigt."
+  },
+  "values": {
+    "power": "4 × AA"
+  }
+}

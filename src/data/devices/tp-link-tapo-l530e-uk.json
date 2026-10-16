@@ -1,0 +1,164 @@
+{
+  "category": "smart-bulb",
+  "brand": "TP-Link Tapo",
+  "model": "Tapo L530E (UK, E27)",
+  "name": "Tapo L530E (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.tp-link.com/uk/home-networking/smart-bulb/tapo-l530e/",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "tapo-l530e-uk"
+    ],
+    "note": "IEEE 802.11b/g/n, 2.4 GHz only."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No official source states Matter either way: the UK spec page lists only Alexa and Google, and we found no CSA listing for the L530E. TP-Link's Matter colour bulb is the L535E. Not confirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The UK spec page lists only Alexa and Google, but no official source says Apple Home is unsupported. Not confirmed."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "tapo-l530e-uk",
+        "tapo-l530e-ug"
+      ],
+      "note": "Through the Tapo cloud integration for Google Home."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "tapo-l530e-uk",
+        "tapo-l530e-ug",
+        "tplink-faq-2780-uk"
+      ],
+      "note": "Through the Tapo Alexa skill."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "tapo-l530e-ug",
+        "tplink-smartthings-faq"
+      ],
+      "note": "Via TP-Link account linking in the SmartThings app (Partner devices > Tapo). The L530E user guide names SmartThings; TP-Link's SmartThings FAQ (US edition) covers Tapo bulbs in general and says only basic controls work."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-tplink"
+      ],
+      "note": "Listed as supported by the official TP-Link Smart Home integration; needs TP-Link cloud credentials and may need Third-Party Compatibility enabled in the Tapo app."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "tapo-l530e-uk",
+      "tapo-l530e-uk-tapo"
+    ],
+    "note": "Connects straight to 2.4 GHz Wi-Fi and is controlled from the Tapo app; no bridge needed."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "ha-tplink"
+    ],
+    "note": "Home Assistant's TP-Link integration talks to the bulb on the local network without the TP-Link cloud, though it uses your TP-Link account credentials to authenticate."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": [
+      "tapo-l530e-uk",
+      "tapo-l530e-uk-tapo"
+    ],
+    "note": "16 million colours plus tunable white, 2500–6500 K."
+  },
+  "lumens": {
+    "value": 806,
+    "sources": [
+      "tapo-l530e-uk",
+      "tapo-l530e-uk-tapo"
+    ],
+    "note": "806 lm, comparable to a 60 W incandescent."
+  },
+  "bulbBase": {
+    "value": "E27",
+    "sources": [
+      "tapo-l530e-uk"
+    ],
+    "note": "The UK spec page lists E27 (A60)."
+  },
+  "summary": "Tapo L530E (UK) is a colour Wi-Fi bulb with an E27 screw base, 806 lumens and tunable white from 2500 to 6500 K. It works with Alexa and Google Home through TP-Link's cloud links, and with SmartThings after you link your TP-Link account. There's no hub: it joins 2.4 GHz Wi-Fi directly, and Home Assistant's TP-Link Smart Home integration controls it locally. Apple Home and Matter are both unconfirmed.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "Apple Home and Matter support aren't confirmed; TP-Link's Matter colour bulb is the Tapo L535E, not this one.",
+    "SmartThings gets basic controls only.",
+    "Home Assistant needs your TP-Link account credentials, and you may have to turn on Third-Party Compatibility in the Tapo app."
+  ],
+  "sources": [
+    {
+      "id": "tapo-l530e-uk",
+      "url": "https://www.tp-link.com/uk/home-networking/smart-bulb/tapo-l530e/",
+      "title": "Tapo L530E",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tapo-l530e-uk-tapo",
+      "url": "https://www.tapo.com/uk/product/smart-light-bulb/tapo-l530e/",
+      "title": "Tapo L530E",
+      "publisher": "TP-Link (Tapo)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tapo-l530e-ug",
+      "url": "https://static.tp-link.com/upload/manual/2025/202503/20250310/1910013728_Tapo%20L530E_UG_V1.pdf",
+      "title": "User Guide Tapo Smart Wi-Fi Light Bulb (Tapo L530E) REV1.1.0",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tplink-faq-2780-uk",
+      "url": "https://www.tp-link.com/uk/support/faq/2780/",
+      "title": "How to Connect Tapo and Kasa Devices to Amazon Alexa",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tplink-smartthings-faq",
+      "url": "https://www.tp-link.com/us/support/faq/3158/",
+      "title": "Connect Tapo and Kasa Devices to SmartThings",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "variants": [
+    "tp-link-tapo-l530e-eu"
+  ],
+  "verifiedAt": "2026-10-12"
+}

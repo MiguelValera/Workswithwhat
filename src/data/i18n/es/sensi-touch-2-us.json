@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "El Sensi Touch 2 funciona con Alexa, Google Home y SmartThings, pero no con Apple Home: la propia página de HomeKit de Sensi lo indica como no compatible. Es un termostato de pared para sistemas de una etapa, de varias etapas y de bomba de calor, con wifi y Bluetooth integrados. Toda instalación necesita un cable C (20-30 V CA) o el Common Wire Kit de Sensi.",
+  "caveats": [
+    "No es compatible con Apple HomeKit, según la página de soporte de Sensi.",
+    "Necesita cable C; el Common Wire Kit (SA11) es la opción cuando no hay.",
+    "Sensi no menciona Matter ni Home Assistant."
+  ],
+  "notes": {
+    "radios": "La ficha técnica indica 802.11 a/b/g/n en 2,4 y 5 GHz más Bluetooth LE.",
+    "matter": "Matter no aparece en las páginas de Sensi ni en la ficha técnica; no se ha consultado ningún registro de la CSA.",
+    "hubRequired": "Las páginas de Sensi describen el control por wifi mediante la app Sensi, pero no dicen si hace falta o no un puente.",
+    "localControl": "Las páginas de Sensi insisten en el control remoto mediante su app; no indican control local.",
+    "systems": "La ficha técnica indica caldera de gas o eléctrica, aire acondicionado, caldera de agua y bomba de calor (4H/2C), además de combustible dual sin sensor exterior. Modelos 1F96U-42WF (blanco) y 1F96U-42WFB (negro).",
+    "power": "La ficha técnica dice que todos los sistemas requieren un cable común; Sensi vende un Common Wire Kit (SA11) para las casas que no lo tienen.",
+    "compatibility.apple_home": "La página de soporte de HomeKit de Sensi incluye el Touch 2 en \"Not Apple HomeKit compatible\" (no compatible con Apple HomeKit); solo el Sensi Touch original figura como compatible.",
+    "compatibility.google_home": "Funciona con Google Assistant y Google Home mediante el enlace de la app Sensi.",
+    "compatibility.alexa": "Comandos de voz, rutinas y el panel de energía de Alexa mediante la skill de Sensi.",
+    "compatibility.smartthings": "Sensi indica Samsung SmartThings; su página dice que puede encender o apagar la calefacción.",
+    "compatibility.home_assistant": "Las páginas de Sensi no mencionan Home Assistant."
+  },
+  "values": {
+    "systems": "Universal: una etapa, varias etapas y bomba de calor",
+    "power": "Cable C obligatorio (20-30 V CA)"
+  }
+}

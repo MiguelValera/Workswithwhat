@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Dos canales de relé con medición de consumo por canal, o un canal de persiana o toldo para su motor: así es el Shelly 2PM Gen3, que se instala detrás de un interruptor existente. Necesita cable neutro y no regula la intensidad. Matter por wifi cubre Apple Home, Google Home y SmartThings con el firmware 1.6.0 o posterior, Alexa figura en la página de Shelly y Home Assistant tiene una integración local.",
+  "caveats": [
+    "Necesita cable neutro en la caja.",
+    "Matter necesita el firmware 1.6.0 o posterior; el propio registro de la CSA muestra el firmware 1.3.0-s2.",
+    "Soporta 10 A por canal y 16 A en total, así que dos cargas altas pueden superar el total.",
+    "La página de Shelly no menciona Apple Home; solo funciona mediante Matter."
+  ],
+  "notes": {
+    "radios": "Wifi de 2,4 GHz; el Bluetooth sirve para la configuración y como pasarela de los dispositivos Shelly BLU.",
+    "matter": "La CSA registra el Shelly 2PM Gen3 (certificado el 2025-05-21, Matter 1.3, wifi). Las FAQ de Shelly dicen que Matter necesita el firmware 1.6.0 o posterior, así que actualiza antes de emparejarlo.",
+    "hubRequired": "Dispositivo wifi con interfaz web integrada; no necesita hub.",
+    "localControl": "Shelly indica interfaz web, API HTTP, MQTT, scripts y webhooks; la integración de Home Assistant usa push local.",
+    "switchForm": "Relé de 37 x 42 x 16 mm para una caja de pared, detrás de un interruptor o enchufe.",
+    "dimmer": "Shelly lo llama relé wifi («WLAN Relais») con medición de potencia y no describe ninguna regulación de intensidad. También tiene un modo de cubierta (persiana, estor).",
+    "neutralRequired": "Los terminales de alimentación son N y L, y los esquemas de conexión de Shelly incluyen neutro. También puede funcionar con 24 V CC.",
+    "gangs": "Dos salidas de relé con medición de potencia por canal y dos entradas de interruptor. 10 A por canal, 16 A en total, a hasta 240 V CA.",
+    "compatibility.apple_home": "Mediante Matter con el firmware 1.6.0 o posterior. La página de Shelly no nombra Apple Home. Necesita un centro de la casa (HomePod o Apple TV) para el uso remoto.",
+    "compatibility.google_home": "Mediante Matter. La página de Shelly también indica Google Smart Home sin decir cómo, así que solo afirmamos Matter.",
+    "compatibility.alexa": "La página de Shelly indica Amazon Alexa. También se puede añadir mediante Matter.",
+    "compatibility.smartthings": "Mediante Matter. La página de Shelly también indica SmartThings; no dice la vía.",
+    "compatibility.home_assistant": "Integración oficial de Shelly con push local, que abarca varias generaciones de Shelly. También se puede añadir mediante Matter."
+  },
+  "values": {
+    "gangs": "2 canales"
+  }
+}

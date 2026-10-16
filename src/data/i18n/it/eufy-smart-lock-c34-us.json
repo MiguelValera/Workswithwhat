@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "La C34 di eufy entra in Apple Home e SmartThings tramite Matter su Thread, mentre Alexa e Google Home si collegano associando il tuo account eufy. È un chiavistello con tastierino per le porte statunitensi standard, con Wi-Fi integrato, che va con otto pile AA date per fino a 8 mesi. Home Assistant non è confermato.",
+  "caveats": ["Il controllo Matter richiede un border router Thread come un HomePod mini, un Apple TV 4K, o un hub Nest, Echo o SmartThings compatibile con Matter.", "Il controllo remoto di Apple Home richiede un hub domestico, anche se iOS 18 può aggiungere la serratura senza.", "Servono otto pile AA."],
+  "notes": {
+    "radios": "La CSA indica Thread e Bluetooth come interfacce di trasporto Matter; la pagina prodotto di eufy e la scheda CSA descrivono il Wi-Fi integrato per l'app eufy.",
+    "matter": "La CSA elenca la eufy Smart Lock C34 di Anker Innovations (Matter 1.2, certificata il 2024-06-27, firmware V1.0.0.0, hardware V3), Matter su Thread.",
+    "hubRequired": "La pagina prodotto di eufy dice che non serve nessun hub aggiuntivo; il Wi-Fi integrato collega la serratura all'app eufy. Le piattaforme Matter richiedono un controller Matter con un border router Thread.",
+    "localControl": "Nessuna fonte eufy descrive il solo controllo locale.",
+    "lockFit": "Sostituisce un chiavistello standard: eufy indica un foro trasversale di 38-54 mm, backset di 60 o 70 mm e spessore della porta di 35-55 mm.",
+    "keypad": "Tastierino per codici sulla serratura. A differenza della E30, non è indicato alcun lettore di impronte.",
+    "power": "Otto pile AA; eufy indica fino a 8 mesi con circa 10 sblocchi al giorno.",
+    "compatibility.apple_home": "Matter su Thread. eufy dice che iOS 18 può aggiungere dispositivi Matter senza hub, ma il controllo remoto richiede un HomePod, un HomePod mini o un Apple TV 4K.",
+    "compatibility.google_home": "eufy documenta il collegamento dell'account eufy a Google Assistant per C34/E30. Matter funziona anche con un hub Nest compatibile con Matter.",
+    "compatibility.alexa": "eufy documenta il collegamento dell'account eufy nell'app Alexa per C34/E30. Matter funziona anche con un Echo compatibile con Matter.",
+    "compatibility.smartthings": "Le FAQ Matter di eufy dicono che SmartThings richiede un hub Matter; il suo elenco di hub per i modelli Thread (incluso T85D2, la C34) nomina SmartThings Station, Hub v3 e Dongle.",
+    "compatibility.home_assistant": "Nessuna pagina della documentazione di Home Assistant né fonte eufy nomina questa serratura. Essendo Matter su Thread potrebbe funzionare tramite l'integrazione Matter, non confermato."
+  },
+  "values": {
+    "power": "8 × AA"
+  }
+}

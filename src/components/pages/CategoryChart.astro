@@ -3,10 +3,13 @@
 // market) or one market (/us/smart-plugs/, one table). Both languages.
 import Base from '../../layouts/Base.astro';
 import CompareTable from '../CompareTable.astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemSlug, formatDate, getTranslations, type Device } from '../../lib/devices';
+import MailLink from '../MailLink.astro';
+import { ui } from '../../i18n/ui';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemPath, formatDate, getTranslations, type Device } from '../../lib/devices';
 import { catText, type Category } from '../../lib/categories';
-import { byMarket, marketText, regionPath, type Market } from '../../lib/markets';
-import { langOf, localize } from '../../i18n/lang';
+import { byMarket, marketText, regionOrGlobal, regionPath, type Market } from '../../lib/markets';
+import { HTML_LANG, pick, capitalize as cap, langOf, localize } from '../../i18n/lang';
+import { getComparisons } from '../../lib/compare';
 
 interface Props {
   cat: Category;
@@ -15,54 +18,77 @@ interface Props {
 }
 const { cat, devices, market } = Astro.props;
 const lang = langOf(Astro.url.pathname);
-const es = lang === 'es';
+const T = pick(lang);
+const t = ui(lang);
 const L = (p: string) => localize(p, lang);
 const c = catText(cat, lang);
 const m = market && marketText(market, lang);
-const cap = (s: string) => s.replace(/^./, (x) => x.toUpperCase());
-const translations = await getTranslations();
+const translations = await getTranslations(lang);
 const path = market ? `/${market.key}/${cat.path}/` : `/${cat.path}/`;
 
-const title = es
-  ? `Compatibilidad de ${c.plural}${m ? ` (${m.short})` : ''}: Apple Home, Google Home, Alexa, Matter`
-  : market
+const short = m ? ` (${m.short})` : '';
+const forM = (w: string) => (m ? ` ${w} ${m.phrase}` : '');
+const title = T({
+  en: market
     ? `${market.short} ${cat.singular} compatibility chart: Apple Home, Google Home, Alexa, Matter`
-    : `${cap(cat.singular)} compatibility chart: Apple Home, Google Home, Alexa, Matter`;
-const description = es
-  ? `${devices.length} ${c.plural}${m ? ` para ${m.phrase}` : ''} comparados por compatibilidad con cada ecosistema, radio, certificación Matter y necesidad de hub. Cada celda enlaza a su fuente.`
-  : `${devices.length} ${cat.plural}${market ? ` for ${market.phrase}` : ''} compared by ecosystem support, radio, Matter certification and hub needs. Every cell links back to a source.`;
-const h1 = es
-  ? `Tabla de compatibilidad de ${c.plural}${m ? ` para ${m.phrase}` : ''}`
-  : `${cap(cat.singular)} compatibility chart${market ? ` for ${market.phrase}` : ''}`;
+    : `${cap(cat.singular)} compatibility chart: Apple Home, Google Home, Alexa, Matter`,
+  es: `Compatibilidad de ${c.plural}${short}: Apple Home, Google Home, Alexa, Matter`,
+  de: `${cap(c.plural)}${short}: Kompatibilität mit Apple Home, Google Home, Alexa, Matter`,
+  fr: `Compatibilité des ${c.plural}${short} : Apple Home, Google Home, Alexa, Matter`,
+  it: `${cap(c.plural)}${short}: compatibilità con Apple Home, Google Home, Alexa, Matter`,
+});
+const n = devices.length;
+const description = T({
+  en: `${n} ${cat.plural}${market ? ` for ${market.phrase}` : ''} compared by ecosystem support, radio, Matter certification and hub needs. Every cell links back to a source.`,
+  es: `${n} ${c.plural}${forM('para')} comparados por compatibilidad con cada ecosistema, radio, certificación Matter y necesidad de hub. Cada celda enlaza a su fuente.`,
+  de: `${n} ${c.plural}${forM('für')} im Vergleich: Ökosysteme, Funkstandard, Matter-Zertifizierung und Hub-Bedarf. Jede Zelle verlinkt auf ihre Quelle.`,
+  fr: `Comparatif de ${n} ${c.plural}${forM('pour')} : écosystèmes, radio, certification Matter et besoin d’un hub. Chaque cellule renvoie à sa source.`,
+  it: `Confronto tra ${n} ${c.plural}${forM('per')}: ecosistemi, radio, certificazione Matter e necessità di hub. Ogni cella rimanda alla sua fonte.`,
+});
+const h1 = T({
+  en: `${cap(cat.singular)} compatibility chart${market ? ` for ${market.phrase}` : ''}`,
+  es: `Tabla de compatibilidad de ${c.plural}${forM('para')}`,
+  de: `Kompatibilitätstabelle: ${c.label}${forM('für')}`,
+  fr: `Tableau de compatibilité des ${c.plural}${forM('pour')}`,
+  it: `Tabella di compatibilità: ${c.label}${forM('per')}`,
+});
 const api = `/api/${cat.path}.json`;
 const groups = await Promise.all(
   byMarket(devices).map(async (g) => ({ ...g, text: marketText(g.market, lang), regionPage: await regionPath(g.market, `/${cat.path}/`) })),
 );
 const ecoLinks = await Promise.all(
-  ECOSYSTEMS.map(async (e) => {
-    const global = `/works-with/${ecosystemSlug(e)}/`;
-    return { e, href: L((market && (await regionPath(market, global))) || global) };
-  }),
+  ECOSYSTEMS.map(async (e) => ({ e, href: L(await regionOrGlobal(market, ecosystemPath(e))) })),
 );
+
+const pairCount = (await getComparisons()).filter((x) => x.indexed && x.a.data.category === cat.key && (!market || x.market === market)).length;
+const compareLink = L(`/compare/#${market ? `${cat.path}-${market.key}` : cat.path}`);
 
 const newest = devices.map((d) => d.data.updatedAt).sort().at(-1);
 const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'Dataset',
-    name: es ? `Compatibilidad de ${c.plural}${m ? ` (${m.short})` : ''}` : `${market ? `${market.short} ${cat.singular}` : cap(cat.singular)} ecosystem compatibility`,
+    name: T({
+      en: `${market ? `${market.short} ${cat.singular}` : cap(cat.singular)} ecosystem compatibility`,
+      es: `Compatibilidad de ${c.plural}${short}`,
+      de: `${c.label}${short}: Kompatibilität`,
+      fr: `Compatibilité des ${c.plural}${short}`,
+      it: `Compatibilità: ${c.label}${short}`,
+    }),
     description,
-    inLanguage: es ? 'es-ES' : 'en',
+    inLanguage: HTML_LANG[lang],
     url: new URL(L(path), Astro.site).href,
     ...(newest && { dateModified: newest }),
     creator: { '@type': 'Organization', name: 'Workswithwhat', url: Astro.site!.href },
+    // Our reuse terms ("Using our content" on the legal page), not an open licence.
+    license: new URL(L('/legal/'), Astro.site).href,
     variableMeasured: ['Matter certification', ...ECOSYSTEMS.map((e) => `${ECOSYSTEM_LABELS[e]} compatibility`)],
     distribution: [{ '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: new URL(api, Astro.site).href }],
   },
   {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: m ? (es ? `${c.label} para ${m.phrase}` : `${cat.label} for ${market!.phrase}`) : c.label,
+    name: m ? T({ en: `${cat.label} for ${market!.phrase}`, es: `${c.label}${forM('para')}`, de: `${c.label}${forM('für')}`, fr: `${c.label}${forM('pour')}`, it: `${c.label}${forM('per')}` }) : c.label,
     itemListElement: devices.map((d, i) => ({
       '@type': 'ListItem',
       position: i + 1,
@@ -82,57 +108,115 @@ const crumbs = market
 <Base title={title} description={description} crumbs={crumbs} jsonLd={jsonLd}>
   <h1>{h1}</h1>
   {
-    es ? (
+    T({
+      de: (
+        <p class="lede">
+          Mit welcher Plattform funktioniert jedes Gerät hier, und wie: direkt, über Matter oder über einen Hub? Öffne ein
+          Gerät für die Details und die Quellen hinter jeder Antwort.
+          {m && <> Nur Modelle, die {m.inPhrase} verkauft werden; <a href={L(`/${cat.path}/`)}>alle Regionen ansehen</a>.</>}
+        </p>
+      ),
+      fr: (
+        <p class="lede">
+          Avec quelle plateforme fonctionne chaque appareil, et comment : directement, via Matter ou par un hub. Ouvrez-en
+          un pour voir les détails et les sources de chaque réponse.
+          {m && <> Seuls les modèles vendus {m.inPhrase} apparaissent ; <a href={L(`/${cat.path}/`)}>voir toutes les régions</a>.</>}
+        </p>
+      ),
+      it: (
+        <p class="lede">
+          Con quale piattaforma funziona ogni dispositivo e in che modo: direttamente, tramite Matter o con un hub. Aprine
+          uno per vedere i dettagli e le fonti di ogni risposta.
+          {m && <> Compaiono solo i modelli venduti {m.inPhrase}; <a href={L(`/${cat.path}/`)}>vedi tutte le regioni</a>.</>}
+        </p>
+      ),
+      es: (
       <p class="lede">
         Qué {c.singular} funciona con cada plataforma y de qué forma: directamente, mediante Matter o a través de un hub.
         Abre cualquiera para ver los detalles y las fuentes de cada respuesta.
         {m && <> Solo aparecen modelos que se venden en {m.phrase}; <a href={L(`/${cat.path}/`)}>ver todas las regiones</a>.</>}
       </p>
-    ) : (
+      ),
+      en: (
       <p class="lede">
         Which {cat.singular} works with which platform, and how it gets there: directly, over Matter, or through a hub.
         Open any one for the details and the sources behind each answer.
         {market && <> Only models sold in {market.phrase} are listed; <a href={`/${cat.path}/`}>see every region</a>.</>}
       </p>
-    )
+      ),
+    })
   }
   {
     market ? (
       <CompareTable devices={devices} brandJump />
     ) : (
-      <>
-        <nav class="toc" aria-label={es ? 'Ir a la región' : 'Jump to region'}>
-          <span class="toc-label">{es ? 'Región:' : 'Region:'}</span>
-          {groups.map((g) => <a href={`#${g.market.key}`}>{g.text.label} ({g.devices.length})</a>)}
-        </nav>
-        {groups.map((g) => (
-          <section aria-labelledby={g.market.key}>
-            <h2 id={g.market.key}>{es ? `${c.label} para ${g.text.phrase}` : `${cat.label} for ${g.market.phrase}`}</h2>
+      <div class="filterable">
+        <form class="toc filters f-region" aria-label={t.filterByRegion.replace(/:$/, '')}>
+          <span class="toc-label">{t.filterByRegion}</span>
+          {groups.map((g, i) => (
+            <label>
+              <input type="checkbox" class={`fr-${i + 1}`} />
+              {g.text.label} ({g.devices.length})
+            </label>
+          ))}
+          <button type="reset">{t.showAll}</button>
+        </form>
+        {groups.map((g, i) => (
+          <section class={`fr-${i + 1}`} aria-labelledby={g.market.key}>
+            <h2 id={g.market.key}>{T({
+                en: `${cat.label} for ${g.market.phrase}`,
+                es: `${c.label} para ${g.text.phrase}`,
+                de: `${c.label} für ${g.text.phrase}`,
+                fr: `${c.label} pour ${g.text.phrase}`,
+                it: `${c.label} per ${g.text.phrase}`,
+              })}</h2>
             {g.regionPage && (
               <p class="muted small">
                 <a href={L(g.regionPage)}>
-                  {es ? `Solo ${g.text.label}: tabla de ${c.plural} (${g.text.short})` : `Only ${g.market.label}: the ${g.market.short} ${cat.singular} chart`}
+                  {T({
+                    en: `Only ${g.market.label}: the ${g.market.short} ${cat.singular} chart`,
+                    es: `Solo ${g.text.label}: tabla de ${c.plural} (${g.text.short})`,
+                    de: `Nur ${g.text.label}: ${c.label} (${g.text.short})`,
+                    fr: `${g.text.label} uniquement : tableau des ${c.plural} (${g.text.short})`,
+                    it: `Solo ${g.text.label}: tabella ${c.plural} (${g.text.short})`,
+                  })}
                 </a>
               </p>
             )}
             <CompareTable devices={g.devices} brandJump anchorPrefix={`${g.market.key}-`} region={g.text.label} />
           </section>
         ))}
-      </>
+      </div>
     )
   }
   {
     newest && (
       <p class="muted small">
-        {es ? 'Actualizado el ' : 'Last updated '}
+        {T({ en: 'Last updated ', es: 'Actualizado el ', de: 'Aktualisiert am ', fr: 'Mis à jour le ', it: 'Aggiornato il ' })}
         <time datetime={newest}>{formatDate(newest, lang)}</time>.
-        {es ? ' Los mismos datos están disponibles en ' : ' The same data is available as '}
-        <a href={api}>JSON</a>{es ? ' (en inglés).' : '.'}
+        {T({ en: ' The same data is available as ', es: ' Los mismos datos están disponibles en ', de: ' Dieselben Daten gibt es als ', fr: ' Les mêmes données sont disponibles en ', it: ' Gli stessi dati sono disponibili in formato ' })}
+        <a href={api}>JSON</a>{T({ en: '.', es: ' (en inglés).', de: ' (auf Englisch).', fr: ' (en anglais).', it: ' (in inglese).' })}
+      </p>
+    )
+  }
+  {
+    pairCount > 0 && (
+      <p class="muted">
+        <a href={compareLink}>
+          {T({
+            en: `${pairCount} head-to-head ${cat.singular} ${pairCount === 1 ? 'comparison' : 'comparisons'}${market ? ` for ${market.phrase}` : ''}`,
+            es: `${pairCount} ${pairCount === 1 ? 'comparativa' : 'comparativas'} de ${c.plural}${forM('para')}`,
+            de: `${pairCount} ${pairCount === 1 ? 'Vergleich' : 'Vergleiche'}: ${c.label}${forM('für')}`,
+            fr: `${pairCount} ${pairCount === 1 ? 'comparatif' : 'comparatifs'} de ${c.plural}${forM('pour')}`,
+            it: `${pairCount} ${pairCount === 1 ? 'confronto' : 'confronti'} tra ${c.plural}${forM('per')}`,
+          })}
+        </a>
+        {T({ en: ': two models side by side.', es: ': dos modelos lado a lado.', de: ': zwei Modelle nebeneinander.', fr: ' : deux modèles côte à côte.', it: ': due modelli affiancati.' })}
       </p>
     )
   }
   <p class="muted">
-    {es ? '¿Buscas una plataforma concreta?' : 'Looking for one platform?'}{' '}
+    {T({ en: 'Looking for one platform?', es: '¿Buscas una plataforma concreta?', de: 'Suchst du eine bestimmte Plattform?', fr: 'Vous cherchez une plateforme précise ?', it: 'Cerchi una piattaforma precisa?' })}{' '}
     {
       ecoLinks.map(({ e, href }, i) => (
         <>
@@ -141,5 +225,16 @@ const crumbs = market
         </>
       ))
     }
+  </p>
+  <p class="muted">
+    {t.missingDevice}{' '}
+    <MailLink subject={t.missingDeviceSubject} body={t.missingDeviceBody}>{t.missingDeviceLink}</MailLink>
+    {T({
+      en: ` and we'll add it to the ${cat.singular} chart.`,
+      es: ` y lo añadiremos a la tabla de ${c.plural}.`,
+      de: ` und wir nehmen es in die Tabelle auf.`,
+      fr: ` et nous l’ajouterons au tableau des ${c.plural}.`,
+      it: ` e lo aggiungeremo alla tabella ${c.plural}.`,
+    })}
   </p>
 </Base>

@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Non serve il filo neutro per il Tapo S210 (UK), un interruttore smart a 1 modulo e 1 via che sostituisce quello a muro. Il controllo vocale con Alexa e Google Assistant passa in entrambi i casi da un Tapo Hub, che Tapo indica come H100 o H200 e vende a parte. Apple Home, SmartThings e Matter non sono citati, e le pagine UK non dicono se regola l'intensità.",
+  "caveats": [
+    "Richiede un hub Tapo H100 o H200, venduto a parte.",
+    "Le pagine UK di TP-Link descrivono solo l'accensione e lo spegnimento, quindi non dare per scontato che regoli l'intensità."
+  ],
+  "notes": {
+    "radios": "È indicato solo un collegamento sub-1 GHz a 868 MHz con il Tapo Hub, che non è nel nostro elenco di radio.",
+    "matter": "La pagina UK non cita Matter.",
+    "hubRequired": "La pagina dice che per tutte le funzioni smart serve un Tapo Hub (H100 o H200, venduto a parte).",
+    "localControl": "Non confermato da una fonte ufficiale.",
+    "switchForm": "Sostituisce l'interruttore a muro.",
+    "dimmer": "Nessuna delle due pagine UK dice se regola l'intensità; descrivono solo l'accensione e lo spegnimento, senza dire che non sia regolabile.",
+    "neutralRequired": "La pagina dice che non serve il filo neutro.",
+    "compatibility.apple_home": "La pagina UK non cita Apple Home.",
+    "compatibility.google_home": "La pagina UK indica il controllo vocale tramite Google Assistant; l'interruttore richiede un Tapo Hub.",
+    "compatibility.alexa": "La pagina UK indica il controllo vocale tramite Amazon Alexa; l'interruttore richiede un Tapo Hub.",
+    "compatibility.smartthings": "La pagina UK non cita SmartThings.",
+    "compatibility.home_assistant": "Nessuna fonte ufficiale trovata per questo interruttore."
+  },
+  "via": {
+    "google_home": "Tapo Hub (H100/H200)",
+    "alexa": "Tapo Hub (H100/H200)"
+  },
+  "values": {
+    "gangs": "1 modulo, 1 via"
+  }
+}

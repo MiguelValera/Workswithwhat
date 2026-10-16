@@ -1,0 +1,142 @@
+{
+  "category": "smart-plug",
+  "brand": "AVM",
+  "model": "FRITZ!DECT 200",
+  "name": "FRITZ!DECT 200 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://en.avm.de/products/fritzdect/fritzdect-200/",
+  "radios": {
+    "value": null,
+    "sources": [],
+    "note": "The plug talks DECT ULE to a FRITZ!Box (AVM's current spec page says DECT-ULE), which isn't in the radio list, so no radio is recorded. AVM's FRITZ!DECT 200 shop address now opens the FRITZ!Smart Energy 200 page."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter statement on AVM's pages and no CSA listing found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "AVM's pages don't mention Apple Home or HomeKit."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "AVM's pages only mention Google Calendar for schedules, not Google Home."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "AVM's pages don't mention Alexa or voice assistants."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official AVM or SmartThings page found."
+    },
+    "home_assistant": {
+      "status": "hub",
+      "via": "FRITZ!Box",
+      "sources": [
+        "ha-fritzbox"
+      ],
+      "note": "Home Assistant's FRITZ!SmartHome integration reads the plug from your FRITZ!Box, where it appears as a switch with power, energy, voltage and temperature sensors. The page lists it as FRITZ!Smart Energy 200 (formerly FRITZ!DECT 200)."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "avm-fritzdect-200",
+      "fritz-smart-energy-200",
+      "fritz-dect-200-shop"
+    ],
+    "note": "Needs a FRITZ!Box with a DECT base; AVM's current page says FRITZ!OS 6.83 or newer, and not the FRITZ!Box 7412. The FRITZ!Box is the router, so no separate bridge is sold."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [
+      "ha-fritzbox",
+      "avm-kb-internet"
+    ],
+    "note": "Home Assistant polls the FRITZ!Box locally, but AVM says during an internet outage automatic switching is limited, routines stop and the FRITZ!App Smart Home can't connect. AVM's article (filed under the DECT 200, titled for the DECT 500) doesn't say what works offline."
+  },
+  "energyMonitoring": {
+    "value": true,
+    "sources": [
+      "avm-fritzdect-200",
+      "fritz-smart-energy-200"
+    ],
+    "note": "Shows current power and voltage and records consumption per hour, day, month and year."
+  },
+  "maxLoadWatts": {
+    "value": 2300,
+    "sources": [
+      "avm-kb-load",
+      "fritz-smart-energy-200"
+    ],
+    "note": "AVM's knowledge base gives 2300 W for resistive loads and 2300 VA for inductive loads at 230 V; the current product page says up to 2300 W."
+  },
+  "summary": "The FRITZ DECT 200 only works through an AVM FRITZ Box with a DECT base, and Home Assistant picks it up from there. It talks DECT ULE rather than Wi-Fi, so it won't join a network without one. It measures power and voltage, logs consumption by hour, day, month and year, and switches up to 2300 W. AVM's pages mention no Apple Home, Google Home, Alexa, SmartThings or Matter support.",
+  "caveats": [
+    "Needs a FRITZ Box with a DECT base running FRITZ OS 6.83 or newer; AVM says the FRITZ Box 7412 doesn't work.",
+    "AVM now sells it as FRITZ Smart Energy 200, so current pages use that name.",
+    "During an internet outage AVM says automatic switching is limited, routines stop and the FRITZ App Smart Home can't connect."
+  ],
+  "sources": [
+    {
+      "id": "avm-fritzdect-200",
+      "url": "https://en.avm.de/products/fritzdect/fritzdect-200/",
+      "title": "FRITZ!DECT 200",
+      "publisher": "AVM",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "avm-kb-load",
+      "url": "https://uk.fritz.com/service/knowledge-base/dok/FRITZ-DECT-200/1359_What-kinds-of-devices-can-be-connected-to-the-FRITZ-smart-plug/",
+      "title": "What kinds of devices can be connected to the FRITZ! smart plug?",
+      "publisher": "AVM",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "fritz-smart-energy-200",
+      "url": "https://fritz.com/produkte/smart-home/fritzsmart-energy-200/technische-daten/",
+      "title": "FRITZ!Smart Energy 200",
+      "publisher": "AVM",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "fritz-dect-200-shop",
+      "url": "https://fritz.com/en/products/fritz-dect-200-20002572",
+      "title": "FRITZ!Smart Energy 200",
+      "publisher": "AVM",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "avm-kb-internet",
+      "url": "https://en.fritz.com/service/knowledge-base/dok/FRITZ-DECT-200/3523_Behavior-of-FRITZ-DECT-500-in-case-of-power-or-internet-failure",
+      "title": "Behavior of FRITZ!DECT 500 in case of power or internet failure",
+      "publisher": "AVM",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-fritzbox",
+      "url": "https://www.home-assistant.io/integrations/fritzbox",
+      "title": "AVM FRITZ!SmartHome - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-12",
+  "updatedAt": "2026-10-12"
+}

@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "HomeKit nativo è il motivo per scegliere la Meross MSS110 (venduta come MSS110HK): si abbina direttamente ad Apple Home via Wi-Fi senza passare da Matter né da un bridge. Funzionano anche Google Home, Alexa e SmartThings, ognuno collegando il tuo account Meross. È una presa per Stati Uniti e Canada da 15 A / 1800 W e non monitora i consumi.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz, e Meross dice che le reti Wi-Fi Enterprise non sono supportate.", "Il controllo da remoto in Apple Home richiede un hub domestico Apple (HomePod, Apple TV o iPad).", "Nessun monitoraggio dei consumi; per questo Meross vende prese con misuratore come la MSS315.", "Meross non dice se la MSS110 supporti Matter; la sua mini presa Matter è la MSS115, un altro modello.", "Home Assistant non ha un'integrazione ufficiale Meross."],
+  "notes": {
+    "radios": "Solo Wi-Fi a 2,4 GHz; Meross dice che il Wi-Fi Enterprise non è supportato.",
+    "matter": "Le pagine della MSS110 descrivono HomeKit, non Matter. La mini presa Matter di Meross è la MSS115, un altro modello. Non abbiamo trovato nessuna dichiarazione esplicita in un senso o nell'altro per la MSS110.",
+    "hubRequired": "Si collega direttamente al tuo Wi-Fi a 2,4 GHz; non serve nessun bridge. Un hub domestico Apple serve solo per il controllo remoto HomeKit.",
+    "localControl": "Gli accessori HomeKit di solito funzionano sulla LAN, ma non abbiamo trovato nessuna pagina Meross che indichi il controllo locale per questo modello.",
+    "energyMonitoring": "La pagina della MSS110 per Stati Uniti/Giappone di Meross indica Energy Monitor: No. Per la misura dei consumi Meross vende altri modelli (ad esempio la MSS315).",
+    "maxLoadWatts": "Meross dà la versione per Stati Uniti/Canada/Giappone per 15 A / 1800 W.",
+    "compatibility.apple_home": "HomeKit (HAP) via Wi-Fi; l'unità HomeKit è venduta come MSS110HK (Stati Uniti/Canada). Il controllo remoto richiede un hub domestico Apple (HomePod, Apple TV o iPad).",
+    "compatibility.google_home": "Tramite il collegamento dell'account 'Works with Google Home' di Meross; aggiungi prima la presa nell'app Meross.",
+    "compatibility.alexa": "Tramite la skill Meross per Alexa, collegata al tuo account Meross.",
+    "compatibility.smartthings": "La pagina MSS110US di Meross elenca SmartThings. Si collega associando il tuo account Meross nell'app SmartThings (da cloud a cloud), secondo le FAQ generiche di Meross su SmartThings.",
+    "compatibility.home_assistant": "Nessuna integrazione ufficiale Meross in Home Assistant. Gli utenti del forum segnalano l'abbinamento tramite l'integrazione HomeKit Device o il componente Meross LAN della community, ma nessuna pagina ufficiale cita questo modello."
+  }
+}

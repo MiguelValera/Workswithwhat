@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Google Nest Hub (2nd gen) es el hub de Google Home en formato pantalla. Google dice que los dispositivos Matter funcionan con Google Home a través de él, y además hace de router de borde Thread para los dispositivos Thread. Funciona con wifi de doble banda y Bluetooth 5.0. Nada oficial muestra que los dispositivos emparejados con él aparezcan en Apple Home, Alexa o SmartThings.",
+  "caveats": [
+    "La compatibilidad con Matter se basa en las propias páginas de Google; no se encontró ningún registro de la CSA que nombre este modelo.",
+    "La página de ayuda de Thread de Google no indica ninguna versión de Thread para el Nest Hub (2nd gen).",
+    "Nada oficial muestra que los dispositivos emparejados con él aparezcan en Apple Home, Alexa, SmartThings o Home Assistant."
+  ],
+  "notes": {
+    "radios": "Wifi de doble banda 802.11 b/g/n/ac, Bluetooth 5.0 y un router de borde Thread integrado (802.15.4 a 2,4 GHz), según la página de especificaciones de la Google Store estadounidense.",
+    "matter": "Google indica que admite Matter y dice que todos los dispositivos Matter funcionan con Google Home a través del Nest Hub (2nd gen). No se encontró ningún registro de producto de la CSA que lo nombre, así que el certificado no está confirmado.",
+    "hubRequired": "Es el hub de Google Home.",
+    "localControl": "Sin confirmar en las páginas que hemos leído.",
+    "hubType": "Una pantalla inteligente que funciona como hub de Google Home.",
+    "deviceProtocols": "Los dispositivos Thread se conectan a través del router de borde integrado. Los dispositivos Matter también se admiten por wifi.",
+    "matterBridge": "Google no lo indica.",
+    "threadBorderRouter": "La página de Thread de Google incluye el Nest Hub (2nd gen) entre los productos de Google que pueden hacer de router de borde Thread. La página no indica ninguna versión de Thread.",
+    "maxDevices": "No se encontró ningún límite en las fuentes.",
+    "compatibility.apple_home": "Ninguna fuente oficial muestra dispositivos emparejados con el Nest Hub en Apple Home.",
+    "compatibility.google_home": "Google dice que el Nest Hub funciona como hub de Google Home y que los dispositivos Matter funcionan con Google Home a través de él.",
+    "compatibility.alexa": "Ninguna fuente oficial muestra dispositivos emparejados con el Nest Hub en Alexa.",
+    "compatibility.smartthings": "Ninguna fuente oficial muestra dispositivos emparejados con el Nest Hub en SmartThings.",
+    "compatibility.home_assistant": "La página de Thread de Home Assistant incluye el Nest Hub (2nd gen) como router de borde Thread; no dice que los dispositivos emparejados en Google Home aparezcan en Home Assistant."
+  }
+}

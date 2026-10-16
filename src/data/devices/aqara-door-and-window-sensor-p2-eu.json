@@ -155,5 +155,6 @@
   ],
   "status": "verified",
   "updatedAt": "2026-10-11",
-  "verifiedAt": "2026-10-11"
+  "verifiedAt": "2026-10-11",
+  "variants": ["aqara-door-and-window-sensor-p2-us"]
 }

@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Die Hue White Ambiance A60 B22 im UK-2er-Pack reicht von 2200 bis 6500 K mit bis zu 806 Lumen und hat einen Bajonettsockel. Die Hue-App steuert sie über Bluetooth ohne Bridge, und laut Hues FAQ koppeln Bluetooth-Lampen direkt mit aktuellen Echo- und Google-Nest-Lautsprechern. Apple Home und SmartThings brauchen eine Hue Bridge, Home Assistant nutzt die Hue-Integration.",
+  "caveats": [
+    "Apple Home und SmartThings brauchen eine Hue Bridge. Die UK-Seite führt die Sprachsteuerung unter „Hue Bridge required“, obwohl Hues FAQ die Bluetooth-Kopplung mit aktuellen Echo- und Nest-Lautsprechern beschreibt.",
+    "Matter funktioniert über die Hue Bridge; für die Lampe selbst fanden wir keinen Matter-Eintrag."
+  ],
+  "notes": {
+    "radios": "Hues UK-Seite nennt Bluetooth und Zigbee. Die Hue-Bridge-FAQ sagt, dass die Bridge ein privates Zigbee-Netz für Hue-Lampen betreibt.",
+    "matter": "Hues UK-Seite führt Matter unter den Fremdsystemen, doch für diese EAN fanden wir keinen CSA-Eintrag. Hues Anleitung bietet Matter über die Hue Bridge an. Für die Lampe selbst nicht bestätigt.",
+    "hubRequired": "Hier heißt das: Für die einfache App-Steuerung braucht es eine Bridge. Die Hue-App steuert sie über Bluetooth (etwa 9 m); Apple Home, SmartThings und der volle Funktionsumfang brauchen eine Hue Bridge.",
+    "localControl": "Die Bluetooth-Steuerung vom Smartphone funktioniert ohne Internet; Home Assistant spricht mit der Hue Bridge über deren lokale API.",
+    "colorType": "Einstellbares Weiß von 2200 bis 6500 K; keine Farbe.",
+    "lumens": "Verkauft als „800 lumen“; die Seite nennt bis zu 806 lm bei 4000 K.",
+    "bulbBase": "Bajonettsockel.",
+    "compatibility.apple_home": "Hues Seite führt Apple HomeKit und sagt, die Steuerung per Sprachassistent brauche die Bridge. Hues Matter-Anleitung sagt, die Bridge verbinde auch Lampen ohne Matter mit Apple Home.",
+    "compatibility.google_home": "Hues Seite führt Google Home. Hues (US-)FAQ sagt, dass Bluetooth-Hue-Lampen ohne Bridge mit Nest Mini, Nest Hub und Nest Hub Max koppeln (bis zu 10 Lampen); die UK-Seite führt die Sprachsteuerung unter „Hue Bridge required“. Mit Bridge nutzt es Hues eigene Integration.",
+    "compatibility.alexa": "Hues Seite führt Alexa. Hues (US-)FAQ sagt, dass Bluetooth-Hue-Lampen ohne Bridge mit einem Echo (4. Generation), Echo Show oder neuer koppeln; die UK-Seite führt die Sprachsteuerung unter „Hue Bridge required“. Mit Bridge nutzt es Hues eigenen Skill.",
+    "compatibility.smartthings": "Hues Seite führt Samsung SmartThings; Hues FAQ ordnet SmartThings der Bridge-Seite zu, nicht Bluetooth.",
+    "compatibility.home_assistant": "Offizielle Hue-Integration, die sich mit der Hue Bridge koppelt. Die Dokumentation nennt diese Lampe nicht ausdrücklich."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge"
+  }
+}

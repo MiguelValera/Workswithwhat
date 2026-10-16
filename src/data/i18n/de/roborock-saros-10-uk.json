@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Roborock verkauft den Saros 10 in Großbritannien mit 22 000 Pa Saugkraft, einem einfahrbaren LiDAR mit RGB-Kamera und vibrierenden Wischmopps, die die Station mit heißem Wasser wäscht. Die Station leert den Staubbehälter in einen Beutel. Alexa funktioniert über den Roborock-Plus-Skill, und Roborocks Newsroom führt das Modell für die Matter-Firmware 02.32.44 auf, die Apple Home und Google Home bringt. SmartThings ist nicht bestätigt.",
+  "caveats": [
+    "Die UK-Seite sagt noch, Matter inklusive Apple Home komme per OTA; Roborocks Newsroom nennt die Firmware 02.32.44 als Release.",
+    "Laut Roborock variieren die Matter-Funktionen je nach Ökosystem.",
+    "Es wurde kein CSA-Eintrag gefunden, der den Saros 10 nennt, Matter beruht also auf Roborocks eigener Aussage.",
+    "Roborocks US-Seite sagt, das WLAN laufe nur auf 2,4 GHz; die UK-Seite nennt kein Band.",
+    "Die Seite zur offiziellen Roborock-Integration von Home Assistant nennt den Saros 10 nicht."
+  ],
+  "notes": {
+    "radios": "Die UK-Seite sagt, für die App-Steuerung sei WLAN nötig und Bluetooth diene nur der Netzwerkeinrichtung. Roborocks US-Seite sagt, das WLAN laufe nur auf 2,4 GHz; die UK-Seite nennt kein Band.",
+    "matter": "Roborocks Newsroom führt den Saros 10 für die Matter-Firmware 02.32.44 (April 2025) auf. Die UK-Seite sagt noch, Matter komme mit einem kommenden OTA, ihre Formulierung ist also älter. Es wurde kein CSA-Eintrag gefunden, der das Modell nennt.",
+    "hubRequired": "Verbindet sich über das WLAN zu Hause mit der Roborock-App; die Station ist die Basisstation, kein Hub.",
+    "localControl": "Die UK-Seite sagt, Sprachbefehle funktionierten offline; das ist die Sprachsteuerung im Roboter selbst. Roborock sagt nicht, ob App- oder Smart-Home-Steuerung ohne die Cloud funktioniert.",
+    "cleaning": "VibraRise-4.0-Vibrationsmopp, mit einer Station, die den Mopp mit Wasser von bis zu 80 °C wäscht.",
+    "navigation": "RetractSense senkt den LDS unter niedrige Möbel ab; ReactiveAI 3.0 nutzt Strukturlicht und eine RGB-Kamera zur Hinderniserkennung.",
+    "suctionPa": "Roborocks Angabe aus eigenen Tests.",
+    "selfEmptying": "Die RockDock Ultra 2.0 leert den Staubbehälter in einen Einweg-Staubbeutel.",
+    "compatibility.apple_home": "Über Matter. Die UK-Seite sagt, die Matter-Unterstützung inklusive Apple Home komme per OTA; der Newsroom sagt, die Firmware 02.32.44 liefere sie. Laut Roborock variieren die Matter-Funktionen je nach Ökosystem.",
+    "compatibility.google_home": "Über Matter nach der Firmware 02.32.44, mit je nach Ökosystem unterschiedlichen Funktionen. Roborocks UK-Seiten sagen auch, der Saros 10 unterstütze Google Home, beschreiben aber keine Roborock-Integration, daher ist nur der Matter-Weg erfasst.",
+    "compatibility.alexa": "Über den Roborock-Plus-Skill für Roboter in der Roborock-App; die UK-Seite führt außerdem Amazon Alexa auf.",
+    "compatibility.smartthings": "Weder die UK-Seiten noch die Newsroom-Aussage nennen SmartThings.",
+    "compatibility.home_assistant": "Home Assistant hat eine offizielle Roborock-Integration, aber die gefundene Seite nennt den Saros 10 nicht."
+  },
+  "values": {
+    "navigation": "Einfahrbares LiDAR, RGB-Kamera"
+  }
+}

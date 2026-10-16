@@ -1,0 +1,13 @@
+---
+// Every Italian page; the route list mirrors the English site (see src/lib/routes-i18n.ts).
+import LocalePageView from '../../components/pages/LocalePage.astro';
+import { localeStaticPaths, type LocalePage } from '../../lib/routes-i18n';
+
+export function getStaticPaths() {
+  return localeStaticPaths('it');
+}
+
+const { page } = Astro.props as { page: LocalePage };
+---
+
+<LocalePageView page={page} />

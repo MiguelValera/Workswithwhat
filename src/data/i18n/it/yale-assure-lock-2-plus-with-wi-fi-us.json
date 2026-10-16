@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "La Yale Assure Lock 2 Plus con Wi-Fi sostituisce un chiavistello statunitense e funziona in modo nativo con Apple Home (compreso Home Key), Google Home e Alexa, senza hub aggiuntivo per l'accesso remoto tramite l'app Yale Access. Avvicina un iPhone o un Apple Watch alla serratura con tastierino touchscreen per sbloccarla. Non c'è nessuna scheda Matter, e SmartThings e Home Assistant non sono confermati. Funziona con quattro batterie AA incluse.",
+  "caveats": ["Home Key richiede un iPhone XS o successivo (iOS 15+) oppure un Apple Watch Series 4 o successivo (watchOS 8+).", "Il controllo remoto tramite Apple Home richiede un HomePod, un HomePod mini o un Apple TV come hub domestico.", "Il Wi-Fi è solo a 2,4 GHz.", "Google Home e Alexa funzionano solo sul modello Wi-Fi, non sulla Plus solo Bluetooth.", "Yale vende questa versione senza cilindro con chiave."],
+  "notes": {
+    "radios": "Il Wi-Fi è a 2,4 GHz secondo la pagina dello store e le FAQ di Yale. Il comunicato di lancio di Yale dice che Bluetooth e Apple HomeKit sono di serie sulla Plus, con il Wi-Fi aggiunto per l'accesso remoto. Home Key usa NFC, che nel nostro schema non è una radio.",
+    "matter": "Nessuna scheda CSA trovata per la Assure Lock 2 Plus. Il Matter Smart Module di Yale è un componente aggiuntivo separato e le FAQ della Plus di Yale non menzionano Matter per questa serratura.",
+    "hubRequired": "Yale dice che il modello Wi-Fi offre l'accesso remoto tramite l'app Yale Access. L'uso remoto in Apple Home richiede comunque un hub domestico.",
+    "localControl": "Il controllo remoto passa dall'app Yale Access e dal cloud; nessuna fonte conferma un controllo solo locale.",
+    "lockFit": "Sostituisce il chiavistello sulle porte statunitensi standard. Yale vende la Plus senza cilindro con chiave, e anche in pacchetto con maniglie Norwood o Ridgefield come schede separate.",
+    "keypad": "Tastierino touchscreen sulla serratura. Yale non indica un lettore di impronte sulla Plus.",
+    "power": "Quattro batterie alcaline AA sono incluse, secondo la pagina dello store di Yale.",
+    "compatibility.apple_home": "Apple Home Key è integrato nella serratura (iPhone XS o successivo con iOS 15+, oppure Apple Watch Series 4 o successivo con watchOS 8+). Il controllo remoto tramite Apple Home richiede un HomePod, un HomePod mini o un Apple TV come hub domestico.",
+    "compatibility.google_home": "Yale dice che tutte le integrazioni partner funzionano sui modelli Wi-Fi, e il suo comunicato di lancio nomina Google Home per la versione Wi-Fi. Non disponibile sulla Plus solo Bluetooth.",
+    "compatibility.alexa": "Il comunicato di lancio di Yale nomina il controllo vocale con Alexa per la versione Wi-Fi, e la sua pagina della Plus dice che le integrazioni partner funzionano solo sui modelli Wi-Fi.",
+    "compatibility.smartthings": "Le pagine di Yale che abbiamo visto non menzionano SmartThings e la serratura non ha una scheda Matter, quindi non la segniamo come «no».",
+    "compatibility.home_assistant": "La pagina August di Home Assistant elenca la Assure Lock 2 come funzionante ma con un flag Connect Bridge o campanello impostato, e i post della community dicono che gli account Yale Home più recenti richiedono l'integrazione Yale. Se questo modello Wi-Fi funzioni senza hardware aggiuntivo non è confermato."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Das Ultraloq U-Bolt Pro WiFi ist ein Ersatz-Riegelschloss mit Tastenfeld und Fingerabdruckleser (50 Nutzer, 50 Codes, 100 Fingerabdrücke) und eingebautem 2,4-GHz-WLAN, braucht also keine Bridge. Der Google Assistant, Alexa und SmartThings werden unterstützt. U-tec sagt, es funktioniere nicht mit Apple Home, und für dieses Modell gibt es keine Matter-Aussage. Vier AA-Zellen halten 3 bis 6 Monate.",
+  "caveats": [
+    "Das WLAN läuft nur auf 2,4 GHz; 5 GHz wird nicht unterstützt.",
+    "Keine Apple-Home-Unterstützung; nur Ultraloqs Modelle Bolt Fingerprint führen HomeKit auf.",
+    "Ultraloqs Matter-Schlösser sind ein separates Thread-basiertes Bolt Pro, nicht dieses.",
+    "Home Assistant ist nur für das Z-Wave-U-Bolt-Pro dokumentiert, daher ist dieses WLAN-Modell unbestätigt.",
+    "Fern- und Sprachsteuerung laufen über Ultraloqs Cloud."
+  ],
+  "notes": {
+    "radios": "U-tecs Spezifikation führt Standard-Bluetooth plus 2,4-GHz-WLAN (802.11 b/g/n) auf; 5 GHz wird nicht unterstützt. Die App erreicht das Schloss in der Nähe über Bluetooth.",
+    "matter": "Keine Matter-Aussage für dieses Modell. Ultraloqs Matter-Produkte sind ein separates Thread-basiertes Bolt Pro, nicht dieses Schloss.",
+    "hubRequired": "Eingebauter WLAN-Chip, daher ist die Ultraloq Bridge nicht erforderlich; laut U-tec ist die Bridge für die U-Bolt-Modelle ohne WLAN.",
+    "localControl": "Fern- und Sprachsteuerung laufen über Ultraloqs Cloud; lokale Steuerung ist nicht dokumentiert.",
+    "lockFit": "Ersetzt das vorhandene Riegelschloss; verkauft als Riegelschloss mit Tastenfeld und Fingerabdruckleser.",
+    "keypad": "Tastenfeld plus Fingerabdruckleser; die Spezifikation führt 50 Nutzer, 50 Codes und 100 Fingerabdrücke auf.",
+    "power": "6 V aus vier AA-Alkaline-Batterien, mit einem Micro-USB-Anschluss für Notstrom. U-tec nennt 3 bis 6 Monate für das WLAN-Modell und bis zu einem Jahr für die Versionen ohne WLAN.",
+    "compatibility.apple_home": "U-tecs Artikel „Does Ultraloq work with HomeKit?“ sagt, nur das Bolt Fingerprint (HomeKit-Version) und das Bolt Fingerprint Matter unterstützten HomeKit, und führt die U-Bolt-WLAN-Modelle stattdessen mit Google Assistant, Alexa, IFTTT und SmartThings auf.",
+    "compatibility.google_home": "Google Assistant, über das eingebaute WLAN.",
+    "compatibility.alexa": "Alexa über das eingebaute WLAN.",
+    "compatibility.smartthings": "Ultraloq führt SmartThings für seine Schlösser mit eingebautem WLAN auf.",
+    "compatibility.home_assistant": "Ultraloqs Support-Artikel verbindet Home Assistant mit dem Z-Wave-Modell U-Bolt/U-Bolt Pro, nicht mit dem WLAN-Modell."
+  },
+  "values": {
+    "power": "4 × AA"
+  }
+}

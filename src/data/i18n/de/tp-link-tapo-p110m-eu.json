@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Über Matter erreicht die EU-Tapo-P110M Apple Home, Google Home, Alexa und SmartThings, während Home Assistant entweder seine TP-Link-Integration oder Matter nutzen kann. Die Tapo-App braucht keinen Hub, aber jede Drittanbieter-Plattform braucht ihren eigenen Matter-Controller. Sie ist ein 2,4-GHz-WLAN-Zwischenstecker für 16 A / 3680 W, wobei Bluetooth nur für die Einrichtung dient. Verbrauch, Verlauf und Kostenschätzungen erscheinen in der Tapo-App; die Firmware 1.3.2 hat Matter-Energiemeldungen ergänzt, die TP-Link in SmartThings und Home Assistant verifiziert hat.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN.",
+    "Es gibt keinen HomeKit-Modus, daher funktioniert Apple Home nur über Matter und braucht einen Controller wie einen Apple TV oder HomePod.",
+    "Alexa braucht einen Echo, der als Matter-Controller arbeitet; Matter-Tapo-Geräte laufen nicht über den Tapo-Skill.",
+    "Matter-Verbrauchswerte brauchen die Firmware 1.3.2 oder neuer, und TP-Link nennt nur SmartThings und Home Assistant als verifiziert für deren Anzeige.",
+    "Die TP-Link-Integration von Home Assistant fragt bei neueren Geräten einmalig nach deinen TP-Link-Kontodaten.",
+    "Motorlasten sind auf 1/6 PS begrenzt."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN (IEEE 802.11b/g/n). Laut EU-Datenblatt dient Bluetooth nur der Einrichtung.",
+    "matter": "TP-Links EU-Seiten nennen sie Matter-zertifiziert. Der CSA-Eintrag (Familien-SKU P110M, Zertifikat CSA23546MAT41059-24) nennt nur die Variante P110M(UK); wir fanden keinen CSA-Eintrag, der P110M(EU) nennt.",
+    "hubRequired": "Laut EU-Datenblatt ist mit der Tapo-App kein Hub nötig; Apps von Drittanbietern brauchen einen Matter-Controller.",
+    "localControl": "TP-Links EU-Seiten sagen, Tapo-Matter-Geräte sprächen im lokalen Netzwerk (LAN) mit anderen zertifizierten Geräten. Das ist eine Matter-Aussage; wir fanden keine EU-Seite zur Tapo-App-Steuerung ohne Internet.",
+    "energyMonitoring": "Echtzeit- und Verlaufsdaten plus Kostenschätzungen in der Tapo-App. Die Firmware 1.3.2 (2025) hat Matter-Energiemeldungen ergänzt; TP-Link nennt SmartThings und Home Assistant als Plattformen, auf denen die Anzeige verifiziert ist.",
+    "maxLoadWatts": "16 A / 3680 W für allgemeine Nutzung und ohmsche Lasten; 1/6-PS-Motor.",
+    "compatibility.apple_home": "TP-Link führt Apple Home auf. Es gibt keinen HomeKit-Modus (HAP), also läuft es über Matter; laut EU-Datenblatt ist ein Controller wie ein Apple TV oder HomePod nötig.",
+    "compatibility.google_home": "Wird in der Google-Home-App durch Scannen des Matter-Codes hinzugefügt. Braucht einen Google-Matter-Controller.",
+    "compatibility.alexa": "Laut TP-Link verbinden sich Matter-fähige Tapo-Geräte über Matter direkt mit Alexa, nicht über den Tapo-Skill. Braucht einen Echo, der als Matter-Controller arbeitet.",
+    "compatibility.smartthings": "TP-Link führt Samsung SmartThings auf; die Einrichtung läuft über Matter.",
+    "compatibility.home_assistant": "Die TP-Link-Smart-Home-Integration von Home Assistant führt die P110M unter den unterstützten Tapo-Zwischensteckern auf; neuere Geräte brauchen einmalig deine TP-Link-Kontodaten. Sie lässt sich auch über die Matter-Integration hinzufügen."
+  }
+}

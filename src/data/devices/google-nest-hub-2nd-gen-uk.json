@@ -1,0 +1,144 @@
+{
+  "category": "smart-hub",
+  "brand": "Google",
+  "model": "Nest Hub (2nd gen, UK)",
+  "name": "Nest Hub 2nd Gen (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://store.google.com/gb/product/nest_hub_2nd_gen_specs?hl=en-gb",
+  "radios": {
+    "value": [
+      "wifi",
+      "bluetooth",
+      "thread"
+    ],
+    "sources": [
+      "google-nest-hub-specs-gb"
+    ],
+    "note": "Dual-band Wi-Fi 802.11b/g/n/ac (2.4 and 5 GHz), Bluetooth 5.0 and a built-in Thread border router (802.15.4 at 2.4 GHz), per the UK Google Store spec page."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "google-nest-hub-specs-gb"
+    ],
+    "note": "The UK spec page lists Matter as supported. No CSA product listing naming it was found, so a certificate is not confirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Nest Hub-paired devices in Apple Home."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "google-nest-hub-specs-gb"
+      ],
+      "note": "Google's UK spec page says the Nest Hub works as a hub for Google Home and lists Matter as supported."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Nest Hub-paired devices in Alexa."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source shows Nest Hub-paired devices in SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [
+        "ha-thread"
+      ],
+      "note": "Home Assistant's Thread page lists Nest Hub (2nd gen) as a Thread border router; it does not say devices paired in Google Home appear in Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "google-nest-hub-specs-gb"
+    ],
+    "note": "It is the hub for Google Home."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed from the pages we read."
+  },
+  "hubType": {
+    "value": "speaker-display",
+    "sources": [
+      "google-nest-hub-specs-gb"
+    ],
+    "note": "A smart display that works as a hub for Google Home."
+  },
+  "deviceProtocols": {
+    "value": [
+      "thread"
+    ],
+    "sources": [
+      "google-nest-hub-specs-gb",
+      "google-thread"
+    ],
+    "note": "Thread devices connect through the built-in border router. Matter devices are supported on Wi-Fi as well."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Not stated by Google."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "google-thread",
+      "google-nest-hub-specs-gb"
+    ],
+    "note": "Google's Thread page lists Nest Hub (2nd gen) among Google products that can act as a Thread border router. The page gives no Thread version."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "No limit found in the sources."
+  },
+  "summary": "The Nest Hub 2nd Gen (UK) slots into Google Home as its hub: the smart display works as its hub and has a built-in Thread border router. Google's UK spec page lists Matter as supported. It runs on dual-band Wi-Fi with Bluetooth 5.0. Nothing official shows devices paired through it appearing in Apple Home, Alexa or SmartThings.",
+  "caveats": [
+    "Matter support rests on Google's own pages; no CSA listing naming this model was found.",
+    "Google's Thread help page gives no Thread version for the Nest Hub (2nd gen).",
+    "Nothing official shows devices paired through it appearing in Apple Home, Alexa, SmartThings or Home Assistant."
+  ],
+  "sources": [
+    {
+      "id": "google-nest-hub-specs-gb",
+      "url": "https://store.google.com/gb/product/nest_hub_2nd_gen_specs?hl=en-gb",
+      "title": "Nest Hub (2nd Gen) tech specs – Google Store",
+      "publisher": "Google Store UK",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "google-thread",
+      "url": "https://support.google.com/googlenest/answer/9249088?hl=en",
+      "title": "How Google products use Thread in a smart home",
+      "publisher": "Google Nest Help",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-thread",
+      "url": "https://www.home-assistant.io/integrations/thread/",
+      "title": "Thread - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "variants": [
+    "google-nest-hub-2nd-gen-us"
+  ],
+  "verifiedAt": "2026-10-12"
+}

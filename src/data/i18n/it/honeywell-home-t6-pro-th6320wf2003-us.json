@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Il T6 Pro TH6320WF2003 di Honeywell Home è un termostato da parete Wi-Fi a 2,4 GHz per impianti a bassa tensione: fino a 3 stadi di riscaldamento e 2 di raffrescamento con le pompe di calore, 2 e 2 con gli impianti tradizionali. Il testo di Honeywell per questo modello cita Apple Home e Amazon Echo. Non serve nessun hub, ma richiede un filo C.",
+  "caveats": [
+    "Richiede un filo C; Honeywell vende un adattatore per il filo C.",
+    "Solo Wi-Fi a 2,4 GHz.",
+    "Si vende tramite installatori: la pagina di Honeywell lo mostra esaurito, con prezzo su richiesta a un professionista, e una tabella delle specifiche indica meno stadi per la pompa di calore.",
+    "Il supporto a Google Home, SmartThings, Matter e Home Assistant non è confermato per questo modello."
+  ],
+  "notes": {
+    "radios": "Solo 802.11 b/g/n a 2,4 GHz.",
+    "matter": "La pagina di Honeywell non cita Matter; non è stata controllata nessuna scheda CSA.",
+    "hubRequired": "Si collega direttamente al Wi-Fi di casa; la pagina indica RedLINK come No.",
+    "localControl": "Honeywell non dice se il controllo funzioni senza il suo cloud.",
+    "systems": "Il nome del modello e una tabella delle specifiche indicano 3 stadi di riscaldamento e 2 di raffrescamento con le pompe di calore; un'altra tabella nella stessa pagina indica 2 e 1.",
+    "power": "L'articolo di supporto di Honeywell dice che i modelli Wi-Fi T5/T6 Pro richiedono un filo comune.",
+    "compatibility.apple_home": "Il testo delle funzioni del T6 Pro dice «Integration with your Apple Home and Amazon Echo» (integrazione con Apple Home e Amazon Echo).",
+    "compatibility.google_home": "Google Assistant compare solo nella riga di loghi «works with» di Honeywell valida per tutto il marchio, non nel testo di questo modello.",
+    "compatibility.alexa": "Il testo delle funzioni del T6 Pro cita l'integrazione con Amazon Echo.",
+    "compatibility.smartthings": "Samsung SmartThings compare solo nella riga di loghi «works with» di Honeywell valida per tutto il marchio, non nel testo di questo modello.",
+    "compatibility.home_assistant": "Per questo modello non è stata controllata nessuna pagina di Home Assistant."
+  },
+  "values": {
+    "power": "Filo C richiesto",
+    "systems": "Bassa tensione; pompa di calore fino a 3 stadi caldo/2 freddo, impianto tradizionale 2 caldo/2 freddo"
+  }
+}

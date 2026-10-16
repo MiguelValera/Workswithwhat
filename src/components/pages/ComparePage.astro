@@ -1,0 +1,240 @@
+---
+// "X vs Y": two devices of one category and market side by side, in English
+// (/compare/<a>-vs-<b>/) or Spanish (/es/comparar/<a>-vs-<b>/). Every value comes from the
+// two records and links to its source on the device's own page.
+import Base from '../../layouts/Base.astro';
+import Refs from '../Refs.astro';
+import Status from '../Status.astro';
+import { catText, categoryOf } from '../../lib/categories';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePathIn, ecosystemPath, ecosystemSlug, formatDate, getTranslations, langsFor, listJoin, worksWith } from '../../lib/devices';
+import { compareAnswer, compareDescription, compareName, comparePath, compareRows, comparisonsFor, summaryLines, pairText, type Comparison } from '../../lib/compare';
+import { marketChartPath, marketText } from '../../lib/markets';
+import { HTML_LANG, pick, langOf, localize } from '../../i18n/lang';
+
+interface Props {
+  comparison: Comparison;
+}
+const { comparison } = Astro.props;
+const { a, b, market } = comparison;
+const lang = langOf(Astro.url.pathname);
+const T = pick(lang);
+const L = (p: string) => localize(p, lang);
+const translations = await getTranslations(lang);
+const { wa, wb } = pairText(comparison, lang, translations);
+const cat = categoryOf(a.data);
+const c = catText(cat, lang);
+const mt = marketText(market, lang);
+const name = compareName(comparison);
+const pathA = devicePathIn(a, lang, translations);
+const pathB = devicePathIn(b, lang, translations);
+const langs = await langsFor(a, b);
+
+const title = T({ en: `${name}: smart home compatibility compared`, es: `${name}: compatibilidad comparada`, de: `${name}: Smart-Home-Kompatibilität im Vergleich`, fr: `${name} : compatibilité maison connectée comparée`, it: `${name}: compatibilità smart home a confronto` });
+const description = compareDescription(comparison, lang);
+const rows = compareRows(a, b, lang, wa, wb);
+const differs = rows.filter((r) => r.a !== r.b);
+// Matter first, then each ecosystem, then the facts, as on device pages
+type Cell = { d: typeof a; base: string; ids: string[]; text?: string; status?: (typeof a.data.compatibility)['alexa']['status']; via?: string };
+const factRow = (r: (typeof rows)[number]) => ({
+  id: undefined as string | undefined,
+  label: r.label,
+  differs: r.a !== r.b,
+  cells: [
+    { d: a, base: pathA, ids: r.sa, text: r.a },
+    { d: b, base: pathB, ids: r.sb, text: r.b },
+  ] as Cell[],
+});
+const table = [
+  factRow(rows[0]),
+  ...ECOSYSTEMS.map((e) => {
+    const [x, y] = [a.data.compatibility[e], b.data.compatibility[e]];
+    return {
+      id: `compare-${ecosystemSlug(e)}`,
+      label: ECOSYSTEM_LABELS[e],
+      differs: x.status !== y.status || wa.via(e) !== wb.via(e),
+      cells: [
+        { d: a, base: pathA, ids: x.sources, status: x.status, via: wa.via(e) },
+        { d: b, base: pathB, ids: y.sources, status: y.status, via: wb.via(e) },
+      ] as Cell[],
+    };
+  }),
+  ...rows.slice(1).map(factRow),
+];
+const marketChart = L(await marketChartPath(market, cat));
+
+const faq = ECOSYSTEMS.map((e) => ({
+  e,
+  q: T({ en: `${a.data.name} or ${b.data.name}: which works with ${ECOSYSTEM_LABELS[e]}?`, es: `¿Cuál funciona con ${ECOSYSTEM_LABELS[e]}, ${a.data.name} o ${b.data.name}?`, de: `${a.data.name} oder ${b.data.name}: Welches funktioniert mit ${ECOSYSTEM_LABELS[e]}?`, fr: `${a.data.name} ou ${b.data.name} : lequel fonctionne avec ${ECOSYSTEM_LABELS[e]} ?`, it: `${a.data.name} o ${b.data.name}: quale funziona con ${ECOSYSTEM_LABELS[e]}?` }),
+  a: compareAnswer(comparison, e, lang, wa, wb),
+}));
+
+const others = (await comparisonsFor(a))
+  .concat(await comparisonsFor(b))
+  .filter((o) => o.indexed && o.slug !== comparison.slug)
+  .filter((o, i, all) => all.findIndex((x) => x.slug === o.slug) === i);
+
+const checked = [a.data.verifiedAt, b.data.verifiedAt].filter(Boolean).sort()[0];
+const product = (d: typeof a, words: typeof wa, path: string) => ({
+  // Thing, not Product: see DevicePage.astro.
+  '@type': 'Thing',
+  name: d.data.name,
+  identifier: d.data.model,
+  description: words.summary,
+  url: new URL(path, Astro.site).href,
+});
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description,
+    inLanguage: HTML_LANG[lang],
+    dateModified: [a.data.updatedAt, b.data.updatedAt].sort().at(-1),
+    about: [product(a, wa, pathA), product(b, wb, pathB)],
+  },
+];
+---
+
+<Base
+  title={title}
+  description={description}
+  ogType="article"
+  crumbs={[
+    { name: c.label, path: `/${cat.path}/` },
+    { name: T({ en: 'Comparisons', es: 'Comparativas', de: 'Vergleiche', fr: 'Comparatifs', it: 'Confronti' }), path: '/compare/' },
+    { name, path: comparePath(comparison) },
+  ]}
+  alternates={langs.length > 1}
+  langs={langs}
+  noindex={!comparison.indexed}
+  jsonLd={jsonLd}
+>
+  <article>
+    <h1>{name}</h1>
+    <p class="muted">
+      {c.label} · <a class="badge region" href={marketChart}>{T({ en: `For ${market.phrase}`, es: `Para ${mt.phrase}`, de: `Für ${mt.phrase}`, fr: `Pour ${mt.phrase}`, it: `Per ${mt.phrase}` })}</a>
+    </p>
+
+    <ul class="verdict">
+      {summaryLines(comparison, lang).map((line) => <li>{line}</li>)}
+      {
+        differs.length > 0 && (
+          <li>
+            {T({ en: 'They also differ on: ', es: 'También difieren en: ', de: 'Außerdem unterscheiden sie sich bei: ', fr: 'Ils diffèrent aussi sur : ', it: 'Differiscono anche per: ' })}
+            {listJoin(differs.map((r) => (r.key === 'matter' || lang === 'de' ? r.label : r.label.replace(/^./, (x) => x.toLowerCase()))), lang)}.
+          </li>
+        )
+      }
+    </ul>
+
+    <nav class="toc" aria-label={T({ en: 'On this page', es: 'En esta página', de: 'Auf dieser Seite', fr: 'Sur cette page', it: 'In questa pagina' })}>
+      <span class="toc-label">{T({ en: 'On this page:', es: 'En esta página:', de: 'Auf dieser Seite:', fr: 'Sur cette page :', it: 'In questa pagina:' })}</span>
+      <a href="#side-by-side">{T({ en: 'Side by side', es: 'Lado a lado', de: 'Im direkten Vergleich', fr: 'Côte à côte', it: 'Fianco a fianco' })}</a>
+      <a href="#quick-answers">{T({ en: 'Quick answers', es: 'Respuestas rápidas', de: 'Kurze Antworten', fr: 'Réponses rapides', it: 'Risposte rapide' })}</a>
+      {others.length > 0 && <a href="#more">{T({ en: 'More comparisons', es: 'Más comparativas', de: 'Weitere Vergleiche', fr: 'Autres comparatifs', it: 'Altri confronti' })}</a>}
+    </nav>
+
+    <h2 id="side-by-side">{T({ en: 'Side by side', es: 'Lado a lado', de: 'Im direkten Vergleich', fr: 'Côte à côte', it: 'Fianco a fianco' })}</h2>
+    <div class="table-scroll">
+      <table role="table" class="stack pair-compare">
+        <thead role="rowgroup">
+          <tr role="row">
+            <th role="columnheader" scope="col"><span class="sr-only">{T({ en: 'Fact', es: 'Dato', de: 'Angabe', fr: 'Donnée', it: 'Dato' })}</span></th>
+            <th role="columnheader" scope="col"><a href={pathA}>{a.data.name}</a></th>
+            <th role="columnheader" scope="col"><a href={pathB}>{b.data.name}</a></th>
+          </tr>
+        </thead>
+        <tbody role="rowgroup">
+          {
+            table.map((row) => (
+              <tr role="row" id={row.id} class={row.differs ? 'differs' : undefined}>
+                <th role="rowheader" scope="row">{row.label}</th>
+                {row.cells.map((cell) => (
+                  <td role="cell" data-label={cell.d.data.name}>
+                    {cell.status ? <Status status={cell.status} via={cell.via} /> : cell.text}<Refs ids={cell.ids} all={cell.d.data.sources} base={cell.base} />
+                  </td>
+                ))}
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    {
+      T({
+        de: (
+          <p class="muted small">
+            Ein Balken links markiert die Zeilen, in denen sie sich unterscheiden. Die Zahlen in Klammern führen zur Quelle auf der Seite des jeweiligen Geräts, wo auch die Hinweise und alles zum Prüfen vor dem Kauf stehen.
+            {checked && <> Anhand offizieller Quellen geprüft; der ältere der beiden Einträge wurde am <time datetime={checked}>{formatDate(checked, lang)}</time> verifiziert.</>}{' '}
+            <a href={L('/methodology/')}>So prüfen wir</a>.
+          </p>
+        ),
+        fr: (
+          <p class="muted small">
+            Une barre à gauche signale les lignes où ils diffèrent. Les chiffres entre crochets mènent à la source sur la fiche de chaque appareil, qui contient aussi les remarques et les points à vérifier avant d’acheter.
+            {checked && <> Vérifié auprès de sources officielles ; la plus ancienne des deux fiches a été vérifiée le <time datetime={checked}>{formatDate(checked, lang)}</time>.</>}{' '}
+            <a href={L('/methodology/')}>Notre méthode</a>.
+          </p>
+        ),
+        it: (
+          <p class="muted small">
+            Una barra a sinistra segna le righe in cui differiscono. I numeri tra parentesi portano alla fonte nella scheda di ciascun dispositivo, dove trovi anche le note e cosa controllare prima di comprare.
+            {checked && <> Verificato su fonti ufficiali; la più vecchia delle due schede è stata verificata il <time datetime={checked}>{formatDate(checked, lang)}</time>.</>}{' '}
+            <a href={L('/methodology/')}>Come verifichiamo</a>.
+          </p>
+        ),
+        es: (
+        <p class="muted small">
+          Una barra a la izquierda marca las filas en las que difieren. Los números entre corchetes llevan a la fuente en la ficha de cada dispositivo, donde también están las notas y los avisos antes de comprar.
+          {checked && <> Comprobado con fuentes oficiales; la ficha más antigua se verificó el <time datetime={checked}>{formatDate(checked, lang)}</time>.</>}{' '}
+          <a href={L('/methodology/')}>Cómo verificamos</a>.
+        </p>
+        ),
+        en: (
+        <p class="muted small">
+          A bar on the left marks the rows where they differ. Numbers in brackets lead to the source on each device's own page, which also has the notes and what to check before you buy.
+          {checked && <> Checked against official sources; the older of the two records was verified on <time datetime={checked}>{formatDate(checked, lang)}</time>.</>}{' '}
+          <a href="/methodology/">How we verify</a>.
+        </p>
+        ),
+      })
+    }
+
+    <h2 id="quick-answers">{T({ en: 'Quick answers', es: 'Respuestas rápidas', de: 'Kurze Antworten', fr: 'Réponses rapides', it: 'Risposte rapide' })}</h2>
+    <dl class="faq">
+      {
+        faq.map((f) => (
+          <div>
+            <dt>{f.q}</dt>
+            <dd>
+              {f.a}{' '}
+              {(worksWith(a, f.e) || worksWith(b, f.e)) && (
+                <a href={L(ecosystemPath(f.e))}>{T({ en: `More ${cat.plural} for ${ECOSYSTEM_LABELS[f.e]}`, es: `Más ${c.plural} para ${ECOSYSTEM_LABELS[f.e]}`, de: `Weitere ${c.plural} für ${ECOSYSTEM_LABELS[f.e]}`, fr: `Plus de ${c.plural} pour ${ECOSYSTEM_LABELS[f.e]}`, it: `${c.gender === 'f' ? 'Altre' : 'Altri'} ${c.plural} per ${ECOSYSTEM_LABELS[f.e]}` })}</a>
+              )}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <p>
+      {T({ en: 'Full details and sources:', es: 'Todos los detalles y fuentes:', de: 'Alle Details und Quellen:', fr: 'Tous les détails et les sources :', it: 'Tutti i dettagli e le fonti:' })} <a href={pathA}>{a.data.name}</a> · <a href={pathB}>{b.data.name}</a>
+    </p>
+  </article>
+
+  {
+    others.length > 0 && (
+      <section aria-labelledby="more">
+        <h2 id="more">{T({ en: 'More comparisons', es: 'Más comparativas', de: 'Weitere Vergleiche', fr: 'Autres comparatifs', it: 'Altri confronti' })}</h2>
+        <ul class="link-list">
+          {others.map((o) => <li><a href={L(comparePath(o))}>{compareName(o)}</a></li>)}
+        </ul>
+      </section>
+    )
+  }
+</Base>

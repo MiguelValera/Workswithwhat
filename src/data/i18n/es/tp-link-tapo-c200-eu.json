@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Tapo nombra Alexa y Google Home para la C200, una cámara interior motorizada (giro e inclinación) que va enchufada a la red eléctrica y se conecta directamente al wifi, sin hub. Grabar en una tarjeta microSD (hasta 512 GB, se vende aparte) es gratis; el historial de clips en la nube necesita un plan Tapo Care. Apple Home, SmartThings y Home Assistant no están confirmados para este modelo, y no hemos encontrado ningún registro de Matter.",
+  "caveats": [
+    "Las emisiones de Alexa y Google van de nube a nube y se cortan a los 10 minutos; tienes que volver a pedirlas para seguir viendo.",
+    "Solo wifi de 2,4 GHz.",
+    "La C200 y la C200C son productos Tapo distintos, cada uno con su página; este registro cubre la C200, que Tapo vende en varias versiones de hardware, de la V1 a la V5.",
+    "La FAQ de Alexa de Tapo nombra solo la C200 (V1), así que la compatibilidad con Alexa en las versiones de hardware más recientes se apoya en la página del producto."
+  ],
+  "notes": {
+    "radios": "Solo wifi de 2,4 GHz (802.11b/g/n); la ficha técnica no indica ningún puerto Ethernet.",
+    "matter": "Las páginas de la Tapo C200 que hemos visto no mencionan ni Matter ni HomeKit, y no hemos encontrado ningún registro de la CSA.",
+    "hubRequired": "Se conecta directamente al wifi de casa; la hoja de especificaciones no indica compatibilidad con hubs, y Alexa se vincula con la cuenta de Tapo sin hub ni puente.",
+    "localControl": "RTSP y ONVIF figuran como compatibles, pero Tapo no dice que el control desde la app funcione sin la nube.",
+    "cameraType": "La página de Tapo Care de Tapo describe la C200 como una cámara de seguridad interior con giro e inclinación. La página alemana del producto indica montaje sobre una mesa o en el techo y ninguna protección frente a la intemperie.",
+    "power": "Adaptador de 9 V CC y 0,6 A para red de 100-240 V; la ficha técnica indica un cable de 3 m.",
+    "localStorage": "Ranura microSD de hasta 512 GB, tarjeta no incluida. Tapo incluye el almacenamiento local entre las funciones que van sin Tapo Care.",
+    "subscription": "Tapo dice que la visión en directo, las notificaciones instantáneas, el audio bidireccional y el almacenamiento local son gratuitos. Los planes Basic y Premium añaden un historial de clips de 7 o 30 días. Los planes varían según el país; no hemos comprobado los precios en la UE.",
+    "compatibility.apple_home": "Ninguna página de Tapo que hayamos encontrado incluye Apple Home ni HomeKit para la C200.",
+    "compatibility.google_home": "La página de la C200 de Tapo dice que funciona con Google Home. La FAQ de Tapo describe la emisión a un Chromecast o a una pantalla de Google, de nube a nube, que se corta a los 10 minutos; la FAQ no nombra la C200.",
+    "compatibility.alexa": "La página de la C200 de Tapo dice que funciona con Alexa. La FAQ de Alexa de Tapo dice que la mayoría de las cámaras Tapo solo muestran la imagen en directo en pantallas Echo o Fire TV, durante 10 minutos cada vez, y que no se pueden encender ni apagar por voz. La FAQ nombra solo la C200 (V1).",
+    "compatibility.smartthings": "Ninguna página de Tapo ni de Samsung que hayamos encontrado incluye SmartThings para la C200.",
+    "compatibility.home_assistant": "La página de la integración de TP-Link de Home Assistant incluye otras cámaras Tapo (C100, C120, C210 y más), pero no la C200. Dice que los dispositivos que no figuran pueden funcionar."
+  },
+  "values": {
+    "power": "Adaptador de 9 V CC (red eléctrica)",
+    "subscription": "Historial de clips en la nube y notificaciones enriquecidas (Tapo Care)"
+  }
+}

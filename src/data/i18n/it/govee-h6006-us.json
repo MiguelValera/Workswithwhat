@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Certificata Matter via Wi-Fi, la Govee H6006 si aggiunge ad Apple Home e SmartThings come luce Matter, mentre Alexa e Google Home usano le integrazioni di Govee. Home Assistant la gestisce in locale con l'integrazione ufficiale Govee lights local. Per l'app Govee Home non serve un hub: raggiunge la lampadina via Wi-Fi a 2,4 GHz o Bluetooth. È una lampadina A19 statunitense con attacco E26 da 1000 lumen a 9 W (Govee la dice equivalente a 75 W), a colori e bianco da 2700 a 6500 K.",
+  "caveats": ["La configurazione Matter richiede un controller Matter, Wi-Fi a 2,4 GHz e IPv6 attivo sul router.", "SmartThings richiede un hub SmartThings compatibile con Matter.", "L'integrazione locale di Home Assistant richiede di attivare la LAN API per ogni lampadina nell'app Govee Home, e alcuni utenti segnalano che l'interruttore manca."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz più Bluetooth secondo l'elenco di specifiche di Govee.",
+    "matter": "La pagina del prodotto indica il controllo Matter; la CSA elenca 'Govee RGBWW Smart LED Bulb' con SKU di famiglia H6008 e SKU di variante H6006 (certificato CSA251E5MAT45367-24, 9 aprile 2025).",
+    "hubRequired": "Per le lampadine significa avere bisogno di un bridge o di un hub per il controllo di base da app. La H6006 si collega via Wi-Fi o Bluetooth all'app Govee Home senza hub.",
+    "localControl": "Home Assistant la controlla tramite la LAN API di Govee. Alcuni utenti segnalano che l'interruttore LAN manca sui loro esemplari, quindi controlla nell'app.",
+    "colorType": "RGBWW: colori più bianco da 2700 a 6500 K.",
+    "lumens": "1000 lm a 9 W; Govee la dice equivalente a 75 W.",
+    "compatibility.apple_home": "Via Matter. Le FAQ Matter di Govee richiedono un controller Matter, Wi-Fi a 2,4 GHz e IPv6 attivo sul router.",
+    "compatibility.google_home": "Govee indica il controllo vocale con Google Assistant tramite la propria integrazione; è possibile anche Matter.",
+    "compatibility.alexa": "Govee indica il controllo vocale con Alexa tramite la propria skill; è possibile anche Matter.",
+    "compatibility.smartthings": "La guida SmartThings di Govee aggiunge i dispositivi Matter scansionando il codice QR Matter; serve un hub SmartThings compatibile con Matter.",
+    "compatibility.home_assistant": "L'integrazione ufficiale Govee lights local elenca la H6006. Usa la LAN API di Govee, che va attivata per ogni dispositivo nell'app Govee Home. Matter è un'alternativa."
+  }
+}

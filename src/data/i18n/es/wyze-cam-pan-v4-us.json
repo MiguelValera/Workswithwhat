@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La Cam Pan v4 de Wyze funciona con Alexa y Google Assistant por wifi de doble banda, se alimenta por USB-C y no necesita hub. Graba 24/7 en una tarjeta microSD de hasta 512 GB; la copia en la nube y la búsqueda con IA requieren un plan Cam Plus. Apple Home, SmartThings, Home Assistant y Matter no están confirmados en las páginas de Wyze.",
+  "caveats": [
+    "La copia en la nube, la búsqueda de vídeo con IA y las alertas descriptivas requieren un plan Cam Plus (2,99 $ al mes por cámara tras 30 días de prueba, según la página de producto de Wyze).",
+    "Para usarla en exterior hace falta el adaptador de corriente Wyze Universal Outdoor Power Adapter, que se vende aparte; el cable incluido no es apto para exterior."
+  ],
+  "notes": {
+    "radios": "Doble banda de 2,4 y 5 GHz, hasta wifi 6.",
+    "matter": "Ninguna de las dos páginas de Wyze menciona Matter y no se ha comprobado ningún registro de la CSA. Que no se mencione no es un no.",
+    "hubRequired": "Los pasos de configuración de Wyze conectan la cámara directamente a una red wifi doméstica de 2,4 o 5 GHz en la app Wyze; no se menciona ninguna estación base.",
+    "localControl": "Las páginas de Wyze no dicen si la visualización en directo o el control funcionan sin su nube, y no mencionan RTSP.",
+    "cameraType": "Wyze la presenta como «Indoor/Outdoor compatible» con un asterisco y la certifica IP65, pero para usarla en exterior hace falta el adaptador Wyze Universal Outdoor Power Adapter, que se vende aparte, porque el cable incluido no es apto para exterior. Tal como se vende es una cámara de interior, por eso figura como de interior.",
+    "power": "Cable USB-C a USB-A de 6 ft con adaptador de 5 V/2 A.",
+    "localStorage": "Tarjeta microSD de hasta 512 GB, que se vende aparte; admite grabación local 24/7.",
+    "subscription": "Página de producto: Cam Plus añade 60 días de copia de vídeo en la nube, búsqueda de vídeo con IA y alertas descriptivas; 30 días de prueba gratuita y después 2,99 $ al mes por cámara.",
+    "compatibility.apple_home": "Las páginas de Wyze de esta cámara no mencionan Apple Home ni HomeKit.",
+    "compatibility.google_home": "Wyze incluye Google Assistant como integración.",
+    "compatibility.alexa": "Wyze incluye Alexa como integración.",
+    "compatibility.smartthings": "Las páginas de Wyze de esta cámara no mencionan SmartThings.",
+    "compatibility.home_assistant": "No se ha encontrado ninguna página oficial de Home Assistant ni de Wyze que confirme este modelo."
+  },
+  "values": {
+    "power": "USB-C (red eléctrica)",
+    "subscription": "Copia en la nube y funciones de IA (Cam Plus)"
+  }
+}

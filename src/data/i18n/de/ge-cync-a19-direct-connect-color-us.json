@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Die GE Cync Direct Connect A19 Color arbeitet mit Apple Home und SmartThings über Matter und mit Alexa und Google Home über Cync, alles über 2,4-GHz-WLAN und ohne Hub. Es ist eine Lampe mit mittlerem Sockel und 800 Lumen. Die CSA führt ein Matter-über-WLAN-Zertifikat für die Cync Full Color Direct Connect A19. Home Assistant ist nicht bestätigt.",
+  "caveats": [
+    "GE verkauft mehrere ähnliche farbige Cync-Lampen; prüfe vor dem Kauf die SKU (93132325 oder 93132326).",
+    "Nur 2,4-GHz-WLAN.",
+    "Apple Home braucht für die Nutzung aus der Ferne eine Apple-Steuerzentrale.",
+    "GEs Shopseite zeigte am 2026-10-12 „Sold out“."
+  ],
+  "notes": {
+    "radios": "2,4-GHz-WLAN, eingerichtet in der Cync-App. Die CSA führt WLAN und Bluetooth; GEs Seite erwähnt Bluetooth nur in einer FAQ.",
+    "matter": "GEs Seite zu den SKUs 93132325 (1er-Pack) und 93132326 (2er-Pack) sagt Matter-kompatibel. Die CSA führt „Cync Full Color Direct Connect LED A19“ von Savant (WLAN und Bluetooth); kein CSA-Eintrag nennt eine SKU.",
+    "hubRequired": "GE sagt, es sei kein Hub und keine Bridge nötig.",
+    "localControl": "GEs Produktseite nennt keine lokale Steuerung. Cyncs allgemeine Lampen-FAQ sagt, Direct-Connect-Lampen ließen sich auch ohne Internet steuern, nennt dieses Modell aber nicht.",
+    "colorType": "Wird als Full Color verkauft; GE erwähnt außerdem einen einstellbaren Weißbereich.",
+    "bulbBase": "GE sagt „medium base“; in den USA ist das E26.",
+    "compatibility.apple_home": "GE sagt, Apple Home funktioniere über Matter; für die Nutzung aus der Ferne ist eine Apple-Steuerzentrale nötig.",
+    "compatibility.google_home": "Cyncs Lampen-FAQ sagt, Direct-Connect-Lampen funktionierten ohne zusätzlichen Hub mit Google Assistant; GE führt Google auch über Matter auf.",
+    "compatibility.alexa": "Cyncs Lampen-FAQ sagt, Direct-Connect-Lampen würden über den Cync-Skill oder Frustration Free Setup mit Alexa verknüpft; GE führt Alexa auch über Matter auf.",
+    "compatibility.smartthings": "GE führt Samsung SmartThings über Matter auf.",
+    "compatibility.home_assistant": "Home Assistant hat eine offizielle Cloud-Integration für Cync (2025.10), doch ihre Dokumentation führt keine Modelle auf, und nichts nennt diese Lampe für die Matter-Integration von HA."
+  },
+  "values": {
+    "bulbBase": "Mittlerer Sockel (A19)"
+  }
+}

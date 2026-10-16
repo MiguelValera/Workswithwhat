@@ -1,0 +1,30 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Nur Zigbee: Die Inovelli Blue Series 2-1 (VZM31-SN) ist ein Wandschalter, der als Dimmer oder als einfacher Ein/Aus-Schalter läuft. Er funktioniert mit oder ohne Neutralleiter, aber ohne einen brauchst du eine Bypass-Lösung an der Leuchte, die nicht im Karton liegt. Er braucht einen Zigbee-Hub: Inovelli führt SmartThings, Hubitat, Home Assistant (ZHA oder Zigbee2MQTT) und Echo-Modelle mit eingebautem Zigbee-Hub. Apple Home und Google Home sind nicht bestätigt.",
+  "caveats": [
+    "Nur Zigbee, er braucht also einen Hub oder Koordinator; Matter ist für dieses Modell nicht bestätigt.",
+    "Ohne Neutralleiter ist ein Bypass nötig, und er liegt nicht bei.",
+    "Erweiterte Funktionen wie Szenen per Mehrfachtipp funktionieren nur an Hubs, die sie unterstützen, und Alexa funktioniert nur mit Echo-Modellen mit eingebautem Zigbee-Hub.",
+    "Die Unterstützung für Apple Home und Google Home ist für diese Version nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Zigbee 3.0.",
+    "matter": "Dies ist die Zigbee-Version. Die Inovelli-Seite deckt auch eine Matter-Version ab, die ein anderes Modell ist; für den VZM31-SN haben wir keinen Matter-Hinweis gefunden.",
+    "hubRequired": "Braucht einen Zigbee-Hub oder Koordinator (SmartThings, Hubitat, ein Echo mit Zigbee oder ein USB-Adapter mit Home Assistant).",
+    "localControl": "Zigbee-Steuerung über einen lokalen Koordinator (ZHA oder Zigbee2MQTT) braucht Inovellis Cloud nicht, aber keine Inovelli- oder Home-Assistant-Seite nennt lokale Steuerung für diesen Schalter ausdrücklich.",
+    "switchForm": "Ersetzt einen Wandschalter; er kann als Dimmer oder als Ein/Aus-Schalter laufen.",
+    "dimmer": "Ein Schalter mit Dimmer- oder Ein/Aus-Modus.",
+    "neutralRequired": "Funktioniert ohne Neutralleiter, aber laut Inovelli muss dann ein Bypass an der Leuchte eingebaut werden, und er liegt nicht bei. Ohne Neutralleiter gibt es keine Verbrauchsmessung, und Wechselschaltungen brauchen einen Inovelli-Zusatzschalter.",
+    "gangs": "Auf den gesehenen Seiten nicht angegeben; er funktioniert in Einzel- und Wechselschaltungen.",
+    "compatibility.apple_home": "Die gesehenen Inovelli-Seiten erwähnen Apple Home für die Zigbee-Version nicht.",
+    "compatibility.google_home": "Die gesehenen Inovelli-Seiten erwähnen Google Home für die Zigbee-Version nicht.",
+    "compatibility.alexa": "Inovelli führt Amazon Echo als kompatiblen Hub, aber nur Echo-Versionen mit eingebautem Zigbee-Hub (Inovelli pflegt eine Kompatibilitätstabelle). Firmware-Funktionen wie Szenen per Mehrfachtipp funktionieren nur, wo der Hub sie unterstützt.",
+    "compatibility.smartthings": "Inovelli führt SmartThings unter den Hubs, die die erweiterten Funktionen des Schalters unterstützen, und veröffentlicht eine SmartThings-Einrichtungsanleitung.",
+    "compatibility.home_assistant": "Inovelli führt Home Assistant über ZHA und Zigbee2MQTT. Beides sind allgemeine Zigbee-Integrationen, keine Inovelli-Integration, und brauchen einen Zigbee-Koordinator wie einen USB-Adapter."
+  },
+  "via": {
+    "alexa": "Amazon Echo mit eingebautem Zigbee-Hub",
+    "smartthings": "SmartThings-Hub (Zigbee)",
+    "home_assistant": "Zigbee-Koordinator (ZHA/Zigbee2MQTT)"
+  }
+}

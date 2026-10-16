@@ -106,6 +106,17 @@ done
 count=$(curl -sS --max-time 20 "$BASE/api/smart-plugs.json" | jq '.count' 2>/dev/null)
 [ -n "$count" ] && [ "$count" -gt 0 ] && ok "JSON API lists $count devices" || fail "JSON API unreadable or empty"
 
+echo "== Email links"
+# Cloudflare Email Obfuscation rewrites mailto: links into /cdn-cgi/l/email-protection
+# and needs a script to decode them, which our CSP blocks: visitors see "[email protected]".
+for path in / /methodology/ /es/; do
+  html=$(curl -sS --max-time 20 "$BASE$path")
+  if echo "$html" | grep -qE 'email-protection|__cf_email__'; then
+    fail "$path: Cloudflare email obfuscation rewrote the mailto links"
+  elif echo "$html" | grep -q 'href="mailto:'; then ok "$path: mailto links intact"
+  else warn "$path: no mailto link found"; fi
+done
+
 echo
 if [ "$fails" -gt 0 ]; then echo "$fails check(s) failed"; exit 1; fi
 echo "All required checks passed"

@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Live-Ansicht auf Echo- und Fire-Geräten mit Bildschirm, Bewegungsansagen und Scharfschalten per Sprache laufen über Blinks Alexa-Integration. Die Blink Mini 2 hängt an einem 5-V-USB-Netzteil, braucht kein Sync Module und kann mit dem separat verkauften wetterfesten Netzteil auch nach draußen. Cloud-Speicher (60 Tage in den USA), Personenerkennung und Extended Live View brauchen einen Blink-Tarif. Ohne Tarif können Clips über ein Sync Module 2 auf einen USB-Stick gehen. Die Unterstützung von Home Assistant für dieses Modell ist nicht bestätigt.",
+  "caveats": [
+    "Lokaler Speicher braucht ein Sync Module 2 und einen USB-Stick, beides separat erhältlich.",
+    "Cloud-Speicher und Personenerkennung brauchen einen Blink-Abo-Tarif.",
+    "Die Unterstützung von Apple Home, Google Home und Home Assistant für dieses Modell ist nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "Blinks Datenblattseite nennt 2,4 GHz 802.11b/g/n; die FAQ sagt, sie brauche eine dauerhaft aktive WLAN-Verbindung.",
+    "matter": "Keine Matter-Angabe auf Blinks Seiten, und in der Suche tauchte kein CSA-Zertifizierungseintrag für eine Blink-Kamera auf.",
+    "hubRequired": "Blink sagt, die Mini 2 brauche kein Sync Module. Ein Sync Module 2 wird nur für lokalen Speicher gebraucht.",
+    "localControl": "Blink sagt nicht, ob eine Steuerung ohne die Cloud funktioniert.",
+    "cameraType": "Wird als Innenkamera zum Einstecken verkauft. Blink sagt, sie könne mit einem separat verkauften Außennetzteil im Freien genutzt werden (IP65).",
+    "power": "Laut Blinks FAQ 5 V, 1 A USB-Strom über das mitgelieferte Netzteil oder das separat verkaufte wetterfeste Netzteil für den Außeneinsatz. Die Datenblattseite nennt einen USB-C-Anschluss.",
+    "localStorage": "Nur mit einem Sync Module 2 im selben Blink-System und einem USB-Stick mit 1–256 GB darin; Clips werden dann ohne Abo auf dem Stick gespeichert.",
+    "subscription": "Blink nennt 60 Tage Cloud-Speicher in den USA mit einem Tarif. Personenerkennung und Extended Live View (bis zu 90 Minuten) brauchen ebenfalls ein Abo.",
+    "compatibility.apple_home": "Keine Blink-Seite gefunden, die HomeKit für die Mini 2 führt. Blinks FAQ zur Outdoor und Indoor 3rd Gen sagt, HomeKit werde zur Markteinführung nicht unterstützt, doch das ist ein anderes Modell.",
+    "compatibility.google_home": "Keine Blink-Seite gefunden, die Google Assistant für die Mini 2 führt. Blinks FAQ zur Outdoor und Indoor 3rd Gen sagt, es werde zur Markteinführung nicht unterstützt, doch das ist ein anderes Modell.",
+    "compatibility.alexa": "Über den Blink-Skill. Blinks Funktionsseite zur Mini 2 führt Live-Ansicht auf Echo- und Fire-Geräten mit Bildschirm, Bewegungsansagen, Scharf- und Unscharfschalten sowie Bewegungserkennung in Alexa-Routinen auf. Eine per Sprache gestartete Live-Ansicht dauert 5 Minuten.",
+    "compatibility.smartthings": "Keine offizielle Seite von Blink oder SmartThings gefunden; nur alte Forenbeiträge, die nicht zitiert werden.",
+    "compatibility.home_assistant": "Home Assistants offizielle Blink-Integration deckt „Mini cameras“ mit eingeschränkter Unterstützung ab (keine Sensoren oder Batteriestatus), doch ihre Dokumentation nennt die Mini 2 nicht, die Unterstützung für dieses Modell ist also nicht bestätigt."
+  },
+  "values": {
+    "power": "USB-5-V-Netzteil (Netzbetrieb)",
+    "subscription": "Cloud-Videospeicher, Personenerkennung (Blink-Tarif)"
+  }
+}

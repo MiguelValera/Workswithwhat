@@ -34,7 +34,7 @@
     "smartthings": {
       "status": "native",
       "sources": ["tapo-l530e-ug", "tplink-smartthings-faq"],
-      "note": "Via TP-Link account linking in the SmartThings app (Partner devices > Tapo). TP-Link's SmartThings FAQ lists the L530E; the user guide names SmartThings too. Basic controls only. The FAQ cited is the US edition."
+      "note": "Via TP-Link account linking in the SmartThings app (Partner devices > Tapo). The L530E user guide names SmartThings; TP-Link's SmartThings FAQ (US edition) names no models and is cited for the basic controls only."
     },
     "home_assistant": {
       "status": "native",
@@ -112,6 +112,7 @@
     }
   ],
   "status": "verified",
-  "updatedAt": "2026-10-11",
-  "verifiedAt": "2026-10-11"
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-11",
+  "variants": ["tp-link-tapo-l530e-uk"]
 }

@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "IKEA PARASOLL ist ein Zigbee-Kontaktsensor für Türen und Fenster, der einen IKEA-DIRIGERA-Hub braucht, um Apple Home, Google Home und Alexa zu erreichen. Ohne den Hub kann er nur eine gekoppelte TRÅDFRI-Lampe auslösen. Die Unterstützung für SmartThings und Home Assistant ist nicht bestätigt. Er nimmt eine AAA-Zelle, und IKEA empfiehlt seine wiederaufladbare LADDA.",
+  "caveats": [
+    "Braucht einen DIRIGERA-Hub, separat erhältlich, für Handy-Benachrichtigungen sowie für Apple Home, Google Home und Alexa.",
+    "IKEAs österreichische Hilfeseite sagt, PARASOLL sei aus dem Sortiment genommen worden, mit MYGGBETT als Ersatz."
+  ],
+  "notes": {
+    "radios": "IKEAs Einführungsmitteilung beschreibt die drei Sensoren als auf Zigbee aufgebaut.",
+    "matter": "Laut IKEA können Zigbee-Geräte am DIRIGERA über dessen Matter-Bridge verfügbar gemacht werden. Keine gesehene Seite sagt, dass PARASOLL selbst bereitgestellt wird, und es wurde kein CSA-Eintrag gefunden.",
+    "hubRequired": "Handy-Benachrichtigungen und Smart-Home-Verknüpfungen brauchen einen DIRIGERA-Hub (separat erhältlich). Ohne einen kann er nur direkt eine gekoppelte TRÅDFRI-Lampe auslösen.",
+    "localControl": "Keine gesehene Seite sagt, ob er über den DIRIGERA ohne Internet funktioniert.",
+    "power": "IKEA empfiehlt eine wiederaufladbare AAA-Zelle LADDA (HR03, 1,2 V).",
+    "compatibility.apple_home": "Laut IKEA funktioniert der Sensor über den DIRIGERA mit Apple HomeKit.",
+    "compatibility.alexa": "IKEAs Beispiel ist die Frage an Alexa, ob die Tür offen ist.",
+    "compatibility.smartthings": "Keine gesehene IKEA- oder SmartThings-Seite behandelt PARASOLL.",
+    "compatibility.home_assistant": "Die gesehene Home-Assistant-Dokumentation nennt keine PARASOLL-Unterstützung. Er koppelt sich nur laut Forenbeiträgen mit ZHA oder Zigbee2MQTT, und über die Matter-Bridge des DIRIGERA erscheint er Berichten zufolge nicht."
+  },
+  "via": {
+    "apple_home": "IKEA-DIRIGERA-Hub",
+    "google_home": "IKEA-DIRIGERA-Hub",
+    "alexa": "IKEA-DIRIGERA-Hub"
+  },
+  "values": {
+    "power": "1 × AAA"
+  }
+}

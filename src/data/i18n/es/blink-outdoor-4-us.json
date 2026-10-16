@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Según Blink, la Outdoor 4 solo es compatible con Alexa: su FAQ remite a la skill Blink SmartHome y nada menciona Apple Home ni Google Home. La cámara tiene IP65 y funciona con dos pilas AA de litio. Llega al wifi a través de un Sync Module, y el almacenamiento local de clips solo funciona con un Sync Module 2 o XR.",
+  "caveats": [
+    "Necesita un Sync Module, que se vende aparte o en packs.",
+    "El almacenamiento local necesita un Sync Module 2 o XR; el Sync Module Core no tiene.",
+    "La detección de personas y la captura de fotos requieren un plan Blink tras el periodo de prueba.",
+    "Las funciones de Alexa figuran para las cámaras Blink en general, no para este modelo por su nombre."
+  ],
+  "notes": {
+    "radios": "802.11b/g/n de 2,4 GHz. Según la FAQ, la cámara llega a tu wifi a través de un Sync Module.",
+    "matter": "Las páginas de la Outdoor 4 no mencionan Matter y no se ha consultado ningún registro de la CSA.",
+    "hubRequired": "Blink dice que la Outdoor 4 necesita un Sync Module para conectarse a tu wifi. Funciona con cualquier Sync Module de Blink, que se vende aparte o en packs.",
+    "localControl": "Blink no indica qué funciona sin su nube.",
+    "cameraType": "Resistente a la intemperie con IP65. Quitar la tapa del puerto anula esa certificación, salvo que la alimentes por USB-C con un adaptador resistente a la intemperie.",
+    "power": "Incluye dos pilas de litio AA de 1,5 V no recargables, con una duración de hasta 2 años con los ajustes por defecto. Hay un adaptador de corriente resistente a la intemperie y un Battery Extension Pack (EE. UU. y Canadá), ambos opcionales y a la venta aparte.",
+    "localStorage": "Solo con un Sync Module 2 (unidad USB) o un Sync Module XR (microSD, EE. UU. y Canadá). Blink dice que el Sync Module Core no admite almacenamiento local.",
+    "subscription": "Incluye una prueba de 30 días de Blink Plus y después un plan Basic o Plus. El almacenamiento en la nube también requiere un plan o la prueba.",
+    "compatibility.apple_home": "La FAQ y las especificaciones técnicas de la Outdoor 4 no mencionan Apple Home.",
+    "compatibility.google_home": "La FAQ y las especificaciones técnicas de la Outdoor 4 no mencionan Google Home ni Assistant.",
+    "compatibility.alexa": "Mediante la skill Blink SmartHome de Alexa; la FAQ de la Outdoor 4 remite a ella. La página de Blink sobre Alexa enumera la vista en directo en Echo y Fire TV, los avisos de movimiento y las rutinas para las cámaras Blink en general, no para este modelo por su nombre.",
+    "compatibility.smartthings": "No se ha encontrado ninguna página oficial de Blink ni de SmartThings.",
+    "compatibility.home_assistant": "Home Assistant tiene una integración de Blink, pero no se han consultado sus documentos para este modelo."
+  },
+  "values": {
+    "power": "2 × AA de litio (o adaptador USB-C)",
+    "subscription": "Detección de personas y captura de fotos (plan Blink)"
+  }
+}

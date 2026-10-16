@@ -1,0 +1,128 @@
+{
+  "category": "smart-thermostat",
+  "brand": "Hive",
+  "model": "Hive Thermostat Mini",
+  "name": "Hive Thermostat Mini (UK)",
+  "regions": [
+    "UK"
+  ],
+  "officialUrl": "https://www.hivehome.com/shop/smart-heating/hive-thermostat-mini",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "hive-mini"
+    ],
+    "note": "Hive says its heating devices use Zigbee for local communication. The page doesn't state a Wi-Fi radio on the thermostat, so none is listed."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter claim found on Hive's Mini page."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "sources": [
+        "hive-mini",
+        "hive-support-homekit"
+      ],
+      "note": "Hive's Mini page lists Apple HomeKit. Hive's HomeKit guide pairs through a Hive Hub and doesn't name the Mini; hot water, boost and schedules aren't controllable in Apple Home.",
+      "via": "Hive Hub"
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "hive-mini",
+        "hive-support-google"
+      ],
+      "note": "Listed on the Mini page. Link your Hive account in Google Home under Home Control; the guide doesn't name the Mini."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "hive-mini"
+      ],
+      "note": "The Mini page lists Amazon Alexa; Hive's Alexa support page doesn't name the Mini."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No Hive page found lists SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant's Hive integration lists Hive Active Heating, Multi-zone and Radiator Valve but not the Thermostat Mini; it is cloud-polling via your Hive account."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Hive's Mini page doesn't say. Its box contents list no hub, and one FAQ on the page says the first thermostat comes with a Hive Hub. UK retailers sell both hub and hubless bundles. Check the bundle you buy."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Hive says the thermostat keeps working and adjusts temperature without internet, but app control returns only when it's back. That isn't local control, so left unconfirmed."
+  },
+  "thermostatType": {
+    "value": "wall",
+    "sources": [
+      "hive-mini"
+    ],
+    "note": "Battery thermostat that switches your boiler through a mains receiver."
+  },
+  "systems": {
+    "value": "UK gas, LPG, oil and electric boilers; OpenTherm on some combis",
+    "sources": [
+      "hive-mini"
+    ],
+    "note": "No heat pumps, solid fuel or storage heaters. Hot water is on/off and boost only. Several Worcester Bosch models are listed as incompatible."
+  },
+  "power": {
+    "value": "4 × AAA; receiver on 230 V mains",
+    "sources": [
+      "hive-mini"
+    ],
+    "note": "Batteries are in the box."
+  },
+  "summary": "Hive lists Alexa, Google Home and Apple HomeKit for the Thermostat Mini, a battery-powered UK thermostat that switches your boiler through a mains receiver. Alexa and Google Home link through your Hive account, while Apple Home goes through a Hive Hub. It suits most gas, LPG, oil and electric boilers, plus OpenTherm on some combis, but not heat pumps. Whether the Mini needs a hub isn't stated, and Matter isn't claimed.",
+  "caveats": [
+    "Hive doesn't state whether the Mini needs a Hive Hub; check the bundle you buy.",
+    "Not for heat pumps, solid fuel boilers or storage heaters, and several Worcester Bosch models are listed as incompatible.",
+    "Hot water can only be switched on or off, scheduled or boosted for 1 to 6 hours, not set to a temperature.",
+    "OpenTherm works on compatible combi boilers and single-zone systems only.",
+    "In Apple Home, hot water, boost and schedules still need the Hive app."
+  ],
+  "sources": [
+    {
+      "id": "hive-mini",
+      "url": "https://www.hivehome.com/shop/smart-heating/hive-thermostat-mini",
+      "title": "Hive Thermostat Mini",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hive-support-homekit",
+      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=240322121756750",
+      "title": "Integrating Hive Devices with Apple HomeKit - Hive Support",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hive-support-google",
+      "url": "https://support.hivehome.com/portal/app/portlets/results/viewsolution.jsp?solutionid=250130091614183",
+      "title": "Connecting Hive with Google Home - Hive Support",
+      "publisher": "Hive",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Nur Alexa, und Amazon sagt das ausdrücklich: Die Amazon Smart Plug unterstützt keine anderen Sprachassistenten oder Smart-Home-Hubs, Apple Home, Google Home und SmartThings scheiden also aus. Einrichtung und Steuerung laufen in der Alexa-App; einen Hub brauchst du nicht, ein Echo ist optional. Es ist eine US-Steckdose für 2,4-GHz-WLAN mit 120 V / 15 A, wobei Amazon keine Wattzahl angibt. Auch zur Verbrauchsmessung und dazu, ob sie bei Internetausfall funktioniert, sagt Amazon nichts.",
+  "caveats": [
+    "Nur Alexa: Laut Amazon funktioniert sie nicht mit anderen Sprachassistenten oder Smart-Home-Hubs und erscheint daher nicht in Apple Home, Google Home oder SmartThings.",
+    "Nur 2,4-GHz-WLAN.",
+    "Für Home Assistant fanden wir keine offizielle Integration; Besitzer erreichen sie nur indirekt über Alexa-Routinen.",
+    "Amazon sagt nicht, ob die Steckdose ohne Internetverbindung weiterarbeitet."
+  ],
+  "notes": {
+    "radios": "Nur 2,4-GHz-WLAN (802.11 b/g/n). Händlerangebote und FCC-Unterlagen deuten auch auf Bluetooth hin, doch Amazons Seite erwähnt es nicht, daher bleibt es draußen.",
+    "matter": "Amazons Angebot erwähnt Matter nicht und sagt, die Steckdose sei ausschließlich für die Verwendung mit Alexa gemacht. Wir fanden keinen CSA-Eintrag, aber auch keine ausdrückliche Aussage.",
+    "hubRequired": "Kein Smart-Home-Hub nötig, aber die Einrichtung erfordert die Alexa-App (ein Echo ist optional).",
+    "localControl": "Amazon sagt nicht, ob die Steckdose ohne Internet funktioniert.",
+    "energyMonitoring": "Amazons Angebot erwähnt keine Verbrauchsmessung.",
+    "maxLoadWatts": "Amazon nennt 120 VAC, 60 Hz, max. 15 A, gibt aber keine Wattzahl an.",
+    "compatibility.apple_home": "Amazon sagt, die Steckdose unterstütze keine anderen Sprachassistenten oder Smart-Home-Hubs.",
+    "compatibility.google_home": "Amazon sagt, die Steckdose unterstütze keine anderen Sprachassistenten oder Smart-Home-Hubs.",
+    "compatibility.alexa": "Wird in der Alexa-App eingerichtet und gesteuert.",
+    "compatibility.smartthings": "Amazon sagt, die Steckdose unterstütze keine anderen Sprachassistenten oder Smart-Home-Hubs.",
+    "compatibility.home_assistant": "Amazons allgemeiner Satz „keine anderen Smart-Home-Hubs“ nennt Home Assistant nicht. Eine offizielle Integration fanden wir nicht; Forennutzer steuern sie nur indirekt über Alexa-Routinen."
+  }
+}

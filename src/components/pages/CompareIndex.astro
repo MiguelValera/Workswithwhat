@@ -1,0 +1,72 @@
+---
+// Every "X vs Y" page, by category and market (/compare/, /es/comparar/).
+import Base from '../../layouts/Base.astro';
+import { CATEGORIES, catText } from '../../lib/categories';
+import { getComparisons, compareName, comparePath } from '../../lib/compare';
+import { MARKETS, marketText } from '../../lib/markets';
+import { pick, langOf, localize } from '../../i18n/lang';
+
+const lang = langOf(Astro.url.pathname);
+const T = pick(lang);
+const L = (p: string) => localize(p, lang);
+const all = (await getComparisons()).filter((x) => x.indexed);
+const groups = CATEGORIES.map((cat) => ({
+  cat,
+  c: catText(cat, lang),
+  markets: MARKETS.map((m) => ({ m, items: all.filter((x) => x.a.data.category === cat.key && x.market === m) })).filter((g) => g.items.length),
+})).filter((g) => g.markets.length);
+const title = T({
+  en: 'Smart home device comparisons',
+  es: 'Comparativas de dispositivos domóticos',
+  de: 'Smart-Home-Geräte im Vergleich',
+  fr: 'Comparatifs d’appareils connectés',
+  it: 'Confronti tra dispositivi smart home',
+});
+const description = T({
+  en: `${all.length} head-to-head comparisons: two devices of the same category and region, with Matter, Apple Home, Google Home, Alexa, SmartThings and Home Assistant side by side.`,
+  es: `${all.length} comparativas cara a cara: dos dispositivos de la misma categoría y región, con Matter, Apple Home, Google Home, Alexa, SmartThings y Home Assistant lado a lado.`,
+  de: `${all.length} direkte Vergleiche: zwei Geräte derselben Kategorie und Region, mit Matter, Apple Home, Google Home, Alexa, SmartThings und Home Assistant nebeneinander.`,
+  fr: `${all.length} comparatifs face à face : deux appareils de la même catégorie et de la même région, avec Matter, Apple Home, Google Home, Alexa, SmartThings et Home Assistant côte à côte.`,
+  it: `${all.length} confronti diretti: due dispositivi della stessa categoria e regione, con Matter, Apple Home, Google Home, Alexa, SmartThings e Home Assistant affiancati.`,
+});
+---
+
+<Base title={title} description={description} crumbs={[{ name: T({ en: 'Comparisons', es: 'Comparativas', de: 'Vergleiche', fr: 'Comparatifs', it: 'Confronti' }), path: '/compare/' }]}>
+  <h1>{title}</h1>
+  <p class="lede">
+    {
+      T({
+        en: 'Each comparison puts two devices sold in the same region next to each other and shows where they differ: which ecosystems they work with, how they connect, and their specs. Every value links to its source.',
+        es: 'Cada comparativa enfrenta dos dispositivos que se venden en la misma región y muestra dónde difieren: con qué ecosistemas funcionan, cómo se conectan y sus especificaciones. Cada dato enlaza a su fuente.',
+        de: 'Jeder Vergleich stellt zwei Geräte aus derselben Region nebeneinander und zeigt, wo sie sich unterscheiden: mit welchen Ökosystemen sie funktionieren, wie sie sich verbinden und welche technischen Daten sie haben. Jeder Wert verlinkt auf seine Quelle.',
+        fr: 'Chaque comparatif met côte à côte deux appareils vendus dans la même région et montre ce qui les distingue : les écosystèmes compatibles, la connexion et les caractéristiques. Chaque valeur renvoie à sa source.',
+        it: 'Ogni confronto mette fianco a fianco due dispositivi venduti nella stessa regione e mostra dove differiscono: con quali ecosistemi funzionano, come si collegano e le loro specifiche. Ogni valore rimanda alla sua fonte.',
+      })
+    }
+  </p>
+  <nav class="toc" aria-label={T({ en: 'Jump to category', es: 'Ir a la categoría', de: 'Zur Kategorie springen', fr: 'Aller à la catégorie', it: 'Vai alla categoria' })}>
+    <span class="toc-label">{T({ en: 'Category:', es: 'Categoría:', de: 'Kategorie:', fr: 'Catégorie :', it: 'Categoria:' })}</span>
+    {groups.map((g) => <a href={`#${g.cat.path}`}>{g.c.label}</a>)}
+  </nav>
+  {
+    groups.map((g) => (
+      <section aria-labelledby={g.cat.path}>
+        <h2 id={g.cat.path}>{g.c.label}</h2>
+        {g.markets.map(({ m, items }) => (
+          <>
+            <h3 id={`${g.cat.path}-${m.key}`}>{T({
+              en: `For ${m.phrase}`,
+              es: `Para ${marketText(m, lang).phrase}`,
+              de: `Für ${marketText(m, lang).phrase}`,
+              fr: `Pour ${marketText(m, lang).phrase}`,
+              it: `Per ${marketText(m, lang).phrase}`,
+            })}</h3>
+            <ul class="link-list">
+              {items.map((x) => <li><a href={L(comparePath(x))}>{compareName(x)}</a></li>)}
+            </ul>
+          </>
+        ))}
+      </section>
+    ))
+  }
+</Base>

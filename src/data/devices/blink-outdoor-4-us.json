@@ -1,0 +1,142 @@
+{
+  "category": "smart-camera",
+  "brand": "Blink",
+  "model": "Outdoor 4",
+  "name": "Blink Outdoor 4 (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://support.blinkforhome.com/outdoor4-camera-tech-specs",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "blink-outdoor-4-specs"
+    ],
+    "note": "2.4 GHz 802.11b/g/n. Per the FAQ the camera reaches your Wi-Fi through a Sync Module."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "The Outdoor 4 pages do not mention Matter, and no CSA listing was checked."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The Outdoor 4 FAQ and tech specs do not mention Apple Home."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The Outdoor 4 FAQ and tech specs do not mention Google Home or Assistant."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "blink-outdoor-4-faq",
+        "blink-alexa-features"
+      ],
+      "note": "Through the Blink SmartHome Alexa skill; the Outdoor 4 FAQ points to it. Blink's Alexa page lists live view on Echo and Fire TV, motion announcements and routines for Blink cameras in general, not this model by name."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official Blink or SmartThings page found."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Home Assistant has a Blink integration, but its docs were not checked for this model."
+    }
+  },
+  "hubRequired": {
+    "value": true,
+    "sources": [
+      "blink-outdoor-4-faq",
+      "blink-sync-module-core-faq"
+    ],
+    "note": "Blink says the Outdoor 4 needs a Sync Module to connect to your Wi-Fi. It works with any Blink Sync Module and is sold separately or in bundles."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Blink does not state what works without its cloud."
+  },
+  "cameraType": {
+    "value": "outdoor",
+    "sources": [
+      "blink-outdoor-4-faq"
+    ],
+    "note": "IP65 weather resistant. Removing the port cover voids that rating unless it is powered over USB-C with a weather-resistant adapter."
+  },
+  "power": {
+    "value": "2 × AA lithium (or USB-C adapter)",
+    "sources": [
+      "blink-outdoor-4-specs",
+      "blink-outdoor-4-faq"
+    ],
+    "note": "Two AA 1.5 V non-rechargeable lithium batteries included, rated up to 2 years at default settings. Optional weather-resistant power adapter or Battery Extension Pack (US and Canada), both sold separately."
+  },
+  "localStorage": {
+    "value": true,
+    "sources": [
+      "blink-outdoor-4-faq",
+      "blink-sync-module-core-faq"
+    ],
+    "note": "Only with a Sync Module 2 (USB drive) or Sync Module XR (microSD, US and Canada). Blink says the Sync Module Core does not support local storage."
+  },
+  "subscription": {
+    "value": "Person detection and photo capture (Blink plan)",
+    "sources": [
+      "blink-outdoor-4-faq",
+      "blink-sync-module-core-faq"
+    ],
+    "note": "Includes a 30-day Blink Plus trial, then a Basic or Plus plan. Cloud storage also needs a plan or trial."
+  },
+  "summary": "Blink Outdoor 4 is Alexa-only as far as Blink says: its FAQ points to the Blink SmartHome skill, and nothing mentions Apple Home or Google Home. The camera is IP65 and runs on two AA lithium batteries. It reaches Wi-Fi through a Sync Module, and local clip storage works only with a Sync Module 2 or XR.",
+  "caveats": [
+    "Needs a Sync Module, sold separately or in bundles.",
+    "Local storage needs a Sync Module 2 or XR; the Sync Module Core has none.",
+    "Person detection and photo capture need a Blink plan after the trial.",
+    "Alexa features are listed for Blink cameras in general, not for this model by name."
+  ],
+  "sources": [
+    {
+      "id": "blink-outdoor-4-specs",
+      "url": "https://support.blinkforhome.com/outdoor4-camera-tech-specs",
+      "title": "Blink Outdoor 4 Technical Specifications",
+      "publisher": "Blink",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "blink-outdoor-4-faq",
+      "url": "https://support.blinkforhome.com/en_US/outdoor4-camera-faq",
+      "title": "Blink Outdoor 4 camera FAQ",
+      "publisher": "Blink",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "blink-sync-module-core-faq",
+      "url": "https://support.blinkforhome.com/en_US/sync-module-core-faq",
+      "title": "Sync Module Core FAQ",
+      "publisher": "Blink",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "blink-alexa-features",
+      "url": "https://support.blinkforhome.com/en_US/supported-features-alexa/supported-alexa-features",
+      "title": "Alexa Supported Features",
+      "publisher": "Blink",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

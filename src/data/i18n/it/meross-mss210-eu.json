@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Controlla la confezione prima di comprare la Meross MSS210 (EU) per Apple Home: Meross vende versioni HomeKit (MSS210HK) e non HomeKit con lo stesso nome, e il suo negozio dice che solo quella HomeKit funziona con Apple Home. Tutte le versioni funzionano con Alexa, Google Home e SmartThings tramite il tuo account Meross. È una presa Wi-Fi a 2,4 GHz da 16 A, senza hub e senza monitoraggio dei consumi.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Solo la versione HomeKit (MSS210HK) funziona con Apple Home, secondo il negozio di Meross.", "Nessun monitoraggio dei consumi; Meross vende prese con misuratore come modelli separati, come la MSS210PZF e la MSS310.", "Matter non è confermato per il modello europeo; non abbiamo trovato nessuna scheda CSA.", "Home Assistant non ha un'integrazione ufficiale Meross; i proprietari si affidano ai componenti della community."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz (802.11 b/g/n) con un'antenna interna.",
+    "matter": "La pagina europea e la scheda tecnica di Meross elencano HomeKit, Alexa, Google e SmartThings ma non Matter, e non abbiamo trovato nessuna scheda CSA. Solo una pagina del negozio Meross UK per la MSS210HK cita Matter, quindi lo lasciamo non confermato.",
+    "hubRequired": "Meross dice che non serve nessun hub; si collega al tuo Wi-Fi a 2,4 GHz.",
+    "localControl": "Meross non dice se funzioni senza internet. La versione HomeKit dovrebbe funzionare in locale in Apple Home, ma non abbiamo trovato nessuna pagina Meross che lo confermi.",
+    "energyMonitoring": "La scheda europea di Meross indica 'Energy Monitor: No'. Meross vende prese con misuratore come modelli separati (ad esempio MSS210PZF, MSS310).",
+    "maxLoadWatts": "Meross dà la versione EU/FR per 16 A al massimo ma non indica i watt. A 230 V sarebbero circa 3680 W.",
+    "compatibility.apple_home": "Venduta in versioni HomeKit (MSS210HK) e non HomeKit con un solo nome. Il negozio di Meross dice che solo la versione HomeKit supporta Apple Home; la pagina europea del prodotto elenca HomeKit senza distinguerle. Cerca l'etichetta HomeKit.",
+    "compatibility.google_home": "Meross elenca Google Assistant; funziona collegando il tuo account Meross.",
+    "compatibility.alexa": "Meross elenca Amazon Alexa; funziona tramite la skill Meross collegata al tuo account Meross.",
+    "compatibility.smartthings": "Meross elenca SmartThings; funziona collegando il tuo account Meross nell'app SmartThings.",
+    "compatibility.home_assistant": "Home Assistant non ha un'integrazione ufficiale Meross. I proprietari usano componenti della community (HACS), e la versione HomeKit può abbinarsi tramite HomeKit Device, ma nessuno dei due è documentato per questo modello."
+  }
+}

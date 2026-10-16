@@ -1,14 +1,14 @@
 import type { APIRoute } from 'astro';
-import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemSlug, getPublishedDevices, worksWith } from '../lib/devices';
-import { CATEGORIES } from '../lib/categories';
-import { ES_ENABLED } from '../site.config';
+import { ECOSYSTEMS, ECOSYSTEM_LABELS, devicePath, ecosystemPath, getActiveCategories, getPublishedDevices, worksWith } from '../lib/devices';
+import { ACTIVE_LANGS, localize } from '../i18n/lang';
 import { byMarket, getActiveMarkets, getRegionPages } from '../lib/markets';
+import { compareName, comparePath, getComparisons } from '../lib/compare';
 
 // llms.txt (https://llmstxt.org): a plain map of the site for AI assistants.
 export const GET: APIRoute = async ({ site }) => {
   const devices = await getPublishedDevices();
   const url = (p: string) => new URL(p, site).href;
-  const cats = CATEGORIES.filter((c) => devices.some((d) => d.data.category === c.key));
+  const cats = await getActiveCategories();
   const regionPages = await getRegionPages();
   const markets = await getActiveMarkets();
   const lines = [
@@ -25,9 +25,11 @@ export const GET: APIRoute = async ({ site }) => {
     ...markets.map((m) => `- [${m.label} devices as JSON](${url(`/api/${m.key}/devices.json`)}): only models sold in ${m.phrase}; per category at /api/${m.key}/<category>.json`),
     `- [Full text for LLMs](${url('/llms-full.txt')}): every device page as Markdown`,
     `- [How we verify](${url('/methodology/')}): sourcing rules and label definitions`,
-    ...(ES_ENABLED
-      ? [`- [Spanish version](${url('/es/')}): the same pages and data in Spanish (Spain), under /es/ with Spanish paths, e.g. ${url('/es/enchufes-inteligentes/')}`]
-      : []),
+    ...ACTIVE_LANGS.filter((l) => l !== 'en').map((l) => {
+      const name = { es: 'Spanish', de: 'German', fr: 'French', it: 'Italian' }[l];
+      const where = l === 'es' ? ' (Spain)' : '';
+      return `- [${name} version](${url(`/${l}/`)}): the same pages and data in ${name}${where}, under /${l}/ with ${name} paths, e.g. ${url(localize('/smart-plugs/', l))}`;
+    }),
     '',
   ];
   lines.push(
@@ -53,8 +55,17 @@ export const GET: APIRoute = async ({ site }) => {
   lines.push(
     '## By ecosystem',
     '',
-    ...ECOSYSTEMS.map((e) => `- [Devices that work with ${ECOSYSTEM_LABELS[e]}](${url(`/works-with/${ecosystemSlug(e)}/`)})`),
+    ...ECOSYSTEMS.map((e) => `- [Devices that work with ${ECOSYSTEM_LABELS[e]}](${url(ecosystemPath(e))})`),
     `- [Matter devices](${url('/works-with/matter/')}): Matter-certified devices split by Wi-Fi and Thread`,
+    '',
+  );
+  const comparisons = (await getComparisons()).filter((c) => c.indexed);
+  lines.push(
+    '## Comparisons',
+    '',
+    `Head-to-head pages for two devices of the same category and market, with every ecosystem, Matter and spec side by side. [All comparisons](${url('/compare/')})`,
+    '',
+    ...comparisons.map((c) => `- [${compareName(c)}](${url(comparePath(c))})`),
     '',
   );
   return new Response(lines.join('\n'), { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });

@@ -1,0 +1,144 @@
+{
+  "category": "light-strip",
+  "brand": "TP-Link Tapo",
+  "model": "Tapo L900-5",
+  "name": "Tapo L900-5 (EU)",
+  "regions": [
+    "EU"
+  ],
+  "officialUrl": "https://www.tp-link.com/gr/home-networking/smart-bulb/tapo-l900-5/",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "tapo-l900-gr"
+    ],
+    "note": "2.4 GHz only (IEEE 802.11 b/g/n)."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "tapo-l900-gr",
+      "tapo-l900-eu-guide"
+    ],
+    "note": "Neither the product page nor the EU user guide mentions Matter; absence is not proof, so left unconfirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [
+        "tapo-l900-gr"
+      ],
+      "note": "The page only mentions Siri Shortcuts, not Apple Home or HomeKit."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "tapo-l900-gr",
+        "tapo-l900-eu-guide"
+      ],
+      "note": "Voice control through Google Assistant, set up with the Tapo app's third-party services."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "tapo-l900-gr",
+        "tapo-l900-eu-guide"
+      ],
+      "note": "Voice control through Amazon Alexa, set up with the Tapo app's third-party services."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [
+        "tapo-l900-gr"
+      ],
+      "note": "Not mentioned on TP-Link's page."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-tplink"
+      ],
+      "note": "Listed under Tapo light strips in Home Assistant's official TP-Link integration, which connects locally and needs TP-Link account credentials."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "tapo-l900-gr",
+      "tapo-l900-eu-guide"
+    ],
+    "note": "TP-Link says no hub is required; it connects to home Wi-Fi."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "ha-tplink"
+    ],
+    "note": "Home Assistant's TP-Link integration connects locally without the TP-Link cloud; TP-Link's own app control is cloud-based."
+  },
+  "colorType": {
+    "value": "color",
+    "sources": [
+      "tapo-l900-gr"
+    ],
+    "note": "Over 16 million colours plus warm white and cool daylight."
+  },
+  "lengthM": {
+    "value": 5,
+    "sources": [
+      "tapo-l900-gr"
+    ],
+    "note": "5 m strip (5000 mm); it can be cut, but cut-off pieces can't be reused."
+  },
+  "multiZone": {
+    "value": null,
+    "sources": [
+      "tapo-l900-gr"
+    ],
+    "note": "TP-Link doesn't describe separate colours along one strip, so this is unconfirmed."
+  },
+  "power": {
+    "value": "Mains adapter (12 V DC)",
+    "sources": [
+      "tapo-l900-gr"
+    ],
+    "note": "Input 220–240 V, output 12 VDC 1.0 A, max 13.5 W."
+  },
+  "summary": "Tapo L900-5 (EU) pairs with Alexa and Google Assistant once you link them in the Tapo app, and with Home Assistant through the TP-Link integration. This 5 m strip runs on 2.4 GHz Wi-Fi with no hub and shows 16 million colours plus warm and cool white. TP-Link doesn't mention Apple Home, SmartThings or Matter.",
+  "caveats": [
+    "2.4 GHz Wi-Fi only.",
+    "The strip can be cut, but the cut-off pieces can't be reused.",
+    "TP-Link doesn't list Apple Home, SmartThings or Matter for this strip."
+  ],
+  "sources": [
+    {
+      "id": "tapo-l900-gr",
+      "url": "https://www.tp-link.com/gr/home-networking/smart-bulb/tapo-l900-5/",
+      "title": "Tapo L900-5 | Smart Wi-Fi Light Strip | TP-Link Greece",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tapo-l900-eu-guide",
+      "url": "https://static.tp-link.com/upload/manual/2022/202206/20220623/1910013213_Tapo%20L900-5(EU)_UG_V1.pdf",
+      "title": "Tapo Smart Light Strip, Multicolor - User Guide (EU)",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

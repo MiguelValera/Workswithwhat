@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Der Eve Thermo (5. Generation) ist ein Heizkörperthermostat, der laut Eve lokal arbeitet, ohne Cloud, Abo oder Registrierung. Er nutzt Matter über Thread und ist für Apple Home, Google Home, Alexa, SmartThings und Home Assistant aufgeführt. Deine Plattform braucht einen Hub, der Matter-Controller und Thread-Border-Router zugleich ist. Er passt auf Ventile mit M30 × 1,5, und Adapter für Danfoss RA, RAV und RAVL liegen bei.",
+  "caveats": [
+    "Braucht einen Hub deiner Plattform mit den Funktionen Matter-Controller und Thread-Border-Router; eine Eve-Bridge ist nicht nötig.",
+    "Laut Eve werden Zeitpläne auf dem Gerät bei Alexa oder SmartThings nicht unterstützt und brauchen die Eve-App."
+  ],
+  "notes": {
+    "radios": "Die CSA führt Thread und Bluetooth für den Eve Thermo.",
+    "matter": "Eve brachte die 5. Generation im Dezember 2025 mit Matter über Thread heraus. Der zitierte CSA-Eintrag (Firmware 3.6.5, zertifiziert am 21 Nov 2025, Matter 1.4.1) passt zu dieser Markteinführung; ein verwandter Eintrag mit anderer Produkt-ID hat dieselbe Firmware.",
+    "hubRequired": "Eine Eve-Bridge ist nicht nötig, doch Eve sagt, du brauchst einen Hub deiner Plattform mit den Funktionen Matter-Controller und Thread-Border-Router.",
+    "localControl": "Eve sagt, er arbeite lokal ohne Cloud, Abo oder Registrierung, und die Zeitpläne seien auf dem Ventil selbst gespeichert.",
+    "systems": "Eve sagt, über 90 Prozent der Heizkörper passten ohne Adapter. Eve liefert nur die Adapter für Danfoss RA, RAV und RAVL; andere Ventile brauchen einen Adapter eines Drittanbieters.",
+    "power": "Tests und Händler sagen 2 × AA, doch keine in der Suche gesehene Eve-Seite bestätigte es.",
+    "compatibility.apple_home": "Eve sagt, die erste Plattform brauche einen Hub mit den Funktionen Matter-Controller und Thread-Border-Router.",
+    "compatibility.google_home": "Eve führt Google Home auf. Eve sagt, die Zeitpläne auf dem Gerät brauchten die Eve-App, die es für Nutzer von Google Home auf Android gibt.",
+    "compatibility.alexa": "Eve führt Alexa über Matter auf, mit Echo-Geräten als Hubs. Eve sagt, Zeitpläne auf dem Gerät würden bei Alexa nicht unterstützt.",
+    "compatibility.smartthings": "Eve führt Samsung SmartThings über Matter auf. Eve sagt, Zeitpläne auf dem Gerät würden bei SmartThings nicht unterstützt.",
+    "compatibility.home_assistant": "Home Assistants Eve-Seite führt den Eve Thermo als Matter-Gerät, lokal über die Matter-Integration betrieben. Braucht einen Thread-Border-Router."
+  },
+  "values": {
+    "systems": "Ventile M30 × 1,5; Adapter Danfoss RA, RAV, RAVL im Lieferumfang"
+  }
+}

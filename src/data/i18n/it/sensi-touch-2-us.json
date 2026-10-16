@@ -1,0 +1,19 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Sensi Touch 2 funziona con Alexa, Google Home e SmartThings, ma non con Apple Home: la pagina HomeKit di Sensi lo elenca come non compatibile. È un termostato da parete per impianti monostadio, multistadio e a pompa di calore, con Wi-Fi e Bluetooth integrati. Ogni installazione richiede un filo C (20-30 V CA), oppure il Common Wire Kit di Sensi.",
+  "caveats": ["Non compatibile con Apple HomeKit, secondo la pagina di supporto di Sensi.", "Richiede un filo C; il Common Wire Kit (SA11) è l'opzione quando manca.", "Sensi non menziona Matter né Home Assistant."],
+  "notes": {
+    "radios": "La scheda tecnica indica 802.11 a/b/g/n a 2,4 e 5 GHz più Bluetooth LE.",
+    "matter": "Matter non è menzionato nelle pagine di Sensi né nella scheda tecnica; nessuna scheda CSA è stata controllata.",
+    "hubRequired": "Le pagine di Sensi descrivono il controllo Wi-Fi tramite l'app Sensi ma non dicono se serva o meno un bridge.",
+    "localControl": "Le pagine di Sensi insistono sul controllo remoto tramite la sua app; il controllo locale non è indicato.",
+    "systems": "La scheda tecnica indica caldaia a gas o elettrica, climatizzatore, caldaia e pompa di calore (4H/2C), più dual fuel senza sensore esterno. Modelli 1F96U-42WF (bianco) e 1F96U-42WFB (nero).",
+    "power": "La scheda tecnica dice che tutti gli impianti richiedono un filo comune; Sensi vende un Common Wire Kit (SA11) per le case che non ne hanno uno.",
+    "compatibility.apple_home": "La pagina di supporto HomeKit di Sensi elenca il Touch 2 sotto «Not Apple HomeKit compatible»; solo il Sensi Touch originale è elencato come compatibile.",
+    "compatibility.google_home": "Funziona con Google Assistant e Google Home tramite il collegamento nell'app Sensi.",
+    "compatibility.alexa": "Comandi vocali, routine e Alexa Energy Dashboard tramite la skill Sensi.",
+    "compatibility.smartthings": "Sensi elenca Samsung SmartThings; la sua pagina dice che può accendere o spegnere il riscaldamento.",
+    "compatibility.home_assistant": "Le pagine di Sensi non menzionano Home Assistant."
+  },
+  "values": {"power": "Filo C obbligatorio (20-30 V CA)", "systems": "Universale: monostadio, multistadio e pompa di calore"}
+}

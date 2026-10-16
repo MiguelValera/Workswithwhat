@@ -1,11 +1,12 @@
 ---
 // Matter-certified devices: every market (/works-with/matter/) or one (/us/works-with/matter/).
 import Base from '../../layouts/Base.astro';
+import DeviceNameCell from '../DeviceNameCell.astro';
 import Refs from '../Refs.astro';
 import { deviceText, devicePathIn, getPublishedDevices, getTranslations, categoryPhrase, radioList, type Device } from '../../lib/devices';
 import { CATEGORIES, catText, specFacts } from '../../lib/categories';
 import { byMarket, marketOf, marketText, type Market } from '../../lib/markets';
-import { langOf } from '../../i18n/lang';
+import { pick, capitalize, langOf } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
 
 interface Props {
@@ -13,9 +14,9 @@ interface Props {
 }
 const { market } = Astro.props;
 const lang = langOf(Astro.url.pathname);
-const es = lang === 'es';
+const T = pick(lang);
 const t = ui(lang);
-const translations = await getTranslations();
+const translations = await getTranslations(lang);
 const mt = market && marketText(market, lang);
 const all = (await getPublishedDevices()).filter((d) => !market || marketOf(d) === market);
 const path = market ? `/${market.key}/works-with/matter/` : '/works-with/matter/';
@@ -32,16 +33,25 @@ const groups = CATEGORIES.map((cat) => {
 }).filter((g) => g.list.length > 0);
 const { short: what, long: whatLong } = categoryPhrase(groups.map((g) => catText(g.cat, lang).plural), lang);
 
-const title = es
-  ? `${what.replace(/^./, (c) => c.toUpperCase())} con Matter${mt ? ` para ${mt.phrase}` : ''}`
-  : market
-    ? `Matter ${what} for ${market.phrase}`
-    : `Matter ${what}`;
-const description = es
-  ? `${matter.length} ${whatLong} con certificación Matter${mt ? ` para ${mt.phrase}` : ''}, separados por wifi y Thread, con lo que necesita cada uno para funcionar en Apple Home, Google Home, Alexa, SmartThings y Home Assistant.`
-  : `${matter.length} Matter-certified ${whatLong}${market ? ` for ${market.phrase}` : ''}, split by Wi-Fi and Thread, with what each needs to work in Apple Home, Google Home, Alexa, SmartThings and Home Assistant.`;
-const wifiN = matter.filter((d) => d.data.matter.transport === 'wifi').length;
-const threadN = matter.filter((d) => d.data.matter.transport === 'thread').length;
+const forM = (w: string) => (mt ? ` ${w} ${mt.phrase}` : '');
+const title = T({
+  en: market ? `Matter ${what} for ${market.phrase}` : `Matter ${what}`,
+  es: `${capitalize(what)} con Matter${forM('para')}`,
+  de: `Matter-fähige ${what}${forM('für')}`,
+  fr: `${capitalize(what)} compatibles Matter${forM('pour')}`,
+  it: `${capitalize(what)} con Matter${forM('per')}`,
+});
+const description = T({
+  en: `${matter.length} Matter-certified ${whatLong}${market ? ` for ${market.phrase}` : ''}, split by Wi-Fi and Thread, with what each needs to work in Apple Home, Google Home, Alexa, SmartThings and Home Assistant.`,
+  es: `${matter.length} ${whatLong} con certificación Matter${forM('para')}, separados por wifi y Thread, con lo que necesita cada uno para funcionar en Apple Home, Google Home, Alexa, SmartThings y Home Assistant.`,
+  de: `${matter.length} Matter-zertifizierte ${whatLong}${forM('für')}, getrennt nach WLAN und Thread, mit dem, was jedes Gerät für Apple Home, Google Home, Alexa, SmartThings und Home Assistant braucht.`,
+  fr: `${matter.length} ${whatLong} avec certification Matter${forM('pour')}, en Wi-Fi ou en Thread, avec ce qu’il faut à chacun pour fonctionner dans Apple Home, Google Home, Alexa, SmartThings et Home Assistant.`,
+  it: `${matter.length} ${whatLong} con certificazione Matter${forM('per')}, via Wi-Fi o Thread, con ciò che serve a ognuno per funzionare in Apple Home, Google Home, Alexa, SmartThings e Home Assistant.`,
+});
+const overWifi = T({ en: 'over Wi-Fi', es: 'por wifi', de: 'über WLAN', fr: 'en Wi-Fi', it: 'via Wi-Fi' });
+const overThread = T({ en: 'over Thread', es: 'por Thread', de: 'über Thread', fr: 'en Thread', it: 'via Thread' });
+const wifiN = groups.reduce((n, g) => n + g.wifi.length, 0);
+const threadN = groups.reduce((n, g) => n + g.thread.length, 0);
 ---
 
 <Base
@@ -59,31 +69,78 @@ const threadN = matter.filter((d) => d.data.matter.transport === 'thread').lengt
         ]
   }
 >
-  <h1>{title.replace(/^./, (c) => c.toUpperCase())}</h1>
-  {
-    es ? (
-      <p class="lede">
-        {matter.length} de los {all.length} dispositivos que hemos comprobado tienen certificación Matter: {wifiN} por wifi y {threadN} por Thread.
-      </p>
-    ) : (
-      <p class="lede">
-        {matter.length} of the {all.length} devices we've checked are Matter-certified: {wifiN} over Wi-Fi and {threadN} over Thread.
-      </p>
-    )
-  }
+  <h1>{capitalize(title)}</h1>
+  <p class="lede">
+    {T({
+      en: `${matter.length} of the ${all.length} devices we've checked are Matter-certified: ${wifiN} over Wi-Fi and ${threadN} over Thread.`,
+      es: `${matter.length} de los ${all.length} dispositivos que hemos comprobado tienen certificación Matter: ${wifiN} por wifi y ${threadN} por Thread.`,
+      de: `${matter.length} der ${all.length} geprüften Geräte sind Matter-zertifiziert: ${wifiN} über WLAN und ${threadN} über Thread.`,
+      fr: `${matter.length} des ${all.length} appareils que nous avons vérifiés sont certifiés Matter : ${wifiN} en Wi-Fi et ${threadN} en Thread.`,
+      it: `${matter.length} dei ${all.length} dispositivi che abbiamo verificato sono certificati Matter: ${wifiN} via Wi-Fi e ${threadN} via Thread.`,
+    })}
+  </p>
 
-  <nav class="toc" aria-label={es ? 'En esta página' : 'On this page'}>
+  <nav class="toc" aria-label={T({ en: 'On this page', es: 'En esta página', de: 'Auf dieser Seite', fr: 'Sur cette page', it: 'In questa pagina' })}>
     <span class="toc-label">{t.jumpTo}</span>
     {
       groups.flatMap((g) => [
-        g.wifi.length > 0 && <a href={`#${g.cat.path}-wifi`}>{catText(g.cat, lang).label} {es ? 'por wifi' : 'over Wi-Fi'} ({g.wifi.length})</a>,
-        g.thread.length > 0 && <a href={`#${g.cat.path}-thread`}>{catText(g.cat, lang).label} {es ? 'por Thread' : 'over Thread'} ({g.thread.length})</a>,
+        g.wifi.length > 0 && <a href={`#${g.cat.path}-wifi`}>{catText(g.cat, lang).label} {overWifi} ({g.wifi.length})</a>,
+        g.thread.length > 0 && <a href={`#${g.cat.path}-thread`}>{catText(g.cat, lang).label} {overThread} ({g.thread.length})</a>,
       ])
     }
-    <a href="#what-matter-means">{es ? 'Qué significa Matter' : 'What Matter means'}</a>
+    <a href="#what-matter-means">{T({ en: 'What Matter means', es: 'Qué significa Matter', de: 'Was Matter bedeutet', fr: 'Ce que signifie Matter', it: 'Cosa significa Matter' })}</a>
   </nav>
   {
-    es ? (
+    T({
+      de: (
+        <>
+          <h2 id="what-matter-means">Was Matter für ein Gerät bedeutet</h2>
+          <p>
+            Ein Matter-zertifiziertes Gerät lässt sich zu jeder Plattform hinzufügen, die als Matter-Controller arbeitet,
+            darunter Apple Home, Google Home, Alexa, SmartThings und Home Assistant, ohne Skill oder Cloud der Marke. Du kannst
+            es auch mit mehreren Plattformen gleichzeitig teilen.
+          </p>
+          <p>
+            <strong>WLAN-Geräte</strong> verbinden sich mit deinem bestehenden Netz. <strong>Thread-Geräte</strong> nutzen ein
+            stromsparendes Mesh-Netz und brauchen einen Thread-Border-Router, den viele aktuelle smarte Lautsprecher und
+            Streaming-Boxen eingebaut haben. In beiden Fällen braucht die Plattform, zu der du es hinzufügst, einen eigenen
+            Matter-Hub für Automationen und Fernzugriff.
+          </p>
+        </>
+      ),
+      fr: (
+        <>
+          <h2 id="what-matter-means">Ce que Matter change pour un appareil</h2>
+          <p>
+            Un appareil certifié Matter peut être ajouté à toute plateforme qui fait office de contrôleur Matter, dont Apple
+            Home, Google Home, Alexa, SmartThings et Home Assistant, sans la skill ni le cloud de la marque. Vous pouvez aussi
+            le partager avec plusieurs plateformes à la fois.
+          </p>
+          <p>
+            <strong>Les appareils Wi-Fi</strong> rejoignent votre réseau actuel. <strong>Les appareils Thread</strong> utilisent
+            un réseau maillé basse consommation et ont besoin d’un routeur de bordure Thread, intégré à de nombreuses enceintes
+            connectées et box multimédia récentes. Dans les deux cas, la plateforme à laquelle vous l’ajoutez a besoin de son
+            propre hub Matter pour les automatisations et l’accès à distance.
+          </p>
+        </>
+      ),
+      it: (
+        <>
+          <h2 id="what-matter-means">Cosa significa Matter per un dispositivo</h2>
+          <p>
+            Un dispositivo certificato Matter si può aggiungere a qualsiasi piattaforma che funzioni da controller Matter, tra
+            cui Apple Home, Google Home, Alexa, SmartThings e Home Assistant, senza la skill o il cloud del marchio. Puoi anche
+            condividerlo con più piattaforme insieme.
+          </p>
+          <p>
+            <strong>I dispositivi Wi-Fi</strong> si collegano alla tua rete attuale. <strong>I dispositivi Thread</strong> usano
+            una rete mesh a basso consumo e richiedono un border router Thread, integrato in molti smart speaker e box di
+            streaming recenti. In entrambi i casi, la piattaforma a cui lo aggiungi ha bisogno di un proprio hub Matter per le
+            automazioni e l’accesso da remoto.
+          </p>
+        </>
+      ),
+      es: (
       <>
         <h2 id="what-matter-means">Qué significa Matter para un dispositivo</h2>
         <p>
@@ -98,7 +155,8 @@ const threadN = matter.filter((d) => d.data.matter.transport === 'thread').lengt
           para las automatizaciones y el acceso remoto.
         </p>
       </>
-    ) : (
+      ),
+      en: (
       <>
         <h2 id="what-matter-means">What Matter means for a device</h2>
         <p>
@@ -112,19 +170,26 @@ const threadN = matter.filter((d) => d.data.matter.transport === 'thread').lengt
           platform you add it to needs its own Matter hub for automations and remote access.
         </p>
       </>
-    )
+      ),
+    })
   }
 
   {
     groups.map((g) =>
       [
-        { label: es ? 'por wifi' : 'over Wi-Fi', list: g.wifi, id: `${g.cat.path}-wifi` },
-        { label: es ? 'por Thread' : 'over Thread', list: g.thread, id: `${g.cat.path}-thread` },
+        { label: overWifi, list: g.wifi, id: `${g.cat.path}-wifi` },
+        { label: overThread, list: g.thread, id: `${g.cat.path}-thread` },
       ].map(
         (tr) =>
           tr.list.length > 0 && (
             <>
-              <h2 id={tr.id}>{es ? `${catText(g.cat, lang).label} con Matter ${tr.label}` : `Matter ${g.cat.plural} ${tr.label}`}</h2>
+              <h2 id={tr.id}>{T({
+                en: `Matter ${g.cat.plural} ${tr.label}`,
+                es: `${catText(g.cat, lang).label} con Matter ${tr.label}`,
+                de: `${catText(g.cat, lang).label} mit Matter ${tr.label}`,
+                fr: `${catText(g.cat, lang).label} Matter ${tr.label}`,
+                it: `${catText(g.cat, lang).label} con Matter ${tr.label}`,
+              })}</h2>
               {split(tr.list).map((m) => (
               <>
               {!market && <h3 id={`${tr.id}-${m.market.key}`}>{marketText(m.market, lang).label} ({m.devices.length})</h3>}
@@ -134,7 +199,7 @@ const threadN = matter.filter((d) => d.data.matter.transport === 'thread').lengt
                     <tr role="row">
                       <th role="columnheader" scope="col">{t.device}</th>
                       <th role="columnheader" scope="col">{t.radios}</th>
-                      <th role="columnheader" scope="col">{es ? g.cat.specs[0].labelEs : g.cat.specs[0].label}</th>
+                      <th role="columnheader" scope="col">{lang === 'en' ? g.cat.specs[0].label : g.cat.specs[0].labelIn[lang]}</th>
                       <th role="columnheader" scope="col">{t.notes}</th>
                     </tr>
                   </thead>
@@ -145,10 +210,7 @@ const threadN = matter.filter((d) => d.data.matter.transport === 'thread').lengt
                       const spec = specFacts(d.data, lang, words.values)[0];
                       return (
                         <tr role="row">
-                          <th role="rowheader" scope="row" class="name">
-                            <a href={href}>{d.data.name}</a>
-                            <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
-                          </th>
+                          <DeviceNameCell device={d} href={href} />
                           <td role="cell" data-label={t.radios}>{radioList(d.data.radios.value, lang) || '—'}</td>
                           <td role="cell" data-label={spec.label}>{spec.text}</td>
                           <td role="cell" class="wide">{words.note('matter', d.data.matter.note)}<Refs ids={d.data.matter.sources} all={d.data.sources} base={href} /></td>
@@ -168,9 +230,13 @@ const threadN = matter.filter((d) => d.data.matter.transport === 'thread').lengt
 
   <p class="muted small">
     {
-      es
-        ? 'Solo aparecen dispositivos con certificación Matter propia. Los que llegan a Matter a través de un puente (como un dispositivo Zigbee detrás de un hub) están en las tablas completas.'
-        : 'Only devices that are Matter-certified themselves are listed. Devices that reach Matter through a bridge (such as a Zigbee device behind a hub) are on the full charts.'
+      T({
+        en: 'Only devices that are Matter-certified themselves are listed. Devices that reach Matter through a bridge (such as a Zigbee device behind a hub) are on the full charts.',
+        es: 'Solo aparecen dispositivos con certificación Matter propia. Los que llegan a Matter a través de un puente (como un dispositivo Zigbee detrás de un hub) están en las tablas completas.',
+        de: 'Hier stehen nur Geräte, die selbst Matter-zertifiziert sind. Geräte, die Matter über eine Bridge erreichen (etwa ein Zigbee-Gerät hinter einem Hub), findest du in den vollständigen Tabellen.',
+        fr: 'Seuls les appareils certifiés Matter eux-mêmes apparaissent ici. Ceux qui passent par un pont pour rejoindre Matter (comme un appareil Zigbee derrière un hub) figurent dans les tableaux complets.',
+        it: 'Compaiono solo i dispositivi certificati Matter in prima persona. Quelli che arrivano a Matter tramite un bridge (come un dispositivo Zigbee dietro un hub) sono nelle tabelle complete.',
+      })
     }
   </p>
 </Base>

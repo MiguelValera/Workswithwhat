@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Das Shelly Dimmer Gen3 ist ein einkanaliges Phasenabschnitt-Dimmermodul mit maximal 200 W, das in der Dose hinter einem vorhandenen Wandschalter sitzt. Es läuft über WLAN und Bluetooth, funktioniert mit oder ohne Neutralleiter und hat eine lokale Weboberfläche, die keine Cloud braucht. Shelly führt Unterstützung für Google, Alexa und SmartThings auf, Home Assistant hat eine offizielle Integration, und Apple Home ist nicht bestätigt.",
+  "caveats": [
+    "Ohne Neutralleiter und ohne Shellys Bypass liegt die Mindestlast bei 20 W.",
+    "Für dieses Modell ist keine Matter-Zertifizierung bestätigt, daher ist die Apple-Home-Unterstützung unbestätigt."
+  ],
+  "notes": {
+    "radios": "WLAN 802.11 b/g/n und Bluetooth (die Wissensdatenbank führt eine Bluetooth-ID auf).",
+    "matter": "Shelly sagt, Gen3-Geräte seien nicht mit Matter ausgeliefert worden und nicht alle bekämen es; die Matter-Firmware-Hinweise nennen Relais, nicht diesen Dimmer. Eine Zertifikats-ID tauchte nebenbei auf, aber ein CSA-Eintrag für diesen Dimmer wurde nicht gefunden, also unbestätigt.",
+    "hubRequired": "WLAN-Gerät mit eigenem Access Point und eigener Weboberfläche.",
+    "localControl": "Die eingebaute Weboberfläche funktioniert ohne Internet und ohne Shelly Cloud; die Shelly-Integration von Home Assistant nutzt lokales Push.",
+    "switchForm": "Kompakter Dimmer-Controller, der hinter einem vorhandenen Wandschalter sitzt.",
+    "dimmer": "Phasenabschnitt-Dimmer für dimmbare LED-, Glühlampen- und Halogenlasten.",
+    "neutralRequired": "Funktioniert mit oder ohne Neutralleiter. Ohne Neutralleiter und ohne Bypass liegt die Mindestlast bei 20 W.",
+    "gangs": "Einkanaliger Dimmer-Controller, maximal 200 W.",
+    "compatibility.apple_home": "Keine Matter-Zertifizierung bestätigt, und keine Shelly-Seite nennt Apple Home für dieses Modell.",
+    "compatibility.google_home": "Shellys Spezifikationstabelle markiert die Google-Smart-Home-Traits als unterstützt.",
+    "compatibility.alexa": "Shellys Spezifikationstabelle markiert die Funktionen von Amazon Alexa als unterstützt.",
+    "compatibility.smartthings": "Shellys Spezifikationstabelle markiert die Funktionen von Samsung SmartThings als unterstützt.",
+    "compatibility.home_assistant": "Offizielle Shelly-Integration mit lokalem Push."
+  },
+  "values": {
+    "gangs": "1 Kanal"
+  }
+}

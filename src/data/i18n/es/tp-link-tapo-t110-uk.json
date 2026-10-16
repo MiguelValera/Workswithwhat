@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Que se abra una puerta, una ventana o un cajón es lo que avisa el Tapo T110 británico, con una notificación push. Alexa y Google Home funcionan, pero solo a través de un hub o un Homebase de Tapo, con el que el sensor se comunica por una radio sub-1 GHz. Funciona con una pila de botón CR2032 que dura unos 2 años. La página británica de TP-Link no menciona Apple Home, SmartThings ni Matter.",
+  "caveats": [
+    "Necesita un hub Tapo para los avisos; no funciona por sí solo.",
+    "TP-Link no indica si es compatible con Apple Home, SmartThings ni Home Assistant."
+  ],
+  "notes": {
+    "radios": "La página británica indica las bandas sub-1 GHz de 868 / 922 MHz (868 MHz en Europa) hacia el hub Tapo, que no está en nuestra lista de radios.",
+    "matter": "No hemos encontrado ninguna certificación Matter para el propio sensor.",
+    "hubRequired": "Las especificaciones dicen que hace falta un hub Tapo (o un Homebase) para los avisos; la página de descargas llama al hub su puente.",
+    "localControl": "Sin confirmar en ninguna fuente oficial.",
+    "senses": "Detecta la apertura de una puerta, una ventana o un cajón.",
+    "power": "Unos 2 años según Tapo, con aviso de batería baja.",
+    "compatibility.apple_home": "La página británica no menciona Apple Home.",
+    "compatibility.google_home": "La página británica muestra la insignia Works with Google Home; el sensor necesita un hub o un Homebase de Tapo.",
+    "compatibility.alexa": "La página británica muestra la insignia Works with Alexa; el sensor necesita un hub o un Homebase de Tapo.",
+    "compatibility.smartthings": "La página británica no menciona SmartThings.",
+    "compatibility.home_assistant": "No hemos encontrado ninguna fuente oficial para este sensor."
+  },
+  "via": {
+    "google_home": "Tapo Hub o Tapo Homebase",
+    "alexa": "Tapo Hub o Tapo Homebase"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Alexa und Google Home ja; Apple Home und SmartThings stehen nicht auf Wyzes Liste. Der Wyze Plug (WLPP1) verknüpft sich über dein Wyze-Konto mit beiden Assistenten und verbindet sich direkt mit 2,4-GHz-WLAN, es gibt also keinen Hub. Wyze nennt keine Matter-Unterstützung. Er ist ein US-Zwischenstecker für 15 A und misst keinen Verbrauch: Die App zeigt nur, wie lange er lief. Home Assistant hat keine offizielle Wyze-Integration.",
+  "caveats": [
+    "Nur 2,4-GHz-WLAN; laut Wyze verbindet er sich nicht mit 5 GHz.",
+    "Laut Wyze wird seine Google-Assistant-Integration offiziell nur in den USA unterstützt.",
+    "Keine Verbrauchsmessung; die Wyze-App erfasst nur die Laufzeit.",
+    "Home Assistant funktioniert nur über inoffizielle Community-Integrationen, die die Wyze-Cloud nutzen.",
+    "Dieser Eintrag behandelt den ursprünglichen WLPP1; eine spätere Revision, WLPP1CFH, wird per Bluetooth eingerichtet."
+  ],
+  "notes": {
+    "radios": "Nur 2,4-GHz-WLAN; laut Wyze verbindet er sich nicht mit 5 GHz. Dieser Eintrag ist der ursprüngliche WLPP1. Die spätere Revision WLPP1CFH wird laut FCC-Unterlagen und Wyze-Forum per Bluetooth eingerichtet; Wyzes Produktseite nennt keine Modellnummer.",
+    "matter": "Wyzes Produktseite und Integrationsliste nennen Alexa, Google Assistant und IFTTT und erwähnen Matter nicht. Das ist ein Fehlen, kein ausdrückliches „nein“, und wir fanden keinen CSA-Eintrag für einen Wyze-Zwischenstecker.",
+    "hubRequired": "Verbindet sich direkt mit dem WLAN; laut Wyze ist kein Hub nötig.",
+    "localControl": "Laut Wyze funktioniert die Taste am Gehäuse bei ausgefallenem WLAN weiter, aber die App-Steuerung fällt aus. Wir fanden keine offizielle Aussage zur Steuerung im lokalen Netzwerk ohne die Wyze-Cloud.",
+    "energyMonitoring": "Laut Wyze kann er den Energieverbrauch nicht melden; die App zeigt nur die Laufzeit. Wyzes Zwischenstecker mit Messung ist der Wyze Plug Outdoor.",
+    "maxLoadWatts": "Wyze führt 100–120 V AC, 60 Hz, maximal 15 A auf, aber keinen Wattwert. 15 A bei 120 V wären 1800 W; das ist abgeleitet, nicht angegeben.",
+    "compatibility.apple_home": "Wyzes Integrationsliste (Alexa, Google Assistant, IFTTT) lässt HomeKit aus, aber Wyze sagt nie, dass es nicht unterstützt wird. Auch kein Matter-Eintrag gefunden.",
+    "compatibility.google_home": "Verknüpfe dein Wyze-Konto in der Google-Home-App. Laut Wyze wird die Google-Integration offiziell nur in den USA unterstützt.",
+    "compatibility.alexa": "Über den Wyze-Alexa-Skill; Ein/Aus per Sprache mit dem Namen des Zwischensteckers.",
+    "compatibility.smartthings": "Wyzes Integrationsliste (Alexa, Google Assistant, IFTTT) lässt SmartThings aus, aber Wyze sagt nie, dass es nicht unterstützt wird.",
+    "compatibility.home_assistant": "Es gibt keine offizielle Wyze-Integration in Home Assistant. Benutzerdefinierte Community-Integrationen (z. B. ha-wyzeapi) existieren und nutzen die Wyze-Cloud-API."
+  }
+}

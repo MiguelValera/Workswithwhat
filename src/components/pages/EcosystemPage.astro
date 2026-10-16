@@ -2,6 +2,7 @@
 // "Devices that work with <ecosystem>": every market (/works-with/apple-home/, one table per
 // market) or one market (/us/works-with/apple-home/).
 import Base from '../../layouts/Base.astro';
+import DeviceNameCell from '../DeviceNameCell.astro';
 import Refs from '../Refs.astro';
 import Status from '../Status.astro';
 import {
@@ -9,7 +10,7 @@ import {
   ECOSYSTEM_LABELS,
   deviceText,
   devicePathIn,
-  ecosystemSlug,
+  ecosystemPath,
   getTranslations,
   radioList,
   getPublishedDevices,
@@ -19,8 +20,8 @@ import {
   type Ecosystem,
 } from '../../lib/devices';
 import { CATEGORIES, catText } from '../../lib/categories';
-import { byMarket, marketOf, marketText, regionPath, type Market } from '../../lib/markets';
-import { langOf, localize } from '../../i18n/lang';
+import { byMarket, marketOf, marketText, regionOrGlobal, type Market } from '../../lib/markets';
+import { pick, capitalize, langOf, localize } from '../../i18n/lang';
 import { ui } from '../../i18n/ui';
 
 interface Props {
@@ -29,21 +30,18 @@ interface Props {
 }
 const { eco, market } = Astro.props;
 const lang = langOf(Astro.url.pathname);
-const es = lang === 'es';
+const T = pick(lang);
 const t = ui(lang);
 const L = (p: string) => localize(p, lang);
-const translations = await getTranslations();
+const translations = await getTranslations(lang);
 const mt = market && marketText(market, lang);
 const label = ECOSYSTEM_LABELS[eco];
 const all = (await getPublishedDevices()).filter((d) => !market || marketOf(d) === market);
-const path = market ? `/${market.key}/works-with/${ecosystemSlug(eco)}/` : `/works-with/${ecosystemSlug(eco)}/`;
+const path = market ? `/${market.key}${ecosystemPath(eco)}` : ecosystemPath(eco);
 // in a region page every table is one market already; elsewhere split each category by market
 const split = (list: Device[]) => (market ? [{ market, devices: list }] : byMarket(list));
 const otherLinks = await Promise.all(
-  ECOSYSTEMS.filter((e) => e !== eco).map(async (e) => {
-    const global = `/works-with/${ecosystemSlug(e)}/`;
-    return { e, href: L((market && (await regionPath(market, global))) || global) };
-  }),
+  ECOSYSTEMS.filter((e) => e !== eco).map(async (e) => ({ e, href: L(await regionOrGlobal(market, ecosystemPath(e))) })),
 );
 const yes = all.filter((d) => worksWith(d, eco));
 const viaMatter = yes.filter((d) => d.data.compatibility[eco].status === 'matter').length;
@@ -54,11 +52,11 @@ const groups = CATEGORIES.map((cat) => ({
   total: all.filter((d) => d.data.category === cat.key).length,
 })).filter((g) => g.total > 0);
 const { short: what, long: whatLong } = categoryPhrase(groups.map((g) => catText(g.cat, lang).plural), lang);
-const What = what.replace(/^./, (c) => c.toUpperCase());
+const What = capitalize(what);
 
 // General, stable facts about how devices reach each platform. Device-specific
 // claims stay in the device records, where they are sourced.
-const HOW: Record<Ecosystem, string[]> = {
+const HOW_EN: Record<Ecosystem, string[]> = {
   apple_home: [
     'A device reaches Apple Home in one of two ways: it supports HomeKit directly, or it is Matter-certified and you add it with the Home app\'s Matter pairing.',
     'Automations and remote control need an Apple home hub (an Apple TV or a HomePod). Thread devices also need a Thread border router, which recent HomePod and Apple TV models include.',
@@ -104,14 +102,91 @@ const HOW_ES: Record<Ecosystem, string[]> = {
   ],
 };
 
-const title = es
-  ? `${What} compatibles con ${label}${mt ? ` en ${mt.phrase}` : ''}`
-  : market
-    ? `${What} that work with ${label} in ${market.phrase}`
-    : `${What} that work with ${label}`;
-const description = es
-  ? `${yes.length} ${whatLong}${mt ? ` para ${mt.phrase}` : ''} con compatibilidad confirmada con ${label}${viaMatter ? `, ${viaMatter} de ellos mediante Matter` : ''}. Consulta cuáles necesitan hub y la fuente de cada uno.`
-  : `${yes.length} ${whatLong} ${market ? `for ${market.phrase} ` : ''}confirmed to work with ${label}${viaMatter ? `, ${viaMatter} of them via Matter` : ''}. See which need a hub, and check the source for each one.`;
+const HOW_DE: Record<Ecosystem, string[]> = {
+  apple_home: [
+    'Ein Gerät kommt auf zwei Wegen in Apple Home: Es unterstützt HomeKit direkt, oder es ist Matter-zertifiziert und du fügst es per Matter-Kopplung in der Home-App hinzu.',
+    'Automationen und Fernzugriff brauchen eine Apple-Steuerzentrale (ein Apple TV oder einen HomePod). Thread-Geräte brauchen außerdem einen Thread-Border-Router, den aktuelle HomePod- und Apple-TV-Modelle eingebaut haben.',
+  ],
+  google_home: [
+    'Geräte verbinden sich mit Google Home über die Kontoverknüpfung der Marke (Cloud zu Cloud) oder über Matter.',
+    'Matter braucht ein Google-Gerät, das als Matter-Hub dient, etwa einen Nest-Lautsprecher oder ein Nest-Display. Thread-Geräte brauchen außerdem ein Google-Gerät, das als Thread-Border-Router arbeitet.',
+  ],
+  alexa: [
+    'Geräte verbinden sich mit Alexa über den Alexa-Skill der Marke (Cloud zu Cloud) oder über Matter.',
+    'Matter braucht ein Echo-Gerät, das als Matter-Controller arbeitet, und Thread-Geräte brauchen einen Echo, der auch Thread-Border-Router ist.',
+  ],
+  smartthings: [
+    'Geräte kommen über eine Cloud-zu-Cloud-Integration, über Matter oder als Zigbee-Geräte an einem SmartThings-Hub in SmartThings.',
+    'Matter- und Zigbee-Geräte brauchen einen SmartThings-Hub. Manche Samsung-Fernseher und -Haushaltsgeräte können diese Rolle übernehmen.',
+  ],
+  home_assistant: [
+    'Home Assistant verbindet sich mit Geräten über Integrationen der Marken (viele davon lokal), über die Matter-Integration oder über einen Zigbee-Koordinator.',
+    'Lokale Integrationen funktionieren auch ohne Internet; deshalb geben wir bei jedem Gerät an, ob es lokal steuerbar ist.',
+  ],
+};
+
+const HOW_FR: Record<Ecosystem, string[]> = {
+  apple_home: [
+    'Un appareil rejoint Apple Home de deux façons : il prend en charge HomeKit directement, ou il est certifié Matter et vous l’ajoutez avec l’appairage Matter de l’app Maison.',
+    'Les automatisations et le contrôle à distance nécessitent un concentrateur domestique Apple (une Apple TV ou un HomePod). Les appareils Thread ont aussi besoin d’un routeur de bordure Thread, intégré aux HomePod et Apple TV récents.',
+  ],
+  google_home: [
+    'Les appareils se connectent à Google Home en associant le compte de la marque (de cloud à cloud) ou via Matter.',
+    'Matter nécessite un appareil Google qui sert de hub Matter, comme une enceinte ou un écran Nest. Les appareils Thread ont aussi besoin d’un appareil Google qui fait office de routeur de bordure Thread.',
+  ],
+  alexa: [
+    'Les appareils se connectent à Alexa via la skill Alexa de la marque (de cloud à cloud) ou via Matter.',
+    'Matter nécessite un Echo qui fait office de contrôleur Matter, et les appareils Thread un Echo qui est aussi routeur de bordure Thread.',
+  ],
+  smartthings: [
+    'Les appareils rejoignent SmartThings par une intégration de cloud à cloud, via Matter, ou comme appareils Zigbee appairés à un hub SmartThings.',
+    'Les appareils Matter et Zigbee nécessitent un hub SmartThings. Certains téléviseurs et appareils électroménagers Samsung peuvent jouer ce rôle.',
+  ],
+  home_assistant: [
+    'Home Assistant se connecte aux appareils par les intégrations des marques (souvent locales), par son intégration Matter ou par un coordinateur Zigbee.',
+    'Les intégrations locales continuent de fonctionner sans internet ; c’est pourquoi nous indiquons le contrôle local pour chaque appareil.',
+  ],
+};
+
+const HOW_IT: Record<Ecosystem, string[]> = {
+  apple_home: [
+    'Un dispositivo arriva in Apple Home in due modi: supporta HomeKit direttamente, oppure è certificato Matter e lo aggiungi con l’abbinamento Matter dell’app Casa.',
+    'Automazioni e controllo da remoto richiedono un hub domestico Apple (una Apple TV o un HomePod). I dispositivi Thread richiedono anche un border router Thread, integrato nei HomePod e nelle Apple TV recenti.',
+  ],
+  google_home: [
+    'I dispositivi si collegano a Google Home collegando l’account del marchio (da cloud a cloud) o tramite Matter.',
+    'Matter richiede un dispositivo Google che faccia da hub Matter, come uno speaker o un display Nest. I dispositivi Thread richiedono anche un dispositivo Google che funzioni da border router Thread.',
+  ],
+  alexa: [
+    'I dispositivi si collegano ad Alexa tramite la skill Alexa del marchio (da cloud a cloud) o tramite Matter.',
+    'Matter richiede un Echo che funzioni da controller Matter, e i dispositivi Thread un Echo che sia anche border router Thread.',
+  ],
+  smartthings: [
+    'I dispositivi arrivano in SmartThings con un’integrazione da cloud a cloud, tramite Matter o come dispositivi Zigbee abbinati a un hub SmartThings.',
+    'I dispositivi Matter e Zigbee richiedono un hub SmartThings. Alcuni televisori ed elettrodomestici Samsung possono fare da hub.',
+  ],
+  home_assistant: [
+    'Home Assistant si collega ai dispositivi tramite le integrazioni dei marchi (molte locali), la sua integrazione Matter o un coordinatore Zigbee.',
+    'Le integrazioni locali continuano a funzionare senza internet; per questo indichiamo il controllo locale per ogni dispositivo.',
+  ],
+};
+const HOW = T({ en: HOW_EN, es: HOW_ES, de: HOW_DE, fr: HOW_FR, it: HOW_IT });
+
+const title = T({
+  en: market ? `${What} that work with ${label} in ${market.phrase}` : `${What} that work with ${label}`,
+  es: `${What} compatibles con ${label}${mt ? ` en ${mt.phrase}` : ''}`,
+  de: `${What}${mt ? ` ${mt.inPhrase}` : ''}, die mit ${label} funktionieren`,
+  fr: `${What} compatibles avec ${label}${mt ? ` ${mt.inPhrase}` : ''}`,
+  it: `${What} compatibili con ${label}${mt ? ` ${mt.inPhrase}` : ''}`,
+});
+const n = yes.length;
+const description = T({
+  en: `${n} ${whatLong} ${market ? `for ${market.phrase} ` : ''}confirmed to work with ${label}${viaMatter ? `, ${viaMatter} of them via Matter` : ''}. See which need a hub, and check the source for each one.`,
+  es: `${n} ${whatLong}${mt ? ` para ${mt.phrase}` : ''} con compatibilidad confirmada con ${label}${viaMatter ? `, ${viaMatter} de ellos mediante Matter` : ''}. Consulta cuáles necesitan hub y la fuente de cada uno.`,
+  de: `${n} ${whatLong}${mt ? ` für ${mt.phrase}` : ''} mit bestätigter Kompatibilität mit ${label}${viaMatter ? `, ${viaMatter} davon über Matter` : ''}. Sieh nach, welche einen Hub brauchen, und prüfe die Quelle zu jedem Gerät.`,
+  fr: `${n} ${whatLong}${mt ? ` pour ${mt.phrase}` : ''} dont la compatibilité avec ${label} est confirmée${viaMatter ? `, dont ${viaMatter} via Matter` : ''}. Voyez lesquels nécessitent un hub et consultez la source de chacun.`,
+  it: `${n} ${whatLong}${mt ? ` per ${mt.phrase}` : ''} con compatibilità confermata con ${label}${viaMatter ? `, ${viaMatter} dei quali tramite Matter` : ''}. Scopri quali richiedono un hub e controlla la fonte di ciascuno.`,
+});
 ---
 
 <Base
@@ -130,31 +205,47 @@ const description = es
   }
 >
   <h1>{title}</h1>
-  {
-    es ? (
-      <p class="lede">
-        {yes.length} de los {all.length} dispositivos que hemos comprobado{mt && ` para ${mt.phrase}`} funcionan con {label}.
-        {viaMatter > 0 && ` ${viaMatter} se conectan mediante Matter en lugar de una integración de la marca.`}
-      </p>
-    ) : (
-      <p class="lede">
-        {yes.length} of the {all.length} devices we've checked{market && ` for ${market.phrase}`} work with {label}.
-        {viaMatter > 0 && ` ${viaMatter} connect through Matter rather than a brand integration.`}
-      </p>
-    )
-  }
-  <nav class="toc" aria-label={es ? 'En esta página' : 'On this page'}>
+  <p class="lede">
+    {T({
+      en: `${n} of the ${all.length} devices we've checked${market ? ` for ${market.phrase}` : ''} work with ${label}.`,
+      es: `${n} de los ${all.length} dispositivos que hemos comprobado${mt ? ` para ${mt.phrase}` : ''} funcionan con ${label}.`,
+      de: `${n} der ${all.length} Geräte, die wir${mt ? ` für ${mt.phrase}` : ''} geprüft haben, funktionieren mit ${label}.`,
+      fr: `${n} des ${all.length} appareils que nous avons vérifiés${mt ? ` pour ${mt.phrase}` : ''} fonctionnent avec ${label}.`,
+      it: `${n} dei ${all.length} dispositivi che abbiamo verificato${mt ? ` per ${mt.phrase}` : ''} funzionano con ${label}.`,
+    })}
+    {viaMatter > 0 &&
+      T({
+        en: ` ${viaMatter} connect through Matter rather than a brand integration.`,
+        es: ` ${viaMatter} se conectan mediante Matter en lugar de una integración de la marca.`,
+        de: ` ${viaMatter} davon verbinden sich über Matter statt über eine Integration der Marke.`,
+        fr: ` ${viaMatter} passent par Matter plutôt que par une intégration de la marque.`,
+        it: ` ${viaMatter} si collegano tramite Matter invece che con un’integrazione del marchio.`,
+      })}
+  </p>
+  <nav class="toc" aria-label={T({ en: 'On this page', es: 'En esta página', de: 'Auf dieser Seite', fr: 'Sur cette page', it: 'In questa pagina' })}>
     <span class="toc-label">{t.jumpTo}</span>
     {groups.map((g) => <a href={`#${g.cat.path}`}>{catText(g.cat, lang).label} ({g.yes.length})</a>)}
-    <a href="#how">{es ? 'Cómo se conectan' : 'How devices connect'}</a>
+    <a href="#how">{T({ en: 'How devices connect', es: 'Cómo se conectan', de: 'So verbinden sich Geräte', fr: 'Comment ils se connectent', it: 'Come si collegano' })}</a>
   </nav>
-  <h2 id="how">{es ? `Cómo se conectan los dispositivos a ${label}` : `How devices connect to ${label}`}</h2>
-  {(es ? HOW_ES : HOW)[eco].map((p) => <p>{p}</p>)}
+  <h2 id="how">{T({
+      en: `How devices connect to ${label}`,
+      es: `Cómo se conectan los dispositivos a ${label}`,
+      de: `So verbinden sich Geräte mit ${label}`,
+      fr: `Comment les appareils se connectent à ${label}`,
+      it: `Come si collegano i dispositivi a ${label}`,
+    })}</h2>
+  {HOW[eco].map((p) => <p>{p}</p>)}
 
   {
     groups.map((g) => (
       <section aria-labelledby={g.cat.path}>
-        <h2 id={g.cat.path}>{es ? `${catText(g.cat, lang).label} compatibles con ${label}` : `${g.cat.label} that work with ${label}`}</h2>
+        <h2 id={g.cat.path}>{T({
+          en: `${g.cat.label} that work with ${label}`,
+          es: `${catText(g.cat, lang).label} compatibles con ${label}`,
+          de: `${catText(g.cat, lang).label}, die mit ${label} funktionieren`,
+          fr: `${catText(g.cat, lang).label} compatibles avec ${label}`,
+          it: `${catText(g.cat, lang).label} compatibili con ${label}`,
+        })}</h2>
         {g.yes.length > 0 ? (
           split(g.yes).map((m) => (
           <>
@@ -171,10 +262,7 @@ const description = es
                   const href = devicePathIn(d, lang, translations);
                   return (
                     <tr role="row">
-                      <th role="rowheader" scope="row" class="name">
-                        <a href={href}>{d.data.name}</a>
-                        <span class="note">{d.data.model} · {d.data.regions.join('/')}</span>
-                      </th>
+                      <DeviceNameCell device={d} href={href} />
                       <td role="cell" data-label={t.how}><Status status={c.status} via={words.via(eco)} /></td>
                       <td role="cell" data-label={t.radio}>{radioList(d.data.radios.value, lang) || '—'}</td>
                       <td role="cell" class="wide">{words.compatNote(eco)}<Refs ids={c.sources} all={d.data.sources} base={href} /></td>
@@ -187,11 +275,17 @@ const description = es
           </>
           ))
         ) : (
-          <p>{es ? `Por ahora no hay ${catText(g.cat, lang).plural} comprobados con compatibilidad confirmada con ${label}.` : `None of the ${g.cat.plural} we've checked so far are confirmed for ${label}.`}</p>
+          <p>{T({
+            en: `None of the ${g.cat.plural} we've checked so far are confirmed for ${label}.`,
+            es: `Por ahora no hay ${catText(g.cat, lang).plural} comprobados con compatibilidad confirmada con ${label}.`,
+            de: `Noch kein geprüftes Gerät dieser Kategorie ist für ${label} bestätigt.`,
+            fr: `Aucun appareil de cette catégorie vérifié jusqu’ici n’est confirmé pour ${label}.`,
+            it: `Nessun dispositivo di questa categoria verificato finora è confermato per ${label}.`,
+          })}</p>
         )}
         {g.unsure.length > 0 && (
           <p class="muted small">
-            {es ? 'Sin confirmar ni descartar:' : 'Not confirmed either way:'}{' '}
+            {T({ en: 'Not confirmed either way:', es: 'Sin confirmar ni descartar:', de: 'Weder bestätigt noch ausgeschlossen:', fr: 'Ni confirmé ni exclu :', it: 'Né confermato né escluso:' })}{' '}
             {g.unsure.map((d, i) => (
               <>
                 {i > 0 && ', '}
@@ -205,7 +299,7 @@ const description = es
   }
 
   <p class="muted">
-    {es ? 'Otras plataformas:' : 'Other platforms:'}{' '}
+    {T({ en: 'Other platforms:', es: 'Otras plataformas:', de: 'Andere Plattformen:', fr: 'Autres plateformes :', it: 'Altre piattaforme:' })}{' '}
     {
       otherLinks.map(({ e, href }, i) => (
         <>

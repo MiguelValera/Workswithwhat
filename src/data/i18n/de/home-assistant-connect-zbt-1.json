@@ -1,0 +1,25 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Der Home Assistant Connect ZBT-1 ist ein USB-Funkstick für alle, die schon Home Assistant betreiben: Er ergänzt Zigbee über ZHA oder Thread mit der App OpenThread Border Router. Pro Stick gilt nur eins von beiden. Home Assistant ist das einzige bestätigte Ökosystem, und früher wurde er als SkyConnect verkauft.",
+  "caveats": [
+    "Er läuft mit Zigbee- oder Thread-Firmware, nie mit beiden; mit Thread-Firmware funktionieren Zigbee-Geräte nicht mehr.",
+    "Er ist nicht eigenständig und braucht Home Assistant auf einem Host wie dem Home Assistant Green.",
+    "Home Assistant hat im November 2025 den neueren Connect ZBT-2 angekündigt, prüfe also vor dem Kauf, ob der ZBT-1 noch erhältlich ist."
+  ],
+  "notes": {
+    "radios": "Silicon Labs EFR32MG21, 2,4 GHz. Läuft mit Zigbee- oder Thread-Firmware, nicht gleichzeitig; kein Bluetooth oder Z-Wave. Modell NC-ZBT-9710.",
+    "matter": "Kein CSA-Eintrag gefunden.",
+    "hubRequired": "Aus keiner offiziellen Quelle bestätigt.",
+    "localControl": "Ein USB-Funkmodul, das vom Home-Assistant-Host angesteuert wird; keine hier angeführte offizielle Seite nennt lokale Steuerung ausdrücklich.",
+    "hubType": "Früher Home Assistant SkyConnect; gleiche Hardware.",
+    "deviceProtocols": "Immer nur eins: Die Thread-Firmware ist reine Thread-Firmware, deshalb funktionieren Zigbee-Geräte nicht, solange sie läuft.",
+    "matterBridge": "Keine Bridge; Matter-Geräte über Thread werden über die Matter-Integration von Home Assistant erreicht.",
+    "threadBorderRouter": "Mit Thread-Firmware und der App OpenThread Border Router.",
+    "maxDevices": "Vom Hersteller nicht angegeben.",
+    "compatibility.apple_home": "Nur über die Home-Assistant-Software erreichbar, die kein Hub ist; nicht bestätigt.",
+    "compatibility.google_home": "Nur über die Home-Assistant-Software erreichbar; nicht bestätigt.",
+    "compatibility.alexa": "Nur über die Home-Assistant-Software erreichbar; nicht bestätigt.",
+    "compatibility.smartthings": "Nicht bestätigt.",
+    "compatibility.home_assistant": "Offizielle Home-Assistant-Hardware: Zigbee über ZHA, Thread über die App OpenThread Border Router."
+  }
+}

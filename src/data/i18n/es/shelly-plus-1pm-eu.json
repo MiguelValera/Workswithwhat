@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Instalado detrás de un interruptor o un enchufe de pared, el Shelly Plus 1PM conmuta un circuito de 16 A a un máximo de 240 V CA y mide su consumo; no regula la intensidad. Shelly indica integraciones con Google, Alexa y SmartThings, y la integración oficial de Shelly en Home Assistant funciona en local por wifi, sin hub. Matter y Apple Home no figuran. La página de Shelly lo marca como descatalogado en favor del 1PM Gen3.",
+  "caveats": [
+    "La página del producto de Shelly marca el Plus 1PM como descatalogado y señala el Shelly 1PM Gen3 como sucesor.",
+    "Ni Matter ni Apple Home figuran para este modelo.",
+    "Shelly no dice si hace falta cable neutro, aunque el esquema de conexión usa bornes L y N."
+  ],
+  "notes": {
+    "radios": "Wifi 802.11 b/g/n y Bluetooth 4.2; la base de conocimiento de Shelly menciona el Bluetooth solo para la configuración.",
+    "matter": "Las páginas de Shelly sobre el Plus 1PM no mencionan Matter, y no hemos encontrado ningún registro de la CSA.",
+    "hubRequired": "La base de conocimiento de Shelly dice que puede funcionar por sí solo en una red wifi local.",
+    "localControl": "Interfaz web integrada, MQTT, scripts y webhooks; CoAP no es compatible.",
+    "switchForm": "Relé de 37 x 42 x 16 mm que se instala detrás de un interruptor o un enchufe existente.",
+    "dimmer": "Relé de encendido y apagado con medición de potencia.",
+    "neutralRequired": "Las páginas de Shelly muestran bornes de alimentación L y N y un neutro en el esquema de conexión de CA, pero nunca dicen que el neutro sea obligatorio.",
+    "gangs": "Una salida de relé y una entrada de interruptor; 16 A CA a un máximo de 240 V.",
+    "compatibility.apple_home": "La lista de integraciones de Shelly para este modelo no incluye Apple HomeKit, y no hay ninguna declaración sobre Matter. La ausencia no es una prueba, así que queda sin confirmar.",
+    "compatibility.google_home": "La página del producto de Shelly y su base de conocimiento incluyen Google entre las integraciones de este modelo, que no tiene Matter, así que el enlace es el propio de Shelly.",
+    "compatibility.alexa": "La página del producto de Shelly y su base de conocimiento incluyen Alexa entre las integraciones. La guía de Alexa de Shelly usa la skill Shelly Cloud, pero nombra solo dispositivos Gen3 y Gen4.",
+    "compatibility.smartthings": "La página del producto de Shelly y su base de conocimiento incluyen Samsung SmartThings entre las integraciones; ninguna dice cómo funciona el enlace.",
+    "compatibility.home_assistant": "Integración oficial de Shelly, con actualizaciones locales push, que dice que son compatibles todas las generaciones de Shelly. La página no nombra el Plus 1PM."
+  },
+  "values": {
+    "gangs": "1 canal"
+  }
+}

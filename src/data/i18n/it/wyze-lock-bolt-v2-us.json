@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Il Lock Bolt v2 (WLCKB2) di Wyze è un chiavistello Wi-Fi che puoi sbloccare con Alexa o Google Assistant, senza hub. Ha una tastiera in vetro retroilluminata e usa otto batterie AA, con una porta USB-C per l'alimentazione di emergenza. Le pagine di Wyze non citano Matter, Apple Home né SmartThings.",
+  "caveats": [
+    "Solo Wi-Fi a 2,4 GHz; il Bluetooth serve per la configurazione e per alcune funzioni dell'app.",
+    "Non adatto a porte in vetro, scorrevoli, con serratura da infilare o a più punti di chiusura.",
+    "Il supporto a Matter e Apple Home non è confermato."
+  ],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz; Bluetooth per la configurazione e per alcune funzioni dell'app.",
+    "matter": "Nessuna delle due pagine di Wyze cita Matter; non è stata controllata nessuna scheda CSA.",
+    "hubRequired": "Wi-Fi integrato; non si cita nessun hub o gateway.",
+    "localControl": "Wyze non dice se la serratura funzioni senza il suo cloud.",
+    "lockFit": "Sostituisce un chiavistello a cilindro singolo su porte in legno spesse da 1-3/8 a 2-11/64 in.",
+    "keypad": "Tastiera in vetro temperato retroilluminata.",
+    "power": "Batterie incluse; porta USB-C per l'alimentazione di emergenza.",
+    "compatibility.apple_home": "Non citato nelle pagine di Wyze.",
+    "compatibility.google_home": "La pagina di Wyze dice che puoi sbloccare con Google Assistant.",
+    "compatibility.alexa": "La pagina di Wyze dice che puoi sbloccare con Alexa.",
+    "compatibility.smartthings": "Non citato nelle pagine di Wyze.",
+    "compatibility.home_assistant": "Nessuna pagina di integrazione di Home Assistant controllata per questa serratura."
+  },
+  "values": {
+    "power": "8 × AA"
+  }
+}

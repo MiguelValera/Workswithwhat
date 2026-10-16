@@ -1,58 +1,131 @@
-// Languages and localized URLs. English lives at the root (/smart-plugs/), Spanish
-// under /es/ with Spanish path segments (/es/enchufes-inteligentes/). Every page is
-// written against its English path; localize() turns it into the current language.
-import { ES_ENABLED } from '../site.config';
+// Languages and localized URLs. English lives at the root (/smart-plugs/), every other
+// language under its own prefix with its own path segments (/es/enchufes-inteligentes/).
+// Every page is written against its English path; localize() turns it into the current language.
+import { ENABLED_LANGS } from '../site.config.ts';
 
-export const LANGS = ['en', 'es'] as const;
+export const LANGS = ['en', 'es', 'de', 'fr', 'it'] as const;
 export type Lang = (typeof LANGS)[number];
+/** languages other than English: each one lives under /<lang>/ */
+export type LocaleLang = Exclude<Lang, 'en'>;
+export const LOCALE_LANGS = LANGS.filter((l): l is LocaleLang => l !== 'en');
 /** languages that get built */
-export const ACTIVE_LANGS: Lang[] = ES_ENABLED ? ['en', 'es'] : ['en'];
+export const ACTIVE_LANGS: Lang[] = LANGS.filter((l) => l === 'en' || (ENABLED_LANGS as readonly string[]).includes(l));
 
-export const HTML_LANG: Record<Lang, string> = { en: 'en', es: 'es-ES' };
-export const OG_LOCALE: Record<Lang, string> = { en: 'en_US', es: 'es_ES' };
-export const LANG_NAMES: Record<Lang, string> = { en: 'English', es: 'Español' };
+export const HTML_LANG: Record<Lang, string> = { en: 'en', es: 'es-ES', de: 'de', fr: 'fr', it: 'it' };
+export const OG_LOCALE: Record<Lang, string> = { en: 'en_US', es: 'es_ES', de: 'de_DE', fr: 'fr_FR', it: 'it_IT' };
+export const LANG_NAMES: Record<Lang, string> = { en: 'English', es: 'Español', de: 'Deutsch', fr: 'Français', it: 'Italiano' };
+/** locale for numbers and dates */
+const NUMBER_LOCALE: Record<Lang, string> = { en: 'en-US', es: 'es-ES', de: 'de-DE', fr: 'fr-FR', it: 'it-IT' };
 
-// English path segment → Spanish. Device slugs, ecosystem slugs and market codes stay as they are.
-const SEGMENTS_ES: Record<string, string> = {
-  'smart-plugs': 'enchufes-inteligentes',
-  'smart-bulbs': 'bombillas-inteligentes',
-  'smart-locks': 'cerraduras-inteligentes',
-  'smart-thermostats': 'termostatos-inteligentes',
-  'smart-sensors': 'sensores-inteligentes',
-  'smart-cameras': 'camaras-y-timbres',
-  'smart-switches': 'interruptores-inteligentes',
-  'robot-vacuums': 'robots-aspiradores',
-  'smart-hubs': 'hubs-y-pasarelas',
-  'works-with': 'compatible-con',
-  methodology: 'metodologia',
-  legal: 'aviso-legal',
-  privacy: 'privacidad',
+/** One value per language, picked for the current one: T({ en: 'Specs', es: 'Especificaciones' }). */
+export const pick =
+  (lang: Lang) =>
+  <V>(m: Record<Lang, V>): V =>
+    m[lang];
+
+// English path segment → localized one. Device slugs, ecosystem slugs and market codes stay as they are.
+const SEGMENTS: Record<LocaleLang, Record<string, string>> = {
+  es: {
+    'smart-plugs': 'enchufes-inteligentes',
+    'smart-bulbs': 'bombillas-inteligentes',
+    'smart-locks': 'cerraduras-inteligentes',
+    'smart-thermostats': 'termostatos-inteligentes',
+    'smart-sensors': 'sensores-inteligentes',
+    'smart-cameras': 'camaras-y-timbres',
+    'smart-switches': 'interruptores-inteligentes',
+    'robot-vacuums': 'robots-aspiradores',
+    'smart-hubs': 'hubs-y-pasarelas',
+    'light-strips': 'tiras-led',
+    'works-with': 'compatible-con',
+    compare: 'comparar',
+    methodology: 'metodologia',
+    legal: 'aviso-legal',
+    privacy: 'privacidad',
+  },
+  de: {
+    'smart-plugs': 'smarte-steckdosen',
+    'smart-bulbs': 'smarte-lampen',
+    'smart-locks': 'smarte-tuerschloesser',
+    'smart-thermostats': 'smarte-thermostate',
+    'smart-sensors': 'smarte-sensoren',
+    'smart-cameras': 'kameras-und-tuerklingeln',
+    'smart-switches': 'smarte-schalter',
+    'robot-vacuums': 'saugroboter',
+    'smart-hubs': 'hubs-und-bridges',
+    'light-strips': 'led-strips',
+    'works-with': 'kompatibel-mit',
+    compare: 'vergleich',
+    methodology: 'methodik',
+    legal: 'impressum',
+    privacy: 'datenschutz',
+  },
+  fr: {
+    'smart-plugs': 'prises-connectees',
+    'smart-bulbs': 'ampoules-connectees',
+    'smart-locks': 'serrures-connectees',
+    'smart-thermostats': 'thermostats-connectes',
+    'smart-sensors': 'capteurs-connectes',
+    'smart-cameras': 'cameras-et-sonnettes',
+    'smart-switches': 'interrupteurs-connectes',
+    'robot-vacuums': 'aspirateurs-robots',
+    'smart-hubs': 'hubs-et-passerelles',
+    'light-strips': 'rubans-led',
+    'works-with': 'compatible-avec',
+    compare: 'comparer',
+    methodology: 'methodologie',
+    legal: 'mentions-legales',
+    privacy: 'confidentialite',
+  },
+  it: {
+    'smart-plugs': 'prese-smart',
+    'smart-bulbs': 'lampadine-smart',
+    'smart-locks': 'serrature-smart',
+    'smart-thermostats': 'termostati-smart',
+    'smart-sensors': 'sensori-smart',
+    'smart-cameras': 'telecamere-e-videocitofoni',
+    'smart-switches': 'interruttori-smart',
+    'robot-vacuums': 'robot-aspirapolvere',
+    'smart-hubs': 'hub-e-bridge',
+    'light-strips': 'strisce-led',
+    'works-with': 'compatibile-con',
+    compare: 'confronta',
+    methodology: 'metodologia',
+    legal: 'note-legali',
+    privacy: 'privacy',
+  },
 };
-const SEGMENTS_EN = Object.fromEntries(Object.entries(SEGMENTS_ES).map(([en, es]) => [es, en]));
+const SEGMENTS_EN = Object.fromEntries(
+  LOCALE_LANGS.map((l) => [l, Object.fromEntries(Object.entries(SEGMENTS[l]).map(([en, x]) => [x, en]))]),
+) as Record<LocaleLang, Record<string, string>>;
 
-export const segmentEs = (en: string) => SEGMENTS_ES[en] ?? en;
+export const segmentIn = (en: string, lang: Lang) => (lang === 'en' ? en : (SEGMENTS[lang][en] ?? en));
 
-export const langOf = (pathname: string): Lang => (pathname === '/es/' || pathname.startsWith('/es/') ? 'es' : 'en');
+export const langOf = (pathname: string): Lang =>
+  LOCALE_LANGS.find((l) => pathname === `/${l}/` || pathname.startsWith(`/${l}/`)) ?? 'en';
 
 /** "/smart-plugs/x/#y" → "/es/enchufes-inteligentes/x/#y" for Spanish; unchanged for English. */
 export function localize(enPath: string, lang: Lang): string {
   if (lang === 'en' || !enPath.startsWith('/')) return enPath;
   const [path, hash] = enPath.split('#');
-  const segs = path.split('/').filter(Boolean).map((s) => SEGMENTS_ES[s] ?? s);
-  return `/es/${segs.length ? `${segs.join('/')}/` : ''}${hash !== undefined ? `#${hash}` : ''}`;
+  const segs = path.split('/').filter(Boolean).map((s) => SEGMENTS[lang][s] ?? s);
+  return `/${lang}/${segs.length ? `${segs.join('/')}/` : ''}${hash !== undefined ? `#${hash}` : ''}`;
 }
 
 /** The English path of any page ("/es/enchufes-inteligentes/" → "/smart-plugs/"). */
 export function toEnglish(pathname: string): string {
-  if (langOf(pathname) === 'en') return pathname;
-  const segs = pathname.slice(3).split('/').filter(Boolean).map((s) => SEGMENTS_EN[s] ?? s);
+  const lang = langOf(pathname);
+  if (lang === 'en') return pathname;
+  const segs = pathname.slice(lang.length + 1).split('/').filter(Boolean).map((s) => SEGMENTS_EN[lang][s] ?? s);
   return `/${segs.length ? `${segs.join('/')}/` : ''}`;
 }
 
+/** "smart plugs" → "Smart plugs" */
+export const capitalize = (s: string) => s.replace(/^./, (c) => c.toUpperCase());
+
 /** Locale-formatted number and date. */
-export const formatNumber = (n: number, lang: Lang) => n.toLocaleString(lang === 'es' ? 'es-ES' : 'en-US');
+export const formatNumber = (n: number, lang: Lang) => n.toLocaleString(NUMBER_LOCALE[lang]);
 export const formatDate = (iso: string, lang: Lang = 'en') =>
-  new Date(`${iso}T00:00:00Z`).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', {
+  new Date(`${iso}T00:00:00Z`).toLocaleDateString(NUMBER_LOCALE[lang], {
     year: 'numeric',
     month: 'short',
     day: 'numeric',

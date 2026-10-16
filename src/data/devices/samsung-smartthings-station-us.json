@@ -1,0 +1,177 @@
+{
+  "category": "smart-hub",
+  "brand": "Samsung",
+  "model": "SmartThings Station (EP-P9500)",
+  "name": "SmartThings Station (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.samsung.com/us/mobile/mobile-accessories/phones/smartthings-station-black-sku-ep-p9500cbegus/",
+  "radios": {
+    "value": [
+      "zigbee",
+      "thread"
+    ],
+    "sources": [
+      "csa-st-station-ep",
+      "st-hub-everywhere"
+    ],
+    "note": "CSA certifies the EP-P9500 for Zigbee 3.0, and Samsung says Matter, Thread and Zigbee devices connect to SmartThings Stations. Wi-Fi and Bluetooth are left out because no official page we could read lists them; no official source lists Z-Wave or Ethernet."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [
+      "csa-st-station",
+      "csa-st-station-ep"
+    ],
+    "note": "CSA lists SmartThings Station twice: a Matter 1.1 software component (2023) and the EP-P9500 as Zigbee 3.0 (2022). Neither ties Matter to the hardware or names a transport, so it is left unconfirmed."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No official source found that shows Station-paired devices in Apple Home."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "st-voice-us"
+      ],
+      "note": "Link SmartThings under Works with Google in the Google Home app; devices at the chosen SmartThings location become controllable."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "st-voice-us"
+      ],
+      "note": "Enable the SmartThings skill in the Alexa app; Samsung lists lights, switches, dimmers, thermostats and locks, plus status of motion and contact sensors."
+    },
+    "smartthings": {
+      "status": "native",
+      "sources": [
+        "st-station-ces",
+        "st-hub-everywhere"
+      ],
+      "note": "The Station is a SmartThings hub; Samsung says Matter, Thread and Zigbee devices connect to it, and several Stations can form a multi-hub network."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-smartthings"
+      ],
+      "note": "Home Assistant's SmartThings integration is cloud-based and adds the SmartThings hub and its devices. The page does not name the Station, and says free SmartThings API access ends in October 2026 (a paid plan is needed after that)."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "st-station-ces"
+    ],
+    "note": "It is the hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No official page we could read explains whether control is local."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": [
+      "st-station-ces"
+    ]
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee",
+      "thread"
+    ],
+    "sources": [
+      "st-hub-everywhere",
+      "st-station-infographic"
+    ],
+    "note": "Samsung names Matter, Thread and Zigbee devices. No official source lists Z-Wave for the Station."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Samsung says the Station supports Matter devices; no source says it exposes its devices to other Matter controllers."
+  },
+  "threadBorderRouter": {
+    "value": true,
+    "sources": [
+      "st-hub-everywhere"
+    ],
+    "note": "Samsung says Thread devices connect to the Station; the page does not use the words 'border router'."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "No limit found in official sources."
+  },
+  "summary": "Samsung's SmartThings Station (EP-P9500, US) is a SmartThings hub that needs no other hub. Samsung says Matter, Thread and Zigbee devices connect to it, and several Stations can form a multi-hub network. Devices at your SmartThings location reach Google Home and Alexa through the SmartThings link or skill. Apple Home isn't confirmed.",
+  "sources": [
+    {
+      "id": "st-station-ces",
+      "url": "https://news.samsung.com/us/samsung-unveils-smartthings-station-making-smarter-homes-accessible-ces-2023",
+      "title": "Samsung Unveils SmartThings Station at CES 2023, Making Smarter Homes Accessible for Everyone",
+      "publisher": "Samsung Newsroom",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "st-hub-everywhere",
+      "url": "https://partners.smartthings.com/hub-everywhere",
+      "title": "Smart Home Hub - Hub Everywhere",
+      "publisher": "SmartThings",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "st-station-infographic",
+      "url": "https://news.samsung.com/global/infographic-keep-track-of-your-smart-home-and-connected-devices-more-seamlessly-with-smartthings-station",
+      "title": "[Infographic] Keep Track of Your Smart Home and Connected Devices More Seamlessly with SmartThings Station",
+      "publisher": "Samsung Newsroom",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "st-voice-us",
+      "url": "https://www.samsung.com/us/support/answer/ANS10006871/",
+      "title": "Set up and use Google Assistant or Amazon Alexa with SmartThings",
+      "publisher": "Samsung",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-st-station",
+      "url": "https://csa-iot.org/csa_product/smartthings-station-2/",
+      "title": "SmartThings Station",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "csa-st-station-ep",
+      "url": "https://csa-iot.org/csa_product/smartthings-station-ep-p9500/",
+      "title": "SmartThings Station (EP-P9500)",
+      "publisher": "Connectivity Standards Alliance",
+      "kind": "certification",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-smartthings",
+      "url": "https://www.home-assistant.io/integrations/smartthings/",
+      "title": "SmartThings - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "caveats": [
+    "Home Assistant's SmartThings integration runs through the cloud, and free API access ends in October 2026; after that a paid plan is needed.",
+    "Samsung's pages say Thread devices connect to the Station but never use the words \"border router\", so treat that role as implied."
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

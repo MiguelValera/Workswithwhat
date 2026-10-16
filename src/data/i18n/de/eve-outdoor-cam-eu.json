@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Eine fest verkabelte Flutlichtkamera, ausschließlich für Apple HomeKit Secure Video gebaut: Das ist die Eve Outdoor Cam. Clips werden auf einem Apple TV oder HomePod analysiert und verschlüsselt in iCloud gespeichert, die Aufzeichnung braucht also einen iCloud+-Tarif, und die Live-Ansicht läuft über die Steuerzentrale. Die Installation braucht Netzstrom mit Neutralleiter und Schutzleiter. Eve führt Google Home, Alexa und SmartThings nicht auf, daher bleiben sie unbestätigt.",
+  "caveats": [
+    "Braucht einen iCloud+-Tarif und eine Apple-Steuerzentrale; ohne beides keine Aufzeichnung.",
+    "Die Installation braucht Neutralleiter und Schutzleiter; ohne sie kann sie an dieser Stelle nicht montiert werden.",
+    "Nur 2,4-GHz-WLAN.",
+    "Technische Daten und Angaben zu Ökosystemen stammen von Seiten aus der Markteinführung 2022; die genaue Modellnummer der EU-Variante wurde nicht gefunden."
+  ],
+  "notes": {
+    "radios": "Laut Handbuch verbindet sie sich nur mit 2,4-GHz-WLAN-Netzwerken.",
+    "matter": "Keine gefundene Eve-Seite sagt, dass die Outdoor Cam Matter unterstützt; sie wird als für HomeKit Secure Video gebaut beschrieben.",
+    "hubRequired": "Keine Eve-Bridge. Eine Apple-Steuerzentrale (Apple TV oder HomePod) ist für HomeKit Secure Video und den Fernzugriff nötig.",
+    "localControl": "Eve sagt, Live-Video berühre nie eine Cloud und der Zugriff laufe über die Steuerzentrale; ein rein lokaler Betrieb wird nicht genannt.",
+    "cameraType": "Flutlichtkamera mit dimmbarem Licht, gedacht als Ersatz für eine vorhandene Außenleuchte.",
+    "power": "Eves Handbuch verlangt Wechselstrom mit Neutralleiter und Schutzleiter; ohne sie kann die Kamera an dieser Stelle nicht installiert werden. Händler nennen 100-240 V AC; auf einer Eve-Seite nicht gesehen.",
+    "localStorage": "Aufnahmen gehen über HomeKit Secure Video nach iCloud; keine gesehene Herstellerseite erwähnt lokalen Speicher.",
+    "subscription": "Für die Aufzeichnung ist ein iCloud+-Tarif nötig (nicht enthalten); die Größe von Apples Tarif bestimmt, wie viele Kameras erlaubt sind.",
+    "compatibility.apple_home": "Ausschließlich für HomeKit Secure Video gebaut: Clips werden auf einem Apple TV oder HomePod analysiert und verschlüsselt in iCloud gespeichert; die Live-Ansicht läuft über die Steuerzentrale.",
+    "compatibility.google_home": "Eve beschreibt sie als ausschließlich für HomeKit Secure Video entwickelt und führt Google Home nicht auf; keine Seite sagt ausdrücklich, dass es nicht unterstützt wird.",
+    "compatibility.alexa": "Eve beschreibt sie als ausschließlich für HomeKit Secure Video entwickelt und führt Alexa nicht auf; keine Seite sagt ausdrücklich, dass es nicht unterstützt wird.",
+    "compatibility.smartthings": "Keine Seite des Herstellers oder von Samsung gefunden.",
+    "compatibility.home_assistant": "Nur eine Community-Anleitung koppelt sie über die HomeKit-Integration plus go2rtc; keine offizielle Home-Assistant-Dokumentation für diese Kamera."
+  },
+  "values": {
+    "power": "Fest verkabelt am Netz (Neutralleiter + Schutzleiter)",
+    "subscription": "iCloud+ (HomeKit Secure Video)"
+  }
+}

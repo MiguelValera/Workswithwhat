@@ -1,0 +1,122 @@
+{
+  "category": "smart-bulb",
+  "brand": "Philips Hue",
+  "model": "White Ambiance A60 B22 800 lm (2-pack, EAN 8719514328303)",
+  "name": "Hue White Ambiance B22 (UK)",
+  "regions": ["UK"],
+  "officialUrl": "https://www.philips-hue.com/en-gb/p/hue-white-ambiance-a60-b22-smart-bulb-800-2-pack/8719514328303",
+  "radios": {
+    "value": ["bluetooth", "zigbee"],
+    "sources": ["hue-b22-gb", "hue-bridge-faq"],
+    "note": "Hue's UK page lists Bluetooth and Zigbee. The Hue Bridge FAQ says the bridge runs a private Zigbee network for Hue lights."
+  },
+  "matter": {
+    "certified": null,
+    "sources": ["hue-matter-guide"],
+    "note": "Hue's UK page lists Matter among third-party systems, but we found no CSA listing for this EAN. Hue's guide offers Matter through the Hue Bridge. Not confirmed for the bulb itself."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-b22-gb", "hue-matter-guide"],
+      "note": "Hue's page lists Apple HomeKit and says voice-assistant control needs the bridge. Hue's Matter guide says the bridge also connects bulbs without Matter to Apple Home."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["hue-b22-gb", "hue-no-bridge-faq"],
+      "note": "Hue's page lists Google Home. Hue's (US) FAQ says Bluetooth Hue lights pair without a Bridge with Nest Mini, Nest Hub and Nest Hub Max (up to 10 lights); the UK page lists voice control under 'Hue Bridge required'. With a Bridge it uses Hue's own integration."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["hue-b22-gb", "hue-no-bridge-faq"],
+      "note": "Hue's page lists Alexa. Hue's (US) FAQ says Bluetooth Hue lights pair without a Bridge with an Echo (4th gen), Echo Show or newer; the UK page lists voice control under 'Hue Bridge required'. With a Bridge it uses Hue's own skill."
+    },
+    "smartthings": {
+      "status": "hub",
+      "via": "Philips Hue Bridge",
+      "sources": ["hue-b22-gb", "hue-no-bridge-faq"],
+      "note": "Hue's page lists Samsung SmartThings; Hue's FAQ puts SmartThings on the Bridge side, not Bluetooth."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-hue"],
+      "note": "Official Hue integration, which pairs with the Hue Bridge. The docs don't name this specific bulb."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["hue-b22-gb", "hue-no-bridge-faq"],
+    "note": "Here this means needing a bridge for basic app control. The Hue app controls it over Bluetooth (about 9 m); Apple Home, SmartThings and the full feature set need a Hue Bridge."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["hue-no-bridge-faq", "ha-hue"],
+    "note": "Bluetooth control from a phone works without internet; Home Assistant talks to the Hue Bridge over its local API."
+  },
+  "colorType": {
+    "value": "tunable-white",
+    "sources": ["hue-b22-gb"],
+    "note": "Adjustable white from 2200 to 6500 K; no colour."
+  },
+  "lumens": {
+    "value": 806,
+    "sources": ["hue-b22-gb"],
+    "note": "Sold as '800 lumen'; the page states up to 806 lm at 4000 K."
+  },
+  "bulbBase": {
+    "value": "B22",
+    "sources": ["hue-b22-gb"],
+    "note": "Bayonet cap."
+  },
+  "summary": "Hue White Ambiance A60 B22 in the UK 2-pack runs from 2200 to 6500 K at up to 806 lumens, on a bayonet cap. The Hue app controls it over Bluetooth without a bridge, and Hue's FAQ says Bluetooth lights pair directly with recent Echo and Google Nest speakers. Apple Home and SmartThings need a Hue Bridge, and Home Assistant uses the Hue integration.",
+  "caveats": [
+    "Apple Home and SmartThings need a Hue Bridge. The UK page lists voice control under 'Hue Bridge required', though Hue's FAQ describes Bluetooth pairing with recent Echo and Nest speakers.",
+    "Matter works through the Hue Bridge; we found no Matter listing for the bulb itself."
+  ],
+  "sources": [
+    {
+      "id": "hue-b22-gb",
+      "url": "https://www.philips-hue.com/en-gb/p/hue-white-ambiance-a60-b22-smart-bulb-800-2-pack/8719514328303",
+      "title": "Hue A60 B22 smart bulb 800 (2-pack), White Ambiance",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-no-bridge-faq",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/faq/controls/how-to-connect-philips-hue-without-a-bridge",
+      "title": "How to connect Philips Hue without a Bridge?",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-matter-guide",
+      "url": "https://www.philips-hue.com/en-us/support/article/philips-hue-and-matter-complete-setup-and-support-guide/000012",
+      "title": "Philips Hue and Matter: Complete Setup & Support Guide",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "hue-bridge-faq",
+      "url": "https://www.philips-hue.com/en-us/explore-hue/faq/controls/what-is-the-hue-bridge",
+      "title": "What is the Hue Bridge?",
+      "publisher": "Signify (Philips Hue)",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-hue",
+      "url": "https://www.home-assistant.io/integrations/hue/",
+      "title": "Philips Hue - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

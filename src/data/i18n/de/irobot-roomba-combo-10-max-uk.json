@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "iRobots UK-Seite nennt Alexa und Google Assistant für den Roomba Combo 10 Max, einen kameranavigierten Saug- und Wischroboter, der mit der AutoWash-Dock geliefert wird. Die Dock leert den Behälter, füllt den Wassertank nach und wäscht und trocknet das Wischpad. Die CSA führt Matter nur für das US-Modell, daher ist Apple Home hier nicht bestätigt, und iRobot nennt keinen Saugwert in Pascal.",
+  "caveats": [
+    "Der Matter-Eintrag der CSA nennt die US-Familien-SKU x085020, nicht die UK-Version X085840; Matter und Apple Home sind für dieses Modell daher nicht bestätigt.",
+    "iRobot nennt keinen Saugwert in Pascal.",
+    "Unterstützung für SmartThings und Home Assistant ist nicht bestätigt."
+  ],
+  "notes": {
+    "radios": "iRobots UK-Seite nennt den Funkstandard nicht. Die CSA führt WLAN für die Familien-SKU x085020 des Roomba Combo 10 Max (das US-Modell), nicht für die UK-Version X085840.",
+    "matter": "Die CSA führt den Roomba Combo 10 Max (Familien-SKU x085020, das US-Modell, WLAN, 2025-01-23); kein Eintrag nennt die UK-Version X085840. iRobots Mitteilung vom Juli 2024, auf der UK-Seite gespiegelt, sagte, Matter sei für das 4. Quartal 2024 geplant. Die UK-Seite erwähnt Matter nicht.",
+    "hubRequired": "Gesteuert über die iRobot-Home-App; die AutoWash-Dock ist kein Hub.",
+    "localControl": "Für dieses Modell aus keiner offiziellen Quelle bestätigt.",
+    "cleaning": "Hin und her bewegtes Wischpad, das auf Teppich angehoben wird; auf Hartböden saugt und wischt er gleichzeitig.",
+    "navigation": "iRobot beschreibt eine Kamera und Erkennungssensoren mit Hindernisvermeidung; ein LiDAR wird nicht erwähnt.",
+    "suctionPa": "iRobot nennt keinen Pascal-Wert, nur „100 % stärkere Saugkraft“ als die Roomba-Combo-i-Serie.",
+    "selfEmptying": "Die AutoWash-Dock leert Schmutz in einen geschlossenen Beutel, füllt den Wischtank nach und wäscht und trocknet das Pad.",
+    "compatibility.apple_home": "Matter ist für das UK-Modell nicht bestätigt (siehe Matter). Die UK-Seite führt Siri, das über Siri-Kurzbefehle funktioniert, nicht über Apple Home.",
+    "compatibility.google_home": "iRobots UK-Seite sagt, dass er mit Geräten mit Google Assistant funktioniert.",
+    "compatibility.alexa": "iRobots UK-Seite sagt, dass er mit Alexa funktioniert.",
+    "compatibility.smartthings": "Auf den iRobot-Seiten, die wir gesehen haben, steht nichts zu SmartThings.",
+    "compatibility.home_assistant": "Home Assistant hat eine lokale Roomba-Integration, doch die Dokumentation nennt dieses Modell nicht, und neuere Modelle sind stellenweise ausgeschlossen. Nicht bestätigt."
+  },
+  "values": {
+    "navigation": "Kamera (PrecisionVision Navigation)"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Sensi Touch 2 funktioniert mit Alexa, Google Home und SmartThings, aber nicht mit Apple Home: Sensis eigene HomeKit-Seite führt es als nicht kompatibel auf. Es ist ein Wandthermostat für einstufige, mehrstufige und Wärmepumpen-Anlagen, mit eingebautem WLAN und Bluetooth. Jede Installation braucht einen C-Draht (20-30 V AC) oder Sensis Common Wire Kit.",
+  "caveats": [
+    "Laut Sensis Support-Seite nicht mit Apple HomeKit kompatibel.",
+    "Braucht einen C-Draht; das Common Wire Kit (SA11) ist die Option, wenn keiner vorhanden ist.",
+    "Sensi erwähnt weder Matter noch Home Assistant."
+  ],
+  "notes": {
+    "radios": "Das Datenblatt führt 802.11 a/b/g/n auf 2,4 und 5 GHz sowie Bluetooth LE auf.",
+    "matter": "Matter wird auf Sensis Seiten und im Datenblatt nicht erwähnt; ein CSA-Eintrag wurde nicht geprüft.",
+    "hubRequired": "Sensis Seiten beschreiben die WLAN-Steuerung über die Sensi-App, sagen aber nicht, ob eine Bridge nötig ist oder nicht.",
+    "localControl": "Sensis Seiten betonen die Fernsteuerung über die App; lokale Steuerung wird nicht erwähnt.",
+    "systems": "Das Datenblatt führt Gas- oder Elektroheizung, Klimaanlage, Heizkessel und Wärmepumpe (4H/2C) auf, dazu Dual Fuel ohne Außensensor. Modelle 1F96U-42WF (weiß) und 1F96U-42WFB (schwarz).",
+    "power": "Laut Datenblatt brauchen alle Anlagen einen gemeinsamen Draht; Sensi verkauft ein Common Wire Kit (SA11) für Häuser ohne einen.",
+    "compatibility.apple_home": "Sensis HomeKit-Support-Seite führt das Touch 2 unter „Not Apple HomeKit compatible“; nur das ursprüngliche Sensi Touch ist als kompatibel aufgeführt.",
+    "compatibility.google_home": "Funktioniert mit dem Google Assistant und Google Home über die Verknüpfung in der Sensi-App.",
+    "compatibility.alexa": "Sprachbefehle, Routinen und das Alexa-Energie-Dashboard über den Sensi-Skill.",
+    "compatibility.smartthings": "Sensi führt Samsung SmartThings auf; laut Seite kann es die Heizung ein- oder ausschalten.",
+    "compatibility.home_assistant": "Sensis Seiten erwähnen Home Assistant nicht."
+  },
+  "values": {
+    "power": "C-Draht erforderlich (20-30 V AC)",
+    "systems": "Universal: einstufig, mehrstufig und Wärmepumpe"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Una volta configurato, l'HomePod mini diventa automaticamente un hub di Apple Home, con accesso remoto e automazioni per gli accessori HomeKit e Matter. Apple lo definisce un hub domestico con Thread e Home Assistant lo elenca come border router Thread. Ha Wi-Fi 802.11n e Bluetooth 5.0. Nulla di ufficiale mostra i suoi dispositivi in Google Home, Alexa o SmartThings.",
+  "caveats": ["Serve un hub domestico per l'accesso remoto e per gli accessori Thread; la pagina di configurazione dice che solo i proprietari della casa possono aggiungerne uno all'app Home."],
+  "notes": {
+    "radios": "Wi-Fi 802.11n, Bluetooth 5.0 e Thread.",
+    "matter": "Apple elenca l'HomePod mini come hub domestico per gli accessori Matter. La scheda software HomePod della CSA (Matter 1.0, ottobre 2022) è un componente software e non nomina alcun modello di HomePod, quindi un certificato per singolo modello non è confermato.",
+    "hubRequired": "È l'hub.",
+    "localControl": "Non confermato da una fonte ufficiale.",
+    "deviceProtocols": "Apple dice che gli accessori Thread HomeKit o Matter si collegano tramite un hub domestico con Thread, come l'HomePod mini.",
+    "matterBridge": "Non indicato da Apple.",
+    "threadBorderRouter": "Apple nomina l'HomePod mini come hub domestico con Thread, accanto ai border router Thread di terze parti; la pagina Thread di Home Assistant lo elenca come border router.",
+    "maxDevices": "Nessun limite trovato nelle fonti.",
+    "compatibility.apple_home": "Configurando un HomePod mini, questo diventa automaticamente un hub domestico; aggiunge accesso remoto e automazioni per gli accessori HomeKit e Matter e fa da hub Thread.",
+    "compatibility.google_home": "Nessuna fonte ufficiale mostra in Google Home i dispositivi abbinati all'HomePod mini.",
+    "compatibility.alexa": "Nessuna fonte ufficiale mostra in Alexa i dispositivi abbinati all'HomePod mini.",
+    "compatibility.smartthings": "Nessuna fonte ufficiale mostra in SmartThings i dispositivi abbinati all'HomePod mini.",
+    "compatibility.home_assistant": "La pagina Thread di Home Assistant elenca l'HomePod mini come border router Thread; non dice che i dispositivi abbinati in Apple Home compaiano in Home Assistant."
+  }
+}

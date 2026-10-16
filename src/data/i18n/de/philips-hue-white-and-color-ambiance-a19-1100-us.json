@@ -1,0 +1,27 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Hues eigene Integrationen verbinden die Philips Hue White and Color Ambiance A19 mit Alexa und Google Home, entweder ohne Bridge über Bluetooth an unterstützten Echo- und Google-Nest-Lautsprechern oder über eine Hue Bridge. Apple Home und SmartThings brauchen die Bridge, und Home Assistant hat offizielle Integrationen für beide Wege. Diese US-Version (Produktcode 046677591168) ist eine Farblampe mit E26-Sockel und bis zu 1100 Lumen. Matter ist unbestätigt: Die CSA führt eine Hue-A19/A60-Lampe mit 1100 lm, aber Hues Seite zu diesem Code nennt nur Bluetooth und Zigbee.",
+  "caveats": [
+    "Apple Home und SmartThings brauchen eine Hue Bridge; die direkte Matter-Kopplung ist für diesen Produktcode nicht bestätigt.",
+    "Ohne Bridge funktioniert die Google-Steuerung nur von Google-Nest-Lautsprechern und -Displays.",
+    "Der Bluetooth-Modus schafft höchstens etwa 10 Lampen in einem Raum und hat keinen Fernzugriff.",
+    "Hue verkauft auch A19-Farblampen mit geringerer Leistung (z. B. 800 lm), prüfe also auf der Packung den Produktcode 046677591168."
+  ],
+  "notes": {
+    "radios": "Hue führt Bluetooth und Zigbee. Der CSA-Matter-Eintrag zur 1100lm A19/A60 nennt auch einen Thread-Transport, aber wir können ihn nicht diesem Produktcode zuordnen, deshalb ist Thread hier nicht aufgeführt.",
+    "matter": "Offizielle Quellen widersprechen sich. Der CSA-Eintrag „White and Color Ambiance 1100lm A19/A60“ nennt Thread- und Bluetooth-Transport (Matter 1.3), aber Hues Seite zu diesem Produktcode führt nur Bluetooth und Zigbee. Hues Anleitung bietet Matter auch über die Hue Bridge.",
+    "hubRequired": "Die grundlegende Steuerung funktioniert per Bluetooth aus der Hue-App (bis zu 10 Lampen, ein Raum). Für Apple Home, SmartThings, Fernzugriff und größere Setups wird eine Hue Bridge gebraucht.",
+    "localControl": "Die Bluetooth-Steuerung vom Handy braucht kein Internet; die Hue Bridge bietet auch eine lokale API, die Home Assistant nutzt.",
+    "colorType": "Vollfarbe plus einstellbares Weiß; Hue nennt einen Bereich von 1000–20000 K.",
+    "lumens": "Bis zu 1100 lm laut Hues Seite zum Produktcode 046677591168. Hue verkauft auch A19-Farblampen mit geringerer Leistung (z. B. 800 lm), prüfe also den Code auf der Packung.",
+    "compatibility.apple_home": "Hues Produktseite führt Apple Home unter „Hue Bridge required“; die Bridge verbindet über HomeKit oder Matter. Ist diese Lampe das im CSA-Eintrag geführte Thread-Modell, kann sie sich eventuell auch direkt über Matter koppeln; nicht bestätigt.",
+    "compatibility.google_home": "Hues eigene Integration. Laut Hues FAQ und Googles Support-Seiten funktionieren Bluetooth-Lampen ohne Bridge nur mit Google-Nest-Lautsprechern und -Displays; die Produktseite führt Google unter „Hue Bridge required“, was den vollen Funktionsumfang freischaltet.",
+    "compatibility.alexa": "Hues eigene Integration. Laut Hues FAQ und der Alexa-Einrichtungsseite lassen sich Bluetooth-Lampen an unterstützten Echo-Geräten direkt hinzufügen; die Produktseite führt Alexa unter „Hue Bridge required“, was den Hue-Skill und weitere Funktionen ergänzt.",
+    "compatibility.smartthings": "Hues Produktseite führt SmartThings unter „Hue Bridge required“. Die direkte Matter-Kopplung ist für diesen Produktcode unbestätigt (siehe Matter).",
+    "compatibility.home_assistant": "Offizielle Hue-Integration (über die Hue Bridge) und offizielle Hue-BLE-Integration (2025.12, Bluetooth ohne Bridge). Die BLE-Dokumentation nennt bestimmte Hue-Modelle und sagt, andere sollten funktionieren; dieser Produktcode wird nicht genannt."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge"
+  }
+}

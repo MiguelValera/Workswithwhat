@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Per la Wyze Plug Outdoor (WLPPO1) sono confermati solo due assistenti: Alexa tramite la skill Wyze, e Google Home tramite un collegamento all'account Wyze che Wyze supporta solo negli Stati Uniti. Apple Home e SmartThings non sono nell'elenco di integrazioni di Wyze, e Wyze non menziona Matter. Si collega direttamente al Wi-Fi a 2,4 GHz, usa il Bluetooth per la configurazione e registra il consumo energetico nell'app Wyze con avvisi quando l'uso di un mese supera il tuo limite. Una volta configurata, il suo sensore di luce continua a comandare la presa anche se il Wi-Fi cade.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "Wyze dice che la sua integrazione con Google Assistant è supportata ufficialmente solo negli Stati Uniti.", "Apple Home e SmartThings non sono nell'elenco di integrazioni di Wyze.", "Valore nominale di 15 A per presa; Wyze non pubblica un limite in watt.", "Nessuna integrazione ufficiale con Home Assistant, solo integrazioni della community che usano il cloud Wyze."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz (niente 5 GHz). Il Bluetooth 4.2 si usa durante la configurazione.",
+    "matter": "Le pagine di Wyze per questa presa nominano solo Alexa e Google Assistant e non menzionano Matter. È un'assenza, non un no esplicito.",
+    "hubRequired": "La pagina prodotto di Wyze indica Hub Required: No. Si collega direttamente al Wi-Fi a 2,4 GHz e si configura nell'app Wyze.",
+    "localControl": "Wyze dice che il sensore di luce continua a comandare la presa senza Wi-Fi una volta configurata, ma non abbiamo trovato nessuna dichiarazione sul controllo sulla rete locale senza il cloud Wyze.",
+    "energyMonitoring": "Storico dei consumi nell'app Wyze, con avvisi quando l'uso mensile supera un livello impostato.",
+    "maxLoadWatts": "Wyze indica 15 A al massimo per presa (120 V, 60 Hz) con protezione da sovraccarico e un limite di motore da 1/2 HP, ma nessun valore in watt.",
+    "compatibility.apple_home": "L'elenco di integrazioni di Wyze (Alexa, Google Assistant, IFTTT) non include HomeKit, ma non abbiamo trovato nessuna pagina Wyze che dica che la presa da esterno non è supportata.",
+    "compatibility.google_home": "Collega il tuo account Wyze nell'app Google Home. L'elenco dei dispositivi Google Assistant di Wyze nomina la Plug Outdoor, e Wyze dice che l'integrazione è supportata solo negli Stati Uniti.",
+    "compatibility.alexa": "Tramite la skill Alexa di Wyze.",
+    "compatibility.smartthings": "SmartThings non è nell'elenco di integrazioni di Wyze, ma Wyze non dice che non sia supportato.",
+    "compatibility.home_assistant": "Nessuna integrazione ufficiale Wyze in Home Assistant; solo integrazioni personalizzate della community che usano il cloud Wyze."
+  }
+}

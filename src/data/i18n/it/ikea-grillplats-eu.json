@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Ogni strada verso IKEA GRILLPLATS passa da Matter su Thread. Vale per Apple Home, Google Home, Alexa e SmartThings, che IKEA elenca, più l'integrazione Matter di Home Assistant, ma ognuna richiede un border router Thread come l'hub DIRIGERA di IKEA o un hub Apple, Google, Amazon o SmartThings con Thread. Senza, si abbina solo direttamente a un telecomando o a un sensore di movimento IKEA. Monitora il consumo ed è dato per 3680 W / 16 A per carichi resistivi. Questo record riguarda il tipo E2491-EU.",
+  "caveats": ["Serve un border router Thread (DIRIGERA o quello di un altro ecosistema) per il controllo da telefono, vocale o dell'ecosistema.", "Dato per 3680 W / 16 A per carichi resistivi ma solo 300 W per carichi motore.", "Alcune recensioni di acquirenti segnalano abbinamenti falliti con Alexa.", "I dati di consumo che vedi dipendono dall'app del controller."],
+  "notes": {
+    "radios": "IKEA dice che usa Matter su Thread. La scheda CSA per lo SKU di famiglia E2491-EU indica Thread e Bluetooth come trasporti; il Bluetooth serve probabilmente solo per la configurazione Matter.",
+    "matter": "IKEA lo segnala come compatibile con Matter. Il certificato CSA CSA255B7MAT46345-24 (Matter 1.4, certificato il 2025-08-20) elenca lo SKU di famiglia E2491-EU, il tipo citato nel manuale tedesco di IKEA. La CSA ha anche altri certificati GRILLPLATS.",
+    "hubRequired": "IKEA dice che il controllo da telefono richiede un border router Thread, come il suo hub DIRIGERA o il border router di un altro ecosistema. Senza, si abbina solo direttamente a un telecomando o a un sensore di movimento IKEA.",
+    "localControl": "Certificato Matter (CSA), e Home Assistant documenta Matter come controllo locale senza cloud. IKEA stessa non dichiara il controllo locale.",
+    "energyMonitoring": "IKEA dice che monitora il consumo di energia. Cosa vedi dipende dall'app del controller.",
+    "maxLoadWatts": "Manuale tedesco di IKEA per il tipo E2491-EU: 220-240 V, carico resistivo massimo 3680 W / 16 A, carico motore massimo 300 W.",
+    "compatibility.apple_home": "IKEA cita Apple tra i sistemi compatibili. Tramite Matter; serve un hub domestico Apple che sia un border router Thread.",
+    "compatibility.google_home": "IKEA cita Google tra i sistemi compatibili. Tramite Matter; serve un hub Google che sia un border router Thread.",
+    "compatibility.alexa": "IKEA cita Amazon tra i sistemi compatibili. Tramite Matter; serve un Echo che sia un controller Matter e un border router Thread. Alcune recensioni di acquirenti segnalano abbinamenti falliti con Alexa.",
+    "compatibility.smartthings": "IKEA cita Samsung tra i sistemi compatibili. Tramite Matter; serve un hub SmartThings con Thread.",
+    "compatibility.home_assistant": "Tramite l'integrazione Matter di Home Assistant, che richiede un border router Thread per i dispositivi Thread. IKEA non cita Home Assistant."
+  }
+}

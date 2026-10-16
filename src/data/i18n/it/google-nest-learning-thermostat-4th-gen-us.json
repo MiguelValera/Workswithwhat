@@ -1,0 +1,23 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Google Home è l'app principale del Nest Learning Thermostat (4th gen), un termostato da parete statunitense con Wi-Fi e certificazione Matter. Quella scheda Matter è ciò che lo porta in Apple Home, e Home Assistant ha anche un'integrazione ufficiale Nest. Alexa funziona tramite la skill Nest di Google, e SmartThings non è confermato. Funziona senza filo C nella maggior parte delle case e copre la maggior parte degli impianti a 24 V.",
+  "caveats": ["La configurazione richiede l'app Google Home.", "Google dice che gli impianti solo riscaldamento, solo raffrescamento, a zone e a pompa di calore richiedono un filo C o un Nest Power Connector; il suo strumento di verifica è g.co/nest/works.", "Google limita un termostato a 5 app Matter, e Apple Home richiede inoltre un hub domestico Apple.", "Il supporto a SmartThings non è confermato."],
+  "notes": {
+    "radios": "Le specifiche della 4th gen di Google indicano Wi-Fi 802.11n (2,4/5 GHz). Nessuna pagina Google che abbiamo visto indica una radio Thread per questo modello, quindi è esclusa.",
+    "matter": "La CSA elenca la 4th gen come certificata Matter su Wi-Fi (firmware 2.3, Matter 1.4, ottobre 2025; una scheda precedente del 2024 copre il firmware 2.1). Google dice che funziona con Google Home e altre app compatibili con Matter.",
+    "hubRequired": "Si collega via Wi-Fi e si configura nell'app Google Home; non serve un bridge.",
+    "localControl": "Nessuna fonte del produttore dichiara cosa funzioni senza internet. L'integrazione Nest di Home Assistant è basata sul cloud.",
+    "thermostatType": "Termostato da parete.",
+    "systems": "Google elenca la maggior parte degli impianti a 24 V (gas, elettrico, gasolio, aria forzata, pompa di calore, radiante). Usa g.co/nest/works per controllare il tuo.",
+    "power": "La pagina delle specifiche di Google dice che funziona senza filo C nella maggior parte delle case e che in casi limitati (meno dell'1%) serve un filo C o un Nest Power Connector. La pagina prodotto di Google aggiunge che gli impianti solo riscaldamento, solo raffrescamento, a zone e a pompa di calore ne richiedono uno.",
+    "compatibility.apple_home": "Tramite Matter: aggiungilo prima a Google Home, poi collegalo ad Apple Home. Google limita un termostato a 5 app Matter. Serve un hub domestico Apple.",
+    "compatibility.google_home": "Si configura e si controlla nell'app Google Home.",
+    "compatibility.alexa": "Tramite la skill Nest di Google per Alexa, attivata dall'app Google Home. Il confronto dei termostati di Google elenca Works with Amazon Alexa per la 4th gen.",
+    "compatibility.smartthings": "Nessuna pagina di Google o Samsung trovata elenca questo modello. Solo un post del forum di SmartThings cita un termostato Nest tramite Matter.",
+    "compatibility.home_assistant": "Integrazione ufficiale Google Nest che usa la Smart Device Management API, che secondo Google supporta tutti i modelli di termostato Nest; Google applica una tariffa una tantum di 5 USD per Device Access. Matter è un secondo percorso."
+  },
+  "values": {
+    "power": "Filo C non necessario nella maggior parte delle case",
+    "systems": "La maggior parte degli impianti a 24 V, pompe di calore incluse"
+  }
+}

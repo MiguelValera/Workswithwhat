@@ -1,0 +1,31 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Mit 2 m anfangen und auf 10 m erweitern: Der Hue Gradient Lightstrip ist ein erweiterbares Basisset, das mehrere Farben gleichzeitig zeigt. Dank Bluetooth und Zigbee steuert ihn die Hue-App ohne Bridge. Google Home und Alexa sind nativ; Apple Home und SmartThings laufen über eine Hue Bridge, ebenso Home Assistants Hue-Integration. Hue führt Matter, ohne einen Transport zu nennen.",
+  "caveats": [
+    "Er zieht 20 W über ein Netzteil, das 2-m-Set braucht also eine Steckdose in der Nähe.",
+    "Apple Home, SmartThings und der Fernzugriff laufen über eine Hue Bridge; ohne sie ist die Bluetooth-Steuerung auf 10 Lampen pro Smartphone begrenzt.",
+    "Hues Seite führt Matter, nennt aber keinen Transport, und für diese EAN wurde kein CSA-Eintrag gefunden."
+  ],
+  "notes": {
+    "radios": "Die deutsche Seite nennt Bluetooth und Zigbee als Protokolle.",
+    "matter": "Hues Seite führt Matter unter den Fremdsystemen, nennt aber keinen Transport, und für diese EAN fanden wir keinen CSA-Eintrag. Hues Matter-Anleitung bietet Matter über die Hue Bridge an, direkt nur bei Lampen mit dem Matter-Logo.",
+    "hubRequired": "Die Seite sagt, die Steuerung funktioniere über Bluetooth oder eine Hue Bridge. Hues FAQ erlaubt bis zu 10 Lampen pro Smartphone über Bluetooth; für Apple Home, SmartThings und den Fernzugriff braucht es eine Bridge.",
+    "localControl": "Hues FAQ beschreibt die Bluetooth-Steuerung ohne Bridge als rein lokal; die Hue Bridge spricht mit Home Assistant über das lokale Netzwerk (Local Push).",
+    "colorType": "White and Colour Ambiance.",
+    "lengthM": "2-m-Basisset; erweiterbar auf bis zu 10 m und kürzbar.",
+    "multiZone": "Die Seite sagt, er zeige mehrere Farben gleichzeitig; eine Zonenzahl nennt sie nicht.",
+    "power": "20 W, Eingang 220–240 V; die Seite nennt die Ausgangsspannung nicht.",
+    "compatibility.apple_home": "Hues Seite führt Apple Home; Hues (US-)FAQ ohne Bridge ordnet Apple HomeKit der Hue-Bridge-Seite zu, die es über HomeKit oder Matter anbindet.",
+    "compatibility.google_home": "Hues Seite führt Google Home. Hues (US-)FAQ sagt, dass Bluetooth-Hue-Lampen ohne Bridge mit Nest Mini, Nest Hub und Nest Hub Max koppeln; mit Bridge nutzt es Hues eigene Integration.",
+    "compatibility.alexa": "Hues Seite führt Alexa. Hues (US-)FAQ sagt, dass Bluetooth-Hue-Lampen ohne Bridge mit einem Echo (4. Generation), Echo Show oder neuer koppeln; mit Bridge nutzt es Hues eigenen Skill.",
+    "compatibility.smartthings": "Hues Seite führt Samsung SmartThings; Hues (US-)FAQ ohne Bridge ordnet SmartThings der Hue-Bridge-Seite zu.",
+    "compatibility.home_assistant": "Offizielle Philips-Hue-Integration, die über das lokale Netzwerk mit der Hue Bridge spricht; der Streifen braucht dafür eine Bridge."
+  },
+  "via": {
+    "apple_home": "Philips Hue Bridge",
+    "smartthings": "Philips Hue Bridge"
+  },
+  "values": {
+    "power": "Netzteil"
+  }
+}

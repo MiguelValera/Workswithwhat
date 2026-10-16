@@ -1,0 +1,126 @@
+{
+  "category": "smart-hub",
+  "brand": "SONOFF",
+  "model": "ZBDongle-E",
+  "name": "SONOFF ZBDongle-E",
+  "regions": [
+    "US",
+    "EU",
+    "UK"
+  ],
+  "officialUrl": "https://sonoff.tech/en-us/products/sonoff-zigbee-3-0-usb-dongle-plus-zbdongle-e",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "e-page"
+    ],
+    "note": "Silicon Labs EFR32MG21 with Zigbee 3.0 coordinator firmware out of the box. Sold as Zigbee 3.0 USB Dongle Plus-E; Home Assistant calls it Dongle Plus V2. Regions: the maker's store sells it in USD, EUR and GBP; no shipping list is stated."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No CSA listing found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software, which is not a hub; not confirmed."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software; not confirmed."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software; not confirmed."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not confirmed."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "e-page",
+        "ha-zha"
+      ],
+      "note": "Home Assistant lists it as a tested adapter for ZHA, not as official hardware, and the maker page describes use with Home Assistant."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed by an official source."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "e-page"
+    ],
+    "note": "The maker pitches it as a gateway to locally control all your Zigbee devices through Home Assistant or other open-source platforms."
+  },
+  "hubType": {
+    "value": "usb-dongle",
+    "sources": [
+      "e-page"
+    ],
+    "note": "Plugs into a host running Home Assistant or Zigbee2MQTT; it has no app of its own."
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "e-page"
+    ],
+    "note": "Zigbee 3.0 only on the maker page; no Thread firmware is offered there."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Not a bridge on its own; the maker mentions Matter only for its separate eWeLink CUBE software."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "The maker page does not offer a Thread border router mode; not stated either way as a feature."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "The maker states conflicting limits: 21 direct children by default (40 at most, 100 with changes) in the description, and 30 direct plus 30 via routers in the FAQ."
+  },
+  "summary": "The ZBDongle-E is a USB Zigbee 3.0 stick built on a Silicon Labs EFR32MG21 chip, and the only ecosystem it is confirmed with is Home Assistant (via ZHA or Zigbee2MQTT). It has no app and no Matter certification, so you plug it into a host you already run. SONOFF quotes conflicting child-device limits, from 21 direct by default to 30 direct plus 30 via routers.",
+  "sources": [
+    {
+      "id": "e-page",
+      "url": "https://sonoff.tech/en-us/products/sonoff-zigbee-3-0-usb-dongle-plus-zbdongle-e",
+      "title": "SONOFF Zigbee 3.0 USB Dongle Plus (ZBDongle-E)",
+      "publisher": "SONOFF",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-zha",
+      "url": "https://www.home-assistant.io/integrations/zha/",
+      "title": "Zigbee Home Automation - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "caveats": [
+    "It is not standalone and needs Home Assistant or Zigbee2MQTT on a separate host.",
+    "Home Assistant allows one ZHA instance, so a second dongle needs Zigbee2MQTT on a different channel.",
+    "Hue Green Power devices need the channel set to 11, 15, 20 or 25."
+  ],
+  "verifiedAt": "2026-10-12"
+}

@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Live-Video der Nest Cam (Innenbereich, kabelgebunden) 2. Generation läuft aus der Google-Home-App auf Nest-Displays und Chromecast-Geräte sowie über den Skill Google Nest auf einen Echo Show. Googles Store-Seite nennt bis zu 3 Stunden Ereignisvideo-Verlauf inklusive; ein längerer Verlauf und die 24/7-Aufzeichnung brauchen einen kostenpflichtigen Google-Tarif. Sie wird mit einem 10-ft-Kabel und einem 7,5-W-USB-A-Netzteil angeschlossen, nur für den Innenbereich. Home Assistant unterstützt sie, Apple Home und SmartThings sind nicht bestätigt.",
+  "caveats": [
+    "Die Innenkamera der 3. Generation nutzt USB-C statt USB-A; achte darauf, die Daten der 2. Generation zu lesen.",
+    "Home Assistant kann den WebRTC-Stream dieser Kamera über die Integration nicht aufzeichnen, und die Nest-Integration verlangt einmalig 5 US-Dollar Gebühr für Google Device Access.",
+    "Die Live-Ansicht in Alexa stoppt bei kabelgebundenen Nest-Kameras nach 12 Stunden, bis du erneut danach fragst.",
+    "Die 24/7-Aufzeichnung und ein längerer Verlauf brauchen einen kostenpflichtigen Google-Tarif."
+  ],
+  "notes": {
+    "radios": "WLAN-Kamera. Bluetooth Low Energy für die Einrichtung steht in Händlerangeboten und auf Googles Datenblattseite der 3. Generation, doch für die 2. Generation sahen wir es auf keiner Google-Seite bestätigt.",
+    "matter": "Keine gefundene Google-Seite führt Matter für diese Kamera.",
+    "hubRequired": "Verbindet sich über WLAN mit der Google-Home-App; keine Bridge aufgeführt.",
+    "localControl": "Streams laufen über Googles Cloud; auf den gesehenen Seiten ist kein rein lokaler Modus dokumentiert.",
+    "cameraType": "Google führt sie nur für den Innenbereich.",
+    "power": "7,5-W-USB-A-Netzteil im Lieferumfang. Das Modell der 3. Generation nutzt stattdessen USB-C.",
+    "localStorage": "Keine gesehene Google-Seite erwähnt lokalen Speicher; Ereignisvideos werden in Googles Cloud aufbewahrt.",
+    "subscription": "Googles Store-Seite nennt bis zu 3 Stunden Ereignisvideo-Verlauf inklusive; ein längerer Verlauf und die 24/7-Aufzeichnung brauchen einen kostenpflichtigen Google-Tarif. Die Tarifnamen für dieses Modell wurden von keiner Google-Seite bestätigt.",
+    "compatibility.apple_home": "Keine Google-Seite führt Apple Home; Tests sagen, es gebe keine HomeKit-Unterstützung, doch das ist keine offizielle Aussage.",
+    "compatibility.google_home": "Wird in der Google-Home-App eingerichtet. Live-Video läuft auf Nest-Displays und Chromecast-Geräte.",
+    "compatibility.alexa": "Über den Skill Google Nest: „Alexa, show [camera name]“ streamt Live-Video auf einen Echo Show. Die Live-Ansicht von kabelgebundenen Nest-Kameras stoppt nach 12 Stunden, bis du erneut danach fragst.",
+    "compatibility.smartthings": "Keine Seite von Google oder Samsung gefunden.",
+    "compatibility.home_assistant": "Home Assistants Integration Google Nest unterstützt Nest-Kameras mit Live-Streams und Ereignissen über Google Device Access, das einmalig 5 US-Dollar kostet. Für WebRTC-Kameras wie diese sagt HA, das Aufzeichnen von Streams werde nicht unterstützt."
+  },
+  "values": {
+    "power": "USB-A-Netzteil (Netzbetrieb), 10-ft-Kabel",
+    "subscription": "Optional: längerer Ereignisverlauf und 24/7-Aufzeichnung"
+  }
+}

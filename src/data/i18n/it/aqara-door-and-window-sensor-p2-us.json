@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "La versione statunitense del Door and Window Sensor P2 si collega tramite Matter su Thread, quindi funziona con Apple Home, Google Home, Alexa, SmartThings e Home Assistant, senza hub Aqara. Segnala aperto o chiuso e va a una pila CR123A. Serve un border router Thread compatibile con Matter, mentre l'allarme antimanomissione e le impostazioni di sensibilità richiedono l'Hub M3 di Aqara.",
+  "caveats": ["Serve un border router Thread compatibile con Matter, ad esempio un HomePod mini, un Nest Hub (2nd gen) o un Echo (4th gen).", "Il supporto completo ad Aqara Home, l'allarme antimanomissione e la sensibilità regolabile dipendono dall'Hub M3 di Aqara."],
+  "notes": {
+    "radios": "Le specifiche statunitensi di Aqara indicano Thread e BLE; la CSA indica Thread e Bluetooth. Modelli statunitensi DW-S02E e DW-S02D.",
+    "matter": "La CSA elenca Door and Window Sensor P2 di Lumi United (vendor 0x115F, product 0x2002), una scheda globale senza modello né regione. La pagina prodotto statunitense parla di supporto Matter nativo.",
+    "hubRequired": "Nessun hub Aqara per l'uso con Matter, ma serve un border router Thread compatibile con Matter (non un hub di marca). Il supporto di Aqara Home, l'allarme antimanomissione e la sensibilità regolabile sono legati all'Hub M3 di Aqara.",
+    "localControl": "La pagina statunitense di Aqara dice che può funzionare interamente sulla tua rete locale, senza servizi cloud.",
+    "senses": "La pagina statunitense di Aqara indica il rilevamento aperto/chiuso sempre attivo; la CSA lo elenca come sensore di contatto (device type 0x0015).",
+    "compatibility.apple_home": "Serve un border router Thread compatibile con Matter: Apple TV 4K (2nd/3rd gen), HomePod (2nd gen) o HomePod mini.",
+    "compatibility.google_home": "Serve un border router Thread come Nest Hub (2nd gen), Nest Hub Max o Nest Wifi Pro.",
+    "compatibility.alexa": "Serve un border router Thread come Echo (4th gen).",
+    "compatibility.smartthings": "Serve un border router Thread come SmartThings Hub v3, Aeotec Hub v3 o SmartThings Station.",
+    "compatibility.home_assistant": "Aqara elenca Home Assistant Yellow come border router testato; si usa tramite l'integrazione Matter di Home Assistant."
+  },
+  "values": {
+    "power": "CR123A"
+  }
+}

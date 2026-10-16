@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Aqara Smart Lock U200 è una serratura che si monta all'interno sopra il cilindro esistente e si collega a Apple Home, Google Home, Alexa, SmartThings e Home Assistant tramite Matter su Thread. Ogni piattaforma richiede un border router Thread; per Apple significa un HomePod mini, un HomePod 2nd gen o un Apple TV 4K. Il kit include un tastierino esterno wireless con lettore di impronte, e la serratura va con una batteria ricaricabile agli ioni di litio da 7,4 V, data per circa 6 mesi per ricarica.",
+  "caveats": ["Matter richiede un border router Thread; su Apple Home deve essere un HomePod mini, un HomePod 2nd gen o un Apple TV 4K.", "Il manuale di Aqara dice che le piattaforme di terze parti ottengono solo le funzioni di base.", "Aqara si contraddice sulla necessità di un hub (Aqara M3); le sue FAQ dicono che l'M3 serve solo per il controllo remoto e le automazioni.", "I cilindri a profilo europeo richiedono una funzione di emergenza per continuare a usare la chiave dall'esterno.", "Il modello statunitense (AD075) è un prodotto distinto con un proprio certificato Matter."],
+  "notes": {
+    "radios": "La CSA indica Thread e Bluetooth. La scheda tecnica di Aqara indica anche NFC per tessere e telefoni.",
+    "matter": "La CSA elenca la Smart Lock U200 di Lumi United (Aqara), product ID 0x2802, con Thread e Bluetooth. La scheda non nomina una regione; un modello statunitense distinto (AD075) ha un proprio certificato.",
+    "hubRequired": "Aqara si contraddice: la tabella delle specifiche statunitense dice che serve un hub (Aqara M3), mentre le FAQ della U200 dicono che gli utenti di Aqara Home non hanno bisogno di un hub e che l'M3 serve solo per il controllo remoto e le automazioni.",
+    "localControl": "Nessuna fonte Aqara dichiara il solo controllo locale.",
+    "lockFit": "Aqara la definisce una serratura che si monta dall'interno sopra il cilindro esistente. I cilindri a profilo europeo richiedono una funzione di emergenza; la pagina di installazione di Aqara indica i tipi di cilindro supportati.",
+    "keypad": "La serratura viene fornita con un tastierino esterno wireless già abbinato, con lettore di impronte (4 × AAA o cablato a 12-24 V); la confezione europea include le quattro pile AAA.",
+    "power": "Batteria ricaricabile agli ioni di litio da 7,4 V, inclusa nella confezione europea; fino a circa 6 mesi per ricarica con 8 sblocchi al giorno. La scheda tecnica di Aqara ammette anche 4 pile AA tramite un adattatore per pile AA, che l'elenco della confezione europea non include.",
+    "compatibility.apple_home": "Serve un hub domestico Apple che sia border router Thread (HomePod mini, HomePod 2nd gen, Apple TV 4K).",
+    "compatibility.google_home": "Serve un border router Thread che supporti Matter.",
+    "compatibility.alexa": "Serve un border router Thread che supporti Matter.",
+    "compatibility.smartthings": "Serve un border router Thread che supporti Matter.",
+    "compatibility.home_assistant": "Il comunicato di lancio di Aqara elenca Home Assistant; si raggiunge tramite Matter, che richiede un border router Thread. Il manuale di Aqara dice che le piattaforme di terze parti ottengono solo le funzioni di base."
+  },
+  "values": {
+    "power": "Batteria ricaricabile agli ioni di litio"
+  }
+}

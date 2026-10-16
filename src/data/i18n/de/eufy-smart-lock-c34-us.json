@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Das C34 von eufy tritt Apple Home und SmartThings über Matter auf Thread bei, während Alexa und Google Home über die Verknüpfung deines eufy-Kontos angebunden werden. Es ist ein Riegelschloss mit Tastenfeld für gängige US-Türen, mit eingebautem WLAN und acht AA-Batterien, die laut Hersteller bis zu 8 Monate halten. Home Assistant ist nicht bestätigt.",
+  "caveats": [
+    "Die Matter-Steuerung braucht einen Thread-Border-Router wie einen HomePod mini, Apple TV 4K oder einen Matter-fähigen Nest-Hub, Echo oder SmartThings-Hub.",
+    "Die Fernsteuerung über Apple Home braucht eine Steuerzentrale, auch wenn iOS 18 das Schloss ohne eine hinzufügen kann.",
+    "Acht AA-Batterien werden gebraucht."
+  ],
+  "notes": {
+    "radios": "Die CSA führt Thread und Bluetooth als Matter-Transportschnittstellen; eufys Produktseite und der CSA-Eintrag beschreiben eingebautes WLAN für die eufy-App.",
+    "matter": "Die CSA führt das eufy Smart Lock C34 von Anker Innovations (Matter 1.2, zertifiziert am 2024-06-27, Firmware V1.0.0.0, Hardware V3), Matter über Thread.",
+    "hubRequired": "eufys Produktseite sagt, es sei kein zusätzlicher Hub nötig; eingebautes WLAN verbindet das Schloss mit der eufy-App. Matter-Plattformen brauchen einen Matter-Controller mit Thread-Border-Router.",
+    "localControl": "Keine eufy-Quelle beschreibt reine lokale Steuerung.",
+    "lockFit": "Ersetzt ein gängiges Riegelschloss: eufy nennt eine Bohrung von 38-54 mm, ein Dornmaß von 60 oder 70 mm und eine Türdicke von 35-55 mm.",
+    "keypad": "Code-Tastenfeld am Schloss. Anders als beim E30 ist kein Fingerabdruckleser aufgeführt.",
+    "power": "Acht AA-Batterien; eufy gibt bis zu 8 Monate bei etwa 10 Entriegelungen pro Tag an.",
+    "compatibility.apple_home": "Matter über Thread. eufy sagt, iOS 18 könne Matter-Geräte ohne Hub hinzufügen, doch die Fernsteuerung braucht einen HomePod, HomePod mini oder Apple TV 4K.",
+    "compatibility.google_home": "eufy dokumentiert die Verknüpfung des eufy-Kontos mit Google Assistant für das C34/E30. Matter funktioniert auch mit einem Matter-fähigen Nest-Hub.",
+    "compatibility.alexa": "eufy dokumentiert die Verknüpfung des eufy-Kontos in der Alexa-App für das C34/E30. Matter funktioniert auch mit einem Matter-fähigen Echo.",
+    "compatibility.smartthings": "eufys Matter-FAQ sagt, SmartThings brauche einen Matter-Hub; die Hub-Liste für Thread-Modelle (darunter T85D2, das C34) nennt SmartThings Station, Hub v3 und Dongle.",
+    "compatibility.home_assistant": "Keine Home-Assistant-Dokumentationsseite und keine eufy-Quelle nennt dieses Schloss. Als Matter-über-Thread-Gerät funktioniert es möglicherweise über die Matter-Integration, unbestätigt."
+  },
+  "values": {
+    "power": "8 × AA"
+  }
+}

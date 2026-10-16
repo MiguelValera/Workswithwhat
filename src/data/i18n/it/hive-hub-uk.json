@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Riscaldamento, luci e prese Hive compaiono in Apple Home, Google Home e Alexa una volta abbinati all'Hive Hub, l'hub Zigbee che si collega al router anche via Ethernet. Apple Home è nativo tramite l'integrazione HomeKit di Hive, ma esclude l'acqua calda, il termostato cablato SLT5 e la valvola per radiatore. Home Assistant funziona tramite il tuo account Hive. Nessuna dichiarazione su Matter trovata.",
+  "caveats": ["Apple Home richiede l'ultimo Hive Hub o l'Hub 360 e non supporta l'acqua calda, il vecchio termostato cablato SLT5 né la valvola per radiatore.", "Home Assistant usa l'integrazione ufficiale Hive con il tuo account Hive (polling via cloud); l'hub in sé non si abbina a Home Assistant.", "Le pagine di Hive non concordano sul fatto che l'hub abbia il Wi-Fi: una indica Ethernet, Wi-Fi e Zigbee, un'altra solo Ethernet e Zigbee.", "Il supporto a SmartThings non è confermato da nessuna fonte ufficiale."],
+  "notes": {
+    "radios": "Entrambe le pagine Hive indicano Ethernet verso il router e Zigbee. Il Wi-Fi è escluso perché le pagine di Hive non concordano: la pagina dell'Hub lo indica, un'altra pagina del negozio no. Il Bluetooth non è indicato.",
+    "matter": "Nessuna dichiarazione su Matter trovata per l'Hive Hub.",
+    "hubRequired": "È l'hub a cui si collegano il riscaldamento e i dispositivi domestici Hive.",
+    "localControl": "Non confermato da una fonte ufficiale.",
+    "deviceProtocols": "Zigbee verso termostati, valvole per radiatore, prese e sensori Hive.",
+    "matterBridge": "Nessuna dichiarazione su un bridge Matter trovata.",
+    "threadBorderRouter": "Nessuna dichiarazione su Thread trovata.",
+    "maxDevices": "Nessun massimo trovato.",
+    "compatibility.apple_home": "La pagina HomeKit di Hive riguarda riscaldamento, luci e prese nell'app Casa di Apple, configurati dall'app Hive; richiede l'ultimo Hive Hub o l'Hub 360. Acqua calda, il vecchio termostato cablato SLT5 e la valvola per radiatore non sono supportati.",
+    "compatibility.google_home": "Collega l'account Hive in Works with Google nell'app Google Home; Hive elenca riscaldamento, luci e prese.",
+    "compatibility.alexa": "Attiva la skill Hive e collega il tuo account Hive; Hive elenca riscaldamento, luci e prese.",
+    "compatibility.smartthings": "Nessuna fonte ufficiale trovata; solo post della community.",
+    "compatibility.home_assistant": "Integrazione ufficiale Hive che usa il tuo account Hive (polling via cloud); l'hub in sé non si abbina a Home Assistant."
+  }
+}

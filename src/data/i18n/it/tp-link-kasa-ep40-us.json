@@ -1,0 +1,22 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "Presa da esterno Kasa EP40: Alexa e Google Assistant tramite l'app Kasa, più l'integrazione TP-Link di Home Assistant, senza hub. Si collega solo al Wi-Fi a 2,4 GHz e regge 15 A (1875 W) condivisi tra le due prese. Apple Home non è indicato per questo modello.",
+  "caveats": [
+    "Solo Wi-Fi a 2,4 GHz.",
+    "Il limite di 15 A (1875 W) è condiviso dalle due prese.",
+    "Apple Home e SmartThings sono indicati solo per il modello separato EP40A."
+  ],
+  "notes": {
+    "radios": "Solo 2,4 GHz (802.11 b/g/n).",
+    "matter": "Né la pagina Kasa né la scheda tecnica citano Matter; l'assenza non equivale a un no. Il modello Matter è l'EP40M, separato.",
+    "hubRequired": "Non serve nessun hub; servono l'app gratuita Kasa Smart e un account.",
+    "localControl": "L'integrazione di Home Assistant si collega in locale senza il cloud TP-Link. L'app Kasa e il controllo vocale usano il cloud.",
+    "energyMonitoring": "Né la pagina Kasa né la scheda tecnica citano il monitoraggio dei consumi.",
+    "maxLoadWatts": "TP-Link indica una potenza massima di 1,875 kW e 15 A in totale, condivisi tra le due prese; la pagina Kasa aggiunge una potenza nominale del motore di 1/2 HP.",
+    "compatibility.apple_home": "La pagina Kasa e la scheda tecnica dell'EP40 elencano solo Alexa e Google Assistant. La variante EP40A elenca Apple Home, ma è un modello diverso.",
+    "compatibility.google_home": "Funziona con Google Assistant tramite il collegamento nell'app Kasa.",
+    "compatibility.alexa": "Funziona con Alexa tramite la skill Kasa.",
+    "compatibility.smartthings": "Non è nella pagina Kasa né nella scheda tecnica dell'EP40; la pagina separata dell'EP40A elenca SmartThings.",
+    "compatibility.home_assistant": "Elencata tra le multiprese nell'integrazione ufficiale TP-Link Smart Home, che dialoga in locale con i dispositivi Kasa."
+  }
+}

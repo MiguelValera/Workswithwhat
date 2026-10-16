@@ -1,0 +1,29 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "De todo lo que se puede conectar, solo Alexa está confirmado para el Video Doorbell (2nd Gen, BDM01300U) de Blink en el Reino Unido: vincula tus cuentas y el audio bidireccional funciona en dispositivos como el Echo Show. El timbre usa tres pilas AA de litio, con cableado opcional al timbre de casa, y necesita un Sync Module; el pack británico incluye un Sync Module Core. Los clips en la nube se guardan 30 días con un plan de Blink. Apple Home, Google Home y Home Assistant están sin confirmar.",
+  "caveats": [
+    "El almacenamiento local necesita un Sync Module 2 o XR, que se venden aparte; el Sync Module Core incluido solo guarda en la nube.",
+    "El almacenamiento en la nube y la detección de personas necesitan una suscripción de Blink; en el Reino Unido los clips se conservan 30 días.",
+    "Solo wifi de 2,4 GHz.",
+    "La compatibilidad con Apple Home, Google Home y Home Assistant está sin confirmar."
+  ],
+  "notes": {
+    "radios": "La ficha técnica y las FAQ de Blink indican solo 802.11b/g/n a 2,4 GHz. Blink indica el modelo BDM01300U para el Reino Unido y varios países de la UE.",
+    "matter": "Las páginas británicas de Blink no mencionan Matter y no hemos encontrado ningún registro de la CSA para este timbre en las búsquedas.",
+    "hubRequired": "Las FAQ del 2nd Gen, la guía de configuración, la ficha técnica y la tabla de Sync Module de Blink dicen que requiere un Sync Module. Las FAQ del Sync Module Core indican un Video Doorbell, sin decir de qué generación, como opcional; Amazon Reino Unido llama al Core un pack opcional.",
+    "localControl": "Blink no indica si algún control funciona sin su nube.",
+    "cameraType": "Timbre con pilas, resistente a la intemperie IP65, con cableado opcional al timbre de casa.",
+    "power": "Hacen falta pilas incluso con el cableado al timbre. Blink indica hasta dos años de duración de las pilas con los ajustes por defecto.",
+    "localStorage": "Solo con un Sync Module 2 (unidad USB) o un Sync Module XR (microSD), ambos a la venta por separado. El Sync Module Core del pack admite solo almacenamiento en la nube.",
+    "subscription": "En el Reino Unido los clips en la nube se conservan 30 días (60 en otros países). Incluye una prueba de 30 días del plan Plus; Amazon Reino Unido dice que la detección de personas necesita un plan.",
+    "compatibility.apple_home": "Las FAQ británicas de Blink mencionan los atajos de Siri, pero no HomeKit ni Apple Home, así que la compatibilidad con Apple Home está sin confirmar.",
+    "compatibility.google_home": "Las páginas británicas de Blink para este modelo no mencionan Google Home.",
+    "compatibility.alexa": "Las FAQ británicas de Blink dicen que puedes vincular las cuentas de Blink y Alexa, y que el audio bidireccional funciona en dispositivos Alexa como el Echo Show. Los dispositivos Alexa compatibles también pueden hacer de timbre.",
+    "compatibility.smartthings": "No hemos encontrado ninguna página oficial de Blink ni de SmartThings.",
+    "compatibility.home_assistant": "Ninguna página oficial de Home Assistant nombra este timbre."
+  },
+  "values": {
+    "power": "3 × AA de litio, cableado opcional al timbre",
+    "subscription": "Almacenamiento de clips en la nube y detección de personas (plan Blink)"
+  }
+}

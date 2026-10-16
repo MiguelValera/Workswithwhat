@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "L'Echo (4th Gen) ha un hub Zigbee integrato: luci, prese, interruttori da incasso e serrature Zigbee si abbinano direttamente e compaiono in Alexa, senza un hub separato. Funziona anche da border router Thread 1.1 per i dispositivi Matter su Thread. Per Google Home, Apple Home, SmartThings e Home Assistant non è confermato che i dispositivi abbinati compaiano.",
+  "caveats": ["La scheda CSA di questo modello riguarda solo Zigbee 3.0; il supporto Matter si basa sulla documentazione per sviluppatori di Amazon."],
+  "notes": {
+    "radios": "Hub Zigbee (certificato CSA Zigbee 3.0) e border router Thread secondo la documentazione per sviluppatori di Amazon. Wi-Fi e Bluetooth non sono indicati perché nessuna pagina ufficiale che abbiamo potuto leggere li cita.",
+    "matter": "La documentazione Matter di Amazon elenca Echo (2nd Gen e successivi) come compatibile con Matter, con Echo come amministratore Matter. La scheda CSA di Echo (4th Gen) riguarda solo Zigbee 3.0, quindi non è confermato alcun certificato Matter per questo modello.",
+    "hubRequired": "L'Echo stesso è l'hub.",
+    "localControl": "Non confermato per questo modello. La documentazione Matter di Amazon dice che alcuni tipi di connessione permettono ad Alexa di controllare i dispositivi in locale, senza indicare i modelli di Echo.",
+    "deviceProtocols": "I dispositivi Zigbee si abbinano all'hub integrato; il border router Thread (Thread 1.1) serve i dispositivi Matter su Thread.",
+    "matterBridge": "La documentazione Matter di Amazon non indica nessun Echo come bridge Matter.",
+    "threadBorderRouter": "Indicato con Thread 1.1.",
+    "maxDevices": "Nessun limite trovato nelle fonti.",
+    "compatibility.apple_home": "Nessuna fonte ufficiale mostra i dispositivi Zigbee abbinati all'Echo in Apple Home.",
+    "compatibility.google_home": "Nessuna fonte ufficiale mostra i dispositivi Zigbee abbinati all'Echo in Google Home.",
+    "compatibility.alexa": "Luci, prese, interruttori da incasso e serrature Zigbee si abbinano direttamente all'hub integrato dell'Echo e compaiono in Alexa.",
+    "compatibility.smartthings": "Nessuna fonte ufficiale mostra i dispositivi Zigbee abbinati all'Echo in SmartThings.",
+    "compatibility.home_assistant": "Nessuna pagina ufficiale di Home Assistant mostra i dispositivi abbinati all'Echo come presenti lì."
+  }
+}

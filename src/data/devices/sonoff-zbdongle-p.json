@@ -1,0 +1,126 @@
+{
+  "category": "smart-hub",
+  "brand": "SONOFF",
+  "model": "ZBDongle-P",
+  "name": "SONOFF ZBDongle-P",
+  "regions": [
+    "US",
+    "EU",
+    "UK"
+  ],
+  "officialUrl": "https://sonoff.tech/en-us/products/sonoff-zigbee-3-0-usb-dongle-plus-zbdongle-p",
+  "radios": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "p-page"
+    ],
+    "note": "Texas Instruments CC2652P with a CP2102(N) USB bridge, +20 dBm output, shipping with Z-Stack coordinator firmware. Sold as \"Zigbee 3.0 USB Dongle Plus-P\". Regions: the maker's store sells it in USD, EUR and GBP; no shipping list is stated."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No CSA listing found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software, which is not a hub; not confirmed."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software; not confirmed."
+    },
+    "alexa": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Reachable only through Home Assistant software; not confirmed."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not confirmed."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "p-page",
+        "ha-zha"
+      ],
+      "note": "The maker says it fully supports ZHA in Home Assistant or Zigbee2MQTT. Home Assistant names it only in the ZHA USB discovery list, not among its recommended or other tested adapters."
+    }
+  },
+  "hubRequired": {
+    "value": null,
+    "sources": [],
+    "note": "Not confirmed by an official source."
+  },
+  "localControl": {
+    "value": true,
+    "sources": [
+      "p-page"
+    ],
+    "note": "The maker says it lets you control Zigbee devices locally through Home Assistant or other open-source platforms."
+  },
+  "hubType": {
+    "value": "usb-dongle",
+    "sources": [
+      "p-page"
+    ],
+    "note": "Plugs into a host running Home Assistant or Zigbee2MQTT; it has no app of its own."
+  },
+  "deviceProtocols": {
+    "value": [
+      "zigbee"
+    ],
+    "sources": [
+      "p-page"
+    ],
+    "note": "Zigbee 3.0 only; the page lists no Thread or other radio."
+  },
+  "matterBridge": {
+    "value": null,
+    "sources": [],
+    "note": "Not a bridge on its own; the maker mentions Matter only for its separate eWeLink CUBE software."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "The maker page does not offer a Thread border router mode."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": [],
+    "note": "The maker states conflicting limits: 21 direct children by default (40 at most, 100 with changes) in the specs, and 50 direct plus up to 200 with routers in the FAQ."
+  },
+  "summary": "Where the ZBDongle-E uses a Silicon Labs chip, the ZBDongle-P uses a Texas Instruments CC2652P with +20 dBm output and Z-Stack coordinator firmware. It is a Zigbee 3.0 USB coordinator for Home Assistant (ZHA) or Zigbee2MQTT on a host you supply, and Home Assistant is the only ecosystem confirmed. SONOFF's own limits conflict: 21 direct children in the specs, 50 direct in the FAQ.",
+  "sources": [
+    {
+      "id": "p-page",
+      "url": "https://sonoff.tech/en-us/products/sonoff-zigbee-3-0-usb-dongle-plus-zbdongle-p",
+      "title": "SONOFF Zigbee 3.0 USB Dongle Plus (ZBDongle-P)",
+      "publisher": "SONOFF",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-zha",
+      "url": "https://www.home-assistant.io/integrations/zha/",
+      "title": "Zigbee Home Automation - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "caveats": [
+    "It is not standalone and needs Home Assistant or Zigbee2MQTT on a separate host.",
+    "ZHA and Zigbee2MQTT cannot share one dongle; use two dongles on separate channels to run both.",
+    "Home Assistant does not list it as a recommended adapter; it appears only in the USB discovery list."
+  ],
+  "verifiedAt": "2026-10-12"
+}

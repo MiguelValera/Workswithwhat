@@ -1,0 +1,30 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Für sich allein koppelt sich die IKEA TRETAKT nur mit einer IKEA-Fernbedienung oder einem Bewegungssensor. Mit einem DIRIGERA-Hub (oder dem älteren TRÅDFRI-Gateway) erreicht sie Apple Home, Google Home und Alexa, entweder über IKEAs eigene Verknüpfungen oder die Matter-Bridge des DIRIGERA, und so sieht sie auch die Matter-Integration von Home Assistant. Die Steckdose selbst ist Zigbee, nicht Matter. Diese EU-Version ist für ohmsche Lasten mit 3680 W ausgelegt, für Motoren aber nur mit 300 W, und IKEA erwähnt keine Verbrauchsmessung.",
+  "caveats": [
+    "Für App-, Sprach- oder jede Ökosystem-Steuerung braucht sie den DIRIGERA-Hub (oder das TRÅDFRI-Gateway).",
+    "Motorlasten sind auf 300 W begrenzt, weit unter den 3680 W für ohmsche Lasten.",
+    "Kein Matter-Gerät; Matter-Plattformen sehen sie nur über die DIRIGERA-Matter-Bridge.",
+    "Die US-TRETAKT ist eine eigene Version mit 1800 W.",
+    "IKEA führt sie in einigen Märkten als auslaufend."
+  ],
+  "notes": {
+    "radios": "IKEAs Produktseite nennt das Funkmodul nicht. Die CSA führt die TRETAKT Smart Plug als Zigbee-3.0-zertifiziert (der Eintrag nennt die regionale Variante nicht); Zigbee2MQTT führt sie als E22x4 (E2204 EU).",
+    "matter": "Für die TRETAKT selbst wurde keine Matter-Zertifizierung gefunden. Sie erreicht Matter-Plattformen nur über die Matter-Bridge des DIRIGERA-Hubs.",
+    "hubRequired": "Für App-, Sprach- und Ökosystem-Steuerung wird der DIRIGERA (oder das ältere TRÅDFRI-Gateway) gebraucht. Ohne Hub lässt sie sich trotzdem direkt mit einer IKEA-Fernbedienung oder einem Bewegungssensor koppeln.",
+    "localControl": "Keine offizielle Aussage zur lokalen Steuerung gefunden.",
+    "energyMonitoring": "IKEAs Einträge und die gefundene Anleitung erwähnen keine Verbrauchsmessung, aber keine Quelle sagt ausdrücklich, dass sie fehlt.",
+    "maxLoadWatts": "3680 W ohmsche Last; die Anleitung begrenzt Motorlasten auf 300 W. Die US-TRETAKT ist mit 1800 W ausgelegt.",
+    "compatibility.apple_home": "Der Hub wird in der App IKEA Home smart zu Apple Home hinzugefügt; es gibt auch eine Matter-Bridge-Option.",
+    "compatibility.google_home": "Verknüpft über den Dienst Works with Google und ein IKEA-Konto oder über die Matter-Bridge.",
+    "compatibility.alexa": "Über den Alexa-Skill IKEA Home Smart oder über die Matter-Bridge.",
+    "compatibility.smartthings": "Keine offizielle IKEA- oder SmartThings-Seite behandelt diese Steckdose.",
+    "compatibility.home_assistant": "Die Matter-Dokumentation von HA nennt den DIRIGERA als Bridge und führt smarte Steckdosen unter den durchgereichten Typen. Direkte Kopplung an einen Zigbee-Koordinator (ZHA, Zigbee2MQTT) wird von Nutzern berichtet, ist aber offiziell nicht dokumentiert."
+  },
+  "via": {
+    "apple_home": "IKEA-DIRIGERA-Hub",
+    "google_home": "IKEA-DIRIGERA-Hub",
+    "alexa": "IKEA-DIRIGERA-Hub",
+    "home_assistant": "IKEA-DIRIGERA-Hub (Matter-Bridge)"
+  }
+}

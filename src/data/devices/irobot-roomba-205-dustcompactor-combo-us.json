@@ -1,0 +1,120 @@
+{
+  "category": "robot-vacuum",
+  "brand": "iRobot",
+  "model": "Roomba 205 DustCompactor Combo Robot",
+  "name": "Roomba 205 DustCompactor Combo (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://www.irobot.com/en_US/roomba-205-dustcompactor-combo-robot/L124020.html",
+  "radios": {
+    "value": null,
+    "sources": [],
+    "note": "iRobot's page mentions the Roomba Home app and voice assistants but does not state Wi-Fi or its band."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No Matter statement on iRobot's page or fast facts sheet, and no CSA listing was found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [
+        "irobot-205"
+      ],
+      "note": "iRobot says it works with Siri-enabled devices; that is voice control, not a Home app accessory. Apple Home support not confirmed."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": [
+        "irobot-205"
+      ],
+      "note": "iRobot says it works with Google Assistant-enabled devices."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "irobot-205"
+      ],
+      "note": "iRobot says it works with Alexa-enabled devices."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "No iRobot or Samsung page found for SmartThings."
+    },
+    "home_assistant": {
+      "status": "unknown",
+      "sources": [
+        "irobot-ha"
+      ],
+      "note": "The official Roomba integration says it does not work with newer x05 Wi-Fi models, naming the 105, 405 and 505. It does not name the 205, so support is not confirmed."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "irobot-205"
+    ],
+    "note": "It ships with a standard charging dock, which is not a hub."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "No maker statement on local-only control found."
+  },
+  "cleaning": {
+    "value": "vacuum-mop",
+    "sources": [
+      "irobot-205"
+    ],
+    "note": "Vacuum only, mop only or both, with a washable microfiber pad."
+  },
+  "navigation": {
+    "value": "ClearView LiDAR",
+    "sources": [
+      "irobot-205"
+    ],
+    "note": "Maps the home and stores up to 3 maps."
+  },
+  "suctionPa": {
+    "value": null,
+    "sources": [],
+    "note": "iRobot states suction only as a comparison to the Roomba 600 series, not in pascals."
+  },
+  "selfEmptying": {
+    "value": false,
+    "sources": [
+      "irobot-205"
+    ],
+    "note": "No self-emptying dock: the robot compacts debris onboard, which iRobot says lasts up to 60 days, and ships with a standard charging dock."
+  },
+  "summary": "Roomba 205 DustCompactor Combo works with Alexa and Google Assistant-enabled devices, according to iRobot, which also mentions Siri, though that is voice control only. It vacuums, mops or does both, and maps with ClearView LiDAR (up to 3 maps). There is no self-emptying dock: it compacts debris onboard, which iRobot says lasts up to 60 days. No Matter support turned up.",
+  "caveats": [
+    "iRobot mentions Siri, but that is voice control, not a Home app accessory, so Apple Home isn't confirmed.",
+    "No Matter statement exists on iRobot's pages, and no CSA listing was found.",
+    "The Home Assistant Roomba integration says newer x05 Wi-Fi models don't work; it names the 105, 405 and 505, not the 205."
+  ],
+  "sources": [
+    {
+      "id": "irobot-205",
+      "url": "https://www.irobot.com/en_US/roomba-205-dustcompactor-combo-robot/L124020.html",
+      "title": "Roomba 205 DustCompactor Combo Robot",
+      "publisher": "iRobot",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "irobot-ha",
+      "url": "https://www.home-assistant.io/integrations/roomba/",
+      "title": "iRobot Roomba and Braava - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

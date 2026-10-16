@@ -1,0 +1,73 @@
+---
+import MailLink from '../../MailLink.astro';
+import Base from '../../../layouts/Base.astro';
+import { CONTACT_URL, LEGAL_UPDATED, OPERATOR } from '../../../site.config';
+import { formatDate } from '../../../lib/devices';
+
+const details = [
+  ['Éditeur', OPERATOR.name],
+  ['Numéro fiscal (NIF)', OPERATOR.taxId],
+  ['Adresse', OPERATOR.address],
+  ['E-mail', OPERATOR.email],
+].filter(([, v]) => v);
+---
+
+<Base
+  title="Mentions légales"
+  description="Qui édite Workswithwhat, comment nous contacter et les conditions d’utilisation du site et de ses données de compatibilité."
+  crumbs={[{ name: 'Mentions légales', path: '/legal/' }]}
+>
+  <h1>Mentions légales</h1>
+  <p class="muted">Dernière mise à jour : <time datetime={LEGAL_UPDATED}>{formatDate(LEGAL_UPDATED, 'fr')}</time></p>
+
+  <h2>Qui édite ce site</h2>
+  {
+    details.length > 0 && (
+      <dl class="facts">
+        {details.map(([k, v]) => (
+          <div>
+            <dt>{k}</dt>
+            <dd>{v === OPERATOR.email ? <MailLink /> : v}</dd>
+          </div>
+        ))}
+      </dl>
+    )
+  }
+  <p>
+    Workswithwhat (workswithwhat.com) est un site de référence indépendant sur la compatibilité des appareils de maison
+    connectée. Pour toute question, correction ou demande juridique, <a href={CONTACT_URL}>contactez-nous via le gestionnaire de tickets du projet</a>{OPERATOR.email && <> ou par e-mail à <MailLink /></>}.
+  </p>
+
+  <h2>Information uniquement, sans garantie</h2>
+  <p>
+    La compatibilité dépend de la révision matérielle, de la région, du firmware et du logiciel de l’écosystème, qui
+    changent tous. Nous vérifions chaque affirmation avec les sources citées et indiquons quand chaque appareil a été vérifié
+    pour la dernière fois, mais nous ne pouvons pas garantir que l’information est complète, à jour ou sans erreur. Avant
+    d’acheter, vérifiez auprès du fabricant pour votre modèle et votre région. Nous ne sommes pas responsables des décisions
+    ou pertes fondées sur ce site.
+  </p>
+
+  <h2>Indépendance et marques</h2>
+  <p>
+    Nous n’avons aucun lien avec les fabricants ou plateformes cités, qui ne nous soutiennent ni ne nous paient. Il n’y a
+    ni fiches sponsorisées ni liens d’affiliation. Les noms de produits, marques et logos appartiennent à leurs
+    propriétaires et ne servent qu’à identifier les produits.
+  </p>
+
+  <h2>Liens vers d’autres sites</h2>
+  <p>
+    Nous citons comme sources des pages de fabricants, d’organismes de certification et de plateformes. Nous ne contrôlons
+    pas ces sites et ne sommes pas responsables de leur contenu ni de leurs pratiques en matière de confidentialité.
+  </p>
+
+  <h2>Utilisation de nos contenus</h2>
+  <p>
+    Les textes et la compilation de données de ce site sont protégés par le droit d’auteur. Vous pouvez citer des réponses
+    isolées, et les assistants et moteurs de recherche peuvent les utiliser, à condition de citer Workswithwhat et de faire
+    un lien vers la page d’où vient la réponse. Pour toute autre réutilisation, comme la copie du jeu de données en masse,
+    demandez-nous d’abord.
+  </p>
+
+  <h2>Confidentialité</h2>
+  <p>Nous n’utilisons ni cookies ni traceurs. Consultez notre <a href="/fr/confidentialite/">politique de confidentialité et de cookies</a>.</p>
+</Base>

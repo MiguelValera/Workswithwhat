@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Tippe mit einem iPhone oder einer Apple Watch, und das Schlage Encode Plus öffnet über Apple Home Key. Es ist ein vollständiges Riegelschloss mit Touchscreen-Tastenfeld und eingebautem 2,4-GHz-WLAN und funktioniert ohne Hub mit Apple Home, Google Home und Alexa. Home Assistant nutzt die offizielle Schlage-Integration über Schlages Cloud. Es ist nicht Matter-zertifiziert, und SmartThings wird nicht aufgeführt. Vier AA-Batterien sind enthalten und halten bis zu sechs Monate.",
+  "caveats": [
+    "Das WLAN läuft auf 2,4 GHz.",
+    "Nicht Matter-fähig; laut Allegion unterstützt es Matter derzeit nicht.",
+    "Home Key braucht ein iPhone XS oder neuer mit iOS 15+ oder eine Apple Watch Series 4+ mit watchOS 8+.",
+    "Die Sprachsteuerung fällt bei einem WLAN-Ausfall aus, und die Home-Assistant-Integration läuft über Schlages Cloud.",
+    "Schlage führt SmartThings nicht auf, und wir konnten es in keine Richtung bestätigen."
+  ],
+  "notes": {
+    "radios": "Schlage beschreibt es als Riegelschloss mit eingebautem WLAN (2,4 GHz). Händlerangebote erwähnen auch Bluetooth, und Allegions Einrichtungsanleitung lässt dich zum Koppeln das Bluetooth deines Handys einschalten, aber keine gesehene Schlage-Seite führt Bluetooth als Funkstandard des Schlosses auf.",
+    "matter": "Allegions Wissensdatenbank sagt, das Encode Plus sei nicht Matter-fähig und unterstütze Matter derzeit nicht.",
+    "hubRequired": "Laut Schlage brauchen Encode-Produkte keinen Hub und keinen Adapter; das Schloss hat eingebautes WLAN.",
+    "localControl": "Die Home-Assistant-Steuerung läuft über Schlages Cloud; keine Quelle bestätigt, was bei ausgefallenem Internet funktioniert. Schlage weist darauf hin, dass die Sprachsteuerung bei einem WLAN-Ausfall ausfällt.",
+    "lockFit": "Verkauft als vollständiges smartes Riegelschloss (BE499WB) mit Century- oder Camelot-Zierteil, in mehreren Ausführungen.",
+    "keypad": "Touchscreen-Tastenfeld am Schloss mit eigenen Zugangscodes für jede Person.",
+    "power": "Schlages Produktseite zum BE499WB führt vier AA-Alkaline-Batterien (enthalten) und bis zu sechs Monate Batterielaufzeit bei typischer Nutzung auf.",
+    "compatibility.apple_home": "Wird über HomeKit zu Apple Home hinzugefügt, einschließlich Apple Home Key (iPhone oder Apple Watch antippen). Home Key braucht ein iPhone XS oder neuer mit iOS 15+ oder eine Apple Watch Series 4+ mit watchOS 8+.",
+    "compatibility.google_home": "Über die Schlage-Home-App und den Google Assistant: Ver- und Entriegeln sowie Statusabfrage. Kein Hub nötig.",
+    "compatibility.alexa": "Alexa-Skill über die Schlage-Home-App. Die Entriegelung per Sprache muss in der Alexa-App eingeschaltet werden.",
+    "compatibility.smartthings": "Die gesehenen Schlage-Seiten führen Alexa, Google und Apple auf, aber nicht SmartThings, und das Schloss hat kein Matter. Nur Forenbeiträge sagen, SmartThings sei inkompatibel, daher markieren wir es nicht mit „nein“.",
+    "compatibility.home_assistant": "Offizielle Schlage-Integration, die für WLAN-Schlösser Schlages Cloud-API nutzt und das Encode Plus als funktionierend aufführt."
+  },
+  "values": {
+    "power": "4 × AA"
+  }
+}

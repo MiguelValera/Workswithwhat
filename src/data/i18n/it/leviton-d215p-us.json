@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "La D215P di Leviton copre tutti e cinque: Apple Home con HomeKit integrato, Alexa, Google Home e SmartThings tramite My Leviton, e Home Assistant tramite Matter dopo l'aggiornamento del firmware Matter di Leviton. Si collega direttamente al Wi-Fi a 2,4 GHz, senza hub. L'aggiornamento permette ai controller Matter di raggiungerla sulla rete locale, ma elimina l'abbinamento HomeKit, quindi la riaggiungi ad Apple Home con il codice Matter e un hub domestico Apple. È data per 15 A a uso generale a 120 V e 1500 W per lampade a incandescenza; Leviton non cita il monitoraggio dei consumi.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz.", "L'aggiornamento Matter elimina il collegamento HomeKit; per riaggiungerla ad Apple Home con il codice Matter serve un hub domestico Apple.", "Home Assistant richiede l'aggiornamento Matter; non c'è un'integrazione ufficiale di Leviton.", "I limiti dipendono dal carico: 15 A a uso generale, 1500 W a incandescenza/alogena, 5 A LED/CFL, motore da 3/4 HP.", "La pagina del prodotto e la scheda tecnica di Leviton non citano il monitoraggio dei consumi."],
+  "notes": {
+    "radios": "Wi-Fi a 2,4 GHz secondo la guida di Leviton. La scheda CSA indica Wi-Fi e Bluetooth come trasporti; il Bluetooth serve probabilmente solo per la configurazione.",
+    "matter": "Matter arriva con un aggiornamento del firmware nell'app My Leviton. La CSA elenca la D215P (Matter 1.3, firmware 2.3.10, certificata il 2025-05-20); altre pagine della CSA mostrano un secondo ID di certificato.",
+    "hubRequired": "Si collega direttamente al Wi-Fi a 2,4 GHz; non serve nessun hub Leviton.",
+    "localControl": "Con il firmware Matter, i controller Matter la raggiungono sulla rete Wi-Fi locale. Leviton non dichiara il controllo locale per la sua app.",
+    "energyMonitoring": "La pagina del prodotto e la scheda tecnica di Leviton non citano il monitoraggio dei consumi, ma nessuna fonte dice che sia assente.",
+    "maxLoadWatts": "Leviton la dà per 15 A a uso generale a 120 V, 1500 W a incandescenza/alogena, 5 A LED/CFL e motore da 3/4 HP. Non indica un unico valore in watt per l'uso generale.",
+    "compatibility.apple_home": "Si abbina direttamente ad Apple Home tramite HomeKit, con il codice HomeKit in dotazione. L'aggiornamento Matter facoltativo elimina il collegamento HomeKit; va poi riaggiunta con il codice Matter, il che richiede un hub domestico Apple.",
+    "compatibility.google_home": "Tramite il collegamento cloud My Leviton; dopo l'aggiornamento del firmware è possibile anche Matter.",
+    "compatibility.alexa": "Tramite la skill My Leviton per Alexa; dopo l'aggiornamento del firmware è possibile anche Matter.",
+    "compatibility.smartthings": "Leviton elenca SmartThings e dice che l'aggiornamento Matter non tocca l'integrazione SmartThings esistente. È possibile anche Matter.",
+    "compatibility.home_assistant": "Tramite l'integrazione Matter di Home Assistant dopo l'aggiornamento del firmware Matter. Non abbiamo trovato nessuna integrazione ufficiale Leviton per Home Assistant."
+  }
+}

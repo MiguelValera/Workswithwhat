@@ -1,0 +1,26 @@
+{
+  "basedOn": "2026-10-10",
+  "summary": "Nur für Apple HomeKit gebaut, koppelt sich der Wemo WSP100 direkt per Bluetooth oder Thread mit Apple Home; laut Belkin funktioniert er nicht mit Google Home oder Alexa. Home Assistant kann ihn stattdessen über die offizielle Integration HomeKit Device koppeln. Weil er nie die Wemo-App oder -Cloud nutzte, funktioniert er laut Belkin nach der Abschaltung der Wemo-Cloud weiter über HomeKit. Der US-Zwischenstecker ist für 120 V / 15 A / 1800 W ausgelegt und meldet keine Leistung.",
+  "caveats": [
+    "Laut Belkins FAQ keine Unterstützung für Google Home oder Alexa.",
+    "Thread und Fernsteuerung brauchen eine Apple-Steuerzentrale mit Thread (Apple TV 4K 2021 oder HomePod mini).",
+    "Belkins Seiten widersprechen sich, ob du schon für die Einrichtung eine Apple-Steuerzentrale brauchst.",
+    "Ein HomeKit-Zubehör koppelt sich immer nur mit einem Controller, daher können Apple Home und Home Assistant es nicht gleichzeitig halten.",
+    "Belkin hat den Support für die meisten Wemo-Geräte und die Wemo-App beendet.",
+    "Belkin erwähnt Matter für diesen Zwischenstecker nie.",
+    "Keine Verbrauchsmessung."
+  ],
+  "notes": {
+    "radios": "Bluetooth LE 5.0 und Thread (802.15.4), laut Belkins Spezifikationsartikel.",
+    "matter": "Belkin beschreibt ihn als reines HomeKit-Gerät und erwähnt Matter dafür nie. Kein CSA-Eintrag gefunden. In keine Richtung bestätigt.",
+    "hubRequired": "Belkins Quellen widersprechen sich: Die FAQ sagt, ein Hub sei nur für Thread und die Steuerung von unterwegs nötig, während die Spezifikationsliste sagt, du brauchst eine Apple-Steuerzentrale oder einen Thread-Hub.",
+    "localControl": "Läuft über HomeKit ohne Wemo-App oder Cloud; laut Belkin funktionieren Thread-Wemo-Geräte nach der Abschaltung der Wemo-Cloud weiter über HomeKit.",
+    "energyMonitoring": "Belkins FAQ sagt, der WSP100 habe keine Leistungsmeldung.",
+    "maxLoadWatts": "120 V, 15 A, 1800 W. Die thailändische Version (WSP100-TH) hat einen anderen Nennwert.",
+    "compatibility.apple_home": "HomeKit (HAP) über Bluetooth und Thread, eingerichtet per NFC oder HomeKit-Code. Thread und Fernsteuerung brauchen eine Apple-Steuerzentrale mit Thread (Apple TV 4K 2021 oder HomePod mini).",
+    "compatibility.google_home": "Belkins FAQ antwortet „No“ für Google Home und sagt, der Zwischenstecker sei nur für die Nutzung mit Apple HomeKit gedacht.",
+    "compatibility.alexa": "Belkins FAQ antwortet „No“ für Amazon Alexa und sagt, der Zwischenstecker sei nur für die Nutzung mit Apple HomeKit gedacht.",
+    "compatibility.smartthings": "Belkin sagt, der Zwischenstecker sei nur für Apple HomeKit gedacht, und nennt keine Matter-Unterstützung, aber keine Seite von Belkin oder Samsung nennt SmartThings in irgendeine Richtung.",
+    "compatibility.home_assistant": "Die offizielle Integration HomeKit Device von Home Assistant koppelt HomeKit-Zubehör über Bluetooth und Thread (Thread braucht einen Border-Router). HA nennt den WSP100 nicht, und ein HomeKit-Zubehör koppelt sich immer nur mit einem Controller."
+  }
+}

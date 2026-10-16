@@ -1,0 +1,122 @@
+{
+  "category": "smart-hub",
+  "brand": "TP-Link",
+  "model": "Tapo H200",
+  "name": "Tapo H200 (UK)",
+  "regions": ["UK"],
+  "officialUrl": "https://www.tp-link.com/uk/home-networking/smart-hub/tapo-h200/",
+  "radios": {
+    "value": ["wifi", "ethernet"],
+    "sources": ["tp-link-uk-h200"],
+    "note": "2.4 GHz Wi-Fi plus an Ethernet cable in the box. The sensors and switches talk to the hub on a separate Sub-1G radio (863-868 MHz for UK/EU), which is not in our radio list."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "No CSA listing for the hub itself found. TP-Link says the hub can bridge Sub-1G devices to Matter controllers; see matterBridge."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "matter",
+      "sources": ["tp-link-matter-faq", "tp-link-uk-h200"],
+      "note": "Through the hub's Matter bridge, added from Apple Home (iOS 18 or later) with an Apple home hub. TP-Link's UK page names Apple Home among the Matter platforms; its UK Matter FAQ says bridged Sub-1G devices include the T100, T310, T315 and S220, but not buttons."
+    },
+    "google_home": {
+      "status": "native",
+      "sources": ["tp-link-uk-h200"],
+      "note": "TP-Link's UK page says the hub works with Google Home (and Alexa) when connected to Tapo cameras, sensors or Sub-1G switches. Matter bridging is also offered."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": ["tp-link-uk-h200"],
+      "note": "TP-Link's UK page says the hub works with Alexa when connected to Tapo cameras, sensors or Sub-1G switches. Matter bridging is also offered."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "The pages we saw don't mention SmartThings. It may work through the Matter bridge, but that isn't confirmed."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": ["ha-tplink"],
+      "note": "Home Assistant's built-in TP-Link Smart Home integration lists the H200 as a hub and the Tapo sensors under hub-connected devices; it polls locally. The page doesn't confirm every child device for the H200 specifically."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": ["tp-link-uk-h200"],
+    "note": "It is the hub: the Tapo sensors, switches and some cameras connect through it."
+  },
+  "localControl": {
+    "value": true,
+    "sources": ["ha-tplink", "tp-link-uk-h200"],
+    "note": "Home Assistant's integration polls it locally (every 5 seconds) without the TP-Link cloud. The hub also records camera video to a microSD card of up to 512 GB (sold separately)."
+  },
+  "hubType": {
+    "value": "hub",
+    "sources": ["tp-link-uk-h200"]
+  },
+  "deviceProtocols": {
+    "value": ["proprietary"],
+    "sources": ["tp-link-uk-h200"],
+    "note": "Sub-1G radio (863.35, 864.35 and 868.35 MHz in the UK/EU). TP-Link doesn't name the protocol and doesn't say Zigbee."
+  },
+  "matterBridge": {
+    "value": true,
+    "sources": ["tp-link-matter-faq", "tp-link-uk-h200", "tp-link-community-matter-bridging"],
+    "note": "TP-Link's Matter FAQ for Tapo hubs names the T100, T310, T315 and S220 as bridged; its community guide names the H200 and adds the T110. Buttons (S200B, S200D) and the T300 leak sensor are not bridged."
+  },
+  "threadBorderRouter": {
+    "value": null,
+    "sources": [],
+    "note": "No Thread claim on the pages we saw."
+  },
+  "maxDevices": {
+    "value": null,
+    "sources": ["tp-link-uk-h200"],
+    "note": "TP-Link states up to 64 Sub-1G devices (switches, sensors, buttons) plus 4 cameras or video doorbells, two separate limits, so no single number is recorded."
+  },
+  "summary": "The Tapo H200 (UK) is the hub for TP-Link's Sub-1G sensors, switches and buttons, and it takes up to 4 Tapo cameras or video doorbells as well. Alexa and Google Home are listed, Home Assistant has a built-in integration, and a Matter bridge passes some sensors to Apple Home. It connects by Ethernet or 2.4 GHz Wi-Fi and has a microSD slot (up to 512 GB) for camera recordings.",
+  "caveats": [
+    "Matter bridging covers only some sensor types; TP-Link's FAQ says the buttons (S200B, S200D) are not bridged.",
+    "The sensors use a Sub-1G radio, not Zigbee, so Zigbee devices can't pair with it.",
+    "TP-Link states 64 Sub-1G devices and 4 cameras as separate limits, and multi-control devices count as several."
+  ],
+  "sources": [
+    {
+      "id": "tp-link-uk-h200",
+      "url": "https://www.tp-link.com/uk/home-networking/smart-hub/tapo-h200/",
+      "title": "Tapo H200 Smart Hub",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tp-link-matter-faq",
+      "url": "https://www.tp-link.com/uk/support/faq/3754/",
+      "title": "Generally Asked Questions about Matter for Tapo/Kasa Hubs",
+      "publisher": "TP-Link",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "tp-link-community-matter-bridging",
+      "url": "https://community.tp-link.com/us/smart-home/kb/detail/412808",
+      "title": "Add Your Sub-G Sensors to Other Platforms via Matter Bridging",
+      "publisher": "TP-Link Community",
+      "kind": "review",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-tplink",
+      "url": "https://www.home-assistant.io/integrations/tplink/",
+      "title": "TP-Link Smart Home - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "updatedAt": "2026-10-12",
+  "verifiedAt": "2026-10-12"
+}

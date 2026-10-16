@@ -1,0 +1,20 @@
+{
+  "basedOn": "2026-10-12",
+  "summary": "In Europa, l'Hub 2 porta i dispositivi SwitchBot e gli elettrodomestici a infrarossi in Google Home e Alexa tramite le integrazioni di SwitchBot, e in Apple Home, SmartThings e Home Assistant tramite il suo bridge Matter. Si collega al Wi-Fi a 2,4 GHz e usa il Bluetooth per raggiungere i dispositivi SwitchBot. Il bridge sincronizza fino a 8 sotto-dispositivi con Apple o Google.",
+  "caveats": ["L'Hub 2 si collega solo al Wi-Fi a 2,4 GHz, e Matter funziona su Wi-Fi.", "Il bridge Matter sincronizza fino a 8 sotto-dispositivi con Apple o Google, e solo alcuni tipi di dispositivi SwitchBot passano dal bridge; controlla l'elenco di compatibilità di SwitchBot.", "Apple Home richiede un HomePod o un Apple TV come controller Matter.", "La scheda Matter della CSA riguarda l'Hub 2 globale; il modello europeo non vi è confermato."],
+  "notes": {
+    "radios": "Solo Wi-Fi a 2,4 GHz e Bluetooth LE; ha anche un emettitore a infrarossi. La scheda CSA riguarda l'Hub 2 globale; lo SKU europeo non vi è confermato.",
+    "matter": "La CSA elenca l'Hub di Woan Technology (SKU W3202100, certificato nel 2023); nessuno SKU specifico per l'UE confermato. L'hub si collega alla rete solo via Wi-Fi, quindi Matter funziona su Wi-Fi.",
+    "hubRequired": "È l'hub attraverso cui si collegano i dispositivi Bluetooth di SwitchBot.",
+    "localControl": "Non confermato da una fonte ufficiale.",
+    "deviceProtocols": "Dialoga con i dispositivi Bluetooth SwitchBot e apprende i telecomandi a infrarossi.",
+    "matterBridge": "SwitchBot indica l'Hub 2 come bridge Matter per alcuni dispositivi SwitchBot ed elettrodomestici a infrarossi; controlla l'elenco di compatibilità di SwitchBot per sapere quali tipi passano.",
+    "threadBorderRouter": "Nessuna dichiarazione su Thread trovata.",
+    "maxDevices": "SwitchBot indica 8 come numero di sotto-dispositivi che l'Hub 2 può sincronizzare con Apple o Google tramite Matter, un limite del bridge e non un totale.",
+    "compatibility.apple_home": "Tramite il bridge Matter; richiede un HomePod o un Apple TV come controller Matter. Solo alcuni tipi di dispositivi SwitchBot passano dal bridge.",
+    "compatibility.google_home": "SwitchBot Smart in Works with Google. Funziona anche l'abbinamento Matter a Google Home.",
+    "compatibility.alexa": "Skill SwitchBot Smart. Funziona anche Matter.",
+    "compatibility.smartthings": "La guida Matter-over-Bridge di SwitchBot ha una sezione su SmartThings. Solo alcuni tipi di dispositivi SwitchBot passano dal bridge.",
+    "compatibility.home_assistant": "La pagina SwitchBot Matter di Home Assistant elenca i dispositivi certificati tramite Hub 2 o Hub 3."
+  }
+}

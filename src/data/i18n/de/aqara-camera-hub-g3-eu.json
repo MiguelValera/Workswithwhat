@@ -1,0 +1,30 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Aqara nennt für den Camera Hub G3 HomeKit Secure Video, Google Home und Alexa. Die schwenk- und neigbare Innenkamera ist zugleich ein Zigbee-3.0-Hub für Aqara-Sensoren, ein separater Hub ist also nicht nötig. Gesichts-, Gesten- und Haustiererkennung laufen auf dem Gerät und brauchen kein Abo, und eine microSD-Karte mit bis zu 128 GB nimmt lokale Aufnahmen auf. Betrieben wird er mit einem USB-C-Netzteil mit 5 V / 2 A. Aqara hat die Live-Ansicht auf Echo Show oder Nest-Displays nicht bestätigt, und die Unterstützung für SmartThings und Home Assistant ist nicht bestätigt.",
+  "caveats": [
+    "HomeKit Secure Video begrenzt die Aufnahme auf 1080p und deaktiviert die Schwenk-/Neigesteuerung, und es braucht eine Apple-Steuerzentrale.",
+    "Der Cloud-Speicher von HomeKit Secure Video oder künftige Cloud-Angebote können einen kostenpflichtigen Tarif erfordern; Aqara nennt keinen.",
+    "Google Home und Alexa sehen ihn nur als Kamera, nicht als Zigbee-Hub.",
+    "Die microSD-Karte ist nicht im Lieferumfang.",
+    "Laut Aqaras Handbuch nur für den Innenbereich."
+  ],
+  "notes": {
+    "radios": "Dualband-WLAN mit 2,4/5 GHz und ein eingebauter Zigbee-3.0-Hub.",
+    "matter": "Die von uns gesehenen G3-Seiten von Aqara nennen für die Kamera HomeKit, Alexa und Google Home, aber nicht Matter. Pressemeldungen sagen, ein Firmware-Update von 2023 habe eine Matter-Bridge für mit dem G3 gekoppelte Zigbee-Geräte ergänzt, nicht für die Kamera selbst; eine Aqara-Seite oder einen CSA-Eintrag, der das bestätigt, fanden wir nicht.",
+    "hubRequired": "Der G3 ist selbst ein Zigbee-Hub für Aqara-Sensoren; er braucht keinen separaten Hub.",
+    "localControl": "Aqara sagt, dass Gesichts-, Gesten- und Haustiererkennung sowie die Speicherung in der Aqara-Home-App lokal laufen; reine lokale Steuerung wird nicht genannt.",
+    "cameraType": "Laut Bedienungsanleitung ist das Produkt nur für den Innenbereich gedacht.",
+    "power": "Maximaler Verbrauch 10 W.",
+    "localStorage": "microSD-Karte, nicht im Lieferumfang; Class 4 oder höher, bis zu 128 GB.",
+    "subscription": "Aqara sagt, die lokalen KI-Funktionen brauchen kein Abo, während Cloud-Speicher von Drittanbietern wie HomeKit Secure Video oder künftige Cloud-Angebote einen kostenpflichtigen Tarif erfordern können. Aqara nennt den Tarif nicht.",
+    "compatibility.apple_home": "Unterstützt HomeKit Secure Video. In diesem Modus sinkt die Aufnahme auf 1080p, und die Schwenk-/Neigesteuerung ist nicht verfügbar. Für HSV ist eine Apple-Steuerzentrale nötig.",
+    "compatibility.google_home": "Aqara führt Google Home auf und sagt, der G3 werde dort nur als Kamera angezeigt. Ob die Live-Ansicht auf Nest-Hub-Displays funktioniert, wurde von einer Aqara-Seite nicht bestätigt.",
+    "compatibility.alexa": "Aqara führt Alexa auf und sagt, der G3 werde nur als Kamera angezeigt. Ob die Live-Ansicht auf dem Echo Show funktioniert, wurde von einer Aqara-Seite nicht bestätigt.",
+    "compatibility.smartthings": "Keine von uns gefundene Seite von Aqara oder Samsung erwähnt SmartThings für den G3.",
+    "compatibility.home_assistant": "Laut Seiten von Drittanbietern nur über eine Community-Integration (Aqara Open API) oder HomeKit-Kopplung erreichbar; keine offizielle Home-Assistant-Dokumentation gefunden."
+  },
+  "values": {
+    "power": "USB-C 5 V / 2 A (Netzbetrieb)",
+    "subscription": "Keines für lokale Funktionen; HomeKit Secure Video evtl. kostenpflichtig"
+  }
+}

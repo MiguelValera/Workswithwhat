@@ -1,0 +1,28 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Das Nuki Smart Lock 4. Generation wird innen an der Tür über dem vorhandenen Schließzylinder montiert und spricht Matter über Thread, ohne dass für Matter eine Bridge nötig ist. Apple Home, SmartThings und Home Assistant verbinden sich über Matter; Google Home und Alexa funktionieren auch über Nukis Cloud-Integration. Es hat kein eigenes Tastenfeld und läuft mit vier AA-Zellen oder dem wiederaufladbaren Nuki Power Pack.",
+  "caveats": [
+    "Matter braucht einen Thread-Border-Router wie einen HomePod mini oder Apple TV 4K; Nukis Hub-Tabelle zeigt, welche Echo-Geräte funktionieren.",
+    "Der Fernzugriff braucht eine Nuki Bridge oder die kostenpflichtige Thread-Fernzugriffsoption, und die Cloud-Wege über Google und Alexa brauchen diese plus ein Nuki-Web-Konto.",
+    "Laut Nuki ist das Entsperren per Sprache in Google Home derzeit deaktiviert; die App-Steuerung funktioniert.",
+    "Dein Schlüssel funktioniert von außen nur, wenn der Zylinder eine Notfallfunktion hat; sonst verkauft Nuki einen Universalzylinder.",
+    "Das Keypad 2 NFC ist ein separates Zubehör."
+  ],
+  "notes": {
+    "radios": "Nukis Generationen-Tabelle führt Thread, aber kein eingebautes WLAN für die normale 4. Generation; nur das Pro (4. Generation) hat WLAN. Der CSA-Eintrag von 2025 erwähnt im Text WLAN, aber hier wird Nukis eigener Tabelle gefolgt.",
+    "matter": "Für das normale Schloss der 4. Generation gibt es mehrere CSA-Einträge (Produkt-ID 0x00B0, Thread und Bluetooth); die Pro-Varianten haben eigene Produkt-IDs.",
+    "hubRequired": "Laut Nuki braucht das Matter-Schloss weder Bridge noch Modul. Der Fernzugriff braucht entweder eine Nuki Bridge (separat erhältlich) oder die kostenpflichtige Thread-Fernzugriffsoption. Die Matter-Steuerung braucht einen Thread-Border-Router.",
+    "localControl": "Keine Nuki-Quelle beschreibt Offline- oder rein lokale Steuerung ausdrücklich.",
+    "lockFit": "Wird innen an der Tür über dem vorhandenen Zylinder montiert. Laut Nuki funktioniert der Schlüssel von außen weiter, wenn der Zylinder eine Notfallfunktion hat; sonst nimm den Universalzylinder, separat erhältlich.",
+    "keypad": "Kein Tastenfeld am Schloss. Nuki verkauft das Keypad 2 NFC als separates Zubehör.",
+    "power": "Austauschbare Batterien: vier AA-Zellen oder das wiederaufladbare Nuki Power Pack (separat erhältlich, laut Nuki bis zu 6 Monate pro Ladung).",
+    "compatibility.apple_home": "Nuki führt Apple Home für Matter über Thread. Ein Thread-Border-Router (HomePod mini, Apple TV 4K) ist nötig.",
+    "compatibility.google_home": "Nuki-Web-Cloud-Integration; braucht ein Nuki-Web-Konto und Fernzugriff (Nuki Bridge oder kostenpflichtiger Thread-Fernzugriff). Laut Nuki ist das Entsperren per Sprache in Google Home derzeit deaktiviert; die App-Steuerung funktioniert. Matter über Thread funktioniert mit einem Thread-Border-Router ebenfalls.",
+    "compatibility.alexa": "Nuki-Web-Cloud-Integration (Skill Nuki Smart Home), die Fernzugriff (Nuki Bridge oder die kostenpflichtige Thread-Fernzugriffsoption) und ein Nuki-Web-Konto braucht. Matter über Thread wird ebenfalls unterstützt; Nukis Hub-Tabelle führt, welche Echo-Geräte dafür funktionieren.",
+    "compatibility.smartthings": "Nuki führt Samsung SmartThings als Matter-Hub. Ein Thread-Border-Router ist nötig.",
+    "compatibility.home_assistant": "Home Assistants Nuki-Seite sagt, Smart Locks der 4. Generation unterstützen Matter über Thread und binden sich über die Matter-Integration ein. Braucht einen Thread-Border-Router. Home Assistant dokumentiert für Schlösser der 4. Generation auch MQTT."
+  },
+  "values": {
+    "power": "4 × AA oder Nuki Power Pack"
+  }
+}

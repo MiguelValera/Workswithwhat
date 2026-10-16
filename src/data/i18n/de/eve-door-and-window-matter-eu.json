@@ -1,0 +1,24 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Ob eine Tür oder ein Fenster offen oder geschlossen ist, meldet der Eve Door & Window, samt Statistiken zu Zeitpunkt und Dauer. Über Matter auf Thread funktioniert er mit Apple Home, Google Home, Alexa, SmartThings und Home Assistant; du brauchst also einen Thread-Border-Router wie einen HomePod mini oder Apple TV 4K, aber keine Eve-Bridge. Laut Eve gibt es keine Eve-Cloud und keine Registrierung. Eine austauschbare Halb-AA-Zelle (ER14250) liegt bei.",
+  "caveats": [
+    "Braucht einen Thread-Border-Router, der zugleich Matter-Controller sein muss; eine Eve-Bridge als Alternative gibt es nicht.",
+    "Ältere HomeKit/Thread-Geräte brauchen Eves kostenloses Firmware-Update, um Matter zu bekommen."
+  ],
+  "notes": {
+    "radios": "Eves Seite führt Thread als Funkverbindung; die CSA führt Thread und Bluetooth (Bluetooth dient der Matter-Einrichtung).",
+    "matter": "Die CSA hat mehrere Einträge für Eve Door & Window (Vendor 0x130A, Produkt 0x004D, Firmware 3.1.0 bis 3.2.1), alle mit Thread und Bluetooth. Eve sagt, die neuesten HomeKit/Thread-Modelle hätten Matter per kostenlosem Firmware-Update bekommen.",
+    "hubRequired": "Eine Eve-Bridge ist nicht nötig. Eve sagt, die erste Plattform brauche einen Hub mit den Funktionen Matter-Controller und Thread-Border-Router (z. B. HomePod mini oder Apple TV 4K); das ist ein allgemeiner Thread-Border-Router, kein Marken-Hub.",
+    "localControl": "Eves Seite sagt, es gebe keine Eve-Cloud und keine Registrierung; der CSA-Eintrag beschreibt vollständig lokale Konnektivität.",
+    "senses": "Eve und die CSA beschreiben ihn als Offen/Geschlossen-Sensor mit Statistiken zu Zeitpunkt und Dauer.",
+    "power": "Eves Seite führt eine austauschbare ½-AA-Zelle (ER14250, 3,6 V), im Lieferumfang.",
+    "compatibility.apple_home": "Braucht einen Thread-Border-Router (einen Hub, der auch Matter-Controller ist). Bei Apple heißt das ein HomePod mini, HomePod (2. Generation) oder Apple TV 4K.",
+    "compatibility.google_home": "Braucht einen Thread-Border-Router (einen Hub, der auch Matter-Controller ist).",
+    "compatibility.alexa": "Braucht einen Thread-Border-Router (einen Hub, der auch Matter-Controller ist). Eves Hub-Seite nennt Amazon Alexa unter den Plattformen mit solchen Hubs.",
+    "compatibility.smartthings": "Braucht einen Thread-Border-Router (einen Hub, der auch Matter-Controller ist). Eves Hub-Seite nennt Samsung SmartThings unter den Plattformen mit solchen Hubs.",
+    "compatibility.home_assistant": "Home Assistants Eve-Seite führt den Eve Door & Window als Matter-Gerät, lokal über die Matter-Integration hinzugefügt. Braucht einen Thread-Border-Router."
+  },
+  "values": {
+    "power": "1 × ½ AA (ER14250)"
+  }
+}

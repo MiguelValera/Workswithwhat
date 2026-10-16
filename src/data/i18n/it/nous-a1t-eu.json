@@ -1,0 +1,18 @@
+{
+  "basedOn": "2026-10-11",
+  "summary": "Sulla Nous A1T (EU) Tasmota è preinstallato, quindi non c'è nessun cloud del produttore: va direttamente in Home Assistant tramite l'integrazione ufficiale Tasmota, che richiede un broker MQTT e Tasmota 9.2 o successivo. Misura e registra i consumi, anche se le letture vanno calibrate per essere precise. Alexa e Google Assistant funzionano solo tramite Home Assistant o software simile, non con la presa stessa. La pagina di Nous dà valori di carico contrastanti (10 A nella tabella delle specifiche, 16 A nel nome), quindi non indichiamo un massimo.",
+  "caveats": ["Solo Wi-Fi a 2,4 GHz; Nous dice che non si collega a una rete a 5 GHz.", "L'integrazione Tasmota di Home Assistant richiede un broker MQTT e Tasmota 9.2 o successivo.", "Le letture di energia richiedono la calibrazione del monitoraggio della potenza prima di essere precise.", "La tabella delle specifiche di Nous dice 10 A / 2500 W mentre il nome del prodotto dice 16 A, quindi controlla prima di collegare un carico pesante.", "Niente Alexa né Google Assistant senza Home Assistant o software simile in mezzo."],
+  "notes": {
+    "radios": "Solo Wi-Fi a 2,4 GHz; Nous dice che non funziona sulle reti a 5 GHz.",
+    "matter": "La pagina della A1T di Nous non cita Matter e non è stata trovata nessuna scheda CSA. Viene fornita con il firmware Tasmota.",
+    "hubRequired": "Presa Wi-Fi con Tasmota, configurata dalla sua interfaccia web. Gli assistenti vocali richiedono Home Assistant o simili.",
+    "localControl": "Il firmware Tasmota funziona in locale con un'interfaccia web integrata e MQTT; nessun cloud del produttore.",
+    "energyMonitoring": "Misura e registra il consumo. Nous e il template Tasmota dicono entrambi che richiede la calibrazione del monitoraggio della potenza per letture precise.",
+    "maxLoadWatts": "La pagina di Nous è contraddittoria: la tabella delle specifiche dice carico massimo 10 A / 2500 W, mentre il nome del prodotto e la descrizione del relè dicono 16 A. I rivenditori indicano 16 A / 3680 W.",
+    "compatibility.apple_home": "La pagina della A1T di Nous non cita Apple Home.",
+    "compatibility.google_home": "Nous dice che Google Assistant funziona solo dopo aver collegato la presa a Home Assistant o a software simile. Non c'è nessun collegamento cloud né bridge Nous, quindi dipende dall'integrazione Google di Home Assistant, non dalla presa.",
+    "compatibility.alexa": "Nous dice che Alexa funziona solo dopo aver collegato la presa a Home Assistant o a software simile. Non c'è nessun collegamento cloud né bridge Nous, quindi dipende dall'integrazione Alexa di Home Assistant, non dalla presa.",
+    "compatibility.smartthings": "La pagina della A1T di Nous non cita SmartThings.",
+    "compatibility.home_assistant": "Tramite l'integrazione Tasmota ufficiale di HA via MQTT (richiede un broker MQTT e Tasmota 9.2+). Nous indica Home Assistant come piattaforma prevista."
+  }
+}

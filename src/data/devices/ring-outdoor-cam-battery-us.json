@@ -1,0 +1,132 @@
+{
+  "category": "smart-camera",
+  "brand": "Ring",
+  "model": "Outdoor Cam (Battery)",
+  "name": "Ring Outdoor Cam Battery (US)",
+  "regions": [
+    "US"
+  ],
+  "officialUrl": "https://ring.com/products/outdoor-cam",
+  "radios": {
+    "value": [
+      "wifi"
+    ],
+    "sources": [
+      "ring-outdoor-cam-support",
+      "ring-outdoor-cam"
+    ],
+    "note": "2.4 GHz 802.11 b/g/n only."
+  },
+  "matter": {
+    "certified": null,
+    "sources": [],
+    "note": "Ring's pages don't mention Matter; no CSA listing was found."
+  },
+  "compatibility": {
+    "apple_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not mentioned on Ring's pages."
+    },
+    "google_home": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not mentioned on Ring's pages."
+    },
+    "alexa": {
+      "status": "native",
+      "sources": [
+        "ring-outdoor-cam-support",
+        "ring-outdoor-cam"
+      ],
+      "note": "Ring lists Works With Alexa among the Outdoor Cam features."
+    },
+    "smartthings": {
+      "status": "unknown",
+      "sources": [],
+      "note": "Not mentioned on Ring's pages."
+    },
+    "home_assistant": {
+      "status": "native",
+      "sources": [
+        "ha-ring"
+      ],
+      "note": "Home Assistant's official Ring integration lists Stick Up Battery and Stick Up Cam (3rd Gen): live view, motion events and battery level; last recording needs Ring Protect, no two-way audio."
+    }
+  },
+  "hubRequired": {
+    "value": false,
+    "sources": [
+      "ring-outdoor-cam-support"
+    ],
+    "note": "Connects over Wi-Fi; no bridge mentioned."
+  },
+  "localControl": {
+    "value": null,
+    "sources": [],
+    "note": "Ring doesn't state whether any control works without its cloud."
+  },
+  "cameraType": {
+    "value": "outdoor",
+    "sources": [
+      "ring-outdoor-cam"
+    ],
+    "note": "Weather-resistant, rated -5 to 122 °F; Ring says it is built for outside but works anywhere."
+  },
+  "power": {
+    "value": "Rechargeable battery",
+    "sources": [
+      "ring-outdoor-cam-support",
+      "ring-outdoor-cam"
+    ],
+    "note": "Quick-release battery pack included; plug-in adapter and solar panel sold separately."
+  },
+  "localStorage": {
+    "value": null,
+    "sources": [],
+    "note": "Ring's pages describe cloud video history only."
+  },
+  "subscription": {
+    "value": "Saved video history (Ring Protect)",
+    "sources": [
+      "ring-outdoor-cam"
+    ],
+    "note": "Live view and alerts work without a plan; videos aren't saved. 30-day free trial."
+  },
+  "summary": "Ring Outdoor Cam (Battery) is a 2.4 GHz Wi-Fi camera on a quick-release battery pack, listed by Ring as Works with Alexa. Home Assistant's official Ring integration covers the Stick Up Cam (3rd Gen) it was renamed from, with live view and motion events. Live view and alerts are free, but saved video needs Ring Protect.",
+  "caveats": [
+    "Saved video needs a Ring Protect plan.",
+    "2.4 GHz Wi-Fi only.",
+    "Ring renamed Stick Up Cam (3rd Gen) to Outdoor Cam; its product page labels the battery model 'Outdoor Cam (2nd Gen), 2019 release', so generation numbers differ between Ring's pages.",
+    "Apple Home, Google Home and Matter are not confirmed."
+  ],
+  "sources": [
+    {
+      "id": "ring-outdoor-cam",
+      "url": "https://ring.com/products/outdoor-cam",
+      "title": "Outdoor Cam | Wireless Outdoor Security Camera",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ring-outdoor-cam-support",
+      "url": "https://ring.com/support/products/cameras/stick-up-cam-gen-3?page=1",
+      "title": "Outdoor Cam (formerly Stick Up Cam 3rd Gen) support",
+      "publisher": "Ring",
+      "kind": "manufacturer",
+      "accessed": "2026-10-12"
+    },
+    {
+      "id": "ha-ring",
+      "url": "https://www.home-assistant.io/integrations/ring",
+      "title": "Ring - Home Assistant",
+      "publisher": "Home Assistant",
+      "kind": "ecosystem",
+      "accessed": "2026-10-12"
+    }
+  ],
+  "status": "verified",
+  "verifiedAt": "2026-10-12",
+  "updatedAt": "2026-10-12"
+}
