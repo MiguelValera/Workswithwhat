@@ -10,7 +10,7 @@ export const OPERATOR = {
 };
 
 export const CONTACT_URL = 'https://github.com/MiguelValera/Workswithwhat/issues';
-export const LEGAL_UPDATED = '2026-10-12';
+export const LEGAL_UPDATED = '2026-10-16';
 
 // Languages built besides English (each under /<lang>/). A language goes on only once
 // every published record has a translation in src/data/i18n/<lang>/; while it's off,

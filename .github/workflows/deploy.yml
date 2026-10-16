@@ -26,28 +26,14 @@ jobs:
       - run: npm ci
       - run: npm run validate
       - run: npx astro build
+      # A tar of dist/ (dotfiles included, so /.well-known/ ships) for deploy-cloudflare
       - uses: actions/upload-pages-artifact@v3
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
           path: dist
 
-  deploy:
-    needs: build
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-
-  # Cloudflare Pages: the new host (docs/cloudflare-pages.md). GitHub Pages keeps
-  # deploying as a fallback until the DNS switch is confirmed. Skipped until the
-  # CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets exist.
+  # Cloudflare Pages hosts the site (docs/cloudflare-pages.md). Needs the
+  # CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets.
   deploy-cloudflare:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
@@ -64,8 +50,8 @@ jobs:
           WRANGLER: wrangler@4.151.1
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "::notice::Cloudflare secrets not set; Cloudflare Pages deploy skipped"
-            exit 0
+            echo "::error::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID secrets missing; nothing deployed"
+            exit 1
           fi
           mkdir dist && tar -xf artifact.tar -C dist
           # First run creates the project; later runs find it already there
@@ -94,7 +80,7 @@ jobs:
   # Tell IndexNow engines (Bing, Yandex, …) which URLs exist after each deploy.
   # The key is public by design: it is also served at /b065f34bf6c2a7a6c90cf76a5ada5c02.txt.
   indexnow:
-    needs: [deploy, deploy-cloudflare]
+    needs: deploy-cloudflare
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
